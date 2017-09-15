@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>fossick</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>vijayanant.github.io/tags/haskell/</link>
+    <language>en-us</language>
+    <author>Vijay Anant</author>
+    <copyright>2016 All rights reserved</copyright>
+    <updated>Fri, 20 May 2016 20:20:45 UTC</updated>
+    
+    
+    <item>
+      <title>Understanding Monads Using Function Composition</title>
+      <link>vijayanant.github.io/2016/05/haskel-composition-monad/</link>
+      <pubDate>Fri, 20 May 2016 20:20:45 UTC</pubDate>
+      <author>Vijay Anant</author>
+      <guid>vijayanant.github.io/2016/05/haskel-composition-monad/</guid>
+      <description>
+
+&lt;p&gt;Today I am going to commit a crime - I am about to write one more blog relating to Monads!&lt;/p&gt;
+
+&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
+
+&lt;p&gt;Even though I could use &lt;code&gt;monads&lt;/code&gt; for a while now, I never got around to understanding how they are &lt;strong&gt;composing functions&lt;/strong&gt; and why couldn&amp;rsquo;t we use the &lt;code&gt;(.)&lt;/code&gt; function to compose?&lt;/p&gt;
+
+&lt;p&gt;I wanted to understand Monads from composition view point.&lt;/p&gt;
+
+&lt;h2 id=&#34;let-s-dig-in&#34;&gt;Let&amp;rsquo;s Dig In&lt;/h2&gt;
+
+&lt;p&gt;Lets start with simple function composition&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; b
+&lt;span style=&#34;color: #0000FF&#34;&gt;g&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We all know the how to compose them -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;h&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; g&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;f
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;h&lt;/code&gt; has the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets look at the type of &lt;code&gt;(.)&lt;/code&gt; function&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;(.)&lt;/code&gt; function takes  two functions (&lt;code&gt;g&lt;/code&gt; and &lt;code&gt;f&lt;/code&gt; for example) and returns a new function of the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In essence &lt;code&gt;(g.f) x&lt;/code&gt; is same as &lt;code&gt;g(f x)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;let-us-add-some-complexity&#34;&gt;Let Us Add Some Complexity&lt;/h2&gt;
+
+&lt;p&gt;Let us say we have two more function&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;f&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;span style=&#34;color: #0000FF&#34;&gt;g&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If we try to compose them using the &lt;code&gt;(.)&lt;/code&gt; function as &lt;code&gt;g&#39; . f&#39;&lt;/code&gt; we will notice that the types don&amp;rsquo;t match up. The return type of &lt;code&gt;f&#39;&lt;/code&gt; is a two-tuple &lt;code&gt;(b, String)&lt;/code&gt; where as function &lt;code&gt;g&#39;&lt;/code&gt; is expecting &lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For it to work, we need to modify our function &lt;code&gt;g&#39;&lt;/code&gt; to accept &lt;code&gt;(b, String)&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;g&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we can compose them as &lt;code&gt;g&#39;&#39; . f&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;magicbox&#34;&gt;MagicBox&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What if&lt;/em&gt;&lt;/strong&gt; we could magically transform (or &lt;code&gt;lift&lt;/code&gt;) our function &lt;code&gt;g&#39;&lt;/code&gt; to &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets say we have such a function, and for the fun of it, call it &lt;code&gt;magicBox&lt;/code&gt;. Now we can compose &lt;code&gt;f&#39;&lt;/code&gt; and &lt;code&gt;g&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(magicBox g&amp;#39;) &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; f&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets build a magic box ourselves. It is not that hard really.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Our &lt;code&gt;magicBox&lt;/code&gt; takes a function of type &lt;code&gt;g&#39;&lt;/code&gt; and returns a function of type &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt; func (b, xs) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; func b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We ignore the String parameter.&lt;/p&gt;
+
+&lt;h2 id=&#34;enter-the-bind-operator&#34;&gt;Enter the Bind operator&lt;/h2&gt;
+
+&lt;p&gt;If you have ever used  &lt;code&gt;Monad&lt;/code&gt; you already know &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function.
+Lets take a look at the &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; m a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You might also know the flipped version &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you look closely, the &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; resembles our &lt;code&gt;magicBox&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt;)    &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b)            &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m a         &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
+&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt;            (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;))    &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There you go. With Monad&amp;rsquo;s bind operator all we are doing is transforming the functions so that we can compose them.&lt;/p&gt;
+
+&lt;p&gt;Here is one example of how you might use &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; to compose functions&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;wordCount&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; print &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; length &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; words &lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt; getContents
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>

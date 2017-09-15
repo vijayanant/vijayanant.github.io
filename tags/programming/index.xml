@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>fossick</title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>vijayanant.github.io/tags/programming/</link>
+    <language>en-us</language>
+    <author>Vijay Anant</author>
+    <copyright>2017 All rights reserved</copyright>
+    <updated>Fri, 15 Sep 2017 14:42:26 IST</updated>
+    
+    
+    <item>
+      <title>Thinking in Imperative, Object Oriented and Functional way</title>
+      <link>vijayanant.github.io/2017/09/programming-paradigms/</link>
+      <pubDate>Fri, 15 Sep 2017 14:42:26 IST</pubDate>
+      <author>Vijay Anant</author>
+      <guid>vijayanant.github.io/2017/09/programming-paradigms/</guid>
+      <description>
+
+&lt;p&gt;Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity.  Complex code base is not only harder to test but testing is that much less effective.&lt;/p&gt;
+
+&lt;h2 id=&#34;programming-paradigms&#34;&gt;Programming Paradigms&lt;/h2&gt;
+
+&lt;p&gt;Different programming styles tries to deal with the complexity in their own way. The following sections discusses some common paradigms in general purpose programming.&lt;/p&gt;
+
+&lt;p&gt;The examples given are representative of the paradigm and are simple. They are not representitives of solutions to handling complexity. Complexities that arise due to  state update and control flow are usually visible in fairly large code base.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-imperative-style&#34;&gt;The Imperative Style&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&#34;https://en.wikipedia.org/wiki/Imperative_programming&#34;&gt;imperative programming&lt;/a&gt;, the programs consists of an explicit sequence of instructions/commands that update shared state. Control flow is explicit: commands detail how the computation takes place, step by step. Each step affects the global state of the system.&lt;/p&gt;
+
+&lt;p&gt;Since each step can essentially updates the (global, shared) state, any part of the program can update the state. It is up to the programmer to keep track of how and where the state is being updated and tailor the control flow such that the only desired updates happen and in a perticular order. As the number possible program state increases so does the number of places the state is updated. It becomes harder to keep the program in consistent state. It will soon become a complex cogwheel system with too many moving parts.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;result &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; []
+i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color: #A0A000&#34;&gt;start&lt;/span&gt;:
+  numEmployees &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; length(employees)
+  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;=&lt;/span&gt; numEmployees &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;goto&lt;/span&gt; finished
+  e &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; employees[i]
+  rating &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; e.rating
+  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt; rating &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;goto&lt;/span&gt; nextOne
+  upperCaseName &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; toUpper(e.name)
+  addToList(result, upperCaseName)
+&lt;span style=&#34;color: #A0A000&#34;&gt;nextOne&lt;/span&gt;:
+  i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;1&lt;/span&gt;
+  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;goto&lt;/span&gt; start
+&lt;span style=&#34;color: #A0A000&#34;&gt;finished&lt;/span&gt;:
+  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;return&lt;/span&gt; sort(result)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Use of procedures and structured programming (sometimes considered a separate paradigm) is a way to contain complexity.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;result &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [];
+&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;for&lt;/span&gt; (i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt; length(employees); i&lt;span style=&#34;color: #666666&#34;&gt;++&lt;/span&gt;) {
+  e &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; employees[i];
+  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt;(e.rating &lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt;) {
+    addToList(result,toUpper(e.name));
+  }
+}
+&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;return&lt;/span&gt; sort(result);
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;the-object-oriented-style&#34;&gt;The Object Oriented Style&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Object-oriented_programming&#34;&gt;Object Oriented Programming&lt;/a&gt; is based on passing messages between objects. Objects respond to messages by performing appropriate operations. These operations are generally called methods.&lt;/p&gt;
+
+&lt;p&gt;By encapsulating data and operations that can be performed on that data, into a single entity (object), we have (in  a way) segregated moving parts of the system in to smaller groups. There are still moving parts, a lot of them, but they are grouped in a way which allows programmer to handle each group (class of objects)  in isolation.&lt;/p&gt;
+
+&lt;p&gt;In pure OO style, the control structures like the conditionals and loops become messages themselves.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #19177C&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;List&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;new&lt;/span&gt;.
+&lt;span style=&#34;color: #19177C&#34;&gt;employees&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;each:&lt;/span&gt; [&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #19177C&#34;&gt;e&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;|&lt;/span&gt;
+  &lt;span style=&#34;color: #19177C&#34;&gt;e&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;rating&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;greaterThan:&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;ifTrue:&lt;/span&gt; [&lt;span style=&#34;color: #19177C&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;add&lt;/span&gt; (&lt;span style=&#34;color: #19177C&#34;&gt;e&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;upper&lt;/span&gt;)]]
+&lt;span style=&#34;color: #0000FF&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;sort&lt;/span&gt;.
+&lt;span style=&#34;color: #666666&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color: #19177C&#34;&gt;result&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice that, even though we can now deal with state updates in isolation, objects need to collaborate among themselves to be useful. That happens by the way of message passing. As the number of objects (classes of objects) increases the communication between them also increases and needs to be dealt with carefully.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-functional-style&#34;&gt;The Functional Style&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Functional_programming&#34;&gt;Functional Programming&lt;/a&gt; is based on the mathematical concept of a function. In mathematics there is no notion of updating a variable/state. Functional programming, thus, removes the whole &amp;lsquo;update the shared state&amp;rsquo; business. Functions are the building blocks in FP. Functions take arguments and compute a result based on the inputs provided. Control flow is expressed by combining functions (&lt;a href=&#34;https://en.wikipedia.org/wiki/Function_composition&#34;&gt;function composition&lt;/a&gt;).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;sort&lt;/span&gt; ( map (toUpperCase &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; name) ( filter (&lt;span style=&#34;color: #0000FF&#34;&gt;\&lt;/span&gt;e &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; rating e &lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt;) employees))
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In essence, programming paradigms stem from different concepts about how the world works. They represent different opinions about how to best model the world while we are writing programs.&lt;/p&gt;
+
+&lt;p&gt;The imperative models are based on how computers works. We think in terms of variables that hold values and procedures that manipulate the values held in those variable.&lt;/p&gt;
+
+&lt;p&gt;The object-oriented paradigm models everything as an object. These objects can then interact with each other and thereby update their internal state when something in the system changes. This corresponds to how we often conceptualize the world.&lt;/p&gt;
+
+&lt;p&gt;The functional programming paradigm takes a different approach. The behavior of the system is modelled using pure functions and these are strictly separated from the actual data within the system, which is modelled with immutable values. This is based on the mathematical perspective that a value itself cannot change and all changes in the system are actually the application of a function.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>A Detour Called Monads</title>
+      <link>vijayanant.github.io/2016/08/monad-detour/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 UTC</pubDate>
+      <author>Vijay Anant</author>
+      <guid>vijayanant.github.io/2016/08/monad-detour/</guid>
+      <description>&lt;p&gt;When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it -  hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory. Pocket knife is all that was needed.&lt;/p&gt;
+
+&lt;p&gt;Stop Scaring the newcomers. We don&amp;rsquo;t call it List Monad everytime we use it. We are OK to call it just List. But everytime we need state why do we call it State Monad? When I need to do i/o I will use IO. The fact that it is a monad is not relevant at that point.&lt;/p&gt;
+
+&lt;p&gt;Monads don&amp;rsquo;t do IO, monads don&amp;rsquo;t manage State, Monads don&amp;rsquo;t handle Exception. Monads don&amp;rsquo;t do anything. The types IO, State etc. do. Understand the types.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Understanding Monads Using Function Composition</title>
+      <link>vijayanant.github.io/2016/05/haskel-composition-monad/</link>
+      <pubDate>Fri, 20 May 2016 20:20:45 UTC</pubDate>
+      <author>Vijay Anant</author>
+      <guid>vijayanant.github.io/2016/05/haskel-composition-monad/</guid>
+      <description>
+
+&lt;p&gt;Today I am going to commit a crime - I am about to write one more blog relating to Monads!&lt;/p&gt;
+
+&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
+
+&lt;p&gt;Even though I could use &lt;code&gt;monads&lt;/code&gt; for a while now, I never got around to understanding how they are &lt;strong&gt;composing functions&lt;/strong&gt; and why couldn&amp;rsquo;t we use the &lt;code&gt;(.)&lt;/code&gt; function to compose?&lt;/p&gt;
+
+&lt;p&gt;I wanted to understand Monads from composition view point.&lt;/p&gt;
+
+&lt;h2 id=&#34;let-s-dig-in&#34;&gt;Let&amp;rsquo;s Dig In&lt;/h2&gt;
+
+&lt;p&gt;Lets start with simple function composition&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; b
+&lt;span style=&#34;color: #0000FF&#34;&gt;g&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We all know the how to compose them -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;h&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; g&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;f
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;h&lt;/code&gt; has the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets look at the type of &lt;code&gt;(.)&lt;/code&gt; function&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;(.)&lt;/code&gt; function takes  two functions (&lt;code&gt;g&lt;/code&gt; and &lt;code&gt;f&lt;/code&gt; for example) and returns a new function of the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In essence &lt;code&gt;(g.f) x&lt;/code&gt; is same as &lt;code&gt;g(f x)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;let-us-add-some-complexity&#34;&gt;Let Us Add Some Complexity&lt;/h2&gt;
+
+&lt;p&gt;Let us say we have two more function&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;f&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;span style=&#34;color: #0000FF&#34;&gt;g&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If we try to compose them using the &lt;code&gt;(.)&lt;/code&gt; function as &lt;code&gt;g&#39; . f&#39;&lt;/code&gt; we will notice that the types don&amp;rsquo;t match up. The return type of &lt;code&gt;f&#39;&lt;/code&gt; is a two-tuple &lt;code&gt;(b, String)&lt;/code&gt; where as function &lt;code&gt;g&#39;&lt;/code&gt; is expecting &lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For it to work, we need to modify our function &lt;code&gt;g&#39;&lt;/code&gt; to accept &lt;code&gt;(b, String)&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;g&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we can compose them as &lt;code&gt;g&#39;&#39; . f&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;magicbox&#34;&gt;MagicBox&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;What if&lt;/em&gt;&lt;/strong&gt; we could magically transform (or &lt;code&gt;lift&lt;/code&gt;) our function &lt;code&gt;g&#39;&lt;/code&gt; to &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets say we have such a function, and for the fun of it, call it &lt;code&gt;magicBox&lt;/code&gt;. Now we can compose &lt;code&gt;f&#39;&lt;/code&gt; and &lt;code&gt;g&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(magicBox g&amp;#39;) &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; f&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Lets build a magic box ourselves. It is not that hard really.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Our &lt;code&gt;magicBox&lt;/code&gt; takes a function of type &lt;code&gt;g&#39;&lt;/code&gt; and returns a function of type &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt; func (b, xs) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; func b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We ignore the String parameter.&lt;/p&gt;
+
+&lt;h2 id=&#34;enter-the-bind-operator&#34;&gt;Enter the Bind operator&lt;/h2&gt;
+
+&lt;p&gt;If you have ever used  &lt;code&gt;Monad&lt;/code&gt; you already know &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function.
+Lets take a look at the &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; m a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You might also know the flipped version &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you look closely, the &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; resembles our &lt;code&gt;magicBox&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt;)    &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b)            &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m a         &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
+&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt;            (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;))    &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;There you go. With Monad&amp;rsquo;s bind operator all we are doing is transforming the functions so that we can compose them.&lt;/p&gt;
+
+&lt;p&gt;Here is one example of how you might use &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; to compose functions&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;wordCount&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; print &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; length &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; words &lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt; getContents
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    
+  </channel>
+</rss>
