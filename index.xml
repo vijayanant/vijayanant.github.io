@@ -3,7 +3,7 @@
   <channel>
       <title>fossick</title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>/</link>
+    <link>https://vijayanant.github.io/</link>
     <language>en-us</language>
     <author>Vijay Anant</author>
     <copyright>2017 All rights reserved</copyright>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Thinking in Imperative, Object Oriented and Functional way</title>
-      <link>/2017/09/programming-paradigms/</link>
+      <link>https://vijayanant.github.io/2017/09/programming-paradigms/</link>
       <pubDate>Fri, 15 Sep 2017 14:42:26 IST</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2017/09/programming-paradigms/</guid>
+      <guid>https://vijayanant.github.io/2017/09/programming-paradigms/</guid>
       <description>
 
 &lt;p&gt;Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity.  Complex code base is not only harder to test but testing is that much less effective.&lt;/p&gt;
@@ -97,10 +97,10 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
     
     <item>
       <title>A Detour Called Monads</title>
-      <link>/2016/08/monad-detour/</link>
+      <link>https://vijayanant.github.io/2016/08/monad-detour/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2016/08/monad-detour/</guid>
+      <guid>https://vijayanant.github.io/2016/08/monad-detour/</guid>
       <description>&lt;p&gt;When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it -  hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory. Pocket knife is all that was needed.&lt;/p&gt;
 
 &lt;p&gt;Stop Scaring the newcomers. We don&amp;rsquo;t call it List Monad everytime we use it. We are OK to call it just List. But everytime we need state why do we call it State Monad? When I need to do i/o I will use IO. The fact that it is a monad is not relevant at that point.&lt;/p&gt;
@@ -113,10 +113,10 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
     
     <item>
       <title>Decisions</title>
-      <link>/2016/08/decisions/</link>
+      <link>https://vijayanant.github.io/2016/08/decisions/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2016/08/decisions/</guid>
+      <guid>https://vijayanant.github.io/2016/08/decisions/</guid>
       <description>&lt;p&gt;We all make decisions. We should make decisions to be happy.&lt;/p&gt;
 
 &lt;p&gt;To go to college, to drop out, to get a job, to freelance, to take over family business, to start your own, to take a break from your job, to get married, to visit friends, to avoid talking to some, to go shopping, to buy online, to go jogging, to sleep more, to make peace, to go to war. All decisions are made to be happy.&lt;/p&gt;
@@ -131,10 +131,10 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
     
     <item>
       <title>Duplication Vs Abstraction</title>
-      <link>/2016/07/duplication-vs-abstraction/</link>
+      <link>https://vijayanant.github.io/2016/07/duplication-vs-abstraction/</link>
       <pubDate>Tue, 05 Jul 2016 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2016/07/duplication-vs-abstraction/</guid>
+      <guid>https://vijayanant.github.io/2016/07/duplication-vs-abstraction/</guid>
       <description>&lt;p&gt;When you see code duplication and can&amp;rsquo;t think of an abstraction to  put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.&lt;/p&gt;
 </description>
     </item>
@@ -143,10 +143,10 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
     
     <item>
       <title>Understanding Monads Using Function Composition</title>
-      <link>/2016/05/haskel-composition-monad/</link>
+      <link>https://vijayanant.github.io/2016/05/haskel-composition-monad/</link>
       <pubDate>Fri, 20 May 2016 20:20:45 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2016/05/haskel-composition-monad/</guid>
+      <guid>https://vijayanant.github.io/2016/05/haskel-composition-monad/</guid>
       <description>
 
 &lt;p&gt;Today I am going to commit a crime - I am about to write one more blog relating to Monads!&lt;/p&gt;
@@ -239,10 +239,10 @@ Lets take a look at the &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function&lt;/
     
     <item>
       <title>Pair Programming - What? Why? And How?</title>
-      <link>/2015/01/pairing/</link>
+      <link>https://vijayanant.github.io/2015/01/pairing/</link>
       <pubDate>Sat, 31 Jan 2015 12:31:30 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2015/01/pairing/</guid>
+      <guid>https://vijayanant.github.io/2015/01/pairing/</guid>
       <description>
 
 &lt;h3 id=&#34;what&#34;&gt;What?&lt;/h3&gt;
@@ -284,10 +284,10 @@ Lets take a look at the &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function&lt;/
     
     <item>
       <title>10 Must Have Vim Plugins</title>
-      <link>/2015/01/new-vim-setup/</link>
+      <link>https://vijayanant.github.io/2015/01/new-vim-setup/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2015/01/new-vim-setup/</guid>
+      <guid>https://vijayanant.github.io/2015/01/new-vim-setup/</guid>
       <description>&lt;p&gt;Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;{{site.url}}/assets/my_vim_setup.png&#34; alt=&#34;my_vim_setup&#34; /&gt;&lt;/p&gt;
@@ -315,10 +315,10 @@ Lets take a look at the &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function&lt;/
     
     <item>
       <title>Performance Analysis In Python</title>
-      <link>/2014/11/performance-analysis-in-python/</link>
+      <link>https://vijayanant.github.io/2014/11/performance-analysis-in-python/</link>
       <pubDate>Sun, 02 Nov 2014 20:05:36 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2014/11/performance-analysis-in-python/</guid>
+      <guid>https://vijayanant.github.io/2014/11/performance-analysis-in-python/</guid>
       <description>
 
 &lt;p&gt;My recent escapade with &lt;a href=&#34;https://www.python.org&#34;&gt;Python&lt;/a&gt; taught me many things. One of which is to &amp;ldquo;&lt;strong&gt;start doing something that interests you. And each such daring act will teach you many more things&lt;/strong&gt;.&amp;rdquo;&lt;/p&gt;

@@ -3,7 +3,7 @@
   <channel>
       <title>fossick</title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>/tags/composition/</link>
+    <link>https://vijayanant.github.io/tags/composition/</link>
     <language>en-us</language>
     <author>Vijay Anant</author>
     <copyright>2016 All rights reserved</copyright>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Understanding Monads Using Function Composition</title>
-      <link>/2016/05/haskel-composition-monad/</link>
+      <link>https://vijayanant.github.io/2016/05/haskel-composition-monad/</link>
       <pubDate>Fri, 20 May 2016 20:20:45 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2016/05/haskel-composition-monad/</guid>
+      <guid>https://vijayanant.github.io/2016/05/haskel-composition-monad/</guid>
       <description>
 
 &lt;p&gt;Today I am going to commit a crime - I am about to write one more blog relating to Monads!&lt;/p&gt;

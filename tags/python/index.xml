@@ -3,7 +3,7 @@
   <channel>
       <title>fossick</title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>/tags/python/</link>
+    <link>https://vijayanant.github.io/tags/python/</link>
     <language>en-us</language>
     <author>Vijay Anant</author>
     <copyright>2014 All rights reserved</copyright>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Performance Analysis In Python</title>
-      <link>/2014/11/performance-analysis-in-python/</link>
+      <link>https://vijayanant.github.io/2014/11/performance-analysis-in-python/</link>
       <pubDate>Sun, 02 Nov 2014 20:05:36 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2014/11/performance-analysis-in-python/</guid>
+      <guid>https://vijayanant.github.io/2014/11/performance-analysis-in-python/</guid>
       <description>
 
 &lt;p&gt;My recent escapade with &lt;a href=&#34;https://www.python.org&#34;&gt;Python&lt;/a&gt; taught me many things. One of which is to &amp;ldquo;&lt;strong&gt;start doing something that interests you. And each such daring act will teach you many more things&lt;/strong&gt;.&amp;rdquo;&lt;/p&gt;

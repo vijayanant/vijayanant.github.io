@@ -3,164 +3,164 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2017/09/programming-paradigms/</loc>
+    <loc>https://vijayanant.github.io/2017/09/programming-paradigms/</loc>
     <lastmod>2017-09-15T14:42:26+05:30</lastmod>
   </url>
   
   <url>
-    <loc>/2016/08/monad-detour/</loc>
+    <loc>https://vijayanant.github.io/2016/08/monad-detour/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2016/08/decisions/</loc>
+    <loc>https://vijayanant.github.io/2016/08/decisions/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2016/07/duplication-vs-abstraction/</loc>
+    <loc>https://vijayanant.github.io/2016/07/duplication-vs-abstraction/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2016/05/haskel-composition-monad/</loc>
+    <loc>https://vijayanant.github.io/2016/05/haskel-composition-monad/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2015/01/pairing/</loc>
+    <loc>https://vijayanant.github.io/2015/01/pairing/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2015/01/new-vim-setup/</loc>
+    <loc>https://vijayanant.github.io/2015/01/new-vim-setup/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2014/11/performance-analysis-in-python/</loc>
+    <loc>https://vijayanant.github.io/2014/11/performance-analysis-in-python/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/desc/series-hugo101/</loc>
+    <loc>https://vijayanant.github.io/desc/series-hugo101/</loc>
     <lastmod>2014-08-12T11:09:35+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://vijayanant.github.io/about/</loc>
     <lastmod>2014-07-28T11:14:25+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/analysis/</loc>
+    <loc>https://vijayanant.github.io/tags/analysis/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/</loc>
+    <loc>https://vijayanant.github.io/blog/</loc>
     <lastmod>2017-09-15T14:42:26+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/composition/</loc>
+    <loc>https://vijayanant.github.io/tags/composition/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/desc/</loc>
+    <loc>https://vijayanant.github.io/desc/</loc>
     <lastmod>2014-08-12T11:09:35+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/fp/</loc>
+    <loc>https://vijayanant.github.io/tags/fp/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/functional/</loc>
+    <loc>https://vijayanant.github.io/tags/functional/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/haskell/</loc>
+    <loc>https://vijayanant.github.io/tags/haskell/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/series-desc/hugo-101/</loc>
+    <loc>https://vijayanant.github.io/series-desc/hugo-101/</loc>
     <lastmod>2014-08-12T11:09:35+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/monads/</loc>
+    <loc>https://vijayanant.github.io/tags/monads/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/monadsa/</loc>
+    <loc>https://vijayanant.github.io/tags/monadsa/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/performance/</loc>
+    <loc>https://vijayanant.github.io/tags/performance/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/plugin/</loc>
+    <loc>https://vijayanant.github.io/tags/plugin/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/programming/</loc>
+    <loc>https://vijayanant.github.io/tags/programming/</loc>
     <lastmod>2017-09-15T14:42:26+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/python/</loc>
+    <loc>https://vijayanant.github.io/tags/python/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/series/</loc>
+    <loc>https://vijayanant.github.io/series/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/series-desc/</loc>
+    <loc>https://vijayanant.github.io/series-desc/</loc>
     <lastmod>2014-08-12T11:09:35+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://vijayanant.github.io/tags/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/vim/</loc>
+    <loc>https://vijayanant.github.io/tags/vim/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://vijayanant.github.io/</loc>
     <lastmod>2017-09-15T14:42:26+05:30</lastmod>
     <priority>0</priority>
   </url>

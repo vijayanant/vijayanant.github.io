@@ -3,7 +3,7 @@
   <channel>
       <title>fossick</title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>/tags/programming/</link>
+    <link>https://vijayanant.github.io/tags/programming/</link>
     <language>en-us</language>
     <author>Vijay Anant</author>
     <copyright>2017 All rights reserved</copyright>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Thinking in Imperative, Object Oriented and Functional way</title>
-      <link>/2017/09/programming-paradigms/</link>
+      <link>https://vijayanant.github.io/2017/09/programming-paradigms/</link>
       <pubDate>Fri, 15 Sep 2017 14:42:26 IST</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2017/09/programming-paradigms/</guid>
+      <guid>https://vijayanant.github.io/2017/09/programming-paradigms/</guid>
       <description>
 
 &lt;p&gt;Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity.  Complex code base is not only harder to test but testing is that much less effective.&lt;/p&gt;
@@ -97,10 +97,10 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
     
     <item>
       <title>A Detour Called Monads</title>
-      <link>/2016/08/monad-detour/</link>
+      <link>https://vijayanant.github.io/2016/08/monad-detour/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2016/08/monad-detour/</guid>
+      <guid>https://vijayanant.github.io/2016/08/monad-detour/</guid>
       <description>&lt;p&gt;When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it -  hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory. Pocket knife is all that was needed.&lt;/p&gt;
 
 &lt;p&gt;Stop Scaring the newcomers. We don&amp;rsquo;t call it List Monad everytime we use it. We are OK to call it just List. But everytime we need state why do we call it State Monad? When I need to do i/o I will use IO. The fact that it is a monad is not relevant at that point.&lt;/p&gt;
@@ -113,10 +113,10 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
     
     <item>
       <title>Understanding Monads Using Function Composition</title>
-      <link>/2016/05/haskel-composition-monad/</link>
+      <link>https://vijayanant.github.io/2016/05/haskel-composition-monad/</link>
       <pubDate>Fri, 20 May 2016 20:20:45 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2016/05/haskel-composition-monad/</guid>
+      <guid>https://vijayanant.github.io/2016/05/haskel-composition-monad/</guid>
       <description>
 
 &lt;p&gt;Today I am going to commit a crime - I am about to write one more blog relating to Monads!&lt;/p&gt;

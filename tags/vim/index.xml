@@ -3,7 +3,7 @@
   <channel>
       <title>fossick</title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>/tags/vim/</link>
+    <link>https://vijayanant.github.io/tags/vim/</link>
     <language>en-us</language>
     <author>Vijay Anant</author>
     <copyright>2015 All rights reserved</copyright>
@@ -12,10 +12,10 @@
     
     <item>
       <title>10 Must Have Vim Plugins</title>
-      <link>/2015/01/new-vim-setup/</link>
+      <link>https://vijayanant.github.io/2015/01/new-vim-setup/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>/2015/01/new-vim-setup/</guid>
+      <guid>https://vijayanant.github.io/2015/01/new-vim-setup/</guid>
       <description>&lt;p&gt;Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;{{site.url}}/assets/my_vim_setup.png&#34; alt=&#34;my_vim_setup&#34; /&gt;&lt;/p&gt;
