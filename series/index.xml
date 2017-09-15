@@ -3,7 +3,7 @@
   <channel>
       <title>fossick</title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>vijayanant.github.io/series/</link>
+    <link>/series/</link>
     <language>en-us</language>
     <author>Vijay Anant</author>
     <copyright>0001 All rights reserved</copyright>
