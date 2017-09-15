@@ -110,22 +110,81 @@
     
     <p>Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.</p>
 
-<p><img src="{{site.url}}/assets/my_vim_setup.png" alt="my_vim_setup" /></p>
+<p><img src="/my_vim_setup.png" alt="my_vim_setup" /></p>
 
 <p>Note that the side panes (NERDTree on the left and Tagbar on the right) auto-collapse. They magically appear when you summon them and hide themselves when the task is done.</p>
 
-<p>Sl| Plugin Name| Description
-&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;
-1 | <a href="https://github.com/scrooloose/nerdcommenter"> NERDTree </a>   | Amazing file system explorer. It presents the filesystem to you in the form of a tree which you manipulate with the keyboard and/or mouse. It also allows you to perform simple filesystem operations.
-2 | <a href="https://github.com/kien/ctrlp.vim"> ctrlp </a> | It provides an intuitive and fast mechanism to load files from the file system (with regex and fuzzy find), from open buffers, and from recently used files.
-3 | <a href="https://github.com/tpope/vim-surround"> Surround </a> | Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more.  The plugin provides mappings to easily delete, change and add such surroundings in pairs.
-4 | <a href="https://github.com/scrooloose/nerdcommenter"> NERDCommenter </a> | Allows you to wrangle your code comments, regardless of filetype.
-5 | <a href="https://github.com/scrooloose/syntastic"> Syntastic </a> |  Awesome syntax checking plugin that runs buffers through external syntax checkers as they are saved and opened. If syntax errors are detected, the user is notified and is happy because they didn’t have to compile their code or execute their script to find them.
-6 | <a href="https://github.com/Shougo/neocomplcache.vim"> neocomplcache </a> |  An amazing autocomplete plugin with additional support for snippets. It can complete simultaneously from the dictionary, buffer, omnicomplete and snippets. This is the one true plugin that brings Vim autocomplete on par with the best editors.
-7 | <a href="https://github.com/tpope/vim-fugitive"> Fugitive </a> | Fugitive adds git support to git directories in vim.
-8 | <a href="https://github.com/majutsushi/tagbar"> Tagbar </a> | Another cool plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. It does this by creating a sidebar that displays the ctags-generated tags of the current file, ordered by their scope.
-9 | <a href="https://github.com/klen/python-mode"> PyMode </a> | A must have plugin for Python devs. This plugin contains all you need to develop python applications in Vim.
-10| <a href="https://github.com/Valloric/YouCompleteMe"> YouCompleteMe </a> | YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine for Vim. It has several completion engines: an identifier-based engine that works with every programming language, a semantic, Clang-based engine that provides native semantic code completion for C/C++/Objective-C/Objective-C++ (“the C-family languages”), a Jedi-based completion engine for Python, an OmniSharp-based completion engine for C# and an omnifunc-based completer that uses data from Vim’s omnicomplete system to provide semantic completions for many other languages (Ruby, PHP etc.).</p>
+<table>
+<thead>
+<tr>
+<th>Sl</th>
+<th>Plugin Name</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/scrooloose/nerdcommenter"> NERDTree </a></td>
+<td>Amazing file system explorer. It presents the filesystem to you in the form of a tree which you manipulate with the keyboard and/or mouse. It also allows you to perform simple filesystem operations.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><a href="https://github.com/kien/ctrlp.vim"> ctrlp </a></td>
+<td>It provides an intuitive and fast mechanism to load files from the file system (with regex and fuzzy find), from open buffers, and from recently used files.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><a href="https://github.com/tpope/vim-surround"> Surround </a></td>
+<td>Surround.vim is all about “surroundings”: parentheses, brackets, quotes, XML tags, and more.  The plugin provides mappings to easily delete, change and add such surroundings in pairs.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><a href="https://github.com/scrooloose/nerdcommenter"> NERDCommenter </a></td>
+<td>Allows you to wrangle your code comments, regardless of filetype.</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td><a href="https://github.com/scrooloose/syntastic"> Syntastic </a></td>
+<td>Awesome syntax checking plugin that runs buffers through external syntax checkers as they are saved and opened. If syntax errors are detected, the user is notified and is happy because they didn’t have to compile their code or execute their script to find them.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td><a href="https://github.com/Shougo/neocomplcache.vim"> neocomplcache </a></td>
+<td>An amazing autocomplete plugin with additional support for snippets. It can complete simultaneously from the dictionary, buffer, omnicomplete and snippets. This is the one true plugin that brings Vim autocomplete on par with the best editors.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td><a href="https://github.com/tpope/vim-fugitive"> Fugitive </a></td>
+<td>Fugitive adds git support to git directories in vim.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td><a href="https://github.com/majutsushi/tagbar"> Tagbar </a></td>
+<td>Another cool plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. It does this by creating a sidebar that displays the ctags-generated tags of the current file, ordered by their scope.</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td><a href="https://github.com/klen/python-mode"> PyMode </a></td>
+<td>A must have plugin for Python devs. This plugin contains all you need to develop python applications in Vim.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td><a href="https://github.com/Valloric/YouCompleteMe"> YouCompleteMe </a></td>
+<td>YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine for Vim. It has several completion engines: an identifier-based engine that works with every programming language, a semantic, Clang-based engine that provides native semantic code completion for C/C++/Objective-C/Objective-C++ (“the C-family languages”), a Jedi-based completion engine for Python, an OmniSharp-based completion engine for C# and an omnifunc-based completer that uses data from Vim’s omnicomplete system to provide semantic completions for many other languages (Ruby, PHP etc.).</td>
+</tr>
+</tbody>
+</table>
 
 <p>If you know of other good plugins or have some comments please feel free to reach out on twitter or send me an email. Happy coding.</p>
 
