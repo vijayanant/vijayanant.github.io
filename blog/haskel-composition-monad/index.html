@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+
+  <title> Understanding Monads Using Function Composition  &middot; fossick </title>
+
+  
+  <link rel="stylesheet" href="https://vijayanant.github.io//css/poole.css">
+  <link rel="stylesheet" href="https://vijayanant.github.io//css/syntax.css">
+  <link rel="stylesheet" href="https://vijayanant.github.io//css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="fossick" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Fira Sans']
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about" align=center>
+      <h2 class="brand"><a href="https://vijayanant.github.io/">fossick</a></h2>
+      
+      <p class="lead">
+         blog by Vijay Anant 
+      </p>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="https://vijayanant.github.io//blog">Posts</a></li>
+      
+      <li><a href="/about/">About </a></li>
+      
+      <br/> 
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+    </ul>
+      <a href="https://twitter.com/vijayanant"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+      
+      
+       <a href="https://github.com/vijayanant"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+       
+    <p class="footnote">powered by <a href="http://gohugo.io">Hugo</a> <br/>
+    &copy; 2017 Vijay Anant. All rights reserved.</p>
+  </div>
+</div>
+
+
+  <div class="content container">
+    <div class="post">
+    <h1 class="post-title">Understanding Monads Using Function Composition</h1>
+    <span class="post-date">May 20, 2016</span>
+    
+    
+
+<p>Today I am going to commit a crime - I am about to write one more blog relating to Monads!</p>
+
+<h2 id="why">Why?</h2>
+
+<p>Even though I could use <code>monads</code> for a while now, I never got around to understanding how they are <strong>composing functions</strong> and why couldn&rsquo;t we use the <code>(.)</code> function to compose?</p>
+
+<p>I wanted to understand Monads from composition view point.</p>
+
+<h2 id="let-s-dig-in">Let&rsquo;s Dig In</h2>
+
+<p>Lets start with simple function composition</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">f</span><span style="color: #AA22FF; font-weight: bold">::</span> a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> b
+<span style="color: #0000FF">g</span><span style="color: #AA22FF; font-weight: bold">::</span> b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> c
+</pre></div>
+
+<p>We all know the how to compose them -</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">h</span> <span style="color: #AA22FF; font-weight: bold">=</span> g<span style="color: #666666">.</span>f
+</pre></div>
+
+<p><code>h</code> has the type <code>h:: a -&gt; c</code></p>
+
+<p>Lets look at the type of <code>(.)</code> function</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">.</span>) <span style="color: #AA22FF; font-weight: bold">::</span> (b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> c) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> b) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> c
+</pre></div>
+
+<p>The <code>(.)</code> function takes  two functions (<code>g</code> and <code>f</code> for example) and returns a new function of the type <code>h:: a -&gt; c</code></p>
+
+<p>In essence <code>(g.f) x</code> is same as <code>g(f x)</code></p>
+
+<h2 id="let-us-add-some-complexity">Let Us Add Some Complexity</h2>
+
+<p>Let us say we have two more function</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">f&#39;</span> <span style="color: #AA22FF; font-weight: bold">::</span> a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (b, <span style="color: #B00040">String</span>)
+<span style="color: #0000FF">g&#39;</span> <span style="color: #AA22FF; font-weight: bold">::</span> b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
+</pre></div>
+
+<p>If we try to compose them using the <code>(.)</code> function as <code>g' . f'</code> we will notice that the types don&rsquo;t match up. The return type of <code>f'</code> is a two-tuple <code>(b, String)</code> where as function <code>g'</code> is expecting <code>b</code>.</p>
+
+<p>For it to work, we need to modify our function <code>g'</code> to accept <code>(b, String)</code></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">g&#39;&#39;</span> <span style="color: #AA22FF; font-weight: bold">::</span> (b, <span style="color: #B00040">String</span>) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
+</pre></div>
+
+<p>Now we can compose them as <code>g'' . f'</code></p>
+
+<h2 id="magicbox">MagicBox</h2>
+
+<p><strong><em>What if</em></strong> we could magically transform (or <code>lift</code>) our function <code>g'</code> to <code>g''</code></p>
+
+<p>Lets say we have such a function, and for the fun of it, call it <code>magicBox</code>. Now we can compose <code>f'</code> and <code>g'</code></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(magicBox g&#39;) <span style="color: #666666">.</span> f&#39;
+</pre></div>
+
+<p>Lets build a magic box ourselves. It is not that hard really.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">magicBox</span><span style="color: #AA22FF; font-weight: bold">::</span> (b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (b, <span style="color: #B00040">String</span>) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
+</pre></div>
+
+<p>Our <code>magicBox</code> takes a function of type <code>g'</code> and returns a function of type <code>g''</code></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">magicBox</span> func (b, xs) <span style="color: #AA22FF; font-weight: bold">=</span> func b
+</pre></div>
+
+<p>We ignore the String parameter.</p>
+
+<h2 id="enter-the-bind-operator">Enter the Bind operator</h2>
+
+<p>If you have ever used  <code>Monad</code> you already know <code>&gt;&gt;=</code> function.
+Lets take a look at the <code>&gt;&gt;=</code> function</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">&gt;&gt;=</span>) <span style="color: #AA22FF; font-weight: bold">::</span> <span style="color: #B00040">Monad</span> m <span style="color: #AA22FF; font-weight: bold">=&gt;</span> m a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b
+</pre></div>
+
+<p>You might also know the flipped version <code>=&lt;&lt;</code></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">=&lt;&lt;</span>) <span style="color: #AA22FF; font-weight: bold">::</span> <span style="color: #B00040">Monad</span> m <span style="color: #AA22FF; font-weight: bold">=&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b
+</pre></div>
+
+<p>If you look closely, the <code>=&lt;&lt;</code> resembles our <code>magicBox</code></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">=&lt;&lt;</span>)    <span style="color: #AA22FF; font-weight: bold">::</span> <span style="color: #B00040">Monad</span> m <span style="color: #AA22FF; font-weight: bold">=&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b)            <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m a         <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b
+<span style="color: #0000FF">magicBox</span> <span style="color: #AA22FF; font-weight: bold">::</span>            (b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>))    <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (b, <span style="color: #B00040">String</span>) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
+</pre></div>
+
+<p>There you go. With Monad&rsquo;s bind operator all we are doing is transforming the functions so that we can compose them.</p>
+
+<p>Here is one example of how you might use <code>=&lt;&lt;</code> to compose functions</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">wordCount</span> <span style="color: #AA22FF; font-weight: bold">=</span> print <span style="color: #666666">.</span> length <span style="color: #666666">.</span> words <span style="color: #666666">=&lt;&lt;</span> getContents
+</pre></div>
+
+    
+
+     
+	
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'vijayanant';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
+</div>
+</div> 
+
+</body>w
+</html>

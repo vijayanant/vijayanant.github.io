@@ -12,10 +12,10 @@
     
     <item>
       <title>10 Must Have Vim Plugins</title>
-      <link>https://vijayanant.github.io/2015/01/new-vim-setup/</link>
+      <link>https://vijayanant.github.io/blog/new-vim-setup/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/2015/01/new-vim-setup/</guid>
+      <guid>https://vijayanant.github.io/blog/new-vim-setup/</guid>
       <description>&lt;p&gt;Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://vijayanant.github.io/my_vim_setup.png&#34; alt=&#34;my_vim_setup&#34; /&gt;&lt;/p&gt;
