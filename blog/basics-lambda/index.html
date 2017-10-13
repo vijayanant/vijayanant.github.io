@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+
+  <title> Lambda Calculus - Church Numerals and Basic Operations  &middot; fossick </title>
+
+  
+  <link rel="stylesheet" href="https://vijayanant.github.io//css/poole.css">
+  <link rel="stylesheet" href="https://vijayanant.github.io//css/syntax.css">
+  <link rel="stylesheet" href="https://vijayanant.github.io//css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="fossick" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Fira Sans']
+      }
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about" align=center>
+      <h2 class="brand"><a href="https://vijayanant.github.io/">fossick</a></h2>
+      
+      <p class="lead">
+         blog by Vijay Anant 
+      </p>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="https://vijayanant.github.io//blog">Posts</a></li>
+      
+      <li><a href="/about/">About </a></li>
+      
+      <br/> 
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+    </ul>
+      <a href="https://twitter.com/vijayanant"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+      
+      
+       <a href="https://github.com/vijayanant"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+       
+    <p class="footnote">powered by <a href="http://gohugo.io">Hugo</a> <br/>
+    &copy; 2017 Vijay Anant. All rights reserved.</p>
+  </div>
+</div>
+
+
+  <div class="content container">
+    <div class="post">
+    <h1 class="post-title">Lambda Calculus - Church Numerals and Basic Operations</h1>
+    <span class="post-date">Oct 2, 2017</span>
+    
+    
+
+<p>My notes on Lambda Calculus.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The syntax of the <em>lambda-calculus</em> comprises just three sorts of <em>terms</em>.</p>
+
+<ul>
+<li>A variable <code>x</code> by itself is a term;</li>
+<li>The abstraction of a variable <code>x</code> from a term <code>t1</code>, written <code>λx.t1</code>, is a term;</li>
+<li>And the application of a term <code>t1</code> to another term <code>t2</code>, written <code>t1 t2</code>, is a term.</li>
+</ul>
+
+<p>These ways of forming terms are summarized in the following grammar.</p>
+
+<h2 id="grammar">Grammar</h2>
+
+<pre><code>t ::=      -- Terms
+  x        -- Variable
+  λx. t    -- Abstraction
+  t t      -- Application
+</code></pre>
+
+<h2 id="boolean-definnitions">Boolean definnitions</h2>
+
+<pre><code>tru = λt. λf. t;
+fls = λt. λf. f;
+</code></pre>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">tru</span> t f <span style="color: #AA22FF; font-weight: bold">=</span> t
+<span style="color: #0000FF">fls</span> t f <span style="color: #AA22FF; font-weight: bold">=</span> f
+</pre></div>
+
+<h3 id="tests">tests</h3>
+
+<p><code>test = λl. λm. λn. l m n;</code></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">test</span> pred l m <span style="color: #AA22FF; font-weight: bold">=</span> pred l m
+<span style="color: #0000FF">test</span> tru <span style="color: #BA2121">&quot;a&quot;</span> <span style="color: #BA2121">&quot;b&quot;</span> <span style="color: #408080; font-style: italic">-- &quot;a&quot;</span>
+<span style="color: #0000FF">test</span> fls <span style="color: #BA2121">&quot;a&quot;</span> <span style="color: #BA2121">&quot;b&quot;</span> <span style="color: #408080; font-style: italic">-- &quot;b&quot;</span>
+</pre></div>
+
+<h3 id="reducing-test-term">Reducing Test term</h3>
+
+<pre><code> test tru v w
+ = (λl.λm.λn.l m n) tru v w         by definition
+ → (λm.λn.tru m n) v w
+ → (λn.tru v n) w
+ → tru v w
+ = (λt.λf.t) v w                    by definition
+ → (λf. v) w
+ → v
+</code></pre>
+
+<h2 id="logincal-op">Logincal op</h2>
+
+<p><code>and = λb. λc.b c fls;</code></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">and&#39;</span> p q <span style="color: #AA22FF; font-weight: bold">=</span> p q fls   <span style="color: #408080; font-style: italic">-- if p then q   else fls</span>
+<span style="color: #0000FF">or&#39;</span>  p q <span style="color: #AA22FF; font-weight: bold">=</span> p tru q   <span style="color: #408080; font-style: italic">-- if p then tru else q</span>
+<span style="color: #0000FF">not&#39;</span> p   <span style="color: #AA22FF; font-weight: bold">=</span> p fls tru <span style="color: #408080; font-style: italic">-- if p then fls else tru</span>
+</pre></div>
+
+<h2 id="pairs">Pairs</h2>
+
+<pre><code>pair = λf.λs.λb. b f s;
+fst = λp. p tru;
+snd = λp. p fls;
+</code></pre>
+
+<p><code>Pair v w</code> is a function that, when applied to a boolean value <em>b</em>, applies <em>b</em> to <em>v</em> and <em>w.</em></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">pair</span> f s b <span style="color: #AA22FF; font-weight: bold">=</span> b f s
+<span style="color: #0000FF">fst</span> p <span style="color: #AA22FF; font-weight: bold">=</span> p tru
+<span style="color: #0000FF">snd</span> p <span style="color: #AA22FF; font-weight: bold">=</span> p fls
+</pre></div>
+
+<h3 id="reducing-fst">Reducing fst</h3>
+
+<pre><code>  fst (pair v w)
+= fst ((λf.λs.λb.b f s) v w)
+→ fst ((λs.λb.b v s) w)
+→ fst (λb. b v w)
+= (λp.p tru) (λb.b v w)
+→ (λb.b v w) tru
+→ tru v w
+→ v
+</code></pre>
+
+<h2 id="church-numerals">Church Numerals</h2>
+
+<ul>
+<li>For representing numbers by lambda-terms</li>
+<li>A number <em>n</em> is represented by a combinator (one, two, three, etc. below) that takes two arguments, <em>s</em> and <em>z</em>, and applies <em>s</em>, <em>n</em> times, to <em>z</em>.</li>
+<li>As with booleans and pairs, this encoding makes numbers into active entities: the number n is represented by a function that does something <em>n</em> times — a kind of active unary numeral.</li>
+</ul>
+
+<pre><code>zero  = λs. λz. z;            -- applies s to z zero times
+one   = λs. λz. s z;          -- applies s to z once
+two   = λs. λz. s (s z);      -- applies s twice
+three = λs. λz. s (s (s z));  -- applies s three times
+etc.                          -- and so on...
+</code></pre>
+
+<h3 id="successor">Successor</h3>
+
+<p>Remember, a Church numeral <em>n</em> is a function that applies <em>s</em> to <em>z</em>  (n times).</p>
+
+<pre><code>scc = λn. λs. λz. s (n s z); -- Successor function
+</code></pre>
+
+<p>The term <em>scc</em> is a combinator that takes a Church numeral n and returns another Church numeral—that is, it yields a function that takes arguments <em>s</em> and <em>z</em> and applies <em>s</em> repeatedly to <em>z</em>. We get the right number of applications of <em>s</em> to <em>z</em> by first passing <em>s</em> and <em>z</em> as arguments to <em>n</em>, and then explicitly applying <em>s</em> one more time to the result.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">scc</span>  n s z <span style="color: #AA22FF; font-weight: bold">=</span> s (n s z)
+<span style="color: #0000FF">scc&#39;</span> n s <span style="color: #AA22FF; font-weight: bold">=</span> s <span style="color: #666666">.</span> n s
+</pre></div>
+
+<p>We can think of <em>successor</em> function in two ways. One way, as defined above, is <em>applying s one more time to given number</em>. Another way is _to add given number <em>n</em> to <em>one</em>._ Second approach is given below:</p>
+
+<pre><code>scc = λn. λs. λz. n s (s z)
+</code></pre>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">scc</span>  n s z <span style="color: #AA22FF; font-weight: bold">=</span> n s (s z)
+</pre></div>
+
+<p>Let us see if <em>scc one</em> is actually <em>two</em>:</p>
+
+<pre><code>scc one
+= scc (λs. λz. s z)                       -- by definition of one
+= (λn. λs. λz. n s (s z)) (λs. λz. s z)   -- by definition of scc
+→ (λs. λz. (λs. λz. s z) s (s z))
+→ λs. λz. (λz. s z)(s z)
+→ λs. λz. s (s z)
+= two                                     -- by definition, s applied twice
+</code></pre>
+
+<h3 id="addition">Addition</h3>
+
+<p>Addition of Church numerals can be performed by a term <em>plus</em> that takes two Church numerals, <em>m</em> and <em>n</em>, as arguments, and yields another Church numeral—i.e., a function—that accepts arguments <em>s</em> and <em>z</em>, applies <em>s</em> iterated <em>n</em> times to <em>z</em> (by passing <em>s</em> and <em>z</em> as arguments to <em>n</em>), and then applies <em>s</em> iterated <em>m</em> more times to the result:</p>
+
+<p><code>plus = λm. λn. λs. λz. m s (n s z);</code></p>
+
+<p>We can also think of addition in terms of successor (or increment) function.</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">plus</span> m n <span style="color: #AA22FF; font-weight: bold">=</span> m incr n
+</pre></div>
+
+<p>Here, we apply <em>m</em> times the incrementation to <em>n</em>. In other words, increment <em>n</em>, <em>m</em> times.</p>
+
+<p>Now, we can write -</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">two</span>   <span style="color: #AA22FF; font-weight: bold">=</span> plus one one
+<span style="color: #0000FF">three</span> <span style="color: #AA22FF; font-weight: bold">=</span> plus two one
+<span style="color: #0000FF">four</span>  <span style="color: #AA22FF; font-weight: bold">=</span> add two two
+</pre></div>
+
+<h3 id="multiplication">Multiplication</h3>
+
+<p>Multiplying n and m is adding together <em>m</em> copies of <em>n</em>. Notice that, <code>plus m</code> adds <em>m</em> to any given number. If we apply <code>add m</code> <em>n</em> times to <em>zero</em>, we will have added <em>n</em> copies of <em>m</em>.</p>
+
+<pre><code>times = λm. λn. m (plus n) zero;
+</code></pre>
+
+<p>Intuitively, having a <code>s.s.s. ... s</code> of length <em>m</em>, in order to multiply it by <em>n</em>, we should combine <em>n</em> copies of such a chain. Or, if (m s) is a &ldquo;super-successor&rdquo; containing <em>m</em> exemplars of <em>s</em>, what we need is</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">mul</span> n m s z <span style="color: #AA22FF; font-weight: bold">=</span> n (m s) z
+</pre></div>
+
+<p>which is same as</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">mul</span> n m <span style="color: #AA22FF; font-weight: bold">=</span> n <span style="color: #666666">.</span> m
+</pre></div>
+
+<p><strong>Multiplication is functional composition!</strong></p>
+
+<h3 id="exponentiation">Exponentiation</h3>
+
+<p><code>pow n m</code> means <em>n</em> raised to <em>m</em>-th power. Or, <code>n * n *.....* n</code>- multiplying <em>n</em> by itself <em>m</em> times.</p>
+
+<pre><code>pow n m
+ = (mul n ( ... (mul n (mul n one))))  -- m times
+ = m (mul n) one
+</code></pre>
+
+<p>We know that in the theory of sets, for any sets <em>A</em> and <em>B</em>, the notation <em>B^A</em> denotes the set of all functions from <em>A</em> to <em>B</em>. Typically one applies the argument based on cardinality. Adding one element to <em>A</em>, permits to find <em>|B|</em> more mappings, from the additional element to all of <em>B</em>. So, the number of mappings is multiplied by <em>|B|</em>, in agreement with : <strong><em>B^A+1 = B^A * B</em></strong>.</p>
+
+<pre><code>pow n m = m n
+</code></pre>
+
+<p><strong>exponentiation = inverse application</strong>.</p>
+
+<h3 id="iszero">isZero</h3>
+
+<p>To test whether a Church numeral is zero, we apply our numeral to a pair of terms <em>zz</em> and <em>ss</em> such that applying <em>ss</em> to <em>zz</em> one or more times yields <em>fls</em>, while not applying it at all yields <em>tru</em>.</p>
+
+<p>Remember zero is a function that applies <em>s</em> to <em>z</em> zero times - <code>zero = λs. λz. z</code> or <code>zero  = λs. id</code>.</p>
+
+<p>That is, we need <em>ss</em> and <em>zz</em> such that <em>zero ss zz</em> is <em>tru</em> and <em>fls</em> for any other numeeral.</p>
+
+<pre><code>iszro = λm. m (λx. fls) tru;
+</code></pre>
+
+<h3 id="predecessor">Predecessor</h3>
+
+<p>Predecessor function is tricky! We begin with zero, and keep counting until <em>n</em>, but storing the previous number. Then when we get <em>n</em>, the previous one is its predecessor. We use <strong>Pairs</strong>, defined earlier, to keep two previous numbers.</p>
+
+<pre><code>zz = pair zero zero
+ss  = λp. pair (snd p) (plus one (snd p));
+prd = λm. fst (m ss zz);
+</code></pre>
+
+    
+
+     
+	
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
+</div>
+</div> 
+
+</body>w
+</html>

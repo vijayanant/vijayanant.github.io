@@ -7,7 +7,219 @@
     <language>en-us</language>
     <author>Vijay Anant</author>
     <copyright>2017 All rights reserved</copyright>
-    <updated>Fri, 15 Sep 2017 14:42:26 IST</updated>
+    <updated>Mon, 02 Oct 2017 00:00:00 UTC</updated>
+    
+    
+    <item>
+      <title>Lambda Calculus - Church Numerals and Basic Operations</title>
+      <link>https://vijayanant.github.io/blog/basics-lambda/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 UTC</pubDate>
+      <author>Vijay Anant</author>
+      <guid>https://vijayanant.github.io/blog/basics-lambda/</guid>
+      <description>
+
+&lt;p&gt;My notes on Lambda Calculus.&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;The syntax of the &lt;em&gt;lambda-calculus&lt;/em&gt; comprises just three sorts of &lt;em&gt;terms&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A variable &lt;code&gt;x&lt;/code&gt; by itself is a term;&lt;/li&gt;
+&lt;li&gt;The abstraction of a variable &lt;code&gt;x&lt;/code&gt; from a term &lt;code&gt;t1&lt;/code&gt;, written &lt;code&gt;λx.t1&lt;/code&gt;, is a term;&lt;/li&gt;
+&lt;li&gt;And the application of a term &lt;code&gt;t1&lt;/code&gt; to another term &lt;code&gt;t2&lt;/code&gt;, written &lt;code&gt;t1 t2&lt;/code&gt;, is a term.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These ways of forming terms are summarized in the following grammar.&lt;/p&gt;
+
+&lt;h2 id=&#34;grammar&#34;&gt;Grammar&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;t ::=      -- Terms
+  x        -- Variable
+  λx. t    -- Abstraction
+  t t      -- Application
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;boolean-definnitions&#34;&gt;Boolean definnitions&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;tru = λt. λf. t;
+fls = λt. λf. f;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;tru&lt;/span&gt; t f &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; t
+&lt;span style=&#34;color: #0000FF&#34;&gt;fls&lt;/span&gt; t f &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; f
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;tests&#34;&gt;tests&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;test = λl. λm. λn. l m n;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;test&lt;/span&gt; pred l m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; pred l m
+&lt;span style=&#34;color: #0000FF&#34;&gt;test&lt;/span&gt; tru &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;a&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;b&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- &amp;quot;a&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #0000FF&#34;&gt;test&lt;/span&gt; fls &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;a&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;b&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- &amp;quot;b&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;reducing-test-term&#34;&gt;Reducing Test term&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt; test tru v w
+ = (λl.λm.λn.l m n) tru v w         by definition
+ → (λm.λn.tru m n) v w
+ → (λn.tru v n) w
+ → tru v w
+ = (λt.λf.t) v w                    by definition
+ → (λf. v) w
+ → v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;logincal-op&#34;&gt;Logincal op&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;and = λb. λc.b c fls;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;and&amp;#39;&lt;/span&gt; p q &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p q fls   &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- if p then q   else fls&lt;/span&gt;
+&lt;span style=&#34;color: #0000FF&#34;&gt;or&amp;#39;&lt;/span&gt;  p q &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p tru q   &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- if p then tru else q&lt;/span&gt;
+&lt;span style=&#34;color: #0000FF&#34;&gt;not&amp;#39;&lt;/span&gt; p   &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p fls tru &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- if p then fls else tru&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;pairs&#34;&gt;Pairs&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;pair = λf.λs.λb. b f s;
+fst = λp. p tru;
+snd = λp. p fls;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;Pair v w&lt;/code&gt; is a function that, when applied to a boolean value &lt;em&gt;b&lt;/em&gt;, applies &lt;em&gt;b&lt;/em&gt; to &lt;em&gt;v&lt;/em&gt; and &lt;em&gt;w.&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;pair&lt;/span&gt; f s b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; b f s
+&lt;span style=&#34;color: #0000FF&#34;&gt;fst&lt;/span&gt; p &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p tru
+&lt;span style=&#34;color: #0000FF&#34;&gt;snd&lt;/span&gt; p &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p fls
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;reducing-fst&#34;&gt;Reducing fst&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;  fst (pair v w)
+= fst ((λf.λs.λb.b f s) v w)
+→ fst ((λs.λb.b v s) w)
+→ fst (λb. b v w)
+= (λp.p tru) (λb.b v w)
+→ (λb.b v w) tru
+→ tru v w
+→ v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;church-numerals&#34;&gt;Church Numerals&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For representing numbers by lambda-terms&lt;/li&gt;
+&lt;li&gt;A number &lt;em&gt;n&lt;/em&gt; is represented by a combinator (one, two, three, etc. below) that takes two arguments, &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt;, and applies &lt;em&gt;s&lt;/em&gt;, &lt;em&gt;n&lt;/em&gt; times, to &lt;em&gt;z&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;As with booleans and pairs, this encoding makes numbers into active entities: the number n is represented by a function that does something &lt;em&gt;n&lt;/em&gt; times — a kind of active unary numeral.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;zero  = λs. λz. z;            -- applies s to z zero times
+one   = λs. λz. s z;          -- applies s to z once
+two   = λs. λz. s (s z);      -- applies s twice
+three = λs. λz. s (s (s z));  -- applies s three times
+etc.                          -- and so on...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;successor&#34;&gt;Successor&lt;/h3&gt;
+
+&lt;p&gt;Remember, a Church numeral &lt;em&gt;n&lt;/em&gt; is a function that applies &lt;em&gt;s&lt;/em&gt; to &lt;em&gt;z&lt;/em&gt;  (n times).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scc = λn. λs. λz. s (n s z); -- Successor function
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The term &lt;em&gt;scc&lt;/em&gt; is a combinator that takes a Church numeral n and returns another Church numeral—that is, it yields a function that takes arguments &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt; and applies &lt;em&gt;s&lt;/em&gt; repeatedly to &lt;em&gt;z&lt;/em&gt;. We get the right number of applications of &lt;em&gt;s&lt;/em&gt; to &lt;em&gt;z&lt;/em&gt; by first passing &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt; as arguments to &lt;em&gt;n&lt;/em&gt;, and then explicitly applying &lt;em&gt;s&lt;/em&gt; one more time to the result.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;scc&lt;/span&gt;  n s z &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; s (n s z)
+&lt;span style=&#34;color: #0000FF&#34;&gt;scc&amp;#39;&lt;/span&gt; n s &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; s &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; n s
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We can think of &lt;em&gt;successor&lt;/em&gt; function in two ways. One way, as defined above, is &lt;em&gt;applying s one more time to given number&lt;/em&gt;. Another way is _to add given number &lt;em&gt;n&lt;/em&gt; to &lt;em&gt;one&lt;/em&gt;._ Second approach is given below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scc = λn. λs. λz. n s (s z)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;scc&lt;/span&gt;  n s z &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; n s (s z)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Let us see if &lt;em&gt;scc one&lt;/em&gt; is actually &lt;em&gt;two&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;scc one
+= scc (λs. λz. s z)                       -- by definition of one
+= (λn. λs. λz. n s (s z)) (λs. λz. s z)   -- by definition of scc
+→ (λs. λz. (λs. λz. s z) s (s z))
+→ λs. λz. (λz. s z)(s z)
+→ λs. λz. s (s z)
+= two                                     -- by definition, s applied twice
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;addition&#34;&gt;Addition&lt;/h3&gt;
+
+&lt;p&gt;Addition of Church numerals can be performed by a term &lt;em&gt;plus&lt;/em&gt; that takes two Church numerals, &lt;em&gt;m&lt;/em&gt; and &lt;em&gt;n&lt;/em&gt;, as arguments, and yields another Church numeral—i.e., a function—that accepts arguments &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt;, applies &lt;em&gt;s&lt;/em&gt; iterated &lt;em&gt;n&lt;/em&gt; times to &lt;em&gt;z&lt;/em&gt; (by passing &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt; as arguments to &lt;em&gt;n&lt;/em&gt;), and then applies &lt;em&gt;s&lt;/em&gt; iterated &lt;em&gt;m&lt;/em&gt; more times to the result:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;plus = λm. λn. λs. λz. m s (n s z);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We can also think of addition in terms of successor (or increment) function.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;plus&lt;/span&gt; m n &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; m incr n
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here, we apply &lt;em&gt;m&lt;/em&gt; times the incrementation to &lt;em&gt;n&lt;/em&gt;. In other words, increment &lt;em&gt;n&lt;/em&gt;, &lt;em&gt;m&lt;/em&gt; times.&lt;/p&gt;
+
+&lt;p&gt;Now, we can write -&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;two&lt;/span&gt;   &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; plus one one
+&lt;span style=&#34;color: #0000FF&#34;&gt;three&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; plus two one
+&lt;span style=&#34;color: #0000FF&#34;&gt;four&lt;/span&gt;  &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; add two two
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;multiplication&#34;&gt;Multiplication&lt;/h3&gt;
+
+&lt;p&gt;Multiplying n and m is adding together &lt;em&gt;m&lt;/em&gt; copies of &lt;em&gt;n&lt;/em&gt;. Notice that, &lt;code&gt;plus m&lt;/code&gt; adds &lt;em&gt;m&lt;/em&gt; to any given number. If we apply &lt;code&gt;add m&lt;/code&gt; &lt;em&gt;n&lt;/em&gt; times to &lt;em&gt;zero&lt;/em&gt;, we will have added &lt;em&gt;n&lt;/em&gt; copies of &lt;em&gt;m&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;times = λm. λn. m (plus n) zero;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Intuitively, having a &lt;code&gt;s.s.s. ... s&lt;/code&gt; of length &lt;em&gt;m&lt;/em&gt;, in order to multiply it by &lt;em&gt;n&lt;/em&gt;, we should combine &lt;em&gt;n&lt;/em&gt; copies of such a chain. Or, if (m s) is a &amp;ldquo;super-successor&amp;rdquo; containing &lt;em&gt;m&lt;/em&gt; exemplars of &lt;em&gt;s&lt;/em&gt;, what we need is&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;mul&lt;/span&gt; n m s z &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; n (m s) z
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which is same as&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;mul&lt;/span&gt; n m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; n &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; m
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Multiplication is functional composition!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;exponentiation&#34;&gt;Exponentiation&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;pow n m&lt;/code&gt; means &lt;em&gt;n&lt;/em&gt; raised to &lt;em&gt;m&lt;/em&gt;-th power. Or, &lt;code&gt;n * n *.....* n&lt;/code&gt;- multiplying &lt;em&gt;n&lt;/em&gt; by itself &lt;em&gt;m&lt;/em&gt; times.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pow n m
+ = (mul n ( ... (mul n (mul n one))))  -- m times
+ = m (mul n) one
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We know that in the theory of sets, for any sets &lt;em&gt;A&lt;/em&gt; and &lt;em&gt;B&lt;/em&gt;, the notation &lt;em&gt;B^A&lt;/em&gt; denotes the set of all functions from &lt;em&gt;A&lt;/em&gt; to &lt;em&gt;B&lt;/em&gt;. Typically one applies the argument based on cardinality. Adding one element to &lt;em&gt;A&lt;/em&gt;, permits to find &lt;em&gt;|B|&lt;/em&gt; more mappings, from the additional element to all of &lt;em&gt;B&lt;/em&gt;. So, the number of mappings is multiplied by &lt;em&gt;|B|&lt;/em&gt;, in agreement with : &lt;strong&gt;&lt;em&gt;B^A+1 = B^A * B&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pow n m = m n
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;exponentiation = inverse application&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;iszero&#34;&gt;isZero&lt;/h3&gt;
+
+&lt;p&gt;To test whether a Church numeral is zero, we apply our numeral to a pair of terms &lt;em&gt;zz&lt;/em&gt; and &lt;em&gt;ss&lt;/em&gt; such that applying &lt;em&gt;ss&lt;/em&gt; to &lt;em&gt;zz&lt;/em&gt; one or more times yields &lt;em&gt;fls&lt;/em&gt;, while not applying it at all yields &lt;em&gt;tru&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Remember zero is a function that applies &lt;em&gt;s&lt;/em&gt; to &lt;em&gt;z&lt;/em&gt; zero times - &lt;code&gt;zero = λs. λz. z&lt;/code&gt; or &lt;code&gt;zero  = λs. id&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That is, we need &lt;em&gt;ss&lt;/em&gt; and &lt;em&gt;zz&lt;/em&gt; such that &lt;em&gt;zero ss zz&lt;/em&gt; is &lt;em&gt;tru&lt;/em&gt; and &lt;em&gt;fls&lt;/em&gt; for any other numeeral.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iszro = λm. m (λx. fls) tru;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;predecessor&#34;&gt;Predecessor&lt;/h3&gt;
+
+&lt;p&gt;Predecessor function is tricky! We begin with zero, and keep counting until &lt;em&gt;n&lt;/em&gt;, but storing the previous number. Then when we get &lt;em&gt;n&lt;/em&gt;, the previous one is its predecessor. We use &lt;strong&gt;Pairs&lt;/strong&gt;, defined earlier, to keep two previous numbers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;zz = pair zero zero
+ss  = λp. pair (snd p) (plus one (snd p));
+prd = λm. fst (m ss zz);
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
     
     
     <item>
