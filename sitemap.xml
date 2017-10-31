@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vijayanant.github.io/blog/basics-lambda/</loc>
+    <loc>https://vijayanant.github.io/blog/lambda-calculus/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/programming-paradigms/</loc>
+    <loc>https://vijayanant.github.io/blog/thinking-in-imperative-object-oriented-and-functional-way/</loc>
     <lastmod>2017-09-15T14:42:26+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/monad-detour/</loc>
+    <loc>https://vijayanant.github.io/blog/a-detour-called-monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,17 +28,17 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/haskel-composition-monad/</loc>
+    <loc>https://vijayanant.github.io/blog/understanding-monads-using-function-composition/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/pairing/</loc>
+    <loc>https://vijayanant.github.io/blog/pair-programming---what-why-and-how/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/new-vim-setup/</loc>
+    <loc>https://vijayanant.github.io/blog/10-must-have-vim-plugins/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
   </url>
   

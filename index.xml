@@ -12,10 +12,10 @@
     
     <item>
       <title>Lambda Calculus</title>
-      <link>https://vijayanant.github.io/blog/basics-lambda/</link>
+      <link>https://vijayanant.github.io/blog/lambda-calculus/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/basics-lambda/</guid>
+      <guid>https://vijayanant.github.io/blog/lambda-calculus/</guid>
       <description>
 
 &lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Model_of_computation&#34;&gt;models of computation&lt;/a&gt;
@@ -296,10 +296,10 @@ prd = λm. fst (m ss zz);
     
     <item>
       <title>Thinking in Imperative, Object Oriented and Functional way</title>
-      <link>https://vijayanant.github.io/blog/programming-paradigms/</link>
+      <link>https://vijayanant.github.io/blog/thinking-in-imperative-object-oriented-and-functional-way/</link>
       <pubDate>Fri, 15 Sep 2017 14:42:26 IST</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/programming-paradigms/</guid>
+      <guid>https://vijayanant.github.io/blog/thinking-in-imperative-object-oriented-and-functional-way/</guid>
       <description>
 
 &lt;p&gt;Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity.  Complex code base is not only harder to test but testing is that much less effective.&lt;/p&gt;
@@ -373,10 +373,10 @@ result sort.
     
     <item>
       <title>A Detour Called Monads</title>
-      <link>https://vijayanant.github.io/blog/monad-detour/</link>
+      <link>https://vijayanant.github.io/blog/a-detour-called-monads/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/monad-detour/</guid>
+      <guid>https://vijayanant.github.io/blog/a-detour-called-monads/</guid>
       <description>&lt;p&gt;When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it -  hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory. Pocket knife is all that was needed.&lt;/p&gt;
 
 &lt;p&gt;Stop Scaring the newcomers. We don&amp;rsquo;t call it List Monad everytime we use it. We are OK to call it just List. But everytime we need state why do we call it State Monad? When I need to do i/o I will use IO. The fact that it is a monad is not relevant at that point.&lt;/p&gt;
@@ -419,10 +419,10 @@ result sort.
     
     <item>
       <title>Understanding Monads Using Function Composition</title>
-      <link>https://vijayanant.github.io/blog/haskel-composition-monad/</link>
+      <link>https://vijayanant.github.io/blog/understanding-monads-using-function-composition/</link>
       <pubDate>Fri, 20 May 2016 20:20:45 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/haskel-composition-monad/</guid>
+      <guid>https://vijayanant.github.io/blog/understanding-monads-using-function-composition/</guid>
       <description>
 
 &lt;p&gt;Today I am going to commit a crime - I am about to write one more blog relating to Monads!&lt;/p&gt;
@@ -491,10 +491,10 @@ magicBox ::            (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weig
     
     <item>
       <title>Pair Programming - What? Why? And How?</title>
-      <link>https://vijayanant.github.io/blog/pairing/</link>
+      <link>https://vijayanant.github.io/blog/pair-programming---what-why-and-how/</link>
       <pubDate>Sat, 31 Jan 2015 12:31:30 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/pairing/</guid>
+      <guid>https://vijayanant.github.io/blog/pair-programming---what-why-and-how/</guid>
       <description>
 
 &lt;h3 id=&#34;what&#34;&gt;What?&lt;/h3&gt;
@@ -536,10 +536,10 @@ magicBox ::            (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weig
     
     <item>
       <title>10 Must Have Vim Plugins</title>
-      <link>https://vijayanant.github.io/blog/new-vim-setup/</link>
+      <link>https://vijayanant.github.io/blog/10-must-have-vim-plugins/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/new-vim-setup/</guid>
+      <guid>https://vijayanant.github.io/blog/10-must-have-vim-plugins/</guid>
       <description>&lt;p&gt;Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://vijayanant.github.io/my_vim_setup.png&#34; alt=&#34;my_vim_setup&#34; /&gt;&lt;/p&gt;
