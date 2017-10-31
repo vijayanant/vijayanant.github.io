@@ -18,8 +18,6 @@
       <guid>https://vijayanant.github.io/blog/basics-lambda/</guid>
       <description>
 
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
 &lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Model_of_computation&#34;&gt;models of computation&lt;/a&gt;
 can be broadly classified into two groups - those that are based on &lt;em&gt;machine
 model&lt;/em&gt; and the λ Calculus.&lt;/p&gt;
@@ -69,7 +67,7 @@ parameters in each case.&lt;/p&gt;
 
 &lt;p&gt;A λ function is such an abstraction which has the form:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;λ&amp;lt;variable&amp;gt;.&amp;lt;lambda term&amp;gt;                    ---- refer to the grammer above
+&lt;pre&gt;&lt;code&gt;λ&amp;lt;variable&amp;gt;.&amp;lt;lambda term&amp;gt;    -- refer to the grammer above
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;λ-calculus embodies a kind of function definition (and application) that is the
@@ -80,13 +78,55 @@ by a function is another function.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;(λx.∗ 3 x) 4
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;conventions&#34;&gt;Conventions&lt;/h2&gt;
+&lt;h3 id=&#34;conventions&#34;&gt;Conventions&lt;/h3&gt;
 
 &lt;p&gt;Here are important conventions:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Function application is left associative, i.e. &lt;code&gt;f g h = ((f g) h)&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Consecutive abstractions can be un-curried, i.e. &lt;code&gt;λx y z. t = λx. λy. λz. t&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;free-and-bound-variables&#34;&gt;Free and bound variables&lt;/h2&gt;
+
+&lt;p&gt;In λ-calculus all names are local to definitions (like in most programming
+languages). In the function λx.x we say that x is &amp;ldquo;bound&amp;rdquo; since its occurrence
+in the body of the definition is preceded by λx. A name not preceded by a λ
+is called a &amp;ldquo;free variable.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;In the expression&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(λx.x) (λy.y x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;the &lt;code&gt;x&lt;/code&gt; in the body of the first expression from the left is bound to the first
+λ. The &lt;code&gt;y&lt;/code&gt; in the body of the second expression is bound to the second λ, and
+the following &lt;code&gt;x&lt;/code&gt; is free.&lt;/p&gt;
+
+&lt;h2 id=&#34;beta-reduction&#34;&gt;Beta Reduction&lt;/h2&gt;
+
+&lt;p&gt;In its pure form, the lambda-calculus has no built-in constants or primitive
+operators—no numbers, arithmetic operations, conditionals, records, loops,
+sequencing, I/O, etc. The sole means by which terms &amp;ldquo;compute&amp;rdquo; is the application
+of functions to arguments (which themselves are functions). Each step in the
+computation consists of rewriting an application whose left-hand component is
+an abstraction, by substituting the right-hand component for the bound variable
+in the abstraction&amp;rsquo;s body.&lt;/p&gt;
+
+&lt;p&gt;Following Church, a term of the form &lt;code&gt;(λx.t1)t2&lt;/code&gt; is called a &lt;em&gt;redex&lt;/em&gt; (&amp;ldquo;reducible
+expression”), and the operation of rewriting a redex according to the above
+rule is called beta-reduction.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Full Beta Reduction&lt;/strong&gt;: Any redex may be reduced at any time. At each step
+we pick some redex, anywhere inside the term we are evaluating, and reduce it&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Normal Order Beta Reduction&lt;/strong&gt;: The leftmost, outermost redex is always
+reduced first.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Call By Name Beta Reduction&lt;/strong&gt;: This is more restrictive form of normal order
+reduction, allowing no reductions inside abstractions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Call By Value Beta Reduction&lt;/strong&gt;: Only outermost redexes are reduced and where
+a redex is reduced only when its right-hand side has already been reduced
+to a value.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;boolean-definitions&#34;&gt;Boolean Definitions&lt;/h2&gt;
@@ -147,8 +187,11 @@ snd p = p fls&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;For representing numbers by lambda-terms&lt;/li&gt;
-&lt;li&gt;A number &lt;em&gt;n&lt;/em&gt; is represented by a combinator (one, two, three, etc. below) that takes two arguments, &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt;, and applies &lt;em&gt;s&lt;/em&gt;, &lt;em&gt;n&lt;/em&gt; times, to &lt;em&gt;z&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;As with booleans and pairs, this encoding makes numbers into active entities: the number n is represented by a function that does something &lt;em&gt;n&lt;/em&gt; times — a kind of active unary numeral.&lt;/li&gt;
+&lt;li&gt;A number &lt;em&gt;n&lt;/em&gt; is represented by a combinator (one, two, three, etc. below)
+that takes two arguments, &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt;, and applies &lt;em&gt;s&lt;/em&gt;, &lt;em&gt;n&lt;/em&gt; times, to &lt;em&gt;z&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;As with booleans and pairs, this encoding makes numbers into active entities:
+the number n is represented by a function that does something &lt;em&gt;n&lt;/em&gt; times — a
+kind of active unary numeral.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;zero  = λs. λz. z;            -- applies s to z zero times

@@ -122,8 +122,6 @@
 
         
 
-<h2 id="introduction">Introduction</h2>
-
 <p>The <a href="https://en.wikipedia.org/wiki/Model_of_computation">models of computation</a>
 can be broadly classified into two groups - those that are based on <em>machine
 model</em> and the λ Calculus.</p>
@@ -173,7 +171,7 @@ parameters in each case.</p>
 
 <p>A λ function is such an abstraction which has the form:</p>
 
-<pre><code>λ&lt;variable&gt;.&lt;lambda term&gt;                    ---- refer to the grammer above
+<pre><code>λ&lt;variable&gt;.&lt;lambda term&gt;    -- refer to the grammer above
 </code></pre>
 
 <p>λ-calculus embodies a kind of function definition (and application) that is the
@@ -184,13 +182,55 @@ by a function is another function.</p>
 <pre><code>(λx.∗ 3 x) 4
 </code></pre>
 
-<h2 id="conventions">Conventions</h2>
+<h3 id="conventions">Conventions</h3>
 
 <p>Here are important conventions:</p>
 
 <ul>
 <li>Function application is left associative, i.e. <code>f g h = ((f g) h)</code></li>
 <li>Consecutive abstractions can be un-curried, i.e. <code>λx y z. t = λx. λy. λz. t</code></li>
+</ul>
+
+<h2 id="free-and-bound-variables">Free and bound variables</h2>
+
+<p>In λ-calculus all names are local to definitions (like in most programming
+languages). In the function λx.x we say that x is &ldquo;bound&rdquo; since its occurrence
+in the body of the definition is preceded by λx. A name not preceded by a λ
+is called a &ldquo;free variable.&rdquo;</p>
+
+<p>In the expression</p>
+
+<pre><code>(λx.x) (λy.y x)
+</code></pre>
+
+<p>the <code>x</code> in the body of the first expression from the left is bound to the first
+λ. The <code>y</code> in the body of the second expression is bound to the second λ, and
+the following <code>x</code> is free.</p>
+
+<h2 id="beta-reduction">Beta Reduction</h2>
+
+<p>In its pure form, the lambda-calculus has no built-in constants or primitive
+operators—no numbers, arithmetic operations, conditionals, records, loops,
+sequencing, I/O, etc. The sole means by which terms &ldquo;compute&rdquo; is the application
+of functions to arguments (which themselves are functions). Each step in the
+computation consists of rewriting an application whose left-hand component is
+an abstraction, by substituting the right-hand component for the bound variable
+in the abstraction&rsquo;s body.</p>
+
+<p>Following Church, a term of the form <code>(λx.t1)t2</code> is called a <em>redex</em> (&ldquo;reducible
+expression”), and the operation of rewriting a redex according to the above
+rule is called beta-reduction.</p>
+
+<ul>
+<li><strong>Full Beta Reduction</strong>: Any redex may be reduced at any time. At each step
+we pick some redex, anywhere inside the term we are evaluating, and reduce it</li>
+<li><strong>Normal Order Beta Reduction</strong>: The leftmost, outermost redex is always
+reduced first.</li>
+<li><strong>Call By Name Beta Reduction</strong>: This is more restrictive form of normal order
+reduction, allowing no reductions inside abstractions.</li>
+<li><strong>Call By Value Beta Reduction</strong>: Only outermost redexes are reduced and where
+a redex is reduced only when its right-hand side has already been reduced
+to a value.</li>
 </ul>
 
 <h2 id="boolean-definitions">Boolean Definitions</h2>
@@ -251,8 +291,11 @@ snd p = p fls</code></pre></div>
 
 <ul>
 <li>For representing numbers by lambda-terms</li>
-<li>A number <em>n</em> is represented by a combinator (one, two, three, etc. below) that takes two arguments, <em>s</em> and <em>z</em>, and applies <em>s</em>, <em>n</em> times, to <em>z</em>.</li>
-<li>As with booleans and pairs, this encoding makes numbers into active entities: the number n is represented by a function that does something <em>n</em> times — a kind of active unary numeral.</li>
+<li>A number <em>n</em> is represented by a combinator (one, two, three, etc. below)
+that takes two arguments, <em>s</em> and <em>z</em>, and applies <em>s</em>, <em>n</em> times, to <em>z</em>.</li>
+<li>As with booleans and pairs, this encoding makes numbers into active entities:
+the number n is represented by a function that does something <em>n</em> times — a
+kind of active unary numeral.</li>
 </ul>
 
 <pre><code>zero  = λs. λz. z;            -- applies s to z zero times
