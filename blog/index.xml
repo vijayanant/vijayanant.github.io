@@ -85,25 +85,9 @@ by a function is another function.&lt;/p&gt;
 &lt;p&gt;Here are important conventions:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The common convention is that function application is left associative, i.e.&lt;/li&gt;
+&lt;li&gt;Function application is left associative, i.e. &lt;code&gt;f g h = ((f g) h)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Consecutive abstractions can be un-curried, i.e. &lt;code&gt;λx y z. t = λx. λy. λz. t&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;f g h = ((f g) h)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Consecutive abstractions can be un-curried, i.e.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;λx y z. t =λx.λy.λz. t
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The body of the abstraction extends to the right as far as possible:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;  λx. t1 t2 = λx. (t1 t2)
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;boolean-definitions&#34;&gt;Boolean Definitions&lt;/h2&gt;
 

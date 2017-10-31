@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.30" />
+	<meta name="generator" content="Hugo 0.30.2" />
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -189,25 +189,9 @@ by a function is another function.</p>
 <p>Here are important conventions:</p>
 
 <ul>
-<li>The common convention is that function application is left associative, i.e.</li>
+<li>Function application is left associative, i.e. <code>f g h = ((f g) h)</code></li>
+<li>Consecutive abstractions can be un-curried, i.e. <code>λx y z. t = λx. λy. λz. t</code></li>
 </ul>
-
-<pre><code>f g h = ((f g) h)
-</code></pre>
-
-<ul>
-<li>Consecutive abstractions can be un-curried, i.e.</li>
-</ul>
-
-<pre><code>λx y z. t =λx.λy.λz. t
-</code></pre>
-
-<ul>
-<li>The body of the abstraction extends to the right as far as possible:</li>
-</ul>
-
-<pre><code>  λx. t1 t2 = λx. (t1 t2)
-</code></pre>
 
 <h2 id="boolean-definitions">Boolean Definitions</h2>
 
