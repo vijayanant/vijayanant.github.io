@@ -122,20 +122,14 @@
 <h2 id="let-s-dig-in">Let&rsquo;s Dig In</h2>
 
 <p>Lets start with simple function composition</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">f</span><span style="color: #AA22FF; font-weight: bold">::</span> a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> b
-<span style="color: #0000FF">g</span><span style="color: #AA22FF; font-weight: bold">::</span> b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> c
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">f:: a -&gt; b
+g:: b -&gt; c</code></pre></div>
 <p>We all know the how to compose them -</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">h</span> <span style="color: #AA22FF; font-weight: bold">=</span> g<span style="color: #666666">.</span>f
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">h = g.f</code></pre></div>
 <p><code>h</code> has the type <code>h:: a -&gt; c</code></p>
 
 <p>Lets look at the type of <code>(.)</code> function</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">.</span>) <span style="color: #AA22FF; font-weight: bold">::</span> (b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> c) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> b) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> c
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(.) :: (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c</code></pre></div>
 <p>The <code>(.)</code> function takes  two functions (<code>g</code> and <code>f</code> for example) and returns a new function of the type <code>h:: a -&gt; c</code></p>
 
 <p>In essence <code>(g.f) x</code> is same as <code>g(f x)</code></p>
@@ -143,16 +137,12 @@
 <h2 id="let-us-add-some-complexity">Let Us Add Some Complexity</h2>
 
 <p>Let us say we have two more function</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">f&#39;</span> <span style="color: #AA22FF; font-weight: bold">::</span> a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (b, <span style="color: #B00040">String</span>)
-<span style="color: #0000FF">g&#39;</span> <span style="color: #AA22FF; font-weight: bold">::</span> b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">f&#39; :: a -&gt; (b, <span style="color:#fff;font-weight:bold">String</span>)
+g&#39; :: b -&gt; (c, <span style="color:#fff;font-weight:bold">String</span>)</code></pre></div>
 <p>If we try to compose them using the <code>(.)</code> function as <code>g' . f'</code> we will notice that the types don&rsquo;t match up. The return type of <code>f'</code> is a two-tuple <code>(b, String)</code> where as function <code>g'</code> is expecting <code>b</code>.</p>
 
 <p>For it to work, we need to modify our function <code>g'</code> to accept <code>(b, String)</code></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">g&#39;&#39;</span> <span style="color: #AA22FF; font-weight: bold">::</span> (b, <span style="color: #B00040">String</span>) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">g&#39;&#39; :: (b, <span style="color:#fff;font-weight:bold">String</span>) -&gt; (c, <span style="color:#fff;font-weight:bold">String</span>)</code></pre></div>
 <p>Now we can compose them as <code>g'' . f'</code></p>
 
 <h2 id="magicbox">MagicBox</h2>
@@ -160,41 +150,27 @@
 <p><strong><em>What if</em></strong> we could magically transform (or <code>lift</code>) our function <code>g'</code> to <code>g''</code></p>
 
 <p>Lets say we have such a function, and for the fun of it, call it <code>magicBox</code>. Now we can compose <code>f'</code> and <code>g'</code></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(magicBox g&#39;) <span style="color: #666666">.</span> f&#39;
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(magicBox g&#39;) . f&#39;</code></pre></div>
 <p>Lets build a magic box ourselves. It is not that hard really.</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">magicBox</span><span style="color: #AA22FF; font-weight: bold">::</span> (b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (b, <span style="color: #B00040">String</span>) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">magicBox:: (b -&gt; (c, <span style="color:#fff;font-weight:bold">String</span>)) -&gt; (b, <span style="color:#fff;font-weight:bold">String</span>) -&gt; (c, <span style="color:#fff;font-weight:bold">String</span>)</code></pre></div>
 <p>Our <code>magicBox</code> takes a function of type <code>g'</code> and returns a function of type <code>g''</code></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">magicBox</span> func (b, xs) <span style="color: #AA22FF; font-weight: bold">=</span> func b
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">magicBox func (b, xs) = func b</code></pre></div>
 <p>We ignore the String parameter.</p>
 
 <h2 id="enter-the-bind-operator">Enter the Bind operator</h2>
 
 <p>If you have ever used  <code>Monad</code> you already know <code>&gt;&gt;=</code> function.
 Lets take a look at the <code>&gt;&gt;=</code> function</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">&gt;&gt;=</span>) <span style="color: #AA22FF; font-weight: bold">::</span> <span style="color: #B00040">Monad</span> m <span style="color: #AA22FF; font-weight: bold">=&gt;</span> m a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(&gt;&gt;=) :: <span style="color:#fff;font-weight:bold">Monad</span> m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b</code></pre></div>
 <p>You might also know the flipped version <code>=&lt;&lt;</code></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">=&lt;&lt;</span>) <span style="color: #AA22FF; font-weight: bold">::</span> <span style="color: #B00040">Monad</span> m <span style="color: #AA22FF; font-weight: bold">=&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(=&lt;&lt;) :: <span style="color:#fff;font-weight:bold">Monad</span> m =&gt; (a -&gt; m b) -&gt; m a -&gt; m b</code></pre></div>
 <p>If you look closely, the <code>=&lt;&lt;</code> resembles our <code>magicBox</code></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>(<span style="color: #666666">=&lt;&lt;</span>)    <span style="color: #AA22FF; font-weight: bold">::</span> <span style="color: #B00040">Monad</span> m <span style="color: #AA22FF; font-weight: bold">=&gt;</span> (a <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b)            <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m a         <span style="color: #AA22FF; font-weight: bold">-&gt;</span> m b
-<span style="color: #0000FF">magicBox</span> <span style="color: #AA22FF; font-weight: bold">::</span>            (b <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>))    <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (b, <span style="color: #B00040">String</span>) <span style="color: #AA22FF; font-weight: bold">-&gt;</span> (c, <span style="color: #B00040">String</span>)
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(=&lt;&lt;)    :: <span style="color:#fff;font-weight:bold">Monad</span> m =&gt; (a -&gt; m b)            -&gt; m a         -&gt; m b
+magicBox ::            (b -&gt; (c, <span style="color:#fff;font-weight:bold">String</span>))    -&gt; (b, <span style="color:#fff;font-weight:bold">String</span>) -&gt; (c, <span style="color:#fff;font-weight:bold">String</span>)</code></pre></div>
 <p>There you go. With Monad&rsquo;s bind operator all we are doing is transforming the functions so that we can compose them.</p>
 
 <p>Here is one example of how you might use <code>=&lt;&lt;</code> to compose functions</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">wordCount</span> <span style="color: #AA22FF; font-weight: bold">=</span> print <span style="color: #666666">.</span> length <span style="color: #666666">.</span> words <span style="color: #666666">=&lt;&lt;</span> getContents
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">wordCount = print . length . words =&lt;&lt; getContents</code></pre></div>
     
 
      

@@ -11,18 +11,39 @@
     
     
     <item>
-      <title>Lambda Calculus - Church Numerals and Basic Operations</title>
+      <title>Lambda Calculus</title>
       <link>https://vijayanant.github.io/blog/basics-lambda/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
       <guid>https://vijayanant.github.io/blog/basics-lambda/</guid>
       <description>
 
-&lt;p&gt;My notes on Lambda Calculus.&lt;/p&gt;
-
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;The syntax of the &lt;em&gt;lambda-calculus&lt;/em&gt; comprises just three sorts of &lt;em&gt;terms&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Model_of_computation&#34;&gt;models of computation&lt;/a&gt;
+can be broadly classified into two groups - those that are based on &lt;em&gt;machine
+model&lt;/em&gt; and the λ Calculus.&lt;/p&gt;
+
+&lt;p&gt;Machine models are based on the idea of a program acting on data by
+modification. So a &lt;a href=&#34;https://en.wikipedia.org/wiki/Turing_machine&#34;&gt;Turing Machine&lt;/a&gt;
+consists of a program acting on the data. There is a clear distinction between
+program and data. Programs are not data and data do not contain programs (&amp;lsquo;first
+order&amp;rsquo;). The machine based languages are inherently imperative.&lt;/p&gt;
+
+&lt;p&gt;λ-calculus is a formal system invented in the 1930s by &lt;strong&gt;Alonzo Church&lt;/strong&gt;, in
+which all computation is reduced to the basic operations of function definition
+and application. There is no separation of program from data; the λ calculus
+is inherently &amp;ldquo;higher order&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;λ calculus is different from machine models because it is based on the
+mathematical concept of a variable (which is not at all related to the concept
+of a &amp;ldquo;variable&amp;rdquo;, a misnomer for &amp;ldquo;assignables&amp;rdquo; in machine models). λ-calculus
+emphasizes the use of symbolic transformation rules and does not care about the
+actual machine implementation.&lt;/p&gt;
+
+&lt;h2 id=&#34;grammar&#34;&gt;Grammar&lt;/h2&gt;
+
+&lt;p&gt;The syntax of the λ-calculus comprises just three sorts of &lt;em&gt;terms&lt;/em&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;A variable &lt;code&gt;x&lt;/code&gt; by itself is a term;&lt;/li&gt;
@@ -32,31 +53,71 @@
 
 &lt;p&gt;These ways of forming terms are summarized in the following grammar.&lt;/p&gt;
 
-&lt;h2 id=&#34;grammar&#34;&gt;Grammar&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;t ::=      -- Terms
   x        -- Variable
   λx. t    -- Abstraction
   t t      -- Application
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;boolean-definnitions&#34;&gt;Boolean definnitions&lt;/h2&gt;
+&lt;h2 id=&#34;abstraction-and-application&#34;&gt;Abstraction and Application&lt;/h2&gt;
+
+&lt;p&gt;Abstraction is a key feature of essentially all programming languages. Instead
+of writing the same calculation over and over, we write a function that
+performs the calculation generically, in terms of one or more named parameters,
+and then instantiate this function as needed, providing values for the
+parameters in each case.&lt;/p&gt;
+
+&lt;p&gt;A λ function is such an abstraction which has the form:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;λ&amp;lt;variable&amp;gt;.&amp;lt;lambda term&amp;gt;                    ---- refer to the grammer above
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;λ-calculus embodies a kind of function definition (and application) that is the
+purest possible form. In the lambda-calculus everything is a function: the
+arguments accepted by functions are themselves functions and the result returned
+by a function is another function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(λx.∗ 3 x) 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;conventions&#34;&gt;Conventions&lt;/h2&gt;
+
+&lt;p&gt;Here are important conventions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The common convention is that function application is left associative, i.e.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;f g h = ((f g) h)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Consecutive abstractions can be un-curried, i.e.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;λx y z. t =λx.λy.λz. t
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The body of the abstraction extends to the right as far as possible:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;  λx. t1 t2 = λx. (t1 t2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;boolean-definitions&#34;&gt;Boolean Definitions&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;tru = λt. λf. t;
 fls = λt. λf. f;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;tru&lt;/span&gt; t f &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; t
-&lt;span style=&#34;color: #0000FF&#34;&gt;fls&lt;/span&gt; t f &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; f
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;tru t f = t
+fls t f = f&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;tests&#34;&gt;tests&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;test = λl. λm. λn. l m n;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;test&lt;/span&gt; pred l m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; pred l m
-&lt;span style=&#34;color: #0000FF&#34;&gt;test&lt;/span&gt; tru &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;a&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;b&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- &amp;quot;a&amp;quot;&lt;/span&gt;
-&lt;span style=&#34;color: #0000FF&#34;&gt;test&lt;/span&gt; fls &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;a&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;b&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- &amp;quot;b&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;test pred l m = pred l m
+test tru &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#007f7f&#34;&gt;-- &amp;#34;a&amp;#34;&lt;/span&gt;
+test fls &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#007f7f&#34;&gt;-- &amp;#34;b&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;reducing-test-term&#34;&gt;Reducing Test term&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt; test tru v w
@@ -69,14 +130,12 @@ fls = λt. λf. f;
  → v
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;logincal-op&#34;&gt;Logincal op&lt;/h2&gt;
+&lt;h2 id=&#34;logical-ops&#34;&gt;Logical Ops&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;and = λb. λc.b c fls;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;and&amp;#39;&lt;/span&gt; p q &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p q fls   &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- if p then q   else fls&lt;/span&gt;
-&lt;span style=&#34;color: #0000FF&#34;&gt;or&amp;#39;&lt;/span&gt;  p q &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p tru q   &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- if p then tru else q&lt;/span&gt;
-&lt;span style=&#34;color: #0000FF&#34;&gt;not&amp;#39;&lt;/span&gt; p   &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p fls tru &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;-- if p then fls else tru&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;and1 p q = p q fls   &lt;span style=&#34;color:#007f7f&#34;&gt;-- if p then q   else fls&lt;/span&gt;
+or1  p q = p tru q   &lt;span style=&#34;color:#007f7f&#34;&gt;-- if p then tru else q&lt;/span&gt;
+not1 p   = p fls tru &lt;span style=&#34;color:#007f7f&#34;&gt;-- if p then fls else tru&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;pairs&#34;&gt;Pairs&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;pair = λf.λs.λb. b f s;
@@ -85,11 +144,9 @@ snd = λp. p fls;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;Pair v w&lt;/code&gt; is a function that, when applied to a boolean value &lt;em&gt;b&lt;/em&gt;, applies &lt;em&gt;b&lt;/em&gt; to &lt;em&gt;v&lt;/em&gt; and &lt;em&gt;w.&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;pair&lt;/span&gt; f s b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; b f s
-&lt;span style=&#34;color: #0000FF&#34;&gt;fst&lt;/span&gt; p &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p tru
-&lt;span style=&#34;color: #0000FF&#34;&gt;snd&lt;/span&gt; p &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; p fls
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;pair f s b = b f s
+fst p = p tru
+snd p = p fls&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;reducing-fst&#34;&gt;Reducing fst&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;  fst (pair v w)
@@ -125,17 +182,13 @@ etc.                          -- and so on...
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The term &lt;em&gt;scc&lt;/em&gt; is a combinator that takes a Church numeral n and returns another Church numeral—that is, it yields a function that takes arguments &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt; and applies &lt;em&gt;s&lt;/em&gt; repeatedly to &lt;em&gt;z&lt;/em&gt;. We get the right number of applications of &lt;em&gt;s&lt;/em&gt; to &lt;em&gt;z&lt;/em&gt; by first passing &lt;em&gt;s&lt;/em&gt; and &lt;em&gt;z&lt;/em&gt; as arguments to &lt;em&gt;n&lt;/em&gt;, and then explicitly applying &lt;em&gt;s&lt;/em&gt; one more time to the result.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;scc&lt;/span&gt;  n s z &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; s (n s z)
-&lt;span style=&#34;color: #0000FF&#34;&gt;scc&amp;#39;&lt;/span&gt; n s &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; s &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; n s
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;scc  n s z = s (n s z)
+scc&amp;#39; n s = s . n s&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We can think of &lt;em&gt;successor&lt;/em&gt; function in two ways. One way, as defined above, is &lt;em&gt;applying s one more time to given number&lt;/em&gt;. Another way is _to add given number &lt;em&gt;n&lt;/em&gt; to &lt;em&gt;one&lt;/em&gt;._ Second approach is given below:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;scc = λn. λs. λz. n s (s z)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;scc&lt;/span&gt;  n s z &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; n s (s z)
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;scc  n s z = n s (s z)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Let us see if &lt;em&gt;scc one&lt;/em&gt; is actually &lt;em&gt;two&lt;/em&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;scc one
@@ -154,17 +207,13 @@ etc.                          -- and so on...
 &lt;p&gt;&lt;code&gt;plus = λm. λn. λs. λz. m s (n s z);&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;We can also think of addition in terms of successor (or increment) function.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;plus&lt;/span&gt; m n &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; m incr n
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;plus m n = m incr n&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Here, we apply &lt;em&gt;m&lt;/em&gt; times the incrementation to &lt;em&gt;n&lt;/em&gt;. In other words, increment &lt;em&gt;n&lt;/em&gt;, &lt;em&gt;m&lt;/em&gt; times.&lt;/p&gt;
 
 &lt;p&gt;Now, we can write -&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;two&lt;/span&gt;   &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; plus one one
-&lt;span style=&#34;color: #0000FF&#34;&gt;three&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; plus two one
-&lt;span style=&#34;color: #0000FF&#34;&gt;four&lt;/span&gt;  &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; add two two
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;two   = plus one one
+three = plus two one
+four  = add two two&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;multiplication&#34;&gt;Multiplication&lt;/h3&gt;
 
 &lt;p&gt;Multiplying n and m is adding together &lt;em&gt;m&lt;/em&gt; copies of &lt;em&gt;n&lt;/em&gt;. Notice that, &lt;code&gt;plus m&lt;/code&gt; adds &lt;em&gt;m&lt;/em&gt; to any given number. If we apply &lt;code&gt;add m&lt;/code&gt; &lt;em&gt;n&lt;/em&gt; times to &lt;em&gt;zero&lt;/em&gt;, we will have added &lt;em&gt;n&lt;/em&gt; copies of &lt;em&gt;m&lt;/em&gt;.&lt;/p&gt;
@@ -173,13 +222,9 @@ etc.                          -- and so on...
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Intuitively, having a &lt;code&gt;s.s.s. ... s&lt;/code&gt; of length &lt;em&gt;m&lt;/em&gt;, in order to multiply it by &lt;em&gt;n&lt;/em&gt;, we should combine &lt;em&gt;n&lt;/em&gt; copies of such a chain. Or, if (m s) is a &amp;ldquo;super-successor&amp;rdquo; containing &lt;em&gt;m&lt;/em&gt; exemplars of &lt;em&gt;s&lt;/em&gt;, what we need is&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;mul&lt;/span&gt; n m s z &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; n (m s) z
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;mul n m s z = n (m s) z&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;which is same as&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;mul&lt;/span&gt; n m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; n &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; m
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;mul n m = n . m&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Multiplication is functional composition!&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;exponentiation&#34;&gt;Exponentiation&lt;/h3&gt;
@@ -243,34 +288,30 @@ prd = λm. fst (m ss zz);
 &lt;p&gt;In &lt;a href=&#34;https://en.wikipedia.org/wiki/Imperative_programming&#34;&gt;imperative programming&lt;/a&gt;, the programs consists of an explicit sequence of instructions/commands that update shared state. Control flow is explicit: commands detail how the computation takes place, step by step. Each step affects the global state of the system.&lt;/p&gt;
 
 &lt;p&gt;Since each step can essentially updates the (global, shared) state, any part of the program can update the state. It is up to the programmer to keep track of how and where the state is being updated and tailor the control flow such that the only desired updates happen and in a perticular order. As the number possible program state increases so does the number of places the state is updated. It becomes harder to keep the program in consistent state. It will soon become a complex cogwheel system with too many moving parts.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;result &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; []
-i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;0&lt;/span&gt;
-&lt;span style=&#34;color: #A0A000&#34;&gt;start&lt;/span&gt;:
-  numEmployees &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; length(employees)
-  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;=&lt;/span&gt; numEmployees &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;goto&lt;/span&gt; finished
-  e &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; employees[i]
-  rating &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; e.rating
-  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt; rating &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;goto&lt;/span&gt; nextOne
-  upperCaseName &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; toUpper(e.name)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;result = []
+i = &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;0&lt;/span&gt;
+start:
+  numEmployees = length(employees)
+  &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;if&lt;/span&gt; i &amp;gt;= numEmployees &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;goto&lt;/span&gt; finished
+  e = employees[i]
+  rating = e.rating
+  &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;if&lt;/span&gt; rating &amp;lt;= &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;7&lt;/span&gt; &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;goto&lt;/span&gt; nextOne
+  upperCaseName = toUpper(e.name)
   addToList(result, upperCaseName)
-&lt;span style=&#34;color: #A0A000&#34;&gt;nextOne&lt;/span&gt;:
-  i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; i &lt;span style=&#34;color: #666666&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;1&lt;/span&gt;
-  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;goto&lt;/span&gt; start
-&lt;span style=&#34;color: #A0A000&#34;&gt;finished&lt;/span&gt;:
-  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;return&lt;/span&gt; sort(result)
-&lt;/pre&gt;&lt;/div&gt;
-
+nextOne:
+  i = i + &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;1&lt;/span&gt;
+  &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;goto&lt;/span&gt; start
+finished:
+  &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;return&lt;/span&gt; sort(result)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Use of procedures and structured programming (sometimes considered a separate paradigm) is a way to contain complexity.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;result &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [];
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;for&lt;/span&gt; (i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color: #666666&#34;&gt;&amp;lt;&lt;/span&gt; length(employees); i&lt;span style=&#34;color: #666666&#34;&gt;++&lt;/span&gt;) {
-  e &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; employees[i];
-  &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt;(e.rating &lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt;) {
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;result = [];
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;for&lt;/span&gt; (i = &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;0&lt;/span&gt;; i &amp;lt; length(employees); i++) {
+  e = employees[i];
+  &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;if&lt;/span&gt;(e.rating &amp;gt; &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;7&lt;/span&gt;) {
     addToList(result,toUpper(e.name));
   }
 }
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;return&lt;/span&gt; sort(result);
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;return&lt;/span&gt; sort(result);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;the-object-oriented-style&#34;&gt;The Object Oriented Style&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Object-oriented_programming&#34;&gt;Object Oriented Programming&lt;/a&gt; is based on passing messages between objects. Objects respond to messages by performing appropriate operations. These operations are generally called methods.&lt;/p&gt;
@@ -278,21 +319,17 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
 &lt;p&gt;By encapsulating data and operations that can be performed on that data, into a single entity (object), we have (in  a way) segregated moving parts of the system in to smaller groups. There are still moving parts, a lot of them, but they are grouped in a way which allows programmer to handle each group (class of objects)  in isolation.&lt;/p&gt;
 
 &lt;p&gt;In pure OO style, the control structures like the conditionals and loops become messages themselves.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #19177C&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;List&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;new&lt;/span&gt;.
-&lt;span style=&#34;color: #19177C&#34;&gt;employees&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;each:&lt;/span&gt; [&lt;span style=&#34;color: #666666&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #19177C&#34;&gt;e&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;|&lt;/span&gt;
-  &lt;span style=&#34;color: #19177C&#34;&gt;e&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;rating&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;greaterThan:&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;ifTrue:&lt;/span&gt; [&lt;span style=&#34;color: #19177C&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;add&lt;/span&gt; (&lt;span style=&#34;color: #19177C&#34;&gt;e&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;upper&lt;/span&gt;)]]
-&lt;span style=&#34;color: #0000FF&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;sort&lt;/span&gt;.
-&lt;span style=&#34;color: #666666&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color: #19177C&#34;&gt;result&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Smalltalk&#34; data-lang=&#34;Smalltalk&#34;&gt;result := List &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;new&lt;/span&gt;.
+employees each: [:e |
+  e rating greaterThan: &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;7&lt;/span&gt; &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;ifTrue:&lt;/span&gt; [result add (e name upper)]]
+result sort.
+^result&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Notice that, even though we can now deal with state updates in isolation, objects need to collaborate among themselves to be useful. That happens by the way of message passing. As the number of objects (classes of objects) increases the communication between them also increases and needs to be dealt with carefully.&lt;/p&gt;
 
 &lt;h2 id=&#34;the-functional-style&#34;&gt;The Functional Style&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Functional_programming&#34;&gt;Functional Programming&lt;/a&gt; is based on the mathematical concept of a function. In mathematics there is no notion of updating a variable/state. Functional programming, thus, removes the whole &amp;lsquo;update the shared state&amp;rsquo; business. Functions are the building blocks in FP. Functions take arguments and compute a result based on the inputs provided. Control flow is expressed by combining functions (&lt;a href=&#34;https://en.wikipedia.org/wiki/Function_composition&#34;&gt;function composition&lt;/a&gt;).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;sort&lt;/span&gt; ( map (toUpperCase &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; name) ( filter (&lt;span style=&#34;color: #0000FF&#34;&gt;\&lt;/span&gt;e &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; rating e &lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;7&lt;/span&gt;) employees))
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;sort ( map (toUpperCase . name) ( filter (\e -&amp;gt; rating e &amp;gt; &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;7&lt;/span&gt;) employees))&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;In essence, programming paradigms stem from different concepts about how the world works. They represent different opinions about how to best model the world while we are writing programs.&lt;/p&gt;
@@ -372,20 +409,14 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
 &lt;h2 id=&#34;let-s-dig-in&#34;&gt;Let&amp;rsquo;s Dig In&lt;/h2&gt;
 
 &lt;p&gt;Lets start with simple function composition&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; b
-&lt;span style=&#34;color: #0000FF&#34;&gt;g&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;f:: a -&amp;gt; b
+g:: b -&amp;gt; c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We all know the how to compose them -&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;h&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; g&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;f
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;h = g.f&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;h&lt;/code&gt; has the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Lets look at the type of &lt;code&gt;(.)&lt;/code&gt; function&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; c
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(.) :: (b -&amp;gt; c) -&amp;gt; (a -&amp;gt; b) -&amp;gt; a -&amp;gt; c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The &lt;code&gt;(.)&lt;/code&gt; function takes  two functions (&lt;code&gt;g&lt;/code&gt; and &lt;code&gt;f&lt;/code&gt; for example) and returns a new function of the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;In essence &lt;code&gt;(g.f) x&lt;/code&gt; is same as &lt;code&gt;g(f x)&lt;/code&gt;&lt;/p&gt;
@@ -393,16 +424,12 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
 &lt;h2 id=&#34;let-us-add-some-complexity&#34;&gt;Let Us Add Some Complexity&lt;/h2&gt;
 
 &lt;p&gt;Let us say we have two more function&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;f&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
-&lt;span style=&#34;color: #0000FF&#34;&gt;g&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;f&amp;#39; :: a -&amp;gt; (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)
+g&amp;#39; :: b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If we try to compose them using the &lt;code&gt;(.)&lt;/code&gt; function as &lt;code&gt;g&#39; . f&#39;&lt;/code&gt; we will notice that the types don&amp;rsquo;t match up. The return type of &lt;code&gt;f&#39;&lt;/code&gt; is a two-tuple &lt;code&gt;(b, String)&lt;/code&gt; where as function &lt;code&gt;g&#39;&lt;/code&gt; is expecting &lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;For it to work, we need to modify our function &lt;code&gt;g&#39;&lt;/code&gt; to accept &lt;code&gt;(b, String)&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;g&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;g&amp;#39;&amp;#39; :: (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;) -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Now we can compose them as &lt;code&gt;g&#39;&#39; . f&#39;&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;magicbox&#34;&gt;MagicBox&lt;/h2&gt;
@@ -410,41 +437,27 @@ i &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;What if&lt;/em&gt;&lt;/strong&gt; we could magically transform (or &lt;code&gt;lift&lt;/code&gt;) our function &lt;code&gt;g&#39;&lt;/code&gt; to &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Lets say we have such a function, and for the fun of it, call it &lt;code&gt;magicBox&lt;/code&gt;. Now we can compose &lt;code&gt;f&#39;&lt;/code&gt; and &lt;code&gt;g&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(magicBox g&amp;#39;) &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; f&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(magicBox g&amp;#39;) . f&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Lets build a magic box ourselves. It is not that hard really.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt;&lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;magicBox:: (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)) -&amp;gt; (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;) -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Our &lt;code&gt;magicBox&lt;/code&gt; takes a function of type &lt;code&gt;g&#39;&lt;/code&gt; and returns a function of type &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt; func (b, xs) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; func b
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;magicBox func (b, xs) = func b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;We ignore the String parameter.&lt;/p&gt;
 
 &lt;h2 id=&#34;enter-the-bind-operator&#34;&gt;Enter the Bind operator&lt;/h2&gt;
 
 &lt;p&gt;If you have ever used  &lt;code&gt;Monad&lt;/code&gt; you already know &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function.
 Lets take a look at the &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; m a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(&amp;gt;&amp;gt;=) :: &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;Monad&lt;/span&gt; m =&amp;gt; m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;You might also know the flipped version &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(=&amp;lt;&amp;lt;) :: &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;Monad&lt;/span&gt; m =&amp;gt; (a -&amp;gt; m b) -&amp;gt; m a -&amp;gt; m b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If you look closely, the &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; resembles our &lt;code&gt;magicBox&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt;)    &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt; &lt;span style=&#34;color: #B00040&#34;&gt;Monad&lt;/span&gt; m &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt; (a &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b)            &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m a         &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; m b
-&lt;span style=&#34;color: #0000FF&#34;&gt;magicBox&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;::&lt;/span&gt;            (b &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;))    &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (b, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;) &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;-&amp;gt;&lt;/span&gt; (c, &lt;span style=&#34;color: #B00040&#34;&gt;String&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(=&amp;lt;&amp;lt;)    :: &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;Monad&lt;/span&gt; m =&amp;gt; (a -&amp;gt; m b)            -&amp;gt; m a         -&amp;gt; m b
+magicBox ::            (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;))    -&amp;gt; (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;) -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;There you go. With Monad&amp;rsquo;s bind operator all we are doing is transforming the functions so that we can compose them.&lt;/p&gt;
 
 &lt;p&gt;Here is one example of how you might use &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; to compose functions&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #0000FF&#34;&gt;wordCount&lt;/span&gt; &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;=&lt;/span&gt; print &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; length &lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt; words &lt;span style=&#34;color: #666666&#34;&gt;=&amp;lt;&amp;lt;&lt;/span&gt; getContents
-&lt;/pre&gt;&lt;/div&gt;
-</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;wordCount = print . length . words =&amp;lt;&amp;lt; getContents&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     
@@ -622,41 +635,37 @@ python slowprogram.py  3.81s user 0.04s system 97% cpu 3.927 total
 &lt;h2 id=&#34;python-timer-class-context-manager&#34;&gt;Python Timer Class - Context Manager&lt;/h2&gt;
 
 &lt;p&gt;Corey Goldberg, in his blog &lt;a href=&#34;http://coreygoldberg.blogspot.in/2012/06/python-timer-class-context-manager-for.html&#34;&gt;here&lt;/a&gt;, has given a tiny timer class that can be used to time any block of code.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;timeit&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; default_timer
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;Timer&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;object&lt;/span&gt;):
-    &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;__init__&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;, verbose&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #008000&#34;&gt;False&lt;/span&gt;):
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;verbose &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; verbose
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;timer &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; default_timer
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;from&lt;/span&gt; timeit &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; default_timer
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;class&lt;/span&gt; Timer(&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;object&lt;/span&gt;):
+    &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;def&lt;/span&gt; __init__(self, verbose=False):
+        self.verbose = verbose
+        self.timer = default_timer
         
-    &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;__enter__&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;):
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;start &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;timer()
-        &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;
+    &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;def&lt;/span&gt; __enter__(self):
+        self.start = self.timer()
+        &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;return&lt;/span&gt; self
         
-    &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;__exit__&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;, &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;args):
-        end &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;timer()
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed_secs &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; end &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;start
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed_secs &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;1000&lt;/span&gt;  &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# millisecs&lt;/span&gt;
-        &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;verbose:
-            &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;elapsed time: &lt;/span&gt;&lt;span style=&#34;color: #BB6688; font-weight: bold&#34;&gt;%f&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt; ms&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed
-&lt;/pre&gt;&lt;/div&gt;
-
+    &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;def&lt;/span&gt; __exit__(self, *args):
+        end = self.timer()
+        self.elapsed_secs = end - self.start
+        self.elapsed = self.elapsed_secs * &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;1000&lt;/span&gt;  &lt;span style=&#34;color:#007f7f&#34;&gt;# millisecs&lt;/span&gt;
+        &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;if&lt;/span&gt; self.verbose:
+            &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#39;elapsed time: &lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;%f&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt; ms&amp;#39;&lt;/span&gt; % self.elapsed&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;With this class in hand all you need to do is to enclose any code within the &lt;code&gt;with&lt;/code&gt; block -&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;timer&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; Timer
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;sorting&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; Sort
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;random&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;from&lt;/span&gt; timer &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; Timer
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;from&lt;/span&gt; sorting &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; Sort
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; random
 
-random_items &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [random&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;randint(&lt;span style=&#34;color: #666666&#34;&gt;-50&lt;/span&gt;, &lt;span style=&#34;color: #666666&#34;&gt;100&lt;/span&gt;) &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;for&lt;/span&gt; c &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;5000&lt;/span&gt;)]
-sort &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; Sort()
+random_items = [random.randint(-&lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;100&lt;/span&gt;) &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;for&lt;/span&gt; c in &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;5000&lt;/span&gt;)]
+sort = Sort()
 
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;as&lt;/span&gt; t:
-    sort&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;bubble_sort(random_items)
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;=&amp;gt; elapsed bubble_sort: &lt;/span&gt;&lt;span style=&#34;color: #BB6688; font-weight: bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt; s&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;%&lt;/span&gt; t&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;as&lt;/span&gt; t:
+    sort.bubble_sort(random_items)
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;=&amp;gt; elapsed bubble_sort: &lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt; s&amp;#34;&lt;/span&gt; % t.elapsed
 
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;as&lt;/span&gt; t:
-    sort&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;insertion_sort(random_items)
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;=&amp;gt; elapsed insertion_sort: &lt;/span&gt;&lt;span style=&#34;color: #BB6688; font-weight: bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt; s&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;%&lt;/span&gt; t&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;as&lt;/span&gt; t:
+    sort.insertion_sort(random_items)
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;=&amp;gt; elapsed insertion_sort: &lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt; s&amp;#34;&lt;/span&gt; % t.elapsed&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Here is a sample output :&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ python UsingTimer.py
@@ -746,9 +755,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 &lt;h3 id=&#34;profiling-a-single-statement&#34;&gt;Profiling a single statement&lt;/h3&gt;
 
 &lt;p&gt;Sometimes it is not a good idea or not required/possible to profile an entire script. In those scenarios you can profile individual statements:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cProfile&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;run(&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;sort.bubble_sort(random_items)&amp;#39;&lt;/span&gt;)   
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;cProfile.run(&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#39;sort.bubble_sort(random_items)&amp;#39;&lt;/span&gt;)   &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The stats, as before, are printed on to standard out.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ python cprofile_simple.py

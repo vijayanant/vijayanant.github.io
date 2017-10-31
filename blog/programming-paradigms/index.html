@@ -124,34 +124,30 @@
 <p>In <a href="https://en.wikipedia.org/wiki/Imperative_programming">imperative programming</a>, the programs consists of an explicit sequence of instructions/commands that update shared state. Control flow is explicit: commands detail how the computation takes place, step by step. Each step affects the global state of the system.</p>
 
 <p>Since each step can essentially updates the (global, shared) state, any part of the program can update the state. It is up to the programmer to keep track of how and where the state is being updated and tailor the control flow such that the only desired updates happen and in a perticular order. As the number possible program state increases so does the number of places the state is updated. It becomes harder to keep the program in consistent state. It will soon become a complex cogwheel system with too many moving parts.</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>result <span style="color: #666666">=</span> []
-i <span style="color: #666666">=</span> <span style="color: #666666">0</span>
-<span style="color: #A0A000">start</span>:
-  numEmployees <span style="color: #666666">=</span> length(employees)
-  <span style="color: #008000; font-weight: bold">if</span> i <span style="color: #666666">&gt;=</span> numEmployees <span style="color: #008000; font-weight: bold">goto</span> finished
-  e <span style="color: #666666">=</span> employees[i]
-  rating <span style="color: #666666">=</span> e.rating
-  <span style="color: #008000; font-weight: bold">if</span> rating <span style="color: #666666">&lt;=</span> <span style="color: #666666">7</span> <span style="color: #008000; font-weight: bold">goto</span> nextOne
-  upperCaseName <span style="color: #666666">=</span> toUpper(e.name)
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">result = []
+i = <span style="color:#ff0;font-weight:bold">0</span>
+start:
+  numEmployees = length(employees)
+  <span style="color:#fff;font-weight:bold">if</span> i &gt;= numEmployees <span style="color:#fff;font-weight:bold">goto</span> finished
+  e = employees[i]
+  rating = e.rating
+  <span style="color:#fff;font-weight:bold">if</span> rating &lt;= <span style="color:#ff0;font-weight:bold">7</span> <span style="color:#fff;font-weight:bold">goto</span> nextOne
+  upperCaseName = toUpper(e.name)
   addToList(result, upperCaseName)
-<span style="color: #A0A000">nextOne</span>:
-  i <span style="color: #666666">=</span> i <span style="color: #666666">+</span> <span style="color: #666666">1</span>
-  <span style="color: #008000; font-weight: bold">goto</span> start
-<span style="color: #A0A000">finished</span>:
-  <span style="color: #008000; font-weight: bold">return</span> sort(result)
-</pre></div>
-
+nextOne:
+  i = i + <span style="color:#ff0;font-weight:bold">1</span>
+  <span style="color:#fff;font-weight:bold">goto</span> start
+finished:
+  <span style="color:#fff;font-weight:bold">return</span> sort(result)</code></pre></div>
 <p>Use of procedures and structured programming (sometimes considered a separate paradigm) is a way to contain complexity.</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>result <span style="color: #666666">=</span> [];
-<span style="color: #008000; font-weight: bold">for</span> (i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> length(employees); i<span style="color: #666666">++</span>) {
-  e <span style="color: #666666">=</span> employees[i];
-  <span style="color: #008000; font-weight: bold">if</span>(e.rating <span style="color: #666666">&gt;</span> <span style="color: #666666">7</span>) {
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">result = [];
+<span style="color:#fff;font-weight:bold">for</span> (i = <span style="color:#ff0;font-weight:bold">0</span>; i &lt; length(employees); i++) {
+  e = employees[i];
+  <span style="color:#fff;font-weight:bold">if</span>(e.rating &gt; <span style="color:#ff0;font-weight:bold">7</span>) {
     addToList(result,toUpper(e.name));
   }
 }
-<span style="color: #008000; font-weight: bold">return</span> sort(result);
-</pre></div>
-
+<span style="color:#fff;font-weight:bold">return</span> sort(result);</code></pre></div>
 <h2 id="the-object-oriented-style">The Object Oriented Style</h2>
 
 <p><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object Oriented Programming</a> is based on passing messages between objects. Objects respond to messages by performing appropriate operations. These operations are generally called methods.</p>
@@ -159,21 +155,17 @@ i <span style="color: #666666">=</span> <span style="color: #666666">0</span>
 <p>By encapsulating data and operations that can be performed on that data, into a single entity (object), we have (in  a way) segregated moving parts of the system in to smaller groups. There are still moving parts, a lot of them, but they are grouped in a way which allows programmer to handle each group (class of objects)  in isolation.</p>
 
 <p>In pure OO style, the control structures like the conditionals and loops become messages themselves.</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #19177C">result</span> <span style="color: #666666">:=</span> <span style="color: #0000FF; font-weight: bold">List</span> <span style="color: #008000">new</span>.
-<span style="color: #19177C">employees</span> <span style="color: #0000FF">each:</span> [<span style="color: #666666">:</span><span style="color: #19177C">e</span> <span style="color: #666666">|</span>
-  <span style="color: #19177C">e</span> <span style="color: #0000FF">rating</span> <span style="color: #0000FF">greaterThan:</span> <span style="color: #666666">7</span> <span style="color: #008000">ifTrue:</span> [<span style="color: #19177C">result</span> <span style="color: #0000FF">add</span> (<span style="color: #19177C">e</span> <span style="color: #0000FF">name</span> <span style="color: #0000FF">upper</span>)]]
-<span style="color: #0000FF">result</span> <span style="color: #0000FF">sort</span>.
-<span style="color: #666666">^</span><span style="color: #19177C">result</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Smalltalk" data-lang="Smalltalk">result := List <span style="color:#fff;font-weight:bold">new</span>.
+employees each: [:e |
+  e rating greaterThan: <span style="color:#ff0;font-weight:bold">7</span> <span style="color:#fff;font-weight:bold">ifTrue:</span> [result add (e name upper)]]
+result sort.
+^result</code></pre></div>
 <p>Notice that, even though we can now deal with state updates in isolation, objects need to collaborate among themselves to be useful. That happens by the way of message passing. As the number of objects (classes of objects) increases the communication between them also increases and needs to be dealt with carefully.</p>
 
 <h2 id="the-functional-style">The Functional Style</h2>
 
 <p><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a> is based on the mathematical concept of a function. In mathematics there is no notion of updating a variable/state. Functional programming, thus, removes the whole &lsquo;update the shared state&rsquo; business. Functions are the building blocks in FP. Functions take arguments and compute a result based on the inputs provided. Control flow is expressed by combining functions (<a href="https://en.wikipedia.org/wiki/Function_composition">function composition</a>).</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">sort</span> ( map (toUpperCase <span style="color: #666666">.</span> name) ( filter (<span style="color: #0000FF">\</span>e <span style="color: #AA22FF; font-weight: bold">-&gt;</span> rating e <span style="color: #666666">&gt;</span> <span style="color: #666666">7</span>) employees))
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">sort ( map (toUpperCase . name) ( filter (\e -&gt; rating e &gt; <span style="color:#ff0;font-weight:bold">7</span>) employees))</code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
 
 <p>In essence, programming paradigms stem from different concepts about how the world works. They represent different opinions about how to best model the world while we are writing programs.</p>

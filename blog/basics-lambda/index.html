@@ -9,7 +9,7 @@
 
   
 
-  <title> Lambda Calculus - Church Numerals and Basic Operations  &middot; fossick </title>
+  <title> Lambda Calculus  &middot; fossick </title>
 
   
   <link rel="stylesheet" href="https://vijayanant.github.io//css/poole.css">
@@ -106,16 +106,37 @@
 
   <div class="content container">
     <div class="post">
-    <h1 class="post-title">Lambda Calculus - Church Numerals and Basic Operations</h1>
+    <h1 class="post-title">Lambda Calculus</h1>
     <span class="post-date">Oct 2, 2017</span>
     
     
 
-<p>My notes on Lambda Calculus.</p>
-
 <h2 id="introduction">Introduction</h2>
 
-<p>The syntax of the <em>lambda-calculus</em> comprises just three sorts of <em>terms</em>.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Model_of_computation">models of computation</a>
+can be broadly classified into two groups - those that are based on <em>machine
+model</em> and the λ Calculus.</p>
+
+<p>Machine models are based on the idea of a program acting on data by
+modification. So a <a href="https://en.wikipedia.org/wiki/Turing_machine">Turing Machine</a>
+consists of a program acting on the data. There is a clear distinction between
+program and data. Programs are not data and data do not contain programs (&lsquo;first
+order&rsquo;). The machine based languages are inherently imperative.</p>
+
+<p>λ-calculus is a formal system invented in the 1930s by <strong>Alonzo Church</strong>, in
+which all computation is reduced to the basic operations of function definition
+and application. There is no separation of program from data; the λ calculus
+is inherently &ldquo;higher order&rdquo;.</p>
+
+<p>λ calculus is different from machine models because it is based on the
+mathematical concept of a variable (which is not at all related to the concept
+of a &ldquo;variable&rdquo;, a misnomer for &ldquo;assignables&rdquo; in machine models). λ-calculus
+emphasizes the use of symbolic transformation rules and does not care about the
+actual machine implementation.</p>
+
+<h2 id="grammar">Grammar</h2>
+
+<p>The syntax of the λ-calculus comprises just three sorts of <em>terms</em>.</p>
 
 <ul>
 <li>A variable <code>x</code> by itself is a term;</li>
@@ -125,31 +146,71 @@
 
 <p>These ways of forming terms are summarized in the following grammar.</p>
 
-<h2 id="grammar">Grammar</h2>
-
 <pre><code>t ::=      -- Terms
   x        -- Variable
   λx. t    -- Abstraction
   t t      -- Application
 </code></pre>
 
-<h2 id="boolean-definnitions">Boolean definnitions</h2>
+<h2 id="abstraction-and-application">Abstraction and Application</h2>
+
+<p>Abstraction is a key feature of essentially all programming languages. Instead
+of writing the same calculation over and over, we write a function that
+performs the calculation generically, in terms of one or more named parameters,
+and then instantiate this function as needed, providing values for the
+parameters in each case.</p>
+
+<p>A λ function is such an abstraction which has the form:</p>
+
+<pre><code>λ&lt;variable&gt;.&lt;lambda term&gt;                    ---- refer to the grammer above
+</code></pre>
+
+<p>λ-calculus embodies a kind of function definition (and application) that is the
+purest possible form. In the lambda-calculus everything is a function: the
+arguments accepted by functions are themselves functions and the result returned
+by a function is another function.</p>
+
+<pre><code>(λx.∗ 3 x) 4
+</code></pre>
+
+<h2 id="conventions">Conventions</h2>
+
+<p>Here are important conventions:</p>
+
+<ul>
+<li>The common convention is that function application is left associative, i.e.</li>
+</ul>
+
+<pre><code>f g h = ((f g) h)
+</code></pre>
+
+<ul>
+<li>Consecutive abstractions can be un-curried, i.e.</li>
+</ul>
+
+<pre><code>λx y z. t =λx.λy.λz. t
+</code></pre>
+
+<ul>
+<li>The body of the abstraction extends to the right as far as possible:</li>
+</ul>
+
+<pre><code>  λx. t1 t2 = λx. (t1 t2)
+</code></pre>
+
+<h2 id="boolean-definitions">Boolean Definitions</h2>
 
 <pre><code>tru = λt. λf. t;
 fls = λt. λf. f;
 </code></pre>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">tru</span> t f <span style="color: #AA22FF; font-weight: bold">=</span> t
-<span style="color: #0000FF">fls</span> t f <span style="color: #AA22FF; font-weight: bold">=</span> f
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">tru t f = t
+fls t f = f</code></pre></div>
 <h3 id="tests">tests</h3>
 
 <p><code>test = λl. λm. λn. l m n;</code></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">test</span> pred l m <span style="color: #AA22FF; font-weight: bold">=</span> pred l m
-<span style="color: #0000FF">test</span> tru <span style="color: #BA2121">&quot;a&quot;</span> <span style="color: #BA2121">&quot;b&quot;</span> <span style="color: #408080; font-style: italic">-- &quot;a&quot;</span>
-<span style="color: #0000FF">test</span> fls <span style="color: #BA2121">&quot;a&quot;</span> <span style="color: #BA2121">&quot;b&quot;</span> <span style="color: #408080; font-style: italic">-- &quot;b&quot;</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">test pred l m = pred l m
+test tru <span style="color:#0ff;font-weight:bold">&#34;a&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;b&#34;</span> <span style="color:#007f7f">-- &#34;a&#34;</span>
+test fls <span style="color:#0ff;font-weight:bold">&#34;a&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;b&#34;</span> <span style="color:#007f7f">-- &#34;b&#34;</span></code></pre></div>
 <h3 id="reducing-test-term">Reducing Test term</h3>
 
 <pre><code> test tru v w
@@ -162,14 +223,12 @@ fls = λt. λf. f;
  → v
 </code></pre>
 
-<h2 id="logincal-op">Logincal op</h2>
+<h2 id="logical-ops">Logical Ops</h2>
 
 <p><code>and = λb. λc.b c fls;</code></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">and&#39;</span> p q <span style="color: #AA22FF; font-weight: bold">=</span> p q fls   <span style="color: #408080; font-style: italic">-- if p then q   else fls</span>
-<span style="color: #0000FF">or&#39;</span>  p q <span style="color: #AA22FF; font-weight: bold">=</span> p tru q   <span style="color: #408080; font-style: italic">-- if p then tru else q</span>
-<span style="color: #0000FF">not&#39;</span> p   <span style="color: #AA22FF; font-weight: bold">=</span> p fls tru <span style="color: #408080; font-style: italic">-- if p then fls else tru</span>
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">and1 p q = p q fls   <span style="color:#007f7f">-- if p then q   else fls</span>
+or1  p q = p tru q   <span style="color:#007f7f">-- if p then tru else q</span>
+not1 p   = p fls tru <span style="color:#007f7f">-- if p then fls else tru</span></code></pre></div>
 <h2 id="pairs">Pairs</h2>
 
 <pre><code>pair = λf.λs.λb. b f s;
@@ -178,11 +237,9 @@ snd = λp. p fls;
 </code></pre>
 
 <p><code>Pair v w</code> is a function that, when applied to a boolean value <em>b</em>, applies <em>b</em> to <em>v</em> and <em>w.</em></p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">pair</span> f s b <span style="color: #AA22FF; font-weight: bold">=</span> b f s
-<span style="color: #0000FF">fst</span> p <span style="color: #AA22FF; font-weight: bold">=</span> p tru
-<span style="color: #0000FF">snd</span> p <span style="color: #AA22FF; font-weight: bold">=</span> p fls
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">pair f s b = b f s
+fst p = p tru
+snd p = p fls</code></pre></div>
 <h3 id="reducing-fst">Reducing fst</h3>
 
 <pre><code>  fst (pair v w)
@@ -218,17 +275,13 @@ etc.                          -- and so on...
 </code></pre>
 
 <p>The term <em>scc</em> is a combinator that takes a Church numeral n and returns another Church numeral—that is, it yields a function that takes arguments <em>s</em> and <em>z</em> and applies <em>s</em> repeatedly to <em>z</em>. We get the right number of applications of <em>s</em> to <em>z</em> by first passing <em>s</em> and <em>z</em> as arguments to <em>n</em>, and then explicitly applying <em>s</em> one more time to the result.</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">scc</span>  n s z <span style="color: #AA22FF; font-weight: bold">=</span> s (n s z)
-<span style="color: #0000FF">scc&#39;</span> n s <span style="color: #AA22FF; font-weight: bold">=</span> s <span style="color: #666666">.</span> n s
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">scc  n s z = s (n s z)
+scc&#39; n s = s . n s</code></pre></div>
 <p>We can think of <em>successor</em> function in two ways. One way, as defined above, is <em>applying s one more time to given number</em>. Another way is _to add given number <em>n</em> to <em>one</em>._ Second approach is given below:</p>
 
 <pre><code>scc = λn. λs. λz. n s (s z)
 </code></pre>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">scc</span>  n s z <span style="color: #AA22FF; font-weight: bold">=</span> n s (s z)
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">scc  n s z = n s (s z)</code></pre></div>
 <p>Let us see if <em>scc one</em> is actually <em>two</em>:</p>
 
 <pre><code>scc one
@@ -247,17 +300,13 @@ etc.                          -- and so on...
 <p><code>plus = λm. λn. λs. λz. m s (n s z);</code></p>
 
 <p>We can also think of addition in terms of successor (or increment) function.</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">plus</span> m n <span style="color: #AA22FF; font-weight: bold">=</span> m incr n
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">plus m n = m incr n</code></pre></div>
 <p>Here, we apply <em>m</em> times the incrementation to <em>n</em>. In other words, increment <em>n</em>, <em>m</em> times.</p>
 
 <p>Now, we can write -</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">two</span>   <span style="color: #AA22FF; font-weight: bold">=</span> plus one one
-<span style="color: #0000FF">three</span> <span style="color: #AA22FF; font-weight: bold">=</span> plus two one
-<span style="color: #0000FF">four</span>  <span style="color: #AA22FF; font-weight: bold">=</span> add two two
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">two   = plus one one
+three = plus two one
+four  = add two two</code></pre></div>
 <h3 id="multiplication">Multiplication</h3>
 
 <p>Multiplying n and m is adding together <em>m</em> copies of <em>n</em>. Notice that, <code>plus m</code> adds <em>m</em> to any given number. If we apply <code>add m</code> <em>n</em> times to <em>zero</em>, we will have added <em>n</em> copies of <em>m</em>.</p>
@@ -266,13 +315,9 @@ etc.                          -- and so on...
 </code></pre>
 
 <p>Intuitively, having a <code>s.s.s. ... s</code> of length <em>m</em>, in order to multiply it by <em>n</em>, we should combine <em>n</em> copies of such a chain. Or, if (m s) is a &ldquo;super-successor&rdquo; containing <em>m</em> exemplars of <em>s</em>, what we need is</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">mul</span> n m s z <span style="color: #AA22FF; font-weight: bold">=</span> n (m s) z
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">mul n m s z = n (m s) z</code></pre></div>
 <p>which is same as</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #0000FF">mul</span> n m <span style="color: #AA22FF; font-weight: bold">=</span> n <span style="color: #666666">.</span> m
-</pre></div>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">mul n m = n . m</code></pre></div>
 <p><strong>Multiplication is functional composition!</strong></p>
 
 <h3 id="exponentiation">Exponentiation</h3>

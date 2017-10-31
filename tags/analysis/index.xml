@@ -48,41 +48,37 @@ python slowprogram.py  3.81s user 0.04s system 97% cpu 3.927 total
 &lt;h2 id=&#34;python-timer-class-context-manager&#34;&gt;Python Timer Class - Context Manager&lt;/h2&gt;
 
 &lt;p&gt;Corey Goldberg, in his blog &lt;a href=&#34;http://coreygoldberg.blogspot.in/2012/06/python-timer-class-context-manager-for.html&#34;&gt;here&lt;/a&gt;, has given a tiny timer class that can be used to time any block of code.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;timeit&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; default_timer
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;Timer&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;object&lt;/span&gt;):
-    &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;__init__&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;, verbose&lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #008000&#34;&gt;False&lt;/span&gt;):
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;verbose &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; verbose
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;timer &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; default_timer
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;from&lt;/span&gt; timeit &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; default_timer
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;class&lt;/span&gt; Timer(&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;object&lt;/span&gt;):
+    &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;def&lt;/span&gt; __init__(self, verbose=False):
+        self.verbose = verbose
+        self.timer = default_timer
         
-    &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;__enter__&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;):
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;start &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;timer()
-        &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;
+    &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;def&lt;/span&gt; __enter__(self):
+        self.start = self.timer()
+        &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;return&lt;/span&gt; self
         
-    &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #0000FF&#34;&gt;__exit__&lt;/span&gt;(&lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;, &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt;args):
-        end &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;timer()
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed_secs &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; end &lt;span style=&#34;color: #666666&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;start
-        &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed_secs &lt;span style=&#34;color: #666666&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;1000&lt;/span&gt;  &lt;span style=&#34;color: #408080; font-style: italic&#34;&gt;# millisecs&lt;/span&gt;
-        &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;verbose:
-            &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;elapsed time: &lt;/span&gt;&lt;span style=&#34;color: #BB6688; font-weight: bold&#34;&gt;%f&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt; ms&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed
-&lt;/pre&gt;&lt;/div&gt;
-
+    &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;def&lt;/span&gt; __exit__(self, *args):
+        end = self.timer()
+        self.elapsed_secs = end - self.start
+        self.elapsed = self.elapsed_secs * &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;1000&lt;/span&gt;  &lt;span style=&#34;color:#007f7f&#34;&gt;# millisecs&lt;/span&gt;
+        &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;if&lt;/span&gt; self.verbose:
+            &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#39;elapsed time: &lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;%f&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt; ms&amp;#39;&lt;/span&gt; % self.elapsed&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;With this class in hand all you need to do is to enclose any code within the &lt;code&gt;with&lt;/code&gt; block -&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;timer&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; Timer
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;sorting&lt;/span&gt; &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; Sort
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color: #0000FF; font-weight: bold&#34;&gt;random&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;from&lt;/span&gt; timer &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; Timer
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;from&lt;/span&gt; sorting &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; Sort
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;import&lt;/span&gt; random
 
-random_items &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; [random&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;randint(&lt;span style=&#34;color: #666666&#34;&gt;-50&lt;/span&gt;, &lt;span style=&#34;color: #666666&#34;&gt;100&lt;/span&gt;) &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;for&lt;/span&gt; c &lt;span style=&#34;color: #AA22FF; font-weight: bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color: #008000&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color: #666666&#34;&gt;5000&lt;/span&gt;)]
-sort &lt;span style=&#34;color: #666666&#34;&gt;=&lt;/span&gt; Sort()
+random_items = [random.randint(-&lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;100&lt;/span&gt;) &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;for&lt;/span&gt; c in &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#ff0;font-weight:bold&#34;&gt;5000&lt;/span&gt;)]
+sort = Sort()
 
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;as&lt;/span&gt; t:
-    sort&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;bubble_sort(random_items)
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;=&amp;gt; elapsed bubble_sort: &lt;/span&gt;&lt;span style=&#34;color: #BB6688; font-weight: bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt; s&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;%&lt;/span&gt; t&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;as&lt;/span&gt; t:
+    sort.bubble_sort(random_items)
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;=&amp;gt; elapsed bubble_sort: &lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt; s&amp;#34;&lt;/span&gt; % t.elapsed
 
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;as&lt;/span&gt; t:
-    sort&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;insertion_sort(random_items)
-&lt;span style=&#34;color: #008000; font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color: #BA2121&#34;&gt;&amp;quot;=&amp;gt; elapsed insertion_sort: &lt;/span&gt;&lt;span style=&#34;color: #BB6688; font-weight: bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color: #BA2121&#34;&gt; s&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #666666&#34;&gt;%&lt;/span&gt; t&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;elapsed
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;with&lt;/span&gt; Timer() &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;as&lt;/span&gt; t:
+    sort.insertion_sort(random_items)
+&lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#34;=&amp;gt; elapsed insertion_sort: &lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt; s&amp;#34;&lt;/span&gt; % t.elapsed&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Here is a sample output :&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ python UsingTimer.py
@@ -172,9 +168,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 &lt;h3 id=&#34;profiling-a-single-statement&#34;&gt;Profiling a single statement&lt;/h3&gt;
 
 &lt;p&gt;Sometimes it is not a good idea or not required/possible to profile an entire script. In those scenarios you can profile individual statements:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;cProfile&lt;span style=&#34;color: #666666&#34;&gt;.&lt;/span&gt;run(&lt;span style=&#34;color: #BA2121&#34;&gt;&amp;#39;sort.bubble_sort(random_items)&amp;#39;&lt;/span&gt;)   
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;cProfile.run(&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#0ff;font-weight:bold&#34;&gt;&amp;#39;sort.bubble_sort(random_items)&amp;#39;&lt;/span&gt;)   &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The stats, as before, are printed on to standard out.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ python cprofile_simple.py
