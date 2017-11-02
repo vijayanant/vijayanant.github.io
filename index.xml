@@ -395,9 +395,14 @@ result sort.
       <guid>https://vijayanant.github.io/blog/decisions/</guid>
       <description>&lt;p&gt;We all make decisions. We should make decisions to be happy.&lt;/p&gt;
 
-&lt;p&gt;To go to college, to drop out, to get a job, to freelance, to take over family business, to start your own, to take a break from your job, to get married, to visit friends, to avoid talking to some, to go shopping, to buy online, to go jogging, to sleep more, to make peace, to go to war. All decisions are made to be happy.&lt;/p&gt;
+&lt;p&gt;To go to college, to drop out, to get a job, to freelance, to take over family
+business, to start your own, to take a break from your job, to get married, to
+visit friends, to avoid talking to some, to go shopping, to buy online, to go
+jogging, to sleep more, to make peace, to go to war. All decisions are made to
+be happy.&lt;/p&gt;
 
-&lt;p&gt;Some times you end up less happy. Don&amp;rsquo;t fret! All you need is to make another decision. A better one using all the knowledge you gained in previous decisions.&lt;/p&gt;
+&lt;p&gt;Some times you end up less happy. Don&amp;rsquo;t fret! All you need is to make another
+decision. A better one using all the knowledge you gained in previous decisions.&lt;/p&gt;
 
 &lt;p&gt;It is not that hard.&lt;/p&gt;
 </description>
@@ -411,7 +416,9 @@ result sort.
       <pubDate>Tue, 05 Jul 2016 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
       <guid>https://vijayanant.github.io/blog/duplication-vs-abstraction/</guid>
-      <description>&lt;p&gt;When you see code duplication and can&amp;rsquo;t think of an abstraction to  put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.&lt;/p&gt;
+      <description>&lt;p&gt;When you see code duplication and can&amp;rsquo;t think of an abstraction to put that
+piece of code in, it is wise to keep the code separate. At least until you
+figure out the right abstraction.&lt;/p&gt;
 </description>
     </item>
     
@@ -499,7 +506,8 @@ magicBox ::            (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weig
 
 &lt;h3 id=&#34;what&#34;&gt;What?&lt;/h3&gt;
 
-&lt;p&gt;Simply put, pair programming is two programmers working at a single computer!&lt;/p&gt;
+&lt;p&gt;Simply put, pair programming is two programmers with a single computer working
+together to solve a problem!&lt;/p&gt;
 
 &lt;h3 id=&#34;why&#34;&gt;Why?&lt;/h3&gt;
 
@@ -535,11 +543,11 @@ magicBox ::            (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weig
     
     
     <item>
-      <title>10 Must Have Vim Plugins</title>
-      <link>https://vijayanant.github.io/blog/10-must-have-vim-plugins/</link>
+      <title>10 Vim Plugins That Made My Vim Easy </title>
+      <link>https://vijayanant.github.io/blog/10-vim-plugins-that-made-my-vim-easy/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/10-must-have-vim-plugins/</guid>
+      <guid>https://vijayanant.github.io/blog/10-vim-plugins-that-made-my-vim-easy/</guid>
       <description>&lt;p&gt;Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://vijayanant.github.io/my_vim_setup.png&#34; alt=&#34;my_vim_setup&#34; /&gt;&lt;/p&gt;

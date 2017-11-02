@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/10-must-have-vim-plugins/</loc>
+    <loc>https://vijayanant.github.io/blog/10-vim-plugins-that-made-my-vim-easy/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
   </url>
   
@@ -58,20 +58,8 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/analysis/</loc>
-    <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://vijayanant.github.io/blog/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/composition/</loc>
-    <lastmod>2016-05-20T20:20:45+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,62 +70,8 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/fp/</loc>
-    <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/functional/</loc>
-    <lastmod>2016-05-20T20:20:45+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/haskell/</loc>
-    <lastmod>2016-05-20T20:20:45+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://vijayanant.github.io/series-desc/hugo-101/</loc>
     <lastmod>2014-08-12T11:09:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/monads/</loc>
-    <lastmod>2016-05-20T20:20:45+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/monadsa/</loc>
-    <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/performance/</loc>
-    <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/plugin/</loc>
-    <lastmod>2015-01-04T09:18:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/programming/</loc>
-    <lastmod>2017-09-15T14:42:26+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/python/</loc>
-    <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -154,13 +88,6 @@
   
   <url>
     <loc>https://vijayanant.github.io/tags/</loc>
-    <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/vim/</loc>
-    <lastmod>2015-01-04T09:18:06+00:00</lastmod>
     <priority>0</priority>
   </url>
   
