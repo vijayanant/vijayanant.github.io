@@ -13,14 +13,12 @@
     
     
     <item>
-      <title>Basic maths: Sets, Relations and Functions</title>
-      <link>https://vijayanant.github.io/blog/basic-maths-sets-relations-and-functions/</link>
+      <title>Notes on Sets, Relations, and Functions</title>
+      <link>https://vijayanant.github.io/blog/notes-on-sets-relations-and-functions/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/blog/basic-maths-sets-relations-and-functions/</guid>
-      <description>I have decided to brush-up my basic math skills before jumping into slightly advanced concepts. I do not want to be jumping back and forth everytime I fail to remember some basic stuff.
-This is a result of some of the notes I took (well, all that I have looked-up/understood) so far. Keeping it here so that I (or anyone else) can refer easily.
-Sets, Relations and Functions Standard notation for sets  curly braces for listing the elements of a set explicitly ({.</description>
+      <guid>https://vijayanant.github.io/blog/notes-on-sets-relations-and-functions/</guid>
+      <description>Standard notation for sets  curly braces for listing the elements of a set explicitly ({. . .}) showing how to construct one set from another by “comprehension” ({x ∈ S | . . .}) ∅ for the empty set, and S \ T for the set difference of S and T (the set of elements of S that are not also elements of T ) The size of a set S is written |S| The powerset of S, i.</description>
     </item>
     
     <item>

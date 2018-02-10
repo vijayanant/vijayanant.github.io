@@ -11,20 +11,14 @@
     
     
     <item>
-      <title>Basic maths: Sets, Relations and Functions</title>
-      <link>https://vijayanant.github.io/blog/basic-maths-sets-relations-and-functions/</link>
+      <title>Notes on Sets, Relations, and Functions</title>
+      <link>https://vijayanant.github.io/blog/notes-on-sets-relations-and-functions/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 UTC</pubDate>
       <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/basic-maths-sets-relations-and-functions/</guid>
+      <guid>https://vijayanant.github.io/blog/notes-on-sets-relations-and-functions/</guid>
       <description>
 
-&lt;p&gt;I have decided to brush-up my basic math skills before jumping into slightly advanced concepts. I do not want to be jumping back and forth everytime I fail to remember some basic stuff.&lt;/p&gt;
-
-&lt;p&gt;This is a result of some of the notes I took (well, all that I have looked-up/understood) so far. Keeping it here so that I (or anyone else) can refer easily.&lt;/p&gt;
-
-&lt;h2 id=&#34;sets-relations-and-functions&#34;&gt;Sets, Relations and Functions&lt;/h2&gt;
-
-&lt;h4 id=&#34;standard-notation-for-sets&#34;&gt;Standard notation for sets&lt;/h4&gt;
+&lt;h3 id=&#34;standard-notation-for-sets&#34;&gt;Standard notation for sets&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;curly braces for listing the elements of a set explicitly (&lt;code&gt;{. . .}&lt;/code&gt;)&lt;/li&gt;
@@ -36,69 +30,69 @@
 &lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;countable-set&#34;&gt;Countable Set&lt;/h4&gt;
+&lt;h3 id=&#34;countable-set&#34;&gt;Countable Set&lt;/h3&gt;
 
 &lt;p&gt;The set &lt;code&gt;{0, 1, 2, 3, 4, 5, . . .}&lt;/code&gt; of natural numbers is denoted by the symbol &lt;code&gt;N&lt;/code&gt;. A set is said to be &lt;em&gt;countable&lt;/em&gt; if its elements can be placed in one-to-one correspondence with the natural numbers.&lt;/p&gt;
 
-&lt;h4 id=&#34;n-place-relation&#34;&gt;n-place relation&lt;/h4&gt;
+&lt;h3 id=&#34;n-place-relation&#34;&gt;n-place relation&lt;/h3&gt;
 
 &lt;p&gt;An n-place relation on a collection of sets S1, S2, &amp;hellip; , Sn is a set &lt;code&gt;R ⊆ S1 × S2 ×...× Sn&lt;/code&gt; of tuples of elements from &lt;code&gt;S1&lt;/code&gt; through &lt;code&gt;Sn&lt;/code&gt;. We say that the elements &lt;code&gt;s1 ∈ S1&lt;/code&gt; through &lt;code&gt;sn ∈ Sn&lt;/code&gt; are related by &lt;code&gt;R&lt;/code&gt; if &lt;code&gt;(s1,...,sn)&lt;/code&gt; is an element of &lt;code&gt;R&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;one-place-relation&#34;&gt;one-place relation&lt;/h4&gt;
+&lt;h3 id=&#34;one-place-relation&#34;&gt;one-place relation&lt;/h3&gt;
 
 &lt;p&gt;A one-place relation on a set &lt;code&gt;S&lt;/code&gt; is called a predicate on &lt;code&gt;S.&lt;/code&gt; We say that &lt;code&gt;P&lt;/code&gt; is true of an element &lt;code&gt;s ∈ S&lt;/code&gt; if &lt;code&gt;s ∈ P&lt;/code&gt;. To emphasize this intuition, we often write &lt;code&gt;P(s)&lt;/code&gt; instead of &lt;code&gt;s ∈ P&lt;/code&gt;, regarding &lt;code&gt;P&lt;/code&gt; as a function mapping elements of &lt;code&gt;S&lt;/code&gt; to truth values.&lt;/p&gt;
 
-&lt;h4 id=&#34;two-place-relation&#34;&gt;two-place relation&lt;/h4&gt;
+&lt;h3 id=&#34;two-place-relation&#34;&gt;two-place relation&lt;/h3&gt;
 
 &lt;p&gt;A two-place relation &lt;code&gt;R&lt;/code&gt; on sets &lt;code&gt;S&lt;/code&gt; and &lt;code&gt;T&lt;/code&gt; is called a binary relation. We often write &lt;code&gt;s R t&lt;/code&gt; instead of &lt;code&gt;(s,t) ∈ R&lt;/code&gt;. When &lt;code&gt;S&lt;/code&gt; and &lt;code&gt;T&lt;/code&gt; are the same set &lt;code&gt;U&lt;/code&gt;, we say that &lt;code&gt;R&lt;/code&gt; is a binary relation on &lt;code&gt;U&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;mixfix-syntax&#34;&gt;MixFix syntax&lt;/h4&gt;
+&lt;h3 id=&#34;mixfix-syntax&#34;&gt;MixFix syntax&lt;/h3&gt;
 
 &lt;p&gt;For readability, three or more place relations are often written using a &amp;ldquo;mixfix&amp;rdquo; concrete syntax, where the elements in the relation are separated by a sequence of symbols that jointly constitute the name of the relation. For example, we write &lt;code&gt;Γ ⊢ s:T&lt;/code&gt; to mean the triple &lt;code&gt;(Γ, s, T)&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;domain-co-domain&#34;&gt;Domain &amp;amp; Co-domain&lt;/h4&gt;
+&lt;h3 id=&#34;domain-co-domain&#34;&gt;Domain &amp;amp; Co-domain&lt;/h3&gt;
 
 &lt;p&gt;The domain of a relation &lt;code&gt;R&lt;/code&gt; on sets &lt;code&gt;S&lt;/code&gt; and &lt;code&gt;T&lt;/code&gt;, written &lt;code&gt;dom(R),&lt;/code&gt; is the set of elements &lt;code&gt;s ∈ S&lt;/code&gt; such that &lt;code&gt;(s,t) ∈ R&lt;/code&gt; for some &lt;code&gt;t&lt;/code&gt;. The codomain or range of &lt;code&gt;R&lt;/code&gt;, written &lt;code&gt;range(R)&lt;/code&gt;, is the set of elements &lt;code&gt;t ∈ T&lt;/code&gt; such that &lt;code&gt;(s,t) ∈ R&lt;/code&gt; for some &lt;code&gt;s&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;relation&#34;&gt;Relation&lt;/h4&gt;
+&lt;h3 id=&#34;relation&#34;&gt;Relation&lt;/h3&gt;
 
 &lt;p&gt;A relation &lt;code&gt;R&lt;/code&gt; on sets &lt;code&gt;S&lt;/code&gt; and &lt;code&gt;T&lt;/code&gt; is called a partial function from &lt;code&gt;S&lt;/code&gt; to &lt;code&gt;T&lt;/code&gt; if, whenever &lt;code&gt;(s,t1) ∈ R&lt;/code&gt; and &lt;code&gt;(s,t2) ∈ R&lt;/code&gt;, we have &lt;code&gt;t1 = t2&lt;/code&gt;. If, in addition, &lt;code&gt;dom(R) = S&lt;/code&gt;, then &lt;code&gt;R&lt;/code&gt; is called a total function (or just function) from &lt;code&gt;S&lt;/code&gt; to &lt;code&gt;T&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&#34;partial-function&#34;&gt;Partial Function&lt;/h4&gt;
+&lt;h3 id=&#34;partial-function&#34;&gt;Partial Function&lt;/h3&gt;
 
 &lt;p&gt;A partial function &lt;code&gt;R&lt;/code&gt; from &lt;code&gt;S&lt;/code&gt; to &lt;code&gt;T&lt;/code&gt; is said to be defined on an argument &lt;code&gt;s ∈ S&lt;/code&gt; if &lt;code&gt;s ∈ dom(R)&lt;/code&gt;, and undefined otherwise. We write &lt;code&gt;f(x) ↑&lt;/code&gt;, or &lt;code&gt;f (x) =↑&lt;/code&gt;, to mean &amp;ldquo;f is undefined on x,&amp;rdquo; and &lt;code&gt;f (x)↓&lt;/code&gt; to mean &amp;ldquo;f is defined on x.&amp;rdquo;&lt;/p&gt;
 
-&lt;h4 id=&#34;predicate&#34;&gt;Predicate&lt;/h4&gt;
+&lt;h3 id=&#34;predicate&#34;&gt;Predicate&lt;/h3&gt;
 
 &lt;p&gt;Suppose &lt;code&gt;R&lt;/code&gt; is a binary relation on a set &lt;code&gt;S&lt;/code&gt; and &lt;code&gt;P&lt;/code&gt; is a predicate on &lt;code&gt;S&lt;/code&gt;. We say that &lt;code&gt;P&lt;/code&gt; is preserved by &lt;code&gt;R&lt;/code&gt; if whenever we have &lt;code&gt;s R s&#39;&lt;/code&gt; and &lt;code&gt;P(s)&lt;/code&gt;, we also have &lt;code&gt;P(s&#39;)&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;ordered-sets&#34;&gt;Ordered Sets&lt;/h2&gt;
 
-&lt;h4 id=&#34;reflexive-relation&#34;&gt;Reflexive Relation&lt;/h4&gt;
+&lt;h3 id=&#34;reflexive-relation&#34;&gt;Reflexive Relation&lt;/h3&gt;
 
 &lt;p&gt;A binary relation R on a set S is reflexive if R relates every element of S to itself—that is, s R s (or (s,s) ∈ R) for all s ∈ S.&lt;/p&gt;
 
-&lt;h4 id=&#34;symmetric-relation&#34;&gt;Symmetric Relation&lt;/h4&gt;
+&lt;h3 id=&#34;symmetric-relation&#34;&gt;Symmetric Relation&lt;/h3&gt;
 
 &lt;p&gt;A binary relation R is symmetric if s R t implies t R s, for all s and t in S.&lt;/p&gt;
 
-&lt;h4 id=&#34;transitive-relation&#34;&gt;Transitive Relation&lt;/h4&gt;
+&lt;h3 id=&#34;transitive-relation&#34;&gt;Transitive Relation&lt;/h3&gt;
 
 &lt;p&gt;A binary relation R is transitive if s R t and t R u together imply s R u. R is antisymmetric if s R t and t R s together imply that s = t.&lt;/p&gt;
 
-&lt;h4 id=&#34;preorder&#34;&gt;Preorder&lt;/h4&gt;
+&lt;h3 id=&#34;preorder&#34;&gt;Preorder&lt;/h3&gt;
 
 &lt;p&gt;A reflexive and transitive relation R on a set S is called a preorder on S.&lt;/p&gt;
 
-&lt;h4 id=&#34;partial-order&#34;&gt;Partial Order&lt;/h4&gt;
+&lt;h3 id=&#34;partial-order&#34;&gt;Partial Order&lt;/h3&gt;
 
 &lt;p&gt;A preorder (on a set S) that is also antisymmetric is called a partial order on S.&lt;/p&gt;
 
-&lt;h4 id=&#34;total-order&#34;&gt;Total Order&lt;/h4&gt;
+&lt;h3 id=&#34;total-order&#34;&gt;Total Order&lt;/h3&gt;
 
 &lt;p&gt;A partial order ≤ is called a total order if it also has the property that, for each s and t in S, either s ≤ t or t ≤ s.&lt;/p&gt;
 
-&lt;h4 id=&#34;join-and-meet&#34;&gt;Join and Meet&lt;/h4&gt;
+&lt;h3 id=&#34;join-and-meet&#34;&gt;Join and Meet&lt;/h3&gt;
 
 &lt;p&gt;Suppose that ≤ is a partial order on a set S and s and t are elements of S. An element j ∈ S is said to be a join (or &lt;strong&gt;least upper bound&lt;/strong&gt;) of s and t if&lt;/p&gt;
 
@@ -114,15 +108,15 @@
 &lt;li&gt;for any element n ∈ S with n ≤ s and n ≤ t, we have n ≤ m.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h4 id=&#34;equivalence&#34;&gt;Equivalence&lt;/h4&gt;
+&lt;h3 id=&#34;equivalence&#34;&gt;Equivalence&lt;/h3&gt;
 
 &lt;p&gt;A reflexive, transitive, and symmetric relation on a set S is called an equivalence on S.&lt;/p&gt;
 
-&lt;h4 id=&#34;reflexive-closure&#34;&gt;Reflexive Closure&lt;/h4&gt;
+&lt;h3 id=&#34;reflexive-closure&#34;&gt;Reflexive Closure&lt;/h3&gt;
 
 &lt;p&gt;Suppose R is a binary relation on a set S. The reflexive closure of R is the smallest reflexive relation R′ that contains R. (“Smallest” in the sense that if R′′ is some other reflexive relation that contains all the pairs in R, then we have R′ ⊆ R′′.)&lt;/p&gt;
 
-&lt;h4 id=&#34;transitive-closure&#34;&gt;Transitive Closure&lt;/h4&gt;
+&lt;h3 id=&#34;transitive-closure&#34;&gt;Transitive Closure&lt;/h3&gt;
 
 &lt;p&gt;Similarly, the transitive closure of R is the smallest transitive relation R′ that contains R. The transitive closure of R is often written R+. The reflexive and transitive closure of R is the smallest reflexive and transitive relation that contains R. It is often written R∗.&lt;/p&gt;
 </description>
