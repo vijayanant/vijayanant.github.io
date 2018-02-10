@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>fossick</title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Series-Desc on fossick</title>
     <link>https://vijayanant.github.io/series-desc/</link>
+    <description>Recent content in Series-Desc on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Vijay Anant</author>
-    <copyright>2014 All rights reserved</copyright>
-    <updated>Tue, 12 Aug 2014 11:09:35 UTC</updated>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Tue, 12 Aug 2014 11:09:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/series-desc/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Hugo 101</title>
+      <link>https://vijayanant.github.io/series-desc/hugo-101/</link>
+      <pubDate>Tue, 12 Aug 2014 11:09:35 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/series-desc/hugo-101/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

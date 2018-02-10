@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>fossick</title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Descs on fossick</title>
     <link>https://vijayanant.github.io/desc/</link>
+    <description>Recent content in Descs on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Vijay Anant</author>
-    <copyright>2014 All rights reserved</copyright>
-    <updated>Tue, 12 Aug 2014 11:09:35 UTC</updated>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Tue, 12 Aug 2014 11:09:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/desc/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>series hugo101</title>
+      <link>https://vijayanant.github.io/desc/series-hugo101/</link>
+      <pubDate>Tue, 12 Aug 2014 11:09:35 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/desc/series-hugo101/</guid>
+      <description>Hugo 101 is a series of introductory posts about my exploration of Hugo, a static site generator written in Go by Steve Francia (aka spf13).</description>
+    </item>
     
   </channel>
 </rss>
