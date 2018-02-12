@@ -486,6 +486,83 @@ result sort.
     
     
     <item>
+      <title>OO(h!) Principles</title>
+      <link>https://vijayanant.github.io/blog/ooh-principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 UTC</pubDate>
+      <author>Vijay Anant</author>
+      <guid>https://vijayanant.github.io/blog/ooh-principles/</guid>
+      <description>
+
+&lt;p&gt;There is a good chance that you all are aware of the SOLID principles. There are many more principles for us to consider and adhere to while developing OO software.&lt;/p&gt;
+
+&lt;h2 id=&#34;solid&#34;&gt;SOLID&lt;/h2&gt;
+
+&lt;p&gt;These are the &lt;strong&gt;Principles of Object Oriented Class Design&lt;/strong&gt; popularly known as the &lt;strong&gt;SOLID Principles&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;S&lt;/strong&gt;ingle Responsibility Principle [SRP]&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;O&lt;/strong&gt;pen/Closed Principle [OCP]&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;L&lt;/strong&gt;iskov Substitution Principle [LSP]&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;I&lt;/strong&gt;nterface Segregation Principle [ISP]&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;D&lt;/strong&gt;ependency Inversion Principle [DIP]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The next two set of principles, are related to &lt;em&gt;packaging&lt;/em&gt;. Package here refers to a &lt;em&gt;deployable component&lt;/em&gt;, or simply something you would &amp;lsquo;&lt;em&gt;release&lt;/em&gt;&amp;rsquo; for others to use - like a jar file. These are the &lt;strong&gt;Principles of Package Architecture&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;package-cohesion-principles&#34;&gt;Package Cohesion Principles&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Release Reuse Equivalency Principle [REP]&lt;/li&gt;
+&lt;li&gt;The Common Closure Principle [CCP]&lt;/li&gt;
+&lt;li&gt;The Common Reuse Principle [CRP]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;package-coupling-principles&#34;&gt;Package Coupling Principles&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Acyclic Dependencies Principle [ADP]&lt;/li&gt;
+&lt;li&gt;The Stable Dependencies Principle [SDP]&lt;/li&gt;
+&lt;li&gt;The Stable Abstractions Principle [SAP]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;bertrand-meyer-s-principles&#34;&gt;Bertrand Meyer&amp;rsquo;s Principles&lt;/h2&gt;
+
+&lt;p&gt;Note that some of the principles listed above are also originally described by
+Mayer.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Linguistic Modular Units principle&lt;/li&gt;
+&lt;li&gt;The Self-Documentation principle&lt;/li&gt;
+&lt;li&gt;The Uniform Access principle&lt;/li&gt;
+&lt;li&gt;The Open-Closed principle&lt;/li&gt;
+&lt;li&gt;The Single Choice principle&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;grasp&#34;&gt;GRASP&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;G&lt;/strong&gt;eneral &lt;strong&gt;R&lt;/strong&gt;esponsibility &lt;strong&gt;A&lt;/strong&gt;ssignment &lt;strong&gt;S&lt;/strong&gt;oftware &lt;strong&gt;P&lt;/strong&gt;rinciples&lt;/p&gt;
+
+&lt;p&gt;Guidelines for assigning responsibility to classes and objects in object-oriented design. Helps us in deciding which responsibility should be assigned to which object/class. Identify the objects and responsibilities from the problem domain, and also identify how objects interact with each other.&lt;/p&gt;
+
+&lt;p&gt;GRASP are more than base principles. These techniques have not been invented to create new ways of working, but to better document and standardize old, tried-and-tested programming principles in object-oriented design.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creator&lt;/li&gt;
+&lt;li&gt;Information Expert&lt;/li&gt;
+&lt;li&gt;Low Coupling&lt;/li&gt;
+&lt;li&gt;High Cohesion&lt;/li&gt;
+&lt;li&gt;Controller&lt;/li&gt;
+&lt;li&gt;Indirection&lt;/li&gt;
+&lt;li&gt;Polymorphism&lt;/li&gt;
+&lt;li&gt;Protected Variations&lt;/li&gt;
+&lt;li&gt;Pure Fabrication&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
       <title>A Detour Called Monads</title>
       <link>https://vijayanant.github.io/blog/a-detour-called-monads/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 UTC</pubDate>

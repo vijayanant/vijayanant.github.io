@@ -42,6 +42,17 @@ Programming Paradigms Different programming styles tries to deal with the comple
     </item>
     
     <item>
+      <title>OO(h!) Principles</title>
+      <link>https://vijayanant.github.io/blog/ooh-principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/blog/ooh-principles/</guid>
+      <description>There is a good chance that you all are aware of the SOLID principles. There are many more principles for us to consider and adhere to while developing OO software.
+SOLID These are the Principles of Object Oriented Class Design popularly known as the SOLID Principles.
+ The Single Responsibility Principle [SRP] The Open/Closed Principle [OCP] The Liskov Substitution Principle [LSP] The Interface Segregation Principle [ISP] The Dependency Inversion Principle [DIP]  The next two set of principles, are related to packaging.</description>
+    </item>
+    
+    <item>
       <title>A Detour Called Monads</title>
       <link>https://vijayanant.github.io/blog/a-detour-called-monads/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
