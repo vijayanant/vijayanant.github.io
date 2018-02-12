@@ -6,8 +6,32 @@
     <link>https://vijayanant.github.io/</link>
     <language>en-us</language>
     <author>Vijay Anant</author>
-    <copyright>2017 All rights reserved</copyright>
-    <updated>Sat, 04 Nov 2017 00:00:00 UTC</updated>
+    <copyright>2018 All rights reserved</copyright>
+    <updated>Mon, 12 Feb 2018 00:00:00 UTC</updated>
+    
+    
+    <item>
+      <title>Outward Counterclockwise Spiral Matrix Traversal - haskell</title>
+      <link>https://vijayanant.github.io/blog/outward-counterclockwise-spiral-matrix-traversal---haskell/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 UTC</pubDate>
+      <author>Vijay Anant</author>
+      <guid>https://vijayanant.github.io/blog/outward-counterclockwise-spiral-matrix-traversal---haskell/</guid>
+      <description>
+
+&lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row &lt;code&gt;r&lt;/code&gt; and column &lt;code&gt;c&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Return an array of integers obtained by spiraling outward anti-clockwise from the &lt;code&gt;r&lt;/code&gt; and &lt;code&gt;c&lt;/code&gt;, starting upward.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://us2.campaign-archive1.com/?u=cadc6c448cd083a0aeed7f864&amp;amp;id=a6856ac71e&amp;amp;e=7cfe3ee063&#34;&gt;More details here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;My attempt in Haskell.&lt;/p&gt;
+
+&lt;script src=&#34;//gist.github.com/vijayanant/d1508706dc727b8b27d38495377c28dc.js?file=spiral.hs&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
+    
     
     
     <item>
