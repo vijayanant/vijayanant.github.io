@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <meta content="tensorflow, machine learning, deep learning" name="keywords">
+    <meta content="TensorFlow Basics  &middot; fossick " property="og:title">
+    <title> TensorFlow Basics  &middot; fossick &middot; Vijay Anant</title>
+    <meta content="blog by Vijay Anant - " property="og:description"> 
+
+
+
+    
+    <link rel="stylesheet" href="https://vijayanant.github.io//css/poole.css">
+    <link rel="stylesheet" href="https://vijayanant.github.io//css/syntax.css">
+    <link rel="stylesheet" href="https://vijayanant.github.io//css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="fossick" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Fira Sans']
+        }
+      });
+    </script>
+ </head>
+
+
+<body>
+
+  <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about" align=center>
+      <h2 class="brand"><a href="https://vijayanant.github.io/">fossick</a></h2>
+      
+      <p class="lead">
+         blog by Vijay Anant 
+      </p>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="https://vijayanant.github.io//blog">Posts</a></li>
+      
+      <li><a href="/about/">About </a></li>
+      
+      <br/> 
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+    </ul>
+      <a href="https://twitter.com/vijayanant"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+      
+      
+       <a href="https://github.com/vijayanant"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+       
+    <p class="footnote">powered by <a href="http://gohugo.io">Hugo</a> <br/>
+    &copy; 2018 Vijay Anant. All rights reserved.</p>
+  </div>
+</div>
+
+
+  <div class="content container">
+    <div class="post">
+      <h1 class="post-title">TensorFlow Basics</h1>
+      <span class="post-date">Feb 25, 2018</span>
+      
+      
+      
+      <p class="seriesname">Series: <a href="https://vijayanant.github.io//series/tensorflow-101">tensorflow-101</a></p>
+      
+      
+
+<p>TensorFlow is Google&rsquo;s open source library for numerical computation. All computations are represented as <strong>Data Flow Graphs</strong>. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.</p>
+
+<h2 id="basics">Basics</h2>
+
+<p>Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a <strong>Session</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#f92672">as</span> tf
+x <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>random_uniform([<span style="color:#ae81ff">10</span>])
+<span style="color:#66d9ef">print</span>(x)</code></pre></div>
+<p>What do you think the above code prints?</p>
+
+<p><code>Tensor(&quot;random_uniform:0&quot;, shape=(10,), dtype=float32)</code></p>
+
+<p><code>x</code> is a Tensor. Remember that everyting in tensorflow is graph made of nodes and edges. The call to <code>tf.random_uniform()</code> returns a <code>Tensor</code>.</p>
+
+<h3 id="tensor">Tensor</h3>
+
+<p>A tensor is what is passed between nodes (edge). It represents the (input and) output of an Operation (node). A tensor does not hold the values of the operation&rsquo;s output, but instead provides a means of computing those values in a Session.</p>
+
+<p>In the above example, <code>tf.random_uniform()</code> is an Operation and it returns a Tensor.</p>
+
+<p>Take another look at the output of previous example -</p>
+
+<p><code>Tensor(&quot;random_uniform:0&quot;, shape=(10,), dtype=float32)</code></p>
+
+<p>it tells us that x is a Tensor, the opration name is random_uniform (:0 says its the output), the shape of the tensor (a list of 10 elements) and data type of the elements in the list(float32).</p>
+
+<p>You can get information about the tensor using many of the functions and attribute values available.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">shape <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>get_shape()<span style="color:#f92672">.</span>as_list()
+ty <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>dtype
+name <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>name
+op_name <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>op<span style="color:#f92672">.</span>name
+<span style="color:#66d9ef">print</span>([name, op_name, ty, shape])</code></pre></div>
+<p><code>
+['random_uniform:0', 'random_uniform', tf.float32, [10]]
+</code></p>
+
+<p>So, how do we get the actual result?</p>
+
+<h3 id="sessions-and-graphs">Sessions and Graphs</h3>
+
+<p>Remember we mentioned earlier that every computation is represented as a graph? By default, every operation is added to a default graph. And a Session is where the operations in the graph are run.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>get_default_graph()
+session <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>Session(graph<span style="color:#f92672">=</span>g)
+
+result <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>run(x)
+
+<span style="color:#66d9ef">print</span>(result)
+session<span style="color:#f92672">.</span>close()</code></pre></div>
+<p>The result -</p>
+
+<pre><code>[0.23983908 0.30026257 0.21374762 0.18318117 0.8556453  0.25169706
+ 0.8703637  0.69733584 0.9137391  0.20477629]
+</code></pre>
+
+<h3 id="operations">Operations</h3>
+
+<p>Operations are the nodes in the graph that consume and/or produce Tensors.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[op<span style="color:#f92672">.</span>name <span style="color:#66d9ef">for</span> op <span style="color:#f92672">in</span> g<span style="color:#f92672">.</span>get_operations()]</code></pre></div>
+<p><code>
+['random_uniform/shape',
+ 'random_uniform/min',
+ 'random_uniform/max',
+ 'random_uniform/RandomUniform',
+ 'random_uniform/sub',
+ 'random_uniform/mul',
+ 'random_uniform']
+</code></p>
+
+<h3 id="variables">Variables</h3>
+
+<p>Variables are stateful nodes which output their current value. State is retained across multiple executions of a graph. A variable holds a  value, which can be a Tensor of any type and shape. The type and shape of the variable are fixed at initialization time. The value can be changed using one of the assign methods.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#f92672">as</span> tf
+
+mat <span style="color:#f92672">=</span> [ [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>], [<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>] ]
+trans <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>transpose(mat)
+
+x <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>Variable(mat)
+y <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>matmul(mat, trans)
+
+x<span style="color:#f92672">.</span>assign(tf<span style="color:#f92672">.</span>add(y,<span style="color:#ae81ff">1</span>))</code></pre></div>
+<h3 id="placeholders">Placeholders</h3>
+
+<p>Placeholders are nodes whose value is fed in at execution time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#f92672">as</span> tf
+
+x <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>placeholder(tf<span style="color:#f92672">.</span>float32, shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1024</span>, <span style="color:#ae81ff">1024</span>))
+y <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>matmul(x, x)
+
+<span style="color:#66d9ef">with</span> tf<span style="color:#f92672">.</span>Session() <span style="color:#66d9ef">as</span> sess:
+  rand_array <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">1024</span>, <span style="color:#ae81ff">1024</span>)
+  <span style="color:#66d9ef">print</span>(sess<span style="color:#f92672">.</span>run(y, feed_dict<span style="color:#f92672">=</span>{x: rand_array}))  <span style="color:#75715e"># Will succeed.</span></code></pre></div>
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+
+<p>We have so far learned what tensorFlow is about and got basic intuition towards Tensors, Graphs, Operations and Sessions. We have also learned about how to use Variables and Placeholders. Now, we will put all that togetther.</p>
+
+<ul>
+<li>First, build a graph using variables and placeholders.</li>
+<li>Then, deploy the graph onto a session, which is the execution environment</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np 
+<span style="color:#f92672">import</span> tensorflow <span style="color:#f92672">as</span> tf
+
+b <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>Variable(tf<span style="color:#f92672">.</span>zeros((<span style="color:#ae81ff">100</span>,)))
+W <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>Variable(tf<span style="color:#f92672">.</span>random_uniform((<span style="color:#ae81ff">784</span>, <span style="color:#ae81ff">100</span>),<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))
+
+x <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>placeholder(tf<span style="color:#f92672">.</span>float32, (<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">784</span>))
+
+<span style="color:#75715e"># h = ReLu(Wx + b)</span>
+h <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>nn<span style="color:#f92672">.</span>relu(tf<span style="color:#f92672">.</span>matmul(x, W) <span style="color:#f92672">+</span> b)
+
+sess <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>Session()
+sess<span style="color:#f92672">.</span>run(tf<span style="color:#f92672">.</span>initialize_all_variables())
+sess<span style="color:#f92672">.</span>run(h, {x: np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>random_sample((<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">784</span>))})
+ </code></pre></div>
+<p>If you are not already familiar with NN and activation functions, don&rsquo;t worry about the ReLU (<code>tf.nn.relu()</code>). Just know that TensorFlow provides a very rich set of tools to work with machine learning.</p>
+
+
+
+      
+      
+      
+      <hr/>
+      <p><a href="" id="series"></a>This is a post in the <b>tensorflow-101</b> series.<br/>
+      Other posts in this series:</p>
+      
+      
+      <ul class="series">
+        
+        <li>Feb 25, 2018 - 
+          
+          TensorFlow Basics
+          
+        </li>
+        
+      </ul>
+       
+
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost") 
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by <a href="http://disqus.com/?ref_noscript">Disqus.</a></noscript>
+    </div>
+  </div> 
+
+</body>w
+</html>

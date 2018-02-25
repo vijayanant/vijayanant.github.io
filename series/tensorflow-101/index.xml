@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tensorflow 101 on fossick</title>
+    <link>https://vijayanant.github.io/series/tensorflow-101/</link>
+    <description>Recent content in Tensorflow 101 on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved</copyright>
+    <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/series/tensorflow-101/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TensorFlow Basics</title>
+      <link>https://vijayanant.github.io/blog/tensorflow-basics/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/blog/tensorflow-basics/</guid>
+      <description>TensorFlow is Google&amp;rsquo;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
+Basics Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a Session
+import tensorflow as tf x = tf.random_uniform([10]) print(x) What do you think the above code prints?</description>
+    </item>
+    
+  </channel>
+</rss>
