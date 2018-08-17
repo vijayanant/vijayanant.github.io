@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>fossick</title>
-    <link>https://vijayanant.github.io/</link>
-    <description>Recent content on fossick</description>
+    <title>Posts on fossick</title>
+    <link>https://vijayanant.github.io/posts/</link>
+    <description>Recent content in Posts on fossick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vijayanant.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -141,17 +141,6 @@ Note that the side panes (NERDTree on the left and Tagbar on the right) auto-col
       <guid>https://vijayanant.github.io/posts/performance-analysis-in-python/</guid>
       <description>My recent escapade with Python taught me many things. One of which is to &amp;ldquo;start doing something that interests you. And each such daring act will teach you many more things.&amp;rdquo;
 This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://vijayanant.github.io/about/</link>
-      <pubDate>Mon, 28 Jul 2014 11:14:25 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/about/</guid>
-      <description>Human. Programmer.
-Writing about it is one of the best ways to understand anything. By writing here I hope to better myself along the way. I will be happy if this helps someone else too.
-This site also contains some of my experiences with programming and a few things that I have learnt over the years.</description>
     </item>
     
     <item>

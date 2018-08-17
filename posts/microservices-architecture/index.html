@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.46" />
+
+    
+    
+    
+
+<title> • fossick</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Microservice Architecture with Docker Microservice architecture is a good solution for companies trying to maximize their resources, both human and machine, to develop clean, maintainable, scalable, available code. In order to take advantage of this architecture, we must first comprehend it, and then learn how to master it. Microservice Architecture is a solid, modern architecture and Docker is the best way to get started with this architecture.
+Microservice Architecture Microservice Architecture is a modern architecture designed explicitly for independence, scalability, and reliability through system failure."/>
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Microservice Architecture with Docker Microservice architecture is a good solution for companies trying to maximize their resources, both human and machine, to develop clean, maintainable, scalable, available code. In order to take advantage of this architecture, we must first comprehend it, and then learn how to master it. Microservice Architecture is a solid, modern architecture and Docker is the best way to get started with this architecture.
+Microservice Architecture Microservice Architecture is a modern architecture designed explicitly for independence, scalability, and reliability through system failure." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/microservices-architecture/" />
+
+
+
+
+
+
+<meta property="og:site_name" content="title goes here" />
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vijayanant.github.io/">fossick</a>
+      </span>
+      
+      <p class="site__description">
+         blog by Vijay Anant 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Vijay Anant.
+      
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ 
+      
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1></h1>
+     
+    
+<div class="post__meta">
+    
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 10 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<h1 id="microservice-architecture-with-docker">Microservice Architecture with Docker</h1>
+
+<p>Microservice architecture is a good solution for companies trying to maximize their resources, both human and machine, to develop clean, maintainable, scalable, available code. In order to take advantage of this architecture, we must first comprehend it, and then learn how to master it. Microservice Architecture is a solid, modern architecture and Docker is the best way to get started with this architecture.</p>
+
+<h2 id="microservice-architecture">Microservice Architecture</h2>
+
+<p>Microservice Architecture is a modern architecture designed explicitly for independence, scalability, and reliability through system failure. In their definitive expose on microservices <a href="#1">[1]</a>, James Lewis and Martin Fowler describe the “common characteristics” that such an architecture should possess. They define microservices to be a style of architecture for “developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API” <a href="#1">[1]</a>. This single sentence definition is fairly succinct: Microservices are just miniature services that make up an application. However, the power of the microservice architecture is found in the specific way these services are connected and how they are separated.</p>
+
+<h3 id="the-key-features-of-microservice-architecture">The Key Features of Microservice Architecture</h3>
+
+<p>The first key feature that a microservice architecture provides is interoperability. Because each microservice communicates with a high-level API such as HTTP, instead of something lower level like Java&rsquo;s RMI, the service is completely independent. Designers of these individual services are free to make their own lower-level decisions, from the programming language used to write the service to the physical hardware running the service. A Raspberry Pi could take part in a microservice architecture with a large cloud cluster because the HTTP-based API could allow communication between these two disparate platforms.</p>
+
+<p>The second powerful feature of microservice architecture is the way services are segregated. A major decision any architecture faces is how to divide up responsibilities—which components will be responsible for which requirements. Lewis and Fowler remark that when management break down application requirements for individual teams, they tend to break them up via technology (e.g.: UI, database, security, etc) <a href="#1">[1]</a>. They further suggest that such an architecture will inevitably follow Conway&rsquo;s Law, which says, “Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization&rsquo;s communication structure.” This might be convenient for short-term applications, but it is less ideal in the long-term—and most software teams want their applications to work in the long term. Instead of separating responsibilities by technical necessity, the microservice architecture divides services by their “business capability” <a href="#1">[1]</a>. This results in team independence, e.g.: the UI team no longer depends upon another team to design and implement the database for their application. A team must be full-stack, and, as a result, will have much more autonomy in making design and implementation decisions.</p>
+
+<h3 id="benefits-of-microservice-architecture">Benefits of Microservice Architecture</h3>
+
+<p>Clearly, the main theme of microservice architecture is independence. The benefits of design and implementation independence are numerous.</p>
+
+<p>The first benefit has already been mentioned: Teams responsible for their own full-stack processes are free to choose implementation tools, libraries, and languages<sup><a href="#footnote-1">1</a></sup> that they want and the final products can be distributed across many types of physical hardware, including cloud computing resources.</p>
+
+<p>Secondly, the coupling between modules is reduced drastically. Since services must communicate between each other by a high-level API, they do not have build-time dependencies on each other. As long as the API evolution doesn&rsquo;t result in breaking changes, the service can continue to be improved with new functionality and receive maintenance without ever interfering with other services.</p>
+
+<p>Another benefit of microservices, which is also a necessity due to structure, is decentralized data. In a monolithic architecture, it is not uncommon for all application data to reside in a single database. In the microservice style, each service has its own data store, and these data stores are very rarely shared. With the rise in understanding and popularity of NoSQL, this segregation of data allows individual services to store their data using a tool that best fits their data, whether it be SQL, NoSQL, or something different entirely, like Elasticsearch.</p>
+
+<p>Yet another benefit of this style of architecture is that it can be designed for failure. To clarify, I will use the example of Chaos Monkey developed by Netflix. In 2015, Time magazine reported that 37% of North American internet traffic “during peak evening hours” consisted of Netflix streaming video <a href="#2">[2]</a>. Because the demand for Netflix video is so great and because the content Netflix distributes must allow users to engage in real-time, Netflix must have a very reliable, low latency system. To meet this need, Netflix relies on Amazon&rsquo;s AWS  cloud computing platform. While AWS can provide the scalability and distributed replications, Netflix&rsquo;s applications must still be designed to work together in such an environment. Netflix&rsquo;s concern in this scenario is that a single service failure could bring down their network. Netflix says that their “best defense against major unexpected failures is to fail often. By frequently causing failures, we force our services to be built in a way that is more resilient” <a href="#3">[3]</a>. And Netflix does cause failures—literally. The Chaos Monkey tool&rsquo;s task is to randomly select a running service and to terminate it. Chaos Monkey terminates small parts at a time so that no customers will be impacted, but if the system were not designed to continue working through these intentional failures, the system would quickly be brought to its knees. Since the whole is a sum of its parts, each service must be able to compensate for the failures of other services, as well as accept new services that have been spun up to take the place of those which were defective.</p>
+
+<h3 id="alternatives-to-microservice-architecture">Alternatives to Microservice Architecture</h3>
+
+<p>As we can see, microservice architecture brings about very positive characteristics in the systems which follow this pattern. Microservices are perceived as a step forward in the domain of software architecture, but it is worth considering what architectural styles and their relevant benefits a transition to a microservice architecture might abandon.</p>
+
+<p>Microservice architecture falls under the umbrella of Service-Oriented Architecture (SOA). Some equate the two, claiming that “Microservice” is just a buzzword invented to describe a preexisting architectural pattern. Lewis and Fowler in <a href="#1">[1]</a> say this isn&rsquo;t too far from the mark, but that SOA can also imply the use of a design structure called the Enterprise Service Bus (ESB), or as Jim Webber has referred to it, the “Egregious Spaghetti Box” <a href="#4">[4]</a>. While the ESB pattern was originally designed to be much closer to the microservice pattern we see today, vendors began selling hub-and-spoke Enterprise Application Integration middleware as ESB and, according to Matt McLarty from InfoWorld, “customers ate them up” [<a href="#5">[5]</a>. The resulting structure more closely resembled that of monolithic architecture.</p>
+
+<p>Monolithic architecture might sound old and unusable, but monolithic architecture has its place. Monoliths produce an executable output that is designed to run together on a single physical or virtual machine. A monolithic style is acceptable when the application is small and the solution is evident. In fact, monolithic architecture is often a preferable pattern to follow when designing a new system. Fowler contends in <a href="#6">[6]</a> that successful microservice architectures have grown out of a monolith, and that those projects which began as a pure microservices tend to fall apart. Microservices require a component separation based around business value, and since business value of components is shaped by customers, it is easy to get the separation of responsibilities wrong. Fowler reasons that the cost of using microservices from the start of a project is often too great—that the cost of trying to maintain a set of microservices will inhibit progress. Instead, he says teams should consider a “monolith-first strategy, where you should build a new application as a monolith initially, even if you think it&rsquo;s likely that it will benefit from a microservices architecture” <a href="#6">[6]</a>. Fowler outlines a couple variations on the monolith-first strategy when moving from a monolith to microservices: design the monolith with components in mind and then refactor components out. Use Strangler Pattern to “peel off” components and implement new components as microservices, or completely discard the monolith and re-write the microservices from scratch (the benefit here is that the original monolith design does not have to care about a later refactoring and can help a company be first to market).</p>
+
+<p>Monolithic architecture can be used as a stepping stone to microservices, but it is often incorrectly thought of as the only alternative to a microservice architecture. Often, any style of architecture that does not follow the microservice pattern is called a monolith, and this is a misconception. As an alternative to both monolithic and microservice architectures, it is possible to use a cookie-cutter architecture pattern as documented by Paul Hammant in <a href="#7">[7]</a>. Instead of scaling each service independently, it is possible to instead scale the entire system at once, replicating the processes again and again to machines as demand increases. It is also possible to design components that interact over a common language specific interface (as opposed to HTTP) inside of a single process and then scale that process to many machines. Neither of these variations of SOA are true microservices or monoliths because they are independently built processes or services (not a monolith), but they are not independently scaled or deployed (not a microservice). Cookie-cutter architecture can be easier to use and understand, so it can be used as an alternative to both microservices and monoliths. For a depiction of how monoliths differ from microservices, see Figure 1.</p>
+
+<p><img src="https://martinfowler.com/articles/microservices/images/sketch.png" alt="Figure 1: Difference between dow Monoliths and Microservices scale [1]" />
+<em>Figure 1: Difference between how Monoliths and Microservices scale <a href="#1">[1]</a></em></p>
+
+<h3 id="microservice-architecture-criticism">Microservice Architecture Criticism</h3>
+
+<p>Though microservices have many benefits and the alternatives seem like inferior solutions, there are still some drawbacks to adopting the microservice architecture.
+First, there is some duplication of effort. Benjamin Wootton, CTO of Contino, points out in <a href="#8">[8]</a> that changing requirements which span services are difficult to implement. A new service could be created to fulfill the system-wide change, but that would introduce synchronous coupling<sup><a href="#footnote-2">2</a></sup> which is undesirable. A common library could be used between the running services to avoid this coupling, but since microservices often polyglot, this solution is often not possible. The only remaining solution that would not result in synchronous coupling could result in duplicating the work between services. This is not a problem with monolithic applications.</p>
+
+<p>Next is the issue of testability and asynchronicity. Unlike monoliths and some SOA pattern designs, microservices communicate using primarily asynchronous calls. This results in a more complicated system, especially in the area of testing when needing to test a service which relies on other services because it is hard to mock the production environment. Wootton says that instead of placing a large emphasis on testing, developers focus on monitoring their services in production to find problems and ensure correctness <a href="#8">[8]</a>. Eugene Dvorkin points out in <a href="#9">[9]</a> that monitoring itself can be a difficult problem for a distributed system; it can be hard to aggregate metrics and error logs on running services. Fortunately, Dvorkin provides an answer to these problems, telling his readers to use prebuilt solutions like Logstash and Riemann.</p>
+
+<p>However, the largest drawback, by far, is the complexity of microservices and the cost of operations as a direct result. Microservice architecture requires skilled DevOps and System Networking teams to deploy the very complex final product that such an architectural style produces. Because of its polyglot nature, the process is only complicated further. Wootton says the operations team must be “embedded within your development team” as developers are constructing a full-stack service using whichever tools they desire <a href="#8">[8]</a>. The deployment, monitoring, and provisioning hardware for all the services also add up and can make the entire development process slower <a href="#9">[9]</a>. This is the caveat of the microservice architecture: sure, it is possible to build a great distributed system, but developers must have the know-how and the tooling to maintain it. A key tool used by most successful adopters of the microservice architecture to bring their projects to life is the Linux container.</p>
+
+  </div>
+  
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

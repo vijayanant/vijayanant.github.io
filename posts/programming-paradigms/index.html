@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.46" />
+
+    
+    
+    
+
+<title>Thinking in Imperative, Object Oriented and Functional way • fossick</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Thinking in Imperative, Object Oriented and Functional way"/>
+<meta name="twitter:description" content="programming paradigms stem from different concepts about how the world works. They represent different opinions about how to best model the world while we are writing programs."/>
+
+<meta property="og:title" content="Thinking in Imperative, Object Oriented and Functional way" />
+<meta property="og:description" content="programming paradigms stem from different concepts about how the world works. They represent different opinions about how to best model the world while we are writing programs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/programming-paradigms/" />
+
+
+
+<meta property="article:published_time" content="2017-09-15T00:00:00&#43;05:30"/>
+
+<meta property="article:modified_time" content="2017-09-15T00:00:00&#43;05:30"/>
+
+<meta property="og:site_name" content="title goes here" />
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vijayanant.github.io/">fossick</a>
+      </span>
+      
+      <p class="site__description">
+         blog by Vijay Anant 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Vijay Anant.
+      
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ 
+      
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Thinking in Imperative, Object Oriented and Functional way</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Sep 15, 2017
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<p>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity.  Complex code base is not only harder to test but testing is that much less effective.</p>
+
+<h2 id="programming-paradigms">Programming Paradigms</h2>
+
+<p>Different programming styles tries to deal with the complexity in their own way. The following sections discusses some common paradigms in general purpose programming.</p>
+
+<p>The examples given are representative of the paradigm and are simple. They are not representitives of solutions to handling complexity. Complexities that arise due to  state update and control flow are usually visible in fairly large code base.</p>
+
+<h2 id="the-imperative-style">The Imperative Style</h2>
+
+<p>In <a href="https://en.wikipedia.org/wiki/Imperative_programming">imperative programming</a>, the programs consists of an explicit sequence of instructions/commands that update shared state. Control flow is explicit: commands detail how the computation takes place, step by step. Each step affects the global state of the system.</p>
+
+<p>Since each step can essentially updates the (global, shared) state, any part of the program can update the state. It is up to the programmer to keep track of how and where the state is being updated and tailor the control flow such that the only desired updates happen and in a perticular order. As the number possible program state increases so does the number of places the state is updated. It becomes harder to keep the program in consistent state. It will soon become a complex cogwheel system with too many moving parts.</p>
+
+<pre><code class="language-C">result = []
+i = 0
+start:
+  numEmployees = length(employees)
+  if i &gt;= numEmployees goto finished
+  e = employees[i]
+  rating = e.rating
+  if rating &lt;= 7 goto nextOne
+  upperCaseName = toUpper(e.name)
+  addToList(result, upperCaseName)
+nextOne:
+  i = i + 1
+  goto start
+finished:
+  return sort(result)
+</code></pre>
+
+<p>Use of procedures and structured programming (sometimes considered a separate paradigm) is a way to contain complexity.</p>
+
+<pre><code class="language-C">result = [];
+for (i = 0; i &lt; length(employees); i++) {
+  e = employees[i];
+  if(e.rating &gt; 7) {
+    addToList(result,toUpper(e.name));
+  }
+}
+return sort(result);
+</code></pre>
+
+<h2 id="the-object-oriented-style">The Object Oriented Style</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object Oriented Programming</a> is based on passing messages between objects. Objects respond to messages by performing appropriate operations. These operations are generally called methods.</p>
+
+<p>By encapsulating data and operations that can be performed on that data, into a single entity (object), we have (in  a way) segregated moving parts of the system in to smaller groups. There are still moving parts, a lot of them, but they are grouped in a way which allows programmer to handle each group (class of objects)  in isolation.</p>
+
+<p>In pure OO style, the control structures like the conditionals and loops become messages themselves.</p>
+
+<!--```Smalltalk-->
+
+<pre><code>result := List new.
+employees each: [:e |
+  e rating greaterThan: 7 ifTrue: [result add (e name upper)]]
+result sort.
+^result
+</code></pre>
+
+<p>Notice that, even though we can now deal with state updates in isolation, objects need to collaborate among themselves to be useful. That happens by the way of message passing. As the number of objects (classes of objects) increases the communication between them also increases and needs to be dealt with carefully.</p>
+
+<h2 id="the-functional-style">The Functional Style</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a> is based on the mathematical concept of a function. In mathematics there is no notion of updating a variable/state. Functional programming, thus, removes the whole &lsquo;update the shared state&rsquo; business. Functions are the building blocks in FP. Functions take arguments and compute a result based on the inputs provided. Control flow is expressed by combining functions (<a href="https://en.wikipedia.org/wiki/Function_composition">function composition</a>).</p>
+
+<pre><code>sort ( map (toUpperCase . name) ( filter (\e -&gt; rating e &gt; 7) employees))
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In essence, programming paradigms stem from different concepts about how the world works. They represent different opinions about how to best model the world while we are writing programs.</p>
+
+<p>The imperative models are based on how computers works. We think in terms of variables that hold values and procedures that manipulate the values held in those variable.</p>
+
+<p>The object-oriented paradigm models everything as an object. These objects can then interact with each other and thereby update their internal state when something in the system changes. This corresponds to how we often conceptualize the world.</p>
+
+<p>The functional programming paradigm takes a different approach. The behavior of the system is modelled using pure functions and these are strictly separated from the actual data within the system, which is modelled with immutable values. This is based on the mathematical perspective that a value itself cannot change and all changes in the system are actually the application of a function.</p>
+
+  </div>
+  
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

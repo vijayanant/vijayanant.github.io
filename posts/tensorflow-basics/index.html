@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.46" />
+
+    
+    
+    
+
+<title>TensorFlow Basics • fossick</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TensorFlow Basics"/>
+<meta name="twitter:description" content="TensorFlow is Google&rsquo;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
+Basics Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a Session
+import tensorflow as tf x = tf.random_uniform([10]) print(x)  What do you think the above code prints?"/>
+
+<meta property="og:title" content="TensorFlow Basics" />
+<meta property="og:description" content="TensorFlow is Google&rsquo;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
+Basics Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a Session
+import tensorflow as tf x = tf.random_uniform([10]) print(x)  What do you think the above code prints?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/tensorflow-basics/" />
+
+
+
+<meta property="article:published_time" content="2017-10-02T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-10-02T00:00:00&#43;00:00"/>
+
+<meta property="og:site_name" content="title goes here" />
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vijayanant.github.io/">fossick</a>
+      </span>
+      
+      <p class="site__description">
+         blog by Vijay Anant 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Vijay Anant.
+      
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️ 
+      
+      
+    </p>
+  </div>
+  <div>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>TensorFlow Basics</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 02, 2017
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<p>TensorFlow is Google&rsquo;s open source library for numerical computation. All computations are represented as <strong>Data Flow Graphs</strong>. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.</p>
+
+<h2 id="basics">Basics</h2>
+
+<p>Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a <strong>Session</strong></p>
+
+<pre><code class="language-python">import tensorflow as tf
+x = tf.random_uniform([10])
+print(x)
+</code></pre>
+
+<p>What do you think the above code prints?</p>
+
+<p><code>Tensor(&quot;random_uniform:0&quot;, shape=(10,), dtype=float32)</code></p>
+
+<p><code>x</code> is a Tensor. Remember that everyting in tensorflow is graph made of nodes and edges. The call to <code>tf.random_uniform()</code> returns a <code>Tensor</code>.</p>
+
+<h3 id="tensor">Tensor</h3>
+
+<p>A tensor is what is passed between nodes (edge). It represents the (input and) output of an Operation (node). A tensor does not hold the values of the operation&rsquo;s output, but instead provides a means of computing those values in a Session.</p>
+
+<p>In the above example, <code>tf.random_uniform()</code> is an Operation and it returns a Tensor.</p>
+
+<p>Take another look at the output of previous example -</p>
+
+<p><code>Tensor(&quot;random_uniform:0&quot;, shape=(10,), dtype=float32)</code></p>
+
+<p>it tells us that x is a Tensor, the opration name is random_uniform (:0 says its the output), the shape of the tensor (a list of 10 elements) and data type of the elements in the list(float32).</p>
+
+<p>You can get information about the tensor using many of the functions and attribute values available.</p>
+
+<pre><code class="language-python">shape = x.get_shape().as_list()
+ty = x.dtype
+name = x.name
+op_name = x.op.name
+print([name, op_name, ty, shape])
+</code></pre>
+
+<p><code>
+['random_uniform:0', 'random_uniform', tf.float32, [10]]
+</code></p>
+
+<p>So, how do we get the actual result?</p>
+
+<h3 id="sessions-and-graphs">Sessions and Graphs</h3>
+
+<p>Remember we mentioned earlier that every computation is represented as a graph? By default, every operation is added to a default graph. And a Session is where the operations in the graph are run.</p>
+
+<pre><code class="language-python">g = tf.get_default_graph()
+session = tf.Session(graph=g)
+
+result = session.run(x)
+
+print(result)
+session.close()
+</code></pre>
+
+<p>The result -</p>
+
+<pre><code>[0.23983908 0.30026257 0.21374762 0.18318117 0.8556453  0.25169706
+ 0.8703637  0.69733584 0.9137391  0.20477629]
+</code></pre>
+
+<h3 id="operations">Operations</h3>
+
+<p>Operations are the nodes in the graph that consume and/or produce Tensors.</p>
+
+<pre><code class="language-python">[op.name for op in g.get_operations()]
+</code></pre>
+
+<pre><code class="language-python">['random_uniform/shape',
+ 'random_uniform/min',
+ 'random_uniform/max',
+ 'random_uniform/RandomUniform',
+ 'random_uniform/sub',
+ 'random_uniform/mul',
+ 'random_uniform']
+</code></pre>
+
+<h3 id="variables">Variables</h3>
+
+<p>Variables are stateful nodes which output their current value. State is retained across multiple executions of a graph. A variable holds a  value, which can be a Tensor of any type and shape. The type and shape of the variable are fixed at initialization time. The value can be changed using one of the assign methods.</p>
+
+<pre><code class="language-python">import tensorflow as tf
+
+mat = [ [1,2,3], [4,5,6], [7,8,9] ]
+trans = tf.transpose(mat)
+
+x = tf.Variable(mat)
+y = tf.matmul(mat, trans)
+
+x.assign(tf.add(y,1))
+</code></pre>
+
+<h3 id="placeholders">Placeholders</h3>
+
+<p>Placeholders are nodes whose value is fed in at execution time.</p>
+
+<pre><code class="language-python">import tensorflow as tf
+
+x = tf.placeholder(tf.float32, shape=(1024, 1024))
+y = tf.matmul(x, x)
+
+with tf.Session() as sess:
+  rand_array = np.random.rand(1024, 1024)
+  print(sess.run(y, feed_dict={x: rand_array}))  # Will succeed.
+</code></pre>
+
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+
+<p>We have so far learned what tensorFlow is about and got basic intuition towards Tensors, Graphs, Operations and Sessions. We have also learned about how to use Variables and Placeholders. Now, we will put all that togetther.</p>
+
+<ul>
+<li>First, build a graph using variables and placeholders.</li>
+<li>Then, deploy the graph onto a session, which is the execution environment</li>
+</ul>
+
+<pre><code class="language-python">import numpy as np 
+import tensorflow as tf
+
+b = tf.Variable(tf.zeros((100,)))
+W = tf.Variable(tf.random_uniform((784, 100),-1, 1))
+
+x = tf.placeholder(tf.float32, (100, 784))
+
+# h = ReLu(Wx + b)
+h = tf.nn.relu(tf.matmul(x, W) + b)
+
+sess = tf.Session()
+sess.run(tf.initialize_all_variables())
+sess.run(h, {x: np.random.random_sample((100, 784))})
+ 
+</code></pre>
+
+<p>If you are not already familiar with NN and activation functions, don&rsquo;t worry about the ReLU (<code>tf.nn.relu()</code>). Just know that TensorFlow provides a very rich set of tools to work with machine learning.</p>
+
+  </div>
+  
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
+
+
+
+    
+
+
+
+    </body>
+</html>

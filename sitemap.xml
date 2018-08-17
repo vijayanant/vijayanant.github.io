@@ -3,73 +3,68 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vijayanant.github.io/blog/tensorflow-basics/</loc>
+    <loc>https://vijayanant.github.io/posts/basics-lambda/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/outward-counterclockwise-spiral-matrix-traversal---haskell/</loc>
+    <loc>https://vijayanant.github.io/posts/spiral/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/notes-on-sets-relations-and-functions/</loc>
+    <loc>https://vijayanant.github.io/posts/basic-math/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/lambda-calculus/</loc>
+    <loc>https://vijayanant.github.io/posts/tensorflow-basics/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/thinking-in-imperative-object-oriented-and-functional-way/</loc>
-    <lastmod>2017-09-15T14:42:26+05:30</lastmod>
+    <loc>https://vijayanant.github.io/posts/programming-paradigms/</loc>
+    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/ooh-principles/</loc>
+    <loc>https://vijayanant.github.io/posts/oo-design-principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/a-detour-called-monads/</loc>
+    <loc>https://vijayanant.github.io/posts/monad-detour/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/decisions/</loc>
+    <loc>https://vijayanant.github.io/posts/decisions/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/duplication-vs-abstraction/</loc>
+    <loc>https://vijayanant.github.io/posts/duplication-vs-abstraction/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/understanding-monads-using-function-composition/</loc>
+    <loc>https://vijayanant.github.io/posts/haskel-composition-monad/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/pair-programming---what-why-and-how/</loc>
+    <loc>https://vijayanant.github.io/posts/pairing/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/10-vim-plugins-that-made-my-vim-easy/</loc>
+    <loc>https://vijayanant.github.io/posts/new-vim-setup/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/performance-analysis-in-python/</loc>
+    <loc>https://vijayanant.github.io/posts/performance-analysis-in-python/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/desc/series-hugo101/</loc>
-    <lastmod>2014-08-12T11:09:35+00:00</lastmod>
   </url>
   
   <url>
@@ -78,42 +73,22 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/blog/</loc>
+    <loc>https://vijayanant.github.io/posts/microservices-architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vijayanant.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vijayanant.github.io/posts/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/desc/</loc>
-    <lastmod>2014-08-12T11:09:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/series-desc/hugo-101/</loc>
-    <lastmod>2014-08-12T11:09:35+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/series/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/series-desc/</loc>
-    <lastmod>2014-08-12T11:09:35+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://vijayanant.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/series/tensorflow-101/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
