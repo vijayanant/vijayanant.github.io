@@ -143,15 +143,5 @@ Note that the side panes (NERDTree on the left and Tagbar on the right) auto-col
 This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://vijayanant.github.io/posts/microservices-architecture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/microservices-architecture/</guid>
-      <description>Microservice Architecture with Docker Microservice architecture is a good solution for companies trying to maximize their resources, both human and machine, to develop clean, maintainable, scalable, available code. In order to take advantage of this architecture, we must first comprehend it, and then learn how to master it. Microservice Architecture is a solid, modern architecture and Docker is the best way to get started with this architecture.
-Microservice Architecture Microservice Architecture is a modern architecture designed explicitly for independence, scalability, and reliability through system failure.</description>
-    </item>
-    
   </channel>
 </rss>

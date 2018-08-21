@@ -73,10 +73,6 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/microservices-architecture/</loc>
-  </url>
-  
-  <url>
     <loc>https://vijayanant.github.io/categories/</loc>
     <priority>0</priority>
   </url>
