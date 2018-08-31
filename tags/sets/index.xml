@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sets on fossick</title>
+    <link>https://vijayanant.github.io/tags/sets/</link>
+    <description>Recent content in Sets on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/tags/sets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notes on Sets, Relations, and Functions</title>
+      <link>https://vijayanant.github.io/posts/basic-math/</link>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/basic-math/</guid>
+      <description>Standard notation for sets  curly braces for listing the elements of a set explicitly ({. . .}) showing how to construct one set from another by “comprehension” ({x ∈ S | . . .}) ∅ for the empty set, and S \ T for the set difference of S and T (the set of elements of S that are not also elements of T ) The size of a set S is written |S| The powerset of S, i.</description>
+    </item>
+    
+  </channel>
+</rss>

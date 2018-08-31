@@ -393,27 +393,45 @@ a {
 #references li {
   font-size: 0.9rem; }
 
+code,
 pre {
-  tab-size: 2; }
-  pre code {
-    white-space: pre-wrap; }
-
-code {
-  font-family: "SF-Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Roboto Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
-  font-size: 0.9rem; }
+  font-family: "SF-Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Roboto Mono", "Ubuntu Mono", "Courier New", Courier, monospace; }
 
 code {
   padding: .25em .5em;
+  font-size: 85%;
   color: #bf616a;
   background-color: #f9f9f9;
   border-radius: 3px; }
 
-.hljs {
-  font-size: 0.9rem;
-  font-weight: 300;
-  white-space: pre;
-  border: 1px solid #ddd;
-  border-radius: 4px; }
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent; }
+
+.highlight {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border-radius: .25rem; }
+  .highlight pre {
+    margin-bottom: 0;
+    overflow-x: auto; }
+  .highlight .lineno {
+    display: inline-block;
+    padding-right: .75rem;
+    padding-left: .25rem;
+    color: #999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
 
 /*
 body .gist {

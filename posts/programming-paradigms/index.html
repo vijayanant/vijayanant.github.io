@@ -18,8 +18,8 @@
     
 
 <title>Thinking in Imperative, Object Oriented and Functional way • fossick</title>
-
-
+<meta name="description" content="blog by Vijay Anant:: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="blog, thoughts, programming">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Thinking in Imperative, Object Oriented and Functional way"/>
 <meta name="twitter:description" content="programming paradigms stem from different concepts about how the world works. They represent different opinions about how to best model the world while we are writing programs."/>
@@ -48,11 +48,6 @@
 
 
     
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
-
-
 
 
 <link rel="stylesheet" href="/css/hyde-hyde.css">
@@ -183,35 +178,33 @@
 <p>In <a href="https://en.wikipedia.org/wiki/Imperative_programming">imperative programming</a>, the programs consists of an explicit sequence of instructions/commands that update shared state. Control flow is explicit: commands detail how the computation takes place, step by step. Each step affects the global state of the system.</p>
 
 <p>Since each step can essentially updates the (global, shared) state, any part of the program can update the state. It is up to the programmer to keep track of how and where the state is being updated and tailor the control flow such that the only desired updates happen and in a perticular order. As the number possible program state increases so does the number of places the state is updated. It becomes harder to keep the program in consistent state. It will soon become a complex cogwheel system with too many moving parts.</p>
-
-<pre><code class="language-C">result = []
-i = 0
-start:
-  numEmployees = length(employees)
-  if i &gt;= numEmployees goto finished
-  e = employees[i]
-  rating = e.rating
-  if rating &lt;= 7 goto nextOne
-  upperCaseName = toUpper(e.name)
-  addToList(result, upperCaseName)
-nextOne:
-  i = i + 1
-  goto start
-finished:
-  return sort(result)
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-C" data-lang="C"><span></span><span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
+<span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+<span style="color: #f8f8f2">start:</span>
+  <span style="color: #f8f8f2">numEmployees</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">length(employees)</span>
+  <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&gt;=</span> <span style="color: #f8f8f2">numEmployees</span> <span style="color: #66d9ef">goto</span> <span style="color: #f8f8f2">finished</span>
+  <span style="color: #f8f8f2">e</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">employees[i]</span>
+  <span style="color: #f8f8f2">rating</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">e.rating</span>
+  <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">rating</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">7</span> <span style="color: #66d9ef">goto</span> <span style="color: #f8f8f2">nextOne</span>
+  <span style="color: #f8f8f2">upperCaseName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">toUpper(e.name)</span>
+  <span style="color: #f8f8f2">addToList(result,</span> <span style="color: #f8f8f2">upperCaseName)</span>
+<span style="color: #f8f8f2">nextOne:</span>
+  <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span>
+  <span style="color: #66d9ef">goto</span> <span style="color: #f8f8f2">start</span>
+<span style="color: #f8f8f2">finished:</span>
+  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">sort(result)</span>
+</code></pre></div>
 
 <p>Use of procedures and structured programming (sometimes considered a separate paradigm) is a way to contain complexity.</p>
-
-<pre><code class="language-C">result = [];
-for (i = 0; i &lt; length(employees); i++) {
-  e = employees[i];
-  if(e.rating &gt; 7) {
-    addToList(result,toUpper(e.name));
-  }
-}
-return sort(result);
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-C" data-lang="C"><span></span><span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[];</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">length(employees);</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">e</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">employees[i];</span>
+  <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(e.rating</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">7</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">addToList(result,toUpper(e.name));</span>
+  <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">sort(result);</span>
+</code></pre></div>
 
 <h2 id="the-object-oriented-style">The Object Oriented Style</h2>
 
@@ -220,24 +213,21 @@ return sort(result);
 <p>By encapsulating data and operations that can be performed on that data, into a single entity (object), we have (in  a way) segregated moving parts of the system in to smaller groups. There are still moving parts, a lot of them, but they are grouped in a way which allows programmer to handle each group (class of objects)  in isolation.</p>
 
 <p>In pure OO style, the control structures like the conditionals and loops become messages themselves.</p>
-
-<!--```Smalltalk-->
-
-<pre><code>result := List new.
-employees each: [:e |
-  e rating greaterThan: 7 ifTrue: [result add (e name upper)]]
-result sort.
-^result
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Smalltalk" data-lang="Smalltalk"><span></span><span style="color: #f8f8f2">result</span> <span style="color: #f92672">:=</span> <span style="color: #a6e22e">List</span> <span style="color: #f8f8f2">new.</span>
+<span style="color: #f8f8f2">employees</span> <span style="color: #a6e22e">each:</span> [<span style="color: #f92672">:</span><span style="color: #f8f8f2">e</span> <span style="color: #f92672">|</span>
+  <span style="color: #f8f8f2">e</span> <span style="color: #a6e22e">rating</span> <span style="color: #a6e22e">greaterThan:</span> <span style="color: #ae81ff">7</span> <span style="color: #f8f8f2">ifTrue:</span> [<span style="color: #f8f8f2">result</span> <span style="color: #a6e22e">add</span> (<span style="color: #f8f8f2">e</span> <span style="color: #a6e22e">name</span> <span style="color: #a6e22e">upper</span>)]]
+<span style="color: #a6e22e">result</span> <span style="color: #a6e22e">sort</span><span style="color: #f8f8f2">.</span>
+<span style="color: #f92672">^</span><span style="color: #f8f8f2">result</span>
+</code></pre></div>
 
 <p>Notice that, even though we can now deal with state updates in isolation, objects need to collaborate among themselves to be useful. That happens by the way of message passing. As the number of objects (classes of objects) increases the communication between them also increases and needs to be dealt with carefully.</p>
 
 <h2 id="the-functional-style">The Functional Style</h2>
 
 <p><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a> is based on the mathematical concept of a function. In mathematics there is no notion of updating a variable/state. Functional programming, thus, removes the whole &lsquo;update the shared state&rsquo; business. Functions are the building blocks in FP. Functions take arguments and compute a result based on the inputs provided. Control flow is expressed by combining functions (<a href="https://en.wikipedia.org/wiki/Function_composition">function composition</a>).</p>
-
-<pre><code>sort ( map (toUpperCase . name) ( filter (\e -&gt; rating e &gt; 7) employees))
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">SumType</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">SA</span> <span style="color: #f92672">|</span> <span style="color: #66d9ef">SB</span>
+<span style="color: #a6e22e">sort</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">map</span> <span style="color: #f8f8f2">(toUpperCase</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">name)</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">filter</span> <span style="color: #f8f8f2">(</span><span style="color: #a6e22e">\</span><span style="color: #f8f8f2">e</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">rating</span> <span style="color: #f8f8f2">e</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">7</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">employees))</span>
+</code></pre></div>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -342,18 +332,6 @@ if (!doNotTrack) {
   crossorigin="anonymous">
 </script>
 
-
-    
-        
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        
-        <script type="text/javascript">
-            hljs.configure({languages: []});
-            hljs.initHighlightingOnLoad();
-        </script>
-        
-        
 
 
 

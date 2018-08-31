@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lambda Calculus on fossick</title>
+    <link>https://vijayanant.github.io/tags/lambda-calculus/</link>
+    <description>Recent content in Lambda Calculus on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/tags/lambda-calculus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lambda Calculus</title>
+      <link>https://vijayanant.github.io/posts/basics-lambda/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/basics-lambda/</guid>
+      <description>The models of computation can be broadly classified into two groups - those that are based on machine model and the λ Calculus.
+Machine models are based on the idea of a program acting on data by modification. So a Turing Machine consists of a program acting on the data. There is a clear distinction between program and data. Programs are not data and data do not contain programs (&amp;lsquo;first order&amp;rsquo;).</description>
+    </item>
+    
+  </channel>
+</rss>

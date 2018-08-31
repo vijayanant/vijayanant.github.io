@@ -6,9 +6,118 @@
     <description>Recent content in Tags on fossick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vijayanant.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Beta Reduction</title>
+      <link>https://vijayanant.github.io/tags/beta-reduction/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/beta-reduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Call by Name</title>
+      <link>https://vijayanant.github.io/tags/call-by-name/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/call-by-name/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Call by Value</title>
+      <link>https://vijayanant.github.io/tags/call-by-value/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/call-by-value/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Church Numerals</title>
+      <link>https://vijayanant.github.io/tags/church-numerals/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/church-numerals/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional Programming</title>
+      <link>https://vijayanant.github.io/tags/functional-programming/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>https://vijayanant.github.io/tags/functions/</link>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/functions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://vijayanant.github.io/tags/lambda/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda Calculus</title>
+      <link>https://vijayanant.github.io/tags/lambda-calculus/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/lambda-calculus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maths</title>
+      <link>https://vijayanant.github.io/tags/maths/</link>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/maths/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ordered Sets</title>
+      <link>https://vijayanant.github.io/tags/ordered-sets/</link>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/ordered-sets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relations</title>
+      <link>https://vijayanant.github.io/tags/relations/</link>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/relations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sets</title>
+      <link>https://vijayanant.github.io/tags/sets/</link>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/sets/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
