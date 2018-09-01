@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Refactoring on fossick</title>
+    <link>https://vijayanant.github.io/tags/refactoring/</link>
+    <description>Recent content in Refactoring on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Jul 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Duplication Vs Abstraction</title>
+      <link>https://vijayanant.github.io/posts/duplication-vs-abstraction/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/duplication-vs-abstraction/</guid>
+      <description>When you see code duplication and can&amp;rsquo;t think of an abstraction to put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.</description>
+    </item>
+    
+  </channel>
+</rss>

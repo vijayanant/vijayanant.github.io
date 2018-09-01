@@ -6,10 +6,28 @@
     <description>Recent content in Tags on fossick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jul 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vijayanant.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Abstraction</title>
+      <link>https://vijayanant.github.io/tags/abstraction/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/abstraction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analysis</title>
+      <link>https://vijayanant.github.io/tags/analysis/</link>
+      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/analysis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Beta Reduction</title>
@@ -48,6 +66,96 @@
     </item>
     
     <item>
+      <title>Code Duplication</title>
+      <link>https://vijayanant.github.io/tags/code-duplication/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/code-duplication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code Pairing</title>
+      <link>https://vijayanant.github.io/tags/code-pairing/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/code-pairing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coding</title>
+      <link>https://vijayanant.github.io/tags/coding/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Composition</title>
+      <link>https://vijayanant.github.io/tags/composition/</link>
+      <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/composition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Decision</title>
+      <link>https://vijayanant.github.io/tags/decision/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/decision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://vijayanant.github.io/tags/deep-learning/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design Principles</title>
+      <link>https://vijayanant.github.io/tags/design-principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/design-principles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extreme Programming</title>
+      <link>https://vijayanant.github.io/tags/extreme-programming/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/extreme-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fallacy</title>
+      <link>https://vijayanant.github.io/tags/fallacy/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/fallacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional</title>
+      <link>https://vijayanant.github.io/tags/functional/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/functional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Functional Programming</title>
       <link>https://vijayanant.github.io/tags/functional-programming/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
@@ -62,6 +170,33 @@
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vijayanant.github.io/tags/functions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Happy</title>
+      <link>https://vijayanant.github.io/tags/happy/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/happy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Haskell</title>
+      <link>https://vijayanant.github.io/tags/haskell/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Imperative</title>
+      <link>https://vijayanant.github.io/tags/imperative/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/imperative/</guid>
       <description></description>
     </item>
     
@@ -84,6 +219,24 @@
     </item>
     
     <item>
+      <title>Life Lessons</title>
+      <link>https://vijayanant.github.io/tags/life-lessons/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/life-lessons/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://vijayanant.github.io/tags/machine-learning/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Maths</title>
       <link>https://vijayanant.github.io/tags/maths/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
@@ -93,11 +246,137 @@
     </item>
     
     <item>
+      <title>Matrix Traversal</title>
+      <link>https://vijayanant.github.io/tags/matrix-traversal/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/matrix-traversal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monads</title>
+      <link>https://vijayanant.github.io/tags/monads/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/monads/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Object Orientation</title>
+      <link>https://vijayanant.github.io/tags/object-orientation/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/object-orientation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Object Oriented</title>
+      <link>https://vijayanant.github.io/tags/object-oriented/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/object-oriented/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oop</title>
+      <link>https://vijayanant.github.io/tags/oop/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ordered Sets</title>
       <link>https://vijayanant.github.io/tags/ordered-sets/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vijayanant.github.io/tags/ordered-sets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Packaging</title>
+      <link>https://vijayanant.github.io/tags/packaging/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/packaging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pair Programming</title>
+      <link>https://vijayanant.github.io/tags/pair-programming/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/pair-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance Analysis</title>
+      <link>https://vijayanant.github.io/tags/performance-analysis/</link>
+      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/performance-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plugin</title>
+      <link>https://vijayanant.github.io/tags/plugin/</link>
+      <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Principles</title>
+      <link>https://vijayanant.github.io/tags/principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/principles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://vijayanant.github.io/tags/programming/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Puzzle</title>
+      <link>https://vijayanant.github.io/tags/puzzle/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/puzzle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://vijayanant.github.io/tags/python/</link>
+      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Refactoring</title>
+      <link>https://vijayanant.github.io/tags/refactoring/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/refactoring/</guid>
       <description></description>
     </item>
     
@@ -116,6 +395,51 @@
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vijayanant.github.io/tags/sets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Design</title>
+      <link>https://vijayanant.github.io/tags/software-design/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/software-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solid</title>
+      <link>https://vijayanant.github.io/tags/solid/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/solid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://vijayanant.github.io/tags/tensorflow/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://vijayanant.github.io/tags/vim/</link>
+      <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xp</title>
+      <link>https://vijayanant.github.io/tags/xp/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/xp/</guid>
       <description></description>
     </item>
     

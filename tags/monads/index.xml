@@ -1,85 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>fossick</title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Monads on fossick</title>
     <link>https://vijayanant.github.io/tags/monads/</link>
+    <description>Recent content in Monads on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Vijay Anant</author>
-    <copyright>2016 All rights reserved</copyright>
-    <updated>Fri, 20 May 2016 20:20:45 UTC</updated>
+    <lastBuildDate>Mon, 15 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/tags/monads/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Understanding Monads Using Function Composition</title>
-      <link>https://vijayanant.github.io/blog/understanding-monads-using-function-composition/</link>
-      <pubDate>Fri, 20 May 2016 20:20:45 UTC</pubDate>
-      <author>Vijay Anant</author>
-      <guid>https://vijayanant.github.io/blog/understanding-monads-using-function-composition/</guid>
-      <description>
-
-&lt;p&gt;Today I am going to commit a crime - I am about to write one more blog relating to Monads!&lt;/p&gt;
-
-&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
-
-&lt;p&gt;Even though I could use &lt;code&gt;monads&lt;/code&gt; for a while now, I never got around to understanding how they are &lt;strong&gt;composing functions&lt;/strong&gt; and why couldn&amp;rsquo;t we use the &lt;code&gt;(.)&lt;/code&gt; function to compose?&lt;/p&gt;
-
-&lt;p&gt;I wanted to understand Monads from composition view point.&lt;/p&gt;
-
-&lt;h2 id=&#34;let-s-dig-in&#34;&gt;Let&amp;rsquo;s Dig In&lt;/h2&gt;
-
-&lt;p&gt;Lets start with simple function composition&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;f:: a -&amp;gt; b
-g:: b -&amp;gt; c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;We all know the how to compose them -&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;h = g.f&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;h&lt;/code&gt; has the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Lets look at the type of &lt;code&gt;(.)&lt;/code&gt; function&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(.) :: (b -&amp;gt; c) -&amp;gt; (a -&amp;gt; b) -&amp;gt; a -&amp;gt; c&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The &lt;code&gt;(.)&lt;/code&gt; function takes  two functions (&lt;code&gt;g&lt;/code&gt; and &lt;code&gt;f&lt;/code&gt; for example) and returns a new function of the type &lt;code&gt;h:: a -&amp;gt; c&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;In essence &lt;code&gt;(g.f) x&lt;/code&gt; is same as &lt;code&gt;g(f x)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;let-us-add-some-complexity&#34;&gt;Let Us Add Some Complexity&lt;/h2&gt;
-
-&lt;p&gt;Let us say we have two more function&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;f&amp;#39; :: a -&amp;gt; (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)
-g&amp;#39; :: b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If we try to compose them using the &lt;code&gt;(.)&lt;/code&gt; function as &lt;code&gt;g&#39; . f&#39;&lt;/code&gt; we will notice that the types don&amp;rsquo;t match up. The return type of &lt;code&gt;f&#39;&lt;/code&gt; is a two-tuple &lt;code&gt;(b, String)&lt;/code&gt; where as function &lt;code&gt;g&#39;&lt;/code&gt; is expecting &lt;code&gt;b&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;For it to work, we need to modify our function &lt;code&gt;g&#39;&lt;/code&gt; to accept &lt;code&gt;(b, String)&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;g&amp;#39;&amp;#39; :: (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;) -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now we can compose them as &lt;code&gt;g&#39;&#39; . f&#39;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;magicbox&#34;&gt;MagicBox&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;What if&lt;/em&gt;&lt;/strong&gt; we could magically transform (or &lt;code&gt;lift&lt;/code&gt;) our function &lt;code&gt;g&#39;&lt;/code&gt; to &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Lets say we have such a function, and for the fun of it, call it &lt;code&gt;magicBox&lt;/code&gt;. Now we can compose &lt;code&gt;f&#39;&lt;/code&gt; and &lt;code&gt;g&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(magicBox g&amp;#39;) . f&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Lets build a magic box ourselves. It is not that hard really.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;magicBox:: (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)) -&amp;gt; (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;) -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Our &lt;code&gt;magicBox&lt;/code&gt; takes a function of type &lt;code&gt;g&#39;&lt;/code&gt; and returns a function of type &lt;code&gt;g&#39;&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;magicBox func (b, xs) = func b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;We ignore the String parameter.&lt;/p&gt;
-
-&lt;h2 id=&#34;enter-the-bind-operator&#34;&gt;Enter the Bind operator&lt;/h2&gt;
-
-&lt;p&gt;If you have ever used  &lt;code&gt;Monad&lt;/code&gt; you already know &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function.
-Lets take a look at the &lt;code&gt;&amp;gt;&amp;gt;=&lt;/code&gt; function&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(&amp;gt;&amp;gt;=) :: &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;Monad&lt;/span&gt; m =&amp;gt; m a -&amp;gt; (a -&amp;gt; m b) -&amp;gt; m b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You might also know the flipped version &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(=&amp;lt;&amp;lt;) :: &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;Monad&lt;/span&gt; m =&amp;gt; (a -&amp;gt; m b) -&amp;gt; m a -&amp;gt; m b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you look closely, the &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; resembles our &lt;code&gt;magicBox&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;(=&amp;lt;&amp;lt;)    :: &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;Monad&lt;/span&gt; m =&amp;gt; (a -&amp;gt; m b)            -&amp;gt; m a         -&amp;gt; m b
-magicBox ::            (b -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;))    -&amp;gt; (b, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;) -&amp;gt; (c, &lt;span style=&#34;color:#fff;font-weight:bold&#34;&gt;String&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;There you go. With Monad&amp;rsquo;s bind operator all we are doing is transforming the functions so that we can compose them.&lt;/p&gt;
-
-&lt;p&gt;Here is one example of how you might use &lt;code&gt;=&amp;lt;&amp;lt;&lt;/code&gt; to compose functions&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Haskell&#34; data-lang=&#34;Haskell&#34;&gt;wordCount = print . length . words =&amp;lt;&amp;lt; getContents&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <title>A Detour Called Monads</title>
+      <link>https://vijayanant.github.io/posts/monad-detour/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/monad-detour/</guid>
+      <description>When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory.</description>
     </item>
     
+    <item>
+      <title>Understanding Monads Using Function Composition</title>
+      <link>https://vijayanant.github.io/posts/haskel-composition-monad/</link>
+      <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/haskel-composition-monad/</guid>
+      <description>Today I am going to commit a crime - I am about to write one more blog relating to Monads!
+Why? Even though I could use monads for a while now, I never got around to understanding how they are composing functions and why couldn&amp;rsquo;t we use the (.) function to compose?
+I wanted to understand Monads from composition view point.
+Let&amp;rsquo;s Dig In Lets start with simple function composition</description>
+    </item>
     
   </channel>
 </rss>

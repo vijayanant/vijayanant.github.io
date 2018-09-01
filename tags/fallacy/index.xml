@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fallacy on fossick</title>
+    <link>https://vijayanant.github.io/tags/fallacy/</link>
+    <description>Recent content in Fallacy on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/tags/fallacy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Detour Called Monads</title>
+      <link>https://vijayanant.github.io/posts/monad-detour/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/monad-detour/</guid>
+      <description>When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory.</description>
+    </item>
+    
+  </channel>
+</rss>

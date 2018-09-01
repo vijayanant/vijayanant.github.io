@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imperative on fossick</title>
+    <link>https://vijayanant.github.io/tags/imperative/</link>
+    <description>Recent content in Imperative on fossick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Sep 2017 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/tags/imperative/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thinking in Imperative, Object Oriented and Functional way</title>
+      <link>https://vijayanant.github.io/posts/programming-paradigms/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/programming-paradigms/</guid>
+      <description>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity. Complex code base is not only harder to test but testing is that much less effective.
+Programming Paradigms Different programming styles tries to deal with the complexity in their own way.</description>
+    </item>
+    
+  </channel>
+</rss>

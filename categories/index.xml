@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Haskell</title>
+      <link>https://vijayanant.github.io/categories/haskell/</link>
+      <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/categories/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Maths</title>
       <link>https://vijayanant.github.io/categories/maths/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
@@ -20,11 +29,65 @@
     </item>
     
     <item>
+      <title>Object Orientation</title>
+      <link>https://vijayanant.github.io/categories/object-orientation/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/categories/object-orientation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Profiling</title>
+      <link>https://vijayanant.github.io/categories/profiling/</link>
+      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/categories/profiling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Programming</title>
       <link>https://vijayanant.github.io/categories/programming/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://vijayanant.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rant</title>
+      <link>https://vijayanant.github.io/categories/rant/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/categories/rant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Design</title>
+      <link>https://vijayanant.github.io/categories/software-design/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/categories/software-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://vijayanant.github.io/categories/tools/</link>
+      <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wisdom</title>
+      <link>https://vijayanant.github.io/categories/wisdom/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/categories/wisdom/</guid>
       <description></description>
     </item>
     

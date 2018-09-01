@@ -21,5 +21,14 @@
 Machine models are based on the idea of a program acting on data by modification. So a Turing Machine consists of a program acting on the data. There is a clear distinction between program and data. Programs are not data and data do not contain programs (&amp;lsquo;first order&amp;rsquo;).</description>
     </item>
     
+    <item>
+      <title>A Detour Called Monads</title>
+      <link>https://vijayanant.github.io/posts/monad-detour/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/monad-detour/</guid>
+      <description>When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory.</description>
+    </item>
+    
   </channel>
 </rss>

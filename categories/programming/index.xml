@@ -21,5 +21,98 @@
 Machine models are based on the idea of a program acting on data by modification. So a Turing Machine consists of a program acting on the data. There is a clear distinction between program and data. Programs are not data and data do not contain programs (&amp;lsquo;first order&amp;rsquo;).</description>
     </item>
     
+    <item>
+      <title>Outward Counterclockwise Spiral Matrix Traversal - haskell</title>
+      <link>https://vijayanant.github.io/posts/spiral/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/spiral/</guid>
+      <description>Problem Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row r and column c.
+Return an array of integers obtained by spiraling outward anti-clockwise from the r and c, starting upward.
+More details here</description>
+    </item>
+    
+    <item>
+      <title>TensorFlow Basics</title>
+      <link>https://vijayanant.github.io/posts/tensorflow-basics/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/tensorflow-basics/</guid>
+      <description>TensorFlow is Google&amp;rsquo;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
+Basics Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a Session
+import tensorflow as tf x = tf.random_uniform([10]) print(x)  What do you think the above code prints?</description>
+    </item>
+    
+    <item>
+      <title>Thinking in Imperative, Object Oriented and Functional way</title>
+      <link>https://vijayanant.github.io/posts/programming-paradigms/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/programming-paradigms/</guid>
+      <description>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity. Complex code base is not only harder to test but testing is that much less effective.
+Programming Paradigms Different programming styles tries to deal with the complexity in their own way.</description>
+    </item>
+    
+    <item>
+      <title>OO(h!) Principles</title>
+      <link>https://vijayanant.github.io/posts/oo-design-principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/oo-design-principles/</guid>
+      <description>There is a good chance that you all are aware of the SOLID principles. There are many more principles for us to consider and adhere to while developing OO software.
+SOLID These are the Principles of Object Oriented Class Design popularly known as the SOLID Principles.
+ The Single Responsibility Principle [SRP] The Open/Closed Principle [OCP] The Liskov Substitution Principle [LSP] The Interface Segregation Principle [ISP] The Dependency Inversion Principle [DIP]  The next two set of principles, are related to packaging.</description>
+    </item>
+    
+    <item>
+      <title>A Detour Called Monads</title>
+      <link>https://vijayanant.github.io/posts/monad-detour/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/monad-detour/</guid>
+      <description>When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory.</description>
+    </item>
+    
+    <item>
+      <title>Duplication Vs Abstraction</title>
+      <link>https://vijayanant.github.io/posts/duplication-vs-abstraction/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/duplication-vs-abstraction/</guid>
+      <description>When you see code duplication and can&amp;rsquo;t think of an abstraction to put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Monads Using Function Composition</title>
+      <link>https://vijayanant.github.io/posts/haskel-composition-monad/</link>
+      <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/haskel-composition-monad/</guid>
+      <description>Today I am going to commit a crime - I am about to write one more blog relating to Monads!
+Why? Even though I could use monads for a while now, I never got around to understanding how they are composing functions and why couldn&amp;rsquo;t we use the (.) function to compose?
+I wanted to understand Monads from composition view point.
+Let&amp;rsquo;s Dig In Lets start with simple function composition</description>
+    </item>
+    
+    <item>
+      <title>Pair Programming - What? Why? And How?</title>
+      <link>https://vijayanant.github.io/posts/pairing/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/pairing/</guid>
+      <description>What? Simply put, pair programming is two programmers with a single computer working together to solve a problem!
+Why?  To produce better code To learn more from your peers To learn and practice objectively evaluating possible solutions To collaborate with better programmers  How?  The Driver is responsible to coding (owns the keyboard) The Navigator is responsible for reviewing the driver’s work 30 min Rule: Role changes every 20-30min (at a logical break point) Take control of the worl.</description>
+    </item>
+    
+    <item>
+      <title>Performance Analysis In Python</title>
+      <link>https://vijayanant.github.io/posts/performance-analysis-in-python/</link>
+      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/performance-analysis-in-python/</guid>
+      <description>My recent escapade with Python taught me many things. One of which is to &amp;ldquo;start doing something that interests you. And each such daring act will teach you many more things.&amp;rdquo;
+This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
+    </item>
+    
   </channel>
 </rss>
