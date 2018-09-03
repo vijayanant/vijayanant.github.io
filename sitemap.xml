@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vijayanant.github.io/posts/distributed-systems-1/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vijayanant.github.io/posts/basics-lambda/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url>
@@ -138,6 +143,12 @@
   </url>
   
   <url>
+    <loc>https://vijayanant.github.io/tags/computation/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vijayanant.github.io/tags/decision/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -252,6 +263,12 @@
   </url>
   
   <url>
+    <loc>https://vijayanant.github.io/tags/messaging/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vijayanant.github.io/tags/monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -313,7 +330,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/posts/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -372,6 +389,12 @@
   </url>
   
   <url>
+    <loc>https://vijayanant.github.io/tags/scaling/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vijayanant.github.io/tags/sets/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -392,6 +415,12 @@
   <url>
     <loc>https://vijayanant.github.io/tags/solid/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vijayanant.github.io/tags/storage/</loc>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -433,7 +462,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
