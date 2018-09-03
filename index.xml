@@ -6,21 +6,10 @@
     <description>Recent content on fossick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vijayanant.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Distributed System - Part 1</title>
-      <link>https://vijayanant.github.io/posts/distributed-systems-1/</link>
-      <pubDate>Tue, 14 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/distributed-systems-1/</guid>
-      <description>The simplest of applications we can write and maintain are the ones that run with a single thread on a single processor. We know why we don&amp;rsquo;t do that, because there is only so much we can achieve with such a system.
-The main concerns with this set up are
- Scale We want more resources (CPU, GPU, memory, or storage) than what is available on single server. Buying bigger server, even if available, is not efficient in terms of cost and server utilisation.</description>
-    </item>
     
     <item>
       <title>Lambda Calculus</title>
