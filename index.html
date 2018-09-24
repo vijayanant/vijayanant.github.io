@@ -8,13 +8,29 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.46" />
+<meta name="generator" content="Hugo 0.48" />
 
     
 
 <title>fossick</title>
-<meta name="description" content="blog by Vijay Anant:: technology, thoughts, opinions, and rants">
-<meta name="keywords" content="blog, thoughts, programming">
+
+
+  
+    <meta name="description" content="blog by Vijay Anant:: technology, thoughts, opinions, and rants">
+  
+
+
+
+
+  
+    <meta name="keywords" content="blog, thoughts, programming">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="fossick"/>
 <meta name="twitter:description" content="blog by Vijay Anant"/>
@@ -23,21 +39,7 @@
 <meta property="og:description" content="blog by Vijay Anant" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vijayanant.github.io/" />
-
-
-
-<meta property="og:updated_time" content="2018-02-25T00:00:00&#43;00:00"/>
-
-<meta property="og:site_name" content="title goes here" />
-
-
-
-
-
-
-
-
-
+<meta property="og:updated_time" content="2018-02-25T00:00:00&#43;00:00"/><meta property="og:site_name" content="title goes here" />
 
     
 
@@ -56,7 +58,7 @@
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     
-    <link rel="shortcut icon" href="/author.png">
+    
     
 
 <link href="https://vijayanant.github.io/index.xml" rel="alternate" type="application/rss+xml" title="fossick" />
@@ -91,16 +93,16 @@
 		 
 			 
 				<li>
-					<a href="/about/">
-						<span>About</span>
+					<a href="/posts/">
+						<span>Posts</span>
 					</a>
 				</li>
 			 
 		 
 			 
 				<li>
-					<a href="/posts/">
-						<span>Posts</span>
+					<a href="/about/">
+						<span>About</span>
 					</a>
 				</li>
 			 
@@ -170,15 +172,13 @@
         
       <div class="post-list__item">
         <span class="item__title--big">
-          <a href="/posts/spiral/">Outward Counterclockwise Spiral Matrix Traversal - haskell</a>
+          <a href="/posts/spiral/">Outward Counterclockwise Spiral Matrix Traversal - Haskell</a>
         </span>
         <span class="item__date">
           Feb 12, 2018
         </span>
         
-        Problem Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row r and column c.
-Return an array of integers obtained by spiraling outward anti-clockwise from the r and c, starting upward.
-More details here
+        An efficient, lazy implementation of spiral traversal on a matrix in Haskell.
         
         
         <div class="read-more-link">
@@ -212,9 +212,7 @@ More details here
           Oct 02, 2017
         </span>
         
-        TensorFlow is Google&rsquo;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
-Basics Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a Session
-import tensorflow as tf x = tf.random_uniform([10]) print(x)  What do you think the above code prints?
+        TensorFlow is Google&#39;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
         
         
         <div class="read-more-link">
@@ -386,7 +384,7 @@ This time I set out to finding ways of analysing the performance of an applicati
 
   
   
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
