@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+
+<title>Distributed Systems and Scalable Databases • fossick</title>
+
+
+  
+    <meta name="description" content="Introduction to distributed systems. How distributed databases work and their scaling model.">
+  
+
+
+
+
+  
+  
+    <meta name="keywords" content="scaling, storage, databases, Distributed Systems">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Distributed Systems and Scalable Databases"/>
+<meta name="twitter:description" content="Introduction to distributed systems. How distributed databases work and their scaling model."/>
+
+<meta property="og:title" content="Distributed Systems and Scalable Databases" />
+<meta property="og:description" content="Introduction to distributed systems. How distributed databases work and their scaling model." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/distributed-systems/distributed-databases/" /><meta property="article:published_time" content="2018-10-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-10-08T00:00:00&#43;00:00"/><meta property="og:site_name" content="title goes here" />
+
+    
+
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    
+    
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vijayanant.github.io/">fossick</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://vijayanant.github.io/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         blog by Vijay Anant 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Vijay Anant.
+      
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️  <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+      
+    </p>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Distributed Systems and Scalable Databases</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Oct 08, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/distributed-systems">DISTRIBUTED SYSTEMS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/scaling">scaling</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/storage">storage</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/databases">databases</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 8 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<p>The simplest of applications we can write and maintain are the ones that run
+within a single thread on a single processor. We know why we don&rsquo;t do that,
+because there is only so much we can achieve with such a system.</p>
+
+<p>The main concerns with this set up are:</p>
+
+<ul>
+<li><em><strong>Scale</strong></em> : We need more resources (CPU, memory, or storage) than what is
+available on single server. Buying bigger server, even if available, is not
+efficient in terms of cost and server utilisation. Different functionalities
+might require different combination of resources and resource characteristics.</li>
+<li><em><strong>Resilience</strong></em> : Any software and hardware can fail/crash. Running an
+application on single machine is single point of failure. We prefer to have
+our application be available for users and work as expected even under cases
+of hardware and/or software failures.</li>
+</ul>
+
+<p>A Distributed System provides an alternative approach to scaling and makes our
+system resilient to hardware and software failures.</p>
+
+<h3 id="distributed-system">Distributed System</h3>
+
+<blockquote>
+<p>A distributed system is a collection of independent computers that appears to
+its users as a single coherent system.</p>
+
+<p>&ndash; <em>Andrew S. Tanenbaum</em></p>
+</blockquote>
+
+<p>For example, amazon.com appears to us as a single computer even though many
+computers are working together behind the scene.</p>
+
+<p>This simple definition focuses on two important factors:</p>
+
+<ul>
+<li>the system consists of components (computers) that are autonomous.</li>
+<li>to its users, humans or programs, the system appears as though they are
+dealing with single system/computer.</li>
+</ul>
+
+<p>For independent component to work as a coherent system, the components must
+<strong>collaborate</strong> among themselves. Effective collaboration among components lies
+at the heart of distributed system.</p>
+
+<h3 id="characteristics-of-distributed-systems">Characteristics of Distributed Systems</h3>
+
+<ul>
+<li>The computers operate concurrently</li>
+<li>The computers fail independently</li>
+</ul>
+
+<p>Since all the computers function concurrently, and independently, we can scale
+easily by adding more computers (or remove computers when not required). Even if
+one or more of those computers fail, it will not affect the entire system and
+all the features of our system will be available all the time.</p>
+
+<p>Even though Distributed System overcome the concerns of scaling and resiliency,
+complexity of such a system greatly increases. Even the simplest of application,
+when distributed across computers, becomes complex. Simple things like storing
+data, computing, and passing data across components becomes hard.</p>
+
+<h2 id="scaling-database">Scaling Database</h2>
+
+<p>We will see many approaches to scale data storage and the challenges that
+arise because of that.</p>
+
+<h3 id="single-master-storage">Single Master Storage</h3>
+
+<p>We all are aware of this simple data storage model. The database runs on a
+single server. If you wanted to scale you run the database on a much bigger
+server. At some point, the single server fails to perform as best as did due to
+lack of resources.</p>
+
+<h3 id="read-replication">Read Replication</h3>
+
+<p>This, in many ways, was the first approach to <em>scaling horizontally.</em> We
+realised that most of web application traffic was read and we thought of
+splitting read and write requests to different servers (called nodes).</p>
+
+<p>The concept is simple. All writes still go to a single master and then the
+writes are propagated to the followers. The read requests are handled by the
+follower nodes. This allows for master to handle much more write traffic and
+multiple follower nodes can handle a lot of read request and it is a matter of
+adding new follower node to cater for increased read requests.</p>
+
+<p>Even though this seemingly simple arrangement allows us to handle more load by
+distributing read and write request to different nodes, we have broken the
+consistency. <strong>The database is no longer consistent</strong> (even if the database we
+are using is a relational database). When we write to master node the write has
+to propagate to the follower nodes before it can be read. There is a small time
+window during which the write has completed but the read operation fails. There
+is, however small, a delay  for follower nodes to have the latest data. This is
+<em>Eventually Consistent</em> since the write will be propagated to followers at some
+point without fail.</p>
+
+<p>So, we lost consistency for a while but hey!, everything else is fine now,
+right? NO! This may work for a while but ultimately the master is still handling
+all the write requests. At some point the master can not handle the amount of
+writes it has to do. What do we do?</p>
+
+<h3 id="sharding">Sharding</h3>
+
+<p>With Sharding we split our data across nodes. Each node is called a <strong>shard</strong>.
+Each shard holds different data. We decide how the data is segregated. For
+example, we can segregate our user data based on user&rsquo;s name. All the data of
+users with name starting with letters A to F are in shard 1 and user data with
+name starting with letters from G to N are in shard 2 and similarly O to Z in
+shard 3.</p>
+
+<p>The rules of sharding the data are very important as the database will choose
+which shard to go to for reading and writing data based on the rule. Each of the
+shard will have its own set of replicated followers as in read-replicated
+databases.</p>
+
+<p>Now, we can handle as much write as we want by making the shards smaller and
+smaller and also by having replicated followers for handling read traffic.</p>
+
+<p>We had already lost consistency by having replicated followers but now we split
+our data across nodes which means we can no longer have the same data model we
+had earlier. We can not, for example, read data of two users residing in
+separate shards at a time!. Our joins are no longer useful as they can only work
+with partial data residing in that particular shard. To overcome this, the SQL
+joins have to work with all the shards and then some more to combine them all.</p>
+
+<p>One way to overcome this problem with joins is to <strong>Denormalize</strong> the data. By
+denormalising data we have improved read performance at the cost of write
+performance. At this point we lost many of the features that our databases
+provided. We no longer have consistency, joins are slower and we reduced write
+performance by denormalizing data.</p>
+
+<h2 id="distributed-databases">Distributed Databases</h2>
+
+<p>From what we have seen up until now, we create some new problem every time we
+have to scale beyond what our current model helps with. We now have a
+sharded, replicated system that scales. What are the concerns here?
+Consistency, availability and performance.</p>
+
+<p>We now have more than one server in the network. When a database write occurs,
+we now need to decide when to consider it complete: as soon as it is persisted
+on the master, or only after it is persisted on a replica (or even two or more
+replicas if we want higher availability). If we decide that persisting it on the
+master is enough, we risk losing data if the master fails before replicating the
+data. If we decide to wait until the data is replicated, we incur latency
+penalty.</p>
+
+<p>Thus, from a world of consistency by default, we have entered a world where
+consistency is a choice. In this world, we could choose to have eventual
+consistency, where the state is replicated across multiple nodes, but not every
+node has a complete view of the entire state.</p>
+
+<p>There is still a way to make our distributed database strongly consistent. We
+decide on number of replicas that need to acknowledge the success of read or
+write operation. The number of replicas we decide is also called consistency
+level or Quorum. For a system to be considered strongly consistent, it has to
+follow the rule  <code>R + W &gt; N</code>. Here <code>R</code> and <code>W</code> are the consistency level of read
+and write operations and <code>N</code> is the total number of replicas.</p>
+
+<h2 id="the-cap-theorem">The CAP theorem</h2>
+
+<p>The CAP theorem was introduced by Dr. Eric Brewer in 2000. Given a distributed
+system, it is impossible to guarantee the three following properties:</p>
+
+<ul>
+<li><strong>Consistency</strong>: All nodes share the same states, that is, they all have
+the same data. In an informal manner, a system is consistent if a write is
+successful, all the components of the system can read the new value.</li>
+<li><strong>Availability</strong>: The system remains operative to take care of every
+client request, managing it and answering it. Furthermore, it also means that
+the system is still awake even if a node fails (or crashes).</li>
+<li><strong>Partition Tolerance</strong>: The systems keeps attending client requests even
+though it has been divided into at least two different parts, also called
+partition, that cannot communicate between them.</li>
+</ul>
+
+<blockquote>
+<p>Dr. Brewer issued a clarification stating that his original &ldquo;pick two out
+of three&rdquo; concept was greatly simplified in order to open up a discussion and
+help move it beyond ACID</p>
+</blockquote>
+
+<p>For example, when two of the nodes cannot communicate with each other (network
+reasons, lets say), there is a partition. At that point our system can choose
+either to be consistent and unavailable  (fail instead of returning stale data)
+or be inconsistent and available (return stale data). It cannot choose to be
+both consistent and available.</p>
+
+<blockquote>
+<p>Partition tolerance is a must for any distributed data store.</p>
+</blockquote>
+
+<h2 id="eventual-consistency-and-base-properties">Eventual Consistency And BASE Properties</h2>
+
+<p>As it turns out many applications (or part of the application) prefer high
+availability more than strong consistency. And network latency is an issue in
+keeping nodes in sync for consistency bringing the system performance down.</p>
+
+<p>These applications settle for a highly available, eventually consistent system.
+These systems offer BASE properties (as opposed to ACID)</p>
+
+<ul>
+<li><strong>B</strong>asically <strong>A</strong>vailable  &ndash; High Availability</li>
+<li><strong>S</strong>oft state &ndash; State of the system might change even when nothing external
+happens due to eventual consistency</li>
+<li><strong>E</strong>ventual Consistency &ndash; Eventually consistent system</li>
+</ul>
+
+<p>The most famous systems that appeared and took this option are the NoSQL
+databases.</p>
+
+  </div>
+  
+
+
+  
+
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>
