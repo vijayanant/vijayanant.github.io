@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.48" />
+
+    
+    
+    
+    
+    
+
+<title>TDD Mantra • fossick • Vijay Anant</title>
+
+
+  
+    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
+  
+
+
+
+
+  
+  
+    <meta name="keywords" content="development, testing, TDD, Programming">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TDD Mantra"/>
+<meta name="twitter:description" content="The Essence  Don&rsquo;t write a line of new code unless you first have a failing automated test. Eliminate duplication. (refactor)  What is Needed The ability to write concrete, deterministic, automated tests is a prerequisite for applying TDD.
+Mantra - Order in Programming The two mantras imply an order to the tasks of programming:
+ Red - write a little test that doesn’t work, perhaps doesn’t even compile at first Green - make the test work quickly, committing whatever sins necessary in the process Refactor - eliminate all the duplication created in just getting the test to work  Implications The simple mantra generates complex individual and group behavior."/>
+
+<meta property="og:title" content="TDD Mantra" />
+<meta property="og:description" content="The Essence  Don&rsquo;t write a line of new code unless you first have a failing automated test. Eliminate duplication. (refactor)  What is Needed The ability to write concrete, deterministic, automated tests is a prerequisite for applying TDD.
+Mantra - Order in Programming The two mantras imply an order to the tasks of programming:
+ Red - write a little test that doesn’t work, perhaps doesn’t even compile at first Green - make the test work quickly, committing whatever sins necessary in the process Refactor - eliminate all the duplication created in just getting the test to work  Implications The simple mantra generates complex individual and group behavior." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/tdd-mantra/" /><meta property="article:published_time" content="2018-05-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-05-11T00:00:00&#43;00:00"/><meta property="og:site_name" content="fossick" />
+
+    
+
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    
+    
+    <link rel="shortcut icon" href="/author.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vijayanant.github.io/">fossick</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://vijayanant.github.io/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         Vijay Anant 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Vijay Anant.
+      
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️  <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+      
+    </p>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>TDD Mantra</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 11, 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/development">development</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/testing">testing</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/tdd">tdd</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<h2 id="the-essence">The Essence</h2>
+
+<ul>
+<li>Don&rsquo;t write a line of new code unless you first have a failing automated test.</li>
+<li>Eliminate duplication. (refactor)</li>
+</ul>
+
+<h2 id="what-is-needed">What is Needed</h2>
+
+<p>The ability to write concrete, deterministic, automated tests is a prerequisite
+for applying TDD.</p>
+
+<h2 id="mantra-order-in-programming">Mantra - Order in Programming</h2>
+
+<p>The two mantras imply an order to the tasks of programming:</p>
+
+<ul>
+<li>Red - write a little test that doesn’t work, perhaps doesn’t even compile at
+first</li>
+<li>Green - make the test work quickly, committing whatever sins necessary in the
+process</li>
+<li>Refactor - eliminate all the duplication created in just getting the test to
+work</li>
+</ul>
+
+<h2 id="implications">Implications</h2>
+
+<p>The simple mantra generates complex individual and group behavior. Some of the
+technical implications are:</p>
+
+<ul>
+<li>You must design organically, with running code providing feedback between
+decisions</li>
+<li>You must write your own tests, since you can&rsquo;t wait twenty times a day for
+someone else to write a test</li>
+<li>Your development environment must provide rapid response to small changes</li>
+<li>Your designs must consist of many highly cohesive, loosely coupled components,
+just to make testing easy</li>
+</ul>
+
+<h2 id="benefits">Benefits</h2>
+
+<ul>
+<li>If the defect density can be reduced enough, QA can shift from reactive to
+proactive work</li>
+<li>If the number of nasty surprises can be reduced enough, project managers can
+estimate accurately enough to involve real customers in daily development</li>
+<li>If the topics of technical conversations can be made clear enough, programmers
+can work in minute-by-minute collaboration instead of daily or weekly
+collaboration</li>
+<li>If the defect density can be reduced enough, we can have shippable software
+with new functionality every day, leading to new business relationships with
+customers</li>
+</ul>
+
+<h2 id="what-is-in-it-for-developers">What is in it for Developers?</h2>
+
+<p>Managing Fear - Once you get one test working, you know it is working, now and
+forever. You are one step closer to having everything working than you were when
+the test was broken. Now get the next one working, and the next, and the next.
+By analogy, the tougher the programming problem, the less ground should be
+covered by each test.</p>
+
+<h2 id="the-rhythm">The Rhythm</h2>
+
+<ul>
+<li>Quickly add a test</li>
+<li>Run all tests and see the new one fail</li>
+<li>Make a little change</li>
+<li>Run all tests and see them all succeed</li>
+<li>Refactor to remove duplication</li>
+</ul>
+
+<h2 id="surprises">Surprises</h2>
+
+<ul>
+<li>How each test can cover a small increment of functionality</li>
+<li>How small and ugly the changes can be to make the new tests run</li>
+<li>How often the tests are run</li>
+<li>How many tiny steps make up the refactorings</li>
+</ul>
+
+  </div>
+  
+
+
+  
+
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>

@@ -138,6 +138,15 @@
     </item>
     
     <item>
+      <title>Development</title>
+      <link>https://vijayanant.github.io/tags/development/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Extreme Programming</title>
       <link>https://vijayanant.github.io/tags/extreme-programming/</link>
       <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
@@ -444,11 +453,29 @@
     </item>
     
     <item>
+      <title>Tdd</title>
+      <link>https://vijayanant.github.io/tags/tdd/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tensorflow</title>
       <link>https://vijayanant.github.io/tags/tensorflow/</link>
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://vijayanant.github.io/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://vijayanant.github.io/tags/testing/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://vijayanant.github.io/tags/testing/</guid>
       <description></description>
     </item>
     

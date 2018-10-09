@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://vijayanant.github.io/posts/tdd-mantra/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vijayanant.github.io/posts/basics-lambda/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url>
@@ -169,6 +174,12 @@
   <url>
     <loc>https://vijayanant.github.io/tags/design-principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vijayanant.github.io/tags/development/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -354,7 +365,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/categories/programming/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -437,8 +448,20 @@
   </url>
   
   <url>
+    <loc>https://vijayanant.github.io/tags/tdd/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://vijayanant.github.io/tags/tensorflow/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vijayanant.github.io/tags/testing/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
