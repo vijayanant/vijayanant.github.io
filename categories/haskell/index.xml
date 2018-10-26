@@ -13,10 +13,10 @@
     
     <item>
       <title>Understanding Monads Using Function Composition</title>
-      <link>https://vijayanant.github.io/posts/haskel-composition-monad/</link>
+      <link>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</link>
       <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/haskel-composition-monad/</guid>
+      <guid>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</guid>
       <description>Today I am going to commit a crime - I am about to write one more blog relating to Monads!
 Why? Even though I could use monads for a while now, I never got around to understanding how they are composing functions and why couldn&amp;rsquo;t we use the (.) function to compose?
 I wanted to understand Monads from composition view point.

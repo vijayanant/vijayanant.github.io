@@ -19,11 +19,11 @@
     
     
 
-<title>Outward Counterclockwise Spiral Matrix Traversal - Haskell • fossick • Vijay Anant</title>
+<title>A Detour Called Monads • fossick • Vijay Anant</title>
 
 
   
-    <meta name="description" content="An efficient, lazy implementation of spiral traversal on a matrix in Haskell.">
+    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
   
 
 
@@ -31,7 +31,7 @@
 
   
   
-    <meta name="keywords" content="haskell, matrix traversal, coding, puzzle, Programming">
+    <meta name="keywords" content="functional programming, monads, programming, fallacy, Rant, Programming">
   
 
 
@@ -40,14 +40,14 @@
 <meta name="googlebot" content="index,follow">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Outward Counterclockwise Spiral Matrix Traversal - Haskell"/>
-<meta name="twitter:description" content="An efficient, lazy implementation of spiral traversal on a matrix in Haskell."/>
+<meta name="twitter:title" content="A Detour Called Monads"/>
+<meta name="twitter:description" content="When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory."/>
 
-<meta property="og:title" content="Outward Counterclockwise Spiral Matrix Traversal - Haskell" />
-<meta property="og:description" content="An efficient, lazy implementation of spiral traversal on a matrix in Haskell." />
+<meta property="og:title" content="A Detour Called Monads" />
+<meta property="og:description" content="When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://vijayanant.github.io/posts/spiral/" /><meta property="article:published_time" content="2018-02-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-02-12T00:00:00&#43;00:00"/><meta property="og:site_name" content="fossick" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/a-detour-called-monads/" /><meta property="article:published_time" content="2016-08-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-08-15T00:00:00&#43;00:00"/><meta property="og:site_name" content="fossick" />
 
     
 
@@ -64,7 +64,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Icons -->
-    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     
     <link rel="shortcut icon" href="/author.png">
     
@@ -156,13 +156,13 @@
             
     <article>
   <header>
-    <h1>Outward Counterclockwise Spiral Matrix Traversal - Haskell</h1>
+    <h1>A Detour Called Monads</h1>
      
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Feb 12, 2018
+      <i class="fas fa-calendar-alt"></i> Aug 15, 2016
     
     
     
@@ -172,6 +172,9 @@
           
           
               <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/rant">RANT</a>
               
           
       
@@ -183,16 +186,16 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/haskell">haskell</a>
+          <a class="badge badge-tag" href="/tags/functional-programming">functional programming</a>
            
       
-          <a class="badge badge-tag" href="/tags/matrix-traversal">matrix traversal</a>
+          <a class="badge badge-tag" href="/tags/monads">monads</a>
            
       
-          <a class="badge badge-tag" href="/tags/coding">coding</a>
+          <a class="badge badge-tag" href="/tags/programming">programming</a>
            
       
-          <a class="badge badge-tag" href="/tags/puzzle">puzzle</a>
+          <a class="badge badge-tag" href="/tags/fallacy">fallacy</a>
           
       
     
@@ -204,19 +207,11 @@
 
   </header>
   <div class="post">
-    
+    <p>When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it -  hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory. Pocket knife is all that was needed.</p>
 
-<h2 id="problem">Problem</h2>
+<p>Stop Scaring the newcomers. We don&rsquo;t call it List Monad everytime we use it. We are OK to call it just List. But everytime we need state why do we call it State Monad? When I need to do i/o I will use IO. The fact that it is a monad is not relevant at that point.</p>
 
-<p>Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row <code>r</code> and column <code>c</code>.</p>
-
-<p>Return an array of integers obtained by spiraling outward anti-clockwise from the <code>r</code> and <code>c</code>, starting upward.</p>
-
-<p><a href="http://us2.campaign-archive1.com/?u=cadc6c448cd083a0aeed7f864&amp;id=a6856ac71e&amp;e=7cfe3ee063">More details here</a></p>
-
-<p>My attempt in Haskell.</p>
-
-<script type="application/javascript" src="//gist.github.com/vijayanant/d1508706dc727b8b27d38495377c28dc.js?file=spiral.hs"></script>
+<p>Monads don&rsquo;t do IO, monads don&rsquo;t manage State, Monads don&rsquo;t handle Exception. Monads don&rsquo;t do anything. The types IO, State etc. do. Understand the types.</p>
 
   </div>
   
@@ -232,9 +227,18 @@
         
 <li>
   <span class="list__title--small">
-    <a href="/posts/haskel-composition-monad/">Understanding Monads Using Function Composition</a>
+    <a href="/posts/understanding-monads-using-function-composition/">Understanding Monads Using Function Composition</a>
       
       <time class="pull-right hidden-tablet">20 May 2016</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/thinking-in-imperative-object-oriented-and-functional-way/">Thinking in Imperative, Object Oriented and Functional way</a>
+      
+      <time class="pull-right hidden-tablet">15 Sep 2017</time>
       
   </span>
 </li>

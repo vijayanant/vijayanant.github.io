@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vijayanant.github.io/posts/distributed-systems/distributed-databases/</loc>
+    <loc>https://vijayanant.github.io/posts/distributed-systems-and-scalable-databases/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,17 +13,17 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/basics-lambda/</loc>
+    <loc>https://vijayanant.github.io/posts/lambda-calculus/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/spiral/</loc>
+    <loc>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal---haskell/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/basic-math/</loc>
+    <loc>https://vijayanant.github.io/posts/notes-on-sets-relations-and-functions/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,17 +33,17 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/programming-paradigms/</loc>
+    <loc>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</loc>
     <lastmod>2017-09-15T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/oo-design-principles/</loc>
+    <loc>https://vijayanant.github.io/posts/ooh-principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/monad-detour/</loc>
+    <loc>https://vijayanant.github.io/posts/a-detour-called-monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -58,17 +58,17 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/haskel-composition-monad/</loc>
+    <loc>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</loc>
     <lastmod>2016-05-20T20:20:45+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/pairing/</loc>
+    <loc>https://vijayanant.github.io/posts/pair-programming---what-why-and-how/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/new-vim-setup/</loc>
+    <loc>https://vijayanant.github.io/posts/10-vim-plugins-that-made-my-vim-easy/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
   </url>
   
@@ -226,14 +226,14 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/haskell/</loc>
-    <lastmod>2016-05-20T20:20:45+00:00</lastmod>
+    <loc>https://vijayanant.github.io/tags/haskell/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/haskell/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <loc>https://vijayanant.github.io/categories/haskell/</loc>
+    <lastmod>2016-05-20T20:20:45+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/maths/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
+    <loc>https://vijayanant.github.io/tags/maths/</loc>
+    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/maths/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
+    <loc>https://vijayanant.github.io/categories/maths/</loc>
+    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -292,13 +292,13 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/object-orientation/</loc>
+    <loc>https://vijayanant.github.io/tags/object-orientation/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/object-orientation/</loc>
+    <loc>https://vijayanant.github.io/categories/object-orientation/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -364,14 +364,14 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/programming/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <loc>https://vijayanant.github.io/tags/programming/</loc>
+    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/programming/</loc>
-    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
+    <loc>https://vijayanant.github.io/categories/programming/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -418,13 +418,13 @@
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/software-design/</loc>
+    <loc>https://vijayanant.github.io/tags/software-design/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/software-design/</loc>
+    <loc>https://vijayanant.github.io/categories/software-design/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

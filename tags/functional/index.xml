@@ -13,20 +13,20 @@
     
     <item>
       <title>Thinking in Imperative, Object Oriented and Functional way</title>
-      <link>https://vijayanant.github.io/posts/programming-paradigms/</link>
+      <link>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/programming-paradigms/</guid>
+      <guid>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</guid>
       <description>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity. Complex code base is not only harder to test but testing is that much less effective.
 Programming Paradigms Different programming styles tries to deal with the complexity in their own way.</description>
     </item>
     
     <item>
       <title>Understanding Monads Using Function Composition</title>
-      <link>https://vijayanant.github.io/posts/haskel-composition-monad/</link>
+      <link>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</link>
       <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/haskel-composition-monad/</guid>
+      <guid>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</guid>
       <description>Today I am going to commit a crime - I am about to write one more blog relating to Monads!
 Why? Even though I could use monads for a while now, I never got around to understanding how they are composing functions and why couldn&amp;rsquo;t we use the (.) function to compose?
 I wanted to understand Monads from composition view point.

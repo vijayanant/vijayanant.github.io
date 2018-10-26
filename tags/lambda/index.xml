@@ -13,10 +13,10 @@
     
     <item>
       <title>Lambda Calculus</title>
-      <link>https://vijayanant.github.io/posts/basics-lambda/</link>
+      <link>https://vijayanant.github.io/posts/lambda-calculus/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/basics-lambda/</guid>
+      <guid>https://vijayanant.github.io/posts/lambda-calculus/</guid>
       <description>The models of computation can be broadly classified into two groups - those that are based on machine model and the λ Calculus.
 Machine models are based on the idea of a program acting on data by modification. So a Turing Machine consists of a program acting on the data. There is a clear distinction between program and data. Programs are not data and data do not contain programs (&amp;lsquo;first order&amp;rsquo;).</description>
     </item>

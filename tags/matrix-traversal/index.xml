@@ -13,10 +13,10 @@
     
     <item>
       <title>Outward Counterclockwise Spiral Matrix Traversal - Haskell</title>
-      <link>https://vijayanant.github.io/posts/spiral/</link>
+      <link>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal---haskell/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/spiral/</guid>
+      <guid>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal---haskell/</guid>
       <description>Problem Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row r and column c.
 Return an array of integers obtained by spiraling outward anti-clockwise from the r and c, starting upward.
 More details here</description>

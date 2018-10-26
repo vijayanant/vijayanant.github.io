@@ -13,10 +13,10 @@
     
     <item>
       <title>A Detour Called Monads</title>
-      <link>https://vijayanant.github.io/posts/monad-detour/</link>
+      <link>https://vijayanant.github.io/posts/a-detour-called-monads/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/monad-detour/</guid>
+      <guid>https://vijayanant.github.io/posts/a-detour-called-monads/</guid>
       <description>When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory.</description>
     </item>
     

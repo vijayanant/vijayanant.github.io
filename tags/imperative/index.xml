@@ -13,10 +13,10 @@
     
     <item>
       <title>Thinking in Imperative, Object Oriented and Functional way</title>
-      <link>https://vijayanant.github.io/posts/programming-paradigms/</link>
+      <link>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/programming-paradigms/</guid>
+      <guid>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</guid>
       <description>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity. Complex code base is not only harder to test but testing is that much less effective.
 Programming Paradigms Different programming styles tries to deal with the complexity in their own way.</description>
     </item>
