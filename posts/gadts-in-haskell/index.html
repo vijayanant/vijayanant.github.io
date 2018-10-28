@@ -222,19 +222,21 @@ a language extension. The article describes these use cases with small programs.
 <p>Type system help programmers ensure that the software they write behave
 correctly. They detect errors and also serve as documentation. A good type
 system allow abstracting domain specific concepts. Haskell’s much appreciated
-Algebraic Data Type (ADT) though powerful, is still lacking in few aspects.
-GADTs fill that gap. This article explains GADTs with simple examples.</p>
+<em>Algebraic Data Type (ADT)</em> though powerful, is still lacking in few aspects.
+GADTs fill that gap.</p>
+
+<p>This article explains GADTs with simple examples.</p>
 
 <h2 id="algebraic-data-types-adts">Algebraic Data Types (ADTs)</h2>
 
 <p>ADTs are composite types, i.e., types formed by combining other types. Depending
-on how the types are combined, we can have either a sum type or a product type.</p>
+on how the types are combined, we can have either a <em>sum</em> type or a <em>product</em> type.</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Point</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Pt</span> <span style="color: #66d9ef">Int</span> <span style="color: #66d9ef">Int</span>
 <span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Expr</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Number</span> <span style="color: #66d9ef">Integer</span> <span style="color: #f92672">|</span> <span style="color: #66d9ef">Boolean</span> <span style="color: #66d9ef">Bool</span>
 </code></pre></div>
 
-<p>In the example above <code>Point</code> and <code>Expr</code> are called type constructors and <code>Pt</code>,
-<code>Number</code>, and <code>Boolean</code> are called value constructors. If a type has more than
+<p>In the example above <code>Point</code> and <code>Expr</code> are called <em>type constructors</em> and <code>Pt</code>,
+<code>Number</code>, and <code>Boolean</code> are called <em>value constructors</em>. If a type has more than
 one value constructor, they are called alternatives: one can use any of these
 alternatives to create a value of that type.</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">let</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">10</span>
@@ -278,11 +280,11 @@ a expression evaluator.</p>
 
 <p>If you notice carefully, this allows for some invalid expressions to type check
 successfully.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">expr1</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>          <span style="color: #75715e">-- type checks and valid</span>
-<span style="color: #a6e22e">expr2</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">))</span> <span style="color: #75715e">-- type checks but invalid</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">expr1</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>          <span style="color: #75715e">-- valid and type checks</span>
+<span style="color: #a6e22e">expr2</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">))</span> <span style="color: #75715e">-- invalid but type checks</span>
 </code></pre></div>
 
-<p>Also, notice how our <code>eval</code> function is partially implemented. We do not know
+<p>Also, notice how our <code>eval</code> function is <em>partially</em> implemented. We do not know
 what to evaluate a expression <code>Succ (IsZero (Number 1))</code> to. We could allow the
 function to indicate error by using a <code>Maybe</code> or <code>Either</code> type, but that
 complicates the <code>eval</code> function further as we recursively call <code>eval</code>. Try it
@@ -291,7 +293,7 @@ out for fun.</p>
 <h2 id="generalised-adts">Generalised ADTs</h2>
 
 <p>The idea behind GADTs is to allow arbitrary return types for value constructors.
-They generalize ordinary data types. GADTs are provided in GHC as a language
+They <em>generalize</em> ordinary data types. GADTs are provided in GHC as a language
 extension. We can enable this feature using the <code>LANGUAGE</code> pragma. It provides a
 new syntax for defining data types. We specify type for each value constructor.
 We can now redefine our <code>Expr</code> type like below:</p>
