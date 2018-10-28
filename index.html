@@ -171,9 +171,11 @@
           Oct 26, 2018
         </span>
         
-        Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.
-data Money = Money Rational  Now we can add them together as
-add :: Money -&gt; Money -&gt; Money add (Money m1) (Money m2) = Money (m1 + m2) money1 = Money (50 % 100) money2 = Money (25 % 100) total = add money1 money2  Everything OK There?
+        One of the main advantages of static typing is to catch errors before we deploy
+code to production. Dependent Types allow us to eliminate some checks that are
+usually done at rum time. I take a simple example to show how dependent types
+can be used in that regard in day-to-day programming.
+
         
         
         <div class="read-more-link">
@@ -328,7 +330,12 @@ Mantra - Order in Programming The two mantras imply an order to the tasks of pro
           Oct 15, 2016
         </span>
         
-        Generalized algebraic data types (GADTs) generalizes ordinary algebraic data types by permitting value constructors to return specific types. GADTs are used for ensuring program correctness and in generic programming. This article is specific to Haskell programming language. In Haskell GADTs are implemented as a language extension. The article describes these use cases with small programs.
+        GADTs generalizes ordinary algebraic data types by permitting value constructors
+to return specific types. GADTs are used for ensuring program correctness and in
+generic programming. This article is specific to Haskell programming language.
+In Haskell GADTs are implemented as a language extension. The article describes
+these use cases with small programs.
+
         
         
         <div class="read-more-link">

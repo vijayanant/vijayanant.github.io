@@ -17,9 +17,8 @@
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
       
       <guid>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</guid>
-      <description>Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.
-data Money = Money Rational  Now we can add them together as
-add :: Money -&amp;gt; Money -&amp;gt; Money add (Money m1) (Money m2) = Money (m1 + m2) money1 = Money (50 % 100) money2 = Money (25 % 100) total = add money1 money2  Everything OK There?</description>
+      <description>One of the main advantages of static typing is to catch errors before we deploy code to production. Dependent Types allow us to eliminate some checks that are usually done at rum time. I take a simple example to show how dependent types can be used in that regard in day-to-day programming.
+Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.</description>
     </item>
     
   </channel>

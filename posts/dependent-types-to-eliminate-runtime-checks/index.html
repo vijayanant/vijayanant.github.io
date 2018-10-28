@@ -23,7 +23,11 @@
 
 
   
-    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
+    <meta name="description" content="One of the main advantages of static typing is to catch errors before we deploy
+code to production. Dependent Types allow us to eliminate some checks that are
+usually done at rum time. I take a simple example to show how dependent types
+can be used in that regard in day-to-day programming.
+">
   
 
 
@@ -41,14 +45,18 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dependent Types To Eliminate Runtime Checks"/>
-<meta name="twitter:description" content="Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.
-data Money = Money Rational  Now we can add them together as
-add :: Money -&gt; Money -&gt; Money add (Money m1) (Money m2) = Money (m1 &#43; m2) money1 = Money (50 % 100) money2 = Money (25 % 100) total = add money1 money2  Everything OK There?"/>
+<meta name="twitter:description" content="One of the main advantages of static typing is to catch errors before we deploy
+code to production. Dependent Types allow us to eliminate some checks that are
+usually done at rum time. I take a simple example to show how dependent types
+can be used in that regard in day-to-day programming.
+"/>
 
 <meta property="og:title" content="Dependent Types To Eliminate Runtime Checks" />
-<meta property="og:description" content="Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.
-data Money = Money Rational  Now we can add them together as
-add :: Money -&gt; Money -&gt; Money add (Money m1) (Money m2) = Money (m1 &#43; m2) money1 = Money (50 % 100) money2 = Money (25 % 100) total = add money1 money2  Everything OK There?" />
+<meta property="og:description" content="One of the main advantages of static typing is to catch errors before we deploy
+code to production. Dependent Types allow us to eliminate some checks that are
+usually done at rum time. I take a simple example to show how dependent types
+can be used in that regard in day-to-day programming.
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/" /><meta property="article:published_time" content="2018-10-26T00:00:00&#43;05:30"/>
 <meta property="article:modified_time" content="2018-10-26T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
@@ -207,13 +215,18 @@ add :: Money -&gt; Money -&gt; Money add (Money m1) (Money m2) = Money (m1 &#43;
     
     
     <br/>
-    <i class="fas fa-clock"></i> 4 min read
+    <i class="fas fa-clock"></i> 5 min read
 </div>
 
 
   </header>
   <div class="post">
     
+
+<p>One of the main advantages of static typing is to catch errors before we deploy
+code to production. Dependent Types allow us to eliminate some checks that are
+usually done at rum time. I take a simple example to show how dependent types
+can be used in that regard in day-to-day programming.</p>
 
 <h3 id="give-me-the-money">Give Me The Money!</h3>
 
@@ -235,11 +248,10 @@ money and a function to add money.</p>
 <h3 id="everything-ok-there">Everything OK There?</h3>
 
 <p>There is something we have missed here. The currency. Money is represented in
-some currency (like Indian Rupee or US Dollar) and we cannot add money in
-different currencies.</p>
+some currency (like US Dollar) and we cannot add money in different currencies.</p>
 
 <p>Lets include currency information in our <code>Money</code> type. A simple approach is to
-keep string representing the currency (&ldquo;INR&rdquo;, &ldquo;USD&rdquo;, etc.) along with the amount.</p>
+keep string representing the currency (&ldquo;GBP&rdquo;, &ldquo;USD&rdquo;, etc.) along with the amount.</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">String</span> <span style="color: #66d9ef">Rational</span>
 
 <span style="color: #a6e22e">add</span><span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span>
@@ -247,7 +259,7 @@ keep string representing the currency (&ldquo;INR&rdquo;, &ldquo;USD&rdquo;, etc
 
 <h3 id="houston-we-ve-got-a-problem">Houston, We&rsquo;ve Got a Problem</h3>
 
-<p>Here is the concern. We now have to check if the two money arguments to add are
+<p>Here is the concern. We now have to check if the two money parameters to add are
 of same currency. Well, we can do that by comparing the two strings representing
 the currency. Or by pattern matching for all possible currency! What do we do if
 they don&rsquo;t match? Now we are having to deal with error scenarios. A simple
@@ -273,8 +285,8 @@ in more interesting ways.</p>
 
 <span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(currency</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Symbol</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Rational</span>
 
-<span style="color: #a6e22e">fiftyPaise</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span>
-<span style="color: #a6e22e">fiftyPaise</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
+<span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
+<span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
 
 <span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;USD&quot;</span>
 <span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #ae81ff">2</span>
@@ -282,17 +294,17 @@ in more interesting ways.</p>
 <span style="color: #a6e22e">add</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c</span>
 <span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">m1)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">m2)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(m1</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">m2)</span>
 </code></pre></div>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPaise</span> <span style="color: #f8f8f2">fiftyPaise</span>
-<span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">fiftyPaise</span> <span style="color: #f8f8f2">fiftyPaise</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">fiftyPence</span>
+<span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
 
-<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPaise</span> <span style="color: #f8f8f2">twoDollars</span>
+<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">twoDollars</span>
 
 <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">interactive</span><span style="color: #f92672">&gt;:</span><span style="color: #ae81ff">1</span><span style="color: #66d9ef">:</span><span style="color: #ae81ff">16</span><span style="color: #66d9ef">:</span> <span style="color: #a6e22e">error</span><span style="color: #66d9ef">:</span>
-    <span style="color: #960050; background-color: #1e0010">•</span> <span style="color: #66d9ef">Couldn&#39;t</span> <span style="color: #f8f8f2">match</span> <span style="color: #66d9ef">type</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;USD&quot;</span><span style="color: #960050; background-color: #1e0010">’</span> <span style="color: #f8f8f2">with</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;INR&quot;</span><span style="color: #960050; background-color: #1e0010">’</span>
-      <span style="color: #66d9ef">Expected</span> <span style="color: #66d9ef">type:</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span>
+    <span style="color: #960050; background-color: #1e0010">•</span> <span style="color: #66d9ef">Couldn&#39;t</span> <span style="color: #f8f8f2">match</span> <span style="color: #66d9ef">type</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;USD&quot;</span><span style="color: #960050; background-color: #1e0010">’</span> <span style="color: #f8f8f2">with</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;GBP&quot;</span><span style="color: #960050; background-color: #1e0010">’</span>
+      <span style="color: #66d9ef">Expected</span> <span style="color: #66d9ef">type:</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
         <span style="color: #66d9ef">Actual</span> <span style="color: #66d9ef">type:</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;USD&quot;</span>
     <span style="color: #960050; background-color: #1e0010">•</span> <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">second</span> <span style="color: #f8f8f2">argument</span> <span style="color: #66d9ef">of</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #f8f8f2">add</span><span style="color: #960050; background-color: #1e0010">’</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">namely</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #f8f8f2">twoDollars</span><span style="color: #960050; background-color: #1e0010">’</span>
-      <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">expression</span><span style="color: #66d9ef">:</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPaise</span> <span style="color: #f8f8f2">twoDollars</span>
+      <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">expression</span><span style="color: #66d9ef">:</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">twoDollars</span>
 </code></pre></div>
 
 <p>We use language extensions in GHC for using dependent types. I will try to
@@ -300,22 +312,22 @@ explain their usage in simple terms.</p>
 
 <h3 id="be-kind-to-others">Be Kind To Others</h3>
 
-<p>Notice the type of <code>fiftyPaise</code> -</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">fiftyPaise</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span>
+<p>Notice the type of <code>fiftyPence</code> -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
 </code></pre></div>
 
 <p><code>Money</code> is a type constructor and only accepts other types as parameters (<code>Maybe
-Int</code>, <code>[Int]</code> etc.). But, <code>&quot;INR&quot;</code> seems like a String value! How is this
+Int</code>, <code>[Int]</code> etc.). But, <code>&quot;GBP&quot;</code> seems like a String value! How is this
 possible?</p>
 
-<p>Firstly, <code>&quot;INR&quot;</code> in <code>Money &quot;INR&quot;</code> is not a value but a type with kind <code>Symbol</code>.
+<p>Firstly, <code>&quot;GBP&quot;</code> in <code>Money &quot;GBP&quot;</code> is not a value but a type with kind <code>Symbol</code>.
 You can see that in the data definition of Money. <code>currency</code> type parameter is
 of kind <code>Symbol</code>.</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(currency</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Symbol</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Rational</span>
 </code></pre></div>
 
 <p><code>Symbol</code> is a convenient Kind provided by GHC in the <code>GHC.TypeLits</code> module which
-is the kind for type-level strings. It lets us use string literals like &ldquo;INR&rdquo; as
+is the kind for type-level strings. It lets us use string literals like &ldquo;GBP&rdquo; as
 a type.</p>
 
 <blockquote>
@@ -326,9 +338,9 @@ manually specify a type variable&rsquo;s kind using the <strong>KindSignatures</
 <h2 id="congratulations-you-have-been-promoted">Congratulations! You have Been Promoted</h2>
 
 <p>So, Ok, KindSignatures extension lets me specify that <code>currency</code> has kind
-<code>Symbol</code>, but how does <code>&quot;INR&quot;</code> and <code>&quot;USD&quot;</code> become types of of kind <code>Symbol</code>?</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">fiftyPaise</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span>
-<span style="color: #a6e22e">fiftyPaise</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
+<code>Symbol</code>, but how does <code>&quot;GBP&quot;</code> and <code>&quot;USD&quot;</code> become types of of kind <code>Symbol</code>?</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
+<span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
 
 <span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;USD&quot;</span>
 <span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #ae81ff">2</span>
@@ -339,16 +351,15 @@ this extension is enabled, the type constructors are promoted to Kinds and value
 constructors are promoted to type constructors.</p>
 
 <p>In our case, the kind <code>Symbol</code> is already provided by GHC. All we need is for
-GHC to promote and recognize &ldquo;<code>INR</code>&rdquo; as type.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span>
+GHC to promote and recognize &ldquo;<code>GBP</code>&rdquo; as type.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
 
 <span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">interactive</span><span style="color: #f92672">&gt;:</span><span style="color: #ae81ff">1</span><span style="color: #66d9ef">:</span><span style="color: #ae81ff">7</span><span style="color: #66d9ef">:</span> <span style="color: #a6e22e">error</span><span style="color: #66d9ef">:</span>
-    <span style="color: #66d9ef">Illegal</span> <span style="color: #66d9ef">type:</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;INR&quot;</span><span style="color: #960050; background-color: #1e0010">’</span> <span style="color: #66d9ef">Perhaps</span> <span style="color: #f8f8f2">you</span> <span style="color: #f8f8f2">intended</span> <span style="color: #f8f8f2">to</span> <span style="color: #f8f8f2">use</span> <span style="color: #66d9ef">DataKinds</span>
+    <span style="color: #66d9ef">Illegal</span> <span style="color: #66d9ef">type:</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;GBP&quot;</span><span style="color: #960050; background-color: #1e0010">’</span> <span style="color: #66d9ef">Perhaps</span> <span style="color: #f8f8f2">you</span> <span style="color: #f8f8f2">intended</span> <span style="color: #f8f8f2">to</span> <span style="color: #f8f8f2">use</span> <span style="color: #66d9ef">DataKinds</span>
 
 <span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">set</span> <span style="color: #f92672">-</span><span style="color: #66d9ef">XDataKinds</span>
-<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span>
-<span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;INR&quot;</span> <span style="color: #f92672">::</span> <span style="color: #f92672">*</span>
-
+<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
+<span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span> <span style="color: #f92672">::</span> <span style="color: #f92672">*</span>
 
 <span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Int</span>
 
@@ -359,12 +370,12 @@ GHC to promote and recognize &ldquo;<code>INR</code>&rdquo; as type.</p>
 </code></pre></div>
 
 <blockquote>
-<p>The promoted types, <code>&quot;INR&quot;</code> and <code>&quot;USD&quot;</code> in the above example, have no
+<p>The promoted types, <code>&quot;GBP&quot;</code> and <code>&quot;USD&quot;</code> in the above example, have no
 inhabitants.</p>
 
-<p>Also, promoted types are prefixed with a quote (<code>'&quot;INR&quot;</code> and <code>'&quot;USD&quot;</code>) but they
+<p>Also, promoted types are prefixed with a quote (<code>'&quot;GBP&quot;</code> and <code>'&quot;USD&quot;</code>) but they
 can almost always be ignored as the context of their usage makes it clear which
-one we meant - the type &ldquo;INR&rdquo; or the string value &ldquo;INR&rdquo;.</p>
+one we meant - the type &ldquo;GBP&rdquo; or the string value &ldquo;GBP&rdquo;.</p>
 </blockquote>
 
 <h2 id="the-beginning">The Beginning</h2>
