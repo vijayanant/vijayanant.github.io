@@ -96,6 +96,16 @@ SOLID These are the Principles of Object Oriented Class Design popularly known a
     </item>
     
     <item>
+      <title>GADTs in Haskell</title>
+      <link>https://vijayanant.github.io/posts/gadts-in-haskell/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/gadts-in-haskell/</guid>
+      <description>Generalized Algebraic Data Types (GADTs) generalizes ordinary algebraic data types by permitting value constructors to return specific types. GADTs are used for ensuring program correctness and in generic programming. This article is specific to Haskell programming language. In Haskell GADTs are implemented as a language extension. The article describes these use cases with small programs.
+Introduction Type system help programmers ensure that the software they write behave correctly. They detect errors and also serve as documentation.</description>
+    </item>
+    
+    <item>
       <title>A Detour Called Monads</title>
       <link>https://vijayanant.github.io/posts/a-detour-called-monads/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
