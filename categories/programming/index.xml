@@ -6,10 +6,21 @@
     <description>Recent content in Programming on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="https://vijayanant.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dependent Types To Eliminate Runtime Checks</title>
+      <link>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</guid>
+      <description>Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.
+data Money = Money Rational  Now we can add them together as
+add :: Money -&amp;gt; Money -&amp;gt; Money add (Money m1) (Money m2) = Money (m1 + m2) money1 = Money (50 % 100) money2 = Money (25 % 100) total = add money1 money2  Everything OK There?</description>
+    </item>
     
     <item>
       <title>TDD Mantra</title>

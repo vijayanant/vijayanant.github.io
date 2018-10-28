@@ -41,7 +41,7 @@
 <meta property="og:description" content="Vijay Anant" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://vijayanant.github.io/" />
-<meta property="og:updated_time" content="2018-10-08T00:00:00&#43;00:00"/><meta property="og:site_name" content="fossick" />
+<meta property="og:updated_time" content="2018-10-26T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
 
     
 
@@ -163,6 +163,25 @@
   <div class="post-list">
     
     
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="/posts/dependent-types-to-eliminate-runtime-checks/">Dependent Types To Eliminate Runtime Checks</a>
+        </span>
+        <span class="item__date">
+          Oct 26, 2018
+        </span>
+        
+        Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.
+data Money = Money Rational  Now we can add them together as
+add :: Money -&gt; Money -&gt; Money add (Money m1) (Money m2) = Money (m1 + m2) money1 = Money (50 % 100) money2 = Money (25 % 100) total = add money1 money2  Everything OK There?
+        
+        
+        <div class="read-more-link">
+            <a href="/posts/dependent-types-to-eliminate-runtime-checks/">Read More…</a>
+        </div>
+        
+        </div>
+        
       <div class="post-list__item">
         <span class="item__title--big">
           <a href="/posts/distributed-systems-and-scalable-databases/">Distributed Systems and Scalable Databases</a>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dependent Types on </title>
+    <link>https://vijayanant.github.io/tags/dependent-types/</link>
+    <description>Recent content in Dependent Types on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/tags/dependent-types/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dependent Types To Eliminate Runtime Checks</title>
+      <link>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</guid>
+      <description>Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.
+data Money = Money Rational  Now we can add them together as
+add :: Money -&amp;gt; Money -&amp;gt; Money add (Money m1) (Money m2) = Money (m1 + m2) money1 = Money (50 % 100) money2 = Money (25 % 100) total = add money1 money2  Everything OK There?</description>
+    </item>
+    
+  </channel>
+</rss>
