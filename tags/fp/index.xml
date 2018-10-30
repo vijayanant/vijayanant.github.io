@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming on </title>
-    <link>https://vijayanant.github.io/categories/programming/</link>
-    <description>Recent content in Programming on </description>
+    <title>Fp on </title>
+    <link>https://vijayanant.github.io/tags/fp/</link>
+    <description>Recent content in Fp on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0530</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vijayanant.github.io/tags/fp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</guid>
       <description>One of the main advantages of static typing is to catch errors before we deploy code to production. Dependent Types allow us to eliminate some checks that are usually done at rum time. I take a simple example to show how dependent types can be used in that regard in day-to-day programming.
 Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.</description>
-    </item>
-    
-    <item>
-      <title>TDD Mantra</title>
-      <link>https://vijayanant.github.io/posts/tdd-mantra/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/tdd-mantra/</guid>
-      <description>The Essence  Don&amp;rsquo;t write a line of new code unless you first have a failing automated test. Eliminate duplication. (refactor)  What is Needed The ability to write concrete, deterministic, automated tests is a prerequisite for applying TDD.
-Mantra - Order in Programming The two mantras imply an order to the tasks of programming:
- Red - write a little test that doesn’t work, perhaps doesn’t even compile at first Green - make the test work quickly, committing whatever sins necessary in the process Refactor - eliminate all the duplication created in just getting the test to work  Implications The simple mantra generates complex individual and group behavior.</description>
     </item>
     
     <item>
@@ -54,17 +43,6 @@ More details here</description>
     </item>
     
     <item>
-      <title>TensorFlow Basics</title>
-      <link>https://vijayanant.github.io/posts/tensorflow-basics/</link>
-      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/tensorflow-basics/</guid>
-      <description>TensorFlow is Google&amp;rsquo;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
-Basics Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a Session
-import tensorflow as tf x = tf.random_uniform([10]) print(x)  What do you think the above code prints?</description>
-    </item>
-    
-    <item>
       <title>Thinking in Imperative, Object Oriented and Functional way</title>
       <link>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
@@ -72,17 +50,6 @@ import tensorflow as tf x = tf.random_uniform([10]) print(x)  What do you think 
       <guid>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</guid>
       <description>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity. Complex code base is not only harder to test but testing is that much less effective.
 Programming Paradigms Different programming styles tries to deal with the complexity in their own way.</description>
-    </item>
-    
-    <item>
-      <title>OO(h!) Principles</title>
-      <link>https://vijayanant.github.io/posts/ooh-principles/</link>
-      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/ooh-principles/</guid>
-      <description>There is a good chance that you all are aware of the SOLID principles. There are many more principles for us to consider and adhere to while developing OO software.
-SOLID These are the Principles of Object Oriented Class Design popularly known as the SOLID Principles.
- The Single Responsibility Principle [SRP] The Open/Closed Principle [OCP] The Liskov Substitution Principle [LSP] The Interface Segregation Principle [ISP] The Dependency Inversion Principle [DIP]  The next two set of principles, are related to packaging.</description>
     </item>
     
     <item>
@@ -105,15 +72,6 @@ Introduction Type system help programmers ensure that the software they write be
     </item>
     
     <item>
-      <title>Duplication Vs Abstraction</title>
-      <link>https://vijayanant.github.io/posts/duplication-vs-abstraction/</link>
-      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/duplication-vs-abstraction/</guid>
-      <description>When you see code duplication and can&amp;rsquo;t think of an abstraction to put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.</description>
-    </item>
-    
-    <item>
       <title>Understanding Monads Using Function Composition</title>
       <link>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</link>
       <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
@@ -123,26 +81,6 @@ Introduction Type system help programmers ensure that the software they write be
 Why? Even though I could use monads for a while now, I never got around to understanding how they are composing functions and why couldn&amp;rsquo;t we use the (.) function to compose?
 I wanted to understand Monads from composition view point.
 Let&amp;rsquo;s Dig In Lets start with simple function composition</description>
-    </item>
-    
-    <item>
-      <title>Pair Programming - What? Why? And How?</title>
-      <link>https://vijayanant.github.io/posts/pair-programming---what-why-and-how/</link>
-      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/pair-programming---what-why-and-how/</guid>
-      <description>What? Simply put, pair programming is two programmers with a single computer working together to solve a problem!
-Why?  To produce better code To learn more from your peers To learn and practice objectively evaluating possible solutions To collaborate with better programmers  How?  The Driver is responsible to coding (owns the keyboard) The Navigator is responsible for reviewing the driver’s work 30 min Rule: Role changes every 20-30min (at a logical break point) Take control of the worl.</description>
-    </item>
-    
-    <item>
-      <title>Performance Analysis In Python</title>
-      <link>https://vijayanant.github.io/posts/performance-analysis-in-python/</link>
-      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/performance-analysis-in-python/</guid>
-      <description>My recent escapade with Python taught me many things. One of which is to &amp;ldquo;start doing something that interests you. And each such daring act will teach you many more things.&amp;rdquo;
-This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
     </item>
     
   </channel>
