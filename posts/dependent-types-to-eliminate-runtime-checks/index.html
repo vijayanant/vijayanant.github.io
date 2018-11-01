@@ -293,8 +293,8 @@ not defined.</p>
 
 <p>Wrapping the return type with <code>Maybe</code> or <code>Either e</code> are common approaches to
 extending the function. A special value of <code>Nothing::Maybe Money</code> (or <code>Left
-&quot;Incompatible Currency&quot;::Either String Money</code>) can be returned for all the inputs where <code>add</code>
-is originally not defined.</p>
+&quot;Incompatible Currency&quot;::Either String Money</code>) can be returned for all the
+inputs where <code>add</code> is originally not defined.</p>
 
 <p>A simple addition function now has to deal with error cases. If we decide to
 indicate an error using <code>Maybe Money</code> or <code>Either Error Money</code> as return type,
@@ -342,7 +342,7 @@ more interesting ways.</p>
 
 <p>Notice how the implementation of <code>add</code> function is same as the one before
 introducing <code>currency</code> parameter. It has no if/case expressions and no <code>Maybe</code>
-return type. It is an compilation error to add <code>Money</code> values with different
+return type. It is a compilation error to add <code>Money</code> values with different
 currency.</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">fiftyPence</span>
 <span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
