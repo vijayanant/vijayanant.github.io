@@ -292,8 +292,8 @@ specific value (an <em>error</em> value) for all those inputs for which the func
 not defined.</p>
 
 <p>Wrapping the return type with <code>Maybe</code> or <code>Either e</code> are common approaches to
-extending the function. A special value of <code>Nothing::Money</code> (or <code>Left
-&quot;Incompatible Currency&quot;::Money</code>) can be returned for all the inputs where <code>add</code>
+extending the function. A special value of <code>Nothing::Maybe Money</code> (or <code>Left
+&quot;Incompatible Currency&quot;::Either String Money</code>) can be returned for all the inputs where <code>add</code>
 is originally not defined.</p>
 
 <p>A simple addition function now has to deal with error cases. If we decide to
