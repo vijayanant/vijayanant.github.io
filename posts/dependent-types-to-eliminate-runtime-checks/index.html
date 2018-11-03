@@ -226,8 +226,8 @@ can be used in that regard in day-to-day programming.
   <div class="post">
     
 
-<p>One of the main advantages of <em>static typing</em> is to catch errors before we
-deploy code to production. <strong>Dependent Types</strong> allow us to eliminate some checks
+<p>One of the main advantages of <a href="https://en.wikipedia.org/wiki/Type_system#Static_type_checking">static type checking</a> is to catch
+errors before we deploy code to production.  <a href="https://en.wikipedia.org/wiki/Dependent_type">Dependent Types</a> allow us to eliminate some checks
 that are usually done at run time. I take a simple example to show how dependent
 types can be used in that regard in day-to-day programming.</p>
 
@@ -266,7 +266,7 @@ amount.</p>
 <h3 id="houston-we-ve-got-a-problem">Houston, We&rsquo;ve Got a Problem</h3>
 
 <p>The constraint that only <code>Money</code> values with same <code>currency</code> can be added makes
-our <code>add</code> function <em>partial</em>.</p>
+our <code>add</code> function <a href="https://en.wikipedia.org/wiki/Partial_function">partial</a>.</p>
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">add</span><span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span>
 <span style="color: #a6e22e">add</span>   <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f8f8f2">m1)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c2</span> <span style="color: #f8f8f2">m2)</span> <span style="color: #f92672">=</span>
       <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">c2</span> <span style="color: #66d9ef">of</span>
