@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vijayanant.github.io/posts/expressiveness-of-haskell/</loc>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</loc>
     <lastmod>2018-10-26T00:00:00+05:30</lastmod>
   </url>
@@ -94,7 +99,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/</loc>
-    <lastmod>2018-10-26T00:00:00+05:30</lastmod>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -113,6 +118,12 @@
   <url>
     <loc>https://vijayanant.github.io/tags/beta-reduction/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vijayanant.github.io/tags/binary-tree/</loc>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -249,7 +260,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/tags/haskell/</loc>
-    <lastmod>2018-10-26T00:00:00+05:30</lastmod>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -262,6 +273,12 @@
   <url>
     <loc>https://vijayanant.github.io/tags/imperative/</loc>
     <lastmod>2017-09-15T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vijayanant.github.io/tags/java/</loc>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -369,7 +386,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/posts/</loc>
-    <lastmod>2018-10-26T00:00:00+05:30</lastmod>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -393,7 +410,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/categories/programming/</loc>
-    <lastmod>2018-10-26T00:00:00+05:30</lastmod>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -405,7 +422,7 @@
   
   <url>
     <loc>https://vijayanant.github.io/tags/python/</loc>
-    <lastmod>2014-11-02T20:05:36+00:00</lastmod>
+    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   

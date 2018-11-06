@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on </title>
-    <link>https://vijayanant.github.io/tags/python/</link>
-    <description>Recent content in Python on </description>
+    <title>Binary Tree on </title>
+    <link>https://vijayanant.github.io/tags/binary-tree/</link>
+    <description>Recent content in Binary Tree on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0530</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vijayanant.github.io/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>https://vijayanant.github.io/posts/expressiveness-of-haskell/</guid>
       <description>My goto answer when someone asks why I like Haskell so much these days is usually &amp;ldquo;I like the expressiveness and run time guarantees of Haskell&amp;rdquo;. For those who are little more interested, I would usually show the popular quick sort or merge sort implementations. I wanted a slightly more complicated, yet commonly known, example to demonstrate what I claimed. This is an attempt at that. And turning it into a blog post makes it available for me all the time (and for other too!</description>
-    </item>
-    
-    <item>
-      <title>Performance Analysis In Python</title>
-      <link>https://vijayanant.github.io/posts/performance-analysis-in-python/</link>
-      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/performance-analysis-in-python/</guid>
-      <description>My recent escapade with Python taught me many things. One of which is to &amp;ldquo;start doing something that interests you. And each such daring act will teach you many more things.&amp;rdquo;
-This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
     </item>
     
   </channel>

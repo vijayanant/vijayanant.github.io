@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.50" />
+
+    
+    
+    
+    
+    
+
+<title>Expressiveness of Haskell • fossick • Vijay Anant</title>
+
+
+  
+    <meta name="description" content="Demonstrate the expressiveness of Haskell using a  simple
+Binary Tree and in-order traversal in Haskell, Python and Java">
+  
+
+
+
+
+  
+  
+    <meta name="keywords" content="Haskell, Python, Java, Binary Tree, Programming">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Expressiveness of Haskell"/>
+<meta name="twitter:description" content="Demonstrate the expressiveness of Haskell using a  simple
+Binary Tree and in-order traversal in Haskell, Python and Java"/>
+
+<meta property="og:title" content="Expressiveness of Haskell" />
+<meta property="og:description" content="Demonstrate the expressiveness of Haskell using a  simple
+Binary Tree and in-order traversal in Haskell, Python and Java" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/expressiveness-of-haskell/" /><meta property="article:published_time" content="2018-11-04T00:00:00&#43;05:30"/>
+<meta property="article:modified_time" content="2018-11-04T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
+
+
+    
+
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    
+    <link rel="shortcut icon" href="/author.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://vijayanant.github.io/">fossick</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://vijayanant.github.io/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         Vijay Anant 
+      </p>
+    </div>
+    <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/resume.pdf">
+						<span>CV</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+    <p>
+      <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+    </p>
+    <p class="copyright">
+      &copy; 2018 Vijay Anant.
+      
+      <br/>Built with
+      <a href="https://gohugo.io">Hugo</a> ❤️  <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+      
+      
+    </p>
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Expressiveness of Haskell</h1>
+    
+    <span class="post__subtitle">
+      Tree traversal in Haskell, Python, and Java
+    </span>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 04 Nov 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/haskell">haskell</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/python">python</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/java">java</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/binary-tree">binary tree</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    
+
+<p>My goto answer when someone asks why I like <a href="https://www.haskell.org">Haskell</a>
+so much these days is usually <em>&ldquo;I like the expressiveness and run time
+guarantees of Haskell&rdquo;.</em> For those who are little more interested, I would
+usually show the popular quick sort or merge sort implementations. I wanted a
+slightly more complicated, yet commonly known, example to demonstrate what I
+claimed. This is an attempt at that. And turning it into a blog post makes it
+available for me all the time (and for other too!!).</p>
+
+<p>I do not claim mastery over either of these languages. If you have any
+suggestions on making any of the these implementations more expressive, let me
+know and I will update the sample accordingly. Other languages are welcome too!</p>
+
+<p>All three versions does the same thing. Define a simple <code>Tree</code> type. Instead of
+constructing the tree one-element-at-a-time, we provide a convenient function
+<code>fromList</code> which takes a list and adds it elements to tree. We also provide a
+way to turn the <code>Tree</code> back to a list by providing <code>inorder</code> function to
+traverse the tree in-order.</p>
+
+<p>The tree construction happens like this: we split the list in to three parts -
+middle element, left-sublist and right-sublist. Then, we recursively construct
+left and right sub-tree with the two split parts of the list. The middle element
+is used at the current node. Why we do it this way? If you pass a sorted list,
+this will construct a binary search tree. In-order traversal on that tree should
+return the original sorted list back!</p>
+
+<h2 id="haskell">Haskell</h2>
+
+<script type="application/javascript" src="//gist.github.com/vijayanant/d557b72bea0eda2b3490ba8e059fb486.js?file=Tree.hs"></script>
+
+<h2 id="python">Python</h2>
+
+<script type="application/javascript" src="//gist.github.com/vijayanant/d557b72bea0eda2b3490ba8e059fb486.js?file=Tree.py"></script>
+
+<h2 id="java">Java</h2>
+
+<script type="application/javascript" src="//gist.github.com/vijayanant/d557b72bea0eda2b3490ba8e059fb486.js?file=Tree.java"></script>
+
+  </div>
+  
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/dependent-types-to-eliminate-runtime-checks/">Dependent Types To Eliminate Runtime Checks</a>
+      
+      <time class="pull-right hidden-tablet">26 Oct 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/gadts-to-eliminate-runtime-checks/">GADTs To Eliminate Runtime Checks</a>
+      
+      <time class="pull-right hidden-tablet">15 Oct 2016</time>
+      
+  </span>
+</li>
+
+
+    </ul>
+</div>
+
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>
