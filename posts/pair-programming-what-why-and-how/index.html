@@ -19,7 +19,7 @@
     
     
 
-<title>A Detour Called Monads • fossick • Vijay Anant</title>
+<title>Pair Programming - What? Why? And How? • fossick • Vijay Anant</title>
 
 
   
@@ -31,7 +31,7 @@
 
   
   
-    <meta name="keywords" content="fp, monads, fallacy, Rant, Programming">
+    <meta name="keywords" content="pair programming, XP, code pairing, extreme programming, programming, Rant">
   
 
 
@@ -40,14 +40,16 @@
 <meta name="googlebot" content="index,follow">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A Detour Called Monads"/>
-<meta name="twitter:description" content="When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory."/>
+<meta name="twitter:title" content="Pair Programming - What? Why? And How?"/>
+<meta name="twitter:description" content="What? Simply put, pair programming is two programmers with a single computer working together to solve a problem!
+Why?  To produce better code To learn more from your peers To learn and practice objectively evaluating possible solutions To collaborate with better programmers  How?  The Driver is responsible to coding (owns the keyboard) The Navigator is responsible for reviewing the driver’s work 30 min Rule: Role changes every 20-30min (at a logical break point) Take control of the worl."/>
 
-<meta property="og:title" content="A Detour Called Monads" />
-<meta property="og:description" content="When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory." />
+<meta property="og:title" content="Pair Programming - What? Why? And How?" />
+<meta property="og:description" content="What? Simply put, pair programming is two programmers with a single computer working together to solve a problem!
+Why?  To produce better code To learn more from your peers To learn and practice objectively evaluating possible solutions To collaborate with better programmers  How?  The Driver is responsible to coding (owns the keyboard) The Navigator is responsible for reviewing the driver’s work 30 min Rule: Role changes every 20-30min (at a logical break point) Take control of the worl." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://vijayanant.github.io/posts/a-detour-called-monads/" /><meta property="article:published_time" content="2016-08-15T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2016-08-15T00:00:00&#43;00:00"/><meta property="og:site_name" content="fossick" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/pair-programming-what-why-and-how/" /><meta property="article:published_time" content="2015-01-31T12:31:30&#43;00:00"/>
+<meta property="article:modified_time" content="2015-01-31T12:31:30&#43;00:00"/><meta property="og:site_name" content="fossick" />
 
 
     
@@ -165,13 +167,13 @@
             
     <article>
   <header>
-    <h1>A Detour Called Monads</h1>
+    <h1>Pair Programming - What? Why? And How?</h1>
      
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> 15 Aug 2016
+      <i class="fas fa-calendar-alt"></i> 31 Jan 2015
     
     
     
@@ -180,10 +182,10 @@
           in
           
           
-              <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
+              <a class="badge badge-category" href="/categories/rant">RANT</a>
               •
           
-              <a class="badge badge-category" href="/categories/rant">RANT</a>
+              <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
               
           
       
@@ -195,13 +197,16 @@
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/tags/fp">fp</a>
+          <a class="badge badge-tag" href="/tags/pair-programming">pair programming</a>
            
       
-          <a class="badge badge-tag" href="/tags/monads">monads</a>
+          <a class="badge badge-tag" href="/tags/xp">xp</a>
            
       
-          <a class="badge badge-tag" href="/tags/fallacy">fallacy</a>
+          <a class="badge badge-tag" href="/tags/code-pairing">code pairing</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/extreme-programming">extreme programming</a>
           
       
     
@@ -213,20 +218,41 @@
 
   </header>
   <div class="post">
-    <p>When learning Haskell, all of us are faced with this monad monster. I too have
-spent many days and night fighting it -  hoping that it will grant me all the
-wisdom if I survive long enough. I have come to believe that the community as
-whole has created this monstor. And many of us have taken this detour to master
-the art of monstor slaying instead of going on ahead - just to realise later
-that the detour was unnesessory. Pocket knife is all that was needed.</p>
+    
 
-<p>Stop Scaring the newcomers. We don&rsquo;t call it List Monad everytime we use it. We
-are OK to call it just List. But everytime we need state why do we call it State
-Monad? When I need to do i/o I will use IO. The fact that it is a monad is not
-relevant at that point.</p>
+<h3 id="what">What?</h3>
 
-<p>Monads don&rsquo;t do IO, monads don&rsquo;t manage State, Monads don&rsquo;t handle Exception.
-Monads don&rsquo;t do anything. The types IO, State etc. do. Understand the types.</p>
+<p>Simply put, pair programming is two programmers with a single computer working
+together to solve a problem!</p>
+
+<h3 id="why">Why?</h3>
+
+<ul>
+<li>To produce better code</li>
+<li>To learn more from your peers</li>
+<li>To learn and practice objectively evaluating possible solutions</li>
+<li>To collaborate with better programmers</li>
+</ul>
+
+<h3 id="how">How?</h3>
+
+<ul>
+<li><strong>The Driver</strong> is responsible to coding (owns the keyboard)</li>
+<li><strong>The Navigator</strong> is responsible for reviewing the driver’s work</li>
+<li><strong>30 min Rule</strong>: Role changes every 20-30min (at a logical break point)</li>
+<li><strong>Take control of the worl.. err.. keyboar</strong> - you drive when you know what to do</li>
+</ul>
+
+<h3 id="common-sense">Common Sense</h3>
+
+<ul>
+<li>Respect your peer’s time</li>
+<li>Collective ownership - Be a team player</li>
+<li>Communication - Talk to you peer (Speak your mind)</li>
+<li>Let-go/grab the keyboard when required</li>
+<li>Let go of your ego, be humble</li>
+<li>Enjoy coding</li>
+</ul>
 
   </div>
   
@@ -234,60 +260,6 @@ Monads don&rsquo;t do anything. The types IO, State etc. do. Understand the typ
 
   
 
-
-<div class="post__related">
-    
-    <h2>Related Articles</h2>
-    <ul class="related-posts">
-        
-<li>
-  <span class="list__title--small">
-    <a href="/posts/understanding-monads-using-function-composition/">Understanding Monads Using Function Composition</a>
-      
-      <time class="pull-right hidden-tablet">20 May 2016</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/gadts-to-eliminate-runtime-checks/">GADTs To Eliminate Runtime Checks</a>
-      
-      <time class="pull-right hidden-tablet">15 Oct 2016</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/dependent-types-to-eliminate-runtime-checks/">Dependent Types To Eliminate Runtime Checks</a>
-      
-      <time class="pull-right hidden-tablet">26 Oct 2018</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/lambda-calculus/">Lambda Calculus</a>
-      
-      <time class="pull-right hidden-tablet">25 Feb 2018</time>
-      
-  </span>
-</li>
-
-<li>
-  <span class="list__title--small">
-    <a href="/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/">Outward Counterclockwise Spiral Matrix Traversal - Haskell</a>
-      
-      <time class="pull-right hidden-tablet">12 Feb 2018</time>
-      
-  </span>
-</li>
-
-
-    </ul>
-</div>
 
 
 

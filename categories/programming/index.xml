@@ -44,10 +44,10 @@ Machine models are based on the idea of a program acting on data by modification
     
     <item>
       <title>Outward Counterclockwise Spiral Matrix Traversal - Haskell</title>
-      <link>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal---haskell/</link>
+      <link>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal---haskell/</guid>
+      <guid>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</guid>
       <description>Problem Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row r and column c.
 Return an array of integers obtained by spiraling outward anti-clockwise from the r and c, starting upward.
 More details here</description>
@@ -127,10 +127,10 @@ Let&amp;rsquo;s Dig In Lets start with simple function composition</description>
     
     <item>
       <title>Pair Programming - What? Why? And How?</title>
-      <link>https://vijayanant.github.io/posts/pair-programming---what-why-and-how/</link>
+      <link>https://vijayanant.github.io/posts/pair-programming-what-why-and-how/</link>
       <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/pair-programming---what-why-and-how/</guid>
+      <guid>https://vijayanant.github.io/posts/pair-programming-what-why-and-how/</guid>
       <description>What? Simply put, pair programming is two programmers with a single computer working together to solve a problem!
 Why?  To produce better code To learn more from your peers To learn and practice objectively evaluating possible solutions To collaborate with better programmers  How?  The Driver is responsible to coding (owns the keyboard) The Navigator is responsible for reviewing the driver’s work 30 min Rule: Role changes every 20-30min (at a logical break point) Take control of the worl.</description>
     </item>
