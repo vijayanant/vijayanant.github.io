@@ -17,7 +17,7 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
       
       <guid>https://vijayanant.github.io/posts/expressiveness-of-haskell/</guid>
-      <description>My goto answer when someone asks why I like Haskell so much these days is usually &amp;ldquo;I like the expressiveness and run time guarantees of Haskell&amp;rdquo;. For those who are little more interested, I would usually show the popular quick sort or merge sort implementations. I wanted a slightly more complicated, yet commonly known, example to demonstrate what I claimed. This is an attempt at that. And turning it into a blog post makes it available for me all the time (and for other too!</description>
+      <description>My goto answer when someone asks why I like Haskell so much these days is usually &amp;ldquo;I like the expressiveness and run time guarantees of Haskell&amp;rdquo;. For those who are little more interested, I would usually show the popular quick sort or merge sort implementations. I wanted a slightly more complicated, yet commonly known, example to demonstrate what I claimed. This is an attempt at coming up with such an example.</description>
     </item>
     
   </channel>
