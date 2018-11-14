@@ -258,17 +258,21 @@ understand the problem.</p>
 code needs to be modified. However, adding new functions (operations) over the
 datatype is hard. All the datatypes have to be modified and recompiled.</p>
 
+<p>Below is a java version explaining the problem. If you want to add new operation
+on the expressions (say, to type-check), you will have to add the new operation
+to each object type (Literal and Add) forcing a recompilation of these classes.</p>
+
+<script type="application/javascript" src="//gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressonProblem.java"></script>
+
 <p><a href="https://en.wikipedia.org/wiki/Visitor_pattern">Visitor design pattern</a> in OO
 programming is a known solution to cases where new operations are added over
 existing type (hierarchy). However, by using this pattern we will restrict our
 ability to add new types. Adding new (element) class (to the hierarchy) forces
 changes to all the visitor classes and needs recompilation.</p>
 
-<p>Below is a java version explaining the problem. If you want to add new operation
-on the expressions (say, to type-check), you will have to add the new operation
-to each object type (Literal and Add) forcing a recompilation of these classes.</p>
+<!--The extended Visitor pattern does offer a solution but at the cost of little-->
 
-<script type="application/javascript" src="//gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressonProblem.java"></script>
+<!--type safety as this approach makes use of dynamic type casts.-->
 
 <h2 id="functional-programming">Functional Programming</h2>
 
@@ -287,7 +291,7 @@ typeclass.</p>
 
 <script type="application/javascript" src="//gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressionProblem.hs"></script>
 
-<p>In the <em>functional pearl</em> <a href="http://www.cs.ru.nl/~W.Swierstra/Publications/DataTypesALaCarte.pdf">Data types  la carte</a>,  <em>Wouter
+<p>In the <em>functional pearl</em> <a href="http://www.cs.ru.nl/~W.Swierstra/Publications/DataTypesALaCarte.pdf">Data types a la carte</a>,  <em>Wouter
 Swierstra</em> proposes a solution to the expression problem. Philip Wadler himself
 calls this the <a href="http://wadler.blogspot.com/2008/02/data-types-la-carte.html">best solution in Haskell</a>.</p>
 
