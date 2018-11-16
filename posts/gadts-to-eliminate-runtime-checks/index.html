@@ -68,11 +68,6 @@ these use cases with small programs.
     
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-
-
-
-
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
 
@@ -254,63 +249,58 @@ ADTs though powerful, is still lacking in few aspects. GADTs fill that gap.</p>
 
 <p>ADTs are composite types, i.e., types formed by combining other types. Depending
 on how the types are combined, we can have either a <em>sum</em> type or a <em>product</em> type.</p>
-
-<pre><code class="language-Haskell">data Point = Pt Int Int
-data Expr a = Number Integer | Boolean Bool
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Point</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Pt</span> <span style="color: #66d9ef">Int</span> <span style="color: #66d9ef">Int</span>
+<span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Expr</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Number</span> <span style="color: #66d9ef">Integer</span> <span style="color: #f92672">|</span> <span style="color: #66d9ef">Boolean</span> <span style="color: #66d9ef">Bool</span>
+</code></pre></div>
 
 <p>In the example above <code>Point</code> and <code>Expr</code> are called <em>type constructors</em> and <code>Pt</code>,
 <code>Number</code>, and <code>Boolean</code> are called <em>value constructors</em>. If a type has more than
 one value constructor, they are called alternatives: one can use any of these
 alternatives to create a value of that type.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">let</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">10</span>
+<span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">let</span> <span style="color: #f8f8f2">b</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Boolean</span> <span style="color: #66d9ef">True</span>
 
-<pre><code class="language-Haskell">ghci&gt; let a = Number 10
-ghci&gt; let b = Boolean True
+<span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">a</span>
+<span style="color: #a6e22e">a</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Expr</span>
 
-ghci&gt; :t a
-a :: Expr
-
-ghci&gt; :t b
-b :: Expr
-</code></pre>
+<span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">b</span>
+<span style="color: #a6e22e">b</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Expr</span>
+</code></pre></div>
 
 <p>Notice that the type of both <code>a</code> and <code>b</code> is <code>Expr.</code> This is because of the type of the
 value constructors.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #66d9ef">Number</span>
+<span style="color: #66d9ef">Number</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Integer</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Expr</span>
 
-<pre><code class="language-Haskell">ghci&gt; :t Number
-Number :: Integer -&gt; Expr
-
-ghci&gt; :t Boolean
-Boolean :: Bool -&gt; Expr
-</code></pre>
+<span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #66d9ef">Boolean</span>
+<span style="color: #66d9ef">Boolean</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Bool</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Expr</span>
+</code></pre></div>
 
 <p>To showcase how this complicates code, let us extend our type a bit and also add
 a expression evaluator.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Expr</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Number</span> <span style="color: #66d9ef">Int</span>
+          <span style="color: #f92672">|</span> <span style="color: #66d9ef">Succ</span> <span style="color: #66d9ef">Expr</span>
+          <span style="color: #f92672">|</span> <span style="color: #66d9ef">IsZero</span> <span style="color: #66d9ef">Expr</span>
+          <span style="color: #f92672">|</span> <span style="color: #66d9ef">If</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Expr</span>
 
-<pre><code class="language-Haskell">data Expr = Number Int
-          | Succ Expr
-          | IsZero Expr
-          | If Expr Expr Expr
+<span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Value</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">IntVal</span> <span style="color: #66d9ef">Int</span> <span style="color: #f92672">|</span> <span style="color: #66d9ef">BoolVal</span> <span style="color: #66d9ef">Bool</span>
 
-data Value = IntVal Int | BoolVal Bool
-
-eval :: Expr -&gt; Value
-eval (Number i) = IntVal i
-eval (Succ e) = case eval e of
-        IntVal i -&gt; IntVal (i+1)
-eval (IsZero e) = case eval e of
-        IntVal i -&gt; BoolVal (i==0)
-eval (If b e1 e2) = case eval b of
-        BoolVal True  -&gt; eval e1
-        BoolVal False -&gt; eval e2
-</code></pre>
+<span style="color: #a6e22e">eval</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Expr</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Value</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #f8f8f2">i)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">IntVal</span> <span style="color: #f8f8f2">i</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">e)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e</span> <span style="color: #66d9ef">of</span>
+        <span style="color: #66d9ef">IntVal</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">IntVal</span> <span style="color: #f8f8f2">(i</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">e)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e</span> <span style="color: #66d9ef">of</span>
+        <span style="color: #66d9ef">IntVal</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">BoolVal</span> <span style="color: #f8f8f2">(i</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">If</span> <span style="color: #f8f8f2">b</span> <span style="color: #f8f8f2">e1</span> <span style="color: #f8f8f2">e2)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">b</span> <span style="color: #66d9ef">of</span>
+        <span style="color: #66d9ef">BoolVal</span> <span style="color: #66d9ef">True</span>  <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e1</span>
+        <span style="color: #66d9ef">BoolVal</span> <span style="color: #66d9ef">False</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e2</span>
+</code></pre></div>
 
 <p>If you notice carefully, this allows for some invalid expressions to type check
 successfully.</p>
-
-<pre><code class="language-Haskell">expr1 = Succ (Number 1)          -- valid and type checks
-expr2 = Succ (IsZero (Number 1)) -- invalid but type checks
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">expr1</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>          <span style="color: #75715e">-- valid and type checks</span>
+<span style="color: #a6e22e">expr2</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">))</span> <span style="color: #75715e">-- invalid but type checks</span>
+</code></pre></div>
 
 <p>Also, notice how our <code>eval</code> function is <em>partially</em> implemented. We do not know
 what to evaluate a expression <code>Succ (IsZero (Number 1))</code> to. We could allow the
@@ -325,44 +315,41 @@ They <em>generalize</em> ordinary data types. GADTs are provided in GHC as a lan
 extension. We can enable this feature using the <code>LANGUAGE</code> pragma. It provides a
 new syntax for defining data types. We specify type for each value constructor.
 We can now redefine our <code>Expr</code> type like below:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #75715e">{-# LANGUAGE GADTs #-}</span>
 
-<pre><code class="language-Haskell">{-# LANGUAGE GADTs #-}
-
-data Expr a where
-  Number :: Int -&gt; Expr Int
-  Succ   :: Expr Int -&gt; Expr Int
-  IsZero :: Expr Int -&gt; Expr Bool
-  If     :: ExprBool-&gt;Expra-&gt;Expra-&gt;Expra
-</code></pre>
+<span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Expr</span> <span style="color: #f8f8f2">a</span> <span style="color: #66d9ef">where</span>
+  <span style="color: #66d9ef">Number</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Int</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Int</span>
+  <span style="color: #66d9ef">Succ</span>   <span style="color: #f92672">::</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Int</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Int</span>
+  <span style="color: #66d9ef">IsZero</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Int</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Bool</span>
+  <span style="color: #66d9ef">If</span>     <span style="color: #f92672">::</span> <span style="color: #66d9ef">ExprBool</span><span style="color: #f92672">-&gt;</span><span style="color: #66d9ef">Expra</span><span style="color: #f92672">-&gt;</span><span style="color: #66d9ef">Expra</span><span style="color: #f92672">-&gt;</span><span style="color: #66d9ef">Expra</span>
+</code></pre></div>
 
 <p>Notice that return type for value constructor can differ. This allows our
 program to be more strict. The value constructor <code>Succ</code>, for example, expects a
 <code>Expr Int.</code> The compiler can now reject code if you provide <code>Expr Bool</code> or anything
 else.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Int</span>
 
-<pre><code class="language-Haskell">ghci&gt; :t Succ (Number 10)
-Succ (Number 10) :: Expr Int
-
-ghci&gt; :t Succ (IsZero (Number 0))
-&lt;interactive&gt;:1:7: error:
-     Couldn’t match type Bool with Int
-      Expected type: Expr Int
-        Actual type: Expr Bool
-     In the first argument of Succ, namely (IsZero (Number 0))
-      In the expression: Succ (IsZero (Number 0))
-</code></pre>
+<span style="color: #a6e22e">ghci</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">interactive</span><span style="color: #f92672">&gt;:</span><span style="color: #ae81ff">1</span><span style="color: #66d9ef">:</span><span style="color: #ae81ff">7</span><span style="color: #66d9ef">:</span> <span style="color: #a6e22e">error</span><span style="color: #66d9ef">:</span>
+     <span style="color: #66d9ef">Couldn</span><span style="color: #960050; background-color: #1e0010">’</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">match</span> <span style="color: #66d9ef">type</span> <span style="color: #66d9ef">Bool</span> <span style="color: #f8f8f2">with</span> <span style="color: #66d9ef">Int</span>
+      <span style="color: #66d9ef">Expected</span> <span style="color: #66d9ef">type:</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Int</span>
+        <span style="color: #66d9ef">Actual</span> <span style="color: #66d9ef">type:</span> <span style="color: #66d9ef">Expr</span> <span style="color: #66d9ef">Bool</span>
+     <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">first</span> <span style="color: #f8f8f2">argument</span> <span style="color: #66d9ef">of</span> <span style="color: #66d9ef">Succ</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">namely</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">))</span>
+      <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">expression</span><span style="color: #66d9ef">:</span> <span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">))</span>
+</code></pre></div>
 
 <p>Now, with the refined <code>Expr</code> type, the evaluation of expression become simple. The
 expression evaluator need not worry about cases where the type do not match
 (ill-typed expression we saw earlier). The new evaluator is easy to write and
 read.</p>
-
-<pre><code class="language-Haskell">eval :: Expr a -&gt; a
-eval (Number i) = i
-eval (Succ e) = 1 + eval e
-eval (IsZero e) = 0 == eval e
-eval (If b e1 e2) = if eval b then eval e1 else eval e2
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">eval</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Expr</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">a</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Number</span> <span style="color: #f8f8f2">i)</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Succ</span> <span style="color: #f8f8f2">e)</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">IsZero</span> <span style="color: #f8f8f2">e)</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e</span>
+<span style="color: #a6e22e">eval</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">If</span> <span style="color: #f8f8f2">b</span> <span style="color: #f8f8f2">e1</span> <span style="color: #f8f8f2">e2)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">b</span> <span style="color: #66d9ef">then</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e1</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">eval</span> <span style="color: #f8f8f2">e2</span>
+</code></pre></div>
 
 <p>This version of <code>eval</code> is complete unlike the previously implemented one. If we
 are evaluating an expression, the expression is guaranteed to be valid and no
@@ -490,18 +477,6 @@ if (!doNotTrack) {
   crossorigin="anonymous">
 </script>
 
-
-    
-        
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        
-        <script type="text/javascript">
-            hljs.configure({languages: []});
-            hljs.initHighlightingOnLoad();
-        </script>
-        
-        
 
 
 

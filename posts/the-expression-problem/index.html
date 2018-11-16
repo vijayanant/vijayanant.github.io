@@ -62,11 +62,6 @@ its capacity for expression. " />
     
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-
-
-
-
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
 
@@ -287,9 +282,8 @@ for the new case.</p>
 
 <p>Typeclasses in Haskell offer a solution. But a naive use of type classes will
 not work either! In the below code, the expression</p>
-
-<pre><code class="language-Haskell">if True then Lit 10 else Add (Lit 5) (Lit 5)
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">if</span> <span style="color: #66d9ef">True</span> <span style="color: #66d9ef">then</span> <span style="color: #66d9ef">Lit</span> <span style="color: #ae81ff">10</span> <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">Add</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Lit</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Lit</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span>
+</code></pre></div>
 
 <p>does not typecheck even thought both <code>Lit</code> and <code>Add</code> are instances of <code>Exp</code>
 typeclass.</p>
@@ -421,18 +415,6 @@ if (!doNotTrack) {
   crossorigin="anonymous">
 </script>
 
-
-    
-        
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        
-        <script type="text/javascript">
-            hljs.configure({languages: []});
-            hljs.initHighlightingOnLoad();
-        </script>
-        
-        
 
 
 

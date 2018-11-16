@@ -55,11 +55,6 @@ This time I set out to finding ways of analysing the performance of an applicati
     
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-
-
-
-
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
 
@@ -252,42 +247,40 @@ python slowprogram.py  3.81s user 0.04s system 97% cpu 3.927 total
 <h2 id="python-timer-class-context-manager">Python Timer Class - Context Manager</h2>
 
 <p>Corey Goldberg, in his blog <a href="http://coreygoldberg.blogspot.in/2012/06/python-timer-class-context-manager-for.html">here</a>, has given a tiny timer class that can be used to time any block of code.</p>
-
-<pre><code class="language-Python">from timeit import default_timer
-class Timer(object):
-    def __init__(self, verbose=False):
-        self.verbose = verbose
-        self.timer = default_timer
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Python" data-lang="Python"><span></span><span style="color: #f92672">from</span> <span style="color: #f8f8f2">timeit</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">default_timer</span>
+<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Timer</span><span style="color: #f8f8f2">(object):</span>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">verbose</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">False):</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">verbose</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">verbose</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">timer</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">default_timer</span>
         
-    def __enter__(self):
-        self.start = self.timer()
-        return self
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__enter__</span><span style="color: #f8f8f2">(self):</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">start</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">timer()</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">self</span>
         
-    def __exit__(self, *args):
-        end = self.timer()
-        self.elapsed_secs = end - self.start
-        self.elapsed = self.elapsed_secs * 1000  # millisecs
-        if self.verbose:
-            print 'elapsed time: %f ms' % self.elapsed
-</code></pre>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__exit__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f92672">*</span><span style="color: #f8f8f2">args):</span>
+        <span style="color: #f8f8f2">end</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">timer()</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed_secs</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">start</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed_secs</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">1000</span>  <span style="color: #75715e"># millisecs</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">verbose:</span>
+            <span style="color: #66d9ef">print</span> <span style="color: #e6db74">&#39;elapsed time: %f ms&#39;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span>
+</code></pre></div>
 
 <p>With this class in hand all you need to do is to enclose any code within the <code>with</code> block -</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Python" data-lang="Python"><span></span><span style="color: #f92672">from</span> <span style="color: #f8f8f2">timer</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">Timer</span>
+<span style="color: #f92672">from</span> <span style="color: #f8f8f2">sorting</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">Sort</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">random</span>
 
-<pre><code class="language-Python">from timer import Timer
-from sorting import Sort
-import random
+<span style="color: #f8f8f2">random_items</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">randint(</span><span style="color: #f92672">-</span><span style="color: #ae81ff">50</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">5000</span><span style="color: #f8f8f2">)]</span>
+<span style="color: #f8f8f2">sort</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Sort()</span>
 
-random_items = [random.randint(-50, 100) for c in range(5000)]
-sort = Sort()
+<span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">Timer()</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">t:</span>
+    <span style="color: #f8f8f2">sort</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">bubble_sort(random_items)</span>
+<span style="color: #66d9ef">print</span> <span style="color: #e6db74">&quot;=&gt; elapsed bubble_sort: %s s&quot;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">t</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span>
 
-with Timer() as t:
-    sort.bubble_sort(random_items)
-print &quot;=&gt; elapsed bubble_sort: %s s&quot; % t.elapsed
-
-with Timer() as t:
-    sort.insertion_sort(random_items)
-print &quot;=&gt; elapsed insertion_sort: %s s&quot; % t.elapsed
-</code></pre>
+<span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">Timer()</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">t:</span>
+    <span style="color: #f8f8f2">sort</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">insertion_sort(random_items)</span>
+<span style="color: #66d9ef">print</span> <span style="color: #e6db74">&quot;=&gt; elapsed insertion_sort: %s s&quot;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">t</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span>
+</code></pre></div>
 
 <p>Here is a sample output :</p>
 
@@ -378,9 +371,8 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 <h3 id="profiling-a-single-statement">Profiling a single statement</h3>
 
 <p>Sometimes it is not a good idea or not required/possible to profile an entire script. In those scenarios you can profile individual statements:</p>
-
-<pre><code class="language-Python">cProfile.run('sort.bubble_sort(random_items)')   
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Python" data-lang="Python"><span></span><span style="color: #f8f8f2">cProfile</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run(</span><span style="color: #e6db74">&#39;sort.bubble_sort(random_items)&#39;</span><span style="color: #f8f8f2">)</span>   
+</code></pre></div>
 
 <p>The stats, as before, are printed on to standard out.</p>
 
@@ -503,18 +495,6 @@ if (!doNotTrack) {
   crossorigin="anonymous">
 </script>
 
-
-    
-        
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        
-        <script type="text/javascript">
-            hljs.configure({languages: []});
-            hljs.initHighlightingOnLoad();
-        </script>
-        
-        
 
 
 
