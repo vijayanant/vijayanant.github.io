@@ -53,6 +53,11 @@
     
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
 
@@ -65,8 +70,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Icons -->
-    
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/author.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     
     <link rel="shortcut icon" href="/author.png">
     
@@ -218,10 +222,11 @@
 <h2 id="basics">Basics</h2>
 
 <p>Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a <strong>Session</strong></p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">tensorflow</span> <span style="color: #f92672">as</span> <span style="color: #f8f8f2">tf</span>
-<span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">random_uniform([</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">])</span>
-<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(x)</span>
-</code></pre></div>
+
+<pre><code class="language-python">import tensorflow as tf
+x = tf.random_uniform([10])
+print(x)
+</code></pre>
 
 <p>What do you think the above code prints?</p>
 
@@ -242,12 +247,13 @@
 <p>it tells us that x is a Tensor, the opration name is random_uniform (:0 says its the output), the shape of the tensor (a list of 10 elements) and data type of the elements in the list(float32).</p>
 
 <p>You can get information about the tensor using many of the functions and attribute values available.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f8f8f2">shape</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">get_shape()</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">as_list()</span>
-<span style="color: #f8f8f2">ty</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">dtype</span>
-<span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">name</span>
-<span style="color: #f8f8f2">op_name</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">op</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">name</span>
-<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">([name,</span> <span style="color: #f8f8f2">op_name,</span> <span style="color: #f8f8f2">ty,</span> <span style="color: #f8f8f2">shape])</span>
-</code></pre></div>
+
+<pre><code class="language-python">shape = x.get_shape().as_list()
+ty = x.dtype
+name = x.name
+op_name = x.op.name
+print([name, op_name, ty, shape])
+</code></pre>
 
 <p><code>
 ['random_uniform:0', 'random_uniform', tf.float32, [10]]
@@ -258,14 +264,15 @@
 <h3 id="sessions-and-graphs">Sessions and Graphs</h3>
 
 <p>Remember we mentioned earlier that every computation is represented as a graph? By default, every operation is added to a default graph. And a Session is where the operations in the graph are run.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f8f8f2">g</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">get_default_graph()</span>
-<span style="color: #f8f8f2">session</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Session(graph</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">g)</span>
 
-<span style="color: #f8f8f2">result</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">session</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run(x)</span>
+<pre><code class="language-python">g = tf.get_default_graph()
+session = tf.Session(graph=g)
 
-<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(result)</span>
-<span style="color: #f8f8f2">session</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
-</code></pre></div>
+result = session.run(x)
+
+print(result)
+session.close()
+</code></pre>
 
 <p>The result -</p>
 
@@ -276,43 +283,47 @@
 <h3 id="operations">Operations</h3>
 
 <p>Operations are the nodes in the graph that consume and/or produce Tensors.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f8f8f2">[op</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">name</span> <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">op</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">g</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">get_operations()]</span>
-</code></pre></div>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f8f8f2">[</span><span style="color: #e6db74">&#39;random_uniform/shape&#39;</span><span style="color: #f8f8f2">,</span>
- <span style="color: #e6db74">&#39;random_uniform/min&#39;</span><span style="color: #f8f8f2">,</span>
- <span style="color: #e6db74">&#39;random_uniform/max&#39;</span><span style="color: #f8f8f2">,</span>
- <span style="color: #e6db74">&#39;random_uniform/RandomUniform&#39;</span><span style="color: #f8f8f2">,</span>
- <span style="color: #e6db74">&#39;random_uniform/sub&#39;</span><span style="color: #f8f8f2">,</span>
- <span style="color: #e6db74">&#39;random_uniform/mul&#39;</span><span style="color: #f8f8f2">,</span>
- <span style="color: #e6db74">&#39;random_uniform&#39;</span><span style="color: #f8f8f2">]</span>
-</code></pre></div>
+
+<pre><code class="language-python">[op.name for op in g.get_operations()]
+</code></pre>
+
+<pre><code class="language-python">['random_uniform/shape',
+ 'random_uniform/min',
+ 'random_uniform/max',
+ 'random_uniform/RandomUniform',
+ 'random_uniform/sub',
+ 'random_uniform/mul',
+ 'random_uniform']
+</code></pre>
 
 <h3 id="variables">Variables</h3>
 
 <p>Variables are stateful nodes which output their current value. State is retained across multiple executions of a graph. A variable holds a  value, which can be a Tensor of any type and shape. The type and shape of the variable are fixed at initialization time. The value can be changed using one of the assign methods.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">tensorflow</span> <span style="color: #f92672">as</span> <span style="color: #f8f8f2">tf</span>
 
-<span style="color: #f8f8f2">mat</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">4</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">5</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">6</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">7</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">8</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">9</span><span style="color: #f8f8f2">]</span> <span style="color: #f8f8f2">]</span>
-<span style="color: #f8f8f2">trans</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">transpose(mat)</span>
+<pre><code class="language-python">import tensorflow as tf
 
-<span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Variable(mat)</span>
-<span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">matmul(mat,</span> <span style="color: #f8f8f2">trans)</span>
+mat = [ [1,2,3], [4,5,6], [7,8,9] ]
+trans = tf.transpose(mat)
 
-<span style="color: #f8f8f2">x</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">assign(tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">add(y,</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">))</span>
-</code></pre></div>
+x = tf.Variable(mat)
+y = tf.matmul(mat, trans)
+
+x.assign(tf.add(y,1))
+</code></pre>
 
 <h3 id="placeholders">Placeholders</h3>
 
 <p>Placeholders are nodes whose value is fed in at execution time.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">tensorflow</span> <span style="color: #f92672">as</span> <span style="color: #f8f8f2">tf</span>
 
-<span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">placeholder(tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">float32,</span> <span style="color: #f8f8f2">shape</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">1024</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1024</span><span style="color: #f8f8f2">))</span>
-<span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">matmul(x,</span> <span style="color: #f8f8f2">x)</span>
+<pre><code class="language-python">import tensorflow as tf
 
-<span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Session()</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">sess:</span>
-  <span style="color: #f8f8f2">rand_array</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">np</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">rand(</span><span style="color: #ae81ff">1024</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1024</span><span style="color: #f8f8f2">)</span>
-  <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(sess</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run(y,</span> <span style="color: #f8f8f2">feed_dict</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">{x:</span> <span style="color: #f8f8f2">rand_array}))</span>  <span style="color: #75715e"># Will succeed.</span>
-</code></pre></div>
+x = tf.placeholder(tf.float32, shape=(1024, 1024))
+y = tf.matmul(x, x)
+
+with tf.Session() as sess:
+  rand_array = np.random.rand(1024, 1024)
+  print(sess.run(y, feed_dict={x: rand_array}))  # Will succeed.
+</code></pre>
 
 <h2 id="putting-it-all-together">Putting It All Together</h2>
 
@@ -322,22 +333,23 @@
 <li>First, build a graph using variables and placeholders.</li>
 <li>Then, deploy the graph onto a session, which is the execution environment</li>
 </ul>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-python" data-lang="python"><span></span><span style="color: #f92672">import</span> <span style="color: #f8f8f2">numpy</span> <span style="color: #f92672">as</span> <span style="color: #f8f8f2">np</span> 
-<span style="color: #f92672">import</span> <span style="color: #f8f8f2">tensorflow</span> <span style="color: #f92672">as</span> <span style="color: #f8f8f2">tf</span>
 
-<span style="color: #f8f8f2">b</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Variable(tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">zeros((</span><span style="color: #ae81ff">100</span><span style="color: #f8f8f2">,)))</span>
-<span style="color: #f8f8f2">W</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Variable(tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">random_uniform((</span><span style="color: #ae81ff">784</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">),</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">))</span>
+<pre><code class="language-python">import numpy as np 
+import tensorflow as tf
 
-<span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">placeholder(tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">float32,</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">100</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">784</span><span style="color: #f8f8f2">))</span>
+b = tf.Variable(tf.zeros((100,)))
+W = tf.Variable(tf.random_uniform((784, 100),-1, 1))
 
-<span style="color: #75715e"># h = ReLu(Wx + b)</span>
-<span style="color: #f8f8f2">h</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">nn</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">relu(tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">matmul(x,</span> <span style="color: #f8f8f2">W)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">b)</span>
+x = tf.placeholder(tf.float32, (100, 784))
 
-<span style="color: #f8f8f2">sess</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Session()</span>
-<span style="color: #f8f8f2">sess</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run(tf</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">initialize_all_variables())</span>
-<span style="color: #f8f8f2">sess</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run(h,</span> <span style="color: #f8f8f2">{x:</span> <span style="color: #f8f8f2">np</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">random_sample((</span><span style="color: #ae81ff">100</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">784</span><span style="color: #f8f8f2">))})</span>
+# h = ReLu(Wx + b)
+h = tf.nn.relu(tf.matmul(x, W) + b)
+
+sess = tf.Session()
+sess.run(tf.initialize_all_variables())
+sess.run(h, {x: np.random.random_sample((100, 784))})
  
-</code></pre></div>
+</code></pre>
 
 <p>If you are not already familiar with NN and activation functions, don&rsquo;t worry about the ReLU (<code>tf.nn.relu()</code>). Just know that TensorFlow provides a very rich set of tools to work with machine learning.</p>
 
@@ -408,6 +420,18 @@ if (!doNotTrack) {
   crossorigin="anonymous">
 </script>
 
+
+    
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        <script type="text/javascript">
+            hljs.configure({languages: []});
+            hljs.initHighlightingOnLoad();
+        </script>
+        
+        
 
 
 
