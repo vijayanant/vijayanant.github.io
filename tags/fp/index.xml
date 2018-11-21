@@ -81,17 +81,5 @@ Introduction Type system help programmers ensure that the software they write be
       <description>When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory.</description>
     </item>
     
-    <item>
-      <title>Understanding Monads Using Function Composition</title>
-      <link>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</link>
-      <pubDate>Fri, 20 May 2016 20:20:45 +0000</pubDate>
-      
-      <guid>https://vijayanant.github.io/posts/understanding-monads-using-function-composition/</guid>
-      <description>Today I am going to commit a crime - I am about to write one more blog relating to Monads!
-Why? Even though I could use monads for a while now, I never got around to understanding how they are composing functions and why couldn&amp;rsquo;t we use the (.) function to compose?
-I wanted to understand Monads from composition view point.
-Let&amp;rsquo;s Dig In Lets start with simple function composition</description>
-    </item>
-    
   </channel>
 </rss>
