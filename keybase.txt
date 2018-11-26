@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/vijayanant
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://vijayanant.github.io
+  * I am vijayanant (https://keybase.io/vijayanant) on keybase.
+  * I have a public key ASATAASxUzx1ZqEy4JGeIrlA1oyzEk6jSPdtXtZPglZs_Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c74540510fd247770daafe54337bfa0a3b644b7581039fb12adc27a526e07ff30a",
+      "host": "keybase.io",
+      "kid": "0120130004b1533c7566a132e0919e22b940d68cb3124ea348f76d5ed64f82566cfd0a",
+      "uid": "66114b2a86587e24ce1ffc2c06a02019",
+      "username": "vijayanant"
+    },
+    "merkle_root": {
+      "ctime": 1543210965,
+      "hash": "faaeaa4034e2a561509a85e81ae19497735b65031f1a01a90cb42234e47a61db54175dbae69ab7533ee6b495a246a08f35da923d3bc642d9446fda407f388bd9",
+      "hash_meta": "7f5898cad322c717f8c853a303b19c93cd996043f12b0d6b6c3f035beb5163f4",
+      "seqno": 4008090
+    },
+    "service": {
+      "entropy": "LTYQpvzYC1smPM6CjJBAUbSL",
+      "hostname": "vijayanant.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.10.1"
+  },
+  "ctime": 1543211019,
+  "expire_in": 504576000,
+  "prev": "653c7c8139c3c034dcd508e3c781110961bbcce3d332f7314da062a5ca9b5041",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgEwAEsVM8dWahMuCRniK5QNaMsxJOo0j3bV7WT4JWbP0Kp3BheWxvYWTESpcCBsQgZTx8gTnDwDTc1Qjjx4ERCWG7zOPTMvcxTaBipcqbUEHEIHJUCPallXWgw0yr/y2n1+M7ALOrelmeF+gDkhcan/+zAgHCo3NpZ8RAUoSZMAY8HpUKwhfvo7nAgYLQpwfdOFneD56AZxw65BmmjkQ7GDitQyomhFV5Z6rGteG2XnX5phF8ZITmH2UuDqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPXdYnuZR+qmU1/ylnvXqEbV2yUj0EgtS9vrB+B5/YxYo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/vijayanant
+
+==================================================================
