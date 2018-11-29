@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Haskel on </title>
+    <link>https://vijayanant.github.io/categories/haskel/</link>
+    <description>Recent content in Haskel on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0530</lastBuildDate>
+    
+	<atom:link href="https://vijayanant.github.io/categories/haskel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GADTs Talk - Bengaluru Haskell Meetup</title>
+      <link>https://vijayanant.github.io/posts/gadts-talk-bengaluru-haskell-meetup/</link>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://vijayanant.github.io/posts/gadts-talk-bengaluru-haskell-meetup/</guid>
+      <description>Last week I gave a talk at The Bangalore Haskell User Group on using GADTs to bring compile time correctness to Haskell programs. The focus of the talk was more towards advocating using Haskell type system features where possible to simplify code. The aim was to show how error handling code can be avoided/removed and still achieve type-safety.
+The presentation used for the talk is available here.
+I had written a more detailed writeup on the same topic here.</description>
+    </item>
+    
+  </channel>
+</rss>

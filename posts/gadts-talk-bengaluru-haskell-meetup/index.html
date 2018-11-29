@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
     
+    
+
+
     <head>
     <link href="https://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
@@ -16,18 +19,20 @@
     
     
 
-<title>Fp • fossick • Vijay Anant</title>
+<title>GADTs Talk - Bengaluru Haskell Meetup • fossick • Vijay Anant</title>
 
 
   
-    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
+    <meta name="description" content="Talk I gave at Bangalore Haskell Meetup Group on using GADTs to
+bring compile time correctness to Haskell programs">
   
 
 
 
 
   
-    <meta name="keywords" content="thoughts, programming, technology">
+  
+    <meta name="keywords" content="fp, talk, Haskel">
   
 
 
@@ -36,14 +41,16 @@
 <meta name="googlebot" content="index,follow">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Fp"/>
-<meta name="twitter:description" content="Vijay Anant"/>
+<meta name="twitter:title" content="GADTs Talk - Bengaluru Haskell Meetup"/>
+<meta name="twitter:description" content="Talk I gave at Bangalore Haskell Meetup Group on using GADTs to
+bring compile time correctness to Haskell programs"/>
 
-<meta property="og:title" content="Fp" />
-<meta property="og:description" content="Vijay Anant" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://vijayanant.github.io/tags/fp/" />
-<meta property="og:updated_time" content="2018-11-29T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
+<meta property="og:title" content="GADTs Talk - Bengaluru Haskell Meetup" />
+<meta property="og:description" content="Talk I gave at Bangalore Haskell Meetup Group on using GADTs to
+bring compile time correctness to Haskell programs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vijayanant.github.io/posts/gadts-talk-bengaluru-haskell-meetup/" /><meta property="article:published_time" content="2018-11-29T00:00:00&#43;05:30"/>
+<meta property="article:modified_time" content="2018-11-29T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
 
 
     
@@ -65,10 +72,6 @@
     
     <link rel="shortcut icon" href="/author.png">
     
-
-<link href="https://vijayanant.github.io/tags/fp/index.xml" rel="alternate" type="application/rss+xml" title="fossick" />
-<link href="https://vijayanant.github.io/tags/fp/index.xml" rel="feed" type="application/rss+xml" title="fossick" />
-
 
 </head>
 
@@ -165,19 +168,73 @@
 
         <div class="content container">
             
-    <span class="section__title">Fp</span>
-<ul class="posts">
+    <article>
+  <header>
+    <h1>GADTs Talk - Bengaluru Haskell Meetup</h1>
+     
     
-        
-<li>
-  <span class="list__title--small">
-    <a href="/posts/gadts-talk-bengaluru-haskell-meetup/">GADTs Talk - Bengaluru Haskell Meetup</a>
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 29 Nov 2018
+    
+    
+    
       
-      <time class="pull-right hidden-tablet">29 Nov 2018</time>
       
-  </span>
-</li>
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/haskel">HASKEL</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/talk">TALK</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/fp">fp</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
 
+
+  </header>
+  <div class="post">
+    <p>Last week I gave a talk at <a href="https://www.meetup.com/The-Bangalore-Haskell-User-Group/">The Bangalore Haskell User Group</a> on using GADTs to
+bring compile time correctness to Haskell programs. The focus of the talk was
+more towards advocating using Haskell type system features where possible to
+simplify code. The aim was to show  how error handling code can be
+avoided/removed and still achieve type-safety.</p>
+
+<p>The presentation used for the talk is available
+<a href="/presentations/gadt.pdf">here</a>.</p>
+
+<p>I had written a more detailed writeup on the same topic <a href="https://vijayanant.github.io/posts/gadts-to-eliminate-runtime-checks/">here</a>.</p>
+
+  </div>
+  
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
 <li>
   <span class="list__title--small">
     <a href="/posts/the-expression-problem/">The Expression Problem</a>
@@ -223,27 +280,46 @@
   </span>
 </li>
 
-<li>
-  <span class="list__title--small">
-    <a href="/posts/gadts-to-eliminate-runtime-checks/">GADTs To Eliminate Runtime Checks</a>
-      
-      <time class="pull-right hidden-tablet">15 Oct 2016</time>
-      
-  </span>
-</li>
 
-<li>
-  <span class="list__title--small">
-    <a href="/posts/a-detour-called-monads/">A Detour Called Monads</a>
-      
-      <time class="pull-right hidden-tablet">15 Aug 2016</time>
-      
-  </span>
-</li>
+    </ul>
+</div>
 
+
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'fossickio';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
 
     
-</ul>
+
+
+</article>
 
 
         </div>
@@ -267,6 +343,11 @@ if (!doNotTrack) {
   integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
   crossorigin="anonymous">
 </script>
+
+
+
+
+    
 
 
 
