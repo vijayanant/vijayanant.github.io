@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Profiling on </title>
-    <link>https://vijayanant.github.io/categories/profiling/</link>
+    <link>https://www.vijayanant.com/categories/profiling/</link>
     <description>Recent content in Profiling on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Nov 2014 20:05:36 +0000</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/categories/profiling/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.vijayanant.com/categories/profiling/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Performance Analysis In Python</title>
-      <link>https://vijayanant.github.io/posts/performance-analysis-in-python/</link>
+      <link>https://www.vijayanant.com/posts/performance-analysis-in-python/</link>
       <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/performance-analysis-in-python/</guid>
+      <guid>https://www.vijayanant.com/posts/performance-analysis-in-python/</guid>
       <description>My recent escapade with Python taught me many things. One of which is to &amp;ldquo;start doing something that interests you. And each such daring act will teach you many more things.&amp;rdquo;
 This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
     </item>

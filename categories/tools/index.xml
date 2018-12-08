@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on </title>
-    <link>https://vijayanant.github.io/categories/tools/</link>
+    <link>https://www.vijayanant.com/categories/tools/</link>
     <description>Recent content in Tools on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 04 Jan 2015 09:18:06 +0000</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.vijayanant.com/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>10 Vim Plugins That Made My Vim Easy </title>
-      <link>https://vijayanant.github.io/posts/10-vim-plugins-that-made-my-vim-easy/</link>
+      <link>https://www.vijayanant.com/posts/10-vim-plugins-that-made-my-vim-easy/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/10-vim-plugins-that-made-my-vim-easy/</guid>
+      <guid>https://www.vijayanant.com/posts/10-vim-plugins-that-made-my-vim-easy/</guid>
       <description>Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.
 Note that the side panes (NERDTree on the left and Tagbar on the right) auto-collapse. They magically appear when you summon them and hide themselves when the task is done.</description>
     </item>

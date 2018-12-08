@@ -3,561 +3,561 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vijayanant.github.io/posts/gadts-talk-bengaluru-haskell-meetup/</loc>
+    <loc>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</loc>
     <lastmod>2018-11-29T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/the-expression-problem/</loc>
+    <loc>https://www.vijayanant.com/posts/the-expression-problem/</loc>
     <lastmod>2018-11-13T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/expressiveness/</loc>
+    <loc>https://www.vijayanant.com/posts/expressiveness/</loc>
     <lastmod>2018-11-08T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/expressiveness-of-haskell/</loc>
+    <loc>https://www.vijayanant.com/posts/expressiveness-of-haskell/</loc>
     <lastmod>2018-11-04T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</loc>
+    <loc>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</loc>
     <lastmod>2018-10-26T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/distributed-systems-and-scalable-databases/</loc>
+    <loc>https://www.vijayanant.com/posts/distributed-systems-and-scalable-databases/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/tdd-mantra/</loc>
+    <loc>https://www.vijayanant.com/posts/tdd-mantra/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/lambda-calculus/</loc>
+    <loc>https://www.vijayanant.com/posts/lambda-calculus/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</loc>
+    <loc>https://www.vijayanant.com/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/notes-on-sets-relations-and-functions/</loc>
+    <loc>https://www.vijayanant.com/posts/notes-on-sets-relations-and-functions/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/tensorflow-basics/</loc>
+    <loc>https://www.vijayanant.com/posts/tensorflow-basics/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/thinking-in-imperative-object-oriented-and-functional-way/</loc>
+    <loc>https://www.vijayanant.com/posts/thinking-in-imperative-object-oriented-and-functional-way/</loc>
     <lastmod>2017-09-15T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/ooh-principles/</loc>
+    <loc>https://www.vijayanant.com/posts/ooh-principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/gadts-to-eliminate-runtime-checks/</loc>
+    <loc>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</loc>
     <lastmod>2016-10-15T00:00:00+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/a-detour-called-monads/</loc>
+    <loc>https://www.vijayanant.com/posts/a-detour-called-monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/decisions/</loc>
+    <loc>https://www.vijayanant.com/posts/decisions/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/duplication-vs-abstraction/</loc>
+    <loc>https://www.vijayanant.com/posts/duplication-vs-abstraction/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/pair-programming-what-why-and-how/</loc>
+    <loc>https://www.vijayanant.com/posts/pair-programming-what-why-and-how/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/10-vim-plugins-that-made-my-vim-easy/</loc>
+    <loc>https://www.vijayanant.com/posts/10-vim-plugins-that-made-my-vim-easy/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/performance-analysis-in-python/</loc>
+    <loc>https://www.vijayanant.com/posts/performance-analysis-in-python/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/about/</loc>
+    <loc>https://www.vijayanant.com/about/</loc>
     <lastmod>2014-07-28T11:14:25+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/</loc>
+    <loc>https://www.vijayanant.com/</loc>
     <lastmod>2018-11-29T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/abstraction/</loc>
+    <loc>https://www.vijayanant.com/tags/abstraction/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/analysis/</loc>
+    <loc>https://www.vijayanant.com/tags/analysis/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/beta-reduction/</loc>
+    <loc>https://www.vijayanant.com/tags/beta-reduction/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/binary-tree/</loc>
+    <loc>https://www.vijayanant.com/tags/binary-tree/</loc>
     <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/call-by-name/</loc>
+    <loc>https://www.vijayanant.com/tags/call-by-name/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/call-by-value/</loc>
+    <loc>https://www.vijayanant.com/tags/call-by-value/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/</loc>
+    <loc>https://www.vijayanant.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/church-numerals/</loc>
+    <loc>https://www.vijayanant.com/tags/church-numerals/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/code-duplication/</loc>
+    <loc>https://www.vijayanant.com/tags/code-duplication/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/code-pairing/</loc>
+    <loc>https://www.vijayanant.com/tags/code-pairing/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/coding/</loc>
+    <loc>https://www.vijayanant.com/tags/coding/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/databases/</loc>
+    <loc>https://www.vijayanant.com/tags/databases/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/decision/</loc>
+    <loc>https://www.vijayanant.com/tags/decision/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/deep-learning/</loc>
+    <loc>https://www.vijayanant.com/tags/deep-learning/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/dependent-types/</loc>
+    <loc>https://www.vijayanant.com/tags/dependent-types/</loc>
     <lastmod>2018-10-26T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/design-principles/</loc>
+    <loc>https://www.vijayanant.com/tags/design-principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/development/</loc>
+    <loc>https://www.vijayanant.com/tags/development/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/distributed-systems/</loc>
+    <loc>https://www.vijayanant.com/categories/distributed-systems/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/expressiveness/</loc>
+    <loc>https://www.vijayanant.com/tags/expressiveness/</loc>
     <lastmod>2018-11-08T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/extreme-programming/</loc>
+    <loc>https://www.vijayanant.com/tags/extreme-programming/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/fallacy/</loc>
+    <loc>https://www.vijayanant.com/tags/fallacy/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/fp/</loc>
+    <loc>https://www.vijayanant.com/tags/fp/</loc>
     <lastmod>2018-11-29T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/functional/</loc>
+    <loc>https://www.vijayanant.com/tags/functional/</loc>
     <lastmod>2017-09-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/functions/</loc>
+    <loc>https://www.vijayanant.com/tags/functions/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/gadts/</loc>
+    <loc>https://www.vijayanant.com/tags/gadts/</loc>
     <lastmod>2016-10-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/happy/</loc>
+    <loc>https://www.vijayanant.com/tags/happy/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/haskel/</loc>
+    <loc>https://www.vijayanant.com/categories/haskel/</loc>
     <lastmod>2018-11-29T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/haskell/</loc>
+    <loc>https://www.vijayanant.com/tags/haskell/</loc>
+    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vijayanant.com/categories/haskell/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/haskell/</loc>
-    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/imperative/</loc>
+    <loc>https://www.vijayanant.com/tags/imperative/</loc>
     <lastmod>2017-09-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/java/</loc>
+    <loc>https://www.vijayanant.com/tags/java/</loc>
     <lastmod>2018-11-13T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/lambda/</loc>
+    <loc>https://www.vijayanant.com/tags/lambda/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/lambda-calculus/</loc>
+    <loc>https://www.vijayanant.com/tags/lambda-calculus/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/languages/</loc>
+    <loc>https://www.vijayanant.com/categories/languages/</loc>
     <lastmod>2018-11-08T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/life-lessons/</loc>
+    <loc>https://www.vijayanant.com/tags/life-lessons/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/machine-learning/</loc>
+    <loc>https://www.vijayanant.com/tags/machine-learning/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/maths/</loc>
+    <loc>https://www.vijayanant.com/tags/maths/</loc>
+    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vijayanant.com/categories/maths/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/maths/</loc>
-    <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/matrix-traversal/</loc>
+    <loc>https://www.vijayanant.com/tags/matrix-traversal/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/monads/</loc>
+    <loc>https://www.vijayanant.com/tags/monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/object-orientation/</loc>
+    <loc>https://www.vijayanant.com/tags/object-orientation/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/object-orientation/</loc>
+    <loc>https://www.vijayanant.com/categories/object-orientation/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/object-oriented/</loc>
+    <loc>https://www.vijayanant.com/tags/object-oriented/</loc>
     <lastmod>2017-09-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/oop/</loc>
+    <loc>https://www.vijayanant.com/tags/oop/</loc>
     <lastmod>2018-11-13T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/ordered-sets/</loc>
+    <loc>https://www.vijayanant.com/tags/ordered-sets/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/packaging/</loc>
+    <loc>https://www.vijayanant.com/tags/packaging/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/pair-programming/</loc>
+    <loc>https://www.vijayanant.com/tags/pair-programming/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/performance-analysis/</loc>
+    <loc>https://www.vijayanant.com/tags/performance-analysis/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/plugin/</loc>
+    <loc>https://www.vijayanant.com/tags/plugin/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/posts/</loc>
+    <loc>https://www.vijayanant.com/posts/</loc>
     <lastmod>2018-11-29T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/principles/</loc>
+    <loc>https://www.vijayanant.com/tags/principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/profiling/</loc>
+    <loc>https://www.vijayanant.com/categories/profiling/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/programming/</loc>
-    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vijayanant.github.io/tags/programming/</loc>
+    <loc>https://www.vijayanant.com/tags/programming/</loc>
     <lastmod>2017-09-15T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/puzzle/</loc>
+    <loc>https://www.vijayanant.com/categories/programming/</loc>
+    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vijayanant.com/tags/puzzle/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/python/</loc>
+    <loc>https://www.vijayanant.com/tags/python/</loc>
     <lastmod>2018-11-04T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/rant/</loc>
+    <loc>https://www.vijayanant.com/categories/rant/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/refactoring/</loc>
+    <loc>https://www.vijayanant.com/tags/refactoring/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/relations/</loc>
+    <loc>https://www.vijayanant.com/tags/relations/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/scaling/</loc>
+    <loc>https://www.vijayanant.com/tags/scaling/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/sets/</loc>
+    <loc>https://www.vijayanant.com/tags/sets/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/software-design/</loc>
+    <loc>https://www.vijayanant.com/tags/software-design/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/software-design/</loc>
+    <loc>https://www.vijayanant.com/categories/software-design/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/solid/</loc>
+    <loc>https://www.vijayanant.com/tags/solid/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/storage/</loc>
+    <loc>https://www.vijayanant.com/tags/storage/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/</loc>
+    <loc>https://www.vijayanant.com/tags/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/talk/</loc>
+    <loc>https://www.vijayanant.com/categories/talk/</loc>
     <lastmod>2018-11-29T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/tdd/</loc>
+    <loc>https://www.vijayanant.com/tags/tdd/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/tensorflow/</loc>
+    <loc>https://www.vijayanant.com/tags/tensorflow/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/testing/</loc>
+    <loc>https://www.vijayanant.com/tags/testing/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/tools/</loc>
+    <loc>https://www.vijayanant.com/categories/tools/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/types/</loc>
+    <loc>https://www.vijayanant.com/categories/types/</loc>
     <lastmod>2018-10-26T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/vim/</loc>
+    <loc>https://www.vijayanant.com/tags/vim/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/categories/wisdom/</loc>
+    <loc>https://www.vijayanant.com/categories/wisdom/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vijayanant.github.io/tags/xp/</loc>
+    <loc>https://www.vijayanant.com/tags/xp/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
     <priority>0</priority>
   </url>

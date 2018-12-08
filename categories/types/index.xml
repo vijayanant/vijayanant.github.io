@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Types on </title>
-    <link>https://vijayanant.github.io/categories/types/</link>
+    <link>https://www.vijayanant.com/categories/types/</link>
     <description>Recent content in Types on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0530</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/categories/types/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.vijayanant.com/categories/types/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dependent Types To Eliminate Runtime Checks</title>
-      <link>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</link>
+      <link>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/dependent-types-to-eliminate-runtime-checks/</guid>
+      <guid>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</guid>
       <description>One of the main advantages of static type checking is to catch errors before we deploy code to production. Dependent Types allow us to eliminate some checks that are usually done at run time. I take a simple example to show how dependent types can be used in that regard in day-to-day programming.
 Give Me The Money! Let us start with an example. We will define a simple type for representing money and a function to add money.</description>
     </item>
     
     <item>
       <title>GADTs To Eliminate Runtime Checks</title>
-      <link>https://vijayanant.github.io/posts/gadts-to-eliminate-runtime-checks/</link>
+      <link>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</link>
       <pubDate>Sat, 15 Oct 2016 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/gadts-to-eliminate-runtime-checks/</guid>
+      <guid>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</guid>
       <description>Generalized Algebraic Data Types (GADTs) generalizes ordinary Algebraic Data Types(ADTs) by permitting value constructors to return specific types. GADTs are used for ensuring program correctness and in generic programming. This article is specific to Haskell programming language. In Haskell GADTs are implemented as a language extension. The article describes these use cases with small programs.
 Introduction Type system help programmers ensure that the software they write behave correctly. They detect errors and also serve as documentation.</description>
     </item>

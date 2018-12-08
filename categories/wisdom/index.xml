@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wisdom on </title>
-    <link>https://vijayanant.github.io/categories/wisdom/</link>
+    <link>https://www.vijayanant.com/categories/wisdom/</link>
     <description>Recent content in Wisdom on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Aug 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/categories/wisdom/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.vijayanant.com/categories/wisdom/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Decisions</title>
-      <link>https://vijayanant.github.io/posts/decisions/</link>
+      <link>https://www.vijayanant.com/posts/decisions/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/decisions/</guid>
+      <guid>https://www.vijayanant.com/posts/decisions/</guid>
       <description>We all make decisions. We should make decisions to be happy.
 To go to college, to drop out, to get a job, to freelance, to take over family business, to start your own, to take a break from your job, to get married, to visit friends, to avoid talking to some, to go shopping, to buy online, to go jogging, to sleep more, to make peace, to go to war. All decisions are made to be happy.</description>
     </item>
     
     <item>
       <title>Duplication Vs Abstraction</title>
-      <link>https://vijayanant.github.io/posts/duplication-vs-abstraction/</link>
+      <link>https://www.vijayanant.com/posts/duplication-vs-abstraction/</link>
       <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/duplication-vs-abstraction/</guid>
+      <guid>https://www.vijayanant.com/posts/duplication-vs-abstraction/</guid>
       <description>When you see code duplication and can&amp;rsquo;t think of an abstraction to put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.</description>
     </item>
     

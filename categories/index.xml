@@ -2,137 +2,137 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>https://vijayanant.github.io/categories/</link>
+    <link>https://www.vijayanant.com/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://vijayanant.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.vijayanant.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Distributed Systems</title>
-      <link>https://vijayanant.github.io/categories/distributed-systems/</link>
+      <link>https://www.vijayanant.com/categories/distributed-systems/</link>
       <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/distributed-systems/</guid>
+      <guid>https://www.vijayanant.com/categories/distributed-systems/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Haskel</title>
-      <link>https://vijayanant.github.io/categories/haskel/</link>
+      <link>https://www.vijayanant.com/categories/haskel/</link>
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/haskel/</guid>
+      <guid>https://www.vijayanant.com/categories/haskel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Haskell</title>
-      <link>https://vijayanant.github.io/categories/haskell/</link>
+      <link>https://www.vijayanant.com/categories/haskell/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/haskell/</guid>
+      <guid>https://www.vijayanant.com/categories/haskell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Languages</title>
-      <link>https://vijayanant.github.io/categories/languages/</link>
+      <link>https://www.vijayanant.com/categories/languages/</link>
       <pubDate>Thu, 08 Nov 2018 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/languages/</guid>
+      <guid>https://www.vijayanant.com/categories/languages/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maths</title>
-      <link>https://vijayanant.github.io/categories/maths/</link>
+      <link>https://www.vijayanant.com/categories/maths/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/maths/</guid>
+      <guid>https://www.vijayanant.com/categories/maths/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Object Orientation</title>
-      <link>https://vijayanant.github.io/categories/object-orientation/</link>
+      <link>https://www.vijayanant.com/categories/object-orientation/</link>
       <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/object-orientation/</guid>
+      <guid>https://www.vijayanant.com/categories/object-orientation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Profiling</title>
-      <link>https://vijayanant.github.io/categories/profiling/</link>
+      <link>https://www.vijayanant.com/categories/profiling/</link>
       <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/profiling/</guid>
+      <guid>https://www.vijayanant.com/categories/profiling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>https://vijayanant.github.io/categories/programming/</link>
+      <link>https://www.vijayanant.com/categories/programming/</link>
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/programming/</guid>
+      <guid>https://www.vijayanant.com/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rant</title>
-      <link>https://vijayanant.github.io/categories/rant/</link>
+      <link>https://www.vijayanant.com/categories/rant/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/rant/</guid>
+      <guid>https://www.vijayanant.com/categories/rant/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software Design</title>
-      <link>https://vijayanant.github.io/categories/software-design/</link>
+      <link>https://www.vijayanant.com/categories/software-design/</link>
       <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/software-design/</guid>
+      <guid>https://www.vijayanant.com/categories/software-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Talk</title>
-      <link>https://vijayanant.github.io/categories/talk/</link>
+      <link>https://www.vijayanant.com/categories/talk/</link>
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/talk/</guid>
+      <guid>https://www.vijayanant.com/categories/talk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>https://vijayanant.github.io/categories/tools/</link>
+      <link>https://www.vijayanant.com/categories/tools/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/tools/</guid>
+      <guid>https://www.vijayanant.com/categories/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Types</title>
-      <link>https://vijayanant.github.io/categories/types/</link>
+      <link>https://www.vijayanant.com/categories/types/</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/types/</guid>
+      <guid>https://www.vijayanant.com/categories/types/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wisdom</title>
-      <link>https://vijayanant.github.io/categories/wisdom/</link>
+      <link>https://www.vijayanant.com/categories/wisdom/</link>
       <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/categories/wisdom/</guid>
+      <guid>https://www.vijayanant.com/categories/wisdom/</guid>
       <description></description>
     </item>
     

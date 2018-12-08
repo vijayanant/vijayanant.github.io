@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Solid on </title>
-    <link>https://vijayanant.github.io/tags/solid/</link>
+    <link>https://www.vijayanant.com/tags/solid/</link>
     <description>Recent content in Solid on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Oct 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/tags/solid/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.vijayanant.com/tags/solid/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OO(h!) Principles</title>
-      <link>https://vijayanant.github.io/posts/ooh-principles/</link>
+      <link>https://www.vijayanant.com/posts/ooh-principles/</link>
       <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/ooh-principles/</guid>
+      <guid>https://www.vijayanant.com/posts/ooh-principles/</guid>
       <description>There is a good chance that you all are aware of the SOLID principles. There are many more principles for us to consider and adhere to while developing OO software.
 SOLID These are the Principles of Object Oriented Class Design popularly known as the SOLID Principles.
  The Single Responsibility Principle [SRP] The Open/Closed Principle [OCP] The Liskov Substitution Principle [LSP] The Interface Segregation Principle [ISP] The Dependency Inversion Principle [DIP]  The next two set of principles, are related to packaging.</description>

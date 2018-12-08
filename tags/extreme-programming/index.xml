@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extreme Programming on </title>
-    <link>https://vijayanant.github.io/tags/extreme-programming/</link>
+    <link>https://www.vijayanant.com/tags/extreme-programming/</link>
     <description>Recent content in Extreme Programming on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 31 Jan 2015 12:31:30 +0000</lastBuildDate>
     
-	<atom:link href="https://vijayanant.github.io/tags/extreme-programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.vijayanant.com/tags/extreme-programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pair Programming - What? Why? And How?</title>
-      <link>https://vijayanant.github.io/posts/pair-programming-what-why-and-how/</link>
+      <link>https://www.vijayanant.com/posts/pair-programming-what-why-and-how/</link>
       <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
       
-      <guid>https://vijayanant.github.io/posts/pair-programming-what-why-and-how/</guid>
+      <guid>https://www.vijayanant.com/posts/pair-programming-what-why-and-how/</guid>
       <description>What? Simply put, pair programming is two programmers with a single computer working together to solve a problem!
 Why?  To produce better code To learn more from your peers To learn and practice objectively evaluating possible solutions To collaborate with better programmers  How?  The Driver is responsible to coding (owns the keyboard) The Navigator is responsible for reviewing the driver’s work 30 min Rule: Role changes every 20-30min (at a logical break point) Take control of the worl.</description>
     </item>
