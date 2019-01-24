@@ -6,10 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.vijayanant.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Higher Ranked Types</title>
+      <link>https://www.vijayanant.com/posts/higher-ranked-types/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/higher-ranked-types/</guid>
+      <description>Let&amp;rsquo;s get started with a monomorphic function -
+incr :: Int -&amp;gt; Int incr = (+1)  The function incr works on values of type Int and nothing else. We can make our function polymorphic by using type parameters in place of concrete types -
+incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1)  The modified function incr&#39; can work with any type that has a Num instance.</description>
+    </item>
     
     <item>
       <title>GADTs Talk - Bengaluru Haskell Meetup</title>

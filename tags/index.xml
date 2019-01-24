@@ -185,7 +185,7 @@
     <item>
       <title>Fp</title>
       <link>https://www.vijayanant.com/tags/fp/</link>
-      <pubDate>Thu, 29 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/tags/fp/</guid>
       <description></description>
@@ -230,7 +230,7 @@
     <item>
       <title>Haskell</title>
       <link>https://www.vijayanant.com/tags/haskell/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/tags/haskell/</guid>
       <description></description>
@@ -390,6 +390,15 @@
     </item>
     
     <item>
+      <title>Polymorphism</title>
+      <link>https://www.vijayanant.com/tags/polymorphism/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/polymorphism/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Principles</title>
       <link>https://www.vijayanant.com/tags/principles/</link>
       <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
@@ -422,6 +431,15 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rankntypes</title>
+      <link>https://www.vijayanant.com/tags/rankntypes/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/rankntypes/</guid>
       <description></description>
     </item>
     

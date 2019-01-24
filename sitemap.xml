@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.vijayanant.com/posts/higher-ranked-types/</loc>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</loc>
     <lastmod>2018-11-29T00:00:00+05:30</lastmod>
   </url>
@@ -109,7 +114,7 @@
   
   <url>
     <loc>https://www.vijayanant.com/</loc>
-    <lastmod>2018-11-29T00:00:00+05:30</lastmod>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -240,7 +245,7 @@
   
   <url>
     <loc>https://www.vijayanant.com/tags/fp/</loc>
-    <lastmod>2018-11-29T00:00:00+05:30</lastmod>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -276,7 +281,7 @@
   
   <url>
     <loc>https://www.vijayanant.com/tags/haskell/</loc>
-    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -407,8 +412,14 @@
   </url>
   
   <url>
+    <loc>https://www.vijayanant.com/tags/polymorphism/</loc>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.vijayanant.com/posts/</loc>
-    <lastmod>2018-11-29T00:00:00+05:30</lastmod>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -432,7 +443,7 @@
   
   <url>
     <loc>https://www.vijayanant.com/categories/programming/</loc>
-    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -445,6 +456,12 @@
   <url>
     <loc>https://www.vijayanant.com/tags/python/</loc>
     <lastmod>2018-11-04T00:00:00+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.vijayanant.com/tags/rankntypes/</loc>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -540,7 +557,7 @@
   
   <url>
     <loc>https://www.vijayanant.com/categories/types/</loc>
-    <lastmod>2018-10-26T00:00:00+05:30</lastmod>
+    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
     <priority>0</priority>
   </url>
   
