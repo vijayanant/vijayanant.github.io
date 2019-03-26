@@ -8,31 +8,13 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.54.0" />
 
     
-    
-    
 
-<title>fossick • Vijay Anant</title>
-
-
-  
-    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
-  
-
-
-
-
-  
-    <meta name="keywords" content="thoughts, programming, technology">
-  
-
-
-
-<meta name="robots" content="index,follow">
-<meta name="googlebot" content="index,follow">
-
+<title></title>
+<meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
+<meta name="keywords" content="thoughts, programming, technology">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="Vijay Anant"/>
@@ -41,6 +23,7 @@
 <meta property="og:description" content="Vijay Anant" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.vijayanant.com/" />
+
 <meta property="og:updated_time" content="2019-01-24T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
 
 
@@ -48,10 +31,15 @@
 
 
 
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
 
-<link rel="stylesheet" href="/css/hyde-hyde.css">
-<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6bea8c8c898a9d74cce65ed54b2902da39cca1e3e60eb2897caddc2e3f2f6d47.css" integrity="sha256-a&#43;qMjImKnXTM5l7VSykC2jnMoePmDrKJfK3cLj8vbUc=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -60,37 +48,40 @@
     <![endif]-->
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    
-    <link rel="shortcut icon" href="/author.png">
+    <link rel="shortcut icon" href="/favicon.png">
     
 
-<link href="https://www.vijayanant.com/index.xml" rel="alternate" type="application/rss+xml" title="fossick" />
-<link href="https://www.vijayanant.com/index.xml" rel="feed" type="application/rss+xml" title="fossick" />
+<link href="https://www.vijayanant.com/index.xml" rel="alternate" type="application/rss+xml" title="" />
+<link href="https://www.vijayanant.com/index.xml" rel="feed" type="application/rss+xml" title="" />
 
 
 </head>
 
 
-    <body >
-        
+    <body class=" ">
+    
 <div class="sidebar">
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://www.vijayanant.com">fossick</a>
+        <a href="https://www.vijayanant.com"></a>
       </span>
       
       
       
       <div class="author-image">
-        <img src="https://www.vijayanant.com/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+        <img src="https://www.vijayanant.com/author.png" alt="Author Image" class="img--circle img--headshot element--center">
       </div>
       
       <p class="site__description">
          Vijay Anant 
       </p>
     </div>
-    <div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle"></label>
+      <div class="menu-content">
+        <div>
 	<ul class="sidebar-nav">
 		 
 		 
@@ -122,42 +113,42 @@
 	</ul>
 </div>
 
-    <p>
-      <section class="social">
+        <section class="social">
 	
-	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-	
-	
-	
-	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	<a href="https://twitter.com/vijayanant" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
-	
-	
-	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	<a href="https://github.com/vijayanant" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
 	
 	
-	&nbsp;<a href="https://keybase.io/vijayanant"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	<a href="https://linkedin.com/in/vijayanant" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
 	
 	
 	
-	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://keybase.io/vijayanant" rel="me"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	<a href="mailto:vijay.hassan@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
 </section>
 
-    </p>
-    <p class="copyright">
-      &copy; 2019 Vijay Anant.
-      
-      <br/>Built with
-      <a href="https://gohugo.io">Hugo</a> ❤️  <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
-      
-      
-    </p>
+      </div>
+    </div>
+    <div class="copyright">
+  &copy; 2019 Vijay Anant.
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">Some Rights Reserved</a>.
+  Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
   </div>
 </div>
 
@@ -166,389 +157,15 @@
   <div class="post-list">
     
     
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/higher-ranked-types/">Higher Ranked Types</a>
-        </span>
-        <span class="item__date">
-          24 Jan 2019
-        </span>
-        
-        Monomorphism, Polymorphism, and Higher ranked types
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/higher-ranked-types/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/gadts-talk-bengaluru-haskell-meetup/">GADTs Talk - Bengaluru Haskell Meetup</a>
-        </span>
-        <span class="item__date">
-          29 Nov 2018
-        </span>
-        
-        Talk I gave at Bangalore Haskell Meetup Group on using GADTs to
-bring compile time correctness to Haskell programs
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/gadts-talk-bengaluru-haskell-meetup/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/the-expression-problem/">The Expression Problem</a>
-        </span>
-        <span class="item__date">
-          13 Nov 2018
-        </span>
-        
-         The expression problem is a well known problem in programming
-language theory dealing with the expressiveness of a programming language.
-Whether a language can solve the Expression Problem is a salient indicator of
-its capacity for expression. 
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/the-expression-problem/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/expressiveness/">Expressiveness</a>
-        </span>
-        <span class="item__date">
-          08 Nov 2018
-        </span>
-        
-        What is expressiveness of a language?
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/expressiveness/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/expressiveness-of-haskell/">Expressiveness of Haskell</a>
-        </span>
-        <span class="item__date">
-          04 Nov 2018
-        </span>
-        
-        Demonstrate the expressiveness of Haskell using a  simple
-Binary Tree and in-order traversal in Haskell, Python and Java
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/expressiveness-of-haskell/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/dependent-types-to-eliminate-runtime-checks/">Dependent Types To Eliminate Runtime Checks</a>
-        </span>
-        <span class="item__date">
-          26 Oct 2018
-        </span>
-        
-        One of the main advantages of static typing is to catch errors before we deploy
-code to production. Dependent Types allow us to eliminate some checks that are
-usually done at run time. I take a simple example to show how dependent types
-can be used in that regard in day-to-day programming.
-
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/dependent-types-to-eliminate-runtime-checks/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/distributed-systems-and-scalable-databases/">Distributed Systems and Scalable Databases</a>
-        </span>
-        <span class="item__date">
-          08 Oct 2018
-        </span>
-        
-        Introduction to distributed systems. How distributed databases work and their scaling model.
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/distributed-systems-and-scalable-databases/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/tdd-mantra/">TDD Mantra</a>
-        </span>
-        <span class="item__date">
-          11 May 2018
-        </span>
-        
-        The Essence  Don&rsquo;t write a line of new code unless you first have a failing automated test. Eliminate duplication. (refactor)  What is Needed The ability to write concrete, deterministic, automated tests is a prerequisite for applying TDD.
-Mantra - Order in Programming The two mantras imply an order to the tasks of programming:
- Red - write a little test that doesn’t work, perhaps doesn’t even compile at first Green - make the test work quickly, committing whatever sins necessary in the process Refactor - eliminate all the duplication created in just getting the test to work  Implications The simple mantra generates complex individual and group behavior.
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/tdd-mantra/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/lambda-calculus/">Lambda Calculus</a>
-        </span>
-        <span class="item__date">
-          25 Feb 2018
-        </span>
-        
-        Introduction to Lambda-Calculus and Church Numerals
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/lambda-calculus/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/">Outward Counterclockwise Spiral Matrix Traversal - Haskell</a>
-        </span>
-        <span class="item__date">
-          12 Feb 2018
-        </span>
-        
-        An efficient, lazy implementation of spiral traversal on a matrix in Haskell.
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/notes-on-sets-relations-and-functions/">Notes on Sets, Relations, and Functions</a>
-        </span>
-        <span class="item__date">
-          04 Nov 2017
-        </span>
-        
-        Basic maths - Sets, Relations, and Functions
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/notes-on-sets-relations-and-functions/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/tensorflow-basics/">TensorFlow Basics</a>
-        </span>
-        <span class="item__date">
-          02 Oct 2017
-        </span>
-        
-        TensorFlow is Google&#39;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/tensorflow-basics/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/thinking-in-imperative-object-oriented-and-functional-way/">Thinking in Imperative, Object Oriented and Functional way</a>
-        </span>
-        <span class="item__date">
-          15 Sep 2017
-        </span>
-        
-          programming paradigms stem from different concepts about how the
-  world works. They represent different opinions about how to best model the world
-  while we are writing programs.
-
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/thinking-in-imperative-object-oriented-and-functional-way/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/ooh-principles/">OO(h!) Principles</a>
-        </span>
-        <span class="item__date">
-          23 Oct 2016
-        </span>
-        
-        An (incomplete) list of principles of OO software development
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/ooh-principles/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/gadts-to-eliminate-runtime-checks/">GADTs To Eliminate Runtime Checks</a>
-        </span>
-        <span class="item__date">
-          15 Oct 2016
-        </span>
-        
-        GADTs generalizes ordinary algebraic data types by permitting value constructors
-to return specific types. GADTs are used for ensuring program correctness and in
-generic programming. This article is specific to Haskell programming language.
-In Haskell GADTs are implemented as a language extension. The article describes
-these use cases with small programs.
-
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/gadts-to-eliminate-runtime-checks/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/a-detour-called-monads/">A Detour Called Monads</a>
-        </span>
-        <span class="item__date">
-          15 Aug 2016
-        </span>
-        
-        When learning Haskell, all of us are faced with this monad monster. I too have spent many days and night fighting it - hoping that it will grant me all the wisdom if I survive long enough. I have come to believe that the community as whole has created this monstor. And many of us have taken this detour to master the art of monstor slaying instead of going on ahead - just to realise later that the detour was unnesessory.
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/a-detour-called-monads/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/decisions/">Decisions</a>
-        </span>
-        <span class="item__date">
-          15 Aug 2016
-        </span>
-        
-        We all make decisions. We should make decisions to be happy
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/decisions/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/duplication-vs-abstraction/">Duplication Vs Abstraction</a>
-        </span>
-        <span class="item__date">
-          05 Jul 2016
-        </span>
-        
-        When you see code duplication and can&rsquo;t think of an abstraction to put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.
-        
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/pair-programming-what-why-and-how/">Pair Programming - What? Why? And How?</a>
-        </span>
-        <span class="item__date">
-          31 Jan 2015
-        </span>
-        
-        What? Simply put, pair programming is two programmers with a single computer working together to solve a problem!
-Why?  To produce better code To learn more from your peers To learn and practice objectively evaluating possible solutions To collaborate with better programmers  How?  The Driver is responsible to coding (owns the keyboard) The Navigator is responsible for reviewing the driver’s work 30 min Rule: Role changes every 20-30min (at a logical break point) Take control of the worl.
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/pair-programming-what-why-and-how/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/10-vim-plugins-that-made-my-vim-easy/">10 Vim Plugins That Made My Vim Easy </a>
-        </span>
-        <span class="item__date">
-          04 Jan 2015
-        </span>
-        
-        Few days back I posted the below pic online and some of my friends wanted to know how I got there. I am no vim expert and there are myriad of other (possibly better) ways of doing things. So I will just list the plugins I have used in my setup.
-Note that the side panes (NERDTree on the left and Tagbar on the right) auto-collapse. They magically appear when you summon them and hide themselves when the task is done.
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/10-vim-plugins-that-made-my-vim-easy/">Read More…</a>
-        </div>
-        
-        </div>
-        
-      <div class="post-list__item">
-        <span class="item__title--big">
-          <a href="/posts/performance-analysis-in-python/">Performance Analysis In Python</a>
-        </span>
-        <span class="item__date">
-          02 Nov 2014
-        </span>
-        
-        My recent escapade with Python taught me many things. One of which is to &ldquo;start doing something that interests you. And each such daring act will teach you many more things.&rdquo;
-This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!
-        
-        
-        <div class="read-more-link">
-            <a href="/posts/performance-analysis-in-python/">Read More…</a>
-        </div>
-        
-        </div>
-        
-     
   </div>
+  
+
 
         </div>
         
-
   
-  
+    
+    
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -560,8 +177,8 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
   integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
   crossorigin="anonymous">
 </script>
