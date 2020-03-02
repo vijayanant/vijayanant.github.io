@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Machine Learning on </title>
+    <title>machine learning on </title>
     <link>https://www.vijayanant.com/tags/machine-learning/</link>
-    <description>Recent content in Machine Learning on </description>
+    <description>Recent content in machine learning on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
@@ -17,9 +17,9 @@
       <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/tensorflow-basics/</guid>
-      <description>TensorFlow is Google&amp;rsquo;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
+      <description>TensorFlow is Google&#39;s open source library for numerical computation. All computations are represented as Data Flow Graphs. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.
 Basics Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a Session
-import tensorflow as tf x = tf.random_uniform([10]) print(x)  What do you think the above code prints?</description>
+import tensorflow as tf x = tf.random_uniform([10]) print(x) What do you think the above code prints?</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tdd on </title>
+    <title>TDD on </title>
     <link>https://www.vijayanant.com/tags/tdd/</link>
-    <description>Recent content in Tdd on </description>
+    <description>Recent content in TDD on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/tdd-mantra/</guid>
-      <description>The Essence  Don&amp;rsquo;t write a line of new code unless you first have a failing automated test. Eliminate duplication. (refactor)  What is Needed The ability to write concrete, deterministic, automated tests is a prerequisite for applying TDD.
+      <description>The Essence  Don&#39;t write a line of new code unless you first have a failing automated test. Eliminate duplication. (refactor)  What is Needed The ability to write concrete, deterministic, automated tests is a prerequisite for applying TDD.
 Mantra - Order in Programming The two mantras imply an order to the tasks of programming:
  Red - write a little test that doesn’t work, perhaps doesn’t even compile at first Green - make the test work quickly, committing whatever sins necessary in the process Refactor - eliminate all the duplication created in just getting the test to work  Implications The simple mantra generates complex individual and group behavior.</description>
     </item>

@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     
     
@@ -59,8 +59,8 @@ can be used in that regard in day-to-day programming.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/" />
-<meta property="article:published_time" content="2018-10-26T00:00:00&#43;05:30"/>
-<meta property="article:modified_time" content="2018-10-26T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
+<meta property="article:published_time" content="2018-10-26T00:00:00+05:30" />
+<meta property="article:modified_time" content="2018-10-26T00:00:00+05:30" /><meta property="og:site_name" content="fossick" />
 
 
     
@@ -166,7 +166,7 @@ can be used in that regard in day-to-day programming.
 
     </p>
     <p class="copyright">
-      &copy; 2019 Vijay Anant.
+      &copy; 2020 Vijay Anant.
       
       <br/>Built with
       <a href="https://gohugo.io">Hugo</a> ❤️  <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
@@ -228,213 +228,167 @@ can be used in that regard in day-to-day programming.
 
   </header>
   <div class="post">
-    
-
-<p>One of the main advantages of <a href="https://en.wikipedia.org/wiki/Type_system#Static_type_checking">static type checking</a> is to catch
+    <p>One of the main advantages of <a href="https://en.wikipedia.org/wiki/Type_system#Static_type_checking">static type checking</a> is to catch
 errors before we deploy code to production.  <a href="https://en.wikipedia.org/wiki/Dependent_type">Dependent Types</a> allow us to eliminate some checks
 that are usually done at run time. I take a simple example to show how dependent
 types can be used in that regard in day-to-day programming.</p>
-
 <h2 id="give-me-the-money">Give Me The Money!</h2>
-
 <p>Let us start with an example. We will define a simple type for representing
 money and a function to add money.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Rational</span>
-</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> <span style="color:#66d9ef">Rational</span>
+</code></pre></div><p>Now we can add them together as</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">add</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Money</span>
+<span style="color:#a6e22e">add</span> (<span style="color:#66d9ef">Money</span> m1) (<span style="color:#66d9ef">Money</span> m2)  <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> (m1 <span style="color:#f92672">+</span> m2)
 
-<p>Now we can add them together as</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">add</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span>
-<span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">m1)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">m2)</span>  <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(m1</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">m2)</span>
+<span style="color:#a6e22e">money1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> (<span style="color:#ae81ff">50</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>)
+<span style="color:#a6e22e">money2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> (<span style="color:#ae81ff">25</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>)
 
-<span style="color: #a6e22e">money1</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
-<span style="color: #a6e22e">money2</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">25</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
-
-<span style="color: #a6e22e">total</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">money1</span> <span style="color: #f8f8f2">money2</span>
-</code></pre></div>
-
-<h2 id="everything-ok-there">Everything OK There?</h2>
-
+<span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> add money1 money2
+</code></pre></div><h2 id="everything-ok-there">Everything OK There?</h2>
 <p>There is something we have missed here. The currency. Money is represented in
 some <em>currency</em> (like US Dollar) and we cannot add money in different
 currencies. For example, you cannot add 2 US dollars and 2 British Pounds.</p>
-
 <p>Lets include currency information in our <code>Money</code> type. A simple approach is to
 keep a string representing the currency (&ldquo;GBP&rdquo;, &ldquo;USD&rdquo;, etc.) along with the
 amount.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">String</span> <span style="color: #66d9ef">Rational</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> <span style="color:#66d9ef">String</span> <span style="color:#66d9ef">Rational</span>
 
-<span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span>
-<span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;USD&quot;</span> <span style="color: #ae81ff">2</span>
-</code></pre></div>
-
-<h2 id="houston-we-ve-got-a-problem">Houston, We&rsquo;ve Got a Problem</h2>
-
+<span style="color:#a6e22e">twoDollars</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span>
+<span style="color:#a6e22e">twoDollars</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">USD</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">2</span>
+</code></pre></div><h2 id="houston-weve-got-a-problem">Houston, We've Got a Problem</h2>
 <p>The constraint that only <code>Money</code> values with same <code>currency</code> can be added makes
 our <code>add</code> function <a href="https://en.wikipedia.org/wiki/Partial_function">partial</a>.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">add</span><span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span>
-<span style="color: #a6e22e">add</span>   <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f8f8f2">m1)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c2</span> <span style="color: #f8f8f2">m2)</span> <span style="color: #f92672">=</span>
-      <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">c2</span> <span style="color: #66d9ef">of</span>
-          <span style="color: #66d9ef">True</span>  <span style="color: #f92672">-&gt;</span>  <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f8f8f2">(m2</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">m2)</span>
-      <span style="color: #75715e">--  False -&gt;  ??  -- the function is not defined for this value </span>
-</code></pre></div>
-
-<p>Partial functions are bad. They pass type check and fail at runtime. The
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">add</span><span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Money</span>
+<span style="color:#a6e22e">add</span>   (<span style="color:#66d9ef">Money</span> c1 m1) (<span style="color:#66d9ef">Money</span> c2 m2) <span style="color:#f92672">=</span>
+      <span style="color:#66d9ef">case</span> c1 <span style="color:#f92672">==</span> c2 <span style="color:#66d9ef">of</span>
+          <span style="color:#66d9ef">True</span>  <span style="color:#f92672">-&gt;</span>  <span style="color:#66d9ef">Money</span> c1 (m2 <span style="color:#f92672">+</span> m2)
+      <span style="color:#75715e">--  False -&gt;  ??  -- the function is not defined for this value </span>
+</code></pre></div><p>Partial functions are bad. They pass type check and fail at runtime. The
 application crashes when inputs for which the function is not defined are
 passed. Our <code>add</code> function above fails if it is ever called with two <code>Money</code>
 values with different currency.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">twoDollars</span>
-<span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">twoDollars</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>t add fiftyPence twoDollars
+<span style="color:#a6e22e">add</span> fiftyPence twoDollars <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span>
 
-<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">twoDollars</span>
-<span style="color: #f92672">***</span> <span style="color: #66d9ef">Exception:</span> <span style="color: #f92672">/</span><span style="color: #66d9ef">Users</span><span style="color: #f92672">/</span><span style="color: #f8f8f2">vj</span><span style="color: #f92672">/</span><span style="color: #f8f8f2">workspace</span><span style="color: #f92672">/</span><span style="color: #66d9ef">Haskell</span><span style="color: #f92672">/</span><span style="color: #66d9ef">Money</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">hs</span><span style="color: #66d9ef">:</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">23</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">7</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">24</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">37</span><span style="color: #f8f8f2">)</span><span style="color: #66d9ef">:</span> <span style="color: #66d9ef">Non</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">exhaustive</span> <span style="color: #f8f8f2">patterns</span> <span style="color: #66d9ef">in</span> <span style="color: #66d9ef">case</span>
-</code></pre></div>
-
-<h2 id="improvise-adapt-overcome">Improvise, Adapt, Overcome</h2>
-
+<span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> add fiftyPence twoDollars
+<span style="color:#f92672">***</span> <span style="color:#66d9ef">Exception</span><span style="color:#66d9ef">:</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">Users</span><span style="color:#f92672">/</span>vj<span style="color:#f92672">/</span>workspace<span style="color:#f92672">/</span><span style="color:#66d9ef">Haskell</span><span style="color:#f92672">/</span><span style="color:#66d9ef">Money</span><span style="color:#f92672">.</span>hs<span style="color:#66d9ef">:</span>(<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">7</span>)<span style="color:#f92672">-</span>(<span style="color:#ae81ff">24</span>,<span style="color:#ae81ff">37</span>)<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Non</span><span style="color:#f92672">-</span>exhaustive patterns <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">case</span>
+</code></pre></div><h2 id="improvise-adapt-overcome">Improvise, Adapt, Overcome</h2>
 <p>A simple way to overcome this problem is to extend the function to return a
 specific value (an <em>error</em> value) for all those inputs for which the function is
 not defined.</p>
-
 <p>Wrapping the return type with <code>Maybe</code> or <code>Either e</code> are common approaches to
-extending the function. A special value of <code>Nothing::Maybe Money</code> (or <code>Left
-&quot;Incompatible Currency&quot;::Either String Money</code>) can be returned for all the
+extending the function. A special value of <code>Nothing::Maybe Money</code> (or <code>Left &quot;Incompatible Currency&quot;::Either String Money</code>) can be returned for all the
 inputs where <code>add</code> is originally not defined.</p>
-
 <p>A simple addition function now has to deal with error cases. If we decide to
 indicate an error using <code>Maybe Money</code> or <code>Either Error Money</code> as return type,
 the calling function also has to deal with such a value appropriately (may be by
 returning an error to its caller!).</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">add</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Maybe</span> <span style="color: #66d9ef">Money</span>
-<span style="color: #a6e22e">add</span>   <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f8f8f2">m1)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c2</span> <span style="color: #f8f8f2">m2)</span> <span style="color: #f92672">=</span> 
-      <span style="color: #66d9ef">case</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">c2</span> <span style="color: #66d9ef">of</span>
-          <span style="color: #66d9ef">True</span>  <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Just</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c1</span> <span style="color: #f8f8f2">(m2</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">m2))</span>
-          <span style="color: #66d9ef">False</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Nothing</span>
-</code></pre></div>
-
-<h2 id="independence-freedom-what">Independence? Freedom? What?</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">add</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Money</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Maybe</span> <span style="color:#66d9ef">Money</span>
+<span style="color:#a6e22e">add</span>   (<span style="color:#66d9ef">Money</span> c1 m1) (<span style="color:#66d9ef">Money</span> c2 m2) <span style="color:#f92672">=</span> 
+      <span style="color:#66d9ef">case</span> c1 <span style="color:#f92672">==</span> c2 <span style="color:#66d9ef">of</span>
+          <span style="color:#66d9ef">True</span>  <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Just</span> (<span style="color:#66d9ef">Money</span> c1 (m2 <span style="color:#f92672">+</span> m2))
+          <span style="color:#66d9ef">False</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Nothing</span>
+</code></pre></div><h2 id="independence-freedom-what">Independence? Freedom? What?</h2>
 <p>Using dependent types we can avoid the runtime check by making it possible for
 the compiler to do that check for us. Since the compiler prohibits calling our
 <code>add</code> function with incompatible money values, we are not only freed from
-runtime check, we also don&rsquo;t have to worry about error handling.</p>
-
+runtime check, we also don't have to worry about error handling.</p>
 <p>This is in contrast to extending the function. Here we <em>restrict the domain of
 the function</em> to contain only those values for which the function is defined.</p>
-
 <blockquote>
-<p>Dependent Types are advanced concepts. But we don&rsquo;t have to know all the
+<p>Dependent Types are advanced concepts. But we don't have to know all the
 theory and concepts behind it as many good people have made it so simple for
 us to use it. But I recommend you all to read and know more to use them in
 more interesting ways.</p>
 </blockquote>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #75715e">{-# LANGUAGE KindSignatures, DataKinds #-}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#75715e">{-</span><span style="color:#75715e"># LANGUAGE KindSignatures, DataKinds #</span><span style="color:#75715e">-}</span>
 
-<span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">GHC.TypeLits</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Symbol</span><span style="color: #f8f8f2">)</span>
-<span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">Data.Ratio</span> <span style="color: #f8f8f2">((</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">))</span>
+<span style="color:#66d9ef">import</span> GHC.TypeLits (<span style="color:#66d9ef">Symbol</span>)
+<span style="color:#66d9ef">import</span> Data.Ratio ((<span style="color:#f92672">%</span>))
 
-<span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(currency</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Symbol</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Rational</span>
+<span style="color:#66d9ef">data</span> <span style="color:#66d9ef">Money</span> (currency <span style="color:#f92672">::</span> <span style="color:#66d9ef">Symbol</span>) <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> <span style="color:#66d9ef">Rational</span>
 
-<span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
-<span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
+<span style="color:#a6e22e">fiftyPence</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#a6e22e">fiftyPence</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> (<span style="color:#ae81ff">50</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>)
 
-<span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;USD&quot;</span>
-<span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #ae81ff">2</span>
+<span style="color:#a6e22e">twoDollars</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">USD</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#a6e22e">twoDollars</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> <span style="color:#ae81ff">2</span>
 
-<span style="color: #a6e22e">add</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">-&gt;</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">c</span>
-<span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">m1)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">m2)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(m1</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">m2)</span>
-</code></pre></div>
-
-<p>Notice how the implementation of <code>add</code> function is same as the one before
+<span style="color:#a6e22e">add</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> c <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Money</span> c <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Money</span> c
+<span style="color:#a6e22e">add</span> (<span style="color:#66d9ef">Money</span> m1) (<span style="color:#66d9ef">Money</span> m2) <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> (m1 <span style="color:#f92672">+</span> m2)
+</code></pre></div><p>Notice how the implementation of <code>add</code> function is same as the one before
 introducing <code>currency</code> parameter. It has no if/case expressions and no <code>Maybe</code>
 return type. It is a compilation error to add <code>Money</code> values with different
 currency.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">fiftyPence</span>
-<span style="color: #a6e22e">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>t add fiftyPence fiftyPence
+<span style="color:#a6e22e">add</span> fiftyPence fiftyPence <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span>
 
-<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">t</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">twoDollars</span>
+<span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>t add fiftyPence twoDollars
 
-<span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">interactive</span><span style="color: #f92672">&gt;:</span><span style="color: #ae81ff">1</span><span style="color: #66d9ef">:</span><span style="color: #ae81ff">16</span><span style="color: #66d9ef">:</span> <span style="color: #a6e22e">error</span><span style="color: #66d9ef">:</span>
-    <span style="color: #960050; background-color: #1e0010">•</span> <span style="color: #66d9ef">Couldn&#39;t</span> <span style="color: #f8f8f2">match</span> <span style="color: #66d9ef">type</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;USD&quot;</span><span style="color: #960050; background-color: #1e0010">’</span> <span style="color: #f8f8f2">with</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;GBP&quot;</span><span style="color: #960050; background-color: #1e0010">’</span>
-      <span style="color: #66d9ef">Expected</span> <span style="color: #66d9ef">type:</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
-        <span style="color: #66d9ef">Actual</span> <span style="color: #66d9ef">type:</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;USD&quot;</span>
-    <span style="color: #960050; background-color: #1e0010">•</span> <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">second</span> <span style="color: #f8f8f2">argument</span> <span style="color: #66d9ef">of</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #f8f8f2">add</span><span style="color: #960050; background-color: #1e0010">’</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">namely</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #f8f8f2">twoDollars</span><span style="color: #960050; background-color: #1e0010">’</span>
-      <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">expression</span><span style="color: #66d9ef">:</span> <span style="color: #f8f8f2">add</span> <span style="color: #f8f8f2">fiftyPence</span> <span style="color: #f8f8f2">twoDollars</span>
-</code></pre></div>
-
-<p>We use <em>language extensions</em> in GHC for using dependent types. I will try to
+<span style="color:#f92672">&lt;</span>interactive<span style="color:#f92672">&gt;:</span><span style="color:#ae81ff">1</span><span style="color:#66d9ef">:</span><span style="color:#ae81ff">16</span><span style="color:#66d9ef">:</span> <span style="color:#a6e22e">error</span><span style="color:#66d9ef">:</span>
+    <span style="color:#960050;background-color:#1e0010">•</span> <span style="color:#66d9ef">Couldn&#39;t</span> match <span style="color:#66d9ef">type</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">USD</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">’</span> with <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">’</span>
+      <span style="color:#66d9ef">Expected</span> <span style="color:#66d9ef">type</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span>
+        <span style="color:#66d9ef">Actual</span> <span style="color:#66d9ef">type</span><span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">USD</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#960050;background-color:#1e0010">•</span> <span style="color:#66d9ef">In</span> the second argument <span style="color:#66d9ef">of</span> <span style="color:#960050;background-color:#1e0010">‘</span>add<span style="color:#960050;background-color:#1e0010">’</span>, namely <span style="color:#960050;background-color:#1e0010">‘</span>twoDollars<span style="color:#960050;background-color:#1e0010">’</span>
+      <span style="color:#66d9ef">In</span> the expression<span style="color:#66d9ef">:</span> add fiftyPence twoDollars
+</code></pre></div><p>We use <em>language extensions</em> in GHC for using dependent types. I will try to
 explain their usage in simple terms.</p>
-
 <h2 id="be-kind-to-others">Be Kind To Others</h2>
-
 <p>Notice the type of <code>fiftyPence</code> -</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
-</code></pre></div>
-
-<p><code>Money</code> is a <em>type constructor</em>, as we know, type constructors only accepts
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">fiftyPence</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p><code>Money</code> is a <em>type constructor</em>, as we know, type constructors only accepts
 other types as parameters (<code>Maybe Int</code>, <code>[Int]</code> etc.). But, <code>&quot;GBP&quot;</code> looks like a
 String value! How is this possible?</p>
-
 <p>Firstly, <code>&quot;GBP&quot;</code> in <code>fiftyPence :: Money &quot;GBP&quot;</code> is not a value but a type with
 <strong>kind</strong> <code>Symbol</code>. You can see that in the data definition of Money. <code>currency</code>
 type parameter is of kind <code>Symbol</code>.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">data</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(currency</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Symbol</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Rational</span>
-</code></pre></div>
-
-<p><code>Symbol</code> is a convenient Kind provided by GHC in the <code>GHC.TypeLits</code> module which
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">Money</span> (currency <span style="color:#f92672">::</span> <span style="color:#66d9ef">Symbol</span>) <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> <span style="color:#66d9ef">Rational</span>
+</code></pre></div><p><code>Symbol</code> is a convenient Kind provided by GHC in the <code>GHC.TypeLits</code> module which
 is the kind for type-level strings. It lets us use string literals like &ldquo;GBP&rdquo; as
 a type.</p>
-
 <blockquote>
-<p>You know that we can manually specify a variable&rsquo;s type. Similarly, we can also
-manually specify a type variable&rsquo;s kind using the <em><strong>KindSignatures</strong></em>
+<p>You know that we can manually specify a variable's type. Similarly, we can also
+manually specify a type variable's kind using the <em><strong>KindSignatures</strong></em>
 extension.</p>
 </blockquote>
-
 <h2 id="congratulations-you-have-been-promoted">Congratulations! You have Been Promoted</h2>
-
 <p>OK, So, <code>KindSignatures</code> extension lets me specify that <code>currency</code> has kind
 <code>Symbol</code>, but how does <code>&quot;GBP&quot;</code> and <code>&quot;USD&quot;</code> become types of of kind <code>Symbol</code>?</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
-<span style="color: #a6e22e">fiftyPence</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">fiftyPence</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#a6e22e">fiftyPence</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> (<span style="color:#ae81ff">50</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span>)
 
-<span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">::</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;USD&quot;</span>
-<span style="color: #a6e22e">twoDollars</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">Money</span> <span style="color: #ae81ff">2</span>
-</code></pre></div>
-
-<p>This is all thanks to another GHC extension we have used - <em><strong>DataKinds</strong>.</em> When
+<span style="color:#a6e22e">twoDollars</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">USD</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#a6e22e">twoDollars</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Money</span> <span style="color:#ae81ff">2</span>
+</code></pre></div><p>This is all thanks to another GHC extension we have used - <em><strong>DataKinds</strong>.</em> When
 this extension is enabled, the type constructors are <em>promoted</em> to Kinds and value
 constructors are promoted to type constructors.</p>
-
 <p>In our case, the kind <code>Symbol</code> is already provided by GHC. All we need is for
 GHC to promote and recognize <code>&quot;GBP&quot;</code> as type.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>k <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span>
 
-<span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">interactive</span><span style="color: #f92672">&gt;:</span><span style="color: #ae81ff">1</span><span style="color: #66d9ef">:</span><span style="color: #ae81ff">7</span><span style="color: #66d9ef">:</span> <span style="color: #a6e22e">error</span><span style="color: #66d9ef">:</span>
-    <span style="color: #66d9ef">Illegal</span> <span style="color: #66d9ef">type:</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #e6db74">&quot;GBP&quot;</span><span style="color: #960050; background-color: #1e0010">’</span> <span style="color: #66d9ef">Perhaps</span> <span style="color: #f8f8f2">you</span> <span style="color: #f8f8f2">intended</span> <span style="color: #f8f8f2">to</span> <span style="color: #f8f8f2">use</span> <span style="color: #66d9ef">DataKinds</span>
+<span style="color:#f92672">&lt;</span>interactive<span style="color:#f92672">&gt;:</span><span style="color:#ae81ff">1</span><span style="color:#66d9ef">:</span><span style="color:#ae81ff">7</span><span style="color:#66d9ef">:</span> <span style="color:#a6e22e">error</span><span style="color:#66d9ef">:</span>
+    <span style="color:#66d9ef">Illegal</span> <span style="color:#66d9ef">type</span><span style="color:#66d9ef">:</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">’</span> <span style="color:#66d9ef">Perhaps</span> you intended to use <span style="color:#66d9ef">DataKinds</span>
 
-<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">set</span> <span style="color: #f92672">-</span><span style="color: #66d9ef">XDataKinds</span>
-<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span>
-<span style="color: #66d9ef">Money</span> <span style="color: #e6db74">&quot;GBP&quot;</span> <span style="color: #f92672">::</span> <span style="color: #f92672">*</span>
+<span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>set <span style="color:#f92672">-</span><span style="color:#66d9ef">XDataKinds</span>
+<span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>k <span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">Money</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">GBP</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">::</span> <span style="color:#f92672">*</span>
 
-<span style="color: #a6e22e">λ</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">:</span><span style="color: #f8f8f2">k</span> <span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Int</span>
+<span style="color:#a6e22e">λ</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">:</span>k <span style="color:#66d9ef">Money</span> <span style="color:#66d9ef">Int</span>
 
-<span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">interactive</span><span style="color: #f92672">&gt;:</span><span style="color: #ae81ff">1</span><span style="color: #66d9ef">:</span><span style="color: #ae81ff">7</span><span style="color: #66d9ef">:</span> <span style="color: #a6e22e">error</span><span style="color: #66d9ef">:</span>
-    <span style="color: #960050; background-color: #1e0010">•</span> <span style="color: #66d9ef">Expected</span> <span style="color: #f8f8f2">kind</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #66d9ef">Symbol</span><span style="color: #960050; background-color: #1e0010">’</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">but</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #66d9ef">Int</span><span style="color: #960050; background-color: #1e0010">’</span> <span style="color: #f8f8f2">has</span> <span style="color: #f8f8f2">kind</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #f92672">*</span><span style="color: #960050; background-color: #1e0010">’</span>
-    <span style="color: #960050; background-color: #1e0010">•</span> <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">first</span> <span style="color: #f8f8f2">argument</span> <span style="color: #66d9ef">of</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #66d9ef">Money</span><span style="color: #960050; background-color: #1e0010">’</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">namely</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #66d9ef">Int</span><span style="color: #960050; background-color: #1e0010">’</span>
-      <span style="color: #66d9ef">In</span> <span style="color: #f8f8f2">the</span> <span style="color: #66d9ef">type</span> <span style="color: #960050; background-color: #1e0010">‘</span><span style="color: #66d9ef">Money</span> <span style="color: #66d9ef">Int</span><span style="color: #960050; background-color: #1e0010">’</span>
-</code></pre></div>
-
-<blockquote>
+<span style="color:#f92672">&lt;</span>interactive<span style="color:#f92672">&gt;:</span><span style="color:#ae81ff">1</span><span style="color:#66d9ef">:</span><span style="color:#ae81ff">7</span><span style="color:#66d9ef">:</span> <span style="color:#a6e22e">error</span><span style="color:#66d9ef">:</span>
+    <span style="color:#960050;background-color:#1e0010">•</span> <span style="color:#66d9ef">Expected</span> kind <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#66d9ef">Symbol</span><span style="color:#960050;background-color:#1e0010">’</span>, but <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#66d9ef">Int</span><span style="color:#960050;background-color:#1e0010">’</span> has kind <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">’</span>
+    <span style="color:#960050;background-color:#1e0010">•</span> <span style="color:#66d9ef">In</span> the first argument <span style="color:#66d9ef">of</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#66d9ef">Money</span><span style="color:#960050;background-color:#1e0010">’</span>, namely <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#66d9ef">Int</span><span style="color:#960050;background-color:#1e0010">’</span>
+      <span style="color:#66d9ef">In</span> the <span style="color:#66d9ef">type</span> <span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#66d9ef">Money</span> <span style="color:#66d9ef">Int</span><span style="color:#960050;background-color:#1e0010">’</span>
+</code></pre></div><blockquote>
 <p>The promoted types, <code>&quot;GBP&quot;</code> and <code>&quot;USD&quot;</code> in the above example, have no
 inhabitants.</p>
-
+</blockquote>
+<blockquote>
 <p>Also, promoted types are prefixed with a quote (<code>'&quot;GBP&quot;</code> and <code>'&quot;USD&quot;</code>) but they
 can almost always be ignored as the context of their usage makes it clear which
 one we meant - the type &ldquo;GBP&rdquo; or the string value &ldquo;GBP&rdquo;.</p>
 </blockquote>
-
 <h2 id="the-beginning">The Beginning</h2>
-
 <p>There is much more to depended types than what we have seen here. This is to
 show readers that dependent types can be useful in day-to-day programming as
 well.</p>

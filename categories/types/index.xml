@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Types on </title>
@@ -17,9 +17,9 @@
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/posts/higher-ranked-types/</guid>
-      <description>Let&amp;rsquo;s get started with a monomorphic function -
-incr :: Int -&amp;gt; Int incr = (+1)  The function incr works on values of type Int and nothing else. We can make our function polymorphic by using type parameters in place of concrete types -
-incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1)  The modified function incr&#39; can work with any type that has a Num instance.</description>
+      <description>Let&#39;s get started with a monomorphic function -
+incr :: Int -&amp;gt; Int incr = (+1) The function incr works on values of type Int and nothing else. We can make our function polymorphic by using type parameters in place of concrete types -
+incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1) The modified function incr&#39; can work with any type that has a Num instance. Now let us move on and look at a simple higher order function -</description>
     </item>
     
     <item>

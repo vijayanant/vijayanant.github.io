@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     
     
@@ -56,8 +56,8 @@ Whether a language can solve the Expression Problem is a salient indicator of
 its capacity for expression. " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.vijayanant.com/posts/the-expression-problem/" />
-<meta property="article:published_time" content="2018-11-13T00:00:00&#43;05:30"/>
-<meta property="article:modified_time" content="2018-11-13T00:00:00&#43;05:30"/><meta property="og:site_name" content="fossick" />
+<meta property="article:published_time" content="2018-11-13T00:00:00+05:30" />
+<meta property="article:modified_time" content="2018-11-13T00:00:00+05:30" /><meta property="og:site_name" content="fossick" />
 
 
     
@@ -163,7 +163,7 @@ its capacity for expression. " />
 
     </p>
     <p class="copyright">
-      &copy; 2019 Vijay Anant.
+      &copy; 2020 Vijay Anant.
       
       <br/>Built with
       <a href="https://gohugo.io">Hugo</a> ❤️  <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
@@ -225,73 +225,54 @@ its capacity for expression. " />
 
   </header>
   <div class="post">
-    
-
-<p>In the <a href="https://www.vijayanant.com/posts/expressiveness/">previous post</a> I had put forward
+    <p>In the <a href="https://www.vijayanant.com/posts/expressiveness/">previous post</a> I had put forward
 (rather hastily, I must add) my thoughts on what does expressiveness mean for
 programming languages. I had this feeling of forgetting something important but
-couldn&rsquo;t pinpoint what it was. Today, while sipping a hot cup of coffee, I
+couldn't pinpoint what it was. Today, while sipping a hot cup of coffee, I
 remembered <strong>the expression problem</strong>.</p>
-
 <p>The Expression Problem is a well known problem in programming language theory
 dealing with the expressiveness of a programming language. Here is <a href="http://homepages.inf.ed.ac.uk/wadler/papers/expression/expression.txt">Philip
-Wadler&rsquo;s original statement</a> of the
+Wadler's original statement</a> of the
 problem.</p>
-
 <blockquote>
 <p>The Expression Problem is a new name for an old problem. The goal is to define
 a datatype by cases, where one can add new cases to the datatype and new
 functions over the datatype, without recompiling existing code, and while
 retaining static type safety (e.g., no casts).</p>
-
 <p>&ndash;  <em>Philip Wadler</em></p>
 </blockquote>
-
 <p>He goes on to say &ldquo;<em>Whether a language can solve the Expression Problem is a salient
-indicator of its capacity for expression.</em>&ldquo;</p>
-
+indicator of its capacity for expression.</em>&rdquo;</p>
 <p>In this post, we will see two examples, one in Java and one in Haskell to
 understand the problem.</p>
-
 <h2 id="oo-programming">OO Programming</h2>
-
 <p>In Object Oriented Programming, it is easy to add new datatypes by defining new
 (sub)classes. Since classes encapsulate the operations on the data type, no existing
 code needs to be modified. However, adding new functions (operations) over the
 datatype is hard. All the datatypes have to be modified and recompiled.</p>
-
 <p>Below is a java version explaining the problem. If you want to add new operation
 on the expressions (say, to type-check), you will have to add the new operation
 to each object type (Literal and Add) forcing a recompilation of these classes.</p>
-
-<script type="application/javascript" src="//gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressonProblem.java"></script>
+<script type="application/javascript" src="https://gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressonProblem.java"></script>
 
 <p><a href="https://en.wikipedia.org/wiki/Visitor_pattern">Visitor design pattern</a> in OO
 programming is a known solution to cases where new operations are added over
 existing type (hierarchy). However, by using this pattern we will restrict our
 ability to add new types. Adding new (element) class (to the hierarchy) forces
 changes to all the visitor classes and needs recompilation.</p>
-
-<!--The extended Visitor pattern does offer a solution but at the cost of little-->
-
-<!--type safety as this approach makes use of dynamic type casts.-->
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="functional-programming">Functional Programming</h2>
-
 <p>In functional programming, we think of functions that operate on values of
 certain types. It is easy to add new functions that operate on a datatype. To
 add new case to the datatype, we will have to modify all the functions to cater
 for the new case.</p>
-
 <p>Typeclasses in Haskell offer a solution. But a naive use of type classes will
 not work either! In the below code, the expression</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Haskell" data-lang="Haskell"><span></span><span style="color: #66d9ef">if</span> <span style="color: #66d9ef">True</span> <span style="color: #66d9ef">then</span> <span style="color: #66d9ef">Lit</span> <span style="color: #ae81ff">10</span> <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">Add</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Lit</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">Lit</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span>
-</code></pre></div>
-
-<p>does not typecheck even thought both <code>Lit</code> and <code>Add</code> are instances of <code>Exp</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">True</span> <span style="color:#66d9ef">then</span> <span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">Add</span> (<span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">5</span>) (<span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">5</span>)
+</code></pre></div><p>does not typecheck even thought both <code>Lit</code> and <code>Add</code> are instances of <code>Exp</code>
 typeclass.</p>
-
-<script type="application/javascript" src="//gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressionProblem.hs"></script>
+<script type="application/javascript" src="https://gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressionProblem.hs"></script>
 
 <p>In the <em>functional pearl</em> <a href="http://www.cs.ru.nl/~W.Swierstra/Publications/DataTypesALaCarte.pdf">Data types a la carte</a>,  <em>Wouter
 Swierstra</em> proposes a solution to the expression problem. Philip Wadler himself

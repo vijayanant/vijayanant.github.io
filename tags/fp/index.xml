@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fp on </title>
+    <title>fp on </title>
     <link>https://www.vijayanant.com/tags/fp/</link>
-    <description>Recent content in Fp on </description>
+    <description>Recent content in fp on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0530</lastBuildDate>
@@ -17,9 +17,9 @@
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/posts/higher-ranked-types/</guid>
-      <description>Let&amp;rsquo;s get started with a monomorphic function -
-incr :: Int -&amp;gt; Int incr = (+1)  The function incr works on values of type Int and nothing else. We can make our function polymorphic by using type parameters in place of concrete types -
-incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1)  The modified function incr&#39; can work with any type that has a Num instance.</description>
+      <description>Let&#39;s get started with a monomorphic function -
+incr :: Int -&amp;gt; Int incr = (+1) The function incr works on values of type Int and nothing else. We can make our function polymorphic by using type parameters in place of concrete types -
+incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1) The modified function incr&#39; can work with any type that has a Num instance. Now let us move on and look at a simple higher order function -</description>
     </item>
     
     <item>
@@ -39,8 +39,8 @@ I had written a more detailed writeup on the same topic here.</description>
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/posts/the-expression-problem/</guid>
-      <description>In the previous post I had put forward (rather hastily, I must add) my thoughts on what does expressiveness mean for programming languages. I had this feeling of forgetting something important but couldn&amp;rsquo;t pinpoint what it was. Today, while sipping a hot cup of coffee, I remembered the expression problem.
-The Expression Problem is a well known problem in programming language theory dealing with the expressiveness of a programming language.</description>
+      <description>In the previous post I had put forward (rather hastily, I must add) my thoughts on what does expressiveness mean for programming languages. I had this feeling of forgetting something important but couldn&#39;t pinpoint what it was. Today, while sipping a hot cup of coffee, I remembered the expression problem.
+The Expression Problem is a well known problem in programming language theory dealing with the expressiveness of a programming language. Here is Philip Wadler&#39;s original statement of the problem.</description>
     </item>
     
     <item>
@@ -71,7 +71,8 @@ Machine models are based on the idea of a program acting on data by modification
       <guid>https://www.vijayanant.com/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</guid>
       <description>Problem Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row r and column c.
 Return an array of integers obtained by spiraling outward anti-clockwise from the r and c, starting upward.
-More details here</description>
+More details here
+My attempt in Haskell.</description>
     </item>
     
     <item>

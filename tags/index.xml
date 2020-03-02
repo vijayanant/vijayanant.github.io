@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
@@ -6,224 +6,17 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0530</lastBuildDate>
     
 	<atom:link href="https://www.vijayanant.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Abstraction</title>
-      <link>https://www.vijayanant.com/tags/abstraction/</link>
-      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/abstraction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Analysis</title>
-      <link>https://www.vijayanant.com/tags/analysis/</link>
-      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Beta Reduction</title>
-      <link>https://www.vijayanant.com/tags/beta-reduction/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/beta-reduction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Binary Tree</title>
-      <link>https://www.vijayanant.com/tags/binary-tree/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/binary-tree/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Call by Name</title>
-      <link>https://www.vijayanant.com/tags/call-by-name/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/call-by-name/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Call by Value</title>
-      <link>https://www.vijayanant.com/tags/call-by-value/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/call-by-value/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Church Numerals</title>
-      <link>https://www.vijayanant.com/tags/church-numerals/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/church-numerals/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Code Duplication</title>
-      <link>https://www.vijayanant.com/tags/code-duplication/</link>
-      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/code-duplication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Code Pairing</title>
-      <link>https://www.vijayanant.com/tags/code-pairing/</link>
-      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/code-pairing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coding</title>
-      <link>https://www.vijayanant.com/tags/coding/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/coding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Databases</title>
-      <link>https://www.vijayanant.com/tags/databases/</link>
-      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/databases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Decision</title>
-      <link>https://www.vijayanant.com/tags/decision/</link>
-      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/decision/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
-      <link>https://www.vijayanant.com/tags/deep-learning/</link>
-      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dependent Types</title>
-      <link>https://www.vijayanant.com/tags/dependent-types/</link>
-      <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/dependent-types/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Design Principles</title>
-      <link>https://www.vijayanant.com/tags/design-principles/</link>
-      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/design-principles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://www.vijayanant.com/tags/development/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Expressiveness</title>
-      <link>https://www.vijayanant.com/tags/expressiveness/</link>
-      <pubDate>Thu, 08 Nov 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/expressiveness/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Extreme Programming</title>
-      <link>https://www.vijayanant.com/tags/extreme-programming/</link>
-      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/extreme-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fallacy</title>
-      <link>https://www.vijayanant.com/tags/fallacy/</link>
-      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/fallacy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fp</title>
+      <title>fp</title>
       <link>https://www.vijayanant.com/tags/fp/</link>
       <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/tags/fp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Functional</title>
-      <link>https://www.vijayanant.com/tags/functional/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/functional/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Functions</title>
-      <link>https://www.vijayanant.com/tags/functions/</link>
-      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/functions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gadts</title>
-      <link>https://www.vijayanant.com/tags/gadts/</link>
-      <pubDate>Sat, 15 Oct 2016 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/gadts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Happy</title>
-      <link>https://www.vijayanant.com/tags/happy/</link>
-      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/happy/</guid>
       <description></description>
     </item>
     
@@ -237,11 +30,20 @@
     </item>
     
     <item>
-      <title>Imperative</title>
-      <link>https://www.vijayanant.com/tags/imperative/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      <title>Polymorphism</title>
+      <link>https://www.vijayanant.com/tags/polymorphism/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/imperative/</guid>
+      <guid>https://www.vijayanant.com/tags/polymorphism/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RankNTypes</title>
+      <link>https://www.vijayanant.com/tags/rankntypes/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/rankntypes/</guid>
       <description></description>
     </item>
     
@@ -251,6 +53,141 @@
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
       
       <guid>https://www.vijayanant.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oop</title>
+      <link>https://www.vijayanant.com/tags/oop/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>expressiveness</title>
+      <link>https://www.vijayanant.com/tags/expressiveness/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/expressiveness/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Tree</title>
+      <link>https://www.vijayanant.com/tags/binary-tree/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/binary-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://www.vijayanant.com/tags/python/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dependent Types</title>
+      <link>https://www.vijayanant.com/tags/dependent-types/</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/dependent-types/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>databases</title>
+      <link>https://www.vijayanant.com/tags/databases/</link>
+      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/databases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scaling</title>
+      <link>https://www.vijayanant.com/tags/scaling/</link>
+      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/scaling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>https://www.vijayanant.com/tags/storage/</link>
+      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://www.vijayanant.com/tags/development/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TDD</title>
+      <link>https://www.vijayanant.com/tags/tdd/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://www.vijayanant.com/tags/testing/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beta Reduction</title>
+      <link>https://www.vijayanant.com/tags/beta-reduction/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/beta-reduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Call By Name</title>
+      <link>https://www.vijayanant.com/tags/call-by-name/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/call-by-name/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Call By Value</title>
+      <link>https://www.vijayanant.com/tags/call-by-value/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/call-by-value/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Church Numerals</title>
+      <link>https://www.vijayanant.com/tags/church-numerals/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/church-numerals/</guid>
       <description></description>
     </item>
     
@@ -273,20 +210,38 @@
     </item>
     
     <item>
-      <title>Life Lessons</title>
-      <link>https://www.vijayanant.com/tags/life-lessons/</link>
-      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      <title>coding</title>
+      <link>https://www.vijayanant.com/tags/coding/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/life-lessons/</guid>
+      <guid>https://www.vijayanant.com/tags/coding/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Machine Learning</title>
-      <link>https://www.vijayanant.com/tags/machine-learning/</link>
-      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      <title>matrix traversal</title>
+      <link>https://www.vijayanant.com/tags/matrix-traversal/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/machine-learning/</guid>
+      <guid>https://www.vijayanant.com/tags/matrix-traversal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>puzzle</title>
+      <link>https://www.vijayanant.com/tags/puzzle/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/puzzle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>https://www.vijayanant.com/tags/functions/</link>
+      <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/functions/</guid>
       <description></description>
     </item>
     
@@ -300,155 +255,11 @@
     </item>
     
     <item>
-      <title>Matrix Traversal</title>
-      <link>https://www.vijayanant.com/tags/matrix-traversal/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/matrix-traversal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Monads</title>
-      <link>https://www.vijayanant.com/tags/monads/</link>
-      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/monads/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Object Orientation</title>
-      <link>https://www.vijayanant.com/tags/object-orientation/</link>
-      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/object-orientation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Object Oriented</title>
-      <link>https://www.vijayanant.com/tags/object-oriented/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/object-oriented/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Oop</title>
-      <link>https://www.vijayanant.com/tags/oop/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/oop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Ordered Sets</title>
       <link>https://www.vijayanant.com/tags/ordered-sets/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/ordered-sets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Packaging</title>
-      <link>https://www.vijayanant.com/tags/packaging/</link>
-      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/packaging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pair Programming</title>
-      <link>https://www.vijayanant.com/tags/pair-programming/</link>
-      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/pair-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Performance Analysis</title>
-      <link>https://www.vijayanant.com/tags/performance-analysis/</link>
-      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/performance-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Plugin</title>
-      <link>https://www.vijayanant.com/tags/plugin/</link>
-      <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/plugin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Polymorphism</title>
-      <link>https://www.vijayanant.com/tags/polymorphism/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/polymorphism/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Principles</title>
-      <link>https://www.vijayanant.com/tags/principles/</link>
-      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/principles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://www.vijayanant.com/tags/programming/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Puzzle</title>
-      <link>https://www.vijayanant.com/tags/puzzle/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/puzzle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.vijayanant.com/tags/python/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rankntypes</title>
-      <link>https://www.vijayanant.com/tags/rankntypes/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/rankntypes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Refactoring</title>
-      <link>https://www.vijayanant.com/tags/refactoring/</link>
-      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/refactoring/</guid>
       <description></description>
     </item>
     
@@ -462,20 +273,110 @@
     </item>
     
     <item>
-      <title>Scaling</title>
-      <link>https://www.vijayanant.com/tags/scaling/</link>
-      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/scaling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Sets</title>
       <link>https://www.vijayanant.com/tags/sets/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/sets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://www.vijayanant.com/tags/deep-learning/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://www.vijayanant.com/tags/machine-learning/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tensorflow</title>
+      <link>https://www.vijayanant.com/tags/tensorflow/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional</title>
+      <link>https://www.vijayanant.com/tags/functional/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/functional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Imperative</title>
+      <link>https://www.vijayanant.com/tags/imperative/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/imperative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Object Oriented</title>
+      <link>https://www.vijayanant.com/tags/object-oriented/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/object-oriented/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://www.vijayanant.com/tags/programming/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design Principles</title>
+      <link>https://www.vijayanant.com/tags/design-principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/design-principles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Object orientation</title>
+      <link>https://www.vijayanant.com/tags/object-orientation/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/object-orientation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Packaging</title>
+      <link>https://www.vijayanant.com/tags/packaging/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/packaging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Principles</title>
+      <link>https://www.vijayanant.com/tags/principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/principles/</guid>
       <description></description>
     </item>
     
@@ -489,7 +390,7 @@
     </item>
     
     <item>
-      <title>Solid</title>
+      <title>SOLID</title>
       <link>https://www.vijayanant.com/tags/solid/</link>
       <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
       
@@ -498,43 +399,133 @@
     </item>
     
     <item>
-      <title>Storage</title>
-      <link>https://www.vijayanant.com/tags/storage/</link>
-      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      <title>GADTs</title>
+      <link>https://www.vijayanant.com/tags/gadts/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0530</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/storage/</guid>
+      <guid>https://www.vijayanant.com/tags/gadts/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tdd</title>
-      <link>https://www.vijayanant.com/tags/tdd/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      <title>Decision</title>
+      <link>https://www.vijayanant.com/tags/decision/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/tdd/</guid>
+      <guid>https://www.vijayanant.com/tags/decision/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tensorflow</title>
-      <link>https://www.vijayanant.com/tags/tensorflow/</link>
-      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      <title>fallacy</title>
+      <link>https://www.vijayanant.com/tags/fallacy/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/tensorflow/</guid>
+      <guid>https://www.vijayanant.com/tags/fallacy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Testing</title>
-      <link>https://www.vijayanant.com/tags/testing/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      <title>Happy</title>
+      <link>https://www.vijayanant.com/tags/happy/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/testing/</guid>
+      <guid>https://www.vijayanant.com/tags/happy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vim</title>
+      <title>Life Lessons</title>
+      <link>https://www.vijayanant.com/tags/life-lessons/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/life-lessons/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monads</title>
+      <link>https://www.vijayanant.com/tags/monads/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/monads/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Abstraction</title>
+      <link>https://www.vijayanant.com/tags/abstraction/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/abstraction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code Duplication</title>
+      <link>https://www.vijayanant.com/tags/code-duplication/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/code-duplication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Refactoring</title>
+      <link>https://www.vijayanant.com/tags/refactoring/</link>
+      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/refactoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code pairing</title>
+      <link>https://www.vijayanant.com/tags/code-pairing/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/code-pairing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>extreme programming</title>
+      <link>https://www.vijayanant.com/tags/extreme-programming/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/extreme-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pair programming</title>
+      <link>https://www.vijayanant.com/tags/pair-programming/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/pair-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XP</title>
+      <link>https://www.vijayanant.com/tags/xp/</link>
+      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/xp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plugin</title>
+      <link>https://www.vijayanant.com/tags/plugin/</link>
+      <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
       <link>https://www.vijayanant.com/tags/vim/</link>
       <pubDate>Sun, 04 Jan 2015 09:18:06 +0000</pubDate>
       
@@ -543,11 +534,20 @@
     </item>
     
     <item>
-      <title>Xp</title>
-      <link>https://www.vijayanant.com/tags/xp/</link>
-      <pubDate>Sat, 31 Jan 2015 12:31:30 +0000</pubDate>
+      <title>analysis</title>
+      <link>https://www.vijayanant.com/tags/analysis/</link>
+      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/tags/xp/</guid>
+      <guid>https://www.vijayanant.com/tags/analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance analysis</title>
+      <link>https://www.vijayanant.com/tags/performance-analysis/</link>
+      <pubDate>Sun, 02 Nov 2014 20:05:36 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/performance-analysis/</guid>
       <description></description>
     </item>
     

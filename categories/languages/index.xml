@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Languages on </title>
@@ -18,7 +18,7 @@
       
       <guid>https://www.vijayanant.com/posts/expressiveness/</guid>
       <description>Last week, I wrote a post comparing simple programs written in Haskell, Python, and Java to demonstrate the expressiveness of Haskell. It got me thinking whether expressiveness is something we can compare between any two programming languages.
-Conciseness One thing that is very visible among the three implementations is the size of the programs. Is that a good measure of expressiveness of a language? I don&amp;rsquo;t think so. If being concise is what makes a language expressive, obfuscated C programs would be everywhere and even encouraged.</description>
+Conciseness One thing that is very visible among the three implementations is the size of the programs. Is that a good measure of expressiveness of a language? I don&#39;t think so. If being concise is what makes a language expressive, obfuscated C programs would be everywhere and even encouraged.</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Puzzle on </title>
+    <title>puzzle on </title>
     <link>https://www.vijayanant.com/tags/puzzle/</link>
-    <description>Recent content in Puzzle on </description>
+    <description>Recent content in puzzle on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate>
@@ -19,7 +19,8 @@
       <guid>https://www.vijayanant.com/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</guid>
       <description>Problem Write a function that accepts four arguments. The first two arguments are the size of the grid (rows X columns), filled with ascending integers from left to right, top to bottom, starting from 1. The next two arguments are the starting positions, the row r and column c.
 Return an array of integers obtained by spiraling outward anti-clockwise from the r and c, starting upward.
-More details here</description>
+More details here
+My attempt in Haskell.</description>
     </item>
     
   </channel>

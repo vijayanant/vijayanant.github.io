@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     
     
@@ -42,15 +42,15 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Performance Analysis In Python"/>
 <meta name="twitter:description" content="My recent escapade with Python taught me many things. One of which is to &ldquo;start doing something that interests you. And each such daring act will teach you many more things.&rdquo;
-This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!"/>
+This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&#39;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!"/>
 
 <meta property="og:title" content="Performance Analysis In Python" />
 <meta property="og:description" content="My recent escapade with Python taught me many things. One of which is to &ldquo;start doing something that interests you. And each such daring act will teach you many more things.&rdquo;
-This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!" />
+This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&#39;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.vijayanant.com/posts/performance-analysis-in-python/" />
-<meta property="article:published_time" content="2014-11-02T20:05:36&#43;00:00"/>
-<meta property="article:modified_time" content="2014-11-02T20:05:36&#43;00:00"/><meta property="og:site_name" content="fossick" />
+<meta property="article:published_time" content="2014-11-02T20:05:36+00:00" />
+<meta property="article:modified_time" content="2014-11-02T20:05:36+00:00" /><meta property="og:site_name" content="fossick" />
 
 
     
@@ -156,7 +156,7 @@ This time I set out to finding ways of analysing the performance of an applicati
 
     </p>
     <p class="copyright">
-      &copy; 2019 Vijay Anant.
+      &copy; 2020 Vijay Anant.
       
       <br/>Built with
       <a href="https://gohugo.io">Hugo</a> ❤️  <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
@@ -218,97 +218,66 @@ This time I set out to finding ways of analysing the performance of an applicati
 
   </header>
   <div class="post">
-    
-
-<p>My recent escapade with <a href="https://www.python.org">Python</a> taught me many things. One of which is to &ldquo;<strong>start doing something that interests you. And each such daring act will teach you many more things</strong>.&rdquo;</p>
-
-<p>This time I set out to finding ways of analysing the performance of an application - specifically Python applications.  And as always I wasn&rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python! ).</p>
-
+    <p>My recent escapade with <a href="https://www.python.org">Python</a> taught me many things. One of which is to &ldquo;<strong>start doing something that interests you. And each such daring act will teach you many more things</strong>.&rdquo;</p>
+<p>This time I set out to finding ways of analysing the performance of an application - specifically Python applications.  And as always I wasn't disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python! ).</p>
 <h2 id="performance-analysis">Performance Analysis</h2>
-
 <p>Let us start by trying to understand what is performance and how do we analyse it.</p>
-
 <ol>
 <li><strong>Performance</strong> is a measure of <em>how fast</em> the application (or each component of the application) is running and <em>how little memory</em> it uses</li>
 <li>Performance <strong>analysis</strong> is finding where are the speed <em>bottlenecks</em> and where is the <em>memory leaking</em></li>
 </ol>
-
 <p>In this article we will restrict ourselves to measuring and analysing the performance. Improving performance is a different topic altogether. Hopefully, I will have something to write about it someday.  Depending on the need of the hour, you can choose any one or a combination of the tools and techniques explained here.</p>
-
 <h2 id="good-old-time">Good old &lsquo;time&rsquo;</h2>
-
 <p>I use a Mac, but I am pretty sure, the <code>time</code> utility came from Unix ancestry.</p>
-
 <pre><code>$ time python slowprogram.py
 python slowprogram.py  3.81s user 0.04s system 97% cpu 3.927 total
-</code></pre>
-
-<p>The sum of user and system time gives you a measure of how much time your program took (excluding time taken for I/O).</p>
-
-<p>This doesn&rsquo;t help much. Though this tells you that the application is taking more time than it should be taking (how do you know?), it doesn&rsquo;t tell you where so that you can go look.</p>
-
-<h2 id="python-timer-class-context-manager">Python Timer Class - Context Manager</h2>
-
+</code></pre><p>The sum of user and system time gives you a measure of how much time your program took (excluding time taken for I/O).</p>
+<p>This doesn't help much. Though this tells you that the application is taking more time than it should be taking (how do you know?), it doesn't tell you where so that you can go look.</p>
+<h2 id="python-timer-class---context-manager">Python Timer Class - Context Manager</h2>
 <p>Corey Goldberg, in his blog <a href="http://coreygoldberg.blogspot.in/2012/06/python-timer-class-context-manager-for.html">here</a>, has given a tiny timer class that can be used to time any block of code.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Python" data-lang="Python"><span></span><span style="color: #f92672">from</span> <span style="color: #f8f8f2">timeit</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">default_timer</span>
-<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Timer</span><span style="color: #f8f8f2">(object):</span>
-    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">verbose</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">False):</span>
-        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">verbose</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">verbose</span>
-        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">timer</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">default_timer</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#f92672">from</span> timeit <span style="color:#f92672">import</span> default_timer
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Timer</span>(object):
+    <span style="color:#66d9ef">def</span> __init__(self, verbose<span style="color:#f92672">=</span>False):
+        self<span style="color:#f92672">.</span>verbose <span style="color:#f92672">=</span> verbose
+        self<span style="color:#f92672">.</span>timer <span style="color:#f92672">=</span> default_timer
         
-    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__enter__</span><span style="color: #f8f8f2">(self):</span>
-        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">start</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">timer()</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">self</span>
+    <span style="color:#66d9ef">def</span> __enter__(self):
+        self<span style="color:#f92672">.</span>start <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>timer()
+        <span style="color:#66d9ef">return</span> self
         
-    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__exit__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f92672">*</span><span style="color: #f8f8f2">args):</span>
-        <span style="color: #f8f8f2">end</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">timer()</span>
-        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed_secs</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">end</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">start</span>
-        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed_secs</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">1000</span>  <span style="color: #75715e"># millisecs</span>
-        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">verbose:</span>
-            <span style="color: #66d9ef">print</span> <span style="color: #e6db74">&#39;elapsed time: %f ms&#39;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span>
-</code></pre></div>
+    <span style="color:#66d9ef">def</span> __exit__(self, <span style="color:#f92672">*</span>args):
+        end <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>timer()
+        self<span style="color:#f92672">.</span>elapsed_secs <span style="color:#f92672">=</span> end <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>start
+        self<span style="color:#f92672">.</span>elapsed <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>elapsed_secs <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>  <span style="color:#75715e"># millisecs</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>verbose:
+            <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">elapsed time: </span><span style="color:#e6db74">%f</span><span style="color:#e6db74"> ms</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>elapsed
+</code></pre></div><p>With this class in hand all you need to do is to enclose any code within the <code>with</code> block -</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#f92672">from</span> timer <span style="color:#f92672">import</span> Timer
+<span style="color:#f92672">from</span> sorting <span style="color:#f92672">import</span> Sort
+<span style="color:#f92672">import</span> random
 
-<p>With this class in hand all you need to do is to enclose any code within the <code>with</code> block -</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Python" data-lang="Python"><span></span><span style="color: #f92672">from</span> <span style="color: #f8f8f2">timer</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">Timer</span>
-<span style="color: #f92672">from</span> <span style="color: #f8f8f2">sorting</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">Sort</span>
-<span style="color: #f92672">import</span> <span style="color: #f8f8f2">random</span>
+random_items <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#f92672">-</span><span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5000</span>)]
+sort <span style="color:#f92672">=</span> Sort()
 
-<span style="color: #f8f8f2">random_items</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">randint(</span><span style="color: #f92672">-</span><span style="color: #ae81ff">50</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">5000</span><span style="color: #f8f8f2">)]</span>
-<span style="color: #f8f8f2">sort</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Sort()</span>
+<span style="color:#66d9ef">with</span> Timer() <span style="color:#66d9ef">as</span> t:
+    sort<span style="color:#f92672">.</span>bubble_sort(random_items)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=&gt; elapsed bubble_sort: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> t<span style="color:#f92672">.</span>elapsed
 
-<span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">Timer()</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">t:</span>
-    <span style="color: #f8f8f2">sort</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">bubble_sort(random_items)</span>
-<span style="color: #66d9ef">print</span> <span style="color: #e6db74">&quot;=&gt; elapsed bubble_sort: %s s&quot;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">t</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span>
-
-<span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">Timer()</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">t:</span>
-    <span style="color: #f8f8f2">sort</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">insertion_sort(random_items)</span>
-<span style="color: #66d9ef">print</span> <span style="color: #e6db74">&quot;=&gt; elapsed insertion_sort: %s s&quot;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">t</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">elapsed</span>
-</code></pre></div>
-
-<p>Here is a sample output :</p>
-
+<span style="color:#66d9ef">with</span> Timer() <span style="color:#66d9ef">as</span> t:
+    sort<span style="color:#f92672">.</span>insertion_sort(random_items)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=&gt; elapsed insertion_sort: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> t<span style="color:#f92672">.</span>elapsed
+</code></pre></div><p>Here is a sample output :</p>
 <pre><code>$ python UsingTimer.py
 =&gt; elapsed bubble_sort: 4177.52599716 s
 =&gt; elapsed insertion_sort: 1.23190879822 s
-</code></pre>
-
-<p>The advantage with this approach is obvious. You can enclose any suspicious piece of code inside the <code>with</code> block and see if that block of code is taking too long to complete.  You would first start with enclosing a bigger chunk and keep on reducing the size to pin-point the problematic part.</p>
-
+</code></pre><p>The advantage with this approach is obvious. You can enclose any suspicious piece of code inside the <code>with</code> block and see if that block of code is taking too long to complete.  You would first start with enclosing a bigger chunk and keep on reducing the size to pin-point the problematic part.</p>
 <h2 id="profiling">Profiling</h2>
-
 <p>A <a href="http://en.wikipedia.org/wiki/Profiling_(computer_programming)">profile</a> is a set of statistics that describes how often and for how long various parts of the program get executed. The <code>time</code> utility described above is also a profiler - a simple one whose stats output is not very detailed.</p>
-
 <p>The Python standard library provides three different implementations of the same profiling interface. The documentation is available <a href="https://docs.python.org/2/library/profile.html">here</a>.</p>
-
 <h3 id="simple-approach">Simple approach</h3>
-
 <p>Simple way to profile a script is to invoke the cProfile when running a script:</p>
-
 <pre><code>$ python -m cProfile UsingTimer.py
-</code></pre>
-
-<p>This prints the stats onto standard out.</p>
-
+</code></pre><p>This prints the stats onto standard out.</p>
 <pre><code>=&gt; elapsed bubble_sort: 4173.29096794 s
 =&gt; elapsed insertion_sort: 2.54702568054 s
          25073 function calls in 4.231 seconds
@@ -361,24 +330,14 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.000    0.000 {posix.urandom}
  5003    0.089    0.000    0.089    0.000 {range}
     4    0.000    0.000    0.000    0.000 {time.time}
-</code></pre>
-
-<p>From this we can figure out which module and function is heavily used and try to either improve that function or take other design decisions to reduce the number of calls to that function.</p>
-
+</code></pre><p>From this we can figure out which module and function is heavily used and try to either improve that function or take other design decisions to reduce the number of calls to that function.</p>
 <p>In the above example, clearly, bubble sort is taking too much time. See for yourself:</p>
-
 <pre><code>ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    4.084    4.084    4.173    4.173 sorting.py:4(bubble_sort)
-</code></pre>
-
-<h3 id="profiling-a-single-statement">Profiling a single statement</h3>
-
+</code></pre><h3 id="profiling-a-single-statement">Profiling a single statement</h3>
 <p>Sometimes it is not a good idea or not required/possible to profile an entire script. In those scenarios you can profile individual statements:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><code class="language-Python" data-lang="Python"><span></span><span style="color: #f8f8f2">cProfile</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">run(</span><span style="color: #e6db74">&#39;sort.bubble_sort(random_items)&#39;</span><span style="color: #f8f8f2">)</span>   
-</code></pre></div>
-
-<p>The stats, as before, are printed on to standard out.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">cProfile<span style="color:#f92672">.</span>run(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sort.bubble_sort(random_items)</span><span style="color:#e6db74">&#39;</span>)   
+</code></pre></div><p>The stats, as before, are printed on to standard out.</p>
 <pre><code>$ python cprofile_simple.py
      10005 function calls in 3.732 seconds
 
@@ -390,19 +349,11 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
  5001    0.001    0.000    0.001    0.000 {len}
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
  5001    0.079    0.000    0.079    0.000 {range} 	
-</code></pre>
-
-<h2 id="profiling-memory-usage">Profiling Memory Usage</h2>
-
+</code></pre><h2 id="profiling-memory-usage">Profiling Memory Usage</h2>
 <p>Till now we only concerned ourselves with how long it takes to complete a task, whether it be a statement, a function call or an entire script. Now we will see how to profile memory usage of a python script.</p>
-
 <p>I will show you a few examples of memory profiling using the <code>memory_profiler</code>  package.</p>
-
 <pre><code>$ pip install -U memory_profiler
-</code></pre>
-
-<p><code>memory_profiler</code> requires that you decorate your function of interest with an <code>@profile</code> decorator:</p>
-
+</code></pre><p><code>memory_profiler</code> requires that you decorate your function of interest with an <code>@profile</code> decorator:</p>
 <pre><code>$ python memprofile_sample.py
 Filename: memprofile_sample.py
 
@@ -413,20 +364,12 @@ Line   Mem usage    Increment   Line Contents
 13      9.2 MiB      0.0 MiB       sort.insertion_sort(random_items)
 14      9.3 MiB      0.2 MiB       sort.quick_sort(random_items)
 15      9.4 MiB      0.0 MiB       sort.heap_sort(random_items)
-</code></pre>
-
-<p>The first column represents the line number of the code that has been profiled, the second column (Mem usage) shows the memory usage of the Python interpreter after that line has been executed. The third column (Increment) represents the difference in memory of the current line with respect to the last one. The last column (Line Contents) prints the code that has been profiled.</p>
-
+</code></pre><p>The first column represents the line number of the code that has been profiled, the second column (Mem usage) shows the memory usage of the Python interpreter after that line has been executed. The third column (Increment) represents the difference in memory of the current line with respect to the last one. The last column (Line Contents) prints the code that has been profiled.</p>
 <h2 id="memory-leak">Memory Leak</h2>
-
 <p>Python uses <a href="http://en.wikipedia.org/wiki/Reference_counting">reference counting</a> to keep track of objects in use. What this means is each of the objects that the application creates holds a numeric count. This count represents the number of references to an object at any given time. The count is incremented every time a new reference to the object is created and decremented when a reference is deleted. This way,  when the ref-count of an object becomes zero, the Python interpreter knows that the object is no longer required and can be destroyed, thus reclaiming the memory used by that object.</p>
-
 <p>If Python automatically handles deleting unwanted objects <strong><em>how does the memory leak?</em></strong></p>
-
 <p>The only way for the Python interpreter to know that an object is unwanted is by looking at the number of references the object has. If the developer of the script is not careful in removing those unwanted references, there is no way for Python to destroy the object and reclaim memory. So, basically, it is a human fault (No surprises there!).</p>
-
 <p>How do I know if my application is leaking memory? Well, intuitively, if the memory usage of the application grows over time but the amount of data it holds remains the same, there is memory leak.</p>
-
 <blockquote>
 <p>All the code used in this article is available <a href="https://github.com/vijayanant/pyperf">here</a></p>
 </blockquote>
