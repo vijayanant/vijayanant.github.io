@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -297,7 +297,7 @@ They <em>generalize</em> ordinary data types. GADTs are provided in GHC as a lan
 extension. We can enable this feature using the <code>LANGUAGE</code> pragma. It provides a
 new syntax for defining data types. We specify type for each value constructor.
 We can now redefine our <code>Expr</code> type like below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#75715e">{-</span><span style="color:#75715e"># LANGUAGE GADTs #</span><span style="color:#75715e">-}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#75715e">{-# LANGUAGE GADTs #-}</span>
 
 <span style="color:#66d9ef">data</span> <span style="color:#66d9ef">Expr</span> a <span style="color:#66d9ef">where</span>
   <span style="color:#66d9ef">Number</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Expr</span> <span style="color:#66d9ef">Int</span>

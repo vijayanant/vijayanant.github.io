@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -317,8 +317,8 @@ to a value.</li>
 </code></pre></div><h3 id="tests">tests</h3>
 <p><code>test = λl. λm. λn. l m n;</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">test</span> pred l m <span style="color:#f92672">=</span> pred l m
-<span style="color:#a6e22e">test</span> tru <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span> <span style="color:#75715e">-- &#34;a&#34;</span>
-<span style="color:#a6e22e">test</span> fls <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span> <span style="color:#75715e">-- &#34;b&#34;</span>
+<span style="color:#a6e22e">test</span> tru <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#75715e">-- &#34;a&#34;</span>
+<span style="color:#a6e22e">test</span> fls <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#75715e">-- &#34;b&#34;</span>
 </code></pre></div><h3 id="reducing-test-term">Reducing Test term</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"> test tru v w
  <span style="color:#f92672">=</span> (λl<span style="color:#f92672">.</span>λm<span style="color:#f92672">.</span>λn<span style="color:#f92672">.</span>l m n) tru v w         by definition

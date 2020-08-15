@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -211,7 +211,7 @@
 
   </header>
   <div class="post">
-    <p>TensorFlow is Google's open source library for numerical computation. All computations are represented as <strong>Data Flow Graphs</strong>. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.</p>
+    <p>TensorFlow is Google&rsquo;s open source library for numerical computation. All computations are represented as <strong>Data Flow Graphs</strong>. The Nodes in the graph represent operations and Edges represent the data-communication between nodes.</p>
 <h2 id="basics">Basics</h2>
 <p>Every computation is a graph. That is, we first create a graph that represent our computation. Then we run/evaluate that graph. The evaluation always happen within a <strong>Session</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#f92672">as</span> tf
@@ -221,7 +221,7 @@ x <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>ran
 <p><code>Tensor(&quot;random_uniform:0&quot;, shape=(10,), dtype=float32)</code></p>
 <p><code>x</code> is a Tensor. Remember that everytihing in tensorflow is graph made of nodes and edges. The call to <code>tf.random_uniform()</code> returns a <code>Tensor</code>.</p>
 <h3 id="tensor">Tensor</h3>
-<p>A tensor is what is passed between nodes (edge). It represents the (input and) output of an Operation (node). A tensor does not hold the values of the operation's output, but instead provides a means of computing those values in a Session.</p>
+<p>A tensor is what is passed between nodes (edge). It represents the (input and) output of an Operation (node). A tensor does not hold the values of the operation&rsquo;s output, but instead provides a means of computing those values in a Session.</p>
 <p>In the above example, <code>tf.random_uniform()</code> is an Operation and it returns a Tensor.</p>
 <p>Take another look at the output of previous example -</p>
 <p><code>Tensor(&quot;random_uniform:0&quot;, shape=(10,), dtype=float32)</code></p>
@@ -249,13 +249,13 @@ session<span style="color:#f92672">.</span>close()
 </code></pre><h3 id="operations">Operations</h3>
 <p>Operations are the nodes in the graph that consume and/or produce Tensors.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[op<span style="color:#f92672">.</span>name <span style="color:#66d9ef">for</span> op <span style="color:#f92672">in</span> g<span style="color:#f92672">.</span>get_operations()]
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">random_uniform/shape</span><span style="color:#e6db74">&#39;</span>,
- <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">random_uniform/min</span><span style="color:#e6db74">&#39;</span>,
- <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">random_uniform/max</span><span style="color:#e6db74">&#39;</span>,
- <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">random_uniform/RandomUniform</span><span style="color:#e6db74">&#39;</span>,
- <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">random_uniform/sub</span><span style="color:#e6db74">&#39;</span>,
- <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">random_uniform/mul</span><span style="color:#e6db74">&#39;</span>,
- <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">random_uniform</span><span style="color:#e6db74">&#39;</span>]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#e6db74">&#39;random_uniform/shape&#39;</span>,
+ <span style="color:#e6db74">&#39;random_uniform/min&#39;</span>,
+ <span style="color:#e6db74">&#39;random_uniform/max&#39;</span>,
+ <span style="color:#e6db74">&#39;random_uniform/RandomUniform&#39;</span>,
+ <span style="color:#e6db74">&#39;random_uniform/sub&#39;</span>,
+ <span style="color:#e6db74">&#39;random_uniform/mul&#39;</span>,
+ <span style="color:#e6db74">&#39;random_uniform&#39;</span>]
 </code></pre></div><h3 id="variables">Variables</h3>
 <p>Variables are stateful nodes which output their current value. State is retained across multiple executions of a graph. A variable holds a  value, which can be a Tensor of any type and shape. The type and shape of the variable are fixed at initialization time. The value can be changed using one of the assign methods.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#f92672">as</span> tf
@@ -298,7 +298,7 @@ sess <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>
 sess<span style="color:#f92672">.</span>run(tf<span style="color:#f92672">.</span>initialize_all_variables())
 sess<span style="color:#f92672">.</span>run(h, {x: np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>random_sample((<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">784</span>))})
  
-</code></pre></div><p>If you are not already familiar with NN and activation functions, don't worry about the ReLU (<code>tf.nn.relu()</code>). Just know that TensorFlow provides a very rich set of tools to work with machine learning.</p>
+</code></pre></div><p>If you are not already familiar with NN and activation functions, don&rsquo;t worry about the ReLU (<code>tf.nn.relu()</code>). Just know that TensorFlow provides a very rich set of tools to work with machine learning.</p>
 
   </div>
   

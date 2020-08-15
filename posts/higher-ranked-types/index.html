@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -217,7 +217,7 @@
 
   </header>
   <div class="post">
-    <p>Let's get started with a <em>monomorphic</em> function -</p>
+    <p>Let&rsquo;s get started with a <em>monomorphic</em> function -</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">incr</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Int</span>
 <span style="color:#a6e22e">incr</span> <span style="color:#f92672">=</span> (<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
 </code></pre></div><p>The function <code>incr</code> works on values of type <code>Int</code> and nothing else. We can make
@@ -235,14 +235,14 @@ Now let us move on and look at a simple <em>higher order</em> function -</p>
 function <code>g</code> polymorphic here? The answer is <strong>No!</strong> The <code>a</code> type is being used
 polymorphically here, however, <code>a</code> is bound to whatever is the type of <code>x</code> when
 <code>g</code> is applied to <code>x</code> i.e., <code>g</code> is monomorphic!</p>
-<p>You don't believe me? Try this</p>
+<p>You don&rsquo;t believe me? Try this</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">badfoo</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Show</span> a <span style="color:#f92672">=&gt;</span> (a <span style="color:#f92672">-&gt;</span> a) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
-<span style="color:#a6e22e">badfoo</span> g <span style="color:#f92672">=</span> (show (g <span style="color:#ae81ff">1000</span>)) <span style="color:#f92672">++</span> (g <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">? what!</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#a6e22e">badfoo</span> g <span style="color:#f92672">=</span> (show (g <span style="color:#ae81ff">1000</span>)) <span style="color:#f92672">++</span> (g <span style="color:#e6db74">&#34;? what!&#34;</span>)
 </code></pre></div><p>Or this function -</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">badbar</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Show</span> a <span style="color:#f92672">=&gt;</span> (a <span style="color:#f92672">-&gt;</span> a) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">IO</span> ()
 <span style="color:#a6e22e">badbar</span> g <span style="color:#f92672">=</span> <span style="color:#66d9ef">do</span>
     print <span style="color:#f92672">$</span> g <span style="color:#ae81ff">100</span>
-    print <span style="color:#f92672">$</span> g <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">why?</span><span style="color:#e6db74">&#34;</span>
+    print <span style="color:#f92672">$</span> g <span style="color:#e6db74">&#34;why?&#34;</span>
 </code></pre></div><p>The compiler will not be happy with this code. If <code>g</code> were polymorphic, we
 could apply it to both numeric and string values!</p>
 <h2 id="polymorphic-functions">Polymorphic Functions</h2>
@@ -275,16 +275,16 @@ then it is said to be <strong>Rank-N</strong> polymorphic function.</p>
 </blockquote>
 <h2 id="rankntypes-ghc-extension">RankNTypes GHC Extension</h2>
 <p>Haskell is based on the Hindley-Milner type system - and while it allows us to
-write polymorphic functions, it doesn't allow us to write functions which take
+write polymorphic functions, it doesn&rsquo;t allow us to write functions which take
 polymorphic functions as arguments.</p>
 <p>Higher Ranked Types are provided in GHC as a language extension. It can be
 enabled via the <code>RankNTypes</code> extension. Practically speaking, enabling
 higher-ranked types lets us introduce new variable scopes inside of type
 signatures.</p>
-<p>Here's the implementation we want:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#75715e">{-</span><span style="color:#75715e"># LANGUAGE RankNTypes #</span><span style="color:#75715e">-}</span>
+<p>Here&rsquo;s the implementation we want:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#75715e">{-# LANGUAGE RankNTypes #-}</span>
 <span style="color:#a6e22e">goodfoo</span> <span style="color:#f92672">::</span> (forall a<span style="color:#f92672">.</span> <span style="color:#66d9ef">Show</span> a <span style="color:#f92672">=&gt;</span> a <span style="color:#f92672">-&gt;</span> a) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
-<span style="color:#a6e22e">goodfoo</span> g <span style="color:#f92672">=</span> (show (g <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">++</span> (g <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Works!</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#a6e22e">goodfoo</span> g <span style="color:#f92672">=</span> (show (g <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">++</span> (g <span style="color:#e6db74">&#34;Works!&#34;</span>)
 </code></pre></div><p>Higher Ranked Types make polymorphic Haskell functions <em>first class</em>.</p>
 
   </div>

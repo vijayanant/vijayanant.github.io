@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
     
     
@@ -259,10 +259,10 @@ become a complex cogwheel system with too many moving parts.</p>
 i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 start:
   numEmployees <span style="color:#f92672">=</span> length(employees)
-  <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> numEmployees <span style="color:#66d9ef">goto</span> finished
+  <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&gt;=</span> numEmployees <span style="color:#66d9ef">goto</span> finished
   e <span style="color:#f92672">=</span> employees[i]
   rating <span style="color:#f92672">=</span> e.rating
-  <span style="color:#66d9ef">if</span> rating <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span> <span style="color:#66d9ef">goto</span> nextOne
+  <span style="color:#66d9ef">if</span> rating <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">7</span> <span style="color:#66d9ef">goto</span> nextOne
   upperCaseName <span style="color:#f92672">=</span> toUpper(e.name)
   addToList(result, upperCaseName)
 nextOne:
@@ -273,7 +273,7 @@ finished:
 </code></pre></div><p>Use of procedures and structured programming (sometimes considered a separate
 paradigm) is a way to contain complexity.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">result <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> length(employees); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+<span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> length(employees); i<span style="color:#f92672">++</span>) {
   e <span style="color:#f92672">=</span> employees[i];
   <span style="color:#66d9ef">if</span>(e.rating <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">7</span>) {
     addToList(result,toUpper(e.name));
