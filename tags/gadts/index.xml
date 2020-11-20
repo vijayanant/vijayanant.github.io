@@ -6,11 +6,7 @@
     <description>Recent content in GADTs on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Oct 2016 00:00:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.vijayanant.com/tags/gadts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 15 Oct 2016 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/gadts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GADTs To Eliminate Runtime Checks</title>
       <link>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</link>

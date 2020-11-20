@@ -6,11 +6,7 @@
     <description>Recent content in matrix traversal on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.vijayanant.com/tags/matrix-traversal/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/matrix-traversal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Outward Counterclockwise Spiral Matrix Traversal - Haskell</title>
       <link>https://www.vijayanant.com/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</link>

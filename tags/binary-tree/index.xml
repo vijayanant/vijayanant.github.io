@@ -6,11 +6,7 @@
     <description>Recent content in Binary Tree on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.vijayanant.com/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Expressiveness of Haskell</title>
       <link>https://www.vijayanant.com/posts/expressiveness-of-haskell/</link>

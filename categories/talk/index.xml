@@ -6,11 +6,7 @@
     <description>Recent content in talk on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0530</lastBuildDate>
-    
-	<atom:link href="https://www.vijayanant.com/categories/talk/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/categories/talk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GADTs Talk - Bengaluru Haskell Meetup</title>
       <link>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</link>
