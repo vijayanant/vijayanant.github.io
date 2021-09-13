@@ -6,11 +6,11 @@
     <description>Recent content in expressiveness on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/expressiveness/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/expressiveness/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Expressiveness</title>
       <link>https://www.vijayanant.com/posts/expressiveness/</link>
-      <pubDate>Thu, 08 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/expressiveness/</guid>
       <description>Last week, I wrote a post comparing simple programs written in Haskell, Python, and Java to demonstrate the expressiveness of Haskell. It got me thinking whether expressiveness is something we can compare between any two programming languages.

@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.76.4" />
+<meta name="generator" content="Hugo 0.88.1" />
 
     
     
@@ -55,9 +55,10 @@ language theory dealing with the expressiveness of a programming language.
 Whether a language can solve the Expression Problem is a salient indicator of
 its capacity for expression. " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.vijayanant.com/posts/the-expression-problem/" />
-<meta property="article:published_time" content="2018-11-13T00:00:00+05:30" />
-<meta property="article:modified_time" content="2018-11-13T00:00:00+05:30" /><meta property="og:site_name" content="fossick" />
+<meta property="og:url" content="https://www.vijayanant.com/posts/the-expression-problem/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-11-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-11-13T00:00:00+00:00" /><meta property="og:site_name" content="fossick" />
+
 
 
     
@@ -267,7 +268,7 @@ add new case to the datatype, we will have to modify all the functions to cater
 for the new case.</p>
 <p>Typeclasses in Haskell offer a solution. But a naive use of type classes will
 not work either! In the below code, the expression</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">True</span> <span style="color:#66d9ef">then</span> <span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">Add</span> (<span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">5</span>) (<span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">5</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#66d9ef">if</span> <span style="color:#66d9ef">True</span> <span style="color:#66d9ef">then</span> <span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">Add</span> (<span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">5</span>) (<span style="color:#66d9ef">Lit</span> <span style="color:#ae81ff">5</span>)
 </code></pre></div><p>does not typecheck even thought both <code>Lit</code> and <code>Add</code> are instances of <code>Exp</code>
 typeclass.</p>
 <script type="application/javascript" src="https://gist.github.com/vijayanant/231b2470b98a92d38d54c7b982ab6503.js?file=ExpressionProblem.hs"></script>

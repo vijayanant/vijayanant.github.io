@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.76.4" />
+<meta name="generator" content="Hugo 0.88.1" />
 
     
     
@@ -46,9 +46,10 @@
 <meta property="og:title" content="Lambda Calculus" />
 <meta property="og:description" content="Introduction to Lambda-Calculus and Church Numerals" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.vijayanant.com/posts/lambda-calculus/" />
+<meta property="og:url" content="https://www.vijayanant.com/posts/lambda-calculus/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2018-02-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-02-25T00:00:00+00:00" /><meta property="og:site_name" content="fossick" />
+
 
 
     
@@ -251,7 +252,7 @@ actual machine implementation.</p>
 <li>And the application of a term <code>t1</code> to another term <code>t2</code>, written <code>t1 t2</code>, is a term.</li>
 </ul>
 <p>These ways of forming terms are summarized in the following grammar.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">t</span> <span style="color:#66d9ef">::=</span>      <span style="color:#75715e">-- Terms</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">t</span> <span style="color:#66d9ef">::=</span>      <span style="color:#75715e">-- Terms</span>
   x        <span style="color:#75715e">-- Variable</span>
   λx<span style="color:#f92672">.</span> t    <span style="color:#75715e">-- Abstraction</span>
   t t      <span style="color:#75715e">-- Application</span>
@@ -262,12 +263,12 @@ performs the calculation generically, in terms of one or more named parameters,
 and then instantiate this function as needed, providing values for the
 parameters in each case.</p>
 <p>A λ function is such an abstraction which has the form:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">λ</span><span style="color:#f92672">&lt;</span>variable<span style="color:#f92672">&gt;.&lt;</span>lambda term<span style="color:#f92672">&gt;</span>    <span style="color:#75715e">-- refer to the grammar above</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">λ</span><span style="color:#f92672">&lt;</span>variable<span style="color:#f92672">&gt;.&lt;</span>lambda term<span style="color:#f92672">&gt;</span>    <span style="color:#75715e">-- refer to the grammar above</span>
 </code></pre></div><p>λ-calculus embodies a kind of function definition (and application) that is the
 purest possible form. In the lambda-calculus everything is a function: the
 arguments accepted by functions are themselves functions and the result returned
 by a function is another function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(λx<span style="color:#f92672">.</span> f x) <span style="color:#ae81ff">4</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(λx<span style="color:#f92672">.</span> f x) <span style="color:#ae81ff">4</span>
 </code></pre></div><p>In the above example we define a function that applies the given
 parameter (x here) to a previously defined function <code>f</code>. The value <code>4</code> is then
 applied to this newly defined function.</p>
@@ -283,7 +284,7 @@ languages). In the function λx.x we say that x is &ldquo;bound&rdquo; since its
 in the body of the definition is preceded by λx. A name not preceded by a λ
 is called a &ldquo;free variable.&rdquo;</p>
 <p>In the expression</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(λx<span style="color:#f92672">.</span>x) (λy<span style="color:#f92672">.</span>y x)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">(λx<span style="color:#f92672">.</span>x) (λy<span style="color:#f92672">.</span>y x)
 </code></pre></div><p>the <code>x</code> in the body of the first expression from the left is bound to the first
 λ. The <code>y</code> in the body of the second expression is bound to the second λ, and
 the following <code>x</code> is free.</p>
@@ -310,17 +311,17 @@ a redex is reduced only when its right-hand side has already been reduced
 to a value.</li>
 </ul>
 <h2 id="boolean-definitions">Boolean Definitions</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">tru</span> <span style="color:#f92672">=</span> λt<span style="color:#f92672">.</span> λf<span style="color:#f92672">.</span> t;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">tru</span> <span style="color:#f92672">=</span> λt<span style="color:#f92672">.</span> λf<span style="color:#f92672">.</span> t;
 <span style="color:#a6e22e">fls</span> <span style="color:#f92672">=</span> λt<span style="color:#f92672">.</span> λf<span style="color:#f92672">.</span> f;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">tru</span> t f <span style="color:#f92672">=</span> t
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">tru</span> t f <span style="color:#f92672">=</span> t
 <span style="color:#a6e22e">fls</span> t f <span style="color:#f92672">=</span> f
 </code></pre></div><h3 id="tests">tests</h3>
 <p><code>test = λl. λm. λn. l m n;</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">test</span> pred l m <span style="color:#f92672">=</span> pred l m
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">test</span> pred l m <span style="color:#f92672">=</span> pred l m
 <span style="color:#a6e22e">test</span> tru <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#75715e">-- &#34;a&#34;</span>
 <span style="color:#a6e22e">test</span> fls <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#75715e">-- &#34;b&#34;</span>
 </code></pre></div><h3 id="reducing-test-term">Reducing Test term</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"> test tru v w
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"> test tru v w
  <span style="color:#f92672">=</span> (λl<span style="color:#f92672">.</span>λm<span style="color:#f92672">.</span>λn<span style="color:#f92672">.</span>l m n) tru v w         by definition
  <span style="color:#960050;background-color:#1e0010">→</span> (λm<span style="color:#f92672">.</span>λn<span style="color:#f92672">.</span>tru m n) v w
  <span style="color:#960050;background-color:#1e0010">→</span> (λn<span style="color:#f92672">.</span>tru v n) w
@@ -330,19 +331,19 @@ to a value.</li>
  <span style="color:#960050;background-color:#1e0010">→</span> v
 </code></pre></div><h2 id="logical-ops">Logical Ops</h2>
 <p><code>and = λb. λc.b c fls;</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">and1</span> p q <span style="color:#f92672">=</span> p q fls   <span style="color:#75715e">-- if p then q   else fls</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">and1</span> p q <span style="color:#f92672">=</span> p q fls   <span style="color:#75715e">-- if p then q   else fls</span>
 <span style="color:#a6e22e">or1</span>  p q <span style="color:#f92672">=</span> p tru q   <span style="color:#75715e">-- if p then tru else q</span>
 <span style="color:#a6e22e">not1</span> p   <span style="color:#f92672">=</span> p fls tru <span style="color:#75715e">-- if p then fls else tru</span>
 </code></pre></div><h2 id="pairs">Pairs</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pair</span> <span style="color:#f92672">=</span> λf<span style="color:#f92672">.</span>λs<span style="color:#f92672">.</span>λb<span style="color:#f92672">.</span> b f s;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pair</span> <span style="color:#f92672">=</span> λf<span style="color:#f92672">.</span>λs<span style="color:#f92672">.</span>λb<span style="color:#f92672">.</span> b f s;
 <span style="color:#a6e22e">fst</span> <span style="color:#f92672">=</span> λp<span style="color:#f92672">.</span> p tru;
 <span style="color:#a6e22e">snd</span> <span style="color:#f92672">=</span> λp<span style="color:#f92672">.</span> p fls;
 </code></pre></div><p><code>Pair v w</code> is a function that, when applied to a boolean value <em>b</em>, applies <em>b</em> to <em>v</em> and <em>w.</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pair</span> f s b <span style="color:#f92672">=</span> b f s
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pair</span> f s b <span style="color:#f92672">=</span> b f s
 <span style="color:#a6e22e">fst</span> p <span style="color:#f92672">=</span> p tru
 <span style="color:#a6e22e">snd</span> p <span style="color:#f92672">=</span> p fls
 </code></pre></div><h3 id="reducing-fst">Reducing fst</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">  fst (pair v w)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell">  fst (pair v w)
 <span style="color:#f92672">=</span> fst ((λf<span style="color:#f92672">.</span>λs<span style="color:#f92672">.</span>λb<span style="color:#f92672">.</span>b f s) v w)
 <span style="color:#960050;background-color:#1e0010">→</span> fst ((λs<span style="color:#f92672">.</span>λb<span style="color:#f92672">.</span>b v s) w)
 <span style="color:#960050;background-color:#1e0010">→</span> fst (λb<span style="color:#f92672">.</span> b v w)
@@ -359,22 +360,22 @@ that takes two arguments, <em>s</em> and <em>z</em>, and applies <em>s</em>, <em
 the number n is represented by a function that does something <em>n</em> times — a
 kind of active unary numeral.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">zero</span>  <span style="color:#f92672">=</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> z;            <span style="color:#75715e">-- applies s to z zero times</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">zero</span>  <span style="color:#f92672">=</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> z;            <span style="color:#75715e">-- applies s to z zero times</span>
 <span style="color:#a6e22e">one</span>   <span style="color:#f92672">=</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s z;          <span style="color:#75715e">-- applies s to z once</span>
 <span style="color:#a6e22e">two</span>   <span style="color:#f92672">=</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s (s z);      <span style="color:#75715e">-- applies s twice</span>
 <span style="color:#a6e22e">three</span> <span style="color:#f92672">=</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s (s (s z));  <span style="color:#75715e">-- applies s three times</span>
 <span style="color:#a6e22e">etc</span><span style="color:#f92672">.</span>                          <span style="color:#75715e">-- and so on...</span>
 </code></pre></div><h3 id="successor">Successor</h3>
 <p>Remember, a Church numeral <em>n</em> is a function that applies <em>s</em> to <em>z</em>  (n times).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span> <span style="color:#f92672">=</span> λn<span style="color:#f92672">.</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s (n s z); <span style="color:#75715e">-- Successor function</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span> <span style="color:#f92672">=</span> λn<span style="color:#f92672">.</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s (n s z); <span style="color:#75715e">-- Successor function</span>
 </code></pre></div><p>The term <em>scc</em> is a combinator that takes a Church numeral n and returns another Church numeral—that is, it yields a function that takes arguments <em>s</em> and <em>z</em> and applies <em>s</em> repeatedly to <em>z</em>. We get the right number of applications of <em>s</em> to <em>z</em> by first passing <em>s</em> and <em>z</em> as arguments to <em>n</em>, and then explicitly applying <em>s</em> one more time to the result.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span>  n s z <span style="color:#f92672">=</span> s (n s z)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span>  n s z <span style="color:#f92672">=</span> s (n s z)
 <span style="color:#a6e22e">scc&#39;</span> n s <span style="color:#f92672">=</span> s <span style="color:#f92672">.</span> n s
 </code></pre></div><p>We can think of <em>successor</em> function in two ways. One way, as defined above, is <em>applying s one more time to given number</em>. Another way is <em>to add given number <em>n</em> to <em>one</em>.</em> Second approach is given below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span> <span style="color:#f92672">=</span> λn<span style="color:#f92672">.</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> n s (s z)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span>  n s z <span style="color:#f92672">=</span> n s (s z)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span> <span style="color:#f92672">=</span> λn<span style="color:#f92672">.</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> n s (s z)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span>  n s z <span style="color:#f92672">=</span> n s (s z)
 </code></pre></div><p>Let us see if <em>scc one</em> is actually <em>two</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span> one
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">scc</span> one
 <span style="color:#f92672">=</span> scc (λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s z)                       <span style="color:#75715e">-- by definition of one</span>
 <span style="color:#f92672">=</span> (λn<span style="color:#f92672">.</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> n s (s z)) (λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s z)   <span style="color:#75715e">-- by definition of scc</span>
 <span style="color:#960050;background-color:#1e0010">→</span> (λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> (λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> s z) s (s z))
@@ -383,38 +384,38 @@ kind of active unary numeral.</li>
 <span style="color:#f92672">=</span> two                                     <span style="color:#75715e">-- by definition, s applied twice</span>
 </code></pre></div><h3 id="addition">Addition</h3>
 <p>Addition of Church numerals can be performed by a term <em>plus</em> that takes two Church numerals, <em>m</em> and <em>n</em>, as arguments, and yields another Church numeral—i.e., a function—that accepts arguments <em>s</em> and <em>z</em>, applies <em>s</em> iterated <em>n</em> times to <em>z</em> (by passing <em>s</em> and <em>z</em> as arguments to <em>n</em>), and then applies <em>s</em> iterated <em>m</em> more times to the result:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">plus</span> <span style="color:#f92672">=</span> λm<span style="color:#f92672">.</span> λn<span style="color:#f92672">.</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> m s (n s z);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">plus</span> <span style="color:#f92672">=</span> λm<span style="color:#f92672">.</span> λn<span style="color:#f92672">.</span> λs<span style="color:#f92672">.</span> λz<span style="color:#f92672">.</span> m s (n s z);
 </code></pre></div><p>We can also think of addition in terms of successor (or increment) function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">plus</span> m n <span style="color:#f92672">=</span> m incr n
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">plus</span> m n <span style="color:#f92672">=</span> m incr n
 </code></pre></div><p>Here, we apply <em>m</em> times the incrementation to <em>n</em>. In other words, increment <em>n</em>, <em>m</em> times.</p>
 <p>Now, we can write -</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">two</span>   <span style="color:#f92672">=</span> plus one one
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">two</span>   <span style="color:#f92672">=</span> plus one one
 <span style="color:#a6e22e">three</span> <span style="color:#f92672">=</span> plus two one
 <span style="color:#a6e22e">four</span>  <span style="color:#f92672">=</span> add two two
 </code></pre></div><h3 id="multiplication">Multiplication</h3>
 <p>Multiplying n and m is adding together <em>m</em> copies of <em>n</em>. Notice that, <code>plus m</code> adds <em>m</em> to any given number. If we apply <code>add m</code> <em>n</em> times to <em>zero</em>, we will have added <em>n</em> copies of <em>m</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">times</span> <span style="color:#f92672">=</span> λm<span style="color:#f92672">.</span> λn<span style="color:#f92672">.</span> m (plus n) zero;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">times</span> <span style="color:#f92672">=</span> λm<span style="color:#f92672">.</span> λn<span style="color:#f92672">.</span> m (plus n) zero;
 </code></pre></div><p>Intuitively, having a <code>s.s.s. ... s</code> of length <em>m</em>, in order to multiply it by <em>n</em>, we should combine <em>n</em> copies of such a chain. Or, if (m s) is a &ldquo;super-successor&rdquo; containing <em>m</em> exemplars of <em>s</em>, what we need is</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">mul</span> n m s z <span style="color:#f92672">=</span> n (m s) z
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">mul</span> n m s z <span style="color:#f92672">=</span> n (m s) z
 </code></pre></div><p>which is same as</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">mul</span> n m <span style="color:#f92672">=</span> n <span style="color:#f92672">.</span> m
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">mul</span> n m <span style="color:#f92672">=</span> n <span style="color:#f92672">.</span> m
 </code></pre></div><p><strong>Multiplication is functional composition!</strong></p>
 <h3 id="exponentiation">Exponentiation</h3>
 <p><code>pow n m</code> means <em>n</em> raised to <em>m</em>-th power. Or, <code>n * n *.....* n</code>- multiplying <em>n</em> by itself <em>m</em> times.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pow</span> n m
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pow</span> n m
  <span style="color:#f92672">=</span> (mul n ( <span style="color:#f92672">...</span> (mul n (mul n one))))  <span style="color:#75715e">-- m times</span>
  <span style="color:#f92672">=</span> m (mul n) one
 </code></pre></div><p>We know that in the theory of sets, for any sets <em>A</em> and <em>B</em>, the notation <em>B^A</em> denotes the set of all functions from <em>A</em> to <em>B</em>. Typically one applies the argument based on cardinality. Adding one element to <em>A</em>, permits to find <em>|B|</em> more mappings, from the additional element to all of <em>B</em>. So, the number of mappings is multiplied by <em>|B|</em>, in agreement with : <em><strong>B^A+1 = B^A * B</strong></em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pow</span> n m <span style="color:#f92672">=</span> m n
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">pow</span> n m <span style="color:#f92672">=</span> m n
 </code></pre></div><p><strong>exponentiation = inverse application</strong>.</p>
 <h3 id="iszero">isZero</h3>
 <p>To test whether a Church numeral is zero, we apply our numeral to a pair of terms <em>zz</em> and <em>ss</em> such that applying <em>ss</em> to <em>zz</em> one or more times yields <em>fls</em>, while not applying it at all yields <em>tru</em>.</p>
 <p>Remember zero is a function that applies <em>s</em> to <em>z</em> zero times - <code>zero = λs. λz. z</code> or <code>zero  = λs. id</code>.</p>
 <p>That is, we need <em>ss</em> and <em>zz</em> such that <em>zero ss zz</em> is <em>tru</em> and <em>fls</em> for any other numeeral.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">iszro</span> <span style="color:#f92672">=</span> λm<span style="color:#f92672">.</span> m (λx<span style="color:#f92672">.</span> fls) tru;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">iszro</span> <span style="color:#f92672">=</span> λm<span style="color:#f92672">.</span> m (λx<span style="color:#f92672">.</span> fls) tru;
 </code></pre></div><h3 id="predecessor">Predecessor</h3>
 <p>Predecessor function is tricky! We begin with zero, and keep counting until <em>n</em>, but storing the previous number. Then when we get <em>n</em>, the previous one is its predecessor. We use <strong>Pairs</strong>, defined earlier, to keep two previous numbers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">zz</span> <span style="color:#f92672">=</span> pair zero zero
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">zz</span> <span style="color:#f92672">=</span> pair zero zero
 <span style="color:#a6e22e">ss</span>  <span style="color:#f92672">=</span> λp<span style="color:#f92672">.</span> pair (snd p) (plus one (snd p));
 <span style="color:#a6e22e">prd</span> <span style="color:#f92672">=</span> λm<span style="color:#f92672">.</span> fst (m ss zz);
 </code></pre></div>

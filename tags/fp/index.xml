@@ -6,11 +6,11 @@
     <description>Recent content in fp on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/fp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/fp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Higher Ranked Types</title>
       <link>https://www.vijayanant.com/posts/higher-ranked-types/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/higher-ranked-types/</guid>
       <description>Let&amp;rsquo;s get started with a monomorphic function -
@@ -21,7 +21,7 @@ incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1) The modified
     <item>
       <title>GADTs Talk - Bengaluru Haskell Meetup</title>
       <link>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</link>
-      <pubDate>Thu, 29 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</guid>
       <description>Last week I gave a talk at The Bangalore Haskell User Group on using GADTs to bring compile time correctness to Haskell programs. The focus of the talk was more towards advocating using Haskell type system features where possible to simplify code. The aim was to show how error handling code can be avoided/removed and still achieve type-safety.
@@ -32,7 +32,7 @@ I had written a more detailed writeup on the same topic here.</description>
     <item>
       <title>The Expression Problem</title>
       <link>https://www.vijayanant.com/posts/the-expression-problem/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/the-expression-problem/</guid>
       <description>In the previous post I had put forward (rather hastily, I must add) my thoughts on what does expressiveness mean for programming languages. I had this feeling of forgetting something important but couldn&amp;rsquo;t pinpoint what it was. Today, while sipping a hot cup of coffee, I remembered the expression problem.
@@ -42,7 +42,7 @@ The Expression Problem is a well known problem in programming language theory de
     <item>
       <title>Dependent Types To Eliminate Runtime Checks</title>
       <link>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</link>
-      <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</guid>
       <description>One of the main advantages of static type checking is to catch errors before we deploy code to production. Dependent Types allow us to eliminate some checks that are usually done at run time. I take a simple example to show how dependent types can be used in that regard in day-to-day programming.
@@ -74,7 +74,7 @@ My attempt in Haskell.</description>
     <item>
       <title>Thinking in Imperative, Object Oriented and Functional way</title>
       <link>https://www.vijayanant.com/posts/thinking-in-imperative-object-oriented-and-functional-way/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0530</pubDate>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/thinking-in-imperative-object-oriented-and-functional-way/</guid>
       <description>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity. Complex code base is not only harder to test but testing is that much less effective.
@@ -84,7 +84,7 @@ Programming Paradigms Different programming styles tries to deal with the comple
     <item>
       <title>GADTs To Eliminate Runtime Checks</title>
       <link>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</link>
-      <pubDate>Sat, 15 Oct 2016 00:00:00 +0530</pubDate>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</guid>
       <description>Generalized Algebraic Data Types (GADTs) generalizes ordinary Algebraic Data Types(ADTs) by permitting value constructors to return specific types. GADTs are used for ensuring program correctness and in generic programming. This article is specific to Haskell programming language. In Haskell GADTs are implemented as a language extension. The article describes these use cases with small programs.

@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on </title>
+    <title>Python on </title>
     <link>https://www.vijayanant.com/tags/python/</link>
-    <description>Recent content in python on </description>
+    <description>Recent content in Python on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Expressiveness of Haskell</title>
       <link>https://www.vijayanant.com/posts/expressiveness-of-haskell/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/expressiveness-of-haskell/</guid>
       <description>My goto answer when someone asks why I like Haskell so much these days is usually &amp;ldquo;I like the expressiveness and run time guarantees of Haskell&amp;rdquo;. For those who are little more interested, I would usually show the popular quick sort or merge sort implementations. I wanted a slightly more complicated, yet commonly known, example to demonstrate what I claimed. This is an attempt at coming up with such an example.</description>
+    </item>
+    
+    <item>
+      <title>Unscramble - A Word Puzzle</title>
+      <link>https://www.vijayanant.com/posts/unscramble-a-word-puzzle/</link>
+      <pubDate>Sat, 22 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/unscramble-a-word-puzzle/</guid>
+      <description>How It All Started All of this started when we (myself and my friend Raghu) were solving a word puzzle that appeared on daily newspaper. The puzzle itself is very simple. There are few english alphabets in a circle and a bold one in the centre. The challenge is to come up with as many words as possible using the letters. All the English words we come up with must contain the letter in the centre.</description>
     </item>
     
     <item>

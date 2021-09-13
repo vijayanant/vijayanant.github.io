@@ -1,505 +1,311 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.vijayanant.com/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/fp/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/haskell/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/higher-ranked-types/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/polymorphism/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/programming/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/rankntypes/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/types/</loc>
-    <lastmod>2019-01-24T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</loc>
-    <lastmod>2018-11-29T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/haskel/</loc>
-    <lastmod>2018-11-29T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/talk/</loc>
-    <lastmod>2018-11-29T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/java/</loc>
-    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/oop/</loc>
-    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/the-expression-problem/</loc>
-    <lastmod>2018-11-13T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/expressiveness/</loc>
-    <lastmod>2018-11-08T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/expressiveness/</loc>
-    <lastmod>2018-11-08T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/languages/</loc>
-    <lastmod>2018-11-08T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/binary-tree/</loc>
-    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/expressiveness-of-haskell/</loc>
-    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/python/</loc>
-    <lastmod>2018-11-04T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/dependent-types/</loc>
-    <lastmod>2018-10-26T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-10-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</loc>
-    <lastmod>2018-10-26T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2018-10-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/databases/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/distributed-systems/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/distributed-systems-and-scalable-databases/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/scaling/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/storage/</loc>
     <lastmod>2018-10-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/development/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/tdd/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/tdd-mantra/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/testing/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/beta-reduction/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/call-by-name/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/call-by-value/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/church-numerals/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/lambda/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/lambda-calculus/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/lambda-calculus/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/maths/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/coding/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/haskell/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/matrix-traversal/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/puzzle/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/functions/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/maths/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/notes-on-sets-relations-and-functions/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/ordered-sets/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/relations/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/sets/</loc>
     <lastmod>2017-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/deep-learning/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/machine-learning/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/tensorflow/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/tensorflow-basics/</loc>
     <lastmod>2017-10-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/functional/</loc>
-    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/imperative/</loc>
-    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/object-oriented/</loc>
-    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/programming/</loc>
-    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/thinking-in-imperative-object-oriented-and-functional-way/</loc>
-    <lastmod>2017-09-15T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/design-principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/object-orientation/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/object-orientation/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/ooh-principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/packaging/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/principles/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/software-design/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/software-design/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/solid/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/gadts/</loc>
-    <lastmod>2016-10-15T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2016-10-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</loc>
-    <lastmod>2016-10-15T00:00:00+05:30</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2016-10-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/a-detour-called-monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/decision/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/decisions/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/fallacy/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/happy/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/life-lessons/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/rant/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/wisdom/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/abstraction/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/code-duplication/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/duplication-vs-abstraction/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/refactoring/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/code-pairing/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/extreme-programming/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/pair-programming/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/pair-programming-what-why-and-how/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/xp/</loc>
     <lastmod>2015-01-31T12:31:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/10-vim-plugins-that-made-my-vim-easy/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/plugin/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/tools/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/vim/</loc>
     <lastmod>2015-01-04T09:18:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/unscramble/</loc>
+    <lastmod>2014-11-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/posts/unscramble-a-word-puzzle/</loc>
+    <lastmod>2014-11-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/analysis/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/performance-analysis/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/posts/performance-analysis-in-python/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/categories/profiling/</loc>
     <lastmod>2014-11-02T20:05:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.vijayanant.com/about/</loc>
     <lastmod>2014-07-28T11:14:25+00:00</lastmod>
   </url>
-  
 </urlset>

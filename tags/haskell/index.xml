@@ -6,11 +6,11 @@
     <description>Recent content in Haskell on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/haskell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Higher Ranked Types</title>
       <link>https://www.vijayanant.com/posts/higher-ranked-types/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0530</pubDate>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/higher-ranked-types/</guid>
       <description>Let&amp;rsquo;s get started with a monomorphic function -
@@ -21,7 +21,7 @@ incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1) The modified
     <item>
       <title>The Expression Problem</title>
       <link>https://www.vijayanant.com/posts/the-expression-problem/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/the-expression-problem/</guid>
       <description>In the previous post I had put forward (rather hastily, I must add) my thoughts on what does expressiveness mean for programming languages. I had this feeling of forgetting something important but couldn&amp;rsquo;t pinpoint what it was. Today, while sipping a hot cup of coffee, I remembered the expression problem.
@@ -31,7 +31,7 @@ The Expression Problem is a well known problem in programming language theory de
     <item>
       <title>Expressiveness of Haskell</title>
       <link>https://www.vijayanant.com/posts/expressiveness-of-haskell/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0530</pubDate>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/expressiveness-of-haskell/</guid>
       <description>My goto answer when someone asks why I like Haskell so much these days is usually &amp;ldquo;I like the expressiveness and run time guarantees of Haskell&amp;rdquo;. For those who are little more interested, I would usually show the popular quick sort or merge sort implementations. I wanted a slightly more complicated, yet commonly known, example to demonstrate what I claimed. This is an attempt at coming up with such an example.</description>
@@ -40,7 +40,7 @@ The Expression Problem is a well known problem in programming language theory de
     <item>
       <title>Dependent Types To Eliminate Runtime Checks</title>
       <link>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</link>
-      <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</guid>
       <description>One of the main advantages of static type checking is to catch errors before we deploy code to production. Dependent Types allow us to eliminate some checks that are usually done at run time. I take a simple example to show how dependent types can be used in that regard in day-to-day programming.
@@ -62,7 +62,7 @@ My attempt in Haskell.</description>
     <item>
       <title>GADTs To Eliminate Runtime Checks</title>
       <link>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</link>
-      <pubDate>Sat, 15 Oct 2016 00:00:00 +0530</pubDate>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</guid>
       <description>Generalized Algebraic Data Types (GADTs) generalizes ordinary Algebraic Data Types(ADTs) by permitting value constructors to return specific types. GADTs are used for ensuring program correctness and in generic programming. This article is specific to Haskell programming language. In Haskell GADTs are implemented as a language extension. The article describes these use cases with small programs.

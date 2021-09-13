@@ -6,11 +6,11 @@
     <description>Recent content in Dependent Types on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/dependent-types/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/dependent-types/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dependent Types To Eliminate Runtime Checks</title>
       <link>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</link>
-      <pubDate>Fri, 26 Oct 2018 00:00:00 +0530</pubDate>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/dependent-types-to-eliminate-runtime-checks/</guid>
       <description>One of the main advantages of static type checking is to catch errors before we deploy code to production. Dependent Types allow us to eliminate some checks that are usually done at run time. I take a simple example to show how dependent types can be used in that regard in day-to-day programming.

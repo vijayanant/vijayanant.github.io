@@ -6,11 +6,11 @@
     <description>Recent content in GADTs on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Oct 2016 00:00:00 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/gadts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Oct 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/gadts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GADTs To Eliminate Runtime Checks</title>
       <link>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</link>
-      <pubDate>Sat, 15 Oct 2016 00:00:00 +0530</pubDate>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/gadts-to-eliminate-runtime-checks/</guid>
       <description>Generalized Algebraic Data Types (GADTs) generalizes ordinary Algebraic Data Types(ADTs) by permitting value constructors to return specific types. GADTs are used for ensuring program correctness and in generic programming. This article is specific to Haskell programming language. In Haskell GADTs are implemented as a language extension. The article describes these use cases with small programs.

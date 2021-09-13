@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unscramble on </title>
+    <link>https://www.vijayanant.com/tags/unscramble/</link>
+    <description>Recent content in Unscramble on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Nov 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/unscramble/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unscramble - A Word Puzzle</title>
+      <link>https://www.vijayanant.com/posts/unscramble-a-word-puzzle/</link>
+      <pubDate>Sat, 22 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/unscramble-a-word-puzzle/</guid>
+      <description>How It All Started All of this started when we (myself and my friend Raghu) were solving a word puzzle that appeared on daily newspaper. The puzzle itself is very simple. There are few english alphabets in a circle and a bold one in the centre. The challenge is to come up with as many words as possible using the letters. All the English words we come up with must contain the letter in the centre.</description>
+    </item>
+    
+  </channel>
+</rss>
