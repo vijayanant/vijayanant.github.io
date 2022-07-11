@@ -6,11 +6,20 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Declarative</title>
+      <link>https://www.vijayanant.com/tags/declarative/</link>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/declarative/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>fp</title>
       <link>https://www.vijayanant.com/tags/fp/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/fp/</guid>
       <description></description>
@@ -19,7 +28,7 @@
     <item>
       <title>Haskell</title>
       <link>https://www.vijayanant.com/tags/haskell/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/haskell/</guid>
       <description></description>

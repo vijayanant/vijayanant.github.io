@@ -6,7 +6,16 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Behind Run Length Encoding!</title>
+      <link>https://www.vijayanant.com/posts/running-behind-run-length-encoding/</link>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/running-behind-run-length-encoding/</guid>
+      <description>One of the challenges that I faced earlier on with FP is coming up with non-imperative solutions (I still do sometimes). I am sure many have faced similar hardships. We, those who have trained ourselves to think imperatively, jump to iterative solution first, then remember/realise we are lacking the corresponding tools (loops, mutability, etc) in our new favourite language (Haskell for me). Quite often this results in ugly recursive solution that we think is functional.</description>
+    </item>
+    
     <item>
       <title>Higher Ranked Types</title>
       <link>https://www.vijayanant.com/posts/higher-ranked-types/</link>

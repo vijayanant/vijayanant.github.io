@@ -3,16 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.vijayanant.com/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/categories/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/declarative/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/fp/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/haskell/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/posts/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/categories/programming/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/posts/running-behind-run-length-encoding/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/posts/higher-ranked-types/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
@@ -20,16 +35,7 @@
     <loc>https://www.vijayanant.com/tags/polymorphism/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vijayanant.com/posts/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/categories/programming/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.vijayanant.com/tags/rankntypes/</loc>
-    <lastmod>2019-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/categories/types/</loc>
