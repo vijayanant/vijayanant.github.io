@@ -228,6 +228,45 @@ Encoding</a> (RLE) &ndash; a lossless
 data compression to implement. Simply put, RLE compresses a stream of data items
 by encoding it as data item  followed by count of consecutive repetitions of
 that data. For example, <code>AABBBAAAAC</code> is encoded as <code>A2B3A4C</code>.</p>
+<p>Here are some more examples:</p>
+<table>
+<thead>
+<tr>
+<th>Original</th>
+<th>Encoded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AAAA</td>
+<td>A4</td>
+</tr>
+<tr>
+<td>AABBCC</td>
+<td>A2B2C2</td>
+</tr>
+<tr>
+<td>ABBC</td>
+<td>AB2C</td>
+</tr>
+<tr>
+<td>AB</td>
+<td>AB</td>
+</tr>
+<tr>
+<td>aaaAAAaBBb</td>
+<td>a3A3aB2b</td>
+</tr>
+<tr>
+<td>Vijay</td>
+<td>Vijay</td>
+</tr>
+<tr>
+<td>RunLengthEncoding</td>
+<td>RunLengthEncoding</td>
+</tr>
+</tbody>
+</table>
 <h2 id="approach-1---basic-recursion">Approach 1 - Basic Recursion</h2>
 <p>A quick look at the example gives us our first approach. We pass through the
 sequence of data while keeping a running count of repetitions and when the
@@ -238,7 +277,7 @@ one at a time, and accumulate the result (encoded list) in each step.</p>
 <p>Here is a <code>Haskell</code> version.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">rle1</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
 <span style="color:#a6e22e">rle1</span> <span style="color:#66d9ef">[]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-<span style="color:#a6e22e">rle1</span> (x<span style="color:#66d9ef">:</span>xs) <span style="color:#f92672">=</span> myenc <span style="color:#e6db74">&#34;&#34;</span> x <span style="color:#ae81ff">1</span> xs
+<span style="color:#a6e22e">rle1</span> (x<span style="color:#66d9ef">:</span>xs) <span style="color:#f92672">=</span> myenc1 <span style="color:#e6db74">&#34;&#34;</span> x <span style="color:#ae81ff">1</span> xs
 
 <span style="color:#a6e22e">myenc1</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Char</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
 <span style="color:#a6e22e">myenc1</span> enc x n <span style="color:#66d9ef">[]</span> <span style="color:#f92672">=</span> enc <span style="color:#f92672">++</span> (x<span style="color:#66d9ef">:</span>(check n))
@@ -251,7 +290,7 @@ one at a time, and accumulate the result (encoded list) in each step.</p>
         <span style="color:#f92672">|</span> otherwise <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
 
 </code></pre></div><p>Yes, we are going to have problem understanding what we did here in few months.
-We basically have a function <code>myenc</code> called recursively with the current state
+We basically have a function <code>myenc1</code> called recursively with the current state
 of the program passed as arguments.</p>
 <p>After marvelling (crying?) at the code for a while it hits us. We have turned a
 list into another (possibly shorter) list. Isn&rsquo;t this similar to folding
@@ -303,7 +342,7 @@ enhancement is that we no longer deal with individual letters. We look at a
 bunch of letter as a whole.</p>
 <blockquote>
 <p>The beauty of programming is to solve smaller generic problems and combining
-them to solve a much larger problems.</p>
+them to solve much larger problems.</p>
 </blockquote>
 <p>We are onto something here! Let us look at the problem from this perspective.
 Can we identify a smaller, generic problem that we can solve?</p>
