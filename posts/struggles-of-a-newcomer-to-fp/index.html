@@ -28,7 +28,7 @@
     
     
 
-<title>Struggles of a newcomer to FP • fossick • Vijay Anant</title>
+<title>Struggles Of A Newcomer To FP • fossick • Vijay Anant</title>
 
 
   
@@ -50,11 +50,11 @@ does not automatically guarantee simple and maintainable code.">
 <meta name="googlebot" content="index,follow">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Struggles of a newcomer to FP"/>
+<meta name="twitter:title" content="Struggles Of A Newcomer To FP"/>
 <meta name="twitter:description" content="Using a language that promotes functional style of programming
 does not automatically guarantee simple and maintainable code."/>
 
-<meta property="og:title" content="Struggles of a newcomer to FP" />
+<meta property="og:title" content="Struggles Of A Newcomer To FP" />
 <meta property="og:description" content="Using a language that promotes functional style of programming
 does not automatically guarantee simple and maintainable code." />
 <meta property="og:type" content="article" />
@@ -187,7 +187,7 @@ does not automatically guarantee simple and maintainable code." />
             
     <article>
   <header>
-    <h1>Struggles of a newcomer to FP</h1>
+    <h1>Struggles Of A Newcomer To FP</h1>
      
     
 <div class="post__meta">
@@ -297,7 +297,7 @@ and continue with the sequence. Seems straight forward, right?</p>
 <p>The idea is simple, we start from the left, process each element (of the list)
 one at a time, and accumulate the result (encoded list) in each step.</p>
 <p>Here is a <code>Haskell</code> version.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">rle1</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">rle1</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
 <span style="color:#a6e22e">rle1</span> <span style="color:#66d9ef">[]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
 <span style="color:#a6e22e">rle1</span> (x<span style="color:#66d9ef">:</span>xs) <span style="color:#f92672">=</span> myenc1 <span style="color:#e6db74">&#34;&#34;</span> x <span style="color:#ae81ff">1</span> xs
 
@@ -310,7 +310,6 @@ one at a time, and accumulate the result (encoded list) in each step.</p>
 <span style="color:#a6e22e">check</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
 <span style="color:#a6e22e">check</span> n <span style="color:#f92672">|</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">=</span> show n
         <span style="color:#f92672">|</span> otherwise <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-
 </code></pre></div><p>Yes, we are going to have problem understanding what we did here in few months.
 We basically have a function <code>myenc1</code> called recursively with the current state
 of the program passed as arguments.</p>
@@ -327,9 +326,9 @@ can use <code>foldl'</code> here, we have to make some changes.</p>
 <p>Firstly, the recursion is handled by fold itself. So, manual recursion calls are
 no longer needed. Secondly, the fold function expects a binary function as
 argument.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">foldl&#39;</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Foldable</span> t <span style="color:#f92672">=&gt;</span> (b <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">-&gt;</span> b) <span style="color:#f92672">-&gt;</span> b <span style="color:#f92672">-&gt;</span> t a <span style="color:#f92672">-&gt;</span> b
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">foldl&#39;</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Foldable</span> t <span style="color:#f92672">=&gt;</span> (b <span style="color:#f92672">-&gt;</span> a <span style="color:#f92672">-&gt;</span> b) <span style="color:#f92672">-&gt;</span> b <span style="color:#f92672">-&gt;</span> t a <span style="color:#f92672">-&gt;</span> b
 </code></pre></div><p>Here is what we get &ndash;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">rle2</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">rle2</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
 <span style="color:#a6e22e">rle2</span> <span style="color:#66d9ef">[]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
 <span style="color:#a6e22e">rle2</span> (x<span style="color:#66d9ef">:</span>xs) <span style="color:#f92672">=</span> <span style="color:#66d9ef">let</span> (e, c, n) <span style="color:#f92672">=</span> foldl&#39; myenc2 (<span style="color:#e6db74">&#34;&#34;</span>, x, <span style="color:#ae81ff">1</span>) xs
     <span style="color:#66d9ef">in</span> e <span style="color:#f92672">++</span> (c<span style="color:#66d9ef">:</span> check n)
@@ -349,7 +348,7 @@ rethink. Is there a better way? Can we rethink the solution?</p>
 whole. That is, <code>AAADDCCCCBB</code> can be seen a sequence of <code>A</code>&rsquo;s,<code>D</code>&rsquo;s,<code>C</code>&rsquo;s, and
 <code>B</code>&rsquo;s in that order. If we can split the whole thing into a such a grouping, we
 can treat each group separately.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">rle3</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">rle3</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
 <span style="color:#a6e22e">rle3</span> <span style="color:#66d9ef">[]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">[]</span>
 <span style="color:#a6e22e">rle3</span> (x<span style="color:#66d9ef">:</span>xs) <span style="color:#f92672">=</span> x<span style="color:#66d9ef">:</span> showLen first <span style="color:#f92672">++</span> rle3 rest
   <span style="color:#66d9ef">where</span> (first, rest) <span style="color:#f92672">=</span> span (<span style="color:#f92672">==</span> x) xs
@@ -380,7 +379,7 @@ smaller solutions to get RLE.</p>
 <li>Combine the result to get &ldquo;A3BC2D2&rdquo;</li>
 </ol>
 <p>Here is how it will look -</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Haskell" data-lang="Haskell"><span style="color:#a6e22e">encode</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">encode</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">String</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">String</span>
 <span style="color:#a6e22e">encode</span> <span style="color:#66d9ef">[]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">[]</span>
 <span style="color:#a6e22e">encode</span> [x] <span style="color:#f92672">=</span> [x]
 <span style="color:#a6e22e">encode</span> s <span style="color:#f92672">=</span> head s <span style="color:#66d9ef">:</span> (show <span style="color:#f92672">.</span> length) s
