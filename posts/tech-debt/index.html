@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNSPFRLLVH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XNSPFRLLVH');
+    </script>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.88.1" />
+
+    
+    
+    
+    
+    
+
+<title>Tech Debt • fossick • Vijay Anant</title>
+
+
+  
+    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
+  
+
+
+
+
+  
+  
+    <meta name="keywords" content="technical debt, Programming">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tech Debt"/>
+<meta name="twitter:description" content="Technical Debt Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He tells them that refactoring is as important as shipping software as early as possible is to maintaining their place in the market. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground."/>
+
+<meta property="og:title" content="Tech Debt" />
+<meta property="og:description" content="Technical Debt Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He tells them that refactoring is as important as shipping software as early as possible is to maintaining their place in the market. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.vijayanant.com/posts/tech-debt/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-28T00:00:00+00:00" /><meta property="og:site_name" content="fossick" />
+
+
+
+    
+
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    
+    <link rel="shortcut icon" href="/author.png">
+    
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.vijayanant.com">fossick</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://www.vijayanant.com/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         Vijay Anant 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">fossick</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Archieve</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/resume.pdf">
+						<span>Resume</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/kn/">
+						<span>ವಿಜಯಾ೦ತರ೦ಗ</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://keybase.io/vijayanant"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Tech Debt</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 28 Dec 2022
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/technical-debt">technical debt</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 9 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <h1 id="technical-debt">Technical Debt</h1>
+<p><a href="https://en.wikipedia.org/wiki/Ward_Cunningham">Ward Cunningham</a>, co-author of
+the Agile Manifesto and a pioneer in design patterns and XP, came up with this
+metaphor as a way of explaining (to non-technical stakeholders) why refactoring
+was an essential part of software development. He tells them that refactoring is
+as important as shipping software as early as possible is to maintaining their
+place in the market. He used the <strong>debt metaphor as a way of making an analogy
+to how venture capital is used to get a business off the ground.</strong></p>
+<blockquote>
+<p>With borrowed money you can do something sooner than you might otherwise, but
+then until you pay back that money you&rsquo;ll be paying interest. I thought
+borrowing money was a good idea, I thought that rushing software out the door
+to get some experience with it was a good idea, but that of course, you would
+eventually go back and as you learned things about that software you would
+repay that loan by refactoring the program to reflect your experience as you
+acquired it.</p>
+<p>&ndash; Ward Cunningham</p>
+</blockquote>
+<h2 id="it-is-not-a-bad-thing">It Is Not A Bad Thing</h2>
+<p>The idea that technical debt is inherently a bad thing is a corruption of
+Cunningham&rsquo;s original concept. He makes it clear when he says <em>&ldquo;I thought
+borrowing money was a good idea&rdquo;.</em> He sees it as the trade-offs made between
+rushing to capture market vs the long term viability of code.</p>
+<p><em>&ldquo;Rushing software out the door to get experience with it is a good idea, but
+you need to refactor the code to reflect your experience as understanding
+increases.&quot;</em></p>
+<p>We have moved quickly to capture the market by taking on some debt. This is
+definitely a competitive advantage but it comes with a cost.</p>
+<h2 id="bad-code-is-not-encouraged">Bad Code Is NOT Encouraged!</h2>
+<p>There is a misunderstanding that it is OK to write bad code in order to push
+software faster. The argument is - <em>we are going to come back and fix it later
+anyway, so why spend time writing clean code now?</em> This is not correct.
+Cunningham talks of <em>experience gained</em> as the software progresses, and we are
+expected to <em>refactor</em> our code to reflect that experience gained.</p>
+<blockquote>
+<p>I&rsquo;m never in favour of writing code poorly, but I am in favour of writing code
+to reflect your current understanding of a problem even if that understanding
+is partial.</p>
+<p>&ndash; Ward Cunningham</p>
+</blockquote>
+<p>He is definitely asking us to write good quality code even when we accrue debt.
+<strong>Bad code is bad at explaining the intent of the code.</strong> It is not clear what
+was the understanding when you wrote it. And when the time comes to refactor, it
+is that much harder to change the code as you don&rsquo;t understand why it is the way
+it is.</p>
+<p>The debt is supposed to be easier to payback. Bad code makes repayment harder.
+In fact, the debt metaphor works to our advantage only if we write code that is
+clean enough to be understood and refactor easily when our understanding of the
+problem improves.</p>
+<blockquote>
+<p>If you can&rsquo;t refactor your software because it is poorly architected or poorly
+written, <strong>you don&rsquo;t have technical debt, you have bad software.</strong></p>
+</blockquote>
+<p><strong>Then, if bad code is not Tech Debt, what is?</strong></p>
+<h2 id="what-is-tech-debt">What is Tech Debt?</h2>
+<p>Our understanding of problem evolves over time, and our code should reflect our
+current understanding of the problem. We accrue technical debt as the gap
+between our current level of understanding and the level of understanding
+reflected by the code grows. When we gain experience and understand more
+subtleties and nuances of the problem, we refactor our existing code to match
+the latest model. We use that experience to <strong>pay down the principle</strong> that we
+borrowed when we released code that we knew was not going to reflect a changing
+reality.</p>
+<blockquote>
+<p>Technical Debt here is the accumulated distance between our understanding of
+the problem domain and the understanding that the system reflects.</p>
+</blockquote>
+<p>If we fail to refactor the code, we are <strong>paying interest on the debt</strong> every
+time we interact with the code; combining the two disparate models of
+understanding increases cognitive overhead, leads to communications problems,
+and the cost of adding features becomes higher and higher. Eventually, we simply
+can&rsquo;t.</p>
+<h2 id="this-is-unfamiliar">This Is Unfamiliar&hellip;</h2>
+<p>If all this sounds unfamiliar, or is different from what you have read before,
+it is probably because Technical Debt has become conflated with another concept
+-<a href="https://en.wikipedia.org/wiki/Entropy">system entropy</a> (measure of degree of
+disorder in a system). It&rsquo;s easy to write code quickly and ignore good practices
+and factoring. Over time, all of these neglects accumulate and we end up with
+code that looks more like a jungle than a clean understandable guide to the
+behaviour of a system. Code that is hard to understand is very different from
+code that has a different understanding of the problem.</p>
+<h2 id="an-example-may-help">An example May Help</h2>
+<p>Let us assume I am working on a feature that needs to send SMS.  I check with
+other teams if we already have a service/system that can send SMS. I am told
+that you are working on a Notification System/Service that combines email, SMS,
+and/or InApp notifications. It will be ready in 2 months. I am also told that
+every system will have to use this notification system going forward.</p>
+<p>But, I have to launch my feature in 2 weeks time; I will not wait for your
+system to be ready. I will use a simple SMS library/service to get things
+rolling.</p>
+<p>I have now taken a debt. Once the Notification system is ready and is the
+de-facto thing, the debt becomes obvious. Every time we deal with my service we
+have to pay the interest in the form of dealing with that SMS library. Any time
+we change the Notification, we have to deal with the SMS library. Our mental
+model is that every system uses the same notification system, but our code
+doesn&rsquo;t follow that model.</p>
+<p>Once I switch to using notification system, I have paid back the premium. No
+more debt.</p>
+<h2 id="another-example-with-code-please">Another Example, With Code Please?</h2>
+<p>OK, lets take another example with code. We have an <code>addEvent</code> method that adds
+the scheduling event to a collection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Scheduler</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addEvent</span><span style="color:#f92672">(</span>SchedulingEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        events<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>event<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>We are asked to have it do another. Whenever we receive a scheduling event, we
+need to save it and send it to a peer system also. How can we make this change?</p>
+<p>It&rsquo;s very easy. We just add two lines to the code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Scheduler</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addEvent</span><span style="color:#f92672">(</span>SchedulingEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        events<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>event<span style="color:#f92672">);</span>
+        peerNotifier<span style="color:#f92672">.</span><span style="color:#a6e22e">notify</span><span style="color:#f92672">(</span>event<span style="color:#f92672">);</span>
+        store<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>event<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>We’re adding more responsibilities to a class that is concerned with a different
+thing . Schedulers should be about scheduling, not logging, displaying, saving,
+or sending information to peers. This is violating Single Responsibility
+Principle. Many incorrectly think this is &lsquo;taking on tech debt&rsquo;, a temperory
+fix/solution to get the feature out quickly. But we are simply writing bad/messy
+code.</p>
+<p>What would it be like if we refactored the original code to make it possible to
+add our new feature in a pleasant way?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Scheduler</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">registerEventListener</span><span style="color:#f92672">(</span>SchedulingEventListener listener<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        listeners<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>listener<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addEvent</span><span style="color:#f92672">(</span>SchedulingEvent event<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        events<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>event<span style="color:#f92672">);</span>
+
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>SchedulingEventListener listener <span style="color:#f92672">:</span> listeners<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            listener<span style="color:#f92672">.</span><span style="color:#a6e22e">eventAdded</span><span style="color:#f92672">(</span>event<span style="color:#f92672">)</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>In this version, We can easily register one listener that logs, another that
+displays, and another that notifies peers - and in each of these cases, the code
+in Scheduler does not have to change. We had to do a bit of work to refactor the
+code to this state, but once we have, adding the feature is trivial, and
+non-invasive.</p>
+<h2 id="tracking-tech-debt">Tracking Tech Debt</h2>
+<p>Now that we have some understanding of tech debt and the need for refactoring,
+lets think about tracking our debt.</p>
+<p>Over the time people have come up with many ways to track tech debt. One is
+through <strong>code comments.</strong> You add code comments where appropriate to document
+technical debt as it arises. Try to include why you are doing it the way you are
+doing it and at least one potential solution. Such comments usually start with
+<code>FIXME</code>, <code>TODO</code>, or <code>OPTIMIZE</code> tag. Again, remember, bad code is not tech debt.
+Don&rsquo;t fill your code base with FIXMEs and TODOs.</p>
+<p>It is hard to pin down all tech debt to a location in the code. It is hard to
+track if there&rsquo;s nowhere to document it. A <strong>DEBT.md</strong> file  provides that
+location. DEBT.md is the canonical source of where and how the application code
+can and should be improved. This should not be confused with how the application
+can be improved.</p>
+<p>Instead of maintaining a separate file for debt, some use an <strong>issue tracker</strong>
+(Bugzilla or Jira) with a <code>debt</code> tag.</p>
+<p>All of this may sound good in theory but have little practicality. Unless you
+have a way of measuring the value/cost associated with it, there is no way you
+can prioritise such a list and act upon. And there is no good way to assign such
+a value/cost to tech debt.</p>
+<h2 id="when-to-refactor">When To Refactor</h2>
+<p>Since we cannot assign a cost, we cannot prioritise debts. Then, how do we
+decide when and which of the debts do we tackle? Answer is simple - just like
+your product backlog, for example, the priority is &lsquo;when you need it&rsquo;.</p>
+<p>One way to look at this problem (of picking a debt to work on) is to consider
+the existing code when we are thinking of adding a feature and ask ourselves
+what the code should look like to make it easier for us to add this feature.
+Most of the time this involves some generalization, renaming and/or a clarifying
+extraction. We can alter the structure a bit and make it ready for the change.
+Some times this may involve a bigger change. It all depends on whether the
+original design anticipated the current change or not.</p>
+<p>Look at the example above, the <code>Scheduler</code> class did not anticipate such a
+change. Or perhaps it was an overkill at that time to add observer pattern.
+Either way, we changed the code to make it easier to add new feature. We could
+say this refactoring effort is the cost. But we couldn&rsquo;t have known this before
+the feature was even thought of.</p>
+<p>The message is clear, don&rsquo;t use the debt metaphor to justify writing bad code;
+you are simply degrading the internal quality. The argument that &lsquo;new features
+are needed urgently, and perhaps it is good to take on the debt&rsquo; isn&rsquo;t well
+founded. Bad code impacts quickly slowing down the new features that are needed
+quickly. We usually end up releasing slower than expected and with messy code
+which is harder to refator taking up even more effort when the time comes.
+Taking on debt to speed-up delivery only works if you  write code that is clean
+enough to be understood and refactored.</p>
+<h2 id="finally">Finally&hellip;</h2>
+<p>Tech Debt is a metaphor that was initially used to explain to the management the
+need for code refactoring. This is not a development methodology or a design
+philosophy. It doesn&rsquo;t tell you how to design or write code. It doesn&rsquo;t tell you
+when to take debt. The metaphor is helpful in thinking about how to deal with
+design problems and how to communicate that thinking.</p>
+
+  </div>
+  
+
+
+  
+
+
+
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>

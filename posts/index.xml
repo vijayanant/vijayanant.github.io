@@ -6,7 +6,16 @@
     <description>Recent content in Archive on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech Debt</title>
+      <link>https://www.vijayanant.com/posts/tech-debt/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/tech-debt/</guid>
+      <description>Technical Debt Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He tells them that refactoring is as important as shipping software as early as possible is to maintaining their place in the market. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground.</description>
+    </item>
+    
     <item>
       <title>Struggles of a newcomer to FP</title>
       <link>https://www.vijayanant.com/posts/struggles-of-a-newcomer-to-fp/</link>
@@ -25,17 +34,6 @@
       <description>Let&amp;rsquo;s get started with a monomorphic function -
 incr :: Int -&amp;gt; Int incr = (+1) The function incr works on values of type Int and nothing else. We can make our function polymorphic by using type parameters in place of concrete types -
 incr&amp;#39; :: Num a =&amp;gt; a -&amp;gt; a incr&amp;#39; = (+1) The modified function incr&#39; can work with any type that has a Num instance. Now let us move on and look at a simple higher order function -</description>
-    </item>
-    
-    <item>
-      <title>GADTs Talk - Bengaluru Haskell Meetup</title>
-      <link>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</link>
-      <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</guid>
-      <description>Last week I gave a talk at The Bangalore Haskell User Group on using GADTs to bring compile time correctness to Haskell programs. The focus of the talk was more towards advocating using Haskell type system features where possible to simplify code. The aim was to show how error handling code can be avoided/removed and still achieve type-safety.
-The presentation used for the talk is available here.
-I had written a more detailed writeup on the same topic here.</description>
     </item>
     
     <item>
@@ -237,6 +235,17 @@ Note that the side panes (NERDTree on the left and Tagbar on the right) auto-col
       <guid>https://www.vijayanant.com/posts/performance-analysis-in-python/</guid>
       <description>My recent escapade with Python taught me many things. One of which is to &amp;ldquo;start doing something that interests you. And each such daring act will teach you many more things.&amp;rdquo;
 This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.vijayanant.com/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/</guid>
+      <description>Last week I gave a talk at The Bangalore Haskell User Group on using GADTs to bring compile time correctness to Haskell programs. The focus of the talk was more towards advocating using Haskell type system features where possible to simplify code. The aim was to show how error handling code can be avoided/removed and still achieve type-safety.
+The presentation used for the talk is available here.
+I had written a more detailed writeup on the same topic here.</description>
     </item>
     
   </channel>
