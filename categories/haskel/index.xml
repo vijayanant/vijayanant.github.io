@@ -13,7 +13,7 @@
       <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</guid>
-      <description>Last week I gave a talk at The Bangalore Haskell User Group on using GADTs to bring compile time correctness to Haskell programs. The focus of the talk was more towards advocating using Haskell type system features where possible to simplify code. The aim was to show how error handling code can be avoided/removed and still achieve type-safety.
+      <description>Last week I gave a talk at [The Bangalore Haskell User Group] (https://www.meetup.com/The-Bangalore-Haskell-User-Group/) on using GADTs to bring compile time correctness to Haskell programs. The focus of the talk was more towards advocating using Haskell type system features where possible to simplify code. The aim was to show how error handling code can be avoided/removed and still achieve type-safety.
 The presentation used for the talk is available here.
 I had written a more detailed writeup on the same topic here.</description>
     </item>

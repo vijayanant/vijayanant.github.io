@@ -47,6 +47,15 @@
     <loc>https://www.vijayanant.com/categories/types/</loc>
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</loc>
+    <lastmod>2018-11-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/categories/haskel/</loc>
+    <lastmod>2018-11-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/categories/talk/</loc>
+    <lastmod>2018-11-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/java/</loc>
     <lastmod>2018-11-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -481,7 +490,5 @@
   </url><url>
     <loc>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B3%86%E0%B2%A8%E0%B2%AA%E0%B3%81/</loc>
     <lastmod>2008-11-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/posts/</loc>
   </url>
 </urlset>
