@@ -13,7 +13,7 @@
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/technical-debt/</guid>
-      <description>Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He conveys to them that refactoring is as important as shipping software early to maintain their. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground.</description>
+      <description>Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He conveys to them that refactoring is as important as shipping software early to maintain their place in the market. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground.</description>
     </item>
     
     <item>
@@ -246,6 +246,25 @@ Note that the side panes (NERDTree on the left and Tagbar on the right) auto-col
       <guid>https://www.vijayanant.com/posts/performance-analysis-in-python/</guid>
       <description>My recent escapade with Python taught me many things. One of which is to &amp;ldquo;start doing something that interests you. And each such daring act will teach you many more things.&amp;rdquo;
 This time I set out to finding ways of analysing the performance of an application - specifically Python applications. And as always I wasn&amp;rsquo;t disappointed with the results. Why Python? I just happened to be playing around with Python at the time (what I really mean is I was learning Python!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.vijayanant.com/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/</guid>
+      <description>#Existential Types in Haskell: An Advanced Guide
+Haskell is a statically-typed, functional programming language known for its strong type system and type inference capabilities. In Haskell, a type constructor can be used to create a new type based on an existing type. One of the most powerful and flexible type constructors in Haskell is the existential type, which allows for values to be created and manipulated without specifying the exact type of the underlying data.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.vijayanant.com/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/</guid>
+      <description>Existential types, also known as existential quantification, is a feature of modern programming languages that allows for the creation of abstract data types that hide their internal implementation details. This concept provides a way for developers to specify the requirements for a particular data type, without exposing its underlying representation, leading to increased code modularity, abstraction, and overall maintainability. In this article, we&amp;rsquo;ll explore the fundamentals of existential types, their applications, and the benefits they offer to programmers.</description>
     </item>
     
   </channel>

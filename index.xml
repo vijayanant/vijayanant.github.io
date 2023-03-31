@@ -15,14 +15,14 @@
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/posts/technical-debt/</guid>
-      <description>Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He conveys to them that refactoring is as important as shipping software early to maintain their. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground.</description>
+      <description>Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He conveys to them that refactoring is as important as shipping software early to maintain their place in the market. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground.</description>
       <content:encoded>&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Ward_Cunningham&#34;&gt;Ward Cunningham&lt;/a&gt;, co-author of
 the Agile Manifesto and a pioneer in design patterns and XP, came up with this
 metaphor as a way of explaining (to non-technical stakeholders) why refactoring
 was an essential part of software development. He conveys to them that
-refactoring is as important as shipping software early to maintain their. He
-used the &lt;strong&gt;debt metaphor as a way of making an analogy to how venture capital is
-used to get a business off the ground.&lt;/strong&gt;&lt;/p&gt;
+refactoring is as important as shipping software early to maintain their place
+in the market. He used the &lt;strong&gt;debt metaphor as a way of making an analogy to how
+venture capital is used to get a business off the ground.&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;With borrowed money you can do something sooner than you might otherwise, but
 then until you pay back that money you&amp;rsquo;ll be paying interest. I thought
@@ -2199,610 +2199,97 @@ Line   Mem usage    Increment   Line Contents
     </item>
     
     <item>
-      <title>Hey, I&#39;m Vijay</title>
-      <link>https://www.vijayanant.com/about/</link>
-      <pubDate>Mon, 28 Jul 2014 11:14:25 +0000</pubDate>
+      <title></title>
+      <link>https://www.vijayanant.com/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/about/</guid>
-      <description>I&amp;rsquo;m a software engineer working and living in Bengaluru, India.
-I write this blog to document and share my thoughts about new concepts, philosophies, problems, and tools that I encounter and learn in my everyday work. I want to share my experience in the hope that others can avoid similar mistakes and struggles.
-I believe that the best way to learn something is by sharing that knowledge publicly. You will see that many topics that I write here are notes for myself in the future.</description>
-      <content:encoded>&lt;p&gt;I&amp;rsquo;m a software engineer working and living in &lt;a href=&#34;https://en.wikipedia.org/wiki/Bangalore&#34;&gt;Bengaluru,
-India&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I write this blog to document and share my thoughts about new concepts,
-philosophies, problems, and tools that I encounter and learn in my everyday
-work. I want to share my experience in the hope that others can avoid similar
-mistakes and struggles.&lt;/p&gt;
-&lt;p&gt;I believe that the best way to learn something is by sharing that knowledge
-publicly. You will see that many topics that I write here are notes for myself
-in the future.&lt;/p&gt;
-&lt;p&gt;All of the blog posts are my own opinions.&lt;/p&gt;
+      <guid>https://www.vijayanant.com/posts/</guid>
+      <description>#Existential Types in Haskell: An Advanced Guide
+Haskell is a statically-typed, functional programming language known for its strong type system and type inference capabilities. In Haskell, a type constructor can be used to create a new type based on an existing type. One of the most powerful and flexible type constructors in Haskell is the existential type, which allows for values to be created and manipulated without specifying the exact type of the underlying data.</description>
+      <content:encoded>&lt;p&gt;#Existential Types in Haskell: An Advanced Guide&lt;/p&gt;
+&lt;p&gt;Haskell is a statically-typed, functional programming language known for its strong type system and type inference capabilities. In Haskell, a type constructor can be used to create a new type based on an existing type. One of the most powerful and flexible type constructors in Haskell is the existential type, which allows for values to be created and manipulated without specifying the exact type of the underlying data.
+An existential type in Haskell is represented by the syntax &amp;ldquo;existential type quantifier&amp;rdquo;. The quantifier is used to declare that a type exists, but its specific type is not known. For example, the following syntax
+declares an existential type &amp;ldquo;a&amp;rdquo; that can be any type:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data Exists a = forall a . Exists a
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this example, the Exists type constructor creates a new type &amp;ldquo;Exists a&amp;rdquo;, where &amp;ldquo;a&amp;rdquo; is an existential type quantifier. The type constructor takes a single argument, which is the value being wrapped in the existential type.&lt;/p&gt;
+&lt;p&gt;The key advantage of using existential types is that it allows for values to be created and manipulated without specifying the exact type of the underlying data. This can be useful in situations where the type of the data is not known until runtime, or where the type of the data is not relevant to the operation being performed on it.
+For example, consider a simple data type for representing a list of values:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data List a = Nil | Cons a (List a)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this example, the List type constructor creates a new type &amp;ldquo;List a&amp;rdquo;, where &amp;ldquo;a&amp;rdquo; is the type of the values being stored in the list. This type is useful for creating and manipulating lists of values of a specific type.&lt;/p&gt;
+&lt;p&gt;However, if we want to create a list of values where the type of the values is not known until runtime, we can use an existential type:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;data ExList = forall a . ExList (List a)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this example, the ExList type constructor creates a new type &amp;ldquo;ExList&amp;rdquo;, which wraps a List value. The existential type quantifier &amp;ldquo;forall a&amp;rdquo; declares that the type of the values stored in the list is not known. This allows us to create a list of values of any type, without specifying the exact type of the values until runtime.
+One of the key benefits of using existential types is that they allow for greater flexibility and interoperability between different types. For example, consider the following code that takes a list of values and returns the sum of the values:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sumList :: List Int -&amp;gt; Int
+sumList Nil = 0
+sumList (Cons x xs) = x + sumList xs
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this example, the sumList function takes a List Int value and returns the sum of the values stored in the list. This function is only capable of summing lists of Int values, and will not work with lists of values of other types.
+However, if we use an existential type, we can write a more generic version of the sumList function that works with lists of values of any type:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sumExList :: ExList -&amp;gt; Int
+sumExList (ExList list) = case list of
+  Nil -&amp;gt; 0
+  (Cons x xs) -&amp;gt; x + sumExList (ExList xs)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this example, the sumExList function takes an ExList value and returns the sum of the values stored in the underlying List value. The function uses a case expression to pattern match on the List value and recursively calls sumExList on the tail of the list until all values have been processed.&lt;/p&gt;
+&lt;p&gt;Note that the use of an existential type in this example allows the sumExList function to work with lists of values of any type, as long as those values are instances of the Num type class. This provides a powerful way to abstract over the type of the values stored in the list, and allows for greater interoperability between different types.
+Another useful application of existential types in Haskell is in the implementation of type-safe heterogeneous collections. For example, consider the following code that implements a heterogeneous collection of values:&lt;/p&gt;
+&lt;p&gt;``css
+data HetColl = forall a . HetColl a&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+In this example, the HetColl type constructor creates a new type &amp;quot;HetColl&amp;quot;, which wraps a value of any type. The existential type quantifier &amp;quot;forall a&amp;quot; declares that the type of the value being wrapped is not known. This allows us to create a collection of values of any type, without specifying the exact type of the values until runtime.
+To access the values stored in a heterogeneous collection, we can use type classes and type class instances to provide type-safe access to the values stored in the collection. For example, consider the following code that implements a type class for accessing the values stored in a heterogeneous collection:
+
+```kotlin
+class HetAccess a where
+  get :: HetColl -&amp;gt; a
+
+instance HetAccess Int where
+  get (HetColl x) = x
+
+instance HetAccess Bool where
+  get (HetColl x) = x
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this example, the HetAccess type class provides a way to access the values stored in a heterogeneous collection. The type class defines a single function get, which takes a HetColl value and returns a value of type a. The HetAccess type class is then used to define type class instances for accessing values of specific types, such as Int and Bool.
+This provides a type-safe way to access the values stored in a heterogeneous collection, and allows for greater interoperability between different types. The use of type classes and type class instances in combination with existential types is a powerful tool for implementing type-safe heterogeneous collections in Haskell.&lt;/p&gt;
+&lt;p&gt;In conclusion, existential types are a powerful and flexible type constructor in Haskell that provide a way to abstract over the type of values being stored in a data structure. They allow for values to be created and manipulated without specifying the exact type of the underlying data, and provide a powerful tool for implementing type-safe heterogeneous collections. With the use of type classes and type class instances, existential types provide a type-safe way to access values stored in a data structure, and allow for greater interoperability between different types.&lt;/p&gt;
 </content:encoded>
     </item>
     
     <item>
-      <title>ಗುರು</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%97%E0%B3%81%E0%B2%B0%E0%B3%81/</link>
-      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
+      <title></title>
+      <link>https://www.vijayanant.com/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/kn/%E0%B2%97%E0%B3%81%E0%B2%B0%E0%B3%81/</guid>
-      <description>ಇರಬೇಕೊಬ್ಬ ಇರಬೇಕು
-ಗುರುವೆಂದೊಬ್ಬನು ಇರಬೇಕು
-ಧೈರ್ಯವ ತುಂಬುತ ದಾರಿಯ ತೋರುತ
-ಮುಂದಕೆ ದೂಡುತಲಿರಬೇಕು</description>
-      <content:encoded>&lt;p&gt;ಇರಬೇಕೊಬ್ಬ ಇರಬೇಕು&lt;br&gt;
-ಗುರುವೆಂದೊಬ್ಬನು ಇರಬೇಕು&lt;br&gt;
-ಧೈರ್ಯವ ತುಂಬುತ ದಾರಿಯ ತೋರುತ&lt;br&gt;
-ಮುಂದಕೆ ದೂಡುತಲಿರಬೇಕು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ವಿನಾಯಕನ್ಮದ್ವೆ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%B5%E0%B2%BF%E0%B2%A8%E0%B2%BE%E0%B2%AF%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%AE%E0%B2%A6%E0%B3%8D%E0%B2%B5%E0%B3%86/</link>
-      <pubDate>Fri, 20 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%B5%E0%B2%BF%E0%B2%A8%E0%B2%BE%E0%B2%AF%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%AE%E0%B2%A6%E0%B3%8D%E0%B2%B5%E0%B3%86/</guid>
-      <description>ವಿನಾಯಕಪ್ನೋರ್ಗ್ಮದ್ವೆ ಅಂತೆ ಬನ್ರೀ ಹೋಗ್ಬರೋಣೆಲ್ಲ ಹುಡ್ಗ-ಹುಡ್ಗೀಗ್ ಶುಭ ಕೋರಿ
-ಊಟ ಮಾಡ್ಬರೋಣೆಲ್ಲ
-ಮದ್ವೆ ಮುಗ್ಸಿ ಆಫೀಸಿಗೆ
-ಬರೋ ಮೊದಲ್ನೇ ದಿನ
-ವಿನಾಯಕಪ್ಪ ಮರಿಬ್ಯಾಡ್ರಿ
-ನಮ್ಗ್ ಸಿಹಿ ತರೋದನ್ನ</description>
-      <content:encoded>&lt;p&gt;ವಿನಾಯಕಪ್ನೋರ್ಗ್ಮದ್ವೆ ಅಂತೆ &lt;br&gt;
-ಬನ್ರೀ  ಹೋಗ್ಬರೋಣೆಲ್ಲ &lt;br&gt;
-ಹುಡ್ಗ-ಹುಡ್ಗೀಗ್ ಶುಭ ಕೋರಿ&lt;br&gt;
-ಊಟ ಮಾಡ್ಬರೋಣೆಲ್ಲ&lt;/p&gt;
-&lt;p&gt;ಮದ್ವೆ  ಮುಗ್ಸಿ ಆಫೀಸಿಗೆ&lt;br&gt;
-ಬರೋ  ಮೊದಲ್ನೇ  ದಿನ&lt;br&gt;
-ವಿನಾಯಕಪ್ಪ  ಮರಿಬ್ಯಾಡ್ರಿ&lt;br&gt;
-ನಮ್ಗ್ ಸಿಹಿ  ತರೋದನ್ನ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಮಿಡಲ್ ಕ್ಲಾಸ್</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%AE%E0%B2%BF%E0%B2%A1%E0%B2%B2%E0%B3%8D-%E0%B2%95%E0%B3%8D%E0%B2%B2%E0%B2%BE%E0%B2%B8%E0%B3%8D/</link>
-      <pubDate>Tue, 17 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%AE%E0%B2%BF%E0%B2%A1%E0%B2%B2%E0%B3%8D-%E0%B2%95%E0%B3%8D%E0%B2%B2%E0%B2%BE%E0%B2%B8%E0%B3%8D/</guid>
-      <description>ಸೈಟು-ಮನೆ, ಬ್ಯಾಂಕು-ಲೋನು
-ಕಾಗದ-ಪತ್ರ, ಕಾಯಿದೆ-ವಾಯಿದೆ
-ನೌಕರಿ-ಚಾಕರಿ, ಕೂಲಿ-ಕಾಸು
-ಮಿಡಲ್-ಕ್ಲಾಸ್ ಜನರ ಜೀವನವಾಯ್ತು</description>
-      <content:encoded>&lt;p&gt;ಸೈಟು-ಮನೆ, ಬ್ಯಾಂಕು-ಲೋನು&lt;br&gt;
-ಕಾಗದ-ಪತ್ರ, ಕಾಯಿದೆ-ವಾಯಿದೆ&lt;br&gt;
-ನೌಕರಿ-ಚಾಕರಿ, ಕೂಲಿ-ಕಾಸು&lt;br&gt;
-ಮಿಡಲ್-ಕ್ಲಾಸ್ ಜನರ ಜೀವನವಾಯ್ತು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ನಾನೇ?</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%BE%E0%B2%A8%E0%B3%87/</link>
-      <pubDate>Mon, 20 Jun 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%BE%E0%B2%A8%E0%B3%87/</guid>
-      <description>ರಸ್ತೆ ದಾಟುವಾಗ ಕೈ ಹಿಡಿದು
-ಜೋಕೆ ಎ೦ದವಳು ಅಮ್ಮ
-ಹೆದರಬೇಡ ನೀ ನಡೆ
-ಮು೦ದೆ ಎ೦ದದ್ದು ಅಪ್ಪ</description>
-      <content:encoded>&lt;p&gt;ರಸ್ತೆ ದಾಟುವಾಗ ಕೈ ಹಿಡಿದು&lt;br&gt;
-ಜೋಕೆ ಎ೦ದವಳು ಅಮ್ಮ&lt;br&gt;
-ಹೆದರಬೇಡ ನೀ ನಡೆ&lt;br&gt;
-ಮು೦ದೆ  ಎ೦ದದ್ದು ಅಪ್ಪ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ನಾನು ನಾನೇ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%BE%E0%B2%A8%E0%B3%81-%E0%B2%A8%E0%B2%BE%E0%B2%A8%E0%B3%87/</link>
-      <pubDate>Mon, 28 Mar 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%BE%E0%B2%A8%E0%B3%81-%E0%B2%A8%E0%B2%BE%E0%B2%A8%E0%B3%87/</guid>
-      <description>ನೀ ಅರಸನ ಮಗನಾಗಿದ್ದರೂ,
-ನೀ ಅರಚಿ ಕೂಗಾಡಿದರೂ,
-ನಾನು ನಾನೇ ನೀನು ನೀನೆ!</description>
-      <content:encoded>&lt;p&gt;ನೀ ಅರಸನ ಮಗನಾಗಿದ್ದರೂ,&lt;br&gt;
-ನೀ ಅರಚಿ ಕೂಗಾಡಿದರೂ,&lt;br&gt;
-ನಾನು ನಾನೇ ನೀನು ನೀನೆ!&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಕಿಚ್ಚು</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%95%E0%B2%BF%E0%B2%9A%E0%B3%8D%E0%B2%9A%E0%B3%81/</link>
-      <pubDate>Wed, 02 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%95%E0%B2%BF%E0%B2%9A%E0%B3%8D%E0%B2%9A%E0%B3%81/</guid>
-      <description>ನಡುರಾತ್ರಿಯ ಹಿಮದಲ್ಲಿ
-ಮೈ ನಡುಗುವ ಚಳಿಯಲ್ಲಿ
-ಕೊರೆಯುವ ತ೦ಗಾಳಿಯಲಿ
-ಕಿಚ್ಚೆಬ್ಬಿಸಲು ನಿನ್ನ ನೆನಪೊಂದೇ ಸಾಕು</description>
-      <content:encoded>&lt;p&gt;ನಡುರಾತ್ರಿಯ ಹಿಮದಲ್ಲಿ&lt;br&gt;
-ಮೈ ನಡುಗುವ ಚಳಿಯಲ್ಲಿ&lt;br&gt;
-ಕೊರೆಯುವ ತ೦ಗಾಳಿಯಲಿ&lt;br&gt;
-ಕಿಚ್ಚೆಬ್ಬಿಸಲು ನಿನ್ನ ನೆನಪೊಂದೇ ಸಾಕು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಗೀಚಾಟ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%97%E0%B3%80%E0%B2%9A%E0%B2%BE%E0%B2%9F/</link>
-      <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%97%E0%B3%80%E0%B2%9A%E0%B2%BE%E0%B2%9F/</guid>
-      <description>ಈಚೆಗೆ ಕೆಲವು ತಿಂಗಳುಗಳಿಂದ ಗೀಚಿದ ಸಾಲುಗಳಿವು. ಹಾಗೆಯೇ ಪುಸ್ತಕದ ಹಾಳೆಗಳಲ್ಲಿ ಕಳೆದುಹೋಗಿದ್ದವು. ಇ೦ದು ಮನಸ್ಸು ಮಾಡಿದ್ದೇನೆ.
-೧. ಸಾಧಿಸುವೆನೆಂದು ಹತ್ತಿಪ್ಪತ್ತು ಸಾಧನೆಗಳ
-ನೀಲಿನಕ್ಷೆಯ ಬರೆಯುವಷ್ಟರಲ್ಲಿ
-ಬಳಲಿ ನಿದ್ರೆ ಹೋದ
-೨. ಅಳುವ ಮುದ್ದು ಹುಡುಗಿಯ ಕಣ್ಣಂಚಿನ
-ನೀರ ಹನಿಯಲಿ ತನ್ನ ಪ್ರತಿಬಿಂಬವ ಕಂಡು
-ಹುಡುಗ ತಾನೂ ಅತ್ತ
-೩. ಸಾಗರಕೆ ನಾನೆ೦ದರೆ ಬಲು ಪ್ರೀತಿ
-ಹತ್ತಿರ ಹೋದೊಡನೆ ಅಲೆಯ ಬೀಸಿ
-ಬರಸೆಳೆದು ಅಪ್ಪಿಕೊಂಡಾಡುವನು
-೪. ಕೊರೆಯುವ ಚಳಿಯಲ್ಲೂ ಮೈ ಬಿಸಿಯಾಗಿತ್ತು,
-ಗಡಗಡನೆ ನಡುಗುತಿತ್ತು,
-ಇದು ಹುಡುಗಿಯ ಮುಗುಳ್ನಗೆಯಿ೦ದಾದುದಲ್ಲ
-ಮೈಗೆ ತಡೆಯಲಾಗದ ಜ್ವರ ಬ೦ದಿತ್ತು
-೫. ನಿವೇದನೆ ಮಾಡಲು ನೀ ವೇದನೆ ಪಡಬೇಡ
-ವಿಧೇಯತೆ ಹೇಡಿತನವಲ್ಲ</description>
-      <content:encoded>&lt;p&gt;ಈಚೆಗೆ ಕೆಲವು ತಿಂಗಳುಗಳಿಂದ ಗೀಚಿದ ಸಾಲುಗಳಿವು. ಹಾಗೆಯೇ ಪುಸ್ತಕದ ಹಾಳೆಗಳಲ್ಲಿ ಕಳೆದುಹೋಗಿದ್ದವು.  ಇ೦ದು ಮನಸ್ಸು ಮಾಡಿದ್ದೇನೆ.&lt;/p&gt;
-&lt;h5 id=&#34;೧&#34;&gt;೧.&lt;/h5&gt;
-&lt;p&gt;ಸಾಧಿಸುವೆನೆಂದು ಹತ್ತಿಪ್ಪತ್ತು ಸಾಧನೆಗಳ&lt;br&gt;
-ನೀಲಿನಕ್ಷೆಯ ಬರೆಯುವಷ್ಟರಲ್ಲಿ&lt;br&gt;
-ಬಳಲಿ ನಿದ್ರೆ ಹೋದ&lt;/p&gt;
-&lt;h5 id=&#34;೨&#34;&gt;೨.&lt;/h5&gt;
-&lt;p&gt;ಅಳುವ ಮುದ್ದು ಹುಡುಗಿಯ ಕಣ್ಣಂಚಿನ&lt;br&gt;
-ನೀರ ಹನಿಯಲಿ ತನ್ನ ಪ್ರತಿಬಿಂಬವ ಕಂಡು&lt;br&gt;
-ಹುಡುಗ ತಾನೂ ಅತ್ತ&lt;/p&gt;
-&lt;h5 id=&#34;೩&#34;&gt;೩.&lt;/h5&gt;
-&lt;p&gt;ಸಾಗರಕೆ ನಾನೆ೦ದರೆ ಬಲು ಪ್ರೀತಿ&lt;br&gt;
-ಹತ್ತಿರ ಹೋದೊಡನೆ ಅಲೆಯ ಬೀಸಿ&lt;br&gt;
-ಬರಸೆಳೆದು ಅಪ್ಪಿಕೊಂಡಾಡುವನು&lt;/p&gt;
-&lt;h5 id=&#34;೪&#34;&gt;೪.&lt;/h5&gt;
-&lt;p&gt;ಕೊರೆಯುವ ಚಳಿಯಲ್ಲೂ ಮೈ ಬಿಸಿಯಾಗಿತ್ತು,&lt;br&gt;
-ಗಡಗಡನೆ ನಡುಗುತಿತ್ತು,&lt;br&gt;
-ಇದು ಹುಡುಗಿಯ ಮುಗುಳ್ನಗೆಯಿ೦ದಾದುದಲ್ಲ&lt;br&gt;
-ಮೈಗೆ  ತಡೆಯಲಾಗದ ಜ್ವರ ಬ೦ದಿತ್ತು&lt;/p&gt;
-&lt;h5 id=&#34;೫&#34;&gt;೫.&lt;/h5&gt;
-&lt;p&gt;ನಿವೇದನೆ ಮಾಡಲು ನೀ ವೇದನೆ ಪಡಬೇಡ&lt;br&gt;
-ವಿಧೇಯತೆ ಹೇಡಿತನವಲ್ಲ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಸುಗ್ಗಿಯ ಹುಗ್ಗಿ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%B8%E0%B3%81%E0%B2%97%E0%B3%8D%E0%B2%97%E0%B2%BF%E0%B2%AF-%E0%B2%B9%E0%B3%81%E0%B2%97%E0%B3%8D%E0%B2%97%E0%B2%BF/</link>
-      <pubDate>Sat, 15 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%B8%E0%B3%81%E0%B2%97%E0%B3%8D%E0%B2%97%E0%B2%BF%E0%B2%AF-%E0%B2%B9%E0%B3%81%E0%B2%97%E0%B3%8D%E0%B2%97%E0%B2%BF/</guid>
-      <description>ಅಕ್ಕಿ-ಬೇಳೆ ಕಾಯಿ-ಹಾಲು
-ಬೆಲ್ಲ-ನೀರು ಕುದಿಸಿ-ಬೆರೆಸಿ
-ದ್ರಾಕ್ಷಿ ಜೊತೆಗೆ ಗೋಡ೦ಬಿ-ಬಾದಾಮಿ
-ಎಲ್ಲ ಹುರಿದು ಬೆರೆಸಿ ನೋಡು
-ಹಿಗ್ಗಿ ತಿನುವ ಹುಗ್ಗಿ ನೋಡು</description>
-      <content:encoded>&lt;p&gt;ಅಕ್ಕಿ-ಬೇಳೆ ಕಾಯಿ-ಹಾಲು&lt;br&gt;
-ಬೆಲ್ಲ-ನೀರು ಕುದಿಸಿ-ಬೆರೆಸಿ&lt;br&gt;
-ದ್ರಾಕ್ಷಿ ಜೊತೆಗೆ ಗೋಡ೦ಬಿ-ಬಾದಾಮಿ&lt;br&gt;
-ಎಲ್ಲ ಹುರಿದು ಬೆರೆಸಿ ನೋಡು&lt;br&gt;
-ಹಿಗ್ಗಿ ತಿನುವ ಹುಗ್ಗಿ ನೋಡು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಕಡ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%95%E0%B2%A1/</link>
-      <pubDate>Tue, 30 Nov 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%95%E0%B2%A1/</guid>
-      <description>ಮನಸಿನ೦ಗಳದಲಿ ಸೂರ್ಯಾಸ್ತ,
-ಎತ್ತ ನೋಡಿದರೂ ಕಪ್ಪು ಕತ್ತಲು,
-ಓ ಚ೦ದ್ರಮನೇ,
-ಗುರಿಸೇರಬೇಕು ಬೆಳದಿಂಗಳಿಷ್ಟು ಕಡ ಕೊಡುವೆಯಾ?</description>
-      <content:encoded>&lt;p&gt;ಮನಸಿನ೦ಗಳದಲಿ ಸೂರ್ಯಾಸ್ತ,&lt;br&gt;
-ಎತ್ತ ನೋಡಿದರೂ ಕಪ್ಪು ಕತ್ತಲು,&lt;br&gt;
-ಓ ಚ೦ದ್ರಮನೇ,&lt;br&gt;
-ಗುರಿಸೇರಬೇಕು &lt;br&gt;
-ಬೆಳದಿಂಗಳಿಷ್ಟು ಕಡ ಕೊಡುವೆಯಾ?&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಬೆಳಕಿನ ಸಾಲ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%AC%E0%B3%86%E0%B2%B3%E0%B2%95%E0%B2%BF%E0%B2%A8-%E0%B2%B8%E0%B2%BE%E0%B2%B2/</link>
-      <pubDate>Tue, 30 Nov 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%AC%E0%B3%86%E0%B2%B3%E0%B2%95%E0%B2%BF%E0%B2%A8-%E0%B2%B8%E0%B2%BE%E0%B2%B2/</guid>
-      <description>ನಡುರಾತ್ರಿಯಲಿ ಪಡೆದ
-ಚಂದ್ರನ ಬೆಳದಿಂಗಳ ಸಾಲವ
-ತೀರಿಸುವುದಾದರು ಎಂತು?</description>
-      <content:encoded>&lt;p&gt;ನಡುರಾತ್ರಿಯಲಿ ಪಡೆದ&lt;br&gt;
-ಚಂದ್ರನ ಬೆಳದಿಂಗಳ ಸಾಲವ&lt;br&gt;
-ತೀರಿಸುವುದಾದರು ಎಂತು?&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ನನ್ನ ದೇಶ ಭಾರತ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%A8%E0%B3%8D%E0%B2%A8-%E0%B2%A6%E0%B3%87%E0%B2%B6-%E0%B2%AD%E0%B2%BE%E0%B2%B0%E0%B2%A4/</link>
-      <pubDate>Mon, 29 Nov 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%A8%E0%B3%8D%E0%B2%A8-%E0%B2%A6%E0%B3%87%E0%B2%B6-%E0%B2%AD%E0%B2%BE%E0%B2%B0%E0%B2%A4/</guid>
-      <description>ನನ್ನ ದೇಶ ಭಾರತ
-ಇದು ನಮ್ಮ ದೇಶ ಭಾರತ
-ಸ್ವ೦ತಿಕೆಯ ತ೦ತ್ರ ಬಳಸಿ
-ಸ್ವತ೦ತ್ರವಾದ ಭಾರತ
-ಕುತ೦ತ್ರ ಬರದ ಸ್ವತ೦ತ್ರ ಜನರ
-ಪ್ರಚ೦ಡ ದೇಶ ಭಾರತ
-ವಿವಿಧ ಭಾಷೆ ವೇಷವಿರುವ
-ವಿಶಾಲ ದೇಶ ಭಾರತ
-ಹಸಿರೆ ತನ್ನ ಉಸಿರು ಎನುವ
-ಸಂವೃದ್ಧ ದೇಶ ಭಾರತ
-ನನ್ನ ದೇಶ ಭಾರತ
-ಇದು ಸ್ವತ೦ತ್ರ ದೇಶ ಭಾರತ</description>
-      <content:encoded>&lt;p&gt;ನನ್ನ ದೇಶ ಭಾರತ&lt;br&gt;
-ಇದು ನಮ್ಮ ದೇಶ ಭಾರತ&lt;/p&gt;
-&lt;p&gt;ಸ್ವ೦ತಿಕೆಯ ತ೦ತ್ರ ಬಳಸಿ&lt;br&gt;
-ಸ್ವತ೦ತ್ರವಾದ ಭಾರತ&lt;/p&gt;
-&lt;p&gt;ಕುತ೦ತ್ರ ಬರದ ಸ್ವತ೦ತ್ರ ಜನರ&lt;br&gt;
-ಪ್ರಚ೦ಡ ದೇಶ ಭಾರತ&lt;/p&gt;
-&lt;p&gt;ವಿವಿಧ ಭಾಷೆ ವೇಷವಿರುವ&lt;br&gt;
-ವಿಶಾಲ ದೇಶ ಭಾರತ&lt;/p&gt;
-&lt;p&gt;ಹಸಿರೆ ತನ್ನ ಉಸಿರು ಎನುವ&lt;br&gt;
-ಸಂವೃದ್ಧ  ದೇಶ ಭಾರತ&lt;/p&gt;
-&lt;p&gt;ನನ್ನ ದೇಶ ಭಾರತ&lt;br&gt;
-ಇದು ಸ್ವತ೦ತ್ರ ದೇಶ ಭಾರತ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಯಂಗ್-ಏಜ್</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%AF%E0%B2%82%E0%B2%97%E0%B3%8D-%E0%B2%8F%E0%B2%9C%E0%B3%8D/</link>
-      <pubDate>Wed, 13 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%AF%E0%B2%82%E0%B2%97%E0%B3%8D-%E0%B2%8F%E0%B2%9C%E0%B3%8D/</guid>
-      <description>ರಸ್ತೆಯಲ್ಲಿ ಕಣ್ಣು ಹೊಡೆದು
-ಪಾರ್ಕಿನಲ್ಲಿ ಕೈಯ ಹಿಡಿದು
-ಮುಗಿದೆಹೋಯ್ತು ಯಂಗ್-ಏಜ್
-ಹುಡುಗಿಯ ಎ೦ಗೇಜ್-ಮೆಂಟು</description>
-      <content:encoded>&lt;p&gt;ರಸ್ತೆಯಲ್ಲಿ ಕಣ್ಣು ಹೊಡೆದು&lt;br&gt;
-ಪಾರ್ಕಿನಲ್ಲಿ ಕೈಯ ಹಿಡಿದು&lt;br&gt;
-ಮುಗಿದೆಹೋಯ್ತು ಯಂಗ್-ಏಜ್&lt;br&gt;
-ಹುಡುಗಿಯ ಎ೦ಗೇಜ್-ಮೆಂಟು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಮೌನಗಾನ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%AE%E0%B3%8C%E0%B2%A8%E0%B2%97%E0%B2%BE%E0%B2%A8/</link>
-      <pubDate>Mon, 04 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%AE%E0%B3%8C%E0%B2%A8%E0%B2%97%E0%B2%BE%E0%B2%A8/</guid>
-      <description>ಮಾತು ಬರುವ ಮೂಕನಾದೆ
-ಮಾತೇ ಇಲ್ಲದೆ ದಿನವ ಕಳೆದೆ
-ಎಲ್ಲಿ ಹೋದಿರೆಲ್ಲ ನೀವು?
-ಮೌನ ಮನವ ಚುಚ್ಚುತಿಹುದು
-ನಗುವೂ ಬಾಡಿ ಹೋಗುತಿಹುದು
-ಎಂದು ಬರುವಿರೆಲ್ಲ ನೀವು?</description>
-      <content:encoded>&lt;p&gt;ಮಾತು ಬರುವ ಮೂಕನಾದೆ&lt;br&gt;
-ಮಾತೇ ಇಲ್ಲದೆ ದಿನವ ಕಳೆದೆ&lt;br&gt;
-ಎಲ್ಲಿ ಹೋದಿರೆಲ್ಲ  ನೀವು?&lt;/p&gt;
-&lt;p&gt;ಮೌನ ಮನವ ಚುಚ್ಚುತಿಹುದು&lt;br&gt;
-ನಗುವೂ ಬಾಡಿ ಹೋಗುತಿಹುದು&lt;br&gt;
-ಎಂದು ಬರುವಿರೆಲ್ಲ ನೀವು?&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಭಾರತ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%AD%E0%B2%BE%E0%B2%B0%E0%B2%A4/</link>
-      <pubDate>Thu, 19 Aug 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%AD%E0%B2%BE%E0%B2%B0%E0%B2%A4/</guid>
-      <description>ಭಾರಿ ಜನರ
-ಎಳೆವ ರಥವ
-ಕರೆದರವರು ಭಾರತ</description>
-      <content:encoded>&lt;p&gt;ಭಾರಿ ಜನರ&lt;br&gt;
-ಎಳೆವ ರಥವ&lt;br&gt;
-ಕರೆದರವರು ಭಾರತ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಮ೦ದೇವ್ರು</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%AE%E0%B3%A6%E0%B2%A6%E0%B3%87%E0%B2%B5%E0%B3%8D%E0%B2%B0%E0%B3%81/</link>
-      <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%AE%E0%B3%A6%E0%B2%A6%E0%B3%87%E0%B2%B5%E0%B3%8D%E0%B2%B0%E0%B3%81/</guid>
-      <description>ನಿನ್ಮನೆನಲ್ಲಿಲ್ಲಾ೦ದ್ಕೊ೦ಡು ಗುಡಿಗ್ಯಾಕ್ಹೊಗ್ತೀ ಮ೦ಕೇ
-ಹುಡ್ಕು ಮನ್ಸಲ್ನಿ೦ಕಾಣ್ಬೌದು ಒ೦ದೋ-ಎರಡೋ ದೇವ್ರು
-ಇಲ್ಲಾ೦ತ೦ದ್ರೆ ಕತ್ತೆತ್ನೋಡು ಕಾಣ್ತಾರಪ್ಪ-ಅಮ್ಮ
-ಬೇಕಾದಾಗ-ಕೂಗ್ಹಾಕ್ದಾಗ ಬರ್ತಾರಪ್ಪ-ಅಮ್ಮ
-ದೇವ್ರಿಗಿ೦ತ ಇವ್ರೇ ವಾಸಿ ಬರ್ತಾರ್ಕರ್ದಾಗ್ಲೆಲ್ಲಾ
-ಹೆಚ್ಚೇ ಇವ್ರು ಯಾಕ೦ತ೦ದ್ರೆ ಕೊಡ್ತಾರ್ಕೇಳಿದ್ನೆಲ್ಲಾ</description>
-      <content:encoded>&lt;p&gt;ನಿನ್ಮನೆನಲ್ಲಿಲ್ಲಾ೦ದ್ಕೊ೦ಡು  ಗುಡಿಗ್ಯಾಕ್ಹೊಗ್ತೀ ಮ೦ಕೇ&lt;br&gt;
-ಹುಡ್ಕು ಮನ್ಸಲ್ನಿ೦ಕಾಣ್ಬೌದು ಒ೦ದೋ-ಎರಡೋ ದೇವ್ರು&lt;br&gt;
-ಇಲ್ಲಾ೦ತ೦ದ್ರೆ ಕತ್ತೆತ್ನೋಡು ಕಾಣ್ತಾರಪ್ಪ-ಅಮ್ಮ&lt;br&gt;
-ಬೇಕಾದಾಗ-ಕೂಗ್ಹಾಕ್ದಾಗ ಬರ್ತಾರಪ್ಪ-ಅಮ್ಮ&lt;br&gt;
-ದೇವ್ರಿಗಿ೦ತ ಇವ್ರೇ ವಾಸಿ ಬರ್ತಾರ್ಕರ್ದಾಗ್ಲೆಲ್ಲಾ&lt;br&gt;
-ಹೆಚ್ಚೇ ಇವ್ರು ಯಾಕ೦ತ೦ದ್ರೆ ಕೊಡ್ತಾರ್ಕೇಳಿದ್ನೆಲ್ಲಾ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಜಾತಿ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%9C%E0%B2%BE%E0%B2%A4%E0%B2%BF/</link>
-      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%9C%E0%B2%BE%E0%B2%A4%E0%B2%BF/</guid>
-      <description>ಅರಿವರಿಲ್ಲ ಹೇಳ್ವರಿಲ್ಲ
-ತಿಳಿಸುವವರು ಯಾರು ಇಲ್ಲ,
-ಎ೦ದು ಬ೦ತು ಎ೦ತು ಬಂತು
-ಜಾತಿ ನಮ್ಮ ನಡುವಲಿ?
-ದಿಟ್ಟ ಮನದಿ ಜಾತಿ ದಾಟಿ
-ಜ್ಯೋತಿಯೊಂದ ಕಂಡರವರು,
-ಜ್ಯೋತಿಯಿಂದ ಪ೦ಜು ಉರಿಸಿ
-ಮನೆಯನೇಕೆ ಸುಡುವರಿವರು?
-ಪ್ರಾಣಿ ಪಕ್ಷಿಗಳಿಗೆ ಇರದ
-ಜಾತಿ ಮನುಜಗೇತಕೆ?
-ಜಾತಿ ಮೀರಿದಾತ ತಾನೇ
-ದಾತ ಸಕಲ ಪ್ರಾಣಿಗೂ?</description>
-      <content:encoded>&lt;p&gt;ಅರಿವರಿಲ್ಲ ಹೇಳ್ವರಿಲ್ಲ&lt;br&gt;
-ತಿಳಿಸುವವರು ಯಾರು ಇಲ್ಲ,&lt;br&gt;
-ಎ೦ದು ಬ೦ತು ಎ೦ತು ಬಂತು&lt;br&gt;
-ಜಾತಿ ನಮ್ಮ ನಡುವಲಿ?&lt;/p&gt;
-&lt;p&gt;ದಿಟ್ಟ ಮನದಿ ಜಾತಿ ದಾಟಿ&lt;br&gt;
-ಜ್ಯೋತಿಯೊಂದ ಕಂಡರವರು,&lt;br&gt;
-ಜ್ಯೋತಿಯಿಂದ ಪ೦ಜು ಉರಿಸಿ&lt;br&gt;
-ಮನೆಯನೇಕೆ ಸುಡುವರಿವರು?&lt;/p&gt;
-&lt;p&gt;ಪ್ರಾಣಿ ಪಕ್ಷಿಗಳಿಗೆ ಇರದ&lt;br&gt;
-ಜಾತಿ ಮನುಜಗೇತಕೆ?&lt;br&gt;
-ಜಾತಿ ಮೀರಿದಾತ ತಾನೇ&lt;br&gt;
-ದಾತ ಸಕಲ ಪ್ರಾಣಿಗೂ?&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಇದ್ಯಾವುದೂ ಅಲ್ಲ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%87%E0%B2%A6%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B5%E0%B3%81%E0%B2%A6%E0%B3%82-%E0%B2%85%E0%B2%B2%E0%B3%8D%E0%B2%B2/</link>
-      <pubDate>Sun, 03 Jan 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%87%E0%B2%A6%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%B5%E0%B3%81%E0%B2%A6%E0%B3%82-%E0%B2%85%E0%B2%B2%E0%B3%8D%E0%B2%B2/</guid>
-      <description>ನಡುರಾತ್ರಿಯಲ್ಲ, ಪಟಾಕಿ ಹಚ್ಚುವುದೂ ಅಲ್ಲ
-ಗೆಳೆಯರೊಡಗೂಡಿ ತಿಂದು ಕುಡಿಯುವುದಲ್ಲ
-ಮನೆಯಲ್ಲಿ ಮಾಡಿದ ಸಿಹಿಯೂಟವೂ ಅಲ್ಲ
-ಗುರಿಯೊಂದನು ಹುಡುಕಿ ಪಟ್ಟಿಗೆ ಸೇರಿಸುವುದಲ್ಲ
-ಸಿಕ್ಕವರಿಗೆಲ್ಲ ಶುಭಾಶಯವ ಹೇಳುವುದಲ್ಲ
-ತಾಣಗಳಿಗೆ ಹೋಗುವುದಲ್ಲ, ವಿಶ್ರಮಿಸುವುದಲ್ಲ
-ಹೊಸವರುಷವೆಂದರೆ ಇದಾವುದೂ ಅಲ್ಲ
-ಇದು ಬರಿಯ ರಜಾ ದಿನವಲ್ಲ</description>
-      <content:encoded>&lt;p&gt;ನಡುರಾತ್ರಿಯಲ್ಲ, ಪಟಾಕಿ ಹಚ್ಚುವುದೂ ಅಲ್ಲ&lt;br&gt;
-ಗೆಳೆಯರೊಡಗೂಡಿ ತಿಂದು ಕುಡಿಯುವುದಲ್ಲ&lt;br&gt;
-ಮನೆಯಲ್ಲಿ ಮಾಡಿದ ಸಿಹಿಯೂಟವೂ ಅಲ್ಲ&lt;/p&gt;
-&lt;p&gt;ಗುರಿಯೊಂದನು ಹುಡುಕಿ ಪಟ್ಟಿಗೆ ಸೇರಿಸುವುದಲ್ಲ&lt;br&gt;
-ಸಿಕ್ಕವರಿಗೆಲ್ಲ ಶುಭಾಶಯವ ಹೇಳುವುದಲ್ಲ&lt;br&gt;
-ತಾಣಗಳಿಗೆ ಹೋಗುವುದಲ್ಲ, ವಿಶ್ರಮಿಸುವುದಲ್ಲ&lt;/p&gt;
-&lt;p&gt;ಹೊಸವರುಷವೆಂದರೆ ಇದಾವುದೂ ಅಲ್ಲ&lt;br&gt;
-ಇದು ಬರಿಯ ರಜಾ ದಿನವಲ್ಲ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>A Special Day</title>
-      <link>https://www.vijayanant.com/kn/a-special-day/</link>
-      <pubDate>Fri, 15 May 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/a-special-day/</guid>
-      <description>My dear friend,
-Its a special day today
-Make it worth to remember someday
-Keep your smile all along the day
-Make someone smile every day
-My dear friend,
-Its your birthday today</description>
-      <content:encoded>&lt;p&gt;My dear friend,&lt;br&gt;
-Its a special day today&lt;br&gt;
-Make it worth to remember someday&lt;br&gt;
-Keep your smile all along the day&lt;br&gt;
-Make someone smile every day&lt;br&gt;
-My dear friend,&lt;br&gt;
-Its your birthday today&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಜೀವ(ನ)</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%9C%E0%B3%80%E0%B2%B5%E0%B2%A8/</link>
-      <pubDate>Wed, 15 Apr 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%9C%E0%B3%80%E0%B2%B5%E0%B2%A8/</guid>
-      <description>ಬಾನೆತ್ತರದ ಕಟ್ಟಡದಿ ಮಿಸುಕಾಡದೆ ಕುಳಿತಿಹುದು
-ಯಂತ್ರ, ಯಾಂತ್ರಿಕರ ನಡುವೆ ಜೀವ ಕಳೆಗುಂದಿಹುದು
-ಮೌಲ್ಯವಿಲ್ಲದೆ ಗುರಿಯನರಸುತ ತಾ ಸುತ್ತಿ ಬಳಲಿಹುದು
-ಕಾಂಚಾಣದ ನೆರಳಿನಲಿ ಜೀವಕಾಂತಿ ಮಸುಕಾಗಿಹುದು
-ವಿದ್ಯುದ್ದೀಪದಡಿ ದುಡಿಯುತ ಕಾಲ ಕಳೆಯುತಿಹುದು
-ತಾನ್ ರಾಜ ದರ್ಬಾರಿನ ಮೂಲೆಯ ಕಸವಾಗಿಹುದು</description>
-      <content:encoded>&lt;p&gt;ಬಾನೆತ್ತರದ ಕಟ್ಟಡದಿ ಮಿಸುಕಾಡದೆ ಕುಳಿತಿಹುದು&lt;br&gt;
-ಯಂತ್ರ, ಯಾಂತ್ರಿಕರ ನಡುವೆ ಜೀವ ಕಳೆಗುಂದಿಹುದು&lt;br&gt;
-ಮೌಲ್ಯವಿಲ್ಲದೆ ಗುರಿಯನರಸುತ ತಾ ಸುತ್ತಿ ಬಳಲಿಹುದು&lt;br&gt;
-ಕಾಂಚಾಣದ ನೆರಳಿನಲಿ ಜೀವಕಾಂತಿ ಮಸುಕಾಗಿಹುದು&lt;br&gt;
-ವಿದ್ಯುದ್ದೀಪದಡಿ ದುಡಿಯುತ ಕಾಲ ಕಳೆಯುತಿಹುದು&lt;br&gt;
-ತಾನ್ ರಾಜ ದರ್ಬಾರಿನ ಮೂಲೆಯ ಕಸವಾಗಿಹುದು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಸ್ಫೂರ್ತಿ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%B8%E0%B3%8D%E0%B2%AB%E0%B3%82%E0%B2%B0%E0%B3%8D%E0%B2%A4%E0%B2%BF/</link>
-      <pubDate>Sun, 08 Feb 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%B8%E0%B3%8D%E0%B2%AB%E0%B3%82%E0%B2%B0%E0%B3%8D%E0%B2%A4%E0%B2%BF/</guid>
-      <description>ಯಾರು ದಿನವು ತರುವಳೋ
-ಎನ್ನ ಮನಕೆ ಹರುಷವ
-ಯಾರು ದಿಟದಿ ಕೇಳ್ವಳೋ
-ಎನ್ನ ಮನದಾಕಾಂಕ್ಷೆಯಾ
-ಯಾರು ಮೆಚ್ಚಿ ನಲಿವಳೋ
-ಎನ್ನ ಆಯ್ಕೆ ಬಯಕೆಯ
-ಅವಳೇ ನನ್ನ ಜನನಿಯು
-ಜಗಕೆ ನನ್ನ ಕೊಟ್ಟಳು
-ನನ್ನ ಸ್ಫೂರ್ತಿ ಚಿಲುಮೆಯು</description>
-      <content:encoded>&lt;p&gt;ಯಾರು ದಿನವು ತರುವಳೋ&lt;br&gt;
-ಎನ್ನ ಮನಕೆ ಹರುಷವ&lt;br&gt;
-ಯಾರು ದಿಟದಿ ಕೇಳ್ವಳೋ&lt;br&gt;
-ಎನ್ನ ಮನದಾಕಾಂಕ್ಷೆಯಾ&lt;br&gt;
-ಯಾರು ಮೆಚ್ಚಿ ನಲಿವಳೋ&lt;br&gt;
-ಎನ್ನ ಆಯ್ಕೆ ಬಯಕೆಯ&lt;br&gt;
-ಅವಳೇ ನನ್ನ ಜನನಿಯು&lt;br&gt;
-ಜಗಕೆ ನನ್ನ ಕೊಟ್ಟಳು&lt;br&gt;
-ನನ್ನ ಸ್ಫೂರ್ತಿ ಚಿಲುಮೆಯು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಪ್ರೀತಿ ಹಳೆಯದಾ?</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B3%80%E0%B2%A4%E0%B2%BF-%E0%B2%B9%E0%B2%B3%E0%B3%86%E0%B2%AF%E0%B2%A6%E0%B2%BE/</link>
-      <pubDate>Sun, 04 Jan 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B3%80%E0%B2%A4%E0%B2%BF-%E0%B2%B9%E0%B2%B3%E0%B3%86%E0%B2%AF%E0%B2%A6%E0%B2%BE/</guid>
-      <description>ನಿನ್ನೆ ಮಾಡಿದಾ ಅಡುಗೆ
-ಇಂದು ಹಳೆಯದು
-ನಿನ್ನೆ ನಡೆದಾ ದಾರಿ
-ಇಂದು ಹಳೆಯದು
-ನಿನ್ನೆ ಓದಿದಾ ಕವನ
-ಇಂದು ಹಳೆಯದು
-ನಿನ್ನೆ ಮಾಡಿದಾ ಪ್ರೀತಿ
-ಇಂದು ಹಳೆಯದಾ?</description>
-      <content:encoded>&lt;p&gt;ನಿನ್ನೆ ಮಾಡಿದಾ ಅಡುಗೆ&lt;br&gt;
-ಇಂದು ಹಳೆಯದು&lt;br&gt;
-ನಿನ್ನೆ ನಡೆದಾ ದಾರಿ&lt;br&gt;
-ಇಂದು ಹಳೆಯದು&lt;br&gt;
-ನಿನ್ನೆ ಓದಿದಾ ಕವನ&lt;br&gt;
-ಇಂದು ಹಳೆಯದು&lt;br&gt;
-ನಿನ್ನೆ ಮಾಡಿದಾ ಪ್ರೀತಿ&lt;br&gt;
-ಇಂದು ಹಳೆಯದಾ?&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಅಪ್ಪ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%85%E0%B2%AA%E0%B3%8D%E0%B2%AA/</link>
-      <pubDate>Tue, 25 Nov 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%85%E0%B2%AA%E0%B3%8D%E0%B2%AA/</guid>
-      <description>ಅಪ್ಪ ಅಪ್ಪ ನನ್ನ ಮುದ್ದು ಅಪ್ಪ
-ನನ್ನ ಜೊತೆ ಆಟ ಆಡು ಬಾರೋ ಅಪ್ಪ
-ಗೆಳೆಯರೆಲ್ಲ ನನ್ನ ಬಿಟ್ಟು ಹೋಗ್ತಾರಪ್ಪ
-ನೀನೆ ಬಂದು ಒಂದು ಮಾತು ಹೇಳೋ ಅಪ್ಪ
-ನಿನಗೆ ತಿಳಿದ ಆಟವೆಲ್ಲ ಕಲಿಸೋ ಅಪ್ಪ
-ಗೆಳೆಯರೊಡನೆ ಆಡಿ ಗೆದ್ದು ಬರುವೇನಪ್ಪ
-ಆಟ ಮುಗಿಸಿ ಬೇಗ ಬಂದು ಓದುವೆನಪ್ಪ
-ಓದಿ ಬರೆದು ನಿನ್ನಂತೆಯೇ ಆಗುವೆನಪ್ಪ
-ಪಾಠ ಮಾಡಿ ಮೇಷ್ಟರಾಗಿ ನಲಿಯುವೆನಪ್ಪ
-ಅಪ್ಪ ಅಪ್ಪ ನನ್ನ ಮುದ್ದು ಅಪ್ಪ
-ನನ್ನ ಜೊತೆ ಆಟ ಆಡು ಬಾರೋ ಅಪ್ಪ</description>
-      <content:encoded>&lt;p&gt;ಅಪ್ಪ ಅಪ್ಪ ನನ್ನ ಮುದ್ದು ಅಪ್ಪ&lt;br&gt;
-ನನ್ನ ಜೊತೆ ಆಟ ಆಡು ಬಾರೋ ಅಪ್ಪ&lt;br&gt;
-ಗೆಳೆಯರೆಲ್ಲ ನನ್ನ ಬಿಟ್ಟು ಹೋಗ್ತಾರಪ್ಪ&lt;br&gt;
-ನೀನೆ ಬಂದು ಒಂದು ಮಾತು ಹೇಳೋ ಅಪ್ಪ&lt;br&gt;
-ನಿನಗೆ ತಿಳಿದ ಆಟವೆಲ್ಲ ಕಲಿಸೋ ಅಪ್ಪ&lt;br&gt;
-ಗೆಳೆಯರೊಡನೆ ಆಡಿ ಗೆದ್ದು ಬರುವೇನಪ್ಪ&lt;br&gt;
-ಆಟ ಮುಗಿಸಿ ಬೇಗ ಬಂದು ಓದುವೆನಪ್ಪ&lt;br&gt;
-ಓದಿ ಬರೆದು ನಿನ್ನಂತೆಯೇ ಆಗುವೆನಪ್ಪ&lt;br&gt;
-ಪಾಠ ಮಾಡಿ ಮೇಷ್ಟರಾಗಿ ನಲಿಯುವೆನಪ್ಪ&lt;br&gt;
-ಅಪ್ಪ ಅಪ್ಪ ನನ್ನ ಮುದ್ದು ಅಪ್ಪ&lt;br&gt;
-ನನ್ನ ಜೊತೆ ಆಟ ಆಡು ಬಾರೋ ಅಪ್ಪ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ಹೊಸತನ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%B9%E0%B3%8A%E0%B2%B8%E0%B2%A4%E0%B2%A8/</link>
-      <pubDate>Tue, 25 Nov 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%B9%E0%B3%8A%E0%B2%B8%E0%B2%A4%E0%B2%A8/</guid>
-      <description>ಬಾಳೆಂಬ ಹೆಮ್ಮರದಲಿ
-ಚಿಗುರೊಡೆದಿದೆ ಹೊಸ ಆಸೆ
-ಮನವೆಂಬ ಆಗಸದಲಿ
-ಹೊಸದೊಂದು ಸೂರ್ಯೋದಯ
-ಮೊಟ್ಟೆಯೊಡೆದ ಮರಿಗೆ
-ಹೊಸತನದ ಬೆಳಕು
-ಹಸಿದ ಹಕ್ಕಿಯ ಬಾಯ್ಗೆ
-ಗುಟುಕಿನ ಕಾಳು
-ಹಕ್ಕಿಗಳು ಹಾಡುತಲಿವೆ
-ಸಾಂತ್ವನದ ಹಾಡು
-ಪುಟ್ಟ ಜೀವಕೆ ಕೊಟ್ಟಿವೆ
-ಆರೈಕೆಯ ಸೂರು
-ಆಡುತಿವೆ ಹಕ್ಕಿಗಳು
-ಒಂದಾಗಿ ಸೇರಿ
-ಕಾಮನ ಬಿಲ್ಲೊಂದು
-ಕಾಣುತಿದೆ ಅಲ್ಲಿ
-ಹಾಡುತಲಿದೆ ಕೋಗಿಲೆಯು
-ಮಾವಿನ ಚಿಗುರುಂಡು
-ಗರಿಬಿಚ್ಚಿದೆ ನವಿಲು
-ಸಂವೃದ್ಧಿಯಾ ಕಂಡು
-ಜೀವವು ಬಂದಿದೆ ಜೀವನಕೆ
-ಹೊಸತನ ಬಂದಿದೆ ಆಲೋಚನೆಗೆ</description>
-      <content:encoded>&lt;p&gt;ಬಾಳೆಂಬ ಹೆಮ್ಮರದಲಿ&lt;br&gt;
-ಚಿಗುರೊಡೆದಿದೆ ಹೊಸ ಆಸೆ&lt;br&gt;
-ಮನವೆಂಬ ಆಗಸದಲಿ&lt;br&gt;
-ಹೊಸದೊಂದು ಸೂರ್ಯೋದಯ&lt;/p&gt;
-&lt;p&gt;ಮೊಟ್ಟೆಯೊಡೆದ ಮರಿಗೆ&lt;br&gt;
-ಹೊಸತನದ ಬೆಳಕು&lt;br&gt;
-ಹಸಿದ ಹಕ್ಕಿಯ ಬಾಯ್ಗೆ&lt;br&gt;
-ಗುಟುಕಿನ ಕಾಳು&lt;/p&gt;
-&lt;p&gt;ಹಕ್ಕಿಗಳು ಹಾಡುತಲಿವೆ&lt;br&gt;
-ಸಾಂತ್ವನದ ಹಾಡು&lt;br&gt;
-ಪುಟ್ಟ ಜೀವಕೆ ಕೊಟ್ಟಿವೆ&lt;br&gt;
-ಆರೈಕೆಯ ಸೂರು&lt;/p&gt;
-&lt;p&gt;ಆಡುತಿವೆ ಹಕ್ಕಿಗಳು&lt;br&gt;
-ಒಂದಾಗಿ ಸೇರಿ&lt;br&gt;
-ಕಾಮನ ಬಿಲ್ಲೊಂದು&lt;br&gt;
-ಕಾಣುತಿದೆ ಅಲ್ಲಿ&lt;/p&gt;
-&lt;p&gt;ಹಾಡುತಲಿದೆ ಕೋಗಿಲೆಯು&lt;br&gt;
-ಮಾವಿನ ಚಿಗುರುಂಡು&lt;br&gt;
-ಗರಿಬಿಚ್ಚಿದೆ ನವಿಲು&lt;br&gt;
-ಸಂವೃದ್ಧಿಯಾ ಕಂಡು&lt;/p&gt;
-&lt;p&gt;ಜೀವವು ಬಂದಿದೆ ಜೀವನಕೆ&lt;br&gt;
-ಹೊಸತನ ಬಂದಿದೆ ಆಲೋಚನೆಗೆ&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ನನ್ನ ತಾಯಿ</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%A8%E0%B3%8D%E0%B2%A8-%E0%B2%A4%E0%B2%BE%E0%B2%AF%E0%B2%BF/</link>
-      <pubDate>Tue, 18 Nov 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B2%A8%E0%B3%8D%E0%B2%A8-%E0%B2%A4%E0%B2%BE%E0%B2%AF%E0%B2%BF/</guid>
-      <description>ಹೊತ್ತವಳು ಹೆತ್ತವಳು ಬೆಳೆಸಿದವಳವಳು
-ಕೈಯ ಹಿಡಿದು ವಿದ್ಯೆಯ ಕಲಿಸಿದವಳವಳು
-ಕಥೆ ಹೇಳಿ ನೀತಿಯನು ತಿಳಿಸಿದವಳವಳು
-ಸರಿ ದಾರಿಯ ತೋರಿ ನೆಡೆಸಿದವಳವಳು
-ಮನುಜರೆಲ್ಲರೆ ಕೇಳಿ ನನ್ನ ತಾಯಿಯವಳು</description>
-      <content:encoded>&lt;p&gt;ಹೊತ್ತವಳು ಹೆತ್ತವಳು ಬೆಳೆಸಿದವಳವಳು&lt;br&gt;
-ಕೈಯ ಹಿಡಿದು ವಿದ್ಯೆಯ ಕಲಿಸಿದವಳವಳು&lt;br&gt;
-ಕಥೆ ಹೇಳಿ ನೀತಿಯನು ತಿಳಿಸಿದವಳವಳು&lt;br&gt;
-ಸರಿ ದಾರಿಯ ತೋರಿ ನೆಡೆಸಿದವಳವಳು&lt;br&gt;
-ಮನುಜರೆಲ್ಲರೆ ಕೇಳಿ ನನ್ನ ತಾಯಿಯವಳು&lt;/p&gt;
-</content:encoded>
-    </item>
-    
-    <item>
-      <title>ನೆನಪು</title>
-      <link>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B3%86%E0%B2%A8%E0%B2%AA%E0%B3%81/</link>
-      <pubDate>Mon, 17 Nov 2008 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B3%86%E0%B2%A8%E0%B2%AA%E0%B3%81/</guid>
-      <description>ನಿನ್ನೊಡನೆ ಮಾತಾಡದ ಆ ಬರಡು ದಿನಗಳಲಿ
-ನಿನ್ನ ಮೊಗತೊರದ ಆ ಬರಡು ಚಿತ್ರಗಳಲಿ
-ನಿನ್ನ ದನಿತಾರದ ಆ ಬಿರುಗಾಳಿಯಲಿ
-ಪ್ರೀತಿಯ ಚಿಗುರಿಗೆ ನೀರಾಗಿರುವುದೇ ನಿನ್ನ ನೆನಪು</description>
-      <content:encoded>&lt;p&gt;ನಿನ್ನೊಡನೆ ಮಾತಾಡದ ಆ ಬರಡು ದಿನಗಳಲಿ&lt;br&gt;
-ನಿನ್ನ ಮೊಗತೊರದ ಆ ಬರಡು ಚಿತ್ರಗಳಲಿ&lt;br&gt;
-ನಿನ್ನ ದನಿತಾರದ ಆ ಬಿರುಗಾಳಿಯಲಿ&lt;br&gt;
-ಪ್ರೀತಿಯ ಚಿಗುರಿಗೆ ನೀರಾಗಿರುವುದೇ ನಿನ್ನ ನೆನಪು&lt;/p&gt;
-</content:encoded>
+      <guid>https://www.vijayanant.com/posts/</guid>
+      <description>Existential types, also known as existential quantification, is a feature of modern programming languages that allows for the creation of abstract data types that hide their internal implementation details. This concept provides a way for developers to specify the requirements for a particular data type, without exposing its underlying representation, leading to increased code modularity, abstraction, and overall maintainability. In this article, we&amp;rsquo;ll explore the fundamentals of existential types, their applications, and the benefits they offer to programmers.</description>
+      <content:encoded>&lt;p&gt;Existential types, also known as existential quantification, is a feature of modern programming languages that allows for the creation of abstract data types that hide their internal implementation details. This concept provides a way for developers to specify the requirements for a particular data type, without exposing its underlying representation, leading to increased code modularity, abstraction, and overall maintainability. In this article, we&amp;rsquo;ll explore the fundamentals of existential types, their applications, and the benefits they offer to programmers.&lt;/p&gt;
+&lt;p&gt;At the core of existential types lies the idea of abstraction. In computer science, abstraction refers to the process of creating a simplified view of complex systems, with the goal of hiding unnecessary details from the user. Abstraction can be achieved in many ways, including inheritance, interfaces, and polymorphism. However, one of the most powerful abstractions in computer science is achieved through the use of existential types.&lt;/p&gt;
+&lt;p&gt;An existential type is defined using the keyword existential followed by the type parameter. For example, the following code in a language with existential types:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;existential&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Ordered&lt;/span&gt;
+    value&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;
+    less_than&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; bool
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this code, the existential type T is defined as any type that implements the Ordered interface. The existential type is then used to define a value of type T and a function &lt;code&gt;less_than&lt;/code&gt; that takes two values of type T and returns a boolean indicating whether the first value is less than the second. The implementation of the less_than function is abstract and can be any implementation that meets the requirements of the Ordered interface.
+One of the key benefits of using existential types is that they provide a way for programmers to write code that is more modular, abstract, and maintainable. For example, the following code in a language without existential types:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OrderedInt&lt;/span&gt;:
+    value: int
+    less_than: (int, int) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; bool
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OrderedString&lt;/span&gt;:
+    value: str
+    less_than: (str, str) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; bool
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this code, two separate classes are defined for OrderedInt and OrderedString. Each class implements the Ordered interface for its respective type. However, this code is not as modular as it could be, as it requires the developer to create separate classes for each type that implements the Ordered interface.
+In contrast, the following code in a language with existential types is much more modular:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-haskell&#34; data-lang=&#34;haskell&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;existential&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Ordered&lt;/span&gt;
+    value&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;
+    less_than&lt;span style=&#34;color:#66d9ef&#34;&gt;:&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; bool
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;OrderedInt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T:&lt;/span&gt; int
+&lt;span style=&#34;color:#66d9ef&#34;&gt;OrderedString&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;where&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;T:&lt;/span&gt; str
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this code, the existential type T is defined once, and separate types OrderedInt and OrderedString are defined as instances of T with their respective constraints. This approach provides a more abstract and modular implementation, as the implementation of the less_than function is hidden from the user and can be changed without affecting other parts of the code.&lt;/p&gt;
+&lt;p&gt;Another benefit of using existential types is that they provide a way for programmers to write code that is more type-safe. For example, consider the following code in a language without existential types:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;compare&lt;/span&gt;(a, b):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; isinstance(a, int) &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; isinstance(b, int):
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; b
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; isinstance(a, str) &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;is&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded>
     </item>
     
   </channel>
