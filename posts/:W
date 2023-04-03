@@ -1,0 +1,163 @@
++++
+title       = "Design Principles and Design Patterns"
+date        = 2023-03-31T18:30:47+05:30
+type        = "post"
+categories  = ["Programming"]
+tags        = ["Programming", "OOP", "Design Patterns", "Design Principles", "SOLID"]
+description = ""
+draft       = true
++++
+
+Design principles and design patterns are related but serve different purposes.
+
+_Design principles_ are high-level guidelines for designing software that help
+developers create code that is maintainable, extensible, and adaptable. These
+principles are not specific to any programming language or technology and can be
+applied to any software development project. Design principles provide a
+foundation for good software design and help developers create code that is
+easier to maintain and change over time.
+
+*Design patterns*, on the other hand, are specific solutions to recurring design
+problems in software development. They are practical, reusable solutions that
+can be applied to specific programming languages or technologies. Design
+patterns are based on design principles but provide specific implementations
+that can be used to solve specific problems. They can also help developers avoid
+common pitfalls in software development and ensure that their code is efficient,
+scalable, and easy to understand.
+
+The relationship between design patterns and design principles is complementary.
+Design principles provide high-level guidelines and best practices for designing
+software. Design patterns provide concrete implementations to specific design
+problems while adhering to the design principles
+
+In fact, many design patterns provide solutions that adheres to  multiple
+principles While it's ideal for a design pattern to adhere to all the
+design principles, it's not always possible to achieve this. Design principles
+are general guidelines that promote good design practices and help create
+software that is easier to maintain, extend, and adapt. However, they are not
+absolute rules that must be followed in all cases. There may be situations where
+adhering to a design principle is not practical or even desirable, and in such
+cases, a design pattern that addresses the specific problem at hand may be a
+better choice.
+
+Moreover, not all design principles are equally applicable in all situations.
+Some design principles may be more important than others depending on the
+specific problem being solved, and some principles may even conflict with each
+other. 
+
+>NOTE: This is not a exhaustive list. All design patterns are expected to follow
+>the principles.
+
+### Single Responsibility Principle (SRP)
+The SRP states that a class should have only one responsibility or reason to
+change. This means that a class should only be responsible for one thing, and if
+that thing changes, the class should be the only one that needs to change. The
+goal is to keep classes focused and maintainable, and reduce the risk of
+unintended consequences when making changes.
+
+* The Facade Pattern is closely related to the SRP. It provides a simplified
+  interface to a complex system, which helps to reduce coupling between the
+  subsystem and its clients. By hiding the complexity of the subsystem behind a
+  facade, the clients don't need to know about the internal details, which
+  reduces the risk of unintended consequences if the subsystem changes.
+
+### Open/Closed Principle (OCP)
+The OCP states that software entities should be open for extension but closed
+for modification. This means that you should be able to add new functionality to
+    a system without changing the existing code. The goal is to reduce the risk
+    of introducing new bugs when making changes and allow for greater
+    flexibility and adaptability in the system.
+
+The Strategy Pattern and Template Method Pattern are related to the OCP. 
+
+* The Strategy Pattern allows for easy swapping of algorithms or behaviors
+  without changing the client code. This makes it easy to add new functionality
+  to a system without changing the existing code. 
+
+* The Template Method Pattern defines the skeleton of an algorithm and allows
+  subclasses to implement specific steps, without changing the overall
+  structure. This allows for customization of the algorithm without changing the
+  core functionality.
+
+### Liskov Substitution Principle (LSP)
+The LSP states that subtypes must be substitutable for their base types. This
+means that if you have a variable of a certain type, you should be able to
+substitute any subtype of that type without affecting the behavior of the
+system. The goal is to ensure that code is reusable and maintainable, and reduce
+the risk of introducing bugs when making changes.
+
+The Factory Method Pattern and Composite Pattern are related to the LSP.
+* The Factory Method Pattern encapsulates the object creation process and allows
+  for easy creation of new object types that adhere to a common interface. This
+  makes it easy to substitute different types of objects without affecting
+  the behavior of the system.
+* The Composite Pattern allows for treating individual objects and compositions
+  of objects in a uniform manner. This makes it easy to substitute a composite
+  object for an individual object, or vice versa, without affecting the behavior
+  of the system.
+
+### Interface Segregation Principle (ISP)
+The ISP states that clients should not be forced to depend on interfaces they do
+not use. This means that if a client only needs a subset of the functionality
+provided by an interface, it should only depend on that subset. The goal is to
+reduce coupling between components and make it easier to change or replace
+components without affecting the behavior of the system.
+
+The Adapter Pattern and Bridge Pattern are related to the ISP.
+* The Adapter Pattern allows incompatible interfaces to work together by
+  wrapping one of the interfaces with a compatible interface. This makes it
+  possible for a client to use an interface without depending on the full
+  functionality of the underlying implementation.
+* The Bridge Pattern separates the abstraction of a system from its
+  implementation, allowing for greater flexibility in choosing the
+  implementation at runtime.
+
+### Dependency Inversion Principle (DIP)
+The DIP states that high-level modules should not depend on low-level modules.
+Instead, both should depend on abstractions. This means that the details of how
+a system works should be hidden behind abstractions, and changes to the
+implementation should not affect the behavior of the system. The goal is to make
+systems more modular and easier to maintain.
+
+The Dependency Injection Pattern and Observer Pattern are related to the DIP.
+* The Dependency Injection Pattern allows for the injection of dependencies into
+  a class or system, allowing for greater flexibility in the implementation and
+  making it easier to test.
+* The Observer Pattern allows for loose coupling between objects by allowing
+  them to subscribe to events and notifications without knowing about each
+  other.
+
+## The Other Way Around
+
+It is also possible for a single design pattern to cater to more than one design
+principle. In fact, many design patterns are designed to address multiple design
+principles simultaneously.
+
+* The Strategy pattern is often used to address the Open/Closed Principle (OCP)
+  and the Single Responsibility Principle (SRP) at the same time. The OCP states
+  that software entities should be open for extension but closed for
+  modification, while the SRP states that a class should have only one reason to
+  change. The Strategy pattern allows the behavior of an object to be modified
+  at runtime without modifying the object itself, thus adhering to the OCP. It
+  also separates the implementation of the algorithm from the object that uses
+  it, adhering to the SRP.
+
+* The Factory Method pattern can address the SRP, the OCP, and the Dependency
+  Inversion Principle (DIP) at the same time. The Factory Method pattern
+  separates the creation of objects from their use, allowing for greater
+  flexibility in object creation and adherence to the SRP. It also allows for
+  the creation of objects at runtime, adhering to the OCP. Finally, by using
+  abstractions to create objects, it adheres to the DIP.
+
+While it's important to understand the concepts behind each design pattern, it's
+also important to choose the right pattern for the specific problem you are
+trying to solve. Not all patterns will be applicable to every situation, and
+it's important to consider the trade-offs and benefits of each pattern before
+choosing the one that is best suited for your needs.
+
+In conclusion, the five major design principles in object-oriented programming
+and design patterns are essential for creating maintainable, extensible, and
+adaptable code. By following these principles and patterns, developers can
+reduce the risk of introducing bugs when making changes, make systems more
+modular and easier to maintain, and create code that is easier to test and
+reuse.
