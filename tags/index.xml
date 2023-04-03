@@ -6,7 +6,52 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Mar 2023 13:21:32 +0530</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design Patterns</title>
+      <link>https://www.vijayanant.com/tags/design-patterns/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/design-patterns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design Principles</title>
+      <link>https://www.vijayanant.com/tags/design-principles/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/design-principles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oop</title>
+      <link>https://www.vijayanant.com/tags/oop/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://www.vijayanant.com/tags/programming/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SOLID</title>
+      <link>https://www.vijayanant.com/tags/solid/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/solid/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>blogging</title>
       <link>https://www.vijayanant.com/tags/blogging/</link>
@@ -103,15 +148,6 @@
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>oop</title>
-      <link>https://www.vijayanant.com/tags/oop/</link>
-      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/oop/</guid>
       <description></description>
     </item>
     
@@ -386,24 +422,6 @@
     </item>
     
     <item>
-      <title>programming</title>
-      <link>https://www.vijayanant.com/tags/programming/</link>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Design Principles</title>
-      <link>https://www.vijayanant.com/tags/design-principles/</link>
-      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/design-principles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Object orientation</title>
       <link>https://www.vijayanant.com/tags/object-orientation/</link>
       <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
@@ -436,15 +454,6 @@
       <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/software-design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SOLID</title>
-      <link>https://www.vijayanant.com/tags/solid/</link>
-      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/solid/</guid>
       <description></description>
     </item>
     

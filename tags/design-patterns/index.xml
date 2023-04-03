@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Patterns on </title>
+    <link>https://www.vijayanant.com/tags/design-patterns/</link>
+    <description>Recent content in Design Patterns on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design Principles and Design Patterns</title>
+      <link>https://www.vijayanant.com/posts/design-principles-and-design-patterns/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/design-principles-and-design-patterns/</guid>
+      <description>Design principles and design patterns are related but serve different purposes.
+Design principles are high-level guidelines for designing software that helps developers create code that is maintainable, extensible, and adaptable. These principles are not specific to any programming language or technology and can be applied to any software development project. Design principles provide a foundation for good software design and help developers create code that is easier to maintain and change over time.</description>
+    </item>
+    
+  </channel>
+</rss>
