@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNSPFRLLVH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XNSPFRLLVH');
+    </script>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.88.1" />
+
+    
+    
+    
+    
+    
+
+<title>Basic Lambda Calculus • fossick • Vijay Anant</title>
+
+
+  
+    <meta name="description" content="Introduction to Lambda-Calculus">
+  
+
+
+
+
+  
+  
+    <meta name="keywords" content="fp, Lambda, Lambda Calculus, Programming, Maths">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Basic Lambda Calculus"/>
+<meta name="twitter:description" content="Introduction to Lambda-Calculus"/>
+
+<meta property="og:title" content="Basic Lambda Calculus" />
+<meta property="og:description" content="Introduction to Lambda-Calculus" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.vijayanant.com/posts/basic-lambda-calculus/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-02-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-02-25T00:00:00+00:00" /><meta property="og:site_name" content="fossick" />
+
+
+
+    
+
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    
+    <link rel="shortcut icon" href="/author.png">
+    
+
+<link href="https://www.vijayanant.com/index.xml" rel="alternate" type="application/rss+xml" title="fossick" />
+<link href="https://www.vijayanant.com/index.xml" rel="feed" type="application/rss+xml" title="fossick" />
+
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.vijayanant.com">fossick</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://www.vijayanant.com/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         Vijay Anant 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">fossick</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>All Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/resume.pdf">
+						<span>Résumé</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/kn/">
+						<span>ವಿಜಯಾ೦ತರ೦ಗ</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://keybase.io/vijayanant"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Basic Lambda Calculus</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 25 Feb 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/maths">MATHS</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          
+          
+          
+          
+          
+      
+          
+          
+      
+          
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 9 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>Lambda calculus, introduced by Alonzo Church in the 1930s, is a formal system that serves as a foundation for studying computation. Unlike machine models, such as the Turing Machine, lambda calculus operates on the principles of function definition and application as the fundamental operations of computation.</p>
+<p>One of the key distinctions between lambda calculus and machine models is the absence of a clear separation between programs and data in lambda calculus. Instead, lambda calculus treats computation as a process of symbolic transformation using variables and functions. This unique characteristic makes lambda calculus a &ldquo;higher-order&rdquo; system, allowing for powerful abstraction and manipulation of functions.</p>
+<p>Unlike machine models, which are inherently imperative, lambda calculus is rooted in mathematical concepts and emphasises symbolic transformation rules. It is not concerned with specific machine implementations, but rather focuses on the fundamental principles of computation.</p>
+<p>By delving into lambda calculus, one gains insights into functional programming paradigms, formal reasoning, and the theoretical underpinnings of computation itself. It provides a framework for studying computation from a more abstract and theoretical standpoint, exploring the power of function abstraction and application in solving computational problems.</p>
+<p>Overall, lambda calculus is an influential and foundational concept in computer science that has paved the way for functional programming languages and deepened our understanding of computation beyond traditional machine-based models.</p>
+<h2 id="notation-rules-and-building-blocks">Notation, Rules, And Building Blocks</h2>
+<p>Lambda calculus can be considered both a formal system and a notation. It doesn&rsquo;t have a traditional grammar or syntax like programming languages do, but it has a set of rules that define its structure and how expressions are constructed. The basic elements of lambda calculus include variables, lambda abstractions, and function applications.</p>
+<ul>
+<li>
+<p><strong>Variables</strong>: Variables are used to represent inputs and outputs of functions. They can be any symbol or name chosen by the programmer. For example, <code>x</code>, <code>y</code>, <code>z</code> are common variable names.</p>
+</li>
+<li>
+<p><strong>Lambda Abstractions</strong>: Lambda abstractions define functions in lambda calculus. They consist of the <code>λ</code> symbol (lambda), followed by a variable, a dot (<code>.</code>), and an expression. The expression represents the body of the function. For example, <code>λx.x</code> represents a function that takes an input <code>x</code> and returns <code>x</code> itself.</p>
+</li>
+<li>
+<p><strong>Function Applications</strong>: Function applications are used to apply a function to an argument. It involves writing the function followed by the argument. For example, <code>(λx.x) y</code> applies the function <code>λx.x</code> to the argument <code>y</code>.</p>
+</li>
+</ul>
+<h2 id="nesting-and-currying">Nesting and Currying</h2>
+<p>Lambda calculus expressions can be further combined and nested to create more complex functions. Multiple arguments can be represented using nested lambda abstractions or by currying, a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument.</p>
+<p>Suppose we have a function that takes two arguments, <code>add</code>, and we want to represent it as a sequence of functions, each taking one argument. We can do this using nested lambda abstractions.</p>
+<pre tabindex="0"><code>add = λx.λy.(x + y)
+</code></pre><p>This represents a function that takes one argument <code>x</code> and returns another function that takes the second argument <code>y</code> and performs the addition. We can then apply add to an argument as follows: <code>(add 2) 3</code>, which yields the result <code>5</code>. Here, <code>add 2</code> returns a function that takes <code>3</code> as an argument and performs the addition.</p>
+<p>Let&rsquo;s consider another function that takes three arguments, <code>multiply</code>, and we want to transform it into a sequence of functions, each taking one argument.</p>
+<pre tabindex="0"><code>multiply = λx.λy.λz.(x * y * z)
+</code></pre><p>Here, the function multiply takes three arguments <code>x</code>, <code>y</code>, and <code>z</code>, and multiplies them together. By applying currying, we can create a sequence of functions, each taking one argument: <code>mult = (multiply 2)</code>, which gives us a function that takes one argument <code>x</code> and returns another function: <code>mult = λx.(λy.(λz.(x * y * z)))</code>. We can then apply the remaining arguments like <code>(mult 3) 4</code>, which yields the result <code>24</code>. Here, <code>mult 3</code> returns a function that takes <code>4</code> as an argument and performs the multiplication.</p>
+<p>The syntax of lambda calculus is deliberately minimalistic, focusing on the essentials of function definition and application. It provides a foundation for reasoning about functions and computation in a purely symbolic and mathematical manner.</p>
+<p>It&rsquo;s important to note that while lambda calculus has a simple syntax, its power lies in its ability to express complex computations through function composition, recursion, and other constructs built on top of its core principles.</p>
+<h2 id="evaluation-rules">Evaluation Rules</h2>
+<p>In lambda calculus, variables can be categorised as either bound variables or free variables. Understanding the distinction between these two types of variables is crucial in understanding the scoping and substitution rules in lambda calculus.</p>
+<p><strong>Bound variables</strong> are variables that are locally defined within the scope of a lambda abstraction. They are bound by the lambda abstraction and can only be accessed or referenced within that specific scope. Bound variables are typically represented as the arguments of lambda abstractions.</p>
+<p>For example, consider the lambda abstraction: <code>λx.(x y)</code>. Here, the variable <code>x</code> is a bound variable because it is bound by the lambda abstraction <code>λx.</code>. It can only be used within the scope of this abstraction.</p>
+<p><strong>Free variables</strong> are variables that occur within an expression but are not bound by any surrounding lambda abstractions. They are not locally defined and can be referenced from outside the scope in which they appear. Free variables can be thought of as variables that are <em>&ldquo;free&rdquo;</em> to take on different values or be substituted with other expressions.</p>
+<p>For example, consider the expression: <code>(λx.(x y)) z</code>. In this expression, the variable <code>y</code> is a free variable because it is not bound by any surrounding lambda abstraction. It is used within the body of the lambda abstraction <code>λx.(x y)</code>, but it is not defined or bound by it. The variable <code>z</code>, on the other hand, is a bound variable as it is the argument of the outermost lambda abstraction <code>(λx.(x y))</code>.</p>
+<h3 id="beta-reduction">Beta Reduction:</h3>
+<p>The beta reduction rule allows us to apply a lambda abstraction to an argument, resulting in the substitution of the argument in the function body. The general form of beta reduction is:</p>
+<pre tabindex="0"><code>(λx.E) M ⟶ E[x := M]
+</code></pre><p>Here, <code>(λx.E)</code> represents a lambda abstraction, <code>M</code> represents an argument, and <code>E[x := M]</code> represents the expression <code>E</code> with all occurrences of variable <code>x</code> replaced by <code>M</code>. The arrow (<code>⟶</code>) indicates the reduction or simplification step.</p>
+<p>Example:
+Let&rsquo;s consider an example to illustrate beta reduction. Suppose we have the following lambda abstraction:</p>
+<pre tabindex="0"><code>(λx.x) 5
+</code></pre><p>To evaluate this expression, we apply the argument <code>5</code> to the function body by substituting <code>x</code> with <code>5</code>:</p>
+<pre tabindex="0"><code>(λx.x) 5 ⟶ x[x := 5]`
+</code></pre><p>The resulting expression is simply <code>5</code> since the variable <code>x</code> is replaced by <code>5</code>.</p>
+<h3 id="eta-conversion">Eta Conversion:</h3>
+<p>Another important evaluation rule in lambda calculus is eta conversion. It allows us to convert between equivalent lambda abstractions. The general form of eta conversion is:</p>
+<pre tabindex="0"><code>λx.(E x) ⟶ E (if x does not occur free in E)
+</code></pre><p>This rule states that if we have a lambda abstraction that applies its argument to another expression, and the variable <code>x</code> does not occur <em>free</em> in that expression, we can simplify it by removing the application and using the expression directly.</p>
+<p>Example:
+Consider the following lambda abstraction:</p>
+<pre tabindex="0"><code>λx.((λy.y) x)
+</code></pre><p>Since <code>x</code> does not occur <em>free</em> in <code>(λy.y)</code>, we can simplify it using eta conversion:</p>
+<pre tabindex="0"><code>λx.((λy.y) x) ⟶ λx.(λy.y)
+</code></pre><p>The resulting expression is <code>λx.(λy.y)</code>, where the unnecessary application has been removed.</p>
+<p>These are the basic evaluation rules in lambda calculus. Beta reduction allows us to apply arguments to lambda abstractions, and eta conversion allows us to simplify lambda abstractions when certain conditions are met. These rules govern how lambda expressions are evaluated and simplified in lambda calculus.</p>
+<h2 id="church-encoding">Church Encoding</h2>
+<p><a href="https://en.wikipedia.org/wiki/Church_encoding">Church encoding</a> is a technique used in lambda calculus to represent various data types and operations as lambda expressions. It allows us to define and manipulate values within the confines of lambda calculus.</p>
+<h3 id="church-numerals">Church Numerals</h3>
+<p>Church numerals are a way of encoding natural numbers in lambda calculus. Each Church numeral represents a specific natural number using nested lambda abstractions. The Church numeral for zero (0) is defined as <code>λf.λx.x</code>, and the Church numeral for any positive number <code>n</code> is defined as <code>λf.λx.(f^n x)</code>, where <code>f^n</code> represents repeated function application n times.</p>
+<p>For example:</p>
+<ul>
+<li>Church numeral for zero (0): <code>λf.λx.x</code></li>
+<li>Church numeral for one (1): <code>λf.λx.(f x)</code></li>
+<li>Church numeral for two (2): <code>λf.λx.(f (f x))</code></li>
+<li>Church numeral for three (3): <code>λf.λx.(f (f (f x)))</code></li>
+</ul>
+<p>Using Church numerals, we can define arithmetic operations such as addition, multiplication, and predecessor functions purely in terms of lambda expressions.</p>
+<h3 id="church-booleans">Church Booleans</h3>
+<p>Church booleans are another example of Church encoding. They represent the concept of <code>true</code> and <code>false</code> within lambda calculus. Church boolean <code>true</code> is defined as <code>λx.λy.x</code>, and Church boolean <code>false</code> is defined as <code>λx.λy.y</code>.</p>
+<p>Using Church booleans, we can define logical operations like AND, OR, and NOT as lambda expressions.</p>
+<h3 id="church-pairs">Church Pairs</h3>
+<p>Church pairs are used to encode ordered pairs within lambda calculus. A Church pair is defined as a lambda expression that takes two arguments and applies them to a function. For example, a Church pair can be defined as <code>λx.λy.λf.(f x y)</code>.</p>
+<p>By using Church pairs, we can define operations such as projection to retrieve the elements of a pair and even create more complex data structures.</p>
+<p>Church encoding allows us to represent various data types, operations, and even control flow constructs purely using lambda expressions. It demonstrates the expressive power of lambda calculus and its ability to encode fundamental concepts within a functional programming paradigm.</p>
+<h2 id="fixed-point-combinators">Fixed-point combinators</h2>
+<p>Fixed-point combinators are important constructs in lambda calculus that allow the definition of recursive functions. They provide a way to express self-referential computations within the framework of lambda calculus, where direct recursion is not allowed.</p>
+<p>In lambda calculus, direct self-reference or recursion is not possible due to the absence of named functions. Every function is defined in terms of anonymous lambda abstractions, making it challenging to define functions that refer to themselves. Fixed-point combinators offer a workaround for this limitation by providing a mechanism to express recursive computations.</p>
+<h3 id="y-combinator">Y Combinator</h3>
+<p>The most well-known fixed-point combinator is the Y combinator. It is named after the mathematician Haskell Curry, and it allows the definition of recursive functions in lambda calculus.</p>
+<p>The Y combinator is defined as follows:</p>
+<pre tabindex="0"><code>Y = λf.(λx.f (x x)) (λx.f (x x))
+</code></pre><p>Here, <code>f</code> represents the function we want to define recursively. By applying the Y combinator to <code>f</code>, we can create a self-referential computation.</p>
+<p>To understand how the Y combinator works, let&rsquo;s consider an example where we want to define a factorial function using the Y combinator:</p>
+<pre tabindex="0"><code>factorial = Y (λf.λn.if (n == 0) then 1 else n * f (n - 1))
+</code></pre><p>Here, the lambda abstraction <code>(λf.λn.if (n == 0) then 1 else n * f (n - 1))</code> represents the factorial function definition, where <code>f</code> is the recursive call. By applying the Y combinator to this function definition, we create the recursive computation.</p>
+<p>Apart from the Y combinator, there are other fixed-point combinators that can be used in lambda calculus, such as the Z combinator and the U combinator. Each of these combinators has different properties and can be used to express recursion in different ways.</p>
+
+  </div>
+  
+
+
+  
+
+
+<div class="post__related">
+    
+    <h2>Related Articles</h2>
+    <ul class="related-posts">
+        
+<li>
+  <span class="list__title--small">
+    <a href="/posts/gadts-talk-bengaluru-haskell-meetup/">GADTs Talk - Bengaluru Haskell Meetup</a>
+      
+      <time class="pull-right hidden-tablet">29 Nov 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/the-expression-problem/">The Expression Problem</a>
+      
+      <time class="pull-right hidden-tablet">13 Nov 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/dependent-types-to-eliminate-runtime-checks/">Dependent Types To Eliminate Runtime Checks</a>
+      
+      <time class="pull-right hidden-tablet">26 Oct 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/">Outward Counterclockwise Spiral Matrix Traversal - Haskell</a>
+      
+      <time class="pull-right hidden-tablet">12 Feb 2018</time>
+      
+  </span>
+</li>
+
+<li>
+  <span class="list__title--small">
+    <a href="/posts/struggles-of-a-newcomer-to-fp/">Struggles Of A Newcomer To FP</a>
+      
+      <time class="pull-right hidden-tablet">09 Jun 2022</time>
+      
+  </span>
+</li>
+
+
+    </ul>
+</div>
+
+
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>

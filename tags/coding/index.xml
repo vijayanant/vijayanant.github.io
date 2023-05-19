@@ -6,7 +6,16 @@
     <description>Recent content in coding on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Feb 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Technical Debt</title>
+      <link>https://www.vijayanant.com/posts/technical-debt/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/technical-debt/</guid>
+      <description>Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He conveys to them that refactoring is as important as shipping software early to maintain their place in the market. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground.</description>
+    </item>
+    
     <item>
       <title>Outward Counterclockwise Spiral Matrix Traversal - Haskell</title>
       <link>https://www.vijayanant.com/posts/outward-counterclockwise-spiral-matrix-traversal-haskell/</link>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Refactoring on </title>
-    <link>https://www.vijayanant.com/tags/refactoring/</link>
-    <description>Recent content in Refactoring on </description>
+    <title>bad code on </title>
+    <link>https://www.vijayanant.com/tags/bad-code/</link>
+    <description>Recent content in bad code on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/bad-code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Technical Debt</title>
       <link>https://www.vijayanant.com/posts/technical-debt/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://www.vijayanant.com/posts/technical-debt/</guid>
       <description>Ward Cunningham, co-author of the Agile Manifesto and a pioneer in design patterns and XP, came up with this metaphor as a way of explaining (to non-technical stakeholders) why refactoring was an essential part of software development. He conveys to them that refactoring is as important as shipping software early to maintain their place in the market. He used the debt metaphor as a way of making an analogy to how venture capital is used to get a business off the ground.</description>
-    </item>
-    
-    <item>
-      <title>Duplication Vs Abstraction</title>
-      <link>https://www.vijayanant.com/posts/duplication-vs-abstraction/</link>
-      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/posts/duplication-vs-abstraction/</guid>
-      <description>When you see code duplication and can&amp;rsquo;t think of an abstraction to put that piece of code in, it is wise to keep the code separate. At least until you figure out the right abstraction.</description>
     </item>
     
   </channel>

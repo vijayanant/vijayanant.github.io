@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNSPFRLLVH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XNSPFRLLVH');
+    </script>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.88.1" />
+
+    
+    
+    
+    
+    
+
+<title>Quick Guide to Test-Driven Development (TDD) • fossick • Vijay Anant</title>
+
+
+  
+    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
+  
+
+
+
+
+  
+  
+    <meta name="keywords" content="development, testing, TDD, Programming">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Quick Guide to Test-Driven Development (TDD)"/>
+<meta name="twitter:description" content="Test-Driven Development (TDD) is a software development approach that emphasises on tests driving the development. It means that tests play a central role in guiding the entire development process. With each new test driving the development of a small piece of functionality, the tests act as both a specification and a guide, providing clear expectations for the code&rsquo;s behaviour and helping developers stay focused on delivering the required features.
+The Essence TDD can be summarised by two key principles:"/>
+
+<meta property="og:title" content="Quick Guide to Test-Driven Development (TDD)" />
+<meta property="og:description" content="Test-Driven Development (TDD) is a software development approach that emphasises on tests driving the development. It means that tests play a central role in guiding the entire development process. With each new test driving the development of a small piece of functionality, the tests act as both a specification and a guide, providing clear expectations for the code&rsquo;s behaviour and helping developers stay focused on delivering the required features.
+The Essence TDD can be summarised by two key principles:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.vijayanant.com/posts/quick-guide-to-test-driven-development-tdd/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-05-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-05-11T00:00:00+00:00" /><meta property="og:site_name" content="fossick" />
+
+
+
+    
+
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    
+    <link rel="shortcut icon" href="/author.png">
+    
+
+<link href="https://www.vijayanant.com/index.xml" rel="alternate" type="application/rss+xml" title="fossick" />
+<link href="https://www.vijayanant.com/index.xml" rel="feed" type="application/rss+xml" title="fossick" />
+
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.vijayanant.com">fossick</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://www.vijayanant.com/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         Vijay Anant 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">fossick</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>All Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/resume.pdf">
+						<span>Résumé</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/kn/">
+						<span>ವಿಜಯಾ೦ತರ೦ಗ</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://keybase.io/vijayanant"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Quick Guide to Test-Driven Development (TDD)</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 11 May 2018
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/programming">PROGRAMMING</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          
+          
+          
+          
+          
+      
+          
+          
+      
+          
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>Test-Driven Development (TDD) is a software development approach that emphasises on tests driving the development. It means that tests play a central role in guiding the entire development process. With each new test driving the development of a small piece of functionality, the tests act as both a specification and a guide, providing clear expectations for the code&rsquo;s behaviour and helping developers stay focused on delivering the required features.</p>
+<h2 id="the-essence">The Essence</h2>
+<p>TDD can be summarised by two key principles:</p>
+<ol>
+<li><strong>Red</strong>: Write a little test that doesn&rsquo;t work, perhaps doesn&rsquo;t even compile at first.</li>
+<li><strong>Green</strong>: Make the test work quickly, committing whatever sins necessary in the process.</li>
+<li><strong>Refactor</strong>: Eliminate all the duplication created in just getting the test to work.</li>
+</ol>
+<h2 id="what-is-needed">What is Needed</h2>
+<p>Before diving into TDD, it&rsquo;s crucial to have the following prerequisites in place:</p>
+<ul>
+<li>The ability to write concrete, deterministic, automated tests.</li>
+<li>A development environment that provides rapid response to small code changes.</li>
+</ul>
+<h2 id="the-rhythm-of-tdd">The Rhythm of TDD</h2>
+<p>To successfully practice TDD, follow this iterative rhythm:</p>
+<ul>
+<li><strong>Add a Test</strong>: Begin by adding a new test that describes the desired behaviour or functionality.</li>
+<li><strong>Run All Tests</strong>: Execute all existing tests, including the new one, and observe the new test fail as expected.</li>
+<li><strong>Make a Change</strong>: Implement the minimum code necessary to make the failing test pass.</li>
+<li><strong>Run All Tests</strong>: Execute the test suite again, ensuring that all tests, including the newly added one, pass.</li>
+<li><strong>Refactor</strong>: Once all tests are passing, refactor the code to improve its structure, remove duplication, and enhance overall quality. During this stage, keep running the tests to ensure that all changes maintain the system&rsquo;s correctness.</li>
+</ul>
+<h2 id="best-practices-for-tdd">Best Practices for TDD</h2>
+<p>To make the most of TDD, consider the following best practices:</p>
+<ul>
+<li>Write clear and focused tests that cover specific behaviours.</li>
+<li>Aim for high test coverage to ensure comprehensive validation.</li>
+<li>Utilise test doubles (mocks, stubs) to isolate dependencies.</li>
+<li>Use descriptive test names that reflect the intended behaviour being tested.</li>
+<li>Keep tests independent of each other to avoid cascading failures.</li>
+<li>Continuously refactor tests to maintain clarity and readability.</li>
+</ul>
+<h2 id="tdd-tools-and-frameworks">TDD Tools and Frameworks</h2>
+<p>There are several tools and frameworks that can enhance your TDD workflow, such as:</p>
+<ul>
+<li>Testing frameworks (e.g., JUnit, NUnit, pytest) for organising and executing tests.</li>
+<li>Assertion libraries (e.g., assertj, Chai, Hamcrest) for expressive assertions.</li>
+<li>Test runners and continuous integration tools (e.g., Jenkins, Travis CI) for automating test execution and reporting.</li>
+<li>Code coverage tools (e.g., JaCoCo, Istanbul, coverage.py) for tracking test coverage metrics.</li>
+</ul>
+<h2 id="tdd-in-agile-development">TDD in Agile Development</h2>
+<p>TDD aligns closely with Agile development methodologies. By practicing TDD in an Agile context, teams can benefit from:</p>
+<ul>
+<li>Iterative development cycles with continuous feedback.</li>
+<li>Early identification of defects and issues through automated testing.</li>
+<li>Collaborative and customer-focused development practices.</li>
+<li>Improved estimations and project management through predictable code behaviour.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Test-Driven Development is not just a testing technique; it is a development approach that brings discipline, confidence, and clarity to the software development process. By following the TDD principles, employing best practices, and leveraging appropriate tools, developers can build robust, maintainable, and high-quality software that meets the needs of users and stakeholders.</p>
+
+  </div>
+  
+
+
+  
+
+
+
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>

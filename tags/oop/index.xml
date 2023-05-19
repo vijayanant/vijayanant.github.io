@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>oop on </title>
+    <title>OOP on </title>
     <link>https://www.vijayanant.com/tags/oop/</link>
-    <description>Recent content in oop on </description>
+    <description>Recent content in OOP on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 03 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/oop/index.xml" rel="self" type="application/rss+xml" />
@@ -35,6 +35,17 @@ The Expression Problem is a well known problem in programming language theory de
       <guid>https://www.vijayanant.com/posts/thinking-in-imperative-object-oriented-and-functional-way/</guid>
       <description>Complexity is the root cause of majority of software problems. Unreliable softwares are known to be notoriously complex. A complex system is hard to understand and reason about. The harder a system is to understand the more likely we are to introduce more complexity. Complex code base is not only harder to test but testing is that much less effective.
 Programming Paradigms Different programming styles tries to deal with the complexity in their own way.</description>
+    </item>
+    
+    <item>
+      <title>OO(h!) Principles</title>
+      <link>https://www.vijayanant.com/posts/ooh-principles/</link>
+      <pubDate>Sun, 23 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/ooh-principles/</guid>
+      <description>There is a good chance that you all are aware of the SOLID principles. There are many more principles for us to consider and adhere to while developing OO software.
+SOLID These are the Principles of Object Oriented Class Design popularly known as the SOLID Principles.
+ The Single Responsibility Principle [SRP] The Open/Closed Principle [OCP] The Liskov Substitution Principle [LSP] The Interface Segregation Principle [ISP] The Dependency Inversion Principle [DIP]  The next two set of principles, are related to packaging.</description>
     </item>
     
   </channel>

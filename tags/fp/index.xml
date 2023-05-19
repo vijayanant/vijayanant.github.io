@@ -59,13 +59,13 @@ Give Me The Money! Let us start with an example. We will define a simple type fo
     </item>
     
     <item>
-      <title>Lambda Calculus</title>
-      <link>https://www.vijayanant.com/posts/lambda-calculus/</link>
+      <title>Basic Lambda Calculus</title>
+      <link>https://www.vijayanant.com/posts/basic-lambda-calculus/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/posts/lambda-calculus/</guid>
-      <description>The models of computation can be broadly classified into two groups - those that are based on machine model and the λ Calculus.
-Machine models are based on the idea of a program acting on data by modification. So a Turing Machine consists of a program acting on the data. There is a clear distinction between program and data. Programs are not data and data do not contain programs (&amp;lsquo;first order&amp;rsquo;).</description>
+      <guid>https://www.vijayanant.com/posts/basic-lambda-calculus/</guid>
+      <description>Lambda calculus, introduced by Alonzo Church in the 1930s, is a formal system that serves as a foundation for studying computation. Unlike machine models, such as the Turing Machine, lambda calculus operates on the principles of function definition and application as the fundamental operations of computation.
+One of the key distinctions between lambda calculus and machine models is the absence of a clear separation between programs and data in lambda calculus.</description>
     </item>
     
     <item>

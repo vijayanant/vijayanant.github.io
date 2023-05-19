@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>oop</title>
+      <title>OOP</title>
       <link>https://www.vijayanant.com/tags/oop/</link>
       <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -89,6 +89,33 @@
     </item>
     
     <item>
+      <title>bad code</title>
+      <link>https://www.vijayanant.com/tags/bad-code/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/bad-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coding</title>
+      <link>https://www.vijayanant.com/tags/coding/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Refactoring</title>
+      <link>https://www.vijayanant.com/tags/refactoring/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/refactoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>technical debt</title>
       <link>https://www.vijayanant.com/tags/technical-debt/</link>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
@@ -107,6 +134,15 @@
     </item>
     
     <item>
+      <title>encoding</title>
+      <link>https://www.vijayanant.com/tags/encoding/</link>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/encoding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>fp</title>
       <link>https://www.vijayanant.com/tags/fp/</link>
       <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
@@ -121,6 +157,15 @@
       <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/haskell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RLE</title>
+      <link>https://www.vijayanant.com/tags/rle/</link>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/tags/rle/</guid>
       <description></description>
     </item>
     
@@ -242,42 +287,6 @@
     </item>
     
     <item>
-      <title>Beta Reduction</title>
-      <link>https://www.vijayanant.com/tags/beta-reduction/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/beta-reduction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Call By Name</title>
-      <link>https://www.vijayanant.com/tags/call-by-name/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/call-by-name/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Call By Value</title>
-      <link>https://www.vijayanant.com/tags/call-by-value/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/call-by-value/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Church Numerals</title>
-      <link>https://www.vijayanant.com/tags/church-numerals/</link>
-      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/church-numerals/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Lambda</title>
       <link>https://www.vijayanant.com/tags/lambda/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
@@ -292,15 +301,6 @@
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/lambda-calculus/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>coding</title>
-      <link>https://www.vijayanant.com/tags/coding/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/coding/</guid>
       <description></description>
     </item>
     
@@ -526,15 +526,6 @@
       <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://www.vijayanant.com/tags/code-duplication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Refactoring</title>
-      <link>https://www.vijayanant.com/tags/refactoring/</link>
-      <pubDate>Tue, 05 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/tags/refactoring/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RLE on </title>
+    <link>https://www.vijayanant.com/tags/rle/</link>
+    <description>Recent content in RLE on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/rle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Struggles Of A Newcomer To FP</title>
+      <link>https://www.vijayanant.com/posts/struggles-of-a-newcomer-to-fp/</link>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/struggles-of-a-newcomer-to-fp/</guid>
+      <description>One of the challenges that I faced earlier on with FP is coming up with non-imperative solutions (I still do sometimes). I am sure many have faced similar hardships. We, those who have trained ourselves to think imperatively, jump to imperative solution first, then remember/realise we are lacking the corresponding tools (loops, mutability, etc) in our new favourite language (Haskell for example). Quite often this results in ugly recursive solution that we think is functional.</description>
+    </item>
+    
+  </channel>
+</rss>

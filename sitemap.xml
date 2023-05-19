@@ -47,11 +47,23 @@
     <loc>https://www.vijayanant.com/tags/personal-branding/</loc>
     <lastmod>2023-03-30T13:21:32+05:30</lastmod>
   </url><url>
+    <loc>https://www.vijayanant.com/categories/rant/</loc>
+    <lastmod>2023-03-30T13:21:32+05:30</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/starting-a-blog/</loc>
     <lastmod>2023-03-30T13:21:32+05:30</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/posts/why-you-should-blog-too/</loc>
     <lastmod>2023-03-30T13:21:32+05:30</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/bad-code/</loc>
+    <lastmod>2022-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/coding/</loc>
+    <lastmod>2022-12-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/refactoring/</loc>
+    <lastmod>2022-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/posts/technical-debt/</loc>
     <lastmod>2022-12-28T00:00:00+00:00</lastmod>
@@ -62,10 +74,16 @@
     <loc>https://www.vijayanant.com/tags/declarative/</loc>
     <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.vijayanant.com/tags/encoding/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.vijayanant.com/tags/fp/</loc>
     <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/haskell/</loc>
+    <lastmod>2022-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/rle/</loc>
     <lastmod>2022-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/posts/struggles-of-a-newcomer-to-fp/</loc>
@@ -84,9 +102,6 @@
     <lastmod>2019-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/posts/gadts-talk-bengaluru-haskell-meetup/</loc>
-    <lastmod>2018-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/categories/haskel/</loc>
     <lastmod>2018-11-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/categories/talk/</loc>
@@ -140,25 +155,16 @@
     <loc>https://www.vijayanant.com/tags/development/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vijayanant.com/tags/tdd/</loc>
+    <loc>https://www.vijayanant.com/posts/quick-guide-to-test-driven-development-tdd/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vijayanant.com/posts/tdd-mantra/</loc>
+    <loc>https://www.vijayanant.com/tags/tdd/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/testing/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vijayanant.com/tags/beta-reduction/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/call-by-name/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/call-by-value/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/church-numerals/</loc>
+    <loc>https://www.vijayanant.com/posts/basic-lambda-calculus/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/lambda/</loc>
@@ -167,14 +173,8 @@
     <loc>https://www.vijayanant.com/tags/lambda-calculus/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vijayanant.com/posts/lambda-calculus/</loc>
-    <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.vijayanant.com/categories/maths/</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/coding/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/categories/haskell/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
@@ -230,9 +230,6 @@
     <loc>https://www.vijayanant.com/posts/thinking-in-imperative-object-oriented-and-functional-way/</loc>
     <lastmod>2017-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vijayanant.com/categories/object-orientation/</loc>
-    <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.vijayanant.com/tags/object-orientation/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -246,9 +243,6 @@
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/software-design/</loc>
-    <lastmod>2016-10-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/categories/software-design/</loc>
     <lastmod>2016-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/gadts/</loc>
@@ -278,9 +272,6 @@
     <loc>https://www.vijayanant.com/tags/monads/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.vijayanant.com/categories/rant/</loc>
-    <lastmod>2016-08-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.vijayanant.com/categories/wisdom/</loc>
     <lastmod>2016-08-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -291,9 +282,6 @@
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/posts/duplication-vs-abstraction/</loc>
-    <lastmod>2016-07-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/refactoring/</loc>
     <lastmod>2016-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/code-pairing/</loc>
@@ -514,5 +502,11 @@
   </url><url>
     <loc>https://www.vijayanant.com/kn/%E0%B2%A8%E0%B3%86%E0%B2%A8%E0%B2%AA%E0%B3%81/</loc>
     <lastmod>2008-11-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/posts/</loc>
+  </url><url>
+    <loc>https://www.vijayanant.com/posts/</loc>
+  </url><url>
+    <loc>https://www.vijayanant.com/posts/</loc>
   </url>
 </urlset>

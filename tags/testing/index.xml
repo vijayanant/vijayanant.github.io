@@ -8,14 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>TDD Mantra</title>
-      <link>https://www.vijayanant.com/posts/tdd-mantra/</link>
+      <title>Quick Guide to Test-Driven Development (TDD)</title>
+      <link>https://www.vijayanant.com/posts/quick-guide-to-test-driven-development-tdd/</link>
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.vijayanant.com/posts/tdd-mantra/</guid>
-      <description>The Essence  Don&amp;rsquo;t write a line of new code unless you first have a failing automated test. Eliminate duplication. (refactor)  What is Needed The ability to write concrete, deterministic, automated tests is a prerequisite for applying TDD.
-Mantra - Order in Programming The two mantras imply an order to the tasks of programming:
- Red - write a little test that doesn’t work, perhaps doesn’t even compile at first Green - make the test work quickly, committing whatever sins necessary in the process Refactor - eliminate all the duplication created in just getting the test to work  Implications The simple mantra generates complex individual and group behavior.</description>
+      <guid>https://www.vijayanant.com/posts/quick-guide-to-test-driven-development-tdd/</guid>
+      <description>Test-Driven Development (TDD) is a software development approach that emphasises on tests driving the development. It means that tests play a central role in guiding the entire development process. With each new test driving the development of a small piece of functionality, the tests act as both a specification and a guide, providing clear expectations for the code&amp;rsquo;s behaviour and helping developers stay focused on delivering the required features.
+The Essence TDD can be summarised by two key principles:</description>
     </item>
     
   </channel>
