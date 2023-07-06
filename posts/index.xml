@@ -6,17 +6,7 @@
     <description>Recent content in Archive on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Database Normalisation</title>
-      <link>https://www.vijayanant.com/posts/database-normalisation/</link>
-      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.vijayanant.com/posts/database-normalisation/</guid>
-      <description>Database normalisation is a series of steps that aims to achieve an efficient and organised design for a relational database. Applying these steps eliminate data redundancy and the chances of data becoming inconsistent. Additionally, a normalised database is easier to work with when writing code, as the data is organised in a logical and structured manner.
-The table design resulting from the first step is called First Normal Form(1NF), the result of the second step is Second Normal Form (2NF), etc.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 03 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Design Principles and Design Patterns</title>
       <link>https://www.vijayanant.com/posts/design-principles-and-design-patterns/</link>

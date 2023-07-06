@@ -3,34 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.vijayanant.com/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/posts/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/categories/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/posts/database-normalisation/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/categories/databases/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/db/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/normal-forms/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/normalisation/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/normalization/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.vijayanant.com/tags/</loc>
-    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/design-patterns/</loc>
     <lastmod>2023-04-03T00:00:00+00:00</lastmod>
@@ -51,6 +30,9 @@
     <lastmod>2023-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/tags/solid/</loc>
+    <lastmod>2023-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.vijayanant.com/tags/</loc>
     <lastmod>2023-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.vijayanant.com/categories/blogging/</loc>
