@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Databases on </title>
+    <link>https://www.vijayanant.com/categories/databases/</link>
+    <description>Recent content in Databases on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.vijayanant.com/categories/databases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Normalisation</title>
+      <link>https://www.vijayanant.com/posts/database-normalisation/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.vijayanant.com/posts/database-normalisation/</guid>
+      <description>Database normalisation is a series of steps that aims to achieve an efficient and organised design for a relational database. Applying these steps eliminate data redundancy and the chances of data becoming inconsistent. Additionally, a normalised database is easier to work with when writing code, as the data is organised in a logical and structured manner.
+The table design resulting from the first step is called First Normal Form(1NF), the result of the second step is Second Normal Form (2NF), etc.</description>
+    </item>
+    
+  </channel>
+</rss>

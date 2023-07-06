@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNSPFRLLVH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XNSPFRLLVH');
+    </script>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.88.1" />
+
+    
+    
+    
+    
+    
+
+<title>Database Normalisation • fossick • Vijay Anant</title>
+
+
+  
+    <meta name="description" content="blog by Vijay Anant :: technology, thoughts, opinions, and rants">
+  
+
+
+
+
+  
+  
+    <meta name="keywords" content="DB, Normalisation, Normalization, Normal Forms, Databases">
+  
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index,follow">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Database Normalisation"/>
+<meta name="twitter:description" content="Database normalisation is a series of steps that aims to achieve an efficient and organised design for a relational database. Applying these steps eliminate data redundancy and the chances of data becoming inconsistent. Additionally, a normalised database is easier to work with when writing code, as the data is organised in a logical and structured manner.
+The table design resulting from the first step is called First Normal Form(1NF), the result of the second step is Second Normal Form (2NF), etc."/>
+
+<meta property="og:title" content="Database Normalisation" />
+<meta property="og:description" content="Database normalisation is a series of steps that aims to achieve an efficient and organised design for a relational database. Applying these steps eliminate data redundancy and the chances of data becoming inconsistent. Additionally, a normalised database is easier to work with when writing code, as the data is organised in a logical and structured manner.
+The table design resulting from the first step is called First Normal Form(1NF), the result of the second step is Second Normal Form (2NF), etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.vijayanant.com/posts/database-normalisation/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-06T00:00:00+00:00" /><meta property="og:site_name" content="fossick" />
+
+
+
+    
+
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Muli" type="text/css" media="all" />
+
+<link rel="stylesheet" href="/css/hyde-hyde.css">
+<link rel="stylesheet" href="/css/print.min.css" media="print">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    
+    <link rel="shortcut icon" href="/author.png">
+    
+
+<link href="https://www.vijayanant.com/index.xml" rel="alternate" type="application/rss+xml" title="fossick" />
+<link href="https://www.vijayanant.com/index.xml" rel="feed" type="application/rss+xml" title="fossick" />
+
+
+</head>
+
+
+    <body >
+        
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://www.vijayanant.com">fossick</a>
+      </span>
+      
+      
+      
+      <div class="author-image">
+        <img src="https://www.vijayanant.com/author.png" alt="Author Image" class="img--circle img--headshot element--center"> 
+      </div>
+      
+      <p class="site__description">
+         Vijay Anant 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">fossick</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>All Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/resume.pdf">
+						<span>Résumé</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/kn/">
+						<span>ವಿಜಯಾ೦ತರ೦ಗ</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/vijayanant"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="https://github.com/vijayanant"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://linkedin.com/in/vijayanant"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	&nbsp;<a href="https://keybase.io/vijayanant"><i class="fab fa-keybase fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	&nbsp;<a href="mailto:vijay.hassan@gmail.com"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Database Normalisation</h1>
+     
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 06 Jun 2023
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/databases">DATABASES</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          
+          
+          
+          
+          
+      
+          
+          
+      
+          
+          
+      
+          
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 17 min read
+</div>
+
+
+  </header>
+  <div class="post">
+    <p>Database normalisation is a series of steps that aims to achieve an efficient and organised design for a <em>relational database</em>. Applying these steps eliminate data redundancy and the chances of data becoming inconsistent. Additionally, a normalised database is easier to work with when writing code, as the data is organised in a logical and structured manner.</p>
+<p>The table design resulting from the first step is called First Normal Form(1NF), the result of the second step is Second Normal Form (2NF), etc.</p>
+<p>A table in a relational database is said to be normalised if it satisfies 1st normal form. The higher normal forms deal with different levels of redundancy elimination. There are five generally accepted steps of normalisation.</p>
+<p>Before we get into details of normal forms. Let us get familiar with what we mean by inconsistency and data anomalies.</p>
+<h2 id="data-anomalies-and-inconsistencies">Data Anomalies and Inconsistencies</h2>
+<p>Data anomalies and inconsistencies are two common problems that can occur in databases. They can lead to errors, decreased performance, and a loss of confidence in the data.</p>
+<h3 id="data-anomaly">Data Anomaly</h3>
+<p>A data anomaly is an inconsistency in the data that occurs when the same data is stored in multiple places and not all of the copies are updated. This can happen when data is entered manually or when it is imported from another system.</p>
+<p>There are three types of data anomalies:</p>
+<ul>
+<li>
+<p><strong>Insertion anomaly:</strong> This occurs when new data cannot be added to the database because it is missing some required information. For example, if a new employee is hired but their department has not yet been created, the employee cannot be added to the database.</p>
+</li>
+<li>
+<p><strong>Update anomaly:</strong> This occurs when data is updated in one place but not in all of the places where it is stored. For example, if an employee&rsquo;s name is changed, but the change is not made to all of the records that contain the employee&rsquo;s name, the database will contain inconsistent data.</p>
+</li>
+<li>
+<p><strong>Deletion anomaly:</strong> This occurs when data is deleted from one place but not in all of the places where it is stored. For example, if an employee is terminated, their record may be deleted from the employee table, but it may not be deleted from the payroll table. This can lead to problems if the employee is still owed money.</p>
+</li>
+</ul>
+<h3 id="data-inconsistency">Data Inconsistency</h3>
+<p>Data inconsistency is a situation where the same data exists in different formats in multiple tables. This can happen when data is entered manually or when it is imported from another system.</p>
+<p>Data inconsistency can lead to errors, decreased performance, and a loss of confidence in the data. For example, if the same customer&rsquo;s address is stored indifferent formats in different tables, it can be difficult to determine the customer&rsquo;s correct address. This can lead to errors in marketing campaigns and customer service.</p>
+<p>Here are some examples of data anomalies and inconsistency:</p>
+<ul>
+<li>A customer&rsquo;s name is stored in different capitalisations in different tables.</li>
+<li>A product&rsquo;s price is different in the inventory table than it is in the sales table.</li>
+<li>A customer&rsquo;s order history is incomplete because some orders were not entered into the system.</li>
+</ul>
+<p>These are just a few examples of how data anomalies and inconsistency can occur.</p>
+<h4 id="example">Example</h4>
+<p>Consider a database where all the data is stored in a single table.</p>
+<table>
+<thead>
+<tr>
+<th>CustID</th>
+<th>CustName</th>
+<th>Address</th>
+<th>Phone</th>
+<th>OrderDate</th>
+<th>OrderNo</th>
+<th>ItemNo</th>
+<th>Price</th>
+<th>Shipped</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101</td>
+<td>Rahul Sharma</td>
+<td>123, Main Street, New Delhi, 110001</td>
+<td>9876543210</td>
+<td>11/11/2022</td>
+<td>101</td>
+<td>105</td>
+<td>214.50</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Rahul Sharma</td>
+<td>123, Main Street, New Delhi, 110001</td>
+<td>9876543210</td>
+<td>21/11/2022</td>
+<td>102</td>
+<td>108</td>
+<td>155.50</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Priya Singh</td>
+<td>456, High Street, Mumbai, 400001</td>
+<td>8765432109</td>
+<td>01/12/2022</td>
+<td>103</td>
+<td>105</td>
+<td>414.50</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Priya Singh</td>
+<td>456, High Street, Mumbai, 400001</td>
+<td>8765432109</td>
+<td>13/12/2022</td>
+<td>104</td>
+<td>109</td>
+<td>1613.00</td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+<p>This type of design has several drawbacks:</p>
+<ul>
+<li>More than one entity is represented in the table. In this case, the table represents Customers, Orders, and OrderItems.</li>
+<li>The table contains redundant data. Every time a customer places an order, their contact information (Name, Address, and Phone) is needlessly repeated.</li>
+<li>Querying for customers from a specific city is inefficient</li>
+<li>Any query requires the DB to search the entire table. To find every unique customer in the database, one would need to search every line. There is no location set aside to store data about Customers and only Customers.</li>
+<li>Updating information, such as customer names, requires the DB to change multiple rows. If <code>Rahul Sharma</code> moved from <code>New Delhi</code> to <code>Bengaluru,</code> the DB would need to update every row containing his information.</li>
+<li>Deleting a customer&rsquo;s only order also removes all contact information for that customer. If <code>Rahul Sharma</code> cancelled the only two orders he placed, no record of him as a potential customer would remain in the database.</li>
+</ul>
+<h2 id="not-all-databases-need-to-be-in-5nf">Not All Databases Need To Be In 5NF</h2>
+<p>You need to normalise your DB; but not all databases need to be normalised up to 5NF. In fact, there are many cases where it would be counterproductive to do so; it can also make the database more complex and difficult to use.</p>
+<p>The decision of how much to normalise a database depends on a number of factors, including the size and complexity of the database, the frequency of updates, and the needs of the users. In general, it is good practice to normalise databases to at least 3NF. However, there may be cases where it is not necessary to normalise further. For example, a small database that is not updated very often may not need to be normalised beyond 3NF.</p>
+<p>Here are some of the reasons why a database might not need to be normalised up to 5NF:</p>
+<ul>
+<li>The database is small and not updated very often.</li>
+<li>The users of the database do not need to be able to perform complex queries.</li>
+<li>The database is not critical to the business.</li>
+<li>The cost of normalising the database is too high.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites:</h2>
+<h3 id="keys">Keys</h3>
+<ul>
+<li>
+<p><strong>Primary Key</strong>: A primary key is a unique identifier for each record in a table. It uniquely identifies a row and ensures that each record is distinct. A primary key cannot contain null values and must be unique within the table. Typically, a primary key is chosen from one or more columns (attributes) that have unique values. It serves as a reference point for establishing relationships with other tables through foreign key constraints.</p>
+</li>
+<li>
+<p><strong>Foreign Key</strong>: A foreign key is an attribute (column) in one table that refers to the primary key of another table. It establishes a relationship between two tables, where the foreign key in one table references the primary key in another table. This allows for the enforcement of referential integrity, ensuring that data remains consistent across related tables.</p>
+</li>
+<li>
+<p><strong>Candidate Key</strong>: A candidate key is a column or a combination of columns that can uniquely identify a row in a table. It is similar to a primary key but may or may not be chosen as the primary key for the table. A table can have multiple candidate keys, but only one can be selected as the primary key. The other candidate keys become alternate keys. The columns in a candidate key are called prime attributes.</p>
+</li>
+<li>
+<p><strong>Alternate Key</strong>: An alternate key is a candidate key that is not chosen as the primary key for a table. While it can uniquely identify a row, it serves as an alternative to the primary key. An alternate key is useful when there are multiple unique identifiers for a table, and the primary key is selected based on other considerations.</p>
+</li>
+<li>
+<p><strong>Super Key</strong>: A super key is a set of one or more attributes that can uniquely identify a row in a table. It may include more attributes than the minimum required to uniquely identify a record. A super key can have additional attributes that are not necessary for uniqueness. Candidate keys are minimal super keys.</p>
+</li>
+</ul>
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+<li>
+<p><strong>Functional Dependency</strong>: Functional dependency describes the relationship between two sets of attributes in a table. It states that the values of one set of attributes determine the values of another set of attributes. In other words, knowing the value(s) of certain attribute(s) allows us to determine the value(s) of another attribute(s).</p>
+<p>Functional dependencies are denoted as <code>A -&gt; B</code>, where <code>A</code> determines <code>B</code>. A FD <code>X –&gt; Y</code> in a relation R means that for each row in the relation R that has the same value for <code>X</code> the value of <code>Y</code> must also be the same.</p>
+</li>
+<li>
+<p><strong>Partial Dependency</strong>: Partial dependency occurs when an attribute in a table is functionally dependent on only a part of a composite candidate key. It means that some non-key attributes depend on only a portion of the candidate key, rather than the entire key. Partial dependencies can lead to data redundancy and update anomalies.</p>
+</li>
+<li>
+<p><strong>Transitive Dependency</strong>: Transitive dependency is a type of functional dependency that occurs when an attribute is functionally dependent on another attribute through a third attribute. In other words, there is an indirect relationship between two attributes through a third attribute. Transitive dependencies can cause data redundancy and complicate data retrieval and updates. <code>A -&gt; B -&gt; C</code>. Here <code>A</code> determines <code>C</code> indirectly through <code>B</code></p>
+</li>
+<li>
+<p><strong>Multivalued Dependency</strong>: A multivalued dependency exists when there are at least three attributes (like X,Y and Z) in a relation and for a value of X there is a well defined set of values of Y and a well defined set of values of Z. However, the set of values of Y is independent of set Z and vice versa.</p>
+</li>
+</ul>
+<h2 id="first-normal-form-1nf">First Normal Form (1NF)</h2>
+<p><strong>A relation R is in first normal form (1NF) if and only if all underlying domains contain atomic values only.’</strong></p>
+<p>Technically, this is the only criteria that is needed for a relation/table to be in 1NF. However, some more rules are generally added to the 1NF rules. Once your design satisfy this rule, you can claim that your tables are normalised (up to 1NF).</p>
+<h3 id="atomic-values">Atomic Values</h3>
+<p>Each column in a table should hold atomic (indivisible) values. This means that each value within a column should be indivisible and not contain multiple pieces of data. If a value has multiple components, it should be split into separate columns.</p>
+<p>Having atomic values in each column helps prevent data redundancy and ensures data integrity. It eliminates the need to store multiple values in a single column, which can lead to data inconsistency and difficulties in manipulating and querying the data. Atomic values enable efficient storage, retrieval, and update operations.</p>
+<p>Consider a table named &ldquo;Employee&rdquo; with a column called &ldquo;Skills&rdquo; that stores multiple skills as a single value.</p>
+<table>
+<thead>
+<tr>
+<th>Employee ID</th>
+<th>Name</th>
+<th>Skills</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>John</td>
+<td>Programming, Database, UI/UX</td>
+</tr>
+</tbody>
+</table>
+<p>In this example, the &ldquo;Skills&rdquo; column violates 1NF because it contains multiple values, &ldquo;Programming,&rdquo; &ldquo;Database,&rdquo; and &ldquo;UI/UX,&rdquo; separated by commas. This violates the atomicity rule as each skill should be stored in a separate column. Storing multiple values in a single column can lead to difficulties in querying and updating specific skills and can cause data redundancy.</p>
+<h3 id="unique-column-names">Unique Column Names</h3>
+<p>Each column in a table must have a unique name. This ensures clarity and avoids confusion when referencing columns.</p>
+<p>Unique column names prevent ambiguity and confusion when referencing columns in the table. By enforcing distinct column names, it becomes easier to identify and understand the meaning of each column. This clarity improves the maintainability and readability of the database design and facilitates effective communication among developers and users.</p>
+<p>Consider a table named &ldquo;Student&rdquo; with two columns named &ldquo;Name&rdquo; and &ldquo;Student_Name.&rdquo;</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Student_Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td>Smith</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>Johnson</td>
+</tr>
+</tbody>
+</table>
+<p>In this example, the table violates 1NF because it has duplicate column names. Having non-unique column names leads to ambiguity and confusion when referencing columns. It becomes unclear which column should be used, causing difficulties in data retrieval and query formulation.</p>
+<h3 id="orderless-rows">Orderless Rows</h3>
+<p>The order of records (rows) in a table should not matter. The database should be able to retrieve and present the rows in any order without impacting the integrity or meaning of the data.</p>
+<p>Requiring orderless rows ensures that the order in which records are stored or retrieved from the table does not affect the integrity or meaning of the data. It eliminates any dependencies on the physical order of the rows, enabling flexible data retrieval and manipulation operations. This independence from row order simplifies data management and reduces the likelihood of errors or inconsistencies caused by relying on a specific row order.</p>
+<p>Consider a table named &ldquo;Orders&rdquo; where the order of the records represents the sequence of order placement.</p>
+<table>
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>John Smith</td>
+<td>2022-01-15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Alice Johnson</td>
+<td>2022-02-10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bob Williams</td>
+<td>2022-01-05</td>
+</tr>
+</tbody>
+</table>
+<p>In this example, the table violates 1NF because the order of the rows is significant and implies a specific sequence. Depending on the order of the records, the data may have different meanings or implications. Relying on row order can lead to inconsistencies when inserting, deleting, or updating records and can cause confusion in data interpretation.</p>
+<h3 id="uniquely-identifiable-rows">Uniquely Identifiable Rows</h3>
+<p>Each row in a table should be uniquely identifiable. This requires the presence of a primary key, which is a column (or combination of columns) that uniquely identifies each row in the table. The primary key must have unique values and should not contain any null (empty) values.</p>
+<p>Ensuring each row is uniquely identifiable through a primary key solves various problems and prevents anomalies in data management. Having a primary key allows for accurate referencing and linking of data across multiple tables. It helps avoid data duplication and inconsistencies that can arise from having duplicate rows. Additionally, a primary key enables efficient data retrieval, update operations, and maintaining data integrity.</p>
+<p>Consider a table named &ldquo;Students&rdquo; without a primary key.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td>20</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Alice</td>
+<td>19</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p>In this example, the table violates 1NF because it does not have a primary key column. Without a unique identifier for each row, it becomes challenging to differentiate between duplicate or similar records. The absence of a primary key can lead to data duplication, difficulties in data retrieval, and update anomalies when modifying or deleting specific records.</p>
+<p>By adhering to these rules, a table can achieve the First Normal Form. This helps eliminate data redundancy and ensures data integrity and consistency in the database.</p>
+<h2 id="second-normal-form-2nf">Second Normal Form (2NF)</h2>
+<p><strong>&lsquo;A relation R is in second normal form (2NF) if and only if it is in 1NF and every non-key attribute is fully dependent on candidate key.’</strong></p>
+<p>This means that a relation is in 2NF if it meets the following two conditions:</p>
+<ul>
+<li>It is in 1NF. This means that all of its attributes are atomic, and that there are no duplicate rows.</li>
+<li>It does not have any non-prime attribute that is functionally dependent on any proper subset of any candidate key of the relation (i.e. no partial dependencies)</li>
+</ul>
+<p>Here is an example of a table that is in 1NF (but not in 2NF):</p>
+<table>
+<thead>
+<tr>
+<th>Customer</th>
+<th>Customer Address</th>
+<th>Product</th>
+<th>Manufacturer</th>
+<th>Quantity</th>
+<th>Order Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rajesh Kumar</td>
+<td>123 Main Street</td>
+<td>iPhone 13 Pro</td>
+<td>Apple</td>
+<td>1</td>
+<td>06/06/2023</td>
+</tr>
+<tr>
+<td>Priya Sharma</td>
+<td>456 Elm Street</td>
+<td>Samsung Galaxy S22</td>
+<td>Samsung</td>
+<td>2</td>
+<td>07/06/2023</td>
+</tr>
+<tr>
+<td>Ravi Singh</td>
+<td>789 Oak Street</td>
+<td>MacBook Pro</td>
+<td>Apple</td>
+<td>1</td>
+<td>08/06/2023</td>
+</tr>
+<tr>
+<td>Sunita Patel</td>
+<td>101 Pine Street</td>
+<td>Dell XPS 13</td>
+<td>Dell</td>
+<td>2</td>
+<td>09/06/2023</td>
+</tr>
+</tbody>
+</table>
+<p>Here are some problems with this design:</p>
+<ul>
+<li>Everytime a customer buys same product multiple times, customer&rsquo;s address and the product&rsquo;s manufacturer details are repeated.</li>
+<li>If a customers address changes, multiple rows needs to be updated which affects performance of your DB.</li>
+<li>If a customer has only one order, and that order is cancelled, we loose all other information about the customer.</li>
+</ul>
+<p>2NF helps fix these problems. Because a customer can purchase two or more  products on different date, the composite key <code>{Customer, Product, Order Date}</code> is a candidate key. In fact it is the only candidate key for this table. The non-key attributes, then, are <code>Customer Address</code>, <code>Manufacturer</code>, and <code>Quantity</code>. For the table to be in 2NF, these non-key attributes must be determined by entire key.</p>
+<ul>
+<li><code>Customer Address</code> can be determined by <code>Customer</code> alone, this violates 2NF</li>
+<li><code>Manufacturer</code> is determined by <code>Product</code>, this too violates 2NF</li>
+<li><code>Quantity</code> is dependent on <code>Customer</code>, <code>Product</code> and <code>Order Date</code>. That is the
+entire key.</li>
+</ul>
+<p>Since <code>Customer Address</code> and <code>Manufacturer</code> are partially dependent on primary key, we move them to separate table where they depend on the entire key.</p>
+<h4 id="customer-table">Customer Table</h4>
+<table>
+<thead>
+<tr>
+<th>CustomerID (PK)</th>
+<th>Customer Name</th>
+<th>Customer Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>Rajesh Kumar</td>
+<td>123 Main Street</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Priya Sharma</td>
+<td>456 Elm Street</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Ravi Singh</td>
+<td>789 Oak Street</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Sunita Patel</td>
+<td>101 Pine Street</td>
+</tr>
+</tbody>
+</table>
+<h4 id="product-table">Product Table</h4>
+<table>
+<thead>
+<tr>
+<th>ProductID  (PK)</th>
+<th>ProductName</th>
+<th>Manufacturer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>iPhone 13 Pro</td>
+<td>Apple</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Samsung Galaxy S22</td>
+<td>Samsung</td>
+</tr>
+<tr>
+<td>3</td>
+<td>MacBook Pro</td>
+<td>Apple</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Dell XPS 13</td>
+<td>Dell</td>
+</tr>
+</tbody>
+</table>
+<h4 id="customer-order-table">Customer Order Table</h4>
+<table>
+<thead>
+<tr>
+<th>CustomerID (PK, FK)</th>
+<th>ProductID  (PK, FK)</th>
+<th>Quantity</th>
+<th>Order Date (PK)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101</td>
+<td>1</td>
+<td>1</td>
+<td>06/06/2023</td>
+</tr>
+<tr>
+<td>102</td>
+<td>2</td>
+<td>2</td>
+<td>07/06/2023</td>
+</tr>
+<tr>
+<td>103</td>
+<td>3</td>
+<td>1</td>
+<td>08/06/2023</td>
+</tr>
+<tr>
+<td>104</td>
+<td>4</td>
+<td>2</td>
+<td>09/06/2023</td>
+</tr>
+</tbody>
+</table>
+<p>Now, check the problem we had identified with the original table and see if those problems remain!</p>
+<h2 id="3nf">3NF</h2>
+<p><strong>‘A relation R is in third normal form (3NF) if and only if it is in 2NF and
+every non-key attribute is non-transitively dependent on the candidate key.’</strong></p>
+<p>Normalising a table to 2NF ensures that every column in the table is functionally dependent on the entire key. Nonetheless, it does not put any restriction on the non-prime to non-prime attribute dependency. That is addressed in third normal form.</p>
+<p>Here is a table of Men&rsquo;s Tennis Grand Slam Title Winners</p>
+<table>
+<thead>
+<tr>
+<th>YEAR</th>
+<th>TOURNAMENT</th>
+<th>WINNER</th>
+<th>DATE OF BIRTH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023</td>
+<td>French Open</td>
+<td>Novak Djokovic</td>
+<td>22 May 1987</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Australian Open</td>
+<td>Novak Djokovic</td>
+<td>22 May 1987</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>U.S. Open</td>
+<td>Carlos Alcaraz</td>
+<td>05 May 2003</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Wimbledon</td>
+<td>Novak Djokovic</td>
+<td>22 May 1987</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>French Open</td>
+<td>Rafael Nadal</td>
+<td>03 June 1986</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Australian Open</td>
+<td>Rafael Nadal</td>
+<td>03 June 1986</td>
+</tr>
+<tr>
+<td>2010</td>
+<td>Australian Open</td>
+<td>Roger Federer</td>
+<td>08 August 1981</td>
+</tr>
+</tbody>
+</table>
+<p>As there can be multiple tournaments in a given year, <code>{Tournament, Year}</code> is a candidate key for this table.</p>
+<p>This table is in 2NF as there are no partial dependencies.</p>
+<ul>
+<li>Winner&rsquo;s name and date of birth seems to repeating multiple times. We cannot avoid repeating winner&rsquo;s name if the same person wins multiple name. But repeating winner&rsquo;s DOB seems unnecessary.</li>
+<li>Data becomes inconsistent if an update is made to one of the rows changing the DOB. There could be two different DOBs for same payer! Which one is to be believed?</li>
+</ul>
+<p>We thought we solved data duplication and anomalies by removing partial dependencies from the table; then what caused this?</p>
+<p>In this table the non-prime attribute winner&rsquo;s <code>DATE OF BIRTH</code> is transitively dependent on the candidate key <code>{Tournament, Year}</code> through the non-prime attribute <code>WINNER</code>.</p>
+<p><code>{Tournament, Year} -&gt; WINNER -&gt; DATE OF BIRTH</code></p>
+<p>Transitive dependencies can cause a number of problems, including:</p>
+<ul>
+<li><strong>Data redundancy</strong>: If a transitive dependency exists, the same data is stored in multiple places in the database. This can lead to data inconsistencies and make it difficult to update or delete data.</li>
+<li><strong>Update anomalies</strong>: If a transitive dependency exists, and we update the value of an attribute that is transitively dependent on another attribute, we may also need to update the value of the other attribute. This can be a problem if we do not know that the two attributes are related.</li>
+<li><strong>Deletion anomalies</strong>: If a transitive dependency exists, and we delete a row from the table, we may also need to delete rows from other tables. This can be a problem if we do not know that the rows are related.</li>
+</ul>
+<p>To avoid these problems, we normalise our tables so that there are no transitive dependencies. This can be done by splitting the table into multiple tables, with each table representing a single entity.</p>
+<p>Here are some tips for avoiding transitive dependencies in your database tables:</p>
+<ul>
+<li>Identify the primary key for each table.</li>
+<li>Only include attributes in a table that are directly related to the primary key.</li>
+<li>If you need to store data that is indirectly related to the primary key, store it in a separate table.</li>
+</ul>
+<h4 id="tournament-table">Tournament Table</h4>
+<table>
+<thead>
+<tr>
+<th>YEAR</th>
+<th>TOURNAMENT</th>
+<th>WINNER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023</td>
+<td>French Open</td>
+<td>Novak Djokovic</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Australian Open</td>
+<td>Novak Djokovic</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>U.S. Open</td>
+<td>Carlos Alcaraz</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Wimbledon</td>
+<td>Novak Djokovic</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>French Open</td>
+<td>Rafael Nadal</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Australian Open</td>
+<td>Rafael Nadal</td>
+</tr>
+<tr>
+<td>2010</td>
+<td>Australian Open</td>
+<td>Roger Federer</td>
+</tr>
+</tbody>
+</table>
+<h4 id="winners-date-of-birth-table">Winner&rsquo;s Date Of Birth Table</h4>
+<table>
+<thead>
+<tr>
+<th>WINNER</th>
+<th>DATE OF BIRTH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Novak Djokovic</td>
+<td>22 May 1987</td>
+</tr>
+<tr>
+<td>Carlos Alcaraz</td>
+<td>05 May 2003</td>
+</tr>
+<tr>
+<td>Rafael Nadal</td>
+<td>03 June 1986</td>
+</tr>
+<tr>
+<td>Roger Federer</td>
+<td>08 August 1981</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bcnf">BCNF</h2>
+<p><strong>‘A relation R is in Boyce/Codd normal form (BCNF) if and only if every determinant is a candidate key.’</strong></p>
+<h2 id="4nf">4NF</h2>
+<p><strong>‘A relation R is in fourth normal form (4NF) if and only if, wherever there exists a MVD in R, say A -&raquo; B, then all attributes of R are also functionally dependent on A. In other words, the only dependencies (FDs or MVDs) in R are of the form K -&gt; X (i.e. a functional dependency from a candidate key K to some other attribute X). Equivalently: R is in 4NF if it is in BCNF and all MVD’s in R are in fact FDs.’</strong></p>
+<h2 id="5nf">5NF</h2>
+<p><strong>‘A relation R is in fifth normal form (5NF) - also called projection-join normal form (PJ/NF) if and only if every join dependency in R is a consequence of the candidate keys of R.’</strong></p>
+
+  </div>
+  
+
+
+  
+
+
+
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-58152749-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+
+
+    
+
+
+
+    </body>
+</html>
