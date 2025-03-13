@@ -1,0 +1,37 @@
+/*--------------------*\
+    Contact Section Styles
+\*--------------------*/
+
+#contact {
+    padding: 4rem 0;
+    background-color: #f8f8f8; /* Light background */
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}

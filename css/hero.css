@@ -1,0 +1,88 @@
+/*--------------------*\
+    Hero Section Styles
+\*--------------------*/
+#hero {
+    padding: 4rem 0;
+}
+
+.hero-container {
+    display: flex; /* Flex container for image and text */
+    align-items: center; /* Vertically align items */
+}
+
+.hero-image-container {
+    flex: 0 0 350px; /* Set a fixed width for the image container */
+    margin-right: 2rem; /* Add some space between image and text */
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Change to a less round shape */
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text {
+    flex: 1; /* Allow text to take remaining space */
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    color: #444;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; /* Align text to the left */
+    max-width: 600px; 
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/*.contact-button {*/
+    /*display: inline-flex; [> Changed to inline-flex <]*/
+    /*align-items: center; [> Vertically align icon and text <]*/
+    /*background-color: #007bff;*/
+    /*color: #fff;*/
+    /*padding: 10px 20px;*/
+    /*border-radius: 5px;*/
+    /*text-decoration: none;*/
+    /*transition: background-color 0.3s ease;*/
+    /*margin-top: 1rem;*/
+    /*gap: 0.5rem; [> Space between icon and text <]*/
+/*}*/
+
+/*.contact-button:hover {*/
+    /*background-color: #0056b3;*/
+/*}*/
