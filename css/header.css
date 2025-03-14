@@ -28,7 +28,7 @@ nav {
 }
 
 .nav-toggle {
-    display: none;
+    display: none; /* Hidden by default */
     background: none;
     border: none;
     cursor: pointer;
@@ -81,4 +81,37 @@ nav {
 
 .nav-link:hover {
     color: #007bff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show hamburger menu */
+    }
+
+    .nav-list {
+        display: none; /* Hide navigation list */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #fff; /* Or your navbar background */
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+    }
+
+    .nav-list.active {
+        display: flex; /* Show menu when active */
+    }
 }
