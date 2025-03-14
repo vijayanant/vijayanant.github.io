@@ -2,6 +2,7 @@
     Footer Styles
 \*--------------------*/
 footer {
+    padding: 4rem 0;
     background-color: #343a40;
     color: #fff;
     text-align: center;

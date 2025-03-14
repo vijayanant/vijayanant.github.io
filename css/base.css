@@ -8,17 +8,32 @@
 }
 
 body {
-    font-family: sans-serif; /* Replace with your preferred font */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
+    background-color: #f8f8f8;
     color: #333;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+#construction-banner {
+    background-color: #ffeb3b; /* Yellow background for attention */
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
 /* Color palette */
 :root {
     --primary-color: #007bff;

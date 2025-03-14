@@ -2,26 +2,31 @@
     Speaking Section Styles
 \*--------------------*/
 #speaking {
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 
 .speaking-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .speaking-item {
-    padding: 1.5rem;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-    border-radius: 5px; /* Optional: rounded corners */
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    
+    /*border-bottom: 1px solid #ddd;*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); [> Subtle shadow <]*/
+    /*border-radius: 5px; [> Optional: rounded corners <]*/
 }
 
 .speaking-item:hover {
-    background-color: #f0f0f0; /* Slightly darker on hover */
+    /*background-color: #f0f0f0; [> Slightly darker on hover <]*/
     transform: translateY(-2px); /* Slight lift on hover */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    /*transition: background-color 0.3s ease, transform 0.3s ease;*/
 }
 
 .speaking-item:last-child {
@@ -29,11 +34,11 @@
 }
 
 .speaking-item:nth-child(odd) {
-    background-color: #f8f8f8; /* Light gray for odd items */
+    /*background-color: #f8f8f8; [> Light gray for odd items <]*/
 }
 
 .speaking-item:nth-child(even) {
-    background-color: #f0f0f0; /* Slightly darker gray for even items */
+    /*background-color: #f0f0f0; [> Slightly darker gray for even items <]*/
 }
 
 .speaking-item:nth-child(odd) .speaking-title,
