@@ -2,17 +2,18 @@
     About Section Styles
 \*--------------------*/
 #about {
-    /*background-color: #f8f9fa;*/
-    padding: 4rem 0;
+    padding: 6rem 0;
+    border-top: 1px solid #eee;
 }
 
-/*.about-content {*/
-    /*max-width: 700px;*/
-    /*margin: 0 auto;*/
-    /*color: #444;*/
-/*}*/
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
 
-/*#about p {*/
-    /*line-height: 1.7;*/
-    /*margin-bottom: 1.5rem;*/
-/*}*/
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+}

@@ -1,13 +1,13 @@
 /*--------------------*\
     Header Styles
-\*--------------------*/
+*\--------------------*/
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    background-color: var(--background-color);
+    padding: 2rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid #eee;
 }
 
 header .container {
@@ -15,33 +15,60 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* For positioning the dropdown */
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-color);
 }
+
+.logo-badge-bordered {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logo-badge-bordered:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 
 /* Navigation */
 nav {
-    display: flex;
-    align-items: center;
+    position: relative; /* For positioning the dropdown */
 }
 
 .nav-toggle {
-    display: none;
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 101; /* Above the dropdown */
 }
 
 .hamburger {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: var(--text-color);
     position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .hamburger::before,
@@ -50,9 +77,9 @@ nav {
     position: absolute;
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: var(--text-color);
     left: 0;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .hamburger::before {
@@ -63,56 +90,56 @@ nav {
     top: 8px;
 }
 
+/* Active state for hamburger */
+.nav-toggle.active .hamburger {
+    background-color: transparent; /* Hide middle line */
+}
+
+.nav-toggle.active .hamburger::before {
+    transform: rotate(45deg) translate(5px, 7px);
+}
+
+.nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -7px);
+}
+
+
 .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the nav toggle */
+    right: 0;
+    background-color: var(--background-color);
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    min-width: 200px;
+}
+
+.nav-list.active {
     display: flex;
-    align-items: center;
 }
 
 .nav-item {
-    margin-left: 1rem;
+    margin: 0;
+    width: 100%;
 }
 
 .nav-link {
+    display: block;
+    padding: 1rem 2rem;
     text-decoration: none;
-    color: #333;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.1rem;
+    text-align: left;
 }
 
 .nav-link:hover {
-    color: #007bff;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block; /* Show hamburger menu */
-    }
-
-    .nav-list {
-        display: none; /* Hide navigation list */
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust as needed */
-        left: 0;
-        width: 100%;
-        background-color: #fff; /* Or your navbar background */
-        text-align: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-item {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    .nav-link {
-        display: block;
-        padding: 1rem;
-    }
-
-    .nav-list.active {
-        display: flex; /* Show menu when active */
-    }
+    background-color: #f5f5f5;
+    color: var(--primary-color);
 }

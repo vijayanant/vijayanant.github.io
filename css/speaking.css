@@ -2,68 +2,37 @@
     Speaking Section Styles
 \*--------------------*/
 #speaking {
-    padding: 4rem 0;
+    padding: 6rem 0;
+    border-top: 1px solid #eee;
 }
 
 .speaking-grid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .speaking-item {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    
-    /*border-bottom: 1px solid #ddd;*/
-    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); [> Subtle shadow <]*/
-    /*border-radius: 5px; [> Optional: rounded corners <]*/
-}
-
-.speaking-item:hover {
-    /*background-color: #f0f0f0; [> Slightly darker on hover <]*/
-    transform: translateY(-2px); /* Slight lift on hover */
-    /*transition: background-color 0.3s ease, transform 0.3s ease;*/
-}
-
-.speaking-item:last-child {
-    border-bottom: none;
-}
-
-.speaking-item:nth-child(odd) {
-    /*background-color: #f8f8f8; [> Light gray for odd items <]*/
-}
-
-.speaking-item:nth-child(even) {
-    /*background-color: #f0f0f0; [> Slightly darker gray for even items <]*/
-}
-
-.speaking-item:nth-child(odd) .speaking-title,
-.speaking-item:nth-child(odd) .speaking-meta {
-    text-align: left;
-}
-
-.speaking-item:nth-child(even) .speaking-title,
-.speaking-item:nth-child(even) .speaking-meta {
-    text-align: right;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 2rem;
 }
 
 .speaking-title {
-    font-size: 1.5rem;
-    font-weight: 100;
-    color: #007bff;
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
 .speaking-meta {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #777;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
 }
 
 .speaking-description {
     color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
