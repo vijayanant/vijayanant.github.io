@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to your existing CSS -->
+    <style>
+        /* Specific styles for 404 page layout, leveraging existing CSS variables */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container-404 {
+            max-width: 600px;
+            padding: 2rem;
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container-404 h1 {
+            font-family: var(--heading-font);
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .container-404 p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .container-404 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .container-404 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-404">
+        <h1>404</h1>
+        <p>Oops! The page you're looking for doesn't exist.</p>
+        <p>It might have been moved or deleted.</p>
+        <p><a href="/">Go back to the homepage</a></p>
+    </div>
+</body>
+</html>
