@@ -531,6 +531,15 @@ nav {
     margin: 0 auto; /* Center the block itself */
 }
 
+.writing-subsection-title {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
 /*--------------------*\
     Contact Section Styles
 \*--------------------*/

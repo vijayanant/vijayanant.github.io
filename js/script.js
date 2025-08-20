@@ -46,14 +46,15 @@ navLinks.forEach(link => {
 });
 
 // Fetch and display Substack posts
-const writingGrid = document.querySelector('.writing-grid');
+const latestPostsGrid = document.querySelector('#latest-posts-grid');
+const latestPostsTitle = document.querySelector('#latest-posts-title');
 const substackUrl = 'https://vijayanant.substack.com';
 
 // Using a CORS proxy to fetch the RSS feed
 const corsProxy = 'https://api.allorigins.win/get?url=';
 
 async function fetchPosts() {
-    if (!writingGrid) return;
+    if (!latestPostsGrid) return;
 
     try {
         const response = await fetch(`${corsProxy}${encodeURIComponent(substackUrl + '/feed')}`);
@@ -86,7 +87,10 @@ async function fetchPosts() {
             }
         });
 
-        writingGrid.innerHTML += postsHtml; // Append the new posts
+        if (postsHtml !== '') {
+            latestPostsTitle.style.display = 'block';
+            latestPostsGrid.innerHTML = postsHtml;
+        }
     } catch (error) {
         console.error('Error fetching Substack posts:', error);
         // If fetch fails, do nothing. Hardcoded content will remain.
