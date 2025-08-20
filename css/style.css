@@ -68,6 +68,15 @@ img {
     height: 4px;
     background-color: var(--primary-color);
 }
+
+.section-intro {
+    text-align: center;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto 3rem auto; /* Center and add bottom margin */
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+    line-height: 1.8;
+}
 /* components.css */
 .button {
     display: inline-flex;
@@ -85,7 +94,7 @@ img {
 
 .button-primary {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--background-color);
 }
 
 .button-primary:hover {
@@ -437,9 +446,7 @@ nav {
     font-size: 1.1rem;
     line-height: 1.8;
 }
-/*--------------------*\
-    Writing Section Styles
-\*--------------------*/
+/*--------------------*\n    Writing Section Styles\n*--------------------*/
 #writing {
     padding: 6rem 0;
 }
@@ -503,6 +510,13 @@ nav {
 .read-more-button:hover {
     color: #fff;
 }
+
+.writing-item.placeholder-content {
+    text-align: center;
+    max-width: 600px; /* Limit width for better readability when centered */
+    margin: 0 auto; /* Center the block itself */
+}
+
 /*--------------------*\
     Contact Section Styles
 \*--------------------*/

@@ -41,5 +41,8 @@ const outputFile = 'index.html';
     console.log('Successfully updated posts!');
   } catch (error) {
     console.error('Error updating posts:', error);
+    if (writingGrid) {
+        writingGrid.innerHTML = `<p style="color: var(--secondary-text-color); text-align: center;">Could not load posts. Please visit my <a href="${substackUrl}" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">Substack</a> for the latest articles.</p>`;
+    }
   }
 })();
