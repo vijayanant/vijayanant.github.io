@@ -3,12 +3,33 @@ const navList = document.querySelector('.nav-list');
 const navLinks = document.querySelectorAll('.nav-link'); // Select all nav links
 const header = document.querySelector('header');
 
+// Get all sections with an ID
+const sections = document.querySelectorAll('section[id]');
+
 window.addEventListener('scroll', () => {
+    // Sticky header logic
     if (window.scrollY > 100) {
         header.classList.add('header-scrolled');
     } else {
         header.classList.remove('header-scrolled');
     }
+
+    // Scrollspy logic
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.href.includes(current)) {
+            link.classList.add('active');
+        }
+    });
 });
 
 navToggle.addEventListener('click', () => {
