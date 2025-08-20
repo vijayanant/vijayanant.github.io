@@ -89,17 +89,22 @@ img {
     font-size: 1rem;
     font-weight: 700;
     border: 2px solid var(--primary-color);
-    gap: 0.5rem;
+    gap: 0.5rem; /* Add space between icon and text */
+}
+
+.button i {
+    font-size: 1.2rem; /* Slightly larger than text for emphasis */
+    vertical-align: middle; /* Align icon with text */
 }
 
 .button-primary {
-    background-color: var(--primary-color);
-    color: var(--background-color);
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 .button-primary:hover {
-    background-color: transparent;
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: #fff;
 }
 /*--------------------*\
     Header Styles
