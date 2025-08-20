@@ -65,16 +65,16 @@ async function fetchPosts() {
         const xmlDoc = parser.parseFromString(data.contents, "application/xml");
         const items = xmlDoc.querySelectorAll("item");
 
-        let posts = '';
+        let postsHtml = '';
         let count = 0;
         items.forEach(item => {
-            if (count < 3) {
+            if (count < 3) { // Only append the latest 3 posts
                 const title = item.querySelector("title").textContent;
                 const link = item.querySelector("link").textContent;
                 const pubDate = new Date(item.querySelector("pubDate").textContent);
                 const description = item.querySelector("description").textContent.trim();
 
-                posts += `
+                postsHtml += `
                     <div class="writing-item">
                         <h3 class="writing-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
                         <p class="writing-meta"><span>${pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span></p>
@@ -86,12 +86,10 @@ async function fetchPosts() {
             }
         });
 
-        writingGrid.innerHTML = posts;
+        writingGrid.innerHTML += postsHtml; // Append the new posts
     } catch (error) {
         console.error('Error fetching Substack posts:', error);
-        if (writingGrid) {
-            writingGrid.innerHTML = `<p style="color: var(--secondary-text-color);">Could not load posts. Please visit my <a href="${substackUrl}" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">Substack</a> for the latest articles.</p>`;
-        }
+        // If fetch fails, do nothing. Hardcoded content will remain.
     }
 }
 
