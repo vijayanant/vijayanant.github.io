@@ -17,8 +17,8 @@
     --surface-color: #1E1E1E; /* A slightly lighter surface color for cards and sections */
     --text-color: #E0E0E0; /* A light text color for readability */
     --secondary-text-color: #B0B0B0; /* A slightly dimmer text color for secondary information */
-    --heading-font: 'Playfair Display', serif;
-    --body-font: 'Roboto', sans-serif;
+    --heading-font: 'Lora', serif;
+    --body-font: 'Mulish', sans-serif;
 }
 
 body {
@@ -134,11 +134,19 @@ header .container {
 }
 
 .logo {
-    font-family: var(--heading-font);
-    font-size: 2rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--primary-color);
+    display: flex; /* To center the image if it's smaller than the container */
+    align-items: center;
+    justify-content: center;
+    height: 45px; /* Example height, adjust as needed */
+    width: 45px; /* Example width, adjust as needed */
+    text-decoration: none; /* Keep if you want to ensure no underline */
+}
+
+.logo-img {
+    max-height: 100%; /* Ensure image scales within its container */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
 }
 
 /* Navigation */
