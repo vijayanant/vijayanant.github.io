@@ -1,0 +1,24 @@
+<header>
+    <div class="container">
+        <a href="{{ "/" | relURL }}" class="logo">
+            <picture>
+                <source srcset="{{ "/assets/images/logo-512.webp" | relURL }}" type="image/webp">
+                <img src="{{ "/assets/images/logo-512.png" | relURL }}" alt="VA Logo" class="logo-img" loading="lazy">
+            </picture>
+        </a>
+        <nav>
+            <button class="nav-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="{{ "#hero" | relURL }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ "#expertise" | relURL }}" class="nav-link">Expertise</a></li>
+                <li class="nav-item"><a href="{{ "#writing" | relURL }}" class="nav-link">Writing</a></li>
+                <li class="nav-item"><a href="{{ "#speaking" | relURL }}" class="nav-link">Speaking</a></li>
+                <li class="nav-item"><a href="{{ "#workshops" | relURL }}" class="nav-link">Workshops</a></li>
+                <li class="nav-item"><a href="{{ "#contact" | relURL }}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{ "/files/Vijay-Anantharamaiah.pdf" | relURL }}" target="_blank" class="nav-link" aria-label="Download Vijay Anantharamaiah's Resume">Resume</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

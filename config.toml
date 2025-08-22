@@ -1,0 +1,23 @@
+baseURL = "https://vijayanant.com/"
+languageCode = "en-us"
+title = "Vijay Anantharamaiah"
+
+[params]
+  description = "Engineering Leader & Product Builder"
+  image = "https://vijayanant.com/assets/images/logo-512.png"
+
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  groupXML = false
+  keepCSSPseudoClasses = false
+  keepComments = false
+  keepCSSVariables = false
+  keepQuotes = false
+  newLine = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
