@@ -20,4 +20,7 @@ title = "Vijay Anantharamaiah"
   newLine = false
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML"]
+
+[taxonomies]
+  disableKinds = ["taxonomy", "taxonomyTerm"]
