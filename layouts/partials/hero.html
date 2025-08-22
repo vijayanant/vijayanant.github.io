@@ -1,9 +1,9 @@
 <section id="hero">
     <div class="container hero-container">
         <div class="hero-text">
-            <h1 class="hero-title">Vijay Anantharamaiah</h1>
-            <h2 class="hero-subtitle">Engineering Leader & Product Builder</h2>
-            <p class="hero-description">I build two things: high-performing engineering teams and the scalable cloud platforms they need to thrive. As an engineering leader with 20 years of experience, I love solving complex technical challenges and turning ambitious ideas into reality.</p>
+            <h1 class="hero-title">{{ .Site.Data.sections.hero.title }}</h1>
+            <h2 class="hero-subtitle">{{ .Site.Data.sections.hero.subtitle }}</h2>
+            <p class="hero-description">{{ .Site.Data.sections.hero.description | markdownify }}</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/vijayanant/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://vijayanant.substack.com/" target="_blank" aria-label="Substack"><i class="fas fa-newspaper"></i></a>

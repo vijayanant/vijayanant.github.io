@@ -1,0 +1,14 @@
+title: Selected Talks
+items:
+  - title: AI Based Technologies for Authentication
+    meta: IDRBT | 2019 | Hyderabad, India
+    description: Discussed the limitations of existing authentication methods and examined how to leverage AI to authenticate customers in the digital/online age.
+  - title: "(Why?) Should You Know Category Theory"
+    meta: Functional Conf. | 2018 | Bengaluru, India
+    description: Explored the link between the abstract mathematical field of Category Theory and the concrete world of real-world Programming.
+  - title: "Have you GADT?"
+    meta: Functional Conf. | 2017 | Bengaluru, India
+    description: Introduced GADTs and explored their role in ensuring program correctness, demonstrating how they eliminate the need for runtime checks.
+  - title: FP 101
+    meta: BHIVE Tech Talk | 2016 | Bengaluru, India
+    description: An introduction to Functional Programming and the Haskell programming language.

@@ -1,0 +1,16 @@
+title: Writing
+intro: |
+  Dive into my newsletter, where I share insights on technology, leadership, and personal growth. Join a community of forward-thinkers and stay ahead of the curve.
+featured_articles:
+  - title: "Driving AI Code: Why TDD is Essential in the LLM Era"
+    link: https://vijayanant.substack.com/p/driving-ai-code-why-test-driven-development
+    date: Jun 20, 2025
+    description: "Explore how Test-Driven Development (TDD) can be effectively applied to AI and machine learning projects, ensuring robust, reliable, and maintainable code."
+  - title: "Bad Code Is Not Tech Debt"
+    link: https://vijayanant.substack.com/p/bad-code-is-not-tech-debt
+    date: Dec 28, 2022
+    description: "The debt metaphor helps us think about how to deal with design problems and how to communicate that thinking."
+  - title: "Polymorphism, Dynamic Dispatch, and Visitor"
+    link: https://vijayanant.substack.com/p/polymorphism-dynamic-dispatch-and-visitor
+    date: Dec 04, 2023
+    description: "Let's revisit a classic example from our early days of object-oriented programming. We will design a system that allows applying scaling and rotation to lines, circles, and rectangles. However, this time, we'll take it a step further and make it extensible."
