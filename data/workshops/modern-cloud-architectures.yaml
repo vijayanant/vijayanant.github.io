@@ -1,0 +1,28 @@
+title: "Modern Cloud Architectures: A Hands-On Guide"
+description: "A practical workshop for software engineers and architects who want to learn how to design and build scalable, resilient, and cost-effective cloud-native applications."
+overview: "The cloud has changed the way we build and deploy software. But with so many different services and architectural patterns to choose from, it can be hard to know where to start. This workshop is designed to cut through the noise and give you a practical, hands-on guide to designing and building modern cloud architectures. We'll cover the most important cloud services and architectural patterns, and you'll learn how to apply them in practice. You'll leave with the skills and confidence you need to build cloud-native applications that are scalable, resilient, and cost-effective."
+key_takeaways:
+  - "Understand the key principles of cloud-native architecture."
+  - "Learn how to choose the right cloud services for your needs."
+  - "Discover how to design and build scalable, resilient, and cost-effective cloud-native applications."
+  - "Learn how to use containers and serverless technologies to build and deploy your applications."
+  - "Develop a framework for making sound architectural decisions in the cloud."
+syllabus:
+  - title: "The Cloud-Native Mindset"
+    description: "In this session, we'll explore the fundamental shift in mindset that's required to be a successful cloud-native architect. We'll discuss the importance of automation, observability, and continuous delivery."
+  - title: "Choosing the Right Cloud Services"
+    description: "In this session, we'll take a deep-dive into the most important cloud services, including compute, storage, networking, and databases. You'll learn how to choose the right services for your needs and how to combine them to create a complete solution."
+  - title: "Designing for the Cloud"
+    description: "In this session, you'll learn how to design and build scalable, resilient, and cost-effective cloud-native applications. We'll cover topics like microservices, serverless, and event-driven architectures."
+  - title: "Containers and Orchestration"
+    description: "In this session, you'll learn how to use containers and orchestration to build and deploy your applications. We'll cover topics like Docker, Kubernetes, and Helm."
+  - title: "The Cloud Architect's Toolkit"
+    description: "In this session, we'll explore the tools and techniques that you can use to make better architectural decisions in the cloud. We'll cover topics like infrastructure as code (IaC), continuous integration and continuous delivery (CI/CD), and FinOps."
+target_audience:
+  - "You're a software engineer or architect who wants to learn how to design and build modern cloud architectures."
+  - "You're a tech lead who wants to provide your team with a solid foundation in cloud-native development."
+  - "You're an engineering manager who wants to improve the cloud skills of your team."
+format: "This is a full-day, interactive workshop that can be delivered remotely or in-person. The workshop includes a mix of presentations, group discussions, and hands-on exercises."
+interested_cta:
+  text: "Book a Private Workshop"
+  link: "mailto:hello@vijayanant.com?subject=Private%20Workshop%20Inquiry%3A%20Modern%20Cloud%20Architectures"

@@ -5,8 +5,17 @@
         <div class="workshops-grid">
             {{ range .Site.Data.sections.workshops.items }}
             <div class="workshop-item">
-                <h4 class="workshop-title">{{ .title }}</h4>
+                <h3 class="writing-title">
+                    {{ if .link }}
+                        <a href="{{ .link | relURL }}">{{ .title }}</a>
+                    {{ else }}
+                        {{ .title }}
+                    {{ end }}
+                </h3>
                 <p class="workshop-description">{{ .description | markdownify }}</p>
+                {{ if .link }}
+                <a href="{{ .link | relURL }}" class="read-more-button">Read More &rarr;</a>
+                {{ end }}
             </div>
             {{ end }}
         </div>

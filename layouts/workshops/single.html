@@ -11,15 +11,25 @@
             </div>
 
             <div class="workshop-section">
-                <h2 class="workshop-subtitle">Syllabus</h2>
+                <h2 class="workshop-subtitle">Key Takeaways</h2>
                 <ul class="syllabus-list">
-                    {{ range $workshopData.syllabus }}
+                    {{ range $workshopData.key_takeaways }}
                     <li>
                         <i class="fas fa-check-circle"></i>
                         <span>{{ . }}</span>
                     </li>
                     {{ end }}
                 </ul>
+            </div>
+
+            <div class="workshop-section">
+                <h2 class="workshop-subtitle">Syllabus</h2>
+                {{ range $workshopData.syllabus }}
+                <div class="syllabus-item">
+                    <h3 class="syllabus-title">{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+                {{ end }}
             </div>
 
             <div class="workshop-section">

@@ -295,7 +295,7 @@ nav {
         display: none; /* Hide the underline effect on mobile */
     }
 }
-/*--------------------*
+/*--------------------*\
     Hero Section Styles
 *--------------------*/
 #hero {
@@ -761,4 +761,15 @@ footer {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid var(--text-color);
+}
+.syllabus-item {
+    margin-bottom: 1.5rem;
+}
+
+.syllabus-title {
+    font-family: var(--heading-font);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
 }

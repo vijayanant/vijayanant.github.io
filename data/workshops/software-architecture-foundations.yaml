@@ -1,0 +1,28 @@
+title: "Software Architecture: From Patterns to Practice"
+description: "A foundational workshop for software engineers who want to learn the principles of software architecture and how to apply them in practice."
+overview: "Are you a software engineer who wants to move beyond just writing code and start designing systems? Or are you a tech lead who wants to provide your team with a solid foundation in software architecture? If so, this workshop is for you. We'll cover the fundamentals of software architecture, from the most common architectural styles and patterns to the practical, day-to-day challenges of designing and building complex systems. You'll leave with the knowledge and skills you need to make better architectural decisions and to design systems that are scalable, resilient, and easy to maintain."
+key_takeaways:
+  - "Understand the role of the software architect and the key responsibilities of the role."
+  - "Learn how to identify and apply the most common architectural styles and patterns."
+  - "Discover how to design systems that are scalable, resilient, and easy to maintain."
+  - "Learn how to communicate your architectural decisions effectively to your team and your stakeholders."
+  - "Develop a framework for making sound architectural decisions."
+syllabus:
+  - title: "The Fundamentals of Software Architecture"
+    description: "In this session, we'll explore the core concepts of software architecture, including the role of the architect, the importance of quality attributes, and the different architectural views."
+  - title: "Architectural Styles and Patterns"
+    description: "In this session, we'll take a deep-dive into the most common architectural styles and patterns, including layered, microservices, event-driven, and clean architecture. You'll learn how to choose the right style for your needs and how to apply it in practice."
+  - title: "Designing for Scalability and Resilience"
+    description: "In this session, you'll learn how to design systems that can handle a large number of users and that are resilient to failure. We'll cover topics like load balancing, caching, and circuit breakers."
+  - title: "Communicating Architecture"
+    description: "In this session, you'll learn how to communicate your architectural decisions effectively to your team and your stakeholders. We'll cover topics like creating architecture diagrams, writing architecture decision records (ADRs), and presenting your ideas to a non-technical audience."
+  - title: "The Architect's Toolkit"
+    description: "In this session, we'll explore the tools and techniques that you can use to make better architectural decisions. We'll cover topics like domain-driven design (DDD), threat modeling, and performance testing."
+target_audience:
+  - "You're a mid-level to senior software engineer who wants to learn more about software architecture."
+  - "You're a tech lead who wants to provide your team with a solid foundation in software architecture."
+  - "You're an engineering manager who wants to improve the architectural skills of your team."
+format: "This is a full-day, interactive workshop that can be delivered remotely or in-person. The workshop includes a mix of presentations, group discussions, and hands-on exercises."
+interested_cta:
+  text: "Book a Private Workshop"
+  link: "mailto:hello@vijayanant.com?subject=Private%20Workshop%20Inquiry%3A%20Software%20Architecture%20Foundations"
