@@ -24,3 +24,8 @@ title = "Vijay Anantharamaiah"
 
 [taxonomies]
   disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
