@@ -26,6 +26,8 @@ body {
     line-height: 1.8;
     background-color: var(--background-color);
     color: var(--text-color);
+    font-size: 16px;
+    padding-top: 80px;
 }
 
 .container {
@@ -355,34 +357,6 @@ nav {
     color: var(--primary-color);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    #hero {
-        padding: 4rem 20px;
-    }
-
-    .hero-title {
-        font-size: 2.8rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
-}
 /*--------------------*
     Expertise Section Styles
 *--------------------*/
@@ -509,7 +483,7 @@ nav {
     font-size: 1.1rem;
     line-height: 1.8;
 }
-/*--------------------*\
+/*--------------------*
     Writing Section Styles
 *--------------------*/
 #writing {
@@ -611,10 +585,6 @@ nav {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.section-title {
-    margin-bottom: 2rem;
-}
-
 .connect-summary {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -637,16 +607,6 @@ nav {
     color: #fff;
 }
 
-.social-links a {
-    color: var(--secondary-text-color);
-    font-size: 2rem;
-    margin: 0 1rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
 /*--------------------*
     Footer Styles
 *--------------------*/
@@ -657,6 +617,23 @@ footer {
     text-align: center;
     font-size: 0.9rem;
 }
+
+/*--------------------*
+    Workshop Detail Styles
+*--------------------*/
+#workshop-detail {
+    padding: 6rem 0;
+    background-color: var(--background-color);
+}
+
+#workshop-detail .content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
 /*--------------------*
     Mobile Styles
 *--------------------*/
@@ -670,40 +647,118 @@ footer {
     .section-title{
         font-size: 2rem;
     }
-    /* Add more styles for smaller screens */
+
+    .nav-toggle {
+        display: block; /* Show the hamburger menu on smaller screens */
+    }
+
+    .nav-list {
+        display: none; /* Hide the nav list by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--surface-color);
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        list-style: none;
+        padding: 1rem 0;
+        margin: 0;
+        min-width: 200px;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem 2rem;
+        text-align: left;
+    }
+
+    .nav-link::after {
+        display: none; /* Hide the underline effect on mobile */
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
     .section-title{
         font-size: 1.7rem;
     }
+
+    #hero {
+        padding: 4rem 20px;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
 }
-/* Default styles for larger screens */
-body {
-    font-size: 16px;
+.workshop-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--surface-color);
+    padding: 3rem;
+    border-radius: 8px;
 }
 
-/* Media query for smaller screens (e.g., mobile phones) */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    .container{
-        padding: 0 10px;
-    }
-    .section-title{
-        font-size: 2rem;
-    }
-    /* Add more styles for smaller screens */
+.workshop-section {
+    margin-bottom: 3rem;
 }
 
-/* Media query for even smaller screens */
-@media (max-width: 480px){
-    .section-title{
-        font-size: 1.7rem;
-    }
+.workshop-subtitle {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
 }
 
-body {
-  padding-top: 80px;
+.syllabus-list, 
+.audience-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.syllabus-list li, 
+.audience-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.syllabus-list i, 
+.audience-list i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.interested-section {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--text-color);
 }

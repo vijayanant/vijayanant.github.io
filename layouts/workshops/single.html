@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ $workshop := .Page.Params.workshop }}
+{{ $workshopData := index .Site.Data.workshops $workshop }}
+<section id="workshop-detail">
+    <div class="container">
+        <h1 class="section-title">{{ $workshopData.title }}</h1>
+        <div class="workshop-content">
+            <div class="workshop-section">
+                <h2 class="workshop-subtitle">Workshop Overview</h2>
+                <p>{{ $workshopData.overview }}</p>
+            </div>
+
+            <div class="workshop-section">
+                <h2 class="workshop-subtitle">Syllabus</h2>
+                <ul class="syllabus-list">
+                    {{ range $workshopData.syllabus }}
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="workshop-section">
+                <h2 class="workshop-subtitle">Target Audience</h2>
+                <ul class="audience-list">
+                    {{ range $workshopData.target_audience }}
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="workshop-section">
+                <h2 class="workshop-subtitle">Format</h2>
+                <p>{{ $workshopData.format }}</p>
+            </div>
+
+            <div class="workshop-section interested-section">
+                <h2 class="workshop-subtitle">Interested?</h2>
+                <p>If you're interested in a private workshop for your team, please get in touch to discuss your needs and how I can help.</p>
+                <a href="{{ $workshopData.interested_cta.link }}" class="button button-primary">{{ $workshopData.interested_cta.text }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

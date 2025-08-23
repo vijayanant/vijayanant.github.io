@@ -1,0 +1,18 @@
+title: "Pragmatic Tech Leadership"
+description: "A workshop for new and aspiring tech leads on how to build and manage high-performing engineering teams."
+overview: "This interactive workshop is designed to equip new and aspiring tech leads with the essential skills and knowledge to excel in their roles. We will cover a wide range of topics, from the fundamentals of tech leadership to the practical, day-to-day challenges of managing a high-performing engineering team."
+syllabus:
+  - "The Role of the Tech Lead"
+  - "Building and Maintaining a Healthy Team Culture"
+  - "Effective Communication and Feedback"
+  - "Technical Decision-Making and Risk Management"
+  - "Project Management and Execution"
+  - "Mentoring and Career Development"
+target_audience:
+  - "Software engineers who are new to a tech lead role."
+  - "Aspiring tech leads who want to prepare for the next step in their career."
+  - "Engineering managers who want to provide their tech leads with a solid foundation in leadership skills."
+format: "This is a full-day, interactive workshop that can be delivered remotely or in-person. The workshop includes a mix of presentations, group discussions, and hands-on exercises."
+interested_cta:
+  text: "Get in Touch"
+  link: "mailto:hello@vijayanant.com"
