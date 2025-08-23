@@ -773,3 +773,10 @@ footer {
     color: var(--text-color);
     margin-bottom: 0.5rem;
 }
+
+.full-height-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
