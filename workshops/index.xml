@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workshops on Vijay Anantharamaiah</title>
+    <link>https://vijayanant.com/workshops/</link>
+    <description>Recent content in Workshops on Vijay Anantharamaiah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://vijayanant.com/workshops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern Cloud Architectures: A Hands-On Guide</title>
+      <link>https://vijayanant.com/workshops/modern-cloud-architectures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vijayanant.com/workshops/modern-cloud-architectures/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pragmatic Tech Leadership</title>
+      <link>https://vijayanant.com/workshops/pragmatic-tech-leadership/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vijayanant.com/workshops/pragmatic-tech-leadership/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Architecture: From Patterns to Practice</title>
+      <link>https://vijayanant.com/workshops/software-architecture-foundations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vijayanant.com/workshops/software-architecture-foundations/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
