@@ -88,7 +88,7 @@ async function fetchPosts() {
                         <h3 class="writing-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
                         <p class="writing-meta"><span>${pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span></p>
                         <p class="writing-description">${description}</p>
-                        <a href="${link}" class="read-more-button" target="_blank" rel="noopener noreferrer">Read More &rarr;
+                        <a href="${link}" class="read-more-button" target="_blank" rel="noopener noreferrer">Read More &rarr;</a>
                     </div>
                 `;
                 count++;

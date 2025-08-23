@@ -16,7 +16,7 @@
     --background-color: #121212; /* A dark background for a modern look */
     --surface-color: #1E1E1E; /* A slightly lighter surface color for cards and sections */
     --text-color: #E0E0E0; /* A light text color for readability */
-    --secondary-text-color: #B0B0B0; /* A slightly dimmer text color for secondary information */
+    --secondary-text-color: #B0B0B0; /* A slightly dimmer text text color for secondary information */
     --heading-font: 'Lora', serif;
     --body-font: 'Mulish', sans-serif;
 }
@@ -775,7 +775,7 @@ footer {
 }
 
 .full-height-section {
-    min-height: 80vh;
+    min-height: 100vh; /* Corrected from 80vh */
     display: flex;
     align-items: center;
     justify-content: center;
