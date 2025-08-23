@@ -6,7 +6,8 @@ const header = document.querySelector('header');
 // Get all sections with an ID
 const sections = document.querySelectorAll('section[id]');
 
-window.addEventListener('scroll', () => {
+// Function to handle scrollspy logic
+function handleScrollspy() {
     // Sticky header logic
     if (window.scrollY > 100) {
         header.classList.add('header-scrolled');
@@ -15,22 +16,29 @@ window.addEventListener('scroll', () => {
     }
 
     // Scrollspy logic
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
+    // Only run scrollspy on the homepage
+    if (document.body.dataset.pageKind === 'home') {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.href.includes(current)) {
-            link.classList.add('active');
-        }
-    });
-});
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.href.includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    }
+}
+
+// Run scrollspy on page load
+document.addEventListener('DOMContentLoaded', handleScrollspy);
+window.addEventListener('scroll', handleScrollspy); // Continue to run on scroll
 
 navToggle.addEventListener('click', () => {
     navList.classList.toggle('active');
@@ -80,7 +88,7 @@ async function fetchPosts() {
                         <h3 class="writing-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
                         <p class="writing-meta"><span>${pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span></p>
                         <p class="writing-description">${description}</p>
-                        <a href="${link}" class="read-more-button" target="_blank" rel="noopener noreferrer">Read More &rarr;</a>
+                        <a href="${link}" class="read-more-button" target="_blank" rel="noopener noreferrer">Read More &rarr;
                     </div>
                 `;
                 count++;
