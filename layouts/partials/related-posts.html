@@ -1,0 +1,25 @@
+{{ if .Site.Params.enableRelatedPosts }}
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ with $related }}
+  <div class="related-posts-section">
+    <h2 class="section-title">You Might Also Like</h2>
+    <ul class="related-posts-list">
+      {{ range . }}
+      <li class="related-post-item">
+        <a href="{{ .Permalink }}" class="related-post-link">
+          <div class="related-post-content">
+            <h3 class="related-post-title">{{ .Title }}</h3>
+            <p class="related-post-description">{{ .Description }}</p>
+          </div>
+          {{ with .Resources.GetMatch .Params.featured_image }}
+          <div class="related-post-image-wrapper">
+            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="related-post-image">
+          </div>
+          {{ end }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+{{ end }}

@@ -2,7 +2,7 @@
 title: "A Standalone Test Post"
 date: 2025-09-28
 description: "A brief exploration of a standalone topic, not part of any series."
-tags: ["standalone", "test"]
+tags: ["standalone", "test", "testing"]
 categories: ["tests"]
 featured_image: "featured.jpg"
 ---
