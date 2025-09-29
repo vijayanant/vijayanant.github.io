@@ -6,6 +6,18 @@ title = "Vijay Anantharamaiah"
   description = "Engineering Leader & Product Builder"
   image = "https://vijayanant.com/assets/images/logo-512.png"
   enableCodeCopyButton = true
+  enableRelatedPosts = true
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = true
+  [[related.indices]]
+  name = "tags"
+  weight = 100
+  [[related.indices]]
+  name = "categories"
+  weight = 70
 
 [minify]
   disableCSS = false

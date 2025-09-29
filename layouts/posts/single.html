@@ -15,6 +15,45 @@
             {{ .Content }}
           </div>
         </article>
+
+        {{ if .Params.series }}
+          {{ $seriesName := .Params.series }}
+          {{ $pagesInSeries := where site.RegularPages "Params.series" $seriesName }}
+          {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
+          {{ $currentPostIndex := -1 }}
+          {{ range $i, $p := $sortedPages }}
+            {{ if eq .Permalink $.Permalink }}
+              {{ $currentPostIndex = $i }}
+            {{ end }}
+          {{ end }}
+
+          {{ $nextPost := false }}
+          {{ if lt $currentPostIndex (sub (len $sortedPages) 1) }}
+            {{ $nextPost = index $sortedPages (add $currentPostIndex 1) }}
+          {{ end }}
+
+          {{ if $nextPost }}
+            <div class="next-post-prompt">
+              <p>Continue the series:</p>
+              <a href="{{ $nextPost.Permalink }}" class="button button-primary">
+                Next: {{ $nextPost.Title }}
+              </a>
+            </div>
+          {{ else }}
+            {{/* Last post in series */}}
+            <div class="next-post-prompt">
+              <p>You've reached the end of the series!</p>
+              <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/" class="button button-primary">
+                Explore More from "{{ $seriesName }}"
+              </a>
+            </div>
+            {{ partial "related-posts.html" . }}
+          {{ end }}
+        {{ else }}
+          {{/* Standalone post */}}
+          {{ partial "related-posts.html" . }}
+        {{ end }}
+
       </div>
 
       <!-- Sidebar -->
