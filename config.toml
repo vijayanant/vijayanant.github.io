@@ -5,6 +5,7 @@ title = "Vijay Anantharamaiah"
 [params]
   description = "Engineering Leader & Product Builder"
   image = "https://vijayanant.com/assets/images/logo-512.png"
+  enableCodeCopyButton = true
 
 [minify]
   disableCSS = false
@@ -28,6 +29,11 @@ title = "Vijay Anantharamaiah"
   series = "series"
 
 [markup]
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = true
+    style = "dracula"
+
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true

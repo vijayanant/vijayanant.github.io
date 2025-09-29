@@ -15,3 +15,12 @@ This is the first post in our test series. It has a heading.
 ### A Sub-heading
 
 And a sub-heading, for the Table of Contents.
+
+```python
+def hello_world():
+    # This is a comment
+    print("Hello, World!")
+
+if __name__ == "__main__":
+    hello_world()
+```

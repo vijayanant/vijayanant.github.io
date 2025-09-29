@@ -19,6 +19,9 @@
     {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
+    {{ $chromaStyle := resources.Get "css/chroma.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -42,7 +45,7 @@
     </script>
 </head>
 
-<body data-page-kind="{{ .Kind }}">
+<body data-page-kind="{{ .Kind }}" data-enable-code-copy-button="{{ .Site.Params.enableCodeCopyButton }}">
     {{ partial "header.html" . }}
 
     <main>
@@ -53,6 +56,11 @@
 
     {{ $script := resources.Get "js/script.js" | minify | fingerprint }}
     <script src="{{ $script.RelPermalink }}"></script>
+
+    {{ if .Site.Params.enableCodeCopyButton }}
+    {{ $copyCodeScript := resources.Get "js/copy-code.js" | minify | fingerprint }}
+    <script src="{{ $copyCodeScript.RelPermalink }}"></script>
+    {{ end }}
 </body>
 
 </html>
