@@ -81,6 +81,7 @@ series_order: 2
 description: "A brief summary for SEO and social cards."
 tags: ["Architecture", "Patterns", "EDA"]
 categories: ["Software Design"]
+featured_image: "/assets/images/your-featured-image.jpg"
 ---
 ```
 
@@ -92,6 +93,7 @@ date: 2025-10-07
 description: "A brief summary for SEO and social cards."
 tags: ["Productivity", "Random"]
 categories: ["Thoughts"]
+featured_image: "/assets/images/your-featured-image.jpg"
 ---
 ```
 

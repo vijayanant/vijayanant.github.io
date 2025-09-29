@@ -5,10 +5,17 @@
     <div class="blog-grid">
       {{ range .Pages }}
         <div class="post-card">
+          {{ $postPermalink := .Permalink }}
+          {{ with .Resources.GetMatch .Params.featured_image }}
+          <a href="{{ $postPermalink }}">
+            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="post-card-image mb-3">
+          </a>
+          {{ else }}
+          {{/* Optional: Add a fallback image here if no featured image is found */}}
+          {{ end }}
           <h2 class="post-card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-          <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
-          <p class="post-card-description">{{ .Summary }}</p>
-          <a href="{{ .Permalink }}" class="read-more-button">Read More →</a>
+                  <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
+                  <p class="post-card-description">{{ .Description }}</p>          <a href="{{ .Permalink }}" class="read-more-button">Read More →</a>
         </div>
       {{ end }}
     </div>
