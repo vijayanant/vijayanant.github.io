@@ -989,7 +989,7 @@ footer {
     }
     .post-sidebar {
         order: 1; /* Sidebar above main content */
-        /* margin-bottom: 2rem; /* Space between sidebar and content */ */
+        margin-bottom: 2rem; /* Space between sidebar and content */
     }
     .post-sidebar .sticky-top {
         position: static; /* Remove sticky behavior on mobile */
@@ -999,4 +999,29 @@ footer {
         display: none; /* Hide ToC on mobile */
     }
 }
+
+/* Code Copy Button Styles */
+.copy-code-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+pre:hover .copy-code-button {
+    opacity: 1;
+}
+
+.copy-code-button:active {
+    background-color: darken(var(--primary-color), 10%);
+}
+
 
