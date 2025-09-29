@@ -25,3 +25,20 @@ def hello_world():
 if __name__ == "__main__":
     hello_world()
 ```
+
+{{< note type="log" title="My Personal Thoughts" >}}
+This is a personal insight or opinion. It uses the `log` type.
+{{< /note >}}
+
+{{< note type="info" title="Important Information" >}}
+This is an important piece of information.
+{{< /note >}}
+
+{{< note type="warning" >}}
+Be careful with this approach!
+{{< /note >}}
+
+{{< summary title="Key Lessons" >}}
+*   This is a key takeaway point.
+*   Another important lesson learned.
+{{< /summary >}}
