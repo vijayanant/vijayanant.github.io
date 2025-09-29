@@ -840,6 +840,16 @@ footer {
     flex-grow: 1;
 }
 
+.post-card-image {
+    max-width: 100%;
+    width: 100%; /* Make image take full width of card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area without distortion */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    margin: 0 auto; /* Center the image */
+}
+
 /*--------------------*\
     Single Post Styles
 *--------------------*/

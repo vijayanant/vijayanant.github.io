@@ -3,9 +3,10 @@ title: "Part 1: The Test Series"
 date: 2025-09-29
 series: "Test Series"
 series_order: 1
-description: "This is the first part of a test series."
+description: "This is the first part of a test series, focusing on foundational concepts."
 tags: ["testing"]
 categories: ["tests"]
+featured_image: "featured.jpg"
 ---
 
 ## Introduction
