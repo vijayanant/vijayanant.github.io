@@ -1,0 +1,15 @@
+<div class="note-box note-type-{{ .Get "type" | default "info" }}">
+    <div class="note-meta">
+        {{ if eq (.Get "type") "log" }}<i class="fas fa-book"></i> Log
+        {{ else if eq (.Get "type") "info" }}<i class="fas fa-info-circle"></i> Info
+        {{ else if eq (.Get "type") "tip" }}<i class="fas fa-lightbulb"></i> Tip
+        {{ else if eq (.Get "type") "warning" }}<i class="fas fa-exclamation-triangle"></i> Warning
+        {{ else if eq (.Get "type") "danger" }}<i class="fas fa-skull-crossbones"></i> Danger
+        {{ else }}<i class="fas fa-sticky-note"></i> Note
+        {{ end }}
+    </div>
+    {{ with .Get "title" }}
+        <p class="note-title">{{ . }}</p>
+    {{ end }}
+    {{ .Inner }}
+</div>
