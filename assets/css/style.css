@@ -27,6 +27,14 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-size: 16px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
     padding-top: 80px;
 }
 
@@ -111,8 +119,8 @@ img {
 /*--------------------*\
     Header Styles
 \*--------------------*/
-header {
-    background-color: transparent; /* Make the header transparent */
+#site-header {
+    background-color: var(--surface-color); /* Make the header opaque on all pages */
     padding: 2rem 0;
     position: fixed; /* Position it over the hero section */
     width: 100%;
@@ -121,6 +129,7 @@ header {
     z-index: 100;
     transition: background-color 0.3s ease;
 }
+
 
 header.header-scrolled {
     position: fixed;
@@ -780,3 +789,214 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+/*--------------------*\
+    Blog List Styles
+*--------------------*/
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.post-card {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.post-card-title a {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-card-title a:hover {
+    color: #fff;
+}
+
+.post-card-meta {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 1rem;
+}
+
+.post-card-description {
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/*--------------------*\
+    Single Post Styles
+*--------------------*/
+.post-layout {
+    display: flex;
+    gap: 2rem;
+}
+
+.post-content {
+    flex: 3;
+}
+
+.post-sidebar {
+    flex: 1;
+    position: relative;
+    /* padding-top: 8rem; */
+}
+
+.post-sidebar .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px; /* Adjust based on header height */
+}
+
+.post-content article header h1 {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.post-content article header p.text-muted {
+    text-align: center;
+}
+
+.post-content .content h2, 
+.post-content .content h3, 
+.post-content .content h4 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.post-content .content h2 { font-size: 2.2rem; }
+.post-content .content h3 { font-size: 1.8rem; }
+.post-content .content h4 { font-size: 1.4rem; }
+
+.post-content .content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.post-content .content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.post-content .content a:hover {
+    color: #fff;
+}
+
+.post-content .content ul, 
+.post-content .content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.post-content .content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content .content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--secondary-text-color);
+}
+
+.post-content .content pre {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.post-content .content code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.series-nav, .toc-nav {
+    background-color: var(--surface-color);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem; /* Added spacing */
+}
+
+.series-nav ol,
+.toc-nav ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+.series-nav ol li,
+.toc-nav ol li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.toc-nav ol li ol {
+    padding-left: 1rem; /* Indent sub-items */
+}
+
+.series-nav ol li a,
+.toc-nav ol li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.series-nav ol li a:hover,
+.toc-nav ol li a:hover {
+    color: var(--primary-color);
+}
+
+.series-nav ol li.fw-bold a {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+#blog-detail {
+    padding: 6rem 0;
+    background-color: var(--background-color);
+}
+
+@media (max-width: 768px) {
+    .post-layout {
+        flex-direction: column;
+    }
+    .post-content {
+        order: 2; /* Main content below sidebar */
+    }
+    .post-sidebar {
+        order: 1; /* Sidebar above main content */
+        /* margin-bottom: 2rem; /* Space between sidebar and content */ */
+    }
+    .post-sidebar .sticky-top {
+        position: static; /* Remove sticky behavior on mobile */
+        top: auto;
+    }
+    .toc-nav {
+        display: none; /* Hide ToC on mobile */
+    }
+}
+
