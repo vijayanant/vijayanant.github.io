@@ -23,7 +23,9 @@ title = "Vijay Anantharamaiah"
   home = ["HTML"]
 
 [taxonomies]
-  disableKinds = ["taxonomy", "taxonomyTerm"]
+  tag = "tags"
+  category = "categories"
+  series = "series"
 
 [markup]
   [markup.goldmark]

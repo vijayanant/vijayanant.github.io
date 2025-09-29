@@ -1,0 +1,51 @@
+{{ define "main" }}
+<section id="blog-detail">
+  <div class="container">
+    <div class="post-layout">
+
+      <!-- Post Content -->
+      <div class="post-content">
+        <article>
+          <header>
+            <h1>{{ .Title }}</h1>
+            <p class="text-muted">{{ .Date.Format "January 2, 2006" }}</p>
+          </header>
+
+          <div class="content">
+            {{ .Content }}
+          </div>
+        </article>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="post-sidebar">
+        <div class="sticky-top">
+          {{ with .Params.series }}
+            {{ $seriesName := . }}
+            {{ $pagesInSeries := where site.RegularPages "Params.series" $seriesName }}
+            {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
+            <div class="series-nav mb-4">
+              <h5>Part of the "{{ $seriesName }}" series</h5>
+              <ol>
+                {{ range $sortedPages }}
+                  <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </li>
+                {{ end }}
+              </ol>
+            </div>
+          {{ end }}
+
+          {{ if .TableOfContents }}
+          <div class="toc-nav">
+            <h5>On this page</h5>
+            {{ .TableOfContents }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}
