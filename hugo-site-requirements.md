@@ -45,7 +45,7 @@ This is a list of valuable features to be considered after the MVP is complete a
 
 ### 3.1. Essential Features
 *   **Search:** Implement a fast, client-side search functionality.
-*   **Newsletter Integration:** Add well-placed newsletter sign-up forms.
+*   **Newsletter Integration:** Add a configurable `newsletter` shortcode (`{{< newsletter >}}` or `{{< newsletter type="full" title="Custom Title" >}}`) for flexible placement within content, and a full form in the footer.
 
 ### 3.2. Content & Reading Experience
 *   **Code Block Copy Button:** A one-click button on code blocks to copy the contents.

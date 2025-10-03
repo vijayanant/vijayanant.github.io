@@ -16,6 +16,8 @@
           </div>
         </article>
 
+        <hr class="post-separator">
+
         {{ if .Params.series }}
           {{ $seriesName := .Params.series }}
           {{ $pagesInSeries := where site.RegularPages "Params.series" $seriesName }}
@@ -34,17 +36,15 @@
 
           {{ if $nextPost }}
             <div class="next-post-prompt">
-              <p>Continue the series:</p>
-              <a href="{{ $nextPost.Permalink }}" class="button button-primary">
-                Next: {{ $nextPost.Title }}
+              <a href="{{ $nextPost.Permalink }}" class="next-post-link">
+                Next: {{ $nextPost.Title }} <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           {{ else }}
             {{/* Last post in series */}}
             <div class="next-post-prompt">
-              <p>You've reached the end of the series!</p>
-              <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/" class="button button-primary">
-                Explore More from "{{ $seriesName }}"
+              <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/" class="next-post-link">
+                Explore More from "{{ $seriesName }}" <i class="fas fa-arrow-right"></i>
               </a>
             </div>
             {{ partial "related-posts.html" . }}
