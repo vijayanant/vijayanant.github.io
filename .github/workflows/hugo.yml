@@ -30,7 +30,7 @@ jobs:
           hugo-version: '0.121.1'
 
       - name: Build Hugo site
-        run: hugo
+        run: make build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

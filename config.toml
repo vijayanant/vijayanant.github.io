@@ -3,49 +3,55 @@ languageCode = "en-us"
 title = "Vijay Anantharamaiah"
 
 [params]
-  description = "Engineering Leader & Product Builder"
-  image = "https://vijayanant.com/assets/images/logo-512.png"
-  enableCodeCopyButton = true
-  enableRelatedPosts = true
+description = "Engineering Leader & Product Builder"
+image = "https://vijayanant.com/assets/images/logo-512.png"
+enableCodeCopyButton = true
+enableRelatedPosts = true
+enableNewsletter = true
+buttondownUsername = "vijayanant"
 
 [related]
-  threshold = 80
-  includeNewer = true
-  toLower = true
-  [[related.indices]]
-  name = "tags"
-  weight = 100
-  [[related.indices]]
-  name = "categories"
-  weight = 70
+threshold = 80
+includeNewer = true
+toLower = true
+[[related.indices]]
+name = "tags"
+weight = 100
+[[related.indices]]
+name = "categories"
+weight = 70
 
 [minify]
-  disableCSS = false
-  disableHTML = false
-  disableJS = false
-  disableJSON = false
-  disableSVG = false
-  groupXML = false
-  keepCSSPseudoClasses = false
-  keepComments = false
-  keepCSSVariables = false
-  keepQuotes = false
-  newLine = false
+disableCSS = false
+disableHTML = false
+disableJS = false
+disableJSON = false
+disableSVG = false
+groupXML = false
+keepCSSPseudoClasses = false
+keepComments = false
+keepCSSVariables = false
+keepQuotes = false
+newLine = false
 
 [outputs]
-  home = ["HTML"]
+home = ["HTML"]
 
 [taxonomies]
-  tag = "tags"
-  category = "categories"
-  series = "series"
+tag = "tags"
+category = "categories"
+series = "series"
 
 [markup]
-  [markup.highlight]
-    lineNos = true
-    lineNumbersInTable = true
-    style = "dracula"
+[markup.highlight]
+lineNos = true
+lineNumbersInTable = false
+style = "dracula"
 
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[security]
+[security.funcs]
+getenv = ["BUTTONDOWN_API_KEY", "HUGO_"]

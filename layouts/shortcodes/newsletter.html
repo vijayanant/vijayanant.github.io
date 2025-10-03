@@ -1,0 +1,27 @@
+{{ if .Page.Site.Params.enableNewsletter }}
+  {{ $buttondownUsername := .Page.Site.Params.buttondownUsername }}
+  {{ if $buttondownUsername }}
+    {{ $formType := .Get "type" | default "simple" }}
+    {{ $title := .Get "title" }}
+    {{ $description := .Get "description" }}
+
+    {{ if eq $formType "full" }}
+    <div class="newsletter-section">
+      <h3 class="newsletter-title">{{ if $title }}{{ $title }}{{ else }}Stay Updated{{ end }}</h3>
+      <p class="newsletter-description">{{ if $description }}{{ $description }}{{ else }}Get new articles and updates delivered directly to your inbox.{{ end }}</p>
+      <form action="https://buttondown.email/api/emails/embed-subscribe/{{ $buttondownUsername }}" method="post" target="_blank" class="newsletter-form">
+        <input type="email" name="email" id="bd-email-full" placeholder="Your email address" required>
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+    {{ else }}
+    <div class="newsletter-simple-form-wrapper">
+      {{ if $title }}<p class="newsletter-simple-title">{{ $title }}</p>{{ end }}
+      <form action="https://buttondown.email/api/emails/embed-subscribe/{{ $buttondownUsername }}" method="post" target="_blank" class="newsletter-form newsletter-form-simple">
+        <input type="email" name="email" id="bd-email-simple" placeholder="Your email address" required>
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+    {{ end }}
+  {{ end }}
+{{ end }}
