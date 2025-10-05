@@ -1,17 +1,12 @@
 ---
-title: "First, Analyze the Problem: Deriving Your Real Architectural Drivers"
+title: "Deriving Your Real Architectural Drivers"
+subtitle: "Great architecture doesn't start with a solution. It starts with a deep, honest understanding of the problem"
 date: 2025-01-05T10:10:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 2
 tags: ["architecture", "quality attributes", "QAS", "requirements", "business analysis", "risk management"]
 description: "Learn how to translate vague business goals into concrete, measurable architectural drivers using Quality Attribute Scenarios (QAS) to identify and address critical risks."
----
-
-# First, Analyze the Problem: Deriving Your Real Architectural Drivers
-
-### Great architecture doesn't start with a solution. It starts with a deep, honest understanding of the problem
-
 ---
 
 ## Introduction: The Danger of Vague Goals
@@ -26,7 +21,9 @@ This post is about that critical, and often-skipped, next step: conducting a "ju
 
 So, how do you get from a vague fear to a concrete requirement? You start by mapping the critical business workflow to find the points of highest risk. For CityPulse, the entire business risk is concentrated in the ticket purchasing flow during a flash sale.
 
-> **Architect's Log:** *This is a crucial realization. Most systems don't need to scale everywhere. They need to scale where the business-critical load is concentrated. Identifying this specific, narrow point of pressure is half the battle. We're not solving a generic 'scalability' problem; we're solving a very specific 'transactional throughput' problem.*
+{{< note type="log" title="Architect's Log" >}}
+This is a crucial realization. Most systems don't need to scale everywhere. They need to scale where the business-critical load is concentrated. Identifying this specific, narrow point of pressure is half the battle. We're not solving a generic 'scalability' problem; we're solving a very specific 'transactional throughput' problem.
+{{< /note >}}
 
 So how do you turn a vague goal like "scalability" into a concrete engineering target? You need a tool to structure your thinking. The best tool for this is the **Quality Attribute Scenario (QAS)**.
 
@@ -45,13 +42,15 @@ By following that simple narrative structure, you've created a concrete, testabl
 
 You can apply this same thinking to the other drivers, turning vague goals into a professional specification.
 
-> **Architect's Log:** *A word of caution: while these numbers look precise, they are often just well-informed guesses. Will it really be 10,000 users, or 20,000? Is a 1.5-second page load really the magic number, or is 1.7 acceptable? Don't get trapped by the precision of your own metrics. The goal of a QAS isn't to predict the future perfectly; it's to create a reasonable, shared target that is an order of magnitude better than a vague feeling.*
+{{< note type="log" title="Architect's Log" >}}
+A word of caution: while these numbers look precise, they are often just well-informed guesses. Will it really be 10,000 users, or 20,000? Is a 1.5-second page load really the magic number, or is 1.7 acceptable? Don't get trapped by the precision of your own metrics. The goal of a QAS isn't to predict the future perfectly; it's to create a reasonable, shared target that is an order of magnitude better than a vague feeling.
+{{< /note >}}
 
-> **Key Takeaways:**
->
-> * Don't start with solutions. Start by analyzing the specific business problem and its critical workflows.
-> * Identify the points of highest risk in those workflows. This is where your architectural focus should be.
-> * Use the QAS framework (Source, Stimulus, Environment, Response, Measure) to translate vague goals into specific, measurable drivers.
+{{< summary title="Key Takeaways" >}}
+*   Don't start with solutions. Start by analyzing the specific business problem and its critical workflows.
+*   Identify the points of highest risk in those workflows. This is where your architectural focus should be.
+*   Use the QAS framework (Source, Stimulus, Environment, Response, Measure) to translate vague goals into specific, measurable drivers.
+{{< /summary >}}
 
 ## Conclusion: Now You Know the Real Problem
 
@@ -60,8 +59,3 @@ This changes everything. You're no longer debating vague concepts. You now have 
 You know you need a system that can handle high transactional throughput on a small part of its workflow, with high reliability, while ensuring the rest of the site remains performant—and it all has to be built in three months.
 
 Now, and only now, are you ready to make your first, most fundamental architectural decision. You need to choose the **Architectural Style** that will define the entire structure of your system. In our next post, we will analyze the three primary candidate styles—the Monolith, Microservices, and the Event-Driven approach—and see how they stack up against these specific, measurable drivers.
-
----
-
-**Coming Up Next:**
-`[✓] 1. The Problem -> [Current Post] 2. The Drivers -> [Next] 3. The Styles -> [ ] 4. The Decision`

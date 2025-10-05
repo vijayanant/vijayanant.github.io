@@ -1,17 +1,12 @@
 ---
-title: "The Spike: Where Theory Meets Reality"
+title: "The Spike"
+subtitle: "Where Theory Meets Reality"
 date: 2025-01-05T11:00:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 5
 tags: ["architecture", "spike", "experimentation", "validation", "distributed systems", "team proficiency", "risk management"]
 description: "Explore how architectural spikes bridge the gap between theoretical decisions and real-world implementation, validating hypotheses and assessing team readiness for complex architectural styles."
----
-
-# The Spike: Where Theory Meets Reality
-
-### The matrix gave you a hypothesis. An experiment will give you the truth. But the truth you find depends on the team you have
-
 ---
 
 ## Introduction: Beyond the Spreadsheet
@@ -51,7 +46,7 @@ This is a fork in the road. To illustrate the power of context, **you** can map 
 *(For a team talented in backend development, but new to distributed systems)*
 
 * **Interpretation:** This team looks at the spike's results and sees significant risk. The testing and debugging friction isn't just an annoyance; it's a direct threat to their velocity. The "mental model" shift isn't a small hurdle; it's a major source of potential bugs. They conclude that the learning curve is too steep to climb while also trying to meet a critical 3-month business deadline.
-* **Your Architect's Log might read:** *"The spike was a huge success. It didn't tell us what we wanted to hear; it told us what we needed to know. It converted the 'unknown' risk of our inexperience into a 'known' and unacceptable one. For our team, right now, the upfront 'complexity tax' of EDA is too high to pay. Charging ahead would be setting the team up for failure."*
+* **Your Architect\'s Log might read:** *"The spike was a huge success. It didn\'t tell us what we wanted to hear; it told us what we needed to know. It converted the \'unknown\' risk of our inexperience into a \'known\' and unacceptable one. For our team, right now, the upfront \'complexity tax\' of EDA is too high to pay. Charging ahead would be setting the team up for failure."*
 * **Decision:** **You** make the mature, pragmatic decision to **pivot to a well-structured monolith** for the initial launch. **You** direct the team to use the spike's learnings to design the monolith with clean internal boundaries, ensuring the ticketing component is isolated and can be extracted into a service later.
 
 ---
@@ -61,7 +56,7 @@ This is a fork in the road. To illustrate the power of context, **you** can map 
 *(For a team with prior experience in microservices and distributed tracing)*
 
 * **Interpretation:** This team sees the same challenges not as blockers, but as familiar, solvable problems. Their reaction is different: "Yes, this is typical for EDA. The testing issue means we need to incorporate a library specifically for mocking event streams. The observability problem means we must enforce a rule that every event carries a 'Correlation ID'. The 'mental model' shift can be addressed with a few team-wide design reviews."
-* **In this scenario, your Architect's Log sounds very different:** *"The spike revealed no surprises. It confirmed the challenges we expected and, more importantly, validated that our existing skills and patterns are sufficient to manage them. The risk is now contained and understood. We are ready to proceed."*
+* **In this scenario, your Architect\'s Log sounds very different:** *\"The spike revealed no surprises. It confirmed the challenges we expected and, more importantly, validated that our existing skills and patterns are sufficient to manage them. The risk is now contained and understood. We are ready to proceed.\"*
 * **Decision:** The spike successfully de-risks the project, giving **you** the **confidence to proceed with the Event-Driven Architecture.**
 
 ---
@@ -73,7 +68,3 @@ The architectural spike is one of the most powerful tools in **your** toolbox. I
 As **you've** seen from the two paths, the same evidence can lead to two different, entirely correct decisions. The crucial variable was the team's context. Path A wasn't a "failure," and Path B wasn't "smarter." They were different answers to the same question, tailored to the reality of the people who would have to build and operate the system.
 
 For the remainder of the CityPulse series, we will follow the narrative of **Path B**, where **you** and **your** team proceed with the EDA. This will allow us to explore the next set of challenges in building and operating a modern, distributed system.
-
----
-**The Journey:**
-`[✓] 1. The Problem -> [✓] 2. The Drivers -> [✓] 3. The Styles -> [✓] 4. The Decision -> [Current Post] 5. The Spike -> [Next] 6. The Documentation`

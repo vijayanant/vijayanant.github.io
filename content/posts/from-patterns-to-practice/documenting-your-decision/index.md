@@ -1,17 +1,12 @@
 ---
-title: "The Final Step: Documenting and Communicating Your Decision"
+title: "The Final Step"
+subtitle: "Documenting and Communicating Your Decision"
 date: 2025-01-05T10:20:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 6
 tags: ["architecture", "ADR", "C4 Model", "documentation", "communication", "decision making"]
 description: "Learn how to effectively document and communicate architectural decisions using Architectural Decision Records (ADRs) and the C4 Model to prevent 'Architectural Amnesia' and ensure clarity."
----
-
-# The Final Step: Documenting and Communicating Your Decision
-
-### A decision is useless if no one understands it. Let's explore how to make your architectural choices clear, memorable, and effective
-
 ---
 
 ## Introduction: The Decision is Made. Now What?
@@ -22,7 +17,9 @@ What happens in six months when a new developer joins the team? What happens in 
 
 The final, critical step in your framework is to effectively document and communicate the *what* and the *why* of your decision. For this, you'll use two powerful, practical tools: **Architectural Decision Records (ADRs)** and the **C4 Model** for diagrams.
 
-> **Architect's Log:** *Let's be honest for a moment. The process we just walked through for CityPulse was clean. The drivers were clear, the options were distinct, and the weights were agreed upon. The real world is never this tidy. In a real project, you'd be dealing with a dozen other factors: the legacy system you have to integrate with, the political influence of the VP who loves a certain technology, and the vague, shifting requirements from marketing. The framework we're using isn't a magic formula that erases this complexity. It's a tool to bring a sliver of clarity and rationality *to* that complexity. It's a way to force the hard conversations and to make a defensible choice, even when the data is imperfect and the pressures are immense. Don't mistake the clarity of this story for the simplicity of the job.*
+{{< note type="log" title="Architect's Log" >}}
+Let's be honest for a moment. The process we just walked through for CityPulse was clean. The drivers were clear, the options were distinct, and the weights were agreed upon. The real world is never this tidy. In a real project, you'd be dealing with a dozen other factors: the legacy system you have to integrate with, the political influence of the VP who loves a certain technology, and the vague, shifting requirements from marketing. The framework we're using isn't a magic formula that erases this complexity. It's a tool to bring a sliver of clarity and rationality *to* that complexity. It's a way to force the hard conversations and to make a defensible choice, even when the data is imperfect and the pressures are immense. Don't mistake the clarity of this story for the simplicity of the job.
+{{< /note >}}
 
 ## Capturing the "Why": Architectural Decision Records (ADRs)
 
@@ -49,7 +46,9 @@ We will adopt an Event-Driven Architecture for the core ticketing workflow. The 
 *   **Negative:** We accept the significant upfront complexity and learning curve associated with asynchronous systems and eventual consistency. This poses a risk to our timeline, which we are mitigating with a focused spike. Debugging and end-to-end testing will be more difficult than in a monolith.
 ```
 
-> **Architect's Log:** *People often get hung up on the ADR format. It doesn't matter. What matters is that you write it down. The most valuable part of an ADR is the 'Consequences' section. Being honest about the downsides and trade-offs of your decision is a sign of a mature architect. It tells future teams what problems they should be looking out for and what you were optimizing for.*
+{{< note type="log" title="Architect's Log" >}}
+People often get hung up on the ADR format. It doesn't matter. What matters is that you write it down. The most valuable part of an ADR is the 'Consequences' section. Being honest about the downsides and trade-offs of your decision is a sign of a mature architect. It tells future teams what problems they should be looking out for and what you were optimizing for.
+{{< /note >}}
 
 ## Communicating the "What": The C4 Model
 
@@ -69,11 +68,11 @@ For your lead engineer and the development team, you zoom in to **Level 2: The C
 
 You can zoom in further to Components (Level 3) and Code (Level 4), but for communicating a new architectural style, these first two levels are the most critical.
 
-> **Key Takeaways:**
->
-> * A decision is only as good as its communication. Fight "Architectural Amnesia" by writing things down.
-> * Use lightweight **Architectural Decision Records (ADRs)** to document the *why* of your decision, especially the context and consequences.
-> * Use the **C4 Model** to create different diagrams for different audiences, showing the *what* at the right level of detail.
+{{< summary title="Key Takeaways" >}}
+*   A decision is only as good as its communication. Fight \"Architectural Amnesia\" by writing things down.
+*   Use lightweight **Architectural Decision Records (ADRs)** to document the *why* of your decision, especially the context and consequences.
+*   Use the **C4 Model** to create different diagrams for different audiences, showing the *what* at the right level of detail.
+{{< /summary >}}
 
 ## Conclusion: A Decision, Documented
 
@@ -82,11 +81,6 @@ And with that, you have executed every step of the formal decision-making framew
 But is your job as an architect over? Not even close.
 
 In our final post of this foundational series, we'll look at what happens *after* the decision. We'll explore the architect's ongoing role in guiding the system's evolution, managing technical debt, and ensuring the vision becomes a reality. It's where the real work begins.
-
----
-
-**The Journey:**
-`[✓] 1. The Problem -> [✓] 2. The Drivers -> [✓] 3. The Styles -> [✓] 4. The Decision -> [✓] 5. The Spike -> [Current Post] 6. The Documentation -> [Next] 7. The Evolution`
 
 ---
 

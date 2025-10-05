@@ -8,6 +8,9 @@
         <article>
           <header>
             <h1>{{ .Title }}</h1>
+            {{ with .Params.subtitle }}
+              <p class="post-subtitle text-muted">{{ . }}</p>
+            {{ end }}
             <p class="text-muted">{{ .Date.Format "January 2, 2006" }}</p>
           </header>
 
@@ -16,7 +19,7 @@
                                         {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
                                         {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
                                         <div class="series-nav mb-4">
-                                          <h5 class="series-title"><a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">Part of the "{{ $seriesName }}" series</a></h5>
+                                          <h5 class="series-title">Part of the <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">{{ $seriesName }}</a> series</h5>
                                           <ol>
                                             {{ range $sortedPages }}
                                               <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
@@ -58,19 +61,10 @@
                     Next: {{ $nextPost.Title }} <i class="fas fa-arrow-right"></i>
                   </a>
                 </div>
-              {{ else }}
-                {{/* Last post in series */}}
-                <div class="next-post-prompt">
-                  <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/" class="next-post-link">
-                    Explore More from "{{ $seriesName }}" <i class="fas fa-arrow-right"></i>
-                  </a>
-                </div>
-                {{ partial "related-posts.html" . }}
               {{ end }}
-            {{ else }}
-              {{/* Standalone post */}}
-              {{ partial "related-posts.html" . }}
-            {{ end }}      </div>
+            {{ end }} {{/* This closes the 'if .Params.series' block */}}
+            {{ partial "related-posts.html" . }} {{/* Always show related posts */}}
+      </div>
 
     </div>
   </div>

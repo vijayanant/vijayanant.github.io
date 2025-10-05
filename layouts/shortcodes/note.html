@@ -11,5 +11,5 @@
     {{ with .Get "title" }}
         <p class="note-title">{{ . }}</p>
     {{ end }}
-    {{ .Inner }}
+    {{ .Inner | markdownify }}
 </div>

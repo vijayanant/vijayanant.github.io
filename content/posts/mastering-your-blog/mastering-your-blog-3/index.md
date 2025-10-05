@@ -1,10 +1,10 @@
 ---
 title: "Engaging Readers: Related Posts & Newsletter"
-date: 2025-09-28
+date: 2024-09-28
 description: "Discover how to keep your audience engaged with automatically suggested related content and a prominent newsletter sign-up."
 tags: ["blogging", "hugo", "engagement", "related posts", "newsletter"]
 categories: ["how-to", "blogging"]
-series: "Mastering Your Blog"
+series: ["Mastering Your Blog"]
 series_order: 3
 featured_image: "featured.jpg"
 draft: true
@@ -28,13 +28,13 @@ Your blog is equipped with a flexible newsletter sign-up feature, powered by But
 
 ### Simple Newsletter Form (Inline)
 
-Use `{{< newsletter >}}` for a compact form, ideal for placing within an article:
+Use `{{</* newsletter */>}}` for a compact form, ideal for placing within an article:
 
 {{< newsletter >}}
 
 ### Full Newsletter Form (Footer or Dedicated Page)
 
-For a more prominent call to action, you can use `{{< newsletter type="full" title="Join My Newsletter" description="Get exclusive content and early access to new articles!" >}}`.
+For a more prominent call to action, you can use `{{</* newsletter type="full" title="Join My Newsletter" description="Get exclusive content and early access to new articles!" */>}}`.
 
 This is the same form that appears in your site's footer, encouraging site-wide subscriptions.
 

@@ -19,7 +19,8 @@
     --secondary-text-color: #B0B0B0; /* A slightly dimmer text text color for secondary information */
     --tertiary-text-color: #7C7C7C; /* A lighter text color for metadata */
     --heading-font: 'Mulish', sans-serif;
-    --body-font: 'Lora', serif;
+    --body-font: 'Mulish', sans-serif;
+    /* --body-font: 'Lora', serif; */
 }
 
 body {
@@ -957,33 +958,24 @@ pre.chroma {
 .series-nav, .toc-nav {
     background-color: var(--surface-color);
     border-left: 4px solid var(--primary-color);
-    padding: 2rem;
+    padding: 1.5rem; /* Reduced padding */
     border-radius: 8px;
-    margin-bottom: 2rem; /* Added spacing */
-}
-
-.series-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--surface-color);
+    margin-bottom: 2rem;
 }
 
 .series-nav ol,
 .toc-nav ol {
     list-style: none;
     padding-left: 0;
+    max-height: 250px; /* Max height for scrollability */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .series-nav ol li,
 .toc-nav ol li {
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-.toc-nav ol li ol {
-    padding-left: 1rem; /* Indent sub-items */
+    margin-bottom: 0.1rem; /* Further reduced margin */
+    line-height: 1.2; /* Further reduced line height */
+    font-size: 0.9rem; /* Reduced font size */
 }
 
 .series-nav ol li a,
@@ -993,7 +985,7 @@ pre.chroma {
     color: var(--text-color);
     transition: color 0.3s ease;
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 0.4rem; /* Further reduced padding */
 }
 
 .series-nav ol li a:hover,
@@ -1013,7 +1005,7 @@ pre.chroma {
 
 
 #blog-detail {
-    padding: 6rem 0;
+    padding: 1rem 0;
     background-color: var(--background-color);
 }
 
