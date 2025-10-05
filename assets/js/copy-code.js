@@ -31,8 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Position the button relative to the <pre> element
-        pre.style.position = 'relative';
-        pre.appendChild(button);
+        // Find the parent .highlight element and position the button relative to it
+        const highlight = pre.closest('.highlight');
+        if (highlight) {
+            highlight.style.position = 'relative';
+            highlight.appendChild(button);
+        } else {
+            // Fallback for cases where .highlight is not found
+            pre.style.position = 'relative';
+            pre.appendChild(button);
+        }
     });
 });
