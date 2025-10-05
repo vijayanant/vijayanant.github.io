@@ -1,10 +1,10 @@
 ---
 title: "Rich Content: Code Blocks, Notes & Summaries"
-date: 2025-09-27
+date: 2024-09-27
 description: "Elevate your technical content with beautifully highlighted code, custom notes, and concise summaries."
 tags: ["blogging", "hugo", "code blocks", "shortcodes", "notes", "summaries"]
 categories: ["how-to", "blogging"]
-series: "Mastering Your Blog"
+series: ["Mastering Your Blog"]
 series_order: 2
 featured_image: "featured.jpg"
 draft: true
@@ -114,4 +114,3 @@ Here's how it renders:
 In our next post, we'll cover how to keep your readers engaged with related content and a newsletter!
 
 {{< newsletter >}}
-

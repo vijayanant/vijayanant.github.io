@@ -1,17 +1,12 @@
 ---
-title: "An Architect's Work is Never Done: Guiding the Evolution"
+title: "An Architect's Work is Never Done"
+subtitle: "Guiding the Evolution"
 date: 2025-01-05T10:30:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 7
 tags: ["architecture", "evolution", "governance", "technical debt", "stewardship"]
 description: "Beyond making initial decisions, an architect's true role involves continuously guiding the evolution of a system, establishing governance, and strategically managing technical debt."
----
-
-# An Architect's Work is Never Done: Guiding the Evolution
-
-### You've made the big decision. The easy part is over. Here's what happens next
-
 ---
 
 ## Introduction: The End of the Beginning
@@ -51,21 +46,18 @@ Your job isn't to be the "architecture police" and say "no" to every new idea. I
 
 Those shortcuts your team took to meet the deadline? That's **technical debt**. It's not a moral failing; it was a strategic business decision—you took on that debt to get to market faster. Your job now is to manage it. You work with the product manager to make this debt visible. You quantify its cost—"every new feature in the ticketing service takes 20% longer because of this issue"—and you get a "repayment" plan on the product roadmap, just like any other feature.
 
-> **Architect's Log:** *This is the part of the job that no one talks about enough. It's a constant process of negotiation, education, and stewardship. You're part diplomat, part city planner, and part portfolio manager. The technical decisions are often the easy part; guiding the people and the process is the real, long-term challenge.*
+{{< note type="log" title="Architect's Log" >}}
+This is the part of the job that no one talks about enough. It's a constant process of negotiation, education, and stewardship. You're part diplomat, part city planner, and part portfolio manager. The technical decisions are often the easy part; guiding the people and the process is the real, long-term challenge.
+{{< /note >}}
 
-> **Key Takeaways:**
->
-> * The architect's job is not just to make the initial decision, but to steward the architecture over its entire lifecycle.
-> * Key ongoing responsibilities include guiding evolution, establishing lightweight governance (like fitness functions), and strategically managing technical debt.
-> * The same tools you used to make the decision (ADRs, C4, etc.) are the tools you'll use to guide its evolution.
+{{< summary title="Key Takeaways" >}}
+*   The architect's job is not just to make the initial decision, but to steward the architecture over its entire lifecycle.
+*   Key ongoing responsibilities include guiding evolution, establishing lightweight governance (like fitness functions), and strategically managing technical debt.
+*   The same tools you used to make the decision (ADRs, C4, etc.) are the tools you'll use to guide its evolution.
+{{< /summary >}}
 
 ## Conclusion: Welcome to Season Two
 
 This post marks the end of our foundational series on making a single, critical architectural decision. You've followed the complete, repeatable framework from a vague problem to a documented, data-informed choice.
 
 But the story of CityPulse is just getting started. These new challenges—evolving the architecture for a new business need, governing a growing system, and managing the debt from our past decisions—are the bread and butter of an architect's daily life. In Season Two of this series, we'll dive into these real-world challenges, exploring how to manage technical debt, how to evolve your architecture to support brand-new business features, and how to maintain your architectural principles across a growing team. Join us as the story of CityPulse continues.
-
----
-
-**The Journey:**
-`[✓] Season 1: The Decision -> [Current Post] The Epilogue -> [Next] Season 2: The Evolution`
