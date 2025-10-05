@@ -7,6 +7,7 @@ categories: ["how-to", "blogging"]
 series: "Mastering Your Blog"
 series_order: 2
 featured_image: "featured.jpg"
+draft: true
 ---
 
 Welcome back to "Mastering Your Blog"! In this post, we'll explore how to make your technical content more engaging and readable using advanced formatting features.

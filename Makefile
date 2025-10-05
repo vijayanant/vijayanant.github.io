@@ -24,7 +24,7 @@ rebuild:
 
 serve:
 	@echo "Starting Hugo server..."
-	docker run --rm -it -p 1313:1313 -v "$(CURDIR):/src" $(IMAGE_NAME) hugo server --bind 0.0.0.0 --baseURL=http://localhost/
+	docker run --rm -it -p 1313:1313 -v "$(CURDIR):/src" $(IMAGE_NAME) hugo server --bind 0.0.0.0 --baseURL=http://localhost/ --buildDrafts
 
 clean:
 	@echo "Cleaning up..."

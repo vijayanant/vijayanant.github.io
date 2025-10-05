@@ -2,8 +2,10 @@
 title: "Building a Newsletter: The 'Why' Behind the 'What'"
 date: 2025-10-03
 description: "A behind-the-scenes look at the process of creating my new newsletter, from choosing a name to crafting the welcome email."
+draft: true
 tags: ["newsletter", "blogging", "meta"]
 categories: ["how-to", "blogging"]
+featured_image: featured.jpg 
 ---
 
 I'm excited to announce that I'm starting a new newsletter! I've been thinking about this for a while, and I'm finally ready to take the plunge.
@@ -64,7 +66,7 @@ I hope you enjoyed this behind-the-scenes look at the process of creating my new
 ```java
 public class MethodChain {
   public void myMethod() {
-    new MyObject().firstMethod().secondMethod().thirdMethod();
+    new MyObject().firstMethod().secondMethod().thirdMethod().thirdMethod().thirdMethod().thirdMethod().thirdMethod();
   }
 }
 ```

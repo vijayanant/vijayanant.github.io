@@ -1,4 +1,5 @@
 ---
+title: "Mastering Your Blog Part 1"
 date: 2025-09-26
 description: "Learn the fundamental front matter fields, how to organize posts into series, and add featured images to your articles."
 tags: ["blogging", "hugo", "front matter", "series", "featured image"]
@@ -6,6 +7,7 @@ categories: ["how-to", "blogging"]
 series: "Mastering Your Blog"
 series_order: 1
 featured_image: "featured.jpg"
+draft: true
 ---
 
 Welcome to the first post in our "Mastering Your Blog" series! This article will guide you through the essential elements of creating content for your new Hugo-powered blog.

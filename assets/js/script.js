@@ -6,7 +6,6 @@ const header = document.querySelector('header');
 // Get all sections with an ID
 const sections = document.querySelectorAll('section[id]');
 
-// Function to handle scrollspy logic
 function handleScrollspy() {
     // Sticky header logic
     if (window.scrollY > 100) {
@@ -16,7 +15,6 @@ function handleScrollspy() {
     }
 
     // Scrollspy logic
-    // Only run scrollspy on the homepage
     if (document.body.dataset.pageKind === 'home') {
         let current = '';
         sections.forEach(section => {
@@ -29,16 +27,23 @@ function handleScrollspy() {
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.href.includes(current)) {
+            if (current && link.href.includes(current)) {
                 link.classList.add('active');
             }
         });
+
+        if (window.scrollY === 0) {
+            const homeLink = document.querySelector('a.nav-link[href*="#hero"]');
+            if (homeLink) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                homeLink.classList.add('active');
+            }
+        }
     }
 }
 
-// Run scrollspy on page load
-document.addEventListener('DOMContentLoaded', handleScrollspy);
 window.addEventListener('scroll', handleScrollspy); // Continue to run on scroll
+document.addEventListener('DOMContentLoaded', handleScrollspy);
 
 navToggle.addEventListener('click', () => {
     navList.classList.toggle('active');
