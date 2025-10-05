@@ -118,9 +118,9 @@ img {
     background-color: var(--primary-color);
     color: #fff;
 }
-/*--------------------*\
+/*--------------------*
     Header Styles
-\*--------------------*/
+*--------------------*/
 #site-header {
     background-color: var(--surface-color); /* Make the header opaque on all pages */
     padding: 1rem 0;
@@ -307,7 +307,7 @@ nav {
         display: none; /* Hide the underline effect on mobile */
     }
 }
-/*--------------------*\
+/*--------------------*
     Hero Section Styles
 *--------------------*/
 #hero {
@@ -785,7 +785,7 @@ footer {
     justify-content: center;
 }
 
-/*--------------------*\
+/*--------------------*
     Blog List Styles
 *--------------------*/
 .blog-grid {
@@ -848,7 +848,7 @@ footer {
     margin: 0 auto;
 }
 
-/*--------------------*\
+/*--------------------*
     Single Post Styles
 *--------------------*/
 .post-layout {
@@ -1405,3 +1405,211 @@ background-color: #9A67D9;
     max-width: 100%;
 }
 
+/*--------------------*
+    Series Posts Section
+*--------------------*/
+.series-posts-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--surface-color);
+}
+
+.series-posts-section .section-title { /* For the main series title if it were inside this section, but we have a separate header */
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.series-posts-list {
+    list-style: none; /* Ensure default ordered list numbering is removed */
+    padding: 0;
+    counter-reset: series-item-counter; /* Reset the counter for the list */
+}
+
+.series-post-item {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    counter-increment: series-item-counter;
+}
+
+.series-post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.series-post-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.series-post-content {
+    flex-grow: 1;
+    padding-right: 1rem;
+    position: relative; /* For counter positioning */
+    padding-left: 2.5rem; /* Make space for the counter */
+}
+
+.series-post-content::before {
+    content: counter(series-item-counter) ".";
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem; /* Adjust as needed */
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.series-post-title {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.series-post-description {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+}
+
+.series-post-meta {
+    font-size: 0.8rem;
+    color: var(--tertiary-text-color);
+    margin-top: 0.5rem;
+}
+
+.series-post-image-wrapper {
+    flex-shrink: 0;
+    width: 100px; /* Fixed width for the image */
+    height: 70px; /* Fixed height for the image */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.series-post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.current-series-post {
+    border-left: 4px solid var(--primary-color); /* Highlight current post */
+    background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle background highlight */
+}
+
+/* Series Header Styling */
+.series-header {
+    position: relative;
+    padding: 6rem 0;
+    background-color: var(--surface-color);
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-end; /* Align content to the bottom */
+    justify-content: center;
+    min-height: 350px; /* Slightly increased height for better visual */
+    overflow: hidden; /* Ensure gradient doesn't spill */
+}
+
+.series-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%); /* Fading gradient */
+    z-index: 1;
+}
+
+.series-header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem auto; /* Add bottom margin to push content up from the very bottom */
+    padding: 0 20px;
+}
+
+.series-header-content h1 {
+    color: #fff; /* Ensure title is white over image */
+    margin-bottom: 1rem;
+}
+
+.series-header-content .lead {
+    color: rgba(255, 255, 255, 0.8); /* Lighter text for description */
+}
+
+/*--------------------*
+    Series Grid Styles
+*--------------------*/
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.series-card {
+    line-height: 25px;
+    font-size: 19px;
+    background-color: var(--surface-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.series-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.series-card-title a {
+    font-family: var(--heading-font);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.series-card-title a:hover {
+    color: #fff;
+}
+
+.series-card-meta {
+    font-size: 0.8rem;
+    color: var(--tertiary-text-color);
+    margin-bottom: 0rem;
+}
+
+.series-card-description {
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.series-card-image {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.series-card-link { /* Added for consistency with post-card-link */
+    text-decoration: none;
+    color: inherit;
+}

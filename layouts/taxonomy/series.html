@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section id="blog-detail">
+  <div class="container">
+
+    {{ if eq .Kind "term" }}
+      <header class="series-header mb-4" {{ with .Params.featured_image }}{{ $image := $.Page.Resources.GetMatch . }}{{ if $image }} style="background-image: url('{{ $image.RelPermalink }}');"{{ end }}{{ end }}>
+        <div class="series-header-content">
+          <h1>{{ .Title }}</h1>
+          {{ with .Description }}
+            <p class="lead">{{ . }}</p>
+          {{ end }}
+        </div>
+      </header>
+
+      <div class="series-posts-section">
+        <ol class="series-posts-list">
+          {{ range .Pages.ByParam "series_order" }}
+            <li class="series-post-item {{ if eq .Permalink $.Permalink }}current-series-post{{ end }}">
+              <a href="{{ .Permalink }}" class="series-post-link">
+                <div class="series-post-content">
+                  <h3 class="series-post-title">{{ .Title }}</h3>
+                  <p class="series-post-description">{{ .Description }}</p>
+                  <p class="series-post-meta text-muted">{{ .Date.Format "January 2, 2006" }}</p>
+                </div>
+                {{ with .Resources.GetMatch .Params.featured_image }}
+                <div class="series-post-image-wrapper">
+                  <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="series-post-image">
+                </div>
+                {{ end }}
+              </a>
+            </li>
+          {{ end }}
+        </ol>
+      </div>
+    {{ end }}
+
+  </div>
+</section>
+{{ end }}

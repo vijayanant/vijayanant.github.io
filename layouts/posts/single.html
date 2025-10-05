@@ -11,70 +11,66 @@
             <p class="text-muted">{{ .Date.Format "January 2, 2006" }}</p>
           </header>
 
-          {{ with .Params.series }}
-            {{ $seriesName := . }}
-            {{ $pagesInSeries := where site.RegularPages "Params.series" $seriesName }}
-            {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
-            <div class="series-nav mb-4">
-              <h5 class="series-title"><a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">Part of the "{{ $seriesName }}" series</a></h5>
-              <ol>
-                {{ range $sortedPages }}
-                  <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
-                    {{ if eq .Permalink $.Permalink }}
-                      <span>{{ .Title }}</span>
-                    {{ else }}
-                      <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    {{ end }}
-                  </li>
-                {{ end }}
-              </ol>
-            </div>
-          {{ end }}
-
-          <div class="content">
+                                      {{ with index .Params.series 0 }}
+                                        {{ $seriesName := . }}
+                                        {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
+                                        {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
+                                        <div class="series-nav mb-4">
+                                          <h5 class="series-title"><a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">Part of the "{{ $seriesName }}" series</a></h5>
+                                          <ol>
+                                            {{ range $sortedPages }}
+                                              <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
+                                                {{ if eq .Permalink $.Permalink }}
+                                                  <span>{{ .Title }}</span>
+                                                {{ else }}
+                                                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                                {{ end }}
+                                              </li>
+                                            {{ end }}
+                                          </ol>
+                                        </div>
+                                      {{ end }}          <div class="content">
             {{ .Content }}
           </div>
         </article>
 
         <hr class="post-separator">
 
-        {{ if .Params.series }}
-          {{ $seriesName := .Params.series }}
-          {{ $pagesInSeries := where site.RegularPages "Params.series" $seriesName }}
-          {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
-          {{ $currentPostIndex := -1 }}
-          {{ range $i, $p := $sortedPages }}
-            {{ if eq .Permalink $.Permalink }}
-              {{ $currentPostIndex = $i }}
-            {{ end }}
-          {{ end }}
+            {{ if .Params.series }}
+              {{ $seriesName := index .Params.series 0 }}
+              {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
+              {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
+              {{ $currentPostIndex := -1 }}
+              {{ range $i, $p := $sortedPages }}
+                {{ if eq .Permalink $.Permalink }}
+                  {{ $currentPostIndex = $i }}
+                {{ end }}
+              {{ end }}
 
-          {{ $nextPost := false }}
-          {{ if lt $currentPostIndex (sub (len $sortedPages) 1) }}
-            {{ $nextPost = index $sortedPages (add $currentPostIndex 1) }}
-          {{ end }}
+              {{ $nextPost := false }}
+              {{ if lt $currentPostIndex (sub (len $sortedPages) 1) }}
+                {{ $nextPost = index $sortedPages (add $currentPostIndex 1) }}
+              {{ end }}
 
-          {{ if $nextPost }}
-            <div class="next-post-prompt">
-              <a href="{{ $nextPost.Permalink }}" class="next-post-link">
-                Next: {{ $nextPost.Title }} <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          {{ else }}
-            {{/* Last post in series */}}
-            <div class="next-post-prompt">
-              <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/" class="next-post-link">
-                Explore More from "{{ $seriesName }}" <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-            {{ partial "related-posts.html" . }}
-          {{ end }}
-        {{ else }}
-          {{/* Standalone post */}}
-          {{ partial "related-posts.html" . }}
-        {{ end }}
-
-      </div>
+              {{ if $nextPost }}
+                <div class="next-post-prompt">
+                  <a href="{{ $nextPost.Permalink }}" class="next-post-link">
+                    Next: {{ $nextPost.Title }} <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              {{ else }}
+                {{/* Last post in series */}}
+                <div class="next-post-prompt">
+                  <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/" class="next-post-link">
+                    Explore More from "{{ $seriesName }}" <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+                {{ partial "related-posts.html" . }}
+              {{ end }}
+            {{ else }}
+              {{/* Standalone post */}}
+              {{ partial "related-posts.html" . }}
+            {{ end }}      </div>
 
     </div>
   </div>
