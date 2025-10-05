@@ -4,7 +4,7 @@
     <div class="post-layout">
 
       <!-- Post Content -->
-      <div class="post-content">
+      <div class="blog-post-content">
         <article>
           <header>
             <h1>{{ .Title }}</h1>
@@ -16,11 +16,15 @@
             {{ $pagesInSeries := where site.RegularPages "Params.series" $seriesName }}
             {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
             <div class="series-nav mb-4">
-              <h5>Part of the "{{ $seriesName }}" series</h5>
+              <h5 class="series-title"><a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">Part of the "{{ $seriesName }}" series</a></h5>
               <ol>
                 {{ range $sortedPages }}
                   <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ if eq .Permalink $.Permalink }}
+                      <span>{{ .Title }}</span>
+                    {{ else }}
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
                   </li>
                 {{ end }}
               </ol>

@@ -17,12 +17,13 @@
     --surface-color: #1E1E1E; /* A slightly lighter surface color for cards and sections */
     --text-color: #E0E0E0; /* A light text color for readability */
     --secondary-text-color: #B0B0B0; /* A slightly dimmer text text color for secondary information */
-    --heading-font: 'Lora', serif;
-    --body-font: 'Mulish', sans-serif;
+    --tertiary-text-color: #7C7C7C; /* A lighter text color for metadata */
+    --heading-font: 'Mulish', sans-serif;
+    --body-font: 'Lora', serif;
 }
 
 body {
-    font-family: var(--body-font);
+    font-family: var(--heading-font);
     line-height: 1.8;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -39,7 +40,7 @@ main {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -100,6 +101,7 @@ img {
     font-weight: 700;
     border: 2px solid var(--primary-color);
     gap: 0.5rem; /* Add space between icon and text */
+    font-family: var(--heading-font);
 }
 
 .button i {
@@ -121,7 +123,7 @@ img {
 \*--------------------*/
 #site-header {
     background-color: var(--surface-color); /* Make the header opaque on all pages */
-    padding: 2rem 0;
+    padding: 1rem 0;
     position: fixed; /* Position it over the hero section */
     width: 100%;
     top: 0;
@@ -150,8 +152,8 @@ header .container {
     display: flex; /* To center the image if it's smaller than the container */
     align-items: center;
     justify-content: center;
-    height: 45px; /* Example height, adjust as needed */
-    width: 45px; /* Example width, adjust as needed */
+    height: 35px; /* Example height, adjust as needed */
+    width: 35px; /* Example width, adjust as needed */
     text-decoration: none; /* Keep if you want to ensure no underline */
 }
 
@@ -224,16 +226,17 @@ nav {
 }
 
 .nav-item {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
+    font-family: var(--heading-font);
 }
 
 .nav-link::after {
@@ -335,7 +338,7 @@ nav {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
-    font-family: var(--body-font);
+    font-family: var(--heading-font);
     font-weight: 500;
 }
 
@@ -358,7 +361,7 @@ nav {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: var(--secondary-text-color);
+    color: var(--tertiary-text-color);
     transition: color 0.3s ease;
 }
 
@@ -443,7 +446,7 @@ nav {
 
 .speaking-meta {
     font-size: 1rem;
-    color: var(--secondary-text-color);
+    color: var(--tertiary-text-color);
     margin-bottom: 1rem;
 }
 
@@ -535,7 +538,7 @@ nav {
 
 .writing-meta {
     font-size: 0.9rem;
-    color: var(--secondary-text-color);
+    color: var(--tertiary-text-color);
     margin-bottom: 1rem;
 }
 
@@ -622,7 +625,7 @@ nav {
 footer {
     padding: 2rem 0;
     background-color: #1E1E1E;
-    color: var(--secondary-text-color);
+    color: var(--tertiary-text-color);
     text-align: center;
     font-size: 0.9rem;
 }
@@ -788,12 +791,14 @@ footer {
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 0rem;
 }
 
 .post-card {
-    background-color: var(--surface-color);
-    padding: 2rem;
+    line-height: 25px;
+    font-size: 19px;
+    /* background-color: var(--surface-color); */
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -808,11 +813,13 @@ footer {
 
 .post-card-title a {
     font-family: var(--heading-font);
-    font-size: 1.5rem;
+    font-size: 19px;
     font-weight: 700;
+    line-height: 26px;
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    margin-top: 1rem;
 }
 
 .post-card-title a:hover {
@@ -820,26 +827,25 @@ footer {
 }
 
 .post-card-meta {
-    font-size: 0.9rem;
-    color: var(--secondary-text-color);
-    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: var(--tertiary-text-color);
+    margin-bottom: 0rem;
 }
 
 .post-card-description {
     color: var(--secondary-text-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.6;
     flex-grow: 1;
 }
 
 .post-card-image {
     max-width: 100%;
-    width: 100%; /* Make image take full width of card */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area without distortion */
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: 4px;
-    margin-bottom: 1rem;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
 }
 
 /*--------------------*\
@@ -849,7 +855,7 @@ footer {
     /* The flex properties are no longer needed */
 }
 
-.post-content {
+.blog-post-content {
     max-width: 800px;
     margin: 0 auto;
 }
@@ -866,7 +872,7 @@ footer {
     top: 150px; /* Adjust based on header height */
 }
 
-.post-content article header h1 {
+.blog-post-content article header h1 {
     font-family: var(--heading-font);
     font-size: 3rem;
     margin-bottom: 0.5rem;
@@ -874,48 +880,51 @@ footer {
     color: var(--primary-color);
 }
 
-.post-content article header p.text-muted {
+.blog-post-content article header p.text-muted {
     text-align: center;
+    color: var(--tertiary-text-color);
+    margin-bottom: 2rem;
 }
 
-.post-content .content h2, 
-.post-content .content h3, 
-.post-content .content h4 {
+.blog-post-content .content h2, 
+.blog-post-content .content h3, 
+.blog-post-content .content h4 {
     font-family: var(--heading-font);
     color: var(--primary-color);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.post-content .content h2 { font-size: 2.2rem; }
-.post-content .content h3 { font-size: 1.8rem; }
-.post-content .content h4 { font-size: 1.4rem; }
+.blog-post-content .content h2 { font-size: 2.2rem; }
+.blog-post-content .content h3 { font-size: 1.8rem; }
+.blog-post-content .content h4 { font-size: 1.4rem; }
 
-.post-content .content p {
+.blog-post-content .content p {
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    font-family: var(--body-font);
 }
 
-.post-content .content a {
+.blog-post-content .content a {
     color: var(--primary-color);
     text-decoration: underline;
 }
 
-.post-content .content a:hover {
+.blog-post-content .content a:hover {
     color: #fff;
 }
 
-.post-content .content ul, 
-.post-content .content ol {
+.blog-post-content .content ul, 
+.blog-post-content .content ol {
     margin-bottom: 1.5rem;
     padding-left: 2rem;
 }
 
-.post-content .content li {
+.blog-post-content .content li {
     margin-bottom: 0.5rem;
 }
 
-.post-content .content blockquote {
+.blog-post-content .content blockquote {
     border-left: 4px solid var(--primary-color);
     padding-left: 1.5rem;
     margin: 1.5rem 0;
@@ -923,7 +932,7 @@ footer {
     color: var(--secondary-text-color);
 }
 
-.post-content .content pre {
+.blog-post-content .content pre {
     background-color: #2a2a2a;
     padding: 1.5rem;
     border-radius: 8px;
@@ -936,21 +945,29 @@ pre.chroma {
   white-space: pre; /* Prevents line wrapping within the code block */
 }
 
-.post-content .content .highlight pre {
+.blog-post-content .content .highlight pre {
   overflow-x: auto;
   white-space: pre;
 }
 
-.post-content .content code {
+.blog-post-content .content code {
     font-family: 'Courier New', Courier, monospace;
 }
 
 .series-nav, .toc-nav {
     background-color: var(--surface-color);
     border-left: 4px solid var(--primary-color);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem; /* Added spacing */
+}
+
+.series-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--surface-color);
 }
 
 .series-nav ol,
@@ -970,10 +987,13 @@ pre.chroma {
 }
 
 .series-nav ol li a,
-.toc-nav ol li a {
+.toc-nav ol li a,
+.series-nav ol li span {
     text-decoration: none;
     color: var(--text-color);
     transition: color 0.3s ease;
+    display: block;
+    padding: 0.5rem 1rem;
 }
 
 .series-nav ol li a:hover,
@@ -986,6 +1006,11 @@ pre.chroma {
     font-weight: 700;
 }
 
+.series-nav ol li.fw-bold {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
 
 #blog-detail {
     padding: 6rem 0;
@@ -996,7 +1021,7 @@ pre.chroma {
     .post-layout {
         flex-direction: column;
     }
-    .post-content {
+    .blog-post-content {
         order: 2; /* Main content below sidebar */
     }
     .post-sidebar {
@@ -1030,7 +1055,7 @@ pre.chroma {
     top: 0.5rem;
     right: 0.5rem;
     font-size: 0.8rem;
-    color: var(--secondary-text-color);
+    color: var(--tertiary-text-color);
     display: flex;
     align-items: center;
 }
@@ -1302,7 +1327,7 @@ body:not([data-page-kind="home"]) #site-header {
 }
 
 .newsletter-form input[type="email"]::placeholder {
-    color: var(--secondary-text-color);
+    color: var(--tertiary-text-color);
 }
 
 .newsletter-form input[type="submit"] {
