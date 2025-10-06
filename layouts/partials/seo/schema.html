@@ -1,0 +1,61 @@
+{{- if .IsPage }}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" }}
+{{- $params := .Params }}
+{{- $title := .Title }}
+{{- $description := .Description | default .Summary }}
+{{- $image := "" }}
+{{- with .Params.featured_image }}
+  {{- $image = . | absURL }}
+{{- else }}
+  {{- with site.Params.image }}
+    {{- $image = . | absURL }}
+  {{- end }}
+{{- end }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ $title | jsonify }},
+  "description": {{ $description | jsonify }},
+  "image": {{ $image | absURL | jsonify }},
+  "datePublished": {{ .PublishDate.Format $iso8601 | jsonify }},
+  "dateModified": {{ .Lastmod.Format $iso8601 | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.Params.author | default "Your Name" | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.Title | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ site.Params.image | absURL | jsonify }}
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  },
+  "wordcount": {{ .WordCount }},
+  "url": {{ .Permalink | jsonify }},
+  "inLanguage": {{ site.LanguageCode | default "en-us" | jsonify }},
+  {{- with .Params.categories }}
+  "articleSection": [
+    {{- range $i, $e := . }}
+      {{- if $i }},{{- end }}
+      {{- $e | jsonify }}
+    {{- end }}
+  ],
+  {{- end }}
+  {{- with .Params.tags }}
+  "keywords": [
+    {{- range $i, $e := . }}
+      {{- if $i }},{{- end }}
+      {{- $e | jsonify }}
+    {{- end }}
+  ]
+  {{- end }}
+}
+</script>
+{{- end }}

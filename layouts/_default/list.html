@@ -17,7 +17,6 @@
             <a href="{{ .Permalink }}">{{ .Title }}</a>
           </h2>          
           <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
-          <p class="post-card-description">{{ .Description | truncate 35 }}</p>
           <!-- <a href="{{ .Permalink }}" class="read-more-button">Read More →</a> -->
         </div>
       {{ end }}

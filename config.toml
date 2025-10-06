@@ -4,7 +4,20 @@ title = "Vijay Anantharamaiah"
 
 [params]
 description = "Engineering Leader & Product Builder"
-image = "https://vijayanant.com/assets/images/logo-512.png"
+author = "Vijay Anantharamaiah" # Explicitly define author
+portrait = "images/contact-image.png" # Path relative to the assets/ directory
+googleAnalytics = "G-XNSPFRLLVH"
+image = "https://vijayanant.com/assets/images/logo-512.png" # This is your site logo
+contactEmail = "hello@vijayanant.com" # Your actual email
+[[params.social]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/vijayanant/"
+[[params.social]]
+name = "GitHub"
+url = "https://github.com/vijayanant"
+[[params.social]]
+name = "Twitter"
+url = "https://twitter.com/vijayanant"
 enableCodeCopyButton = true
 enableRelatedPosts = true
 enableNewsletter = true

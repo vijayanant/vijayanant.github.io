@@ -11,8 +11,15 @@
             {{ with .Params.subtitle }}
               <p class="post-subtitle text-muted">{{ . }}</p>
             {{ end }}
-            <p class="text-muted">{{ .Date.Format "January 2, 2006" }}</p>
-          </header>
+            <div class="post-meta-info text-center mb-3">
+              {{ with .Params.categories }}
+                {{ range $i, $e := . }}
+                  <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="category-link">{{ . }}</a>{{ if lt ($i | add 1) (len $.Params.categories) }}<span class="meta-delimiter">&middot;</span>{{ end }}
+                {{ end }}
+                <span class="meta-separator"> | </span>
+              {{ end }}
+              <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+            </div>
 
                                       {{ with index .Params.series 0 }}
                                         {{ $seriesName := . }}
