@@ -1187,7 +1187,6 @@ pre.chroma {
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.8rem;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1604,4 +1603,145 @@ background-color: #9A67D9;
 .series-card-link { /* Added for consistency with post-card-link */
     text-decoration: none;
     color: inherit;
+}
+
+/*--------------------*
+    Single Post Category & Date Styles
+*--------------------*/
+.post-meta-info {
+    font-size: 0.9rem; /* Smaller font size for meta info */
+    color: var(--tertiary-text-color); /* Default color for meta info */
+    margin-bottom: 1.5rem; /* Space below the meta info */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.post-meta-info .category-link { /* Apply common styles to category links */
+    color: var(--tertiary-text-color); /* Use tertiary color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Slightly bolder than regular text */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    white-space: nowrap; /* Prevent links from breaking */
+}
+
+.post-meta-info .category-link:hover {
+    color: var(--primary-color); /* Highlight with primary color on hover */
+}
+
+.post-meta-info .meta-delimiter {
+    color: var(--tertiary-text-color); /* Delimiter color */
+    margin: 0 0.4rem; /* Space around the delimiter */
+    white-space: nowrap; /* Prevent delimiter from breaking */
+}
+
+.post-meta-info .meta-separator {
+    color: var(--tertiary-text-color); /* Separator color */
+    margin: 0 0.6rem; /* More space around the pipe separator */
+    white-space: nowrap; /* Prevent separator from breaking */
+}
+
+.post-meta-info .post-date {
+    /* Date will inherit color from .post-meta-info by default */
+    font-weight: 500; /* Make date slightly bolder */
+    white-space: nowrap; /* Prevent date from breaking */
+}
+
+/*--------------------*
+    Post Card Category Styles
+*--------------------*/
+.post-card-categories-inline {
+    margin-top: 0.5rem; /* Space above categories */
+    font-size: 0.85rem; /* Slightly smaller font size for cards */
+}
+
+.post-card-category-link {
+    color: var(--tertiary-text-color); /* Use tertiary color for categories */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Slightly bolder than regular text */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.post-card-category-link:hover {
+    color: var(--primary-color); /* Highlight with primary color on hover */
+}
+
+.post-card-category-delimiter {
+    color: var(--tertiary-text-color); /* Delimiter color */
+    margin: 0 0.2rem; /* Space around the delimiter */
+}
+
+/*--------------------*
+    Taxonomy List Styles (for terms.html)
+*--------------------*/
+.taxonomy-list-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.taxonomy-card {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.taxonomy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.taxonomy-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.taxonomy-card-title {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.taxonomy-card-title a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.taxonomy-card-title a:hover {
+    color: #fff;
+}
+
+.taxonomy-card-description {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.taxonomy-card-meta {
+    font-size: 0.8rem;
+    color: var(--tertiary-text-color);
+}
+
+/*--------------------*
+    Taxonomy Term Styles (for taxonomy.html)
+*--------------------*/
+.taxonomy-term-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section id="blog-detail">
+  <div class="container">
+
+    <header class="taxonomy-list-header mb-4">
+      <h1 class="section-title">All {{ .Data.Plural | title }}</h1>
+      <p class="section-intro">Explore all available {{ .Data.Plural | lower }}.</p>
+    </header>
+
+    <div class="taxonomy-grid">
+      {{ range .Data.Terms.ByCount }}
+        {{ $term := . }}
+        {{ $termPage := site.GetPage (printf "%s/%s" $.Data.Plural ($term.Term | urlize)) }}
+        <div class="taxonomy-card">
+          <a href="{{ $termPage.Permalink }}" class="taxonomy-card-link">
+            <h2 class="taxonomy-card-title">
+              <a href="{{ $termPage.Permalink }}">{{ $termPage.Title }}</a>
+            </h2>
+            {{ with $termPage.Description }}
+              <p class="taxonomy-card-description">{{ . | truncate 100 }}</p>
+            {{ end }}
+            <p class="taxonomy-card-meta text-muted">{{ $term.Count }} posts</p>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}

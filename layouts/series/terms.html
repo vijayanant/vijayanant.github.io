@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section id="blog-detail">
+  <div class="container">
+
+    <header class="series-list-header mb-4">
+      <h1 class="section-title">All Series</h1>
+      <p class="section-intro">Explore all available content series.</p>
+    </header>
+
+    <div class="series-grid">
+      {{ range .Data.Terms.ByCount }}
+        {{ $seriesTerm := . }}
+        {{ $seriesPage := site.GetPage (printf "series/%s" ($seriesTerm.Term | urlize)) }}
+        <div class="series-card">
+          <a href="{{ $seriesPage.Permalink }}" class="series-card-link">
+            {{/* Featured image removed as requested */}}
+            <h2 class="series-card-title">
+              <a href="{{ $seriesPage.Permalink }}">{{ $seriesPage.Title }}</a>
+            </h2>
+            <p class="series-card-description">{{ $seriesPage.Description | truncate 100 }}</p>
+            <p class="series-card-meta text-muted">{{ $seriesTerm.Count }} posts</p>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}
