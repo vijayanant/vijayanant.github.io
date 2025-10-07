@@ -27,6 +27,9 @@
     {{ $chromaStyle := resources.Get "css/chroma.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}">
 
+    {{ $lityStyle := resources.Get "css/lity.min.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $lityStyle.RelPermalink }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -60,6 +63,12 @@
     {{ $copyCodeScript := resources.Get "js/copy-code.js" | minify | fingerprint }}
     <script src="{{ $copyCodeScript.RelPermalink }}"></script>
     {{ end }}
+
+    {{ $jqueryScript := resources.Get "js/jquery.min.js" | fingerprint }}
+    <script src="{{ $jqueryScript.RelPermalink }}"></script>
+
+    {{ $lityScript := resources.Get "js/lity.min.js" | fingerprint }}
+    <script src="{{ $lityScript.RelPermalink }}"></script>
 </body>
 
 </html>
