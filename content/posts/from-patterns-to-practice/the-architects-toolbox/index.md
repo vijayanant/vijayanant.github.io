@@ -5,9 +5,12 @@ date: 2025-01-05T10:40:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 3
-tags: ["architecture", "architectural styles", "monolith", "microservices", "event-driven", "trade-offs", "system design"]
+categories: ["Software Architecture"]
+tags: ["architectural styles", "monolith", "microservices", "event-driven architecture", "trade-offs", "system design"]
 description: "A practical guide to analyzing Monolithic, Microservices, and Event-Driven architectural styles against real-world business drivers to choose the foundational style for your system."
 ---
+
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
 
 ## Introduction: From "Why" to "How"
 
@@ -19,8 +22,7 @@ The world of architectural styles is vast, including classics like Layered, Clie
 
 The three styles that provide the clearest answers to this question are the **Monolithic**, **Microservices**, and **Event-Driven** styles. By analyzing these three, you will learn the core trade-offs that dominate modern system design. We will focus on these for now, and explore others in future posts.
 
-![A diagram of a well-structured monolith, showing internal modules for API, Business Logic, and Data Access within a single deployable unit.](images/MonolithicStyle.png)
-*Figure 1: The Monolithic style, where all components exist in a single, deployable unit, communicating through fast, in-process calls.*
+{{< figure src="03-style-monolith.svg" alt="A diagram of a well-structured monolith, showing internal modules for API, Business Logic, and Data Access within a single deployable unit." caption="Figure 1: The Monolithic style, where all components exist in a single, deployable unit, communicating through fast, in-process calls." >}}
 
 Your most direct path is the **Monolithic style**—a single, unified application. All code for every part of the business would live in one deployable unit. How does this choice stack up against your specific drivers for CityPulse?
 
@@ -36,8 +38,7 @@ From a domain perspective, you'd implement the different parts of the CityPulse 
 
 ## The Second Tool: The Microservices Style
 
-![A diagram of a microservices architecture, showing an API Gateway and several independent services, each with its own database, communicating over a network.](images/MicroservicesStyle.png)
-*Figure 2: The Microservices style, which breaks the system into independently deployable services, trading internal complexity for external, network-based complexity.*
+{{< figure src="04-style-microservices.svg" alt="A diagram of a microservices architecture, showing an API Gateway and several independent services, each with its own database, communicating over a network." caption="Figure 2: The Microservices style, which breaks the system into independently deployable services, trading internal complexity for external, network-based complexity." >}}
 
 To directly address your scalability driver, you can consider the **Microservices style**. What are the real-world consequences of this choice for CityPulse?
 
@@ -49,8 +50,7 @@ Furthermore, this style is a very poor fit for your **Time-to-Market** goal. The
 
 ## The Third Tool: The Event-Driven Style
 
-![A diagram of an event-driven architecture, showing producer services sending events to a central event broker, and consumer services reacting to those events independently.](images/EventDrivenStyle.png)
-*Figure 3: The Event-Driven style, which decouples services by using an intermediary message broker, eliminating direct, synchronous communication.*
+{{< figure src="05-style-event-driven.svg" alt="A diagram of an event-driven architecture, showing producer services sending events to a central event broker, and consumer services reacting to those events independently." caption="Figure 3: The Event-Driven style, which decouples services by using an intermediary message broker, eliminating direct, synchronous communication." >}}
 
 Both previous styles present a stark trade-off. Let's analyze the third candidate, the **Event-Driven style**, which offers a different way to think about communication.
 
@@ -73,3 +73,10 @@ You've now completed a professional analysis, moving beyond buzzwords to a nuanc
 So, how do you choose? How do you move beyond this qualitative discussion and make a formal, data-driven, and justifiable decision?
 
 To break the tie, you need to quantify this analysis and apply your business priorities. In our next post, we will introduce the final analytical tools in our framework—the **Pattern Profiling Scorecard** and the **Weighted Scoring Matrix**—to turn this analysis into a final, data-driven decision.
+
+## Further Reading
+
+*   [**Fundamentals of Software Architecture**](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/) by Mark Richards and Neal Ford. A comprehensive and accessible overview of many architectural styles and patterns.
+*   [**"MonolithFirst"**](https://martinfowler.com/bliki/MonolithFirst.html) by Martin Fowler. The classic and influential article arguing for why starting with a monolith is often a pragmatic choice.
+*   [**Building Microservices, 2nd Edition**](https://www.oreilly.com/library/view/building-microservices-2nd/9781098120297/) by Sam Newman. The canonical book on the microservices architectural style.
+*   [**"What do you mean by 'Event-Driven'?"**](https://martinfowler.com/articles/201701-event-driven.html) by Martin Fowler. A crucial article that clarifies the different patterns and motivations that fall under the broad EDA umbrella.

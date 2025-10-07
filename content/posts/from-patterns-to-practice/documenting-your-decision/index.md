@@ -5,9 +5,12 @@ date: 2025-01-05T10:20:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 6
-tags: ["architecture", "ADR", "C4 Model", "documentation", "communication", "decision making"]
+categories: ["Software Architecture"]
+tags: ["architectural decision records", "adr", "c4 model", "documentation", "communication", "architectural amnesia"]
 description: "Learn how to effectively document and communicate architectural decisions using Architectural Decision Records (ADRs) and the C4 Model to prevent 'Architectural Amnesia' and ensure clarity."
 ---
+
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
 
 ## Introduction: The Decision is Made. Now What?
 
@@ -47,7 +50,7 @@ We will adopt an Event-Driven Architecture for the core ticketing workflow. The 
 ```
 
 {{< note type="log" title="Architect's Log" >}}
-People often get hung up on the ADR format. It doesn't matter. What matters is that you write it down. The most valuable part of an ADR is the 'Consequences' section. Being honest about the downsides and trade-offs of your decision is a sign of a mature architect. It tells future teams what problems they should be looking out for and what you were optimizing for.
+People often get hung up on the ADR format. It doesn't matter. What matters is that you write it down. The most valuable part of an ADR is the 'Consequences' section. Being honest about the downsides and trade-offs of your decision is a sign of a mature architect. It tells future teams what problems they should be looking out for and what you were optimizing for. **Also, remember that an ADR is a living document. The 'Consequences' section, in particular, should be updated as you learn more after the decision is implemented.**
 {{< /note >}}
 
 ## Communicating the "What": The C4 Model
@@ -58,13 +61,11 @@ The solution is to create different maps for different audiences. The **C4 Model
 
 For the CEO, you start at **Level 1: The System Context Diagram**. This is a simple, high-level map of the world. It shows CityPulse as one box in the middle, with the users who interact with it (like the 'Event Goer' and 'Organizer') and the other systems it talks to (like the 'Payment Gateway' and 'Email Service'). It shows the big picture and nothing more.
 
-![A C4 System Context diagram for CityPulse, showing users and external systems.](images/08-c4-context.png)
-*Figure 1: A Level 1 System Context diagram for CityPulse. High-level and perfect for a non-technical audience.*
+{{< figure src="08-c4-context.svg" alt="A C4 System Context diagram for CityPulse, showing users and external systems." caption="Figure 1: A Level 1 System Context diagram for CityPulse. High-level and perfect for a non-technical audience." >}}
 
 For your lead engineer and the development team, you zoom in to **Level 2: The Container Diagram**. This map shows the major technical building blocks *inside* CityPulse. For your new EDA, this might show a 'Web App' that publishes events to a 'Message Broker,' and several services that consume those events, like the 'Ticketing Service' and the 'Notifications Service,' each with its own database. It shows how the major pieces of your architecture fit together.
 
-![A C4 Container diagram for CityPulse, showing the internal structure of the system.](images/09-c4-container.png)
-*Figure 2: A Level 2 Container diagram for CityPulse, showing the internal structure of the system.*
+{{< figure src="09-c4-container.svg" alt="A C4 Container diagram for CityPulse, showing the internal structure of the system." caption="Figure 2: A Level 2 Container diagram for CityPulse, showing the internal structure of the system." >}}
 
 You can zoom in further to Components (Level 3) and Code (Level 4), but for communicating a new architectural style, these first two levels are the most critical.
 
@@ -81,6 +82,11 @@ And with that, you have executed every step of the formal decision-making framew
 But is your job as an architect over? Not even close.
 
 In our final post of this foundational series, we'll look at what happens *after* the decision. We'll explore the architect's ongoing role in guiding the system's evolution, managing technical debt, and ensuring the vision becomes a reality. It's where the real work begins.
+
+## Further Reading
+
+*   [**"Documenting Architecture Decisions"**](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) by Michael Nygard. The original blog post that introduced and popularized the concept of Architectural Decision Records (ADRs).
+*   [**The C4 model for visualizing software architecture**](https://c4model.com/). The official website for the C4 model, created by Simon Brown. It includes a full description of the notation and its levels.
 
 ---
 
