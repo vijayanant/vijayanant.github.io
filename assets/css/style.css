@@ -1764,3 +1764,28 @@ background-color: #9A67D9;
     color: var(--secondary-text-color); /* Use a slightly dimmer text color for captions */
     font-size: 0.9rem; /* Slightly smaller font size for captions */
 }
+
+/* Ensure Lity container and image are correctly sized */
+.lity-image .lity-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw; /* Max width of the viewport */
+    max-height: 90vh; /* Max height of the viewport */
+}
+
+.lity-image .lity-content img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Ensure the entire image is visible */
+}
+
+/* Specific rule for SVG images within Lity content that might lack explicit dimensions */
+.lity-image .lity-content img[src$=".svg"] {
+    width: 100%;  /* Force width to 100% of its parent */
+    height: 100%; /* Force height to 100% of its parent */
+    /* object-fit: contain is already applied to ensure aspect ratio */
+}

@@ -21,15 +21,17 @@
 
     <figure class="responsive-figure {{ with $class }}{{ . }}{{ end }}">
         {{ if eq $fallbackFormat "svg" }}
-            {{/* Handle SVG images: no resizing or WebP conversion needed */}}
-            <img
-                src="{{ $original.RelPermalink }}"
-                alt="{{ $alt }}"
-                {{ with $width }}width="{{ . }}"{{ end }}
-                loading="lazy"
-                decoding="async"
-            >
+            <a href="{{ $original.RelPermalink }}" data-lity>
+                <img
+                    src="{{ $original.RelPermalink }}"
+                    alt="{{ $alt }}"
+                    {{ with $width }}width="{{ . }}"{{ end }}
+                    loading="lazy"
+                    decoding="async"
+                >
+            </a>
         {{ else }}
+            <a href="{{ $original.RelPermalink }}" data-lity>
             {{/* Define responsive sizes for raster images */}}
             {{ $sizes := (slice 480 800 1200) }}
 
@@ -87,6 +89,7 @@
                     decoding="async"
                 >
             </picture>
+            </a>
         {{ end }}
         {{ with $caption }}
             <figcaption>{{ . }}</figcaption>
