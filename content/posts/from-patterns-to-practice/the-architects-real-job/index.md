@@ -10,7 +10,7 @@ tags: ["architectural evolution", "architectural governance", "technical debt", 
 description: "Beyond making initial decisions, an architect's true role involves continuously guiding the evolution of a system, establishing governance, and strategically managing technical debt."
 ---
 
-{{< figure src="framework_roadmap.png" alt="Framework Roadmap" >}}
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
 
 ## Introduction: The End of the Beginning
 
@@ -69,4 +69,3 @@ But the story of CityPulse is just getting started. These new challenges—evolv
 
 * [***Building Evolutionary Architectures***](https://www.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/) by Neal Ford, Rebecca Parsons, and Patrick Kua. The definitive guide to creating architectures that can adapt to change, and the origin of the "Architectural Fitness Function" concept.
 * Martin Fowler's [**Technical Debt Quadrant**](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html). A classic and essential reframing of technical debt not as a moral failing, but as a strategic choice with four distinct types.
-
