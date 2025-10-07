@@ -1,0 +1,97 @@
+{{/*
+    Advanced figure shortcode for responsive, optimized images.
+
+    Parameters:
+    - src (required): Path to the image file, relative to the page bundle.
+    - alt (required): Alternative text for the image.
+    - caption (optional): Image caption, rendered in a <figcaption>.
+    - width (optional): The intrinsic width for the final <img> tag. Defaults to a sensible medium size.
+    - class (optional): Custom class for the <figure> element.
+*/}}
+
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" | plainify }}
+{{ $caption := .Get "caption" | markdownify }}
+{{ $width := .Get "width" }}
+{{ $class := .Get "class" }}
+
+{{ with .Page.Resources.GetMatch $src }}
+    {{ $original := . }}
+    {{ $fallbackFormat := .MediaType.SubType }} {{/* e.g., jpeg, png, svg */}}
+
+    <figure class="responsive-figure {{ with $class }}{{ . }}{{ end }}">
+        {{ if eq $fallbackFormat "svg" }}
+            {{/* Handle SVG images: no resizing or WebP conversion needed */}}
+            <img
+                src="{{ $original.RelPermalink }}"
+                alt="{{ $alt }}"
+                {{ with $width }}width="{{ . }}"{{ end }}
+                loading="lazy"
+                decoding="async"
+            >
+        {{ else }}
+            {{/* Define responsive sizes for raster images */}}
+            {{ $sizes := (slice 480 800 1200) }}
+
+            <picture>
+                {{/* --- WebP sources --- */}}
+                <source
+                    type="image/webp"
+                    srcset="
+                        {{- range $i, $size := $sizes -}}
+                            {{- if ge $original.Width $size -}}
+                                {{- with ($original.Resize (printf "%dx webp" $size)).RelPermalink -}}
+                                    {{- if $i }}, {{ end }}{{ . }} {{ $size }}w
+                                {{- end -}}
+                            {{- end -}}
+                        {{- end -}}
+                        {{- if gt $original.Width (index $sizes (sub (len $sizes) 1)) -}}
+                            , {{ ($original.Resize (printf "%dx webp" $original.Width)).RelPermalink }} {{ $original.Width }}w
+                        {{- end -}}
+                    "
+                    sizes="(max-width: 768px) 100vw, 768px"
+                >
+
+                {{/* --- Fallback sources (e.g., JPEG/PNG) --- */}}
+                <source
+                    type="image/{{ $fallbackFormat }}"
+                    srcset="
+                        {{- range $i, $size := $sizes -}}
+                            {{- if ge $original.Width $size -}}
+                                {{- with ($original.Resize (printf "%dx" $size)).RelPermalink -}}
+                                    {{- if $i }}, {{ end }}{{ . }} {{ $size }}w
+                                {{- end -}}
+                            {{- end -}}
+                        {{- end -}}
+                        {{- if gt $original.Width (index $sizes (sub (len $sizes) 1)) -}}
+                            , {{ $original.RelPermalink }} {{ $original.Width }}w
+                        {{- end -}}
+                    "
+                    sizes="(max-width: 768px) 100vw, 768px"
+                >
+
+                {{/* --- Fallback <img> for old browsers --- */}}
+                {{ $fallbackImg := $original }}
+                {{ if $width }}
+                    {{ $fallbackImg = $original.Resize (printf "%dx" $width) }}
+                {{ else }}
+                    {{/* If no width is specified, use a medium size as a sensible default */}}
+                    {{ $fallbackImg = $original.Resize "800x" }}
+                {{ end }}
+                <img
+                    src="{{ $fallbackImg.RelPermalink }}"
+                    width="{{ $fallbackImg.Width }}"
+                    height="{{ $fallbackImg.Height }}"
+                    alt="{{ $alt }}"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </picture>
+        {{ end }}
+        {{ with $caption }}
+            <figcaption>{{ . }}</figcaption>
+        {{ end }}
+    </figure>
+{{ else }}
+    {{ errorf "Image not found: %s. Note: Images must be page resources (stored alongside index.md)." $src }}
+{{ end }}
