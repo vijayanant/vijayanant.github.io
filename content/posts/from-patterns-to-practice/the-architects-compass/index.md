@@ -1,13 +1,16 @@
 ---
-title: "The Architect's First Problem"
+title: "The Architect's Compass"
 subtitle: "A Tale of Speed vs. Scale"
 date: 2025-01-05T10:00:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 1
-tags: ["architecture", "software design", "trade-offs", "quality attributes", "monolith", "microservices"]
+categories: ["Software Architecture"]
+tags: ["trade-offs", "quality attributes", "monolith", "microservices"]
 description: "Understanding the core conflict between speed and scale is the architect's first challenge. This post explores how to translate business pressures into concrete drivers and navigate critical trade-offs."
 ---
+
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" width="1200" >}}
 
 Imagine this: you're the new software architect at a promising startup, 'CityPulse.' On your first day, you get pulled into two critical conversations that will define your job for the foreseeable future. First, the CEO catches you in the hallway. "Welcome aboard! Our main competitor launches their platform in four months. We have to beat them. I need our platform live in three, no exceptions." An hour later, your lead engineer finds you at your desk. "I'm glad you're here," she says. "That timeline is aggressive. My fear is that the moment a popular concert goes on sale, our whole site is going to crash and burn. We need to build this thing to scale."
 
@@ -33,13 +36,18 @@ Your job is to expose these questions and guide the organization to an answer, e
 
 Now that you have concrete drivers, how do you start thinking about a solution? A good way to start is to explore the two most extreme options. This helps you understand the landscape of trade-offs you're working with.
 
-![A simple diagram of a monolithic application, showing several internal modules communicating with in-process calls.](images/01-comparison-monolith.png)
-*Figure 1: A simple monolith, where all components are bundled in a single unit.*
+{{< figure
+      src="01-comparison-monolith.svg"
+      alt="A simple diagram of a monolithic application, showing several internal modules communicating with in-process calls."
+      caption="Figure 1: A simple monolith, where all components are bundled in a single unit."
+      width="400"
+>}}
 
-On one hand, you could build the entire CityPulse platform as a single, unified application—a **monolith**. This directly serves your Time-to-Market driver. It's often simpler to develop, test, and deploy initially, making that three-month deadline seem possible. The downside? It directly conflicts with your scalability driver. When the big concert sale hits, the entire application is under load. You can't scale the ticketing component without scaling everything else, which is inefficient and expensive.
-
-![A simple diagram of a microservices application, showing several independent services communicating over a network.](images/01-comparison-microservices.png)
-*Figure 2: A simple microservices system, where components are independent services.*
+{{< figure
+    src="01-comparison-microservices.svg"
+    alt="A simple diagram of a microservices application, showing several independent services communicating over a network."
+    caption="Figure 2: A simple microservices system, where components are independent services."
+>}}
 
 On the other hand, you could break the system into small, independent services—a **microservices architecture**. This directly serves your scalability driver. You could have a 'Ticketing Service' that scales independently to handle the immense load. The trade-off here is a massive hit to your Time-to-Market driver. The complexity of a distributed system—networking, data consistency, deployment—is huge, and almost certainly makes a three-month launch impossible.
 
@@ -50,9 +58,10 @@ Be careful of the 'false dichotomy.' The world isn't just monoliths and microser
 {{< /note >}}
 
 {{< summary title="Key Takeaways" >}}
-*   The architect's primary job is to translate vague business conflicts (like speed vs. scale) into concrete, technical trade-offs.
-*   Before you can solve a problem, you must understand the real-world pressures and name them (e.g., Time-to-Market, Scalability).
-*   Exploring the extreme architectural options first is a good way to understand the landscape of the problem you need to solve.
+
+* The architect's primary job is to translate vague business conflicts (like speed vs. scale) into concrete, technical trade-offs.
+* Before you can solve a problem, you must understand the real-world pressures and name them (e.g., Time-to-Market, Scalability).
+* Exploring the extreme architectural options first is a good way to understand the landscape of the problem you need to solve.
 {{< /summary >}}
 
 ## Conclusion: It's About Choosing Your Problems
@@ -64,6 +73,12 @@ Ultimately, remember the most important lesson:
 **Architectural decisions must be based on the specific, unique context of your business problem, not on generic 'best practices' or popular trends.**
 
 In our next post, we'll walk through the process of turning this conflict into a set of concrete, measurable drivers.
+
+## Further Reading
+
+* [**Software Architecture: The Hard Parts**](https://www.oreilly.com/library/view/software-architecture-the/9781492086888/) by Neal Ford, Mark Richards, et al. The definitive book on the nature of architectural trade-offs.
+* [**"Quality Attributes"**](https://resources.sei.cmu.edu/asset_files/technicalnote/2003_001_001_14246.pdf) from the Software Engineering Institute (SEI) at Carnegie Mellon, the origin of much of this foundational thinking.
+* Martin Fowler's article on the [**Utility vs. Strategic Dichotomy**](https://martinfowler.com/bliki/UtilityVsStrategicDichotomy.html), which adds excellent nuance to the "build it fast vs. build it right" conflict.
 
 ---
 

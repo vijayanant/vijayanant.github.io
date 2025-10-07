@@ -5,9 +5,12 @@ date: 2025-01-05T10:10:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 2
-tags: ["architecture", "quality attributes", "QAS", "requirements", "business analysis", "risk management"]
+categories: ["Software Architecture"]
+tags: ["quality attributes", "qas", "requirements", "risk management"]
 description: "Learn how to translate vague business goals into concrete, measurable architectural drivers using Quality Attribute Scenarios (QAS) to identify and address critical risks."
 ---
+
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
 
 ## Introduction: The Danger of Vague Goals
 
@@ -29,8 +32,12 @@ So how do you turn a vague goal like "scalability" into a concrete engineering t
 
 *(For a complete reference on the most common QAs and a deeper look at the QAS Canvas, check out our full deep-dive guide here.)*
 
-![A diagram showing the five parts of the QAS Canvas: Source, Stimulus, Environment, Response, and Response Measure.](images/02-qas-canvas.png)
-*Figure 1: The QAS Canvas provides a simple structure to translate vague goals into testable requirements.*
+{{< figure
+    src="02-qas-canvas.svg"
+    alt="A diagram showing the five parts of the QAS Canvas: Source, Stimulus, Environment, Response, and Response Measure."
+    caption="Figure 1: The QAS Canvas provides a simple structure to translate vague goals into testable requirements."
+    width="400"
+>}}
 
 It's a simple story format that forces you to be specific. As the architect, you'd walk through it like this:
 
@@ -47,9 +54,10 @@ A word of caution: while these numbers look precise, they are often just well-in
 {{< /note >}}
 
 {{< summary title="Key Takeaways" >}}
-*   Don't start with solutions. Start by analyzing the specific business problem and its critical workflows.
-*   Identify the points of highest risk in those workflows. This is where your architectural focus should be.
-*   Use the QAS framework (Source, Stimulus, Environment, Response, Measure) to translate vague goals into specific, measurable drivers.
+
+* Don't start with solutions. Start by analyzing the specific business problem and its critical workflows.
+* Identify the points of highest risk in those workflows. This is where your architectural focus should be.
+* Use the QAS framework (Source, Stimulus, Environment, Response, Measure) to translate vague goals into specific, measurable drivers.
 {{< /summary >}}
 
 ## Conclusion: Now You Know the Real Problem
@@ -59,3 +67,9 @@ This changes everything. You're no longer debating vague concepts. You now have 
 You know you need a system that can handle high transactional throughput on a small part of its workflow, with high reliability, while ensuring the rest of the site remains performant—and it all has to be built in three months.
 
 Now, and only now, are you ready to make your first, most fundamental architectural decision. You need to choose the **Architectural Style** that will define the entire structure of your system. In our next post, we will analyze the three primary candidate styles—the Monolith, Microservices, and the Event-Driven approach—and see how they stack up against these specific, measurable drivers.
+
+## Further Reading
+
+* [**Software Architecture in Practice, 3rd Edition**](https://www.informit.com/store/software-architecture-in-practice-9780132942773) by Len Bass, Paul Clements, and Rick Kazman. This is the canonical source for Quality Attribute Scenarios.
+* [**"Documenting Quality Attributes"**](https://resources.sei.cmu.edu/asset_files/technicalnote/2003_001_001_14246.pdf) - a detailed look at Quality Attribute Scenarios from the Software Engineering Institute (SEI).
+

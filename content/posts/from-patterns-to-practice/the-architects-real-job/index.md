@@ -5,9 +5,12 @@ date: 2025-01-05T10:30:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 7
-tags: ["architecture", "evolution", "governance", "technical debt", "stewardship"]
+categories: ["Software Architecture"]
+tags: ["architectural evolution", "architectural governance", "technical debt", "fitness functions", "stewardship"]
 description: "Beyond making initial decisions, an architect's true role involves continuously guiding the evolution of a system, establishing governance, and strategically managing technical debt."
 ---
+
+{{< figure src="framework_roadmap.png" alt="Framework Roadmap" >}}
 
 ## Introduction: The End of the Beginning
 
@@ -31,8 +34,7 @@ These are not signs of failure. They are signs of success. A growing, evolving b
 
 Your role now is to guide the system through these new challenges. Here are the new hats you have to wear:
 
-![A diagram showing the Architect's Flywheel, illustrating the continuous cycle of guiding evolution, architectural governance, and managing technical debt, with the Architect at the center.](images/10-architects-flywheel.png)
-*Figure 1: The Architect's Flywheel: A continuous cycle of stewardship and evolution.*
+{{< figure src="architectural-flywheel.png" alt="A diagram showing the Architect's Flywheel, illustrating the continuous cycle of guiding evolution, architectural governance, and managing technical debt, with the Architect at the center." caption="Figure 1: The Architect's Flywheel: A continuous cycle of stewardship and evolution." >}}
 
 ### Guiding Evolution (The Unexpected Feature)
 
@@ -51,9 +53,10 @@ This is the part of the job that no one talks about enough. It's a constant proc
 {{< /note >}}
 
 {{< summary title="Key Takeaways" >}}
-*   The architect's job is not just to make the initial decision, but to steward the architecture over its entire lifecycle.
-*   Key ongoing responsibilities include guiding evolution, establishing lightweight governance (like fitness functions), and strategically managing technical debt.
-*   The same tools you used to make the decision (ADRs, C4, etc.) are the tools you'll use to guide its evolution.
+
+* The architect's job is not just to make the initial decision, but to steward the architecture over its entire lifecycle.
+* Key ongoing responsibilities include guiding evolution, establishing lightweight governance (like fitness functions), and strategically managing technical debt.
+* The same tools you used to make the decision (ADRs, C4, etc.) are the tools you'll use to guide its evolution.
 {{< /summary >}}
 
 ## Conclusion: Welcome to Season Two
@@ -61,3 +64,9 @@ This is the part of the job that no one talks about enough. It's a constant proc
 This post marks the end of our foundational series on making a single, critical architectural decision. You've followed the complete, repeatable framework from a vague problem to a documented, data-informed choice.
 
 But the story of CityPulse is just getting started. These new challenges—evolving the architecture for a new business need, governing a growing system, and managing the debt from our past decisions—are the bread and butter of an architect's daily life. In Season Two of this series, we'll dive into these real-world challenges, exploring how to manage technical debt, how to evolve your architecture to support brand-new business features, and how to maintain your architectural principles across a growing team. Join us as the story of CityPulse continues.
+
+## Further Reading
+
+* [***Building Evolutionary Architectures***](https://www.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/) by Neal Ford, Rebecca Parsons, and Patrick Kua. The definitive guide to creating architectures that can adapt to change, and the origin of the "Architectural Fitness Function" concept.
+* Martin Fowler's [**Technical Debt Quadrant**](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html). A classic and essential reframing of technical debt not as a moral failing, but as a strategic choice with four distinct types.
+

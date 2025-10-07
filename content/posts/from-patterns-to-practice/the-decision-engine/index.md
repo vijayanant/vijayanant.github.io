@@ -5,9 +5,12 @@ date: 2025-01-05T10:50:00-07:00
 draft: true
 series: ["From Patterns to Practice"]
 series_order: 4
-tags: ["architecture", "decision making", "weighted scoring matrix", "data-driven", "business priorities", "architectural analysis"]
+categories: ["Software Architecture"]
+tags: ["decision making", "weighted scoring matrix", "data-driven", "business priorities", "architectural analysis", "team proficiency", "risk management"]
 description: "Learn how to move from qualitative analysis to a final, justifiable, and data-informed architectural decision using a Weighted Scoring Matrix to factor in business priorities."
 ---
+
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
 
 ## Introduction: The Final Tie-Breaker
 
@@ -42,13 +45,12 @@ After considering the existential pressures on CityPulse, you assign the weights
 * **Time-to-Market:** The CEO's deadline is critical for survival. **Weight: 40%**
 * **Throughput Scalability:** The engineer's fear of a crash is equally critical. **Weight: 30%**
 * **Reliability (Transactional):** Essential for user trust and payments. **15%**
-* **Initial Cost:** Important for a startup, but secondary to survival. **10%**
+*   **Initial Cost:** This focuses on the upfront cost of development and infrastructure (CapEx). For a startup, this is more critical than the long-term operational cost (OpEx), but still secondary to survival. **10%**
 * **Performance (Under Load):** Important, but partially covered by scalability. **5%**
 
 With your scores and your weights, the final step is simple multiplication (`Score x Weight = Weighted Score`). Let's run the numbers in our final Weighted Scoring Matrix:
 
-![A table showing the Weighted Scoring Matrix analysis for CityPulse, comparing Monolith, Microservices, and Event-Driven styles against the key drivers, with Event-Driven emerging as the winner.](images/06-weighted-scoring-matrix.png)
-*Figure 1: The final Weighted Scoring Matrix. The highest score indicates the most suitable architecture for the stated business priorities.*
+{{< figure src="06-weighted-scoring-matrix.svg" alt="A table showing the Weighted Scoring Matrix analysis for CityPulse, comparing Monolith, Microservices, and Event-Driven styles against the key drivers, with Event-Driven emerging as the winner." caption="Figure 1: The final Weighted Scoring Matrix. The highest score indicates the most suitable architecture for the stated business priorities." >}}
 
 After summing the final weighted scores, the data gives you a clear, if surprising, winner. The **Event-Driven** style emerges with the highest score of **3.85**, narrowly beating the Monolith at 3.80.
 
@@ -78,3 +80,8 @@ The real power here isn't the final number; it's the process. You now have a tra
 Of course, this formal matrix is just one tool in your toolbox. As we explore in our deep-dive on decision-making models, architects also rely on other techniques, from collaborative **RFC processes** to rapid **prototyping**. For a decision this critical, where the matrix result is close and the risk is high, you must combine your analytical model with one of those other techniques.
 
 That's why, in our next post, we'll do just that. We will de-risk our choice by using a specific kind of prototype: the architectural **spike**.
+
+## Further Reading
+
+*   The [**Architectural Tradeoff Analysis Method (ATAM)**](https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=5140) is the formal, comprehensive evaluation method from the SEI that the Weighted Scoring Matrix is a simplified version of.
+*   [***Thinking, Fast and Slow***](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) by Daniel Kahneman. A masterclass on the cognitive biases that can influence stakeholders during the critical process of assigning weights to drivers.
