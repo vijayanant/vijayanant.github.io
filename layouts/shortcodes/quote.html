@@ -1,11 +1,15 @@
-{{ $type := .Get "type" }}
+{{ $type := .Get "type" | default "default" }}
 
 {{ if eq $type "pull" }}
 <div class="pull-quote">
-    {{ .Inner }}
+    {{ .Inner | markdownify }}
+</div>
+{{ else if eq $type "default" }}
+<div class="blockquote">
+    {{ .Inner | markdownify }}
 </div>
 {{ else }}
-<div class="quote-box"> <!-- Using a generic quote-box class for default type -->
-    {{ .Inner }}
+<div class="quote-box {{ $type }}">
+    {{ .Inner | markdownify }}
 </div>
 {{ end }}
