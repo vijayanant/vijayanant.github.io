@@ -88,6 +88,7 @@ img {
     font-size: 1.2rem;
     color: var(--secondary-text-color);
     line-height: 1.8;
+    font-family: var(--body-font);
 }
 /* components.css */
 .button {
@@ -253,10 +254,6 @@ nav {
 
 .nav-link:hover {
     color: var(--primary-color);
-}
-
-.nav-link:hover::after {
-    width: 100%;
 }
 
 .nav-link.active {
@@ -1492,7 +1489,9 @@ background-color: #9A67D9;
     background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle background highlight */
 }
 
-/* Series Header Styling */
+/*--------------------*
+    Series Header Styling
+*--------------------*/
 .series-header {
     position: relative;
     padding: 6rem 0;
@@ -1741,7 +1740,7 @@ background-color: #9A67D9;
 /*--------------------*
     Taxonomy Term Styles (for taxonomy.html)
 *--------------------*/
-/*--------------------*\
+/*--------------------*
     Figure Shortcode Styles
 *--------------------*/
 .responsive-figure {
@@ -1788,4 +1787,21 @@ background-color: #9A67D9;
     width: 100%;  /* Force width to 100% of its parent */
     height: 100%; /* Force height to 100% of its parent */
     /* object-fit: contain is already applied to ensure aspect ratio */
+}
+
+/* Styling for pull-quotes (now using div) */
+.pull-quote {
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 2rem auto; /* Consistent vertical margin, auto for horizontal centering */
+    max-width: 800px; /* Limiting width for readability, similar to main content */
+    text-align: center;
+    background-color: var(--surface-color); /* Added for gray box effect */
+    border-radius: 8px; /* Consistent rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    border: 1px solid var(--primary-color); /* Single border around the box, consistent with summary-box */
+    padding: 1.5rem; /* Consistent padding */
+    color: var(--text-color); /* Default text color */
+    position: relative; /* Keep relative for potential future absolute positioning needs */
 }

@@ -1,0 +1,11 @@
+{{ $type := .Get "type" }}
+
+{{ if eq $type "pull" }}
+<div class="pull-quote">
+    {{ .Inner }}
+</div>
+{{ else }}
+<div class="quote-box"> <!-- Using a generic quote-box class for default type -->
+    {{ .Inner }}
+</div>
+{{ end }}
