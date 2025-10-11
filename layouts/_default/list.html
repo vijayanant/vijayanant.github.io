@@ -8,7 +8,7 @@
           {{ $postPermalink := .Permalink }}
           {{ with .Resources.GetMatch .Params.featured_image }}
           <a href="{{ $postPermalink }}">
-            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="post-card-image">
+            <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="post-card-image">
           </a>
           {{ else }}
           {{/* Optional: Add a fallback image here if no featured image is found */}}

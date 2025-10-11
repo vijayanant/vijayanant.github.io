@@ -4,11 +4,11 @@ title = "Vijay Anantharamaiah"
 
 [params]
 description = "Engineering Leader & Product Builder"
-author = "Vijay Anantharamaiah"                             # Explicitly define author
-portrait = "images/contact-image.png"                       # Path relative to the assets/ directory
+author = "Vijay Anantharamaiah"                      # Explicitly define author
+portrait = "images/contact-image.png"                # Path relative to the assets/ directory
 googleAnalytics = "G-XNSPFRLLVH"
-image = "https://vijayanant.com/assets/images/logo-512.png" # This is your site logo
-contactEmail = "hello@vijayanant.com"                       # Your actual email
+image = "images/logo-512.png"                        # This is your site logo
+contactEmail = "hello@vijayanant.com"                # Your actual email
 enableCodeCopyButton = true
 enableRelatedPosts = true
 enableNewsletter = true

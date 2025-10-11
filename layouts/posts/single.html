@@ -42,6 +42,14 @@
                                       {{ end }}          <div class="content">
             {{ .Content }}
           </div>
+
+          {{ with .Params.tags }}
+            <div class="post-tags mt-4">
+              {{ range . }}
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag-link ms-2">#{{ . }}</a>
+              {{ end }}
+            </div>
+          {{ end }}
         </article>
 
         
