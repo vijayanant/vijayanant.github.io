@@ -1,0 +1,118 @@
+{{ define "main" }}
+<section id="blog-list">
+  <div class="container">
+
+    {{ $allPosts := .Pages }} {{/* No pagination needed for <25 posts */}}
+
+    {{ if gt (len $allPosts) 0 }}
+      {{ $featuredPost := index $allPosts 0 }}
+      {{ $remainingPosts := after 1 $allPosts }}
+
+      {{/* Featured Post Section - Redesigned */}}
+      <div class="featured-post-hero mb-5">
+        {{ with $featuredPost }}
+          {{ $postPermalink := .Permalink }}
+          {{ with .Resources.GetMatch .Params.featured_image }}
+            <a href="{{ $postPermalink }}" class="featured-post-link">
+              <img src="{{ .RelPermalink }}" alt="{{ $featuredPost.Title }}" class="featured-post-hero-image">
+              <span class="featured-post-badge">Latest Article</span> <!-- NEW LINE -->
+              <div class="featured-post-overlay">
+                <h2 class="featured-post-hero-title">{{ $featuredPost.Title }}</h2>
+                <div class="featured-post-hero-meta">{{ $featuredPost.Date.Format "January 2, 2006" }}</div>
+                <p class="featured-post-hero-description">{{ $featuredPost.Description }}</p>
+              </div>
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{/* Featured Series Section */}}
+      {{ $series := first 3 site.Taxonomies.series.ByCount }}
+      {{ range site.Taxonomies.series.Alphabetical }}
+      {{ end }}
+      {{ if gt (len $series) 0 }}
+        <h2 class="section-title mt-5">Featured Series</h2>
+        <div class="blog-grid mb-5">
+          {{ range $series }}
+            {{ $currentSeriesTerm := . }}
+            {{ $seriesPage := site.GetPage (printf "series/%s" ($currentSeriesTerm.Term | urlize)) }}
+            {{ with $seriesPage }}
+              <div class="post-card">
+                <a href="{{ .Permalink }}" class="post-card-link">
+                  {{ with .Params.featured_image }}
+                    <img src="{{ . | relURL }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+                  {{ end }}
+                  <h3 class="post-card-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h3>
+                  <p class="post-card-description">{{ .Description | truncate 100 }}</p>
+                  <p class="post-card-meta text-muted">{{ $currentSeriesTerm.Count }} posts</p>
+                </a>
+              </div>
+            {{ end }}
+          {{ end }}
+          {{ $numSeries := len $series }}
+          {{ if eq $numSeries 2 }}
+            <div class="post-card post-card-placeholder">
+              <div class="placeholder-image"></div>
+              <div class="placeholder-content">
+                <div class="placeholder-line title"></div>
+                <div class="placeholder-line meta"></div>
+                <div class="placeholder-line description"></div>
+              </div>
+            </div>
+          {{ else if eq $numSeries 1 }}
+            <div class="post-card post-card-placeholder">
+              <div class="placeholder-image"></div>
+              <div class="placeholder-content">
+                <div class="placeholder-line title"></div>
+                <div class="placeholder-line meta"></div>
+                <div class="placeholder-line description"></div>
+              </div>
+            </div>
+            <div class="post-card post-card-placeholder">
+              <div class="placeholder-image"></div>
+              <div class="placeholder-content">
+                <div class="placeholder-line title"></div>
+                <div class="placeholder-line meta"></div>
+                <div class="placeholder-line description"></div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{/* All Other Posts Grid */}}
+      {{ if gt (len $remainingPosts) 0 }}
+        <hr class="section-divider mt-5 mb-5">
+        <div class="blog-grid">
+          {{ range $remainingPosts }}
+            <div class="post-card">
+              {{ $postPermalink := .Permalink }}
+              {{ with .Resources.GetMatch .Params.featured_image }}
+              <a href="{{ $postPermalink }}">
+                <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="post-card-image"> 
+              </a>
+              {{ else }}
+              {{/* Optional: Add a fallback image here if no featured image is found */}}
+              {{ end }}
+              <h3 class="post-card-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </h3>          
+              <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
+              <p class="post-card-description">{{ .Description | truncate 100 }}</p>
+              <!-- <a href="{{ .Permalink }}" class="read-more-button">Read More →</a> -->
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{/* Removed pagination partial */}}
+
+    {{ else }}
+      <p class="text-center">No posts found.</p>
+    {{ end }}
+
+  </div>
+</section>
+{{ end }}

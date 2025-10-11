@@ -7,19 +7,54 @@
       <p class="section-intro">Explore all available content series.</p>
     </header>
 
-    <div class="series-grid">
+    <div class="blog-grid">
       {{ range .Data.Terms.ByCount }}
         {{ $seriesTerm := . }}
         {{ $seriesPage := site.GetPage (printf "series/%s" ($seriesTerm.Term | urlize)) }}
-        <div class="series-card">
-          <a href="{{ $seriesPage.Permalink }}" class="series-card-link">
-            {{/* Featured image removed as requested */}}
-            <h2 class="series-card-title">
+        <div class="post-card">
+          <a href="{{ $seriesPage.Permalink }}" class="post-card-link">
+            {{ with $seriesPage.Params.featured_image }}
+              {{ $image := $seriesPage.Resources.GetMatch . }}
+              {{ if $image }}
+                <img src="{{ $image.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+              {{ else }}
+                <img src="{{ . | relURL }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+              {{ end }}
+            {{ end }}
+            <h2 class="post-card-title">
               <a href="{{ $seriesPage.Permalink }}">{{ $seriesPage.Title }}</a>
             </h2>
-            <p class="series-card-description">{{ $seriesPage.Description | truncate 100 }}</p>
-            <p class="series-card-meta text-muted">{{ $seriesTerm.Count }} posts</p>
+            <p class="post-card-description">{{ $seriesPage.Description | truncate 100 }}</p>
+            <p class="post-card-meta text-muted">{{ $seriesTerm.Count }} posts</p>
           </a>
+        </div>
+      {{ end }}
+      {{ $numSeries := len .Data.Terms.ByCount }}
+      {{ if eq $numSeries 2 }}
+        <div class="post-card post-card-placeholder">
+          <div class="placeholder-image"></div>
+          <div class="placeholder-content">
+            <div class="placeholder-line title"></div>
+            <div class="placeholder-line meta"></div>
+            <div class="placeholder-line description"></div>
+          </div>
+        </div>
+      {{ else if eq $numSeries 1 }}
+        <div class="post-card post-card-placeholder">
+          <div class="placeholder-image"></div>
+          <div class="placeholder-content">
+            <div class="placeholder-line title"></div>
+            <div class="placeholder-line meta"></div>
+            <div class="placeholder-line description"></div>
+          </div>
+        </div>
+        <div class="post-card post-card-placeholder">
+          <div class="placeholder-image"></div>
+          <div class="placeholder-content">
+            <div class="placeholder-line title"></div>
+            <div class="placeholder-line meta"></div>
+            <div class="placeholder-line description"></div>
+          </div>
         </div>
       {{ end }}
     </div>

@@ -4,7 +4,7 @@
 <div class="pull-quote">
     {{ .Inner | markdownify }}
 </div>
-{{ else if eq $type "default" }}
+{{ else if eq $type "block" }}
 <div class="blockquote">
     {{ .Inner | markdownify }}
 </div>

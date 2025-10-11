@@ -12,7 +12,8 @@
 
 /* Color palette */
 :root {
-    --primary-color: #BB86FC; /* A vibrant purple for accents */
+    --primary-color-rgb: 187, 134, 252;
+    --primary-color: rgb(var(--primary-color-rgb)); /* A vibrant purple for accents */
     --background-color: #121212; /* A dark background for a modern look */
     --surface-color: #1E1E1E; /* A slightly lighter surface color for cards and sections */
     --text-color: #E0E0E0; /* A light text color for readability */
@@ -164,6 +165,7 @@ header .container {
     max-width: 100%;
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below image */
+    border-radius: 50%; /* Make it circular */
 }
 
 /* Navigation */
@@ -802,6 +804,7 @@ footer {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
+    min-height: 350px; /* Ensure uniform height */
 }
 
 .post-card:hover {
@@ -834,13 +837,13 @@ footer {
     color: var(--secondary-text-color);
     font-size: 0.9rem;
     line-height: 1.6;
-    flex-grow: 1;
+    flex-grow: 1; /* Ensure description fills available space */
 }
 
 .post-card-image {
     max-width: 100%;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 180px; /* Fixed height for uniformity */
     object-fit: cover;
     border-radius: 4px;
     margin: 0 auto;
@@ -1097,7 +1100,7 @@ pre.chroma {
 }
 
 .note-type-log {
-    background-color: rgba(139, 92, 246, 0.1);
+    background-color: rgba(var(--primary-color-rgb), 0.1);
     border-color: var(--primary-color); /* Purple */
     color: #e9d5ff;
 }
@@ -1548,73 +1551,7 @@ background-color: #9A67D9;
     color: rgba(255, 255, 255, 0.8); /* Lighter text for description */
 }
 
-/*--------------------*
-    Series Grid Styles
-*--------------------*/
-.series-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
 
-.series-card {
-    line-height: 25px;
-    font-size: 19px;
-    background-color: var(--surface-color);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    display: flex;
-    flex-direction: column;
-}
-
-.series-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.series-card-title a {
-    font-family: var(--heading-font);
-    font-size: 19px;
-    font-weight: 700;
-    line-height: 26px;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    margin-top: 1rem;
-}
-
-.series-card-title a:hover {
-    color: #fff;
-}
-
-.series-card-meta {
-    font-size: 0.8rem;
-    color: var(--tertiary-text-color);
-    margin-bottom: 0rem;
-}
-
-.series-card-description {
-    color: var(--secondary-text-color);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    flex-grow: 1;
-}
-
-.series-card-image {
-    max-width: 100%;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 4px;
-    margin: 0 auto;
-}
-
-.series-card-link { /* Added for consistency with post-card-link */
-    text-decoration: none;
-    color: inherit;
-}
 
 /*--------------------*
     Single Post Category & Date Styles
@@ -1817,3 +1754,150 @@ background-color: #9A67D9;
     color: var(--text-color); /* Default text color */
     position: relative; /* Keep relative for potential future absolute positioning needs */
 }
+
+/* Tag Styles */
+.tag-link {
+  background-color: rgba(var(--primary-color-rgb), 0.1); /* Muted version of primary color */
+  color: var(--primary-color); /* Use the primary color for text */
+  border: 1px solid rgba(var(--primary-color-rgb), 0.2); /* Subtle border */
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.tag-link:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.2); /* Slightly more opaque on hover */
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.post-tags {
+  text-align: center;
+}
+
+/*--------------------*
+    Featured Post Hero Styles
+*--------------------*/
+.featured-post-hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-end; /* Align content to bottom */
+    justify-content: center;
+    text-align: center;
+}
+
+.featured-post-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) blur(2px); /* Darken and blur background */
+    transform: scale(1.05); /* Slight zoom for blur effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-post-link:hover .featured-post-hero-image {
+    transform: scale(1.1); /* Zoom out on hover */
+    filter: brightness(0.8) blur(0px); /* Less blur/darken on hover */
+}
+
+.featured-post-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.featured-post-hero-title {
+    font-family: var(--heading-font);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.featured-post-hero-title a {
+    text-decoration: none;
+}
+
+.featured-post-hero-title a:hover {
+    /* color: var(--primary-color); */
+}
+
+.featured-post-hero-meta {
+    color: rgba(255, 255, 255, 0.6); /* More subtle */
+    margin-bottom: 1rem;
+}
+
+.featured-post-hero-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9); /* Explicitly set color */
+    line-height: 1.6;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+/* Adjust existing section-title for general use */
+.section-title {
+    margin-top: 4rem; /* Add top margin for general section titles */
+}
+
+
+/* Section Divider */
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--surface-color); /* Subtle line */
+    margin: 3rem auto;
+    width: 50%; /* Not full width, for elegance */
+}
+
+
+.featured-post-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+
+/* Placeholder Card Styles */
+.post-card-placeholder {
+    opacity: 0; /* Make it invisible */
+    pointer-events: none; /* Not clickable */
+    cursor: default;
+}
+
+@media (max-width: 992px) {
+    .post-card-placeholder {
+        display: none; /* Hide placeholders on screens not wide enough for 3 columns */
+    }
+}
+
