@@ -630,6 +630,16 @@ footer {
     font-size: 0.9rem;
 }
 
+footer .footer-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-link:hover {
+    color: #fff;
+}
+
 /*--------------------*
     Workshop Detail Styles
 *--------------------*/
