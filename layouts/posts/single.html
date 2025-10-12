@@ -79,6 +79,7 @@
               {{ end }}
             {{ end }} {{/* This closes the 'if .Params.series' block */}}
             {{ partial "related-posts.html" . }} {{/* Always show related posts */}}
+            {{ partial "giscus.html" . }}
       </div>
 
     </div>
