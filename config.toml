@@ -49,7 +49,9 @@ keepQuotes = false
 newLine = false
 
 [outputs]
-home = ["HTML"]
+home = ["HTML", "RSS"]
+page = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
 
 [taxonomies]
 tag = "tags"
