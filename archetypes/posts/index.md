@@ -1,5 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+slug: "{{ .Name }}"
 date: {{ .Date }}
 description: "A brief summary for SEO and social cards."
 tags: [""]
