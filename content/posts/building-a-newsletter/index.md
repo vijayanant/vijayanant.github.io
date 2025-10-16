@@ -1,10 +1,11 @@
 ---
 title: "Building a Newsletter: The 'Why' Behind the 'What'"
+slug: "building-a-newsletter-the-why-behind-the-what"
 date: 2025-10-03
 description: "A behind-the-scenes look at the process of creating my new newsletter, from choosing a name to crafting the welcome email."
 draft: true
-tags: ["newsletter", "blogging", "meta"]
-categories: ["how-to", "blogging"]
+tags: ["newsletter", "blogging", "writing", "zoho campaigns"]
+categories: ["Career and Writing"]
 featured_image: featured.jpg 
 ---
 
@@ -48,9 +49,9 @@ Here's the full description for the newsletter:
 
 > Go beyond the surface-level discussions of what "works" and take a deep dive into the craft of quality software. This newsletter explores the principles, patterns, and practices that lead to code that is not just functional, but also well-designed, maintainable, and a pleasure to work with. Expect practical advice, in-depth analysis, and a relentless focus on technical excellence.
 
-## The Platform: Buttondown
+## The Platform: Zoho Campaigns
 
-I've decided to use [Buttondown](https://buttondown.email/) as the platform for my newsletter. It's a simple, elegant, and developer-friendly platform that's perfect for my needs.
+I've decided to use [Zoho Campaigns](https://www.zoho.com/campaigns/) as the platform for my newsletter. It's a powerful and feature-rich platform that's perfect for my needs.
 
 {{< summary title="Key Takeaways" >}}
 

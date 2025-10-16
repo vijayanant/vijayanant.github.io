@@ -1,27 +1,69 @@
 {{ if .Page.Site.Params.enableNewsletter }}
-  {{ $buttondownUsername := .Page.Site.Params.buttondownUsername }}
-  {{ if $buttondownUsername }}
-    {{ $formType := .Get "type" | default "simple" }}
-    {{ $title := .Get "title" }}
-    {{ $description := .Get "description" }}
+  {{ $formType := .Get "type" | default "simple" }}
+  {{ $title := .Get "title" }}
+  {{ $description := .Get "description" }}
 
-    {{ if eq $formType "full" }}
-    <div class="newsletter-section">
-      <h3 class="newsletter-title">{{ if $title }}{{ $title }}{{ else }}Stay Updated{{ end }}</h3>
-      <p class="newsletter-description">{{ if $description }}{{ $description }}{{ else }}Get new articles and updates delivered directly to your inbox.{{ end }}</p>
-      <form action="https://buttondown.email/api/emails/embed-subscribe/{{ $buttondownUsername }}" method="post" target="_blank" class="newsletter-form">
-        <input type="email" name="email" id="bd-email-full" placeholder="Your email address" required>
-        <input type="submit" value="Subscribe">
+  <script type="text/javascript" src="https://zgp4-zgp4.maillist-manage.in/js/optin.min.js" onload="setupSF('sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e','ZCFORMVIEW',false,'light',false,'0')"></script>
+  <script type="text/javascript">
+    function runOnFormSubmit_sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e(th){
+    /*Before submit, if you want to trigger your event, "include your code here"*/
+    };
+  </script>
+
+  {{ if eq $formType "full" }}
+  <div class="newsletter-section">
+    <h3 class="newsletter-title">{{ if $title }}{{ $title }}{{ else }}Stay Updated{{ end }}</h3>
+    <p class="newsletter-description">{{ if $description }}{{ $description }}{{ else }}Get new articles and updates delivered directly to your inbox.{{ end }}</p>
+    <div id="sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e" data-type="signupform">
+      <form method="POST" id="zcampaignOptinForm" class="newsletter-form" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" target="_zcSignup">
+        <input type="email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" placeholder="Your email address" required>
+        <input type="submit" value="Subscribe" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON">
+        <input type="hidden" id="fieldBorder" value="">
+        <input type="hidden" id="submitType" name="submitType" value="optinCustomView">
+        <input type="hidden" id="emailReportId" name="emailReportId" value="">
+        <input type="hidden" id="formType" name="formType" value="QuickForm">
+        <input type="hidden" name="zx" id="cmpZuid" value="1dfb33ae41">
+        <input type="hidden" name="zcvers" value="2.0">
+        <input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
+        <input type="hidden" id="mode" name="mode" value="OptinCreateView">
+        <input type="hidden" id="zcld" name="zcld" value="1409a7aa1c1c909b">
+        <input type="hidden" id="zctd" name="zctd" value="1409a7aa1c1c8e31">
+        <input type="hidden" id="document_domain" value="">
+        <input type="hidden" id="zc_Url" value="zgp4-zgp4.maillist-manage.in">
+        <input type="hidden" id="new_optin_response_in" value="0">
+        <input type="hidden" id="duplicate_optin_response_in" value="0">
+        <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW">
+        <input type="hidden" id="zc_formIx" name="zc_formIx" value="3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e">
+        <input type="hidden" id="viewFrom" value="URL_ACTION">
       </form>
     </div>
-    {{ else }}
-    <div class="newsletter-simple-form-wrapper">
-      {{ if $title }}<p class="newsletter-simple-title">{{ $title }}</p>{{ end }}
-      <form action="https://buttondown.email/api/emails/embed-subscribe/{{ $buttondownUsername }}" method="post" target="_blank" class="newsletter-form newsletter-form-simple">
-        <input type="email" name="email" id="bd-email-simple" placeholder="Your email address" required>
-        <input type="submit" value="Subscribe">
-      </form>
+  </div>
+  {{ else }}
+  <div class="newsletter-simple-form-wrapper">
+    {{ if $title }}<p class="newsletter-simple-title">{{ $title }}</p>{{ end }}
+    <div id="sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e" data-type="signupform">
+        <form method="POST" id="zcampaignOptinForm" class="newsletter-form newsletter-form-simple" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" target="_zcSignup">
+            <input type="email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" placeholder="Your email address" required>
+            <input type="submit" value="Subscribe" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON">
+            <input type="hidden" id="fieldBorder" value="">
+            <input type="hidden" id="submitType" name="submitType" value="optinCustomView">
+            <input type="hidden" id="emailReportId" name="emailReportId" value="">
+            <input type="hidden" id="formType" name="formType" value="QuickForm">
+            <input type="hidden" name="zx" id="cmpZuid" value="1dfb33ae41">
+            <input type="hidden" name="zcvers" value="2.0">
+            <input type="hidden" name="oldListIds" id="allCheckedListIds" value="">
+            <input type="hidden" id="mode" name="mode" value="OptinCreateView">
+            <input type="hidden" id="zcld" name="zcld" value="1409a7aa1c1c909b">
+            <input type="hidden" id="zctd" name="zctd" value="1409a7aa1c1c8e31">
+            <input type="hidden" id="document_domain" value="">
+            <input type="hidden" id="zc_Url" value="zgp4-zgp4.maillist-manage.in">
+            <input type="hidden" id="new_optin_response_in" value="0">
+            <input type="hidden" id="duplicate_optin_response_in" value="0">
+            <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW">
+            <input type="hidden" id="zc_formIx" name="zc_formIx" value="3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e">
+            <input type="hidden" id="viewFrom" value="URL_ACTION">
+        </form>
     </div>
-    {{ end }}
+  </div>
   {{ end }}
 {{ end }}

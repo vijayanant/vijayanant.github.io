@@ -1316,124 +1316,7 @@ body:not([data-page-kind="home"]) #site-header {
     object-fit: cover;
 }
 
-/* Newsletter Form Styles */
-.newsletter-section {
-    margin-top: 3rem;
-    padding: 2rem;
-    background-color: transparent; /* Full shortcode in content is transparent */
-    border-radius: 8px;
-    text-align: center;
-    border: none;
-}
 
-.newsletter-section.footer-newsletter {
-    margin-top: 0;
-    border-radius: 0;
-    background-color: var(--surface-color); /* Darker background for footer */
-}
-
-.newsletter-title {
-    font-family: var(--heading-font);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.newsletter-description {
-    font-size: 1.1rem;
-    color: var(--secondary-text-color);
-    margin-bottom: 1.5rem;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.newsletter-form input[type="email"] {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--secondary-text-color);
-    border-radius: 4px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-.newsletter-form input[type="email"]::placeholder {
-    color: var(--tertiary-text-color);
-}
-
-.newsletter-form input[type="submit"] {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: var(--primary-color);
-    color: var(--text-color-inverted);
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-background-color: var(--primary-color);
-
-@media (min-width: 768px) {
-    .newsletter-form {
-        flex-direction: row;
-    }
-    .newsletter-form input[type="email"] {
-        flex-grow: 1;
-    }
-    .newsletter-form input[type="submit"] {
-        width: auto;
-    }
-}
-
-.newsletter-simple-form-wrapper {
-    margin-top: 0rem;
-    margin-bottom: 1rem;
-    padding: 1.5rem;
-    background-color: transparent;
-    border-radius: 8px;
-    text-align: center;
-    border: none;
-}
-
-.newsletter-simple-title {
-    font-family: var(--heading-font);
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.newsletter-form-simple {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    max-width: 350px;
-    margin: 0 auto;
-}
-
-@media (min-width: 576px) {
-    .newsletter-form-simple {
-        flex-direction: row;
-    }
-    .newsletter-form-simple input[type="email"] {
-        flex-grow: 1;
-    }
-    .newsletter-form-simple input[type="submit"] {
-        width: auto;
-    }
-}
 
 
 .copy-code-button:active {
@@ -1463,15 +1346,14 @@ background-color: var(--primary-color);
 .series-posts-list {
     list-style: none; /* Ensure default ordered list numbering is removed */
     padding: 0;
-    counter-reset: series-item-counter; /* Reset the counter for the list */
 }
 
 .series-post-item {
-    background-color: var(--surface-color);
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    min-height: 120px; /* Ensure a minimum height for the box */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    counter-increment: series-item-counter;
+    min-height: 120px; /* Ensure a minimum height for the box */
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.1); /* Subtle border for separation */
 }
 
 .series-post-item:hover {
@@ -1481,28 +1363,52 @@ background-color: var(--primary-color);
 
 .series-post-link {
     display: flex;
+    flex-direction: row-reverse; /* Reverse the order of items */
     align-items: center;
     text-decoration: none;
     color: var(--text-color);
     padding: 1rem;
 }
 
+@media (max-width: 768px) {
+    .series-post-link {
+        flex-direction: column; /* Stack items vertically */
+        align-items: stretch; /* Make items stretch to fill width */
+        padding: 1rem; /* Consistent padding */
+    }
+    .series-post-content {
+        margin-right: 0; /* Remove horizontal margin when stacked */
+        margin-bottom: 1rem; /* Add vertical margin below content */
+        padding-left: 1rem; /* Adjust padding for stacked layout */
+        order: 2; /* Content below image */
+    }
+    .series-post-content::before {
+        left: 1rem; /* Keep counter left-aligned */
+        top: 0; /* Align with the top of the content */
+    }
+    .series-post-image-wrapper {
+        width: 100%; /* Image takes full width */
+        height: 180px; /* Fixed height similar to post-card */
+        max-width: none; /* Remove max-width constraint */
+        margin: 0 auto 1rem auto; /* Center the image wrapper and add bottom margin */
+        order: 1; /* Image above content */
+    }
+    .series-post-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .series-post-content {
     flex-grow: 1;
     padding-right: 1rem;
+    margin-right: 1.5rem; /* Space between content and image */
     position: relative; /* For counter positioning */
-    padding-left: 2.5rem; /* Make space for the counter */
+    padding-left: 1rem; /* Adjusted padding since number is removed */
 }
 
-.series-post-content::before {
-    content: counter(series-item-counter) ".";
-    position: absolute;
-    left: 1rem;
-    top: 0.5rem; /* Adjust as needed */
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
+
 
 .series-post-title {
     font-family: var(--heading-font);
@@ -1525,15 +1431,30 @@ background-color: var(--primary-color);
 
 .series-post-image-wrapper {
     flex-shrink: 0;
-    width: 100px; /* Fixed width for the image */
-    height: 70px; /* Fixed height for the image */
+    width: 18%;
+    max-width: 100%;
+    height: 100%;
     border-radius: 4px;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .series-post-image-wrapper {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .series-post-image-wrapper {
+        width: 100%;
+    }
 }
 
 .series-post-image {
     width: 100%;
     height: 100%;
+    max-height: 180px; /* Set a maximum height for the image */
     object-fit: cover;
 }
 
