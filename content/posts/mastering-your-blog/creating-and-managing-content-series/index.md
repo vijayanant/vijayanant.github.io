@@ -1,12 +1,13 @@
 ---
 title: "Creating and Managing Content Series"
+slug: "creating-and-managing-content-series"
 subtitle: "Organize your blog posts into engaging series for better reader experience and navigation."
 date: 2024-09-29T10:00:00-07:00
 draft: true
 series: ["Mastering Your Blog"]
 series_order: 4
-tags: ["blogging", "hugo", "series", "content organization", "taxonomy"]
-categories: ["how-to", "blogging"]
+tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]
+categories: ["Career and Writing"]
 featured_image: "featured.jpg" # Placeholder for a local image
 ---
 
@@ -100,8 +101,8 @@ date: 2024-01-01T10:00:00-07:00
 draft: true
 series: ["Your Series Name"]
 series_order: 1 # Important for ordering within the series
-tags: ["tag1", "tag2"]
-categories: ["category1"]
+tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]
+categories: ["Career and Writing"]
 featured_image: "featured.jpg" # Optional: Image local to this post's directory
 ---
 ```

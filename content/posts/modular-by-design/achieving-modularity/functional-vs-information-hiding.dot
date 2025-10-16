@@ -1,0 +1,63 @@
+digraph G {
+    bgcolor="transparent";
+    fontname="sans-serif";
+    fontsize=12;
+    rankdir=TB; // Global rank direction
+
+    node [fontname="sans-serif", fontsize=12, shape=box, style="filled", fillcolor="#1E1E1E", fontcolor="#E0E0E0", color="#B0B0B0"];
+    edge [fontname="sans-serif", fontsize=10, color="#B0B0B0"];
+
+    subgraph cluster_functional {
+        label="Functional Decomposition (The Flowchart)";
+        fontsize=16; // Bigger header
+        rankdir=LR; // Subgraph specific rank direction (Left to Right)
+        style=filled;
+        fillcolor="#1E1E1E"; // --surface-color
+        color="#B0B0B0"; // --secondary-text-color
+        fontcolor="#E0E0E0"; // --text-color
+        penwidth=1; // More minimalistic border
+
+        A [label="Validate Order"];
+        B [label="Calculate Total"];
+        C [label="Process Payment"];
+        D [label="Update Inventory"];
+        E [label="Ship Order"];
+
+        A -> B;
+        B -> C;
+        C -> D;
+        D -> E;
+    }
+
+    subgraph cluster_information_hiding {
+        label="Information Hiding (The Secrets)";
+        fontsize=16; // Bigger header
+        rankdir=LR; // Subgraph specific rank direction (Left to Right)
+        style=filled;
+        fillcolor="#1E1E1E"; // --surface-color
+        color="#B0B0B0"; // --secondary-text-color
+        fontcolor="#E0E0E0"; // --text-color
+        penwidth=1; // More minimalistic border
+
+        P [label=<
+            <FONT COLOR="#E0E0E0" POINT-SIZE="14">Pricing Module</FONT><BR/>
+            <FONT COLOR="#B0B0B0" POINT-SIZE="10"><i>Secret: Tax/Discount Rules</i></FONT>
+        >];
+        PG [label=<
+            <FONT COLOR="#E0E0E0" POINT-SIZE="14">Payment Gateway</FONT><BR/>
+            <FONT COLOR="#B0B0B0" POINT-SIZE="10"><i>Secret: Razorpay vs PayU</i></FONT>
+        >]; // Changed examples
+        I [label=<
+            <FONT COLOR="#E0E0E0" POINT-SIZE="14">Inventory</FONT><BR/>
+            <FONT COLOR="#B0B0B0" POINT-SIZE="10"><i>Secret: Stock Tracking Logic</i></FONT>
+        >];
+        S [label=<
+            <FONT COLOR="#E0E0E0" POINT-SIZE="14">Shipping</FONT><BR/>
+            <FONT COLOR="#B0B0B0" POINT-SIZE="10"><i>Secret: Delhivery vs Blue Dart</i></FONT>
+        >]; // Changed examples
+
+        P -> PG [style=invis]; // Invisible edges to force LR flow
+        PG -> I [style=invis];
+        I -> S [style=invis];
+    }
+}

@@ -1,13 +1,15 @@
 ---
-title: "The Final Step"
+title: "Documenting your decision"
+slug: "documenting-your-decision"
 subtitle: "Documenting and Communicating Your Decision"
 date: 2025-01-05T10:20:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 6
 categories: ["Software Architecture"]
-tags: ["architectural decision records", "adr", "c4 model", "documentation", "communication", "architectural amnesia"]
+tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Learn how to effectively document and communicate architectural decisions using Architectural Decision Records (ADRs) and the C4 Model to prevent 'Architectural Amnesia' and ensure clarity."
+featured_image: "08-c4-context.svg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
@@ -70,9 +72,10 @@ For your lead engineer and the development team, you zoom in to **Level 2: The C
 You can zoom in further to Components (Level 3) and Code (Level 4), but for communicating a new architectural style, these first two levels are the most critical.
 
 {{< summary title="Key Takeaways" >}}
-*   A decision is only as good as its communication. Fight \"Architectural Amnesia\" by writing things down.
-*   Use lightweight **Architectural Decision Records (ADRs)** to document the *why* of your decision, especially the context and consequences.
-*   Use the **C4 Model** to create different diagrams for different audiences, showing the *what* at the right level of detail.
+
+* A decision is only as good as its communication. Fight \"Architectural Amnesia\" by writing things down.
+* Use lightweight **Architectural Decision Records (ADRs)** to document the *why* of your decision, especially the context and consequences.
+* Use the **C4 Model** to create different diagrams for different audiences, showing the *what* at the right level of detail.
 {{< /summary >}}
 
 ## Conclusion: A Decision, Documented
@@ -85,9 +88,10 @@ In our final post of this foundational series, we'll look at what happens *after
 
 ## Further Reading
 
-*   [**"Documenting Architecture Decisions"**](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) by Michael Nygard. The original blog post that introduced and popularized the concept of Architectural Decision Records (ADRs).
-*   [**The C4 model for visualizing software architecture**](https://c4model.com/). The official website for the C4 model, created by Simon Brown. It includes a full description of the notation and its levels.
+* [**"Documenting Architecture Decisions"**](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) by Michael Nygard. The original blog post that introduced and popularized the concept of Architectural Decision Records (ADRs).
+* [**The C4 model for visualizing software architecture**](https://c4model.com/). The official website for the C4 model, created by Simon Brown. It includes a full description of the notation and its levels.
 
 ---
 
 What's the biggest challenge you face with documentation in your team? Have you ever used ADRs or C4? Share your experiences in the comments.
+

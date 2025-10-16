@@ -1,13 +1,15 @@
 ---
 title: "The Architect's Compass"
+slug: "the-architects-compass"
 subtitle: "A Tale of Speed vs. Scale"
 date: 2025-01-05T10:00:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 1
 categories: ["Software Architecture"]
-tags: ["trade-offs", "quality attributes", "monolith", "microservices"]
+tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Understanding the core conflict between speed and scale is the architect's first challenge. This post explores how to translate business pressures into concrete drivers and navigate critical trade-offs."
+featured_image: "01-comparison-microservices.svg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" width="1200" >}}
@@ -40,16 +42,17 @@ Now that you have concrete drivers, how do you start thinking about a solution? 
       src="01-comparison-monolith.svg"
       alt="A simple diagram of a monolithic application, showing several internal modules communicating with in-process calls."
       caption="Figure 1: A simple monolith, where all components are bundled in a single unit."
-      width="400"
+      width=250
 >}}
+
+On the other hand, you could break the system into small, independent services—a **microservices architecture**. This directly serves your scalability driver. You could have a 'Ticketing Service' that scales independently to handle the immense load. The trade-off here is a massive hit to your Time-to-Market driver. The complexity of a distributed system—networking, data consistency, deployment—is huge, and almost certainly makes a three-month launch impossible.
 
 {{< figure
     src="01-comparison-microservices.svg"
     alt="A simple diagram of a microservices application, showing several independent services communicating over a network."
     caption="Figure 2: A simple microservices system, where components are independent services."
+    width=700
 >}}
-
-On the other hand, you could break the system into small, independent services—a **microservices architecture**. This directly serves your scalability driver. You could have a 'Ticketing Service' that scales independently to handle the immense load. The trade-off here is a massive hit to your Time-to-Market driver. The complexity of a distributed system—networking, data consistency, deployment—is huge, and almost certainly makes a three-month launch impossible.
 
 These two extremes aren't your only choices, but exploring them has clearly defined the battlefield: you're fighting a war between speed and scale.
 
@@ -77,7 +80,7 @@ In our next post, we'll walk through the process of turning this conflict into a
 ## Further Reading
 
 * [**Software Architecture: The Hard Parts**](https://www.oreilly.com/library/view/software-architecture-the/9781492086888/) by Neal Ford, Mark Richards, et al. The definitive book on the nature of architectural trade-offs.
-* [**"Quality Attributes"**](https://resources.sei.cmu.edu/asset_files/technicalnote/2003_001_001_14246.pdf) from the Software Engineering Institute (SEI) at Carnegie Mellon, the origin of much of this foundational thinking.
+* [**"Quality Attributes"**](https://www.sei.cmu.edu/documents/1142/1995_005_001_16427.pdf) from the Software Engineering Institute (SEI) at Carnegie Mellon, the origin of much of this foundational thinking.
 * Martin Fowler's article on the [**Utility vs. Strategic Dichotomy**](https://martinfowler.com/bliki/UtilityVsStrategicDichotomy.html), which adds excellent nuance to the "build it fast vs. build it right" conflict.
 
 ---

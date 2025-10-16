@@ -1,9 +1,10 @@
 ---
 title: "Mastering Your Blog: Advanced Image Handling"
+slug: "mastering-your-blog-advanced-image-handling"
 date: 2024-10-07T10:00:00-05:00
-draft: false
+draft: true
 series: ["Mastering Your Blog"]
-tags: ["hugo", "shortcodes", "images", "performance"]
+tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]
 ---
 
 In previous posts, we've explored enhancing our blog with various shortcodes. Now, let's tackle one of the most critical aspects of a modern website: images. While standard Markdown is great for simplicity, it falls short when it comes to performance and control. In this post, we'll introduce a powerful custom `figure` shortcode to create beautiful, fast-loading, and responsive images.
@@ -49,6 +50,7 @@ Let's look at what this shortcode does for you automatically:
 4. **Full Control**: You can specify a `width`, `alt` text, and an optional `caption`, giving you full semantic and stylistic control over your images.
 
 {{< summary title="Key Takeaways" >}}
+
 - Standard Markdown for images is not optimal for performance.
 - Use the new `figure` shortcode for responsive, fast-loading images.
 - Place images in the same folder as your `index.md` to use the shortcode.

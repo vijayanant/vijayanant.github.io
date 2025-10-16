@@ -1,9 +1,10 @@
 ---
 title: "Rich Content: Code Blocks, Notes & Summaries"
+slug: "rich-content-code-blocks-notes-summaries"
 date: 2024-09-27
 description: "Elevate your technical content with beautifully highlighted code, custom notes, and concise summaries."
-tags: ["blogging", "hugo", "code blocks", "shortcodes", "notes", "summaries"]
-categories: ["how-to", "blogging"]
+tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]
+categories: ["Career and Writing"]
 series: ["Mastering Your Blog"]
 series_order: 2
 featured_image: "featured.jpg"

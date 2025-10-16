@@ -3,29 +3,49 @@
   <div class="container">
 
     {{ if eq .Kind "term" }}
-      <header class="series-header mb-4" {{ with .Params.featured_image }}{{ $image := $.Page.Resources.GetMatch . }}{{ if $image }} style="background-image: url('{{ $image.RelPermalink }}');"{{ end }}{{ end }}>
-        <div class="series-header-content">
-          <h1>{{ .Title }}</h1>
+      <div class="featured-post-hero mb-5">
+        {{ with .Params.featured_image }}
+          {{ $image := $.Page.Resources.GetMatch . }}
+          {{ if $image }}
+            <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }}" class="featured-post-hero-image">
+          {{ else }}
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="featured-post-hero-image">
+          {{ end }}
+        {{ end }}
+        {{ if .Params.featured }}
+          <span class="featured-post-badge">Featured Series</span>
+        {{ end }}
+        <div class="featured-post-overlay">
+          <h1 class="featured-post-hero-title">{{ .Title }}</h1>
           {{ with .Description }}
-            <p class="lead">{{ . }}</p>
+            <p class="featured-post-hero-description">{{ . }}</p>
           {{ end }}
         </div>
-      </header>
+      </div>
 
       <div class="series-posts-section">
         <ol class="series-posts-list">
           {{ range .Pages.ByParam "series_order" }}
             <li class="series-post-item {{ if eq .Permalink $.Permalink }}current-series-post{{ end }}">
-              <a href="{{ .Permalink }}" class="series-post-link">
+              {{ $currentPost := . }} {{/* Store the current post object here */}}
+              <a href="{{ $currentPost.Permalink }}" class="series-post-link d-flex align-items-center">
                 <div class="series-post-content">
-                  <h3 class="series-post-title">{{ .Title }}</h3>
-                  <p class="series-post-description">{{ .Description }}</p>
-                  <p class="series-post-meta text-muted">{{ .Date.Format "January 2, 2006" }}</p>
+                  <h3 class="series-post-title">{{ $currentPost.Title }}</h3>
+                  <p class="series-post-description">{{ $currentPost.Description }}</p>
+                  <p class="series-post-meta text-muted">{{ $currentPost.Date.Format "January 2, 2006" }}</p>
                 </div>
-                {{ with .Resources.GetMatch .Params.featured_image }}
-                <div class="series-post-image-wrapper">
-                  <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="series-post-image">
-                </div>
+                {{ if $currentPost.Params.featured_image }}
+                  {{ $imagePath := $currentPost.Params.featured_image }}
+                  {{ $image := $currentPost.Resources.GetMatch $imagePath }}
+                  {{ if $image }}
+                    <div class="series-post-image-wrapper ms-3">
+                      <img src="{{ $image.RelPermalink }}" alt="{{ $currentPost.Title }}" class="series-post-image">
+                    </div>
+                  {{ else }}
+                    <div class="series-post-image-wrapper ms-3">
+                      <img src="{{ $imagePath | relURL }}" alt="{{ $currentPost.Title }}" class="series-post-image">
+                    </div>
+                  {{ end }}
                 {{ end }}
               </a>
             </li>

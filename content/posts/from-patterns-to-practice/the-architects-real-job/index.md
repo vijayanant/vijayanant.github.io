@@ -1,13 +1,15 @@
 ---
 title: "An Architect's Work is Never Done"
+slug: "an-architects-work-is-never-done"
 subtitle: "Guiding the Evolution"
 date: 2025-01-05T10:30:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 7
 categories: ["Software Architecture"]
-tags: ["architectural evolution", "architectural governance", "technical debt", "fitness functions", "stewardship"]
+tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Beyond making initial decisions, an architect's true role involves continuously guiding the evolution of a system, establishing governance, and strategically managing technical debt."
+featured_image: "architectural-flywheel.png"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
@@ -34,7 +36,12 @@ These are not signs of failure. They are signs of success. A growing, evolving b
 
 Your role now is to guide the system through these new challenges. Here are the new hats you have to wear:
 
-{{< figure src="architectural-flywheel.png" alt="A diagram showing the Architect's Flywheel, illustrating the continuous cycle of guiding evolution, architectural governance, and managing technical debt, with the Architect at the center." caption="Figure 1: The Architect's Flywheel: A continuous cycle of stewardship and evolution." >}}
+{{< figure
+    src="architectural-flywheel.png"
+    alt="A diagram showing the Architect's Flywheel, illustrating the continuous cycle of guiding evolution, architectural governance, and managing technical debt, with the Architect at the center."
+    caption="Figure 1: The Architect's Flywheel: A continuous cycle of stewardship and evolution."
+    width=450
+>}}
 
 ### Guiding Evolution (The Unexpected Feature)
 
@@ -68,4 +75,4 @@ But the story of CityPulse is just getting started. These new challenges—evolv
 ## Further Reading
 
 * [***Building Evolutionary Architectures***](https://www.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/) by Neal Ford, Rebecca Parsons, and Patrick Kua. The definitive guide to creating architectures that can adapt to change, and the origin of the "Architectural Fitness Function" concept.
-* Martin Fowler's [**Technical Debt Quadrant**](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html). A classic and essential reframing of technical debt not as a moral failing, but as a strategic choice with four distinct types.
+* My take on technical debt: [**Bad Code is not Tech Debt**](/posts/bad-code-is-not-tech-debt/). This post argues that not all bad code is technical debt and explores the nuances of this common misconception.

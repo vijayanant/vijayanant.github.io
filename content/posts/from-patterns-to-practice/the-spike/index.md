@@ -1,13 +1,15 @@
 ---
 title: "The Spike"
+slug: "the-spike"
 subtitle: "Where Theory Meets Reality"
 date: 2025-01-05T11:00:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 5
 categories: ["Software Architecture"]
-tags: ["architectural spike", "experimentation", "validation", "risk mitigation", "team proficiency", "event-driven architecture", "pragmatism"]
+tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Explore how architectural spikes bridge the gap between theoretical decisions and real-world implementation, validating hypotheses and assessing team readiness for complex architectural styles."
+featured_image: "framework_roadmap.svg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
@@ -71,8 +73,3 @@ The architectural spike is one of the most powerful tools in **your** toolbox. I
 As **you've** seen from the two paths, the same evidence can lead to two different, entirely correct decisions. The crucial variable was the team's context. Path A wasn't a "failure," and Path B wasn't "smarter." They were different answers to the same question, tailored to the reality of the people who would have to build and operate the system.
 
 For the remainder of the CityPulse series, we will follow the narrative of **Path B**, where **you** and **your** team proceed with the EDA. This will allow us to explore the next set of challenges in building and operating a modern, distributed system.
-
-## Further Reading
-
-*   Martin Fowler's article on [**"Spikes"**](https://martinfowler.com/bliki/Spike.html), which gives a concise overview of the concept and its origins in Extreme Programming.
-*   [***The Lean Startup***](https://www.theleanstartup.com/principles) by Eric Ries. While not about spikes specifically, its core "Build-Measure-Learn" philosophy is the strategic foundation for why we run experiments like spikes to get validated learning.

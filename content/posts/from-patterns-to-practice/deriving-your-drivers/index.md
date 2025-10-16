@@ -1,13 +1,15 @@
 ---
 title: "Deriving Your Real Architectural Drivers"
+slug: "deriving-your-real-architectural-drivers"
 subtitle: "Great architecture doesn't start with a solution. It starts with a deep, honest understanding of the problem"
 date: 2025-01-05T10:10:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 2
 categories: ["Software Architecture"]
-tags: ["quality attributes", "qas", "requirements", "risk management"]
+tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Learn how to translate vague business goals into concrete, measurable architectural drivers using Quality Attribute Scenarios (QAS) to identify and address critical risks."
+featured_image: "02-qas-canvas.svg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
@@ -36,7 +38,7 @@ So how do you turn a vague goal like "scalability" into a concrete engineering t
     src="02-qas-canvas.svg"
     alt="A diagram showing the five parts of the QAS Canvas: Source, Stimulus, Environment, Response, and Response Measure."
     caption="Figure 1: The QAS Canvas provides a simple structure to translate vague goals into testable requirements."
-    width="400"
+    width="300"
 >}}
 
 It's a simple story format that forces you to be specific. As the architect, you'd walk through it like this:
@@ -72,4 +74,3 @@ Now, and only now, are you ready to make your first, most fundamental architectu
 
 * [**Software Architecture in Practice, 3rd Edition**](https://www.informit.com/store/software-architecture-in-practice-9780132942773) by Len Bass, Paul Clements, and Rick Kazman. This is the canonical source for Quality Attribute Scenarios.
 * [**"Documenting Quality Attributes"**](https://resources.sei.cmu.edu/asset_files/technicalnote/2003_001_001_14246.pdf) - a detailed look at Quality Attribute Scenarios from the Software Engineering Institute (SEI).
-
