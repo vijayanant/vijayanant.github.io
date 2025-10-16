@@ -2,3 +2,9 @@ node_modules
 _site
 .git
 Dockerfile
+public/
+resources/
+hugo_cache/
+.hugo_build.lock
+sitemap.xml
+robots.txt
