@@ -3,7 +3,7 @@ title: "An Architect's Work is Never Done"
 slug: "an-architects-work-is-never-done"
 subtitle: "Guiding the Evolution"
 date: 2025-10-08T09:06:00-07:00
-draft: false
+draft: true
 series: ["From Patterns to Practice"]
 series_order: 7
 categories: ["Software Architecture"]
