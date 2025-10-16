@@ -1,9 +1,10 @@
 ---
 title: "Mastering Your Blog Part 1"
+slug: "mastering-your-blog-part-1"
 date: 2024-09-26
 description: "Learn the fundamental front matter fields, how to organize posts into series, and add featured images to your articles."
-tags: ["blogging", "hugo", "front matter", "series", "featured image"]
-categories: ["how-to", "blogging"]
+tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]
+categories: ["Career and Writing"]
 series: ["Mastering Your Blog"]
 series_order: 1
 featured_image: "featured.jpg"
@@ -21,8 +22,8 @@ Every post starts with **front matter**, a block of YAML (or TOML/JSON) at the t
 title: "My Awesome Blog Post"
 date: 2025-10-01
 description: "A concise summary for SEO and list pages."
-tags: ["hugo", "blogging", "tutorial"]
-categories: ["web development"]
+tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]
+categories: ["Career and Writing"]
 series: ["Mastering Your Blog"]
 series_order: 1
 featured_image: "featured.jpg"

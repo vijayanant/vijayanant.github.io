@@ -1,13 +1,15 @@
 ---
 title: "The Decision Engine"
+slug: "the-decision-engine"
 subtitle: "Making Data-Driven Architectural Choices"
 date: 2025-01-05T10:50:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 4
 categories: ["Software Architecture"]
-tags: ["decision making", "weighted scoring matrix", "data-driven", "business priorities", "architectural analysis", "team proficiency", "risk management"]
+tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Learn how to move from qualitative analysis to a final, justifiable, and data-informed architectural decision using a Weighted Scoring Matrix to factor in business priorities."
+featured_image: "06-weighted-scoring-matrix.svg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
@@ -26,13 +28,11 @@ First, you need to translate your qualitative analysis from the previous post in
 
 Based on your deep analysis, you fill out the scorecard:
 
-| Quality Attribute Driver | Monolith (1-5) | Microservices (1-5) | Event-Driven (1-5) |
-|---|---|---|---|
-| Throughput Scalability | 2 | 5 | 5 |
-| Reliability (Transactional) | 4 | 3 | 4 |
-| Performance (Under Load) | 2 | 4 | 5 |
-| Time-to-Market | 5 | 2 | 3 |
-| Initial Cost | 5 | 2 | 3 |
+{{< figure
+    src="05b-scorecard.svg"
+    alt="A table showing the scorecard analysis for CityPulse, comparing Monolith, Microservices, and Event-Driven styles against the key drivers."
+    caption="Figure 1: The scorecard analysis. Each architectural style is scored (1-5) against specific quality attribute drivers."
+>}}
 
 This scorecard is a powerful summary. It takes your analysis and distills it into a format that clearly shows the conflicting profiles: the Monolith is strong on the cost/speed axis, while the distributed styles are strong on the scale/performance axis.
 
@@ -45,12 +45,16 @@ After considering the existential pressures on CityPulse, you assign the weights
 * **Time-to-Market:** The CEO's deadline is critical for survival. **Weight: 40%**
 * **Throughput Scalability:** The engineer's fear of a crash is equally critical. **Weight: 30%**
 * **Reliability (Transactional):** Essential for user trust and payments. **15%**
-*   **Initial Cost:** This focuses on the upfront cost of development and infrastructure (CapEx). For a startup, this is more critical than the long-term operational cost (OpEx), but still secondary to survival. **10%**
+* **Initial Cost:** This focuses on the upfront cost of development and infrastructure (CapEx). For a startup, this is more critical than the long-term operational cost (OpEx), but still secondary to survival. **10%**
 * **Performance (Under Load):** Important, but partially covered by scalability. **5%**
 
 With your scores and your weights, the final step is simple multiplication (`Score x Weight = Weighted Score`). Let's run the numbers in our final Weighted Scoring Matrix:
 
-{{< figure src="06-weighted-scoring-matrix.svg" alt="A table showing the Weighted Scoring Matrix analysis for CityPulse, comparing Monolith, Microservices, and Event-Driven styles against the key drivers, with Event-Driven emerging as the winner." caption="Figure 1: The final Weighted Scoring Matrix. The highest score indicates the most suitable architecture for the stated business priorities." >}}
+{{< figure
+    src="06-weighted-scoring-matrix.svg"
+    alt="A table showing the Weighted Scoring Matrix analysis for CityPulse, comparing Monolith, Microservices, and Event-Driven styles against the key drivers, with Event-Driven emerging as the winner."
+    caption="Figure 2: The final Weighted Scoring Matrix. The highest score indicates the most suitable architecture for the stated business priorities."
+>}}
 
 After summing the final weighted scores, the data gives you a clear, if surprising, winner. The **Event-Driven** style emerges with the highest score of **3.85**, narrowly beating the Monolith at 3.80.
 
@@ -65,12 +69,14 @@ Crucially, the biggest missing piece here is **Team Proficiency**. For a team ne
 Therefore, you don't blindly accept the matrix's result. Instead, you use it as a tool to frame the next conversation. You propose a time-boxed spike to the engineering team: to build a 'walking skeleton' of the core ticket-purchasing flow using EDA. If the team can prove they can manage it, you proceed. If not, you default to the second-place, lower-risk option—the Monolith—and create a plan to manage its scalability challenges. The matrix gave you a hypothesis; the spike will give you the truth.
 
 {{< summary title="Key Takeaways" >}}
-*   A qualitative analysis of trade-offs is not enough to make a final decision. You need to quantify your findings.
-*   Use a simple scorecard to rank each candidate style against your specific architectural drivers.
-*   The most critical step is assigning business weights to your drivers. This is what connects your technical decision to business value.
-*   The final weighted score provides a data-informed, transparent, and justifiable recommendation.
-*   **Crucially, the matrix provides a hypothesis, not a final answer. Always consider external factors like team proficiency and validate high-risk choices with real-world experiments like spikes.**
+
+* A qualitative analysis of trade-offs is not enough to make a final decision. You need to quantify your findings.
+* Use a simple scorecard to rank each candidate style against your specific architectural drivers.
+* The most critical step is assigning business weights to your drivers. This is what connects your technical decision to business value.
+* The final weighted score provides a data-informed, transparent, and justifiable recommendation.
+* **Crucially, the matrix provides a hypothesis, not a final answer. Always consider external factors like team proficiency and validate high-risk choices with real-world experiments like spikes.**
 {{< /summary >}}
+
 ## Conclusion: A Decision, Justified
 
 So there you have it. You didn't just "pick" an architecture. You followed a professional, repeatable process: you analyzed the problem, defined your drivers, profiled your options, and used a data-driven framework to make a choice.
@@ -83,5 +89,5 @@ That's why, in our next post, we'll do just that. We will de-risk our choice by 
 
 ## Further Reading
 
-*   The [**Architectural Tradeoff Analysis Method (ATAM)**](https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=5140) is the formal, comprehensive evaluation method from the SEI that the Weighted Scoring Matrix is a simplified version of.
-*   [***Thinking, Fast and Slow***](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) by Daniel Kahneman. A masterclass on the cognitive biases that can influence stakeholders during the critical process of assigning weights to drivers.
+* The [**Architectural Tradeoff Analysis Method (ATAM)**](https://www.sei.cmu.edu/documents/629/2000_005_001_13706.pdf) is the formal, comprehensive evaluation method from the SEI that the Weighted Scoring Matrix is a simplified version of.
+* [***Thinking, Fast and Slow***](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) by Daniel Kahneman. A masterclass on the cognitive biases that can influence stakeholders during the critical process of assigning weights to drivers.

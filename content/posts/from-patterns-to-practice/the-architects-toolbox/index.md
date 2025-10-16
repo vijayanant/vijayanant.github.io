@@ -1,13 +1,15 @@
 ---
 title: "The Architect's Toolbox"
+slug: "the-architects-toolbox"
 subtitle: "Choosing Your Foundational Style"
 date: 2025-01-05T10:40:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 3
 categories: ["Software Architecture"]
-tags: ["architectural styles", "monolith", "microservices", "event-driven architecture", "trade-offs", "system design"]
+tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "A practical guide to analyzing Monolithic, Microservices, and Event-Driven architectural styles against real-world business drivers to choose the foundational style for your system."
+featured_image: "05-style-event-driven.svg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
@@ -22,7 +24,11 @@ The world of architectural styles is vast, including classics like Layered, Clie
 
 The three styles that provide the clearest answers to this question are the **Monolithic**, **Microservices**, and **Event-Driven** styles. By analyzing these three, you will learn the core trade-offs that dominate modern system design. We will focus on these for now, and explore others in future posts.
 
-{{< figure src="03-style-monolith.svg" alt="A diagram of a well-structured monolith, showing internal modules for API, Business Logic, and Data Access within a single deployable unit." caption="Figure 1: The Monolithic style, where all components exist in a single, deployable unit, communicating through fast, in-process calls." >}}
+{{< figure
+    src="03-style-monolith.svg" alt="A diagram of a well-structured monolith, showing internal modules for API, Business Logic, and Data Access within a single deployable unit."
+    caption="Figure 1: The Monolithic style, where all components exist in a single, deployable unit, communicating through fast, in-process calls."
+    width=500
+>}}
 
 Your most direct path is the **Monolithic style**—a single, unified application. All code for every part of the business would live in one deployable unit. How does this choice stack up against your specific drivers for CityPulse?
 
@@ -38,7 +44,11 @@ From a domain perspective, you'd implement the different parts of the CityPulse 
 
 ## The Second Tool: The Microservices Style
 
-{{< figure src="04-style-microservices.svg" alt="A diagram of a microservices architecture, showing an API Gateway and several independent services, each with its own database, communicating over a network." caption="Figure 2: The Microservices style, which breaks the system into independently deployable services, trading internal complexity for external, network-based complexity." >}}
+{{< figure
+    src="04-style-microservices.svg" alt="A diagram of a microservices architecture, showing an API Gateway and several independent services, each with its own database, communicating over a network."
+    caption="Figure 2: The Microservices style, which breaks the system into independently deployable services, trading internal complexity for external, network-based complexity."
+    width=500
+>}}
 
 To directly address your scalability driver, you can consider the **Microservices style**. What are the real-world consequences of this choice for CityPulse?
 
@@ -61,9 +71,10 @@ Like the microservices style, however, it is a poor fit for your **Time-to-Marke
 > **Architect's Log:** *Of all the styles, Event-Driven Architecture is the easiest to get wrong. The allure of decoupling is powerful, but I've seen teams create incomprehensible 'chains of events' that are impossible to debug. If you can't clearly trace your core business workflows, you haven't designed a resilient system; you've designed chaos. My rule is: don't even consider EDA unless you have a rock-solid plan for observability and distributed tracing from day one.*
 
 {{< summary title="Key Takeaways" >}}
-*   The first major architectural decision is choosing a foundational **Architectural Style** that defines your system's deployment and communication structure.
-*   Analyze candidate styles against your specific, measurable business drivers, not generic pros and cons.
-*   Always consider the nuanced, real-world trade-offs. "Monoliths don't scale" is a lazy generalization; the real issue is *inefficient* scaling. The "microservice tax" for infrastructure overhead is a real cost that can make them *less* efficient for smaller projects.
+
+* The first major architectural decision is choosing a foundational **Architectural Style** that defines your system's deployment and communication structure.
+* Analyze candidate styles against your specific, measurable business drivers, not generic pros and cons.
+* Always consider the nuanced, real-world trade-offs. "Monoliths don't scale" is a lazy generalization; the real issue is *inefficient* scaling. The "microservice tax" for infrastructure overhead is a real cost that can make them *less* efficient for smaller projects.
 {{< /summary >}}
 
 ## Conclusion: Setting the Stage for a Decision
@@ -76,7 +87,7 @@ To break the tie, you need to quantify this analysis and apply your business pri
 
 ## Further Reading
 
-*   [**Fundamentals of Software Architecture**](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/) by Mark Richards and Neal Ford. A comprehensive and accessible overview of many architectural styles and patterns.
-*   [**"MonolithFirst"**](https://martinfowler.com/bliki/MonolithFirst.html) by Martin Fowler. The classic and influential article arguing for why starting with a monolith is often a pragmatic choice.
-*   [**Building Microservices, 2nd Edition**](https://www.oreilly.com/library/view/building-microservices-2nd/9781098120297/) by Sam Newman. The canonical book on the microservices architectural style.
-*   [**"What do you mean by 'Event-Driven'?"**](https://martinfowler.com/articles/201701-event-driven.html) by Martin Fowler. A crucial article that clarifies the different patterns and motivations that fall under the broad EDA umbrella.
+* [**Fundamentals of Software Architecture**](https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/) by Mark Richards and Neal Ford. A comprehensive and accessible overview of many architectural styles and patterns.
+* [**"MonolithFirst"**](https://martinfowler.com/bliki/MonolithFirst.html) by Martin Fowler. The classic and influential article arguing for why starting with a monolith is often a pragmatic choice.
+* [**Building Microservices, 2nd Edition**](https://www.oreilly.com/library/view/building-microservices-2nd/9781098120297/) by Sam Newman. The canonical book on the microservices architectural style.
+* [**"What do you mean by 'Event-Driven'?"**](https://martinfowler.com/articles/201701-event-driven.html) by Martin Fowler. A crucial article that clarifies the different patterns and motivations that fall under the broad EDA umbrella.
