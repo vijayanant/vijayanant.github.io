@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $subscription_page := .Page.Params.subscription }}
+{{ $pageData := index .Site.Data.subscription $subscription_page }}
+<div class="container thank-you-container">
+    {{ with $pageData }}
+    <h1 class="hero-title">{{ .title }}</h1>
+    <p class="hero-subtitle">{{ .subtitle }}</p>
+    <p class="hero-description thank-you-description">{{ .description }}</p>
+
+    <div class="popular-posts-container">
+        <h2 class="section-title popular-posts-title">{{ .popular_posts_title }}</h2>
+        <ul class="popular-posts-list">
+            {{ range .popular_posts }}
+            <li class="popular-post-item">
+                <a href="{{ .url }}" class="popular-post-link">{{ .title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

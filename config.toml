@@ -12,7 +12,7 @@ contactEmail = "hello@vijayanant.com"                # Your actual email
 enableCodeCopyButton = true
 enableRelatedPosts = true
 enableNewsletter = true
-buttondownUsername = "vijayanant"
+
 
 [[params.social]]
 name = "LinkedIn"
@@ -70,4 +70,4 @@ unsafe = true
 
 [security]
 [security.funcs]
-getenv = ["BUTTONDOWN_API_KEY", "HUGO_"]
+getenv = ["HUGO_"]

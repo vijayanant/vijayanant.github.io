@@ -1,0 +1,183 @@
+/* Fix for Zoho form container border */
+#sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e {
+    border: none !important;
+}
+
+/* Styles for inline success message */
+#Zc_SignupSuccess {
+    position: static !important;
+    width: 100% !important;
+    margin: 1rem 0 0 0 !important;
+    background-color: var(--note-info-background) !important;
+    border: 1px solid var(--note-info-border) !important;
+    padding: 1rem !important;
+    border-radius: 4px;
+}
+
+#signupSuccessMsg {
+    color: var(--note-info-text) !important;
+    font-family: var(--body-font) !important;
+    font-size: 1rem !important;
+}
+
+.successicon {
+    display: none !important;
+}
+
+/* Newsletter Form Styles */
+.newsletter-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: transparent; /* Full shortcode in content is transparent */
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+}
+
+.newsletter-section.footer-newsletter {
+    margin-top: 0;
+    border-radius: 0;
+    background-color: var(--surface-color); /* Darker background for footer */
+}
+
+.newsletter-title {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.newsletter-description {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: var(--tertiary-text-color);
+}
+
+.newsletter-form input[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-inverted);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .newsletter-form {
+        flex-direction: row;
+    }
+    .newsletter-form input[type="email"] {
+        flex-grow: 1;
+    }
+    .newsletter-form input[type="submit"] {
+        width: auto;
+    }
+}
+
+.newsletter-simple-form-wrapper {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background-color: transparent;
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+}
+
+.newsletter-simple-title {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.newsletter-form-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+    .newsletter-form-simple {
+        flex-direction: row;
+    }
+    .newsletter-form-simple input[type="email"] {
+        flex-grow: 1;
+    }
+    .newsletter-form-simple input[type="submit"] {
+        width: auto;
+    }
+}
+
+/* Thank You Page Styles */
+.thank-you-container {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.thank-you-description {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.popular-posts-container {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.popular-posts-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.popular-posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.popular-post-item {
+    margin-bottom: 1rem;
+    background-color: var(--surface-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.popular-post-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+}

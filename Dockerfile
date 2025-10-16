@@ -10,7 +10,7 @@ WORKDIR /src
 # Copy the entire project into the container
 COPY . .
 
-# Declare the BUTTONDOWN_API_KEY build-time variable
+
 
 
 # Build the Hugo site

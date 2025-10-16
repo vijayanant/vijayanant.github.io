@@ -1,9 +1,10 @@
 ---
 title: "Engaging Readers: Related Posts & Newsletter"
+slug: "engaging-readers-related-posts-newsletter"
 date: 2024-09-28
 description: "Discover how to keep your audience engaged with automatically suggested related content and a prominent newsletter sign-up."
-tags: ["blogging", "hugo", "engagement", "related posts", "newsletter"]
-categories: ["how-to", "blogging"]
+tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]
+categories: ["Career and Writing"]
 series: ["Mastering Your Blog"]
 series_order: 3
 featured_image: "featured.jpg"
@@ -24,7 +25,7 @@ For posts that are part of a series, the primary navigation will always be to th
 
 ## Growing Your Audience with a Newsletter
 
-Your blog is equipped with a flexible newsletter sign-up feature, powered by Buttondown. You can place a simple sign-up form anywhere within your content using a shortcode, and a full form is always available in the footer.
+Your blog is equipped with a flexible newsletter sign-up feature, powered by Zoho Campaigns. You can place a simple sign-up form anywhere within your content using a shortcode, and a full form is always available in the footer.
 
 ### Simple Newsletter Form (Inline)
 
@@ -40,7 +41,7 @@ This is the same form that appears in your site's footer, encouraging site-wide 
 
 {{< newsletter type="full" title="Join My Newsletter" description="Get exclusive content and early access to new articles!" >}}
 
-Remember to update your `buttondownUsername` in `config.toml` for the forms to work correctly!
+
 
 ## Conclusion
 

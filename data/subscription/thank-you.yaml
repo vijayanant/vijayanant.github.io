@@ -1,0 +1,11 @@
+title: "You're on the list!"
+subtitle: "Thank you for subscribing to my newsletter."
+description: "You can expect to receive emails from me about software architecture, design principles, and pragmatic engineering leadership."
+popular_posts_title: "In the meantime, here are a few of my most popular posts:"
+popular_posts:
+  - title: "Abstraction vs. Code Duplication"
+    url: "/posts/abstraction-vs-code-duplication/"
+  - title: "Bad Code is Not Tech Debt"
+    url: "/posts/bad-code-is-not-tech-debt/"
+  - title: "Design Principles and Design Patterns"
+    url: "/posts/design-principles-and-design-patterns/"
