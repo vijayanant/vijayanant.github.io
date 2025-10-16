@@ -2,7 +2,7 @@
 title: "The Decision Engine"
 slug: "the-decision-engine"
 subtitle: "Making Data-Driven Architectural Choices"
-date: 2025-01-05T10:50:00-07:00
+date: 2025-10-08T09:03:00-07:00
 draft: false
 series: ["From Patterns to Practice"]
 series_order: 4
