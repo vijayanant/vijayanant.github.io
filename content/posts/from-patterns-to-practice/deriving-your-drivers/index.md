@@ -2,7 +2,7 @@
 title: "Deriving Your Real Architectural Drivers"
 slug: "deriving-your-real-architectural-drivers"
 subtitle: "Great architecture doesn't start with a solution. It starts with a deep, honest understanding of the problem"
-date: 2025-01-05T10:10:00-07:00
+date: 2025-10-08T09:01:00-07:00
 draft: false
 series: ["From Patterns to Practice"]
 series_order: 2

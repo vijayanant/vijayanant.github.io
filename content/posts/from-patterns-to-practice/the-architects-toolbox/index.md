@@ -2,7 +2,7 @@
 title: "The Architect's Toolbox"
 slug: "the-architects-toolbox"
 subtitle: "Choosing Your Foundational Style"
-date: 2025-01-05T10:40:00-07:00
+date: 2025-10-08T09:02:00-07:00
 draft: false
 series: ["From Patterns to Practice"]
 series_order: 3
