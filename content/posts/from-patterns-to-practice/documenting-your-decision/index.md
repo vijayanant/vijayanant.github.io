@@ -3,7 +3,7 @@ title: "Documenting your decision"
 slug: "documenting-your-decision"
 subtitle: "Documenting and Communicating Your Decision"
 date: 2025-10-08T09:05:00-07:00
-draft: false
+draft: true
 series: ["From Patterns to Practice"]
 series_order: 6
 categories: ["Software Architecture"]

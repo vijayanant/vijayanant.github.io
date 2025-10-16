@@ -1,7 +1,7 @@
 ---
 title: "Achieving Modularity"
 slug: "achieving-modularity"
-date: 2025-10-12
+date: 2023-10-12
 draft: false
 series: ["Modular by Design"]
 series_order: 1
