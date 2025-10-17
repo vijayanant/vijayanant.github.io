@@ -57,3 +57,18 @@ navLinks.forEach(link => {
         navToggle.classList.remove('active');
     });
 });
+
+// Close hamburger menu on outside click
+document.addEventListener('click', function(event) {
+  if (!navList.classList.contains('active')) {
+    return;
+  }
+
+  const isClickOnToggle = navToggle.contains(event.target);
+  const isClickInsideNav = navList.contains(event.target);
+
+  if (!isClickOnToggle && !isClickInsideNav) {
+    navList.classList.remove('active');
+    navToggle.classList.remove('active');
+  }
+});
