@@ -5,6 +5,6 @@ social_links:
   - name: LinkedIn
     url: https://www.linkedin.com/in/vijayanant/
     icon: fab fa-linkedin
-  - name: Substack
-    url: https://vijayanant.substack.com/
+  - name: Blog
+    url: /posts/
     icon: fas fa-newspaper
