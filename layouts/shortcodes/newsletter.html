@@ -15,9 +15,12 @@
     <h3 class="newsletter-title">{{ if $title }}{{ $title }}{{ else }}Stay Updated{{ end }}</h3>
     <p class="newsletter-description">{{ if $description }}{{ $description }}{{ else }}Get new articles and updates delivered directly to your inbox.{{ end }}</p>
     <div id="sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e" data-type="signupform">
-      <form method="POST" id="zcampaignOptinForm" class="newsletter-form" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" target="_zcSignup">
-        <input type="email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" placeholder="Your email address" required>
-        <input type="submit" value="Subscribe" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON">
+      <form method="POST" id="zcampaignOptinForm" class="newsletter-form" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc">
+        <div class="newsletter-form-fields">
+            <input type="email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" placeholder="Your email address" required>
+            <input type="submit" value="Subscribe" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON">
+        </div>
+        <div class="newsletter-message"></div>
         <input type="hidden" id="fieldBorder" value="">
         <input type="hidden" id="submitType" name="submitType" value="optinCustomView">
         <input type="hidden" id="emailReportId" name="emailReportId" value="">
@@ -42,7 +45,7 @@
   <div class="newsletter-simple-form-wrapper">
     {{ if $title }}<p class="newsletter-simple-title">{{ $title }}</p>{{ end }}
     <div id="sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e" data-type="signupform">
-        <form method="POST" id="zcampaignOptinForm" class="newsletter-form newsletter-form-simple" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc" target="_zcSignup">
+        <form method="POST" id="zcampaignOptinForm" class="newsletter-form newsletter-form-simple" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc">
             <input type="email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" placeholder="Your email address" required>
             <input type="submit" value="Subscribe" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON">
             <input type="hidden" id="fieldBorder" value="">
