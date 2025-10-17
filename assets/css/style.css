@@ -998,7 +998,7 @@ pre.chroma {
 .blog-post-content .content code { /* For inline code */
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 0.95em; /* Relative to parent */
-    background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle background */
+    /* background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle background */ */
     padding: 0.2em 0.4em;
     border-radius: 3px;
 }
@@ -1192,7 +1192,7 @@ pre.chroma {
     border: none;
     border-top: 1px solid var(--surface-color);
     margin: 3rem auto;
-    width: 50%; /* Adjust width as needed */
+    width: 50%; /* Not full width, for elegance */
 }
 
 /* Next Post Prompt */
@@ -1859,4 +1859,3 @@ body:not([data-page-kind="home"]) #site-header {
         display: none; /* Hide placeholders on screens not wide enough for 3 columns */
     }
 }
-
