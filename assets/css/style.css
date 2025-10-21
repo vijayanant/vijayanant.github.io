@@ -1673,19 +1673,19 @@ body:not([data-page-kind="home"]) #site-header {
 }
 
 /* Ensure Lity container and image are correctly sized */
+.lity-container {
+    width: 100%; /* Force container to take full width */
+}
+
 .lity-image .lity-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 90vw; /* Max width of the viewport */
-    max-height: 90vh; /* Max height of the viewport */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Force container to take full width */
+    height: 100%; /* Force container to take full height */
 }
 
 .lity-image .lity-content img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%; /* Ensure consistent sizing */
     display: block;
     object-fit: contain; /* Ensure the entire image is visible */
 }
@@ -1693,8 +1693,8 @@ body:not([data-page-kind="home"]) #site-header {
 /* Specific rule for SVG images within Lity content that might lack explicit dimensions */
 .lity-image .lity-content img[src$=".svg"] {
     width: 100%;  /* Force width to 100% of its parent */
-    height: 100%; /* Force height to 100% of its parent */
-    /* object-fit: contain is already applied to ensure aspect ratio */
+    display: block; /* Explicitly set display */
+    object-fit: contain; /* Ensure the entire image is visible */
 }
 
 /* Styling for pull-quotes (now using div) */
