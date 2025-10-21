@@ -39,16 +39,30 @@ An ADR is just a short, simple text file, usually written in Markdown, that capt
 
 **Context:**
 
-We need an architecture for CityPulse that can handle high-throughput, transactional spikes during major concert sales, while allowing us to launch within a tight, 3-month deadline. A monolith risks failing under load, while a traditional microservices approach is too complex to build quickly.
+We need an architecture for CityPulse that can handle high-throughput, 
+transactional spikes during major concert sales, while allowing us to launch
+within a tight, 3-month deadline. A monolith risks failing under load, while
+a traditional microservices approach is too complex to build quickly.
 
 **Decision:**
 
-We will adopt an Event-Driven Architecture for the core ticketing workflow. The initial implementation will focus on the `TicketPurchaseRequested` event and the services that consume it. We will precede this with a two-week, time-boxed spike to prove out the technology and our team's ability to manage it.
+We will adopt an Event-Driven Architecture for the core ticketing workflow.
+The initial implementation will focus on the `TicketPurchaseRequested` event
+and the services that consume it. We will precede this with a two-week, 
+time-boxed spike to prove out the technology and our team's ability to manage
+it.
 
 **Consequences:**
 
-*   **Positive:** This style directly addresses our critical scalability and reliability drivers. It decouples our services, making the system more resilient to individual component failures. It provides a foundation for future, real-time features.
-*   **Negative:** We accept the significant upfront complexity and learning curve associated with asynchronous systems and eventual consistency. This poses a risk to our timeline, which we are mitigating with a focused spike. Debugging and end-to-end testing will be more difficult than in a monolith.
+*   **Positive:** This style directly addresses our critical scalability and
+reliability drivers. It decouples our services, making the system more 
+resilient to individual component failures. It provides a foundation for
+future, real-time features.
+
+*   **Negative:** We accept the significant upfront complexity and learning
+curve associated with asynchronous systems and eventual consistency. This poses
+a risk to our timeline, which we are mitigating with a focused spike. Debugging
+and end-to-end testing will be more difficult than in a monolith.
 ```
 
 {{< note type="log" title="Architect's Log" >}}
@@ -78,7 +92,7 @@ You can zoom in further to Components (Level 3) and Code (Level 4), but for comm
 * Use the **C4 Model** to create different diagrams for different audiences, showing the *what* at the right level of detail.
 {{< /summary >}}
 
-## Conclusion: A Decision, Documented
+## A Decision, Documented
 
 And with that, you have executed every step of the formal decision-making framework. You started with a vague business problem, translated it into measurable drivers, analyzed your options, made a data-driven decision, and now you've documented and communicated it clearly. This is the complete, repeatable process for making a high-stakes architectural choice.
 
@@ -94,3 +108,5 @@ In our final post of this foundational series, we'll look at what happens *after
 ---
 
 What's the biggest challenge you face with documentation in your team? Have you ever used ADRs or C4? Share your experiences in the comments.
+
+{{< newsletter type="simple" >}}

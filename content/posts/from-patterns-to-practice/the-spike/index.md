@@ -40,6 +40,8 @@ The two weeks are a whirlwind of learning. **You** watch as the team discovers t
 
 ## The Verdict: A Fork in the Road
 
+{{< newsletter type="simple" >}}
+
 At the end of the two weeks, **you** convene a retro. The walking skeleton works, but the journey was fraught with friction. The raw data is in, but the data doesn't make the decision. Now, **your** job is to interpret that data within the team's specific context.
 
 This is a fork in the road. To illustrate the power of context, **you** can map out two distinct, equally valid interpretations of these exact same results.
@@ -66,10 +68,12 @@ This is a fork in the road. To illustrate the power of context, **you** can map 
 
 ---
 
-## Conclusion: Context is King
+## Context is King
 
 The architectural spike is one of the most powerful tools in **your** toolbox. Its purpose isn't always to prove **your** initial hypothesis correct. Its purpose is to replace uncertainty with evidence.
 
 As **you've** seen from the two paths, the same evidence can lead to two different, entirely correct decisions. The crucial variable was the team's context. Path A wasn't a "failure," and Path B wasn't "smarter." They were different answers to the same question, tailored to the reality of the people who would have to build and operate the system.
 
 For the remainder of the CityPulse series, we will follow the narrative of **Path B**, where **you** and **your** team proceed with the EDA. This will allow us to explore the next set of challenges in building and operating a modern, distributed system.
+
+{{< newsletter type="simple" >}}

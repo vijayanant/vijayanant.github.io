@@ -77,7 +77,7 @@ Like the microservices style, however, it is a poor fit for your **Time-to-Marke
 * Always consider the nuanced, real-world trade-offs. "Monoliths don't scale" is a lazy generalization; the real issue is *inefficient* scaling. The "microservice tax" for infrastructure overhead is a real cost that can make them *less* efficient for smaller projects.
 {{< /summary >}}
 
-## Conclusion: Setting the Stage for a Decision
+## Setting the Stage for a Decision
 
 You've now completed a professional analysis, moving beyond buzzwords to a nuanced understanding of how each architectural style interacts with your specific business problem. The dilemma is clear: the Monolith wins on speed, the Microservices style wins on organizational scale, and the Event-Driven style wins on resilience and absorbing load.
 
@@ -91,3 +91,5 @@ To break the tie, you need to quantify this analysis and apply your business pri
 * [**"MonolithFirst"**](https://martinfowler.com/bliki/MonolithFirst.html) by Martin Fowler. The classic and influential article arguing for why starting with a monolith is often a pragmatic choice.
 * [**Building Microservices, 2nd Edition**](https://www.oreilly.com/library/view/building-microservices-2nd/9781098120297/) by Sam Newman. The canonical book on the microservices architectural style.
 * [**"What do you mean by 'Event-Driven'?"**](https://martinfowler.com/articles/201701-event-driven.html) by Martin Fowler. A crucial article that clarifies the different patterns and motivations that fall under the broad EDA umbrella.
+
+{{< newsletter type="simple" >}}

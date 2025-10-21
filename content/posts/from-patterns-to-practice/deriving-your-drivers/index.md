@@ -62,7 +62,7 @@ A word of caution: while these numbers look precise, they are often just well-in
 * Use the QAS framework (Source, Stimulus, Environment, Response, Measure) to translate vague goals into specific, measurable drivers.
 {{< /summary >}}
 
-## Conclusion: Now You Know the Real Problem
+## Now You Know the Real Problem
 
 This changes everything. You're no longer debating vague concepts. You now have a precise, measurable, and prioritized set of engineering targets derived directly from the business risks. You've translated the story into a specification.
 

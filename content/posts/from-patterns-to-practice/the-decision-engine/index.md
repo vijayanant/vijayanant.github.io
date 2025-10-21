@@ -77,7 +77,7 @@ Therefore, you don't blindly accept the matrix's result. Instead, you use it as 
 * **Crucially, the matrix provides a hypothesis, not a final answer. Always consider external factors like team proficiency and validate high-risk choices with real-world experiments like spikes.**
 {{< /summary >}}
 
-## Conclusion: A Decision, Justified
+## A Decision, Justified
 
 So there you have it. You didn't just "pick" an architecture. You followed a professional, repeatable process: you analyzed the problem, defined your drivers, profiled your options, and used a data-driven framework to make a choice.
 
@@ -91,3 +91,5 @@ That's why, in our next post, we'll do just that. We will de-risk our choice by 
 
 * The [**Architectural Tradeoff Analysis Method (ATAM)**](https://www.sei.cmu.edu/documents/629/2000_005_001_13706.pdf) is the formal, comprehensive evaluation method from the SEI that the Weighted Scoring Matrix is a simplified version of.
 * [***Thinking, Fast and Slow***](https://www.goodreads.com/book/show/11468377-thinking-fast-and-slow) by Daniel Kahneman. A masterclass on the cognitive biases that can influence stakeholders during the critical process of assigning weights to drivers.
+
+{{< newsletter type="simple" >}}

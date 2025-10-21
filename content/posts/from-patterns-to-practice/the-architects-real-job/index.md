@@ -66,7 +66,7 @@ This is the part of the job that no one talks about enough. It's a constant proc
 * The same tools you used to make the decision (ADRs, C4, etc.) are the tools you'll use to guide its evolution.
 {{< /summary >}}
 
-## Conclusion: Welcome to Season Two
+## Welcome to Season Two
 
 This post marks the end of our foundational series on making a single, critical architectural decision. You've followed the complete, repeatable framework from a vague problem to a documented, data-informed choice.
 
@@ -76,3 +76,5 @@ But the story of CityPulse is just getting started. These new challenges—evolv
 
 * [***Building Evolutionary Architectures***](https://www.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/) by Neal Ford, Rebecca Parsons, and Patrick Kua. The definitive guide to creating architectures that can adapt to change, and the origin of the "Architectural Fitness Function" concept.
 * My take on technical debt: [**Bad Code is not Tech Debt**](/posts/bad-code-is-not-tech-debt/). This post argues that not all bad code is technical debt and explores the nuances of this common misconception.
+
+{{< newsletter type="simple" >}}
