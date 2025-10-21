@@ -20,26 +20,28 @@
               {{ end }}
               <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
             </div>
+          </header>
 
-                                      {{ with index .Params.series 0 }}
-                                        {{ $seriesName := . }}
-                                        {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
-                                        {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
-                                        <div class="series-nav mb-4">
-                                          <h5 class="series-title">Part of the <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">{{ $seriesName }}</a> series</h5>
-                                          <ol>
-                                            {{ range $sortedPages }}
-                                              <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
-                                                {{ if eq .Permalink $.Permalink }}
-                                                  <span>{{ .Title }}</span>
-                                                {{ else }}
-                                                  <a href="{{ .Permalink }}">{{ .Title }}</a>
-                                                {{ end }}
-                                              </li>
-                                            {{ end }}
-                                          </ol>
-                                        </div>
-                                      {{ end }}          <div class="content">
+          {{ with index .Params.series 0 }}
+            {{ $seriesName := . }}
+            {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
+            {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
+            <div class="series-nav mb-4">
+              <h5 class="series-title">Part of the <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">{{ $seriesName }}</a> series</h5>
+              <ol>
+                {{ range $sortedPages }}
+                  <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
+                    {{ if eq .Permalink $.Permalink }}
+                      <span>{{ .Title }}</span>
+                    {{ else }}
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ol>
+            </div>
+          {{ end }} 
+          <div class="content">
             {{ .Content }}
           </div>
 
