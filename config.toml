@@ -1,19 +1,20 @@
 baseURL = "https://vijayanant.com/"
 languageCode = "en-us"
-title = "Vijay Anantharamaiah"
-
 [params]
-description = "Engineering Leader & Product Builder"
-author = "Vijay Anantharamaiah"                      # Explicitly define author
-portrait = "images/contact-image.png"                # Path relative to the assets/ directory
-googleAnalytics = "G-XNSPFRLLVH"
-image = "images/logo-512.png"                        # This is your site logo
-contactEmail = "hello@vijayanant.com"                # Your actual email
-enableCodeCopyButton = true
-enableRelatedPosts = true
-enableNewsletter = true
+  description = "Engineering Leader & Product Builder"
+  author = "Vijay Anantharamaiah"
+  portrait = "images/contact-image.png"
+  googleAnalytics = "G-XNSPFRLLVH"
+  image = "images/contact-image.png"
+  contactEmail = "hello@vijayanant.com"
+  enableCodeCopyButton = true
+  enableRelatedPosts = true
+  enableNewsletter = true
 
-
+[params.newsletter]
+title = "The Anant Loop"
+description = "Articles on crafting quality software and building high-performing teams that last."
+author = "Vijay Anant"
 [[params.social]]
 name = "LinkedIn"
 url = "https://www.linkedin.com/in/vijayanant/"

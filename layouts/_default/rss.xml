@@ -1,0 +1,26 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Params.newsletter.title }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ .Site.Params.newsletter.description }}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ .Site.LanguageCode }}</language>
+    <managingEditor>{{ .Site.Params.contactEmail }} ({{ .Site.Params.author }})</managingEditor>
+    <webMaster>{{ .Site.Params.contactEmail }} ({{ .Site.Params.author }})</webMaster>
+    <copyright>Copyright (c) {{ now.Format "2006" }}, {{ .Site.Params.author }}; all rights reserved.</copyright>
+    {{ with .Site.GetPage "/posts" }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{ end }}
+    <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml" />
+    {{ range where .Site.RegularPages "Section" "posts" }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <author>{{ .Params.author | default .Site.Params.newsletter.author }}</author>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Summary | html }}</description>
+    </item>
+    {{ end }}
+  </channel>
+</rss>

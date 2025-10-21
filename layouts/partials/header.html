@@ -2,8 +2,8 @@
     <div class="container">
         <a href="{{ "/" | relURL }}" class="logo">
             <picture>
-                <source srcset="{{ "/assets/images/logo-512.webp" | relURL }}" type="image/webp">
-                <img src="{{ "/assets/images/logo-512.png" | relURL }}" alt="VA Logo" class="logo-img" loading="lazy">
+                <source srcset="{{ (resources.Get "images/contact-image.png").RelPermalink }}" type="image/webp">
+                <img src="{{ (resources.Get "images/contact-image.png").RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" loading="lazy">
             </picture>
         </a>
         <nav>

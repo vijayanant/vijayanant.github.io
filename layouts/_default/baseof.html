@@ -42,10 +42,14 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/images/apple-touch-icon.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/images/favicon-32.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/images/favicon-16.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="48x48" href="{{ "/assets/images/favicon-48.png" | relURL }}">
+    {{ $apple := resources.Get "images/apple-touch-icon.png" | fingerprint }}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $apple.RelPermalink }}">
+    {{ $favicon32 := resources.Get "images/favicon-32.png" | fingerprint }}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}">
+    {{ $favicon16 := resources.Get "images/favicon-16.png" | fingerprint }}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}">
+    {{ $favicon48 := resources.Get "images/favicon-48.png" | fingerprint }}
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ $favicon48.RelPermalink }}">
 
     {{ partial "analytics.html" . }}
     {{ partial "seo/schema.html" . }}
