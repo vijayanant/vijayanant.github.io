@@ -3,7 +3,7 @@ title: "Documenting your decision"
 slug: "documenting-your-decision"
 subtitle: "Documenting and Communicating Your Decision"
 date: 2025-10-08T09:05:00-07:00
-draft: true
+draft: false
 series: ["From Patterns to Practice"]
 series_order: 6
 categories: ["Software Architecture"]
@@ -94,4 +94,3 @@ In our final post of this foundational series, we'll look at what happens *after
 ---
 
 What's the biggest challenge you face with documentation in your team? Have you ever used ADRs or C4? Share your experiences in the comments.
-
