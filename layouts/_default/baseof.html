@@ -5,20 +5,6 @@
     <meta charset="{{ .Site.Params.charset | default "UTF8" }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ .Description | default .Site.Params.description }}">
-    <meta property="og:title" content="{{ .Title | default .Site.Title }}" />
-    <meta property="og:description" content="{{ .Description | default .Site.Params.description }}" />
-    <meta property="og:type" content="website" />
-    {{ $image := "" }}
-    {{ with .Params.featured_image }}
-      {{ $image = . }}
-    {{ else }}
-      {{ $image = .Site.Params.image }}
-    {{ end }}
-    <meta property="og:image" content="{{ $image | absURL }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ .Title | default .Site.Title }}" />
-    <meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}" />
-    <meta name="twitter:image" content="{{ $image | absURL }}" />
     <title>{{ .Title | default .Site.Title }}</title>
 
     {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
@@ -32,8 +18,6 @@
 
     {{ $subscriptionStyle := resources.Get "css/subscription.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $subscriptionStyle.RelPermalink }}">
-
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +36,7 @@
     <link rel="icon" type="image/png" sizes="48x48" href="{{ $favicon48.RelPermalink }}">
 
     {{ partial "analytics.html" . }}
+    {{ partial "seo/social.html" . }}
     {{ partial "seo/schema.html" . }}
     {{ partial "seo/schema-homepage.html" . }}
 </head>
