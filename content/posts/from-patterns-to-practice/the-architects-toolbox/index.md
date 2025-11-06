@@ -9,7 +9,7 @@ series_order: 3
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "A practical guide to analyzing Monolithic, Microservices, and Event-Driven architectural styles against real-world business drivers to choose the foundational style for your system."
-featured_image: "05-style-event-driven.svg"
+featured_image: "toolbox.jpg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}

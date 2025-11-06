@@ -9,7 +9,7 @@ series_order: 1
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Understanding the core conflict between speed and scale is the architect's first challenge. This post explores how to translate business pressures into concrete drivers and navigate critical trade-offs."
-featured_image: "01-comparison-microservices.svg"
+featured_image: "compass.jpg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" width="1200" >}}

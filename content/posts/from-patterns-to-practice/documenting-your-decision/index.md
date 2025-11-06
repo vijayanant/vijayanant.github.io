@@ -9,7 +9,7 @@ series_order: 6
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Learn how to effectively document and communicate architectural decisions using Architectural Decision Records (ADRs) and the C4 Model to prevent 'Architectural Amnesia' and ensure clarity."
-featured_image: "08-c4-context.svg"
+featured_image: "documentation.jpg"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
