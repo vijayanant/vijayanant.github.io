@@ -1,15 +1,15 @@
 baseURL = "https://vijayanant.com/"
 languageCode = "en-us"
 [params]
-  description = "Engineering Leader & Product Builder"
-  author = "Vijay Anantharamaiah"
-  portrait = "images/contact-image.png"
-  googleAnalytics = "G-XNSPFRLLVH"
-  image = "images/contact-image.png"
-  contactEmail = "hello@vijayanant.com"
-  enableCodeCopyButton = true
-  enableRelatedPosts = true
-  enableNewsletter = true
+description = "Engineering Leader & Product Builder"
+author = "Vijay Anantharamaiah"
+portrait = "images/contact-image.png"
+googleAnalytics = "G-XNSPFRLLVH"
+image = "images/contact-image.png"
+contactEmail = "hello@vijayanant.com"
+enableCodeCopyButton = true
+enableRelatedPosts = true
+enableNewsletter = true
 
 [params.newsletter]
 title = "The Anant Loop"
@@ -29,12 +29,22 @@ url = "https://twitter.com/vijayanant"
 threshold = 80
 includeNewer = true
 toLower = true
-[[related.indices]]
-name = "tags"
-weight = 100
+
 [[related.indices]]
 name = "categories"
-weight = 70
+weight = 180
+
+[[related.indices]]
+name = "tags"
+weight = 120
+
+[[related.indices]]
+name = "title"
+weight = 15
+
+[[related.indices]]
+name = "date"
+weight = 10
 
 [minify]
 disableCSS = false
