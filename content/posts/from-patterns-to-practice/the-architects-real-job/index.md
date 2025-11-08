@@ -66,11 +66,13 @@ This is the part of the job that no one talks about enough. It's a constant proc
 * The same tools you used to make the decision (ADRs, C4, etc.) are the tools you'll use to guide its evolution.
 {{< /summary >}}
 
-## Welcome to Season Two
+## What's Next? From Blueprint to Build
 
 This post marks the end of our foundational series on making a single, critical architectural decision. You've followed the complete, repeatable framework from a vague problem to a documented, data-informed choice.
 
-But the story of CityPulse is just getting started. These new challenges—evolving the architecture for a new business need, governing a growing system, and managing the debt from our past decisions—are the bread and butter of an architect's daily life. In Season Two of this series, we'll dive into these real-world challenges, exploring how to manage technical debt, how to evolve your architecture to support brand-new business features, and how to maintain your architectural principles across a growing team. Join us as the story of CityPulse continues.
+But the story of CityPulse is just getting started. We've created the blueprint; now we have to build the house. How do we design the internal structure of our components? How will they communicate effectively without creating a tangled mess? How do we handle the practical realities of security, logging, and deployment?
+
+In our next series, we will move from the high-level blueprint to the low-level build, tackling the next set of practical challenges in bringing an architecture to life. Join us as the story of CityPulse continues.
 
 ## Further Reading
 

@@ -1,0 +1,78 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="background-color: #111; font-family: 'Open Sans', sans-serif; color: white;">
+    <defs>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <radialGradient id="radarGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#2ecc71; stop-opacity:0.4"/>
+            <stop offset="100%" style="stop-color:#2ecc71; stop-opacity:0"/>
+        </radialGradient>
+    </defs>
+
+    <style>
+        .service-box { fill: #1168bd; stroke: #0f5eaa; stroke-width: 2; rx: 10; }
+        .service-text { font-size: 14px; text-anchor: middle; fill: #fff; }
+        .quantum-boundary { fill: none; stroke: #2ecc71; stroke-width: 3; stroke-dasharray: 10 5; filter: url(#glow); }
+    </style>
+
+    <!-- Background Grid -->
+    <path d="M 100 0 L 100 600 M 200 0 L 200 600 M 300 0 L 300 600 M 400 0 L 400 600 M 500 0 L 500 600 M 600 0 L 600 600 M 700 0 L 700 600 M 0 100 L 800 100 M 0 200 L 800 200 M 0 300 L 800 300 M 0 400 L 800 400 M 0 500 L 800 500" stroke="#222" stroke-width="1"/>
+
+    <!-- Radar Sweep -->
+    <circle cx="400" cy="650" r="500" fill="url(#radarGradient)">
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          from="0 400 650"
+                          to="100 400 650"
+                          dur="5s"
+                          repeatCount="indefinite" />
+    </circle>
+    <line x1="400" y1="150" x2="400" y2="650" stroke="rgba(46, 204, 113, 0.5)" stroke-width="2">
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          from="0 400 650"
+                          to="100 400 650"
+                          dur="5s"
+                          repeatCount="indefinite" />
+    </line>
+
+
+    <!-- Services -->
+    <g id="service-group">
+        <!-- Quantum 1 -->
+        <g id="q1-services">
+            <rect x="150" y="150" width="80" height="60" class="service-box"/>
+            <text x="190" y="185" class="service-text">Auth</text>
+            <rect x="250" y="150" width="80" height="60" class="service-box"/>
+            <text x="290" y="185" class="service-text">User</text>
+        </g>
+        
+        <!-- Quantum 2 -->
+        <g id="q2-services">
+            <rect x="500" y="250" width="80" height="60" class="service-box"/>
+            <text x="540" y="285" class="service-text">Email</text>
+        </g>
+
+        <!-- Other services -->
+        <rect x="200" y="400" width="80" height="60" class="service-box"/>
+        <text x="240" y="435" class="service-text">Search</text>
+        <rect x="550" y="450" width="80" height="60" class="service-box"/>
+        <text x="590" y="485" class="service-text">Logging</text>
+    </g>
+
+    <!-- Identified Quanta -->
+    <g id="identified-quanta">
+        <!-- Quantum 1 Boundary -->
+        <rect x="130" y="130" width="220" height="100" class="quantum-boundary"/>
+        <text x="240" y="110" fill="#2ecc71">Quantum 1</text>
+
+        <!-- Quantum 2 Boundary -->
+        <rect x="480" y="230" width="120" height="100" class="quantum-boundary"/>
+        <text x="540" y="210" fill="#2ecc71">Quantum 2</text>
+    </g>
+
+</svg>

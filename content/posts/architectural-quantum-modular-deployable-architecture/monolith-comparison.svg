@@ -1,0 +1,69 @@
+<svg width="900" height="450" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg" style="background-color: #111; font-family: 'Open Sans', sans-serif; color: white;">
+
+    <style>
+        .title { font-size: 20px; text-anchor: middle; fill: #fff; }
+        .label { font-size: 14px; text-anchor: middle; fill: #aaa; }
+        
+        .mono-box { fill: #1168bd; stroke: #0f5eaa; stroke-width: 2; rx: 10; }
+        .service-box { fill: #1a1a1a; stroke: #555; stroke-width: 1; rx: 5; }
+        
+        .quantum-boundary { fill: none; stroke-dasharray: 8 4; stroke-width: 2; rx: 15; }
+    </style>
+
+    <!-- Panel 1: Monolith -->
+    <g transform="translate(150, 100)">
+        <text x="0" y="0" class="title">Monolith</text>
+        
+        <rect x="-100" y="50" width="200" height="200" class="mono-box"/>
+        <text x="0" y="155" style="font-size: 18px; text-anchor: middle; fill: #fff;">App</text>
+        
+        <rect x="-100" y="50" width="200" height="200" class="quantum-boundary" stroke="#3498db"/>
+        <text x="0" y="280" class="label">Single Quantum</text>
+    </g>
+
+    <!-- Separator -->
+    <line x1="300" y1="80" x2="300" y2="380" stroke="#444"/>
+
+    <!-- Panel 2: Microservices -->
+    <g transform="translate(450, 100)">
+        <text x="0" y="0" class="title">Microservices</text>
+        
+        <!-- Service 1 -->
+        <rect x="-100" y="60" width="80" height="60" class="service-box"/>
+        <rect x="-105" y="55" width="90" height="70" class="quantum-boundary" stroke="#2ecc71"/>
+        
+        <!-- Service 2 -->
+        <rect x="20" y="60" width="80" height="60" class="service-box"/>
+        <rect x="15" y="55" width="90" height="70" class="quantum-boundary" stroke="#2ecc71"/>
+
+        <!-- Service 3 -->
+        <rect x="-100" y="180" width="80" height="60" class="service-box"/>
+        <rect x="-105" y="175" width="90" height="70" class="quantum-boundary" stroke="#2ecc71"/>
+
+        <!-- Service 4 -->
+        <rect x="20" y="180" width="80" height="60" class="service-box"/>
+        <rect x="15" y="175" width="90" height="70" class="quantum-boundary" stroke="#2ecc71"/>
+
+        <text x="0" y="280" class="label">Multiple, Independent Quanta</text>
+    </g>
+    
+    <!-- Separator -->
+    <line x1="600" y1="80" x2="600" y2="380" stroke="#444"/>
+
+    <!-- Panel 3: Distributed Monolith -->
+    <g transform="translate(750, 100)">
+        <text x="0" y="0" class="title">Distributed Monolith</text>
+        
+        <!-- The single large quantum boundary -->
+        <rect x="-125" y="40" width="250" height="220" class="quantum-boundary" stroke="#e74c3c"/>
+
+        <!-- Services inside -->
+        <rect x="-100" y="60" width="80" height="60" class="service-box"/>
+        <rect x="20" y="60" width="80" height="60" class="service-box"/>
+        <rect x="-100" y="180" width="80" height="60" class="service-box"/>
+        <rect x="20" y="180" width="80" height="60" class="service-box"/>
+        
+        <text x="0" y="280" class="label">Single, Large Quantum</text>
+    </g>
+
+</svg>

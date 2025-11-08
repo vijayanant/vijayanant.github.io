@@ -1,0 +1,64 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="background-color: #111; font-family: 'Open Sans', sans-serif; color: white;">
+
+    <style>
+        .title { font-size: 22px; text-anchor: middle; fill: #fff; }
+        .axis-line { stroke: #888; stroke-width: 2; }
+        .axis-label { font-size: 18px; fill: #aaa; text-anchor: middle; }
+        .axis-scale-label { font-size: 14px; fill: #888; text-anchor: middle; }
+        .curve-autonomy { stroke: #3498db; stroke-width: 4; fill: none; }
+        .curve-complexity { stroke: #e67e22; stroke-width: 4; fill: none; stroke-dasharray: 10 5; }
+        .annotation-text { font-size: 16px; fill: #ddd; }
+        .legend-text { font-size: 14px; fill: #fff; }
+    </style>
+    
+    <text x="400" y="30" class="title">Quantum Size Trade-offs</text>
+
+    <!-- Axes -->
+    <line x1="100" y1="500" x2="750" y2="500" class="axis-line"/> <!-- X-axis -->
+    <line x1="100" y1="500" x2="100" y2="50" class="axis-line"/>  <!-- Y-axis -->
+
+    <!-- Axis Labels -->
+    <text x="425" y="550" class="axis-label">Quantum Size</text>
+    
+    <!-- Axis Scale Labels (Outside) -->
+    <text x="700" y="520" class="axis-scale-label" style="text-anchor: end;">Large (Monolith)</text>
+    <text x="150" y="520" class="axis-scale-label" style="text-anchor: start;">Small</text>
+    <text x="80" y="65" class="axis-scale-label" style="text-anchor: end;">High</text>
+    <text x="80" y="495" class="axis-scale-label" style="text-anchor: end;">Low</text>
+
+    <!-- Curves -->
+    <path d="M 150,150 C 250,160 450,250 700,450" class="curve-autonomy"/>
+    <path d="M 150,180 C 200,450 300,480 700,480" class="curve-complexity"/>
+
+    <!-- Annotations (Inside) -->
+    <g>
+        <circle cx="150" cy="180" r="8" fill="#e67e22"/>
+        <line x1="150" y1="180" x2="120" y2="230" stroke="#e67e22" stroke-width="1"/>
+        <text x="40" y="240" class="annotation-text" fill="#e67e22">"Nanoservices"</text>
+        <text x="40" y="260" class="annotation-text" fill="#e67e22">High Operational</text>
+        <text x="40" y="280" class="annotation-text" fill="#e67e22">Complexity</text>
+    </g>
+    <g>
+        <circle cx="250" cy="155" r="8" fill="#3498db"/>
+        <line x1="250" y1="155" x2="280" y2="100" stroke="#3498db" stroke-width="1"/>
+        <text x="290" y="105" class="annotation-text" fill="#3498db">"Sweet Spot"</text>
+        <text x="290" y="125" class="annotation-text" fill="#3498db">High Autonomy,</text>
+        <text x="290" y="145" class="annotation-text" fill="#3498db">Manageable Complexity</text>
+    </g>
+    <g>
+        <circle cx="700" cy="450" r="8" fill="#3498db"/>
+        <line x1="700" y1="450" x2="650" y2="380" stroke="#3498db" stroke-width="1"/>
+        <text x="550" y="375" class="annotation-text" fill="#3498db">Monolith</text>
+        <text x="550" y="395" class="annotation-text" fill="#3498db">Low Autonomy</text>
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(500, 50)">
+        <rect x="0" y="0" width="250" height="70" fill="#1a1a1a" stroke="#444" rx="5"/>
+        <line x1="15" y1="25" x2="45" y2="25" class="curve-autonomy" stroke-width="3"/>
+        <text x="60" y="30" class="legend-text">Team Autonomy</text>
+        <line x1="15" y1="50" x2="45" y2="50" class="curve-complexity" stroke-width="3"/>
+        <text x="60" y="55" class="legend-text">Operational Complexity</text>
+    </g>
+
+</svg>

@@ -1,0 +1,62 @@
+<svg width="600" height="700" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" style="background-color: #111; font-family: 'Open Sans', sans-serif; color: white;">
+    <style>
+        .title { font-size: 28px; font-weight: bold; text-anchor: middle; fill: #fff; }
+        .step-box { fill: #1a1a1a; stroke: #555; stroke-width: 1; rx: 10; }
+        .step-number { font-size: 24px; font-weight: bold; fill: #1168bd; text-anchor: middle; }
+        .step-text { font-size: 20px; fill: #ddd; text-anchor: start; }
+        .arrow { fill: #555; }
+    </style>
+
+    <text x="300" y="50" class="title">Steps to Detect Your Quanta</text>
+
+    <!-- Step 1 -->
+    <g transform="translate(50, 100)">
+        <rect class="step-box" width="500" height="80"/>
+        <text x="40" y="48" class="step-number">1</text>
+        <text x="80" y="48" class="step-text">Hunt for synchronous, blocking calls</text>
+    </g>
+
+    <g transform="translate(290, 195)">
+        <path d="M 0 -10 L 10 0 L 0 10 Z" class="arrow" transform="rotate(90)"/>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(50, 220)">
+        <rect class="step-box" width="500" height="80"/>
+        <text x="40" y="48" class="step-number">2</text>
+        <text x="80" y="48" class="step-text">Examine for Synchronous Connascence</text>
+    </g>
+
+    <g transform="translate(290, 315)">
+        <path d="M 0 -10 L 10 0 L 0 10 Z" class="arrow" transform="rotate(90)"/>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(50, 340)">
+        <rect class="step-box" width="500" height="80"/>
+        <text x="40" y="48" class="step-number">3</text>
+        <text x="80" y="48" class="step-text">Evaluate contract for brittleness</text>
+    </g>
+
+    <g transform="translate(290, 435)">
+        <path d="M 0 -10 L 10 0 L 0 10 Z" class="arrow" transform="rotate(90)"/>
+    </g>
+
+    <!-- Step 4 -->
+    <g transform="translate(50, 460)">
+        <rect class="step-box" width="500" height="80"/>
+        <text x="40" y="48" class="step-number">4</text>
+        <text x="80" y="48" class="step-text">Identify forced lock-step deployments</text>
+    </g>
+
+    <g transform="translate(290, 555)">
+        <path d="M 0 -10 L 10 0 L 0 10 Z" class="arrow" transform="rotate(90)"/>
+    </g>
+
+    <!-- Step 5 -->
+    <g transform="translate(50, 580)">
+        <rect class="step-box" width="500" height="80" fill="#1168bd" stroke="#0f5eaa"/>
+        <text x="40" y="48" class="step-number" fill="#fff">5</text>
+        <text x="80" y="48" class="step-text" fill="#fff">Mark components as one Quantum</text>
+    </g>
+</svg>

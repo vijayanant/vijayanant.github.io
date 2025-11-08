@@ -45,7 +45,8 @@ From a domain perspective, you'd implement the different parts of the CityPulse 
 ## The Second Tool: The Microservices Style
 
 {{< figure
-    src="04-style-microservices.svg" alt="A diagram of a microservices architecture, showing an API Gateway and several independent services, each with its own database, communicating over a network."
+    src="04-style-microservices.svg"
+    alt="A diagram of a microservices architecture, showing an API Gateway and several independent services, each with its own database, communicating over a network."
     caption="Figure 2: The Microservices style, which breaks the system into independently deployable services, trading internal complexity for external, network-based complexity."
     width=500
 >}}
@@ -56,11 +57,17 @@ This style is a perfect fit for your **Throughput Scalability** driver. You can 
 
 But this introduces a different kind of waste that is often ignored: the **infrastructure overhead** of each service. Each of your small services needs its own container, its own runtime, and its own monitoring, creating a "microservice tax." You must consider whether the cost of this distributed overhead across many small services is actually greater than the cost of replicating the few, lightweight modules within your monolith. For a very small project, a lean monolith can sometimes be more resource-efficient overall.
 
+This is a common trap that leads to what is often called a "distributed monolith". The post on the [**"Secret to Modular, Deployable Architecture"**]({{< ref "/posts/architectural-quantum-modular-deployable-architecture" >}}), which introduces the concept of the Architectural Quantum explores this anti-pattern in detail.
+
 Furthermore, this style is a very poor fit for your **Time-to-Market** goal. The upfront complexity of creating a distributed system makes the three-month deadline nearly impossible. It also scores lower on **Reliability**. A single ticket purchase might now require synchronous calls between three different services, introducing temporal coupling that significantly increases the chances of failure.
 
 ## The Third Tool: The Event-Driven Style
 
-{{< figure src="05-style-event-driven.svg" alt="A diagram of an event-driven architecture, showing producer services sending events to a central event broker, and consumer services reacting to those events independently." caption="Figure 3: The Event-Driven style, which decouples services by using an intermediary message broker, eliminating direct, synchronous communication." >}}
+{{< figure src="05-style-event-driven.svg"
+    alt="A diagram of an event-driven architecture, showing producer services sending events to a central event broker, and consumer services reacting to those events independently."
+    caption="Figure 3: The Event-Driven style, which decouples services by using an intermediary message broker, eliminating direct, synchronous communication."
+    width=500
+>}}
 
 Both previous styles present a stark trade-off. Let's analyze the third candidate, the **Event-Driven style**, which offers a different way to think about communication.
 
