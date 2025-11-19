@@ -169,7 +169,7 @@ header.header-scrolled {
 }
 
 header .container {
-    max-width: 1200px;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
