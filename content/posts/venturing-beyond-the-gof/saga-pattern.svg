@@ -1,0 +1,80 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .bg { fill: transparent; }
+        .lifeline { stroke: #666; stroke-width: 2; }
+        .box { fill: #2c2c2c; stroke: #999; stroke-width: 1; }
+        .box-text { font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; fill: #e0e0e0; text-anchor: middle; }
+        .arrow-text { font-family: 'Open Sans', sans-serif; font-size: 16px; fill: #b0b0b0; text-anchor: middle; }
+        .seq-circle { fill: #333; stroke: #fff; stroke-width: 2; }
+        .seq-text { font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold; fill: #fff; text-anchor: middle; }
+    </style>
+    <defs>
+        <marker id="arrow-solid" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="strokeWidth" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#2ecc71" />
+        </marker>
+        <marker id="arrow-dashed" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="strokeWidth" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#e74c3c" />
+        </marker>
+    </defs>
+
+    <rect width="100%" height="100%" class="bg"/>
+
+    <!-- Lifelines -->
+    <g id="lifelines">
+        <rect x="100" y="50" width="160" height="60" rx="10" class="box"/>
+        <text x="180" y="85" class="box-text">Order Service</text>
+        <line x1="180" y1="110" x2="180" y2="550" class="lifeline"/>
+        
+        <rect x="370" y="50" width="160" height="60" rx="10" class="box"/>
+        <text x="450" y="85" class="box-text">Payment Service</text>
+        <line x1="450" y1="110" x2="450" y2="550" class="lifeline"/>
+
+        <rect x="640" y="50" width="160" height="60" rx="10" class="box"/>
+        <text x="720" y="85" class="box-text">Shipping Service</text>
+        <line x1="720" y1="110" x2="720" y2="550" class="lifeline"/>
+    </g>
+
+    <!-- Forward Transactions (Happy Path) -->
+    <g id="forward-transactions">
+        <!-- 1. Create Order -->
+        <path d="M 50 150 H 170" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrow-solid)" fill="none" />
+        <circle cx="115" cy="140" r="12" class="seq-circle" style="fill:#2ecc71"/>
+        <text x="115" y="145" class="seq-text">1</text>
+        <text x="115" y="125" class="arrow-text" fill="#2ecc71">Create Order</text>
+
+        <!-- 2. Process Payment -->
+        <path d="M 190 200 H 440" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrow-solid)" fill="none" />
+        <circle cx="315" cy="190" r="12" class="seq-circle" style="fill:#2ecc71"/>
+        <text x="315" y="195" class="seq-text">2</text>
+        <text x="315" y="175" class="arrow-text" fill="#2ecc71">Process Payment</text>
+        
+        <!-- 3. Ship Order -->
+        <path d="M 460 250 H 710" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrow-solid)" fill="none" />
+        <circle cx="585" cy="240" r="12" class="seq-circle" style="fill:#2ecc71"/>
+        <text x="585" y="245" class="seq-text">3</text>
+        <text x="585" y="225" class="arrow-text" fill="#2ecc71">Ship Order</text>
+    </g>
+    
+    <!-- Failure & Compensating Transactions -->
+    <g id="compensating-transactions">
+        <!-- X for Failure -->
+        <g transform="translate(720, 290)">
+             <line x1="-15" y1="-15" x2="15" y2="15" stroke="#e74c3c" stroke-width="4"/>
+             <line x1="-15" y1="15" x2="15" y2="-15" stroke="#e74c3c" stroke-width="4"/>
+        </g>
+        <text x="720" y="325" class="arrow-text" fill="#e74c3c">FAILURE!</text>
+        
+        <!-- 4. Refund Payment -->
+        <path d="M 710 380 H 460" stroke="#e74c3c" stroke-width="2" stroke-dasharray="8 4" marker-end="url(#arrow-dashed)" fill="none" />
+        <circle cx="585" cy="370" r="12" class="seq-circle" style="fill:#e74c3c"/>
+        <text x="585" y="375" class="seq-text">4</text>
+        <text x="585" y="355" class="arrow-text" fill="#e74c3c">Refund Payment</text>
+
+        <!-- 5. Cancel Order -->
+        <path d="M 440 430 H 190" stroke="#e74c3c" stroke-width="2" stroke-dasharray="8 4" marker-end="url(#arrow-dashed)" fill="none" />
+        <circle cx="315" cy="420" r="12" class="seq-circle" style="fill:#e74c3c"/>
+        <text x="315" y="425" class="seq-text">5</text>
+        <text x="315" y="405" class="arrow-text" fill="#e74c3c">Cancel Order</text>
+    </g>
+
+</svg>

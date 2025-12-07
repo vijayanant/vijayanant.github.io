@@ -1,0 +1,59 @@
+<svg viewBox="70 20 660 410" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .bg { fill: transparent; }
+        .state-circle { stroke-width: 3; }
+        .state-text { font-family: 'Open Sans', sans-serif; font-size: 24px; font-weight: bold; fill: #fff; text-anchor: middle; }
+        .transition-text { font-family: 'Open Sans', sans-serif; font-size: 16px; fill: #e0e0e0; text-anchor: middle; }
+        .arrow-path { stroke: #e0e0e0; stroke-width: 2; fill: none; }
+    </style>
+    <defs>
+        <marker id="arrowhead-gray" viewBox="0 0 10 10" refX="8" refY="5"
+            markerUnits="strokeWidth" markerWidth="6" markerHeight="6"
+            orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#e0e0e0" />
+        </marker>
+    </defs>
+
+    <rect width="100%" height="100%" class="bg"/>
+
+    <!-- States -->
+    <g id="state-closed">
+        <circle cx="200" cy="300" r="80" fill="#1e3d2d" stroke="#2ecc71" class="state-circle"/>
+        <text x="200" y="305" class="state-text">Closed</text>
+    </g>
+    
+    <g id="state-open">
+        <circle cx="600" cy="300" r="80" fill="#4d1f1a" stroke="#e74c3c" class="state-circle"/>
+        <text x="600" y="305" class="state-text">Open</text>
+    </g>
+
+    <g id="state-half-open">
+        <circle cx="380" cy="120" r="80" fill="#4a4123" stroke="#f1c40f" class="state-circle"/>
+        <text x="380" y="125" class="state-text">Half-Open</text>
+    </g>
+
+    <!-- Transitions -->
+    <g class="transition">
+        <!-- Closed -> Open -->
+        <path d="M 280 300 L 520 300" class="arrow-path" marker-end="url(#arrowhead-gray)"/>
+        <text x="400" y="280" class="transition-text">Failure threshold met</text>
+    </g>
+
+    <g class="transition">
+        <!-- Open -> Half-Open (curved from top-left of Open to bottom-right of Half-Open) -->
+        <path d="M 540 250 Q 550 170, 460 150" class="arrow-path" marker-end="url(#arrowhead-gray)"/>
+        <text x="510" y="190" class="transition-text">Timeout expires</text>
+    </g>
+    
+    <g class="transition">
+        <!-- Half-Open -> Closed (curved from bottom-left of Half-Open to top-right of Closed) -->
+        <path d="M 300 115 Q 200 140, 200 220" class="arrow-path" marker-end="url(#arrowhead-gray)"/>
+        <text x="230" y="170" class="transition-text">Request succeeds</text>
+    </g>
+    
+    <g class="transition">
+        <!-- Half-Open -> Open (Distinct path from Half-Open -> Open, from right of Half-Open to top of Open) -->
+        <path d="M 460 100 C 550 100, 600 120, 600 220" class="arrow-path" marker-end="url(#arrowhead-gray)"/>
+        <text x="560" y="140" class="transition-text">Request fails</text>
+    </g>
+</svg>

@@ -138,3 +138,5 @@ the solution to a problem
 * in a clear, natural, intuitive, and concise way,
 * in terms of other solved (sub)problems.
 {{< /summary >}}
+
+{{< newsletter type="simple" >}}

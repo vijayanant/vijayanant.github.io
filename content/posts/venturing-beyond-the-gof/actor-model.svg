@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .bg { fill: transparent; }
+        .actor-circle { fill: #2c2c2c; stroke: #7e57c2; stroke-width: 2; }
+        .state-box { fill: #111; stroke: #7e57c2; stroke-width: 1; stroke-dasharray: 4 2; }
+        .actor-text { font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; fill: #e0e0e0; text-anchor: middle; }
+        .state-text { font-family: 'Open Sans', sans-serif; font-size: 14px; fill: #b0b0b0; text-anchor: middle; font-style: italic; }
+        .arrow-path { stroke: #cccccc; stroke-width: 2; fill: none; }
+        .arrow-text { font-family: 'Open Sans', sans-serif; font-size: 16px; fill: #b0b0b0; text-anchor: middle; }
+    </style>
+    <defs>
+        <marker id="arrowhead-actor" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="strokeWidth" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#cccccc" />
+        </marker>
+    </defs>
+
+    <rect width="100%" height="100%" class="bg"/>
+
+    <!-- Actors -->
+    <g id="actor1" transform="translate(200, 250)">
+        <circle cx="0" cy="0" r="80" class="actor-circle"/>
+        <rect x="-50" y="-20" width="100" height="40" rx="5" class="state-box"/>
+        <text y="-35" class="actor-text">Actor A</text>
+        <text y="5" class="state-text">Private State</text>
+    </g>
+    
+    <g id="actor2" transform="translate(600, 150)">
+        <circle cx="0" cy="0" r="80" class="actor-circle"/>
+        <rect x="-50" y="-20" width="100" height="40" rx="5" class="state-box"/>
+        <text y="-35" class="actor-text">Actor B</text>
+        <text y="5" class="state-text">Private State</text>
+    </g>
+
+    <g id="actor3" transform="translate(600, 400)">
+        <circle cx="0" cy="0" r="80" class="actor-circle"/>
+        <rect x="-50" y="-20" width="100" height="40" rx="5" class="state-box"/>
+        <text y="-35" class="actor-text">Actor C</text>
+        <text y="5" class="state-text">Private State</text>
+    </g>
+
+    <!-- Messages -->
+    <g class="message">
+        <!-- A -> B -->
+        <path d="M 270 210 C 350 150, 450 150, 520 150" class="arrow-path" marker-end="url(#arrowhead-actor)"/>
+        <text x="400" y="130" class="arrow-text">Async Message</text>
+    </g>
+
+    <g class="message">
+        <!-- B -> C -->
+        <path d="M 600 230 V 320" class="arrow-path" marker-end="url(#arrowhead-actor)"/>
+        <text x="630" y="275" class="arrow-text" writing-mode="vertical-rl">Message</text>
+    </g>
+    
+    <g class="message">
+        <!-- C -> A -->
+        <path d="M 520 400 C 450 450, 350 450, 270 290" class="arrow-path" marker-end="url(#arrowhead-actor)"/>
+        <text x="400" y="470" class="arrow-text">Async Message</text>
+    </g>
+</svg>
