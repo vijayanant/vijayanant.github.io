@@ -24,10 +24,10 @@
                 // Initialize Fuse.js once data is fetched
                 fuse = new Fuse(searchData, {
                     minMatchCharLength: 3,
-                    threshold: 0.0,
+                    threshold: 0.2,
                     distance: 25,
                     ignoreLocation: true,
-                    includeMatches: true,
+                    // includeMatches: true,
                     keys: [
                         { name: 'title', weight: 0.8 },
                         { name: 'tags', weight: 0.5 },
