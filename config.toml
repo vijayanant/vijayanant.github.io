@@ -10,6 +10,7 @@ contactEmail = "hello@vijayanant.com"
 enableCodeCopyButton = true
 enableRelatedPosts = true
 enableNewsletter = true
+enableSearch = true
 
 [params.newsletter]
 title = "The Anant Loop"
@@ -60,7 +61,7 @@ keepQuotes = false
 newLine = false
 
 [outputs]
-home = ["HTML", "RSS"]
+home = ["HTML", "RSS", "JSON"]
 page = ["HTML", "RSS"]
 section = ["HTML", "RSS"]
 

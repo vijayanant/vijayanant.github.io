@@ -248,6 +248,7 @@ nav {
 
 .nav-list {
     display: flex;
+    align-items: center; /* Vertically center all nav items */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1859,3 +1860,123 @@ body:not([data-page-kind="home"]) #site-header {
         display: none; /* Hide placeholders on screens not wide enough for 3 columns */
     }
 }
+
+/* Search Overlay Styles */
+.search-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly darker overlay */
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10vh; /* Use viewport height for spacing */
+}
+
+.search-overlay-content {
+    background-color: var(--surface-color);
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+    from {top: -100px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--tertiary-text-color);
+    border-radius: 4px;
+    font-size: 1.2em;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#search-input::placeholder {
+    color: var(--secondary-text-color);
+}
+
+#search-results ul {
+    list-style: none;
+    padding: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+#search-results li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-background-color);
+}
+
+#search-results li a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#search-results li a:hover {
+    color: var(--text-color);
+}
+
+#search-results li p {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+#search-results p { /* For 'No results' message */
+    color: var(--secondary-text-color);
+    font-style: italic;
+}
+
+#search-results strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+/* Style for the icon-only search button in the nav */
+#search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Reset padding from nav-link */
+    color: inherit;
+    font-size: 1rem;
+    line-height: 1; /* Align icon vertically */
+}
+
+#search-button i {
+    font-size: 1.1rem;
+}
+
+#search-button:hover {
+    color: var(--primary-color);
+}
+

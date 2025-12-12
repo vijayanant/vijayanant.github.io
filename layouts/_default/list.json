@@ -1,0 +1,16 @@
+{{- if .Site.Params.enableSearch -}}
+{{- $.Scratch.Add "pages" (slice) -}}
+{{- range .Site.RegularPages -}}
+  {{- $post := . -}}
+  {{- if and (eq $post.Kind "page") (eq $post.Section "posts") -}}
+    {{- $.Scratch.Add "pages" (dict 
+        "uri" $post.Permalink 
+        "title" $post.Title 
+        "tags" $post.Params.tags 
+        "categories" $post.Params.categories 
+        "content" ($post.Content | plainify) 
+        "description" $post.Description) -}}
+  {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "pages" | jsonify -}}
+{{- end -}}

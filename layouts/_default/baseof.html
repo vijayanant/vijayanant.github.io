@@ -41,7 +41,7 @@
     {{ partial "seo/schema-homepage.html" . }}
 </head>
 
-<body data-page-kind="{{ .Kind }}" data-enable-code-copy-button="{{ .Site.Params.enableCodeCopyButton }}">
+<body data-page-kind="{{ .Kind }}" data-enable-code-copy-button="{{ .Site.Params.enableCodeCopyButton }}" data-enable-search="{{ .Site.Params.enableSearch }}">
     {{ partial "header.html" . }}
 
     <main>
@@ -63,6 +63,13 @@
 
     {{ $lityScript := resources.Get "js/lity.min.js" | fingerprint }}
     <script src="{{ $lityScript.RelPermalink }}"></script>
+    {{ partial "search_modal.html" . }}
+    {{- if .Site.Params.enableSearch -}}
+    {{ $fuseScript := resources.Get "js/fuse.min.js" | fingerprint }}
+    <script src="{{ $fuseScript.RelPermalink }}"></script>
+    {{ $searchScript := resources.Get "js/search.js" | minify | fingerprint }}
+    <script src="{{ $searchScript.RelPermalink }}"></script>
+    {{- end -}}
 </body>
 
 </html>
