@@ -11,21 +11,21 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
     {{ $chromaStyle := resources.Get "css/chroma.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
     {{ $lityStyle := resources.Get "css/lity.min.css" | fingerprint }}
-    <link rel="stylesheet" href="{{ $lityStyle.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $lityStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
     {{ $subscriptionStyle := resources.Get "css/subscription.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $subscriptionStyle.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $subscriptionStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Mulish:wght@400;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     {{ $apple := resources.Get "images/apple-touch-icon.png" | fingerprint }}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $apple.RelPermalink }}">
     {{ $favicon32 := resources.Get "images/favicon-32.png" | fingerprint }}
