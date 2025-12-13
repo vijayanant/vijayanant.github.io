@@ -11,10 +11,22 @@
             <h3 class="related-post-title">{{ .Title }}</h3>
             <p class="related-post-description">{{ .Description }}</p>
           </div>
-          {{ with .Resources.GetMatch .Params.featured_image }}
-          <div class="related-post-image-wrapper">
-            <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="related-post-image">
-          </div>
+          {{ $image := .Resources.GetMatch .Params.featured_image }}
+          {{ if $image }}
+            <div class="related-post-image-wrapper">
+              {{ $thumbnail := $image.Fill "400x250 webp" }}
+              <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+            </div>
+          {{ else }}
+            {{ with .Params.featured_image }}
+              {{ $thumbnail := resources.Get . }}
+              {{ if $thumbnail }}
+                {{ $thumbnail = $thumbnail.Fill "400x250 webp" }}
+                <div class="related-post-image-wrapper">
+                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+                </div>
+              {{ end }}
+            {{ end }}
           {{ end }}
         </a>
       </li>

@@ -2,8 +2,12 @@
     <div class="container">
         <a href="{{ "/" | relURL }}" class="logo">
             <picture>
-                <source srcset="{{ (resources.Get "images/contact-image.png").RelPermalink }}" type="image/webp">
-                <img src="{{ (resources.Get "images/contact-image.png").RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" loading="lazy">
+                {{ $original := resources.Get "images/contact-image.png" }}
+                {{ if $original }}
+                    {{ $webp := $original.Resize "100x webp" }}
+                    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+                    <img src="{{ $original.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="50" height="50" loading="lazy">
+                {{ end }}
             </picture>
         </a>
         <nav>

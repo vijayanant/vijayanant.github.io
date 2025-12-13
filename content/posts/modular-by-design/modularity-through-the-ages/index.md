@@ -1,11 +1,10 @@
 ---
+title: "Modularity Through The Ages"
+date: 2024-02-29T08:17:52.645Z
+slug: "modularity-through-the-ages"
 series: ["Modular by Design"]
 series_order: 3
-title: "Modularity Through The Ages"
-slug: "modularity-through-the-ages"
-date: 2024-02-29T08:17:52.645Z
 draft: false
-featured_image: "modularity-through-the-ages-1.jpg"
 tags: ["modularity", "microservice", "monolith", "history"]
 categories: ["Software Architecture"]
 description: "A look at the history of software architecture, from RPCs to microservices, and the timeless importance of modularity, coupling, and cohesion."
@@ -155,7 +154,7 @@ scalability lies in well-defined modules with minimal dependencies.** Strong
 code cohesion, low coupling, and clear contracts are the timeless steps to a
 healthy system, regardless of its deployment structure.
 
-However, the pursuit of microservices often leads to a common anti-pattern: the **"distributed monolith."** This occurs when a system is physically deployed as multiple services, but these services remain tightly coupled at a logical level. They might share a single database, have synchronous dependencies, or require coordinated deployments. The result is a system that carries the operational overhead of distributed systems without gaining the benefits of independent deployability and evolvability. It's a stark reminder that simply splitting code into separate processes does not automatically confer modularity; the underlying principles of information hiding, loose coupling, and high cohesion must still be rigorously applied to *any* architectural style.
+However, the pursuit of microservices often leads to a common anti-pattern: the **"distributed monolith."** This occurs when a system is physically deployed as multiple services, but these services remain tightly coupled at a logical level. They might share a single database, have synchronous dependencies, or require coordinated deployments. The result is a system that carries the operational overhead of distributed systems without gaining the benefits of independent deployability and evolvability. It's a stark reminder that simply splitting code into separate processes does not automatically confer modularity; the underlying principles of information hiding, loose coupling, and high cohesion must still be rigorously applied to _any_ architectural style.
 
 Build (and Deployment) is where the difference between the human aspect (the
 code) and the machine aspect (the build/binary/software) is visible. We
@@ -196,10 +195,11 @@ usefulness of microservices is that it not only encapsulates (in a sense) data
 and the code that works with it, it also isolates them in a service boundary.
 
 {{< summary title="Key Takeaways from History" >}}
-*   **Timeless Problem:** The core challenge of software development has always been managing complexity and change through modularity.
-*   **Evolving Solutions:** Architectural styles (RPC, SOA, Microservices) are different attempts to solve this timeless problem, each with its own trade-offs.
-*   **Principles Endure:** While technologies change rapidly, the underlying principles of strong module isolation, low coupling, and high cohesion remain constant.
-*   **Beware the Hype:** New architectural trends often promise solutions, but without careful design based on core principles, they can introduce more pain than benefit.
+
+* **Timeless Problem:** The core challenge of software development has always been managing complexity and change through modularity.
+* **Evolving Solutions:** Architectural styles (RPC, SOA, Microservices) are different attempts to solve this timeless problem, each with its own trade-offs.
+* **Principles Endure:** While technologies change rapidly, the underlying principles of strong module isolation, low coupling, and high cohesion remain constant.
+* **Beware the Hype:** New architectural trends often promise solutions, but without careful design based on core principles, they can introduce more pain than benefit.
 {{< /summary >}}
 
 Brand new microservices (or Hexagonal, or Hub-and-Spokes, or..) architecture

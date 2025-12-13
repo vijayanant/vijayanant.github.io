@@ -14,7 +14,8 @@
           {{ $postPermalink := .Permalink }}
           {{ with .Resources.GetMatch .Params.featured_image }}
             <a href="{{ $postPermalink }}" class="featured-post-link">
-              <img src="{{ .RelPermalink }}" alt="{{ $featuredPost.Title }}" class="featured-post-hero-image">
+              {{ $heroImage := .Fill "1200x600 webp" }}
+              <img src="{{ $heroImage.RelPermalink }}" alt="{{ $featuredPost.Title }}" class="featured-post-hero-image" width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}">
               <span class="featured-post-badge">Latest Article</span> <!-- NEW LINE -->
               <div class="featured-post-overlay">
                 <h2 class="featured-post-hero-title">{{ $featuredPost.Title }}</h2>
@@ -40,7 +41,11 @@
               <div class="post-card">
                 <a href="{{ .Permalink }}" class="post-card-link">
                   {{ with .Params.featured_image }}
-                    <img src="{{ . | relURL }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+                    {{ $image := $seriesPage.Resources.GetMatch . }}
+                    {{ if $image }}
+                      {{ $thumbnail := $image.Fill "400x250 webp" }}
+                      <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+                    {{ end }}
                   {{ end }}
                   <h3 class="post-card-title">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -92,7 +97,8 @@
               {{ $postPermalink := .Permalink }}
               {{ with .Resources.GetMatch .Params.featured_image }}
               <a href="{{ $postPermalink }}">
-                <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="post-card-image"> 
+                {{ $thumbnail := .Fill "400x250 webp" }}
+                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"> 
               </a>
               {{ else }}
               {{/* Optional: Add a fallback image here if no featured image is found */}}

@@ -16,9 +16,14 @@
             {{ with $seriesPage.Params.featured_image }}
               {{ $image := $seriesPage.Resources.GetMatch . }}
               {{ if $image }}
-                <img src="{{ $image.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+                {{ $thumbnail := $image.Fill "400x250 webp" }}
+                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
               {{ else }}
-                <img src="{{ . | relURL }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+                {{ $thumbnail := resources.Get . }}
+                {{ if $thumbnail }}
+                  {{ $thumbnail = $thumbnail.Fill "400x250 webp" }}
+                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+                {{ end }}
               {{ end }}
             {{ end }}
             <h2 class="post-card-title">
