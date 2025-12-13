@@ -51,24 +51,24 @@
     {{ partial "footer.html" . }}
 
     {{ $script := resources.Get "js/script.js" | minify | fingerprint }}
-    <script src="{{ $script.RelPermalink }}"></script>
+    <script src="{{ $script.RelPermalink }}" defer></script>
 
     {{ if .Site.Params.enableCodeCopyButton }}
     {{ $copyCodeScript := resources.Get "js/copy-code.js" | minify | fingerprint }}
-    <script src="{{ $copyCodeScript.RelPermalink }}"></script>
+    <script src="{{ $copyCodeScript.RelPermalink }}" defer></script>
     {{ end }}
 
     {{ $jqueryScript := resources.Get "js/jquery.min.js" | fingerprint }}
-    <script src="{{ $jqueryScript.RelPermalink }}"></script>
+    <script src="{{ $jqueryScript.RelPermalink }}" defer></script>
 
     {{ $lityScript := resources.Get "js/lity.min.js" | fingerprint }}
-    <script src="{{ $lityScript.RelPermalink }}"></script>
+    <script src="{{ $lityScript.RelPermalink }}" defer></script>
     {{ partial "search_modal.html" . }}
     {{- if .Site.Params.enableSearch -}}
     {{ $fuseScript := resources.Get "js/fuse.min.js" | fingerprint }}
-    <script src="{{ $fuseScript.RelPermalink }}"></script>
+    <script src="{{ $fuseScript.RelPermalink }}" defer></script>
     {{ $searchScript := resources.Get "js/search.js" | minify | fingerprint }}
-    <script src="{{ $searchScript.RelPermalink }}"></script>
+    <script src="{{ $searchScript.RelPermalink }}" defer></script>
     {{- end -}}
 </body>
 
