@@ -8,7 +8,7 @@
     <title>{{ .Title | default .Site.Title }}</title>
 
     {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="print" onload="this.media='all'">
 
     {{ $chromaStyle := resources.Get "css/chroma.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}" media="print" onload="this.media='all'">
