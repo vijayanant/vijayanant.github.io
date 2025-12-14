@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://vijayanant.com/sitemap.xml
+Sitemap: https://vijayanant.com/index.xml
