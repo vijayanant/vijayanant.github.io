@@ -1,40 +1,44 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');
-const navLinks = document.querySelectorAll('.nav-link'); // Select all nav links
+const navLinks = document.querySelectorAll('a.nav-link.js-scrollspy-item'); // Select all anchor nav links managed by scrollspy
 const header = document.querySelector('header');
 
 // Get all sections with an ID
 const sections = document.querySelectorAll('section[id]');
 
+const HEADER_SCROLL_THRESHOLD = 100;
+
 function handleScrollspy() {
     // Sticky header logic
-    if (window.scrollY > 100) {
+    if (window.scrollY > HEADER_SCROLL_THRESHOLD) {
         header.classList.add('header-scrolled');
     } else {
         header.classList.remove('header-scrolled');
     }
 
     // Scrollspy logic
-    if (document.body.dataset.pageKind === 'home') {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (current && link.href.includes(current)) {
-                link.classList.add('active');
-            }
-        });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (current && link.href.includes(current)) {
+            link.classList.add('active');
+        }
+    });
 
-        if (window.scrollY === 0) {
-            const homeLink = document.querySelector('a.nav-link[href*="#hero"]');
+    if (window.scrollY === 0) {
+        // ONLY run this if we are on the actual homepage (root path)
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === 'index.html') {
+            const homeLink = document.querySelector('a.nav-link.js-scrollspy-item[href*="#hero"]');
             if (homeLink) {
+                // This is now safe as it only runs on the homepage
                 navLinks.forEach(link => link.classList.remove('active'));
                 homeLink.classList.add('active');
             }
