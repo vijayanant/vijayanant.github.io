@@ -4,9 +4,9 @@
             <picture>
                 {{ $original := resources.Get "images/contact-image.png" }}
                 {{ if $original }}
-                    {{ $webp := $original.Resize "100x webp" }}
+                    {{ $webp := $original.Resize "35x webp" }}
                     <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-                    <img src="{{ $original.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="50" height="50" loading="lazy">
+                    <img src="{{ $original.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="35" height="35" loading="lazy">
                 {{ end }}
             </picture>
         </a>

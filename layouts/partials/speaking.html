@@ -4,7 +4,7 @@
         <div class="speaking-grid">
             {{ range .Site.Data.sections.speaking.items }}
             <div class="speaking-item">
-                <h4 class="speaking-title">{{ .title }}</h4>
+                <h3 class="speaking-title">{{ .title }}</h3>
                 <p class="speaking-meta">{{ .meta }}</p>
                 <p class="speaking-description">{{ .description | markdownify }}</p>
             </div>
