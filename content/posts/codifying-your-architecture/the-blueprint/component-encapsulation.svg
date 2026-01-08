@@ -1,0 +1,75 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+    <style>
+        .bg { fill: #1a1a1a; }
+        .component-box { fill: #2a2a2a; stroke: #A5D6A7; stroke-width: 2; rx: 10; }
+        .external-box { fill: #2a2a2a; stroke: #81D4FA; stroke-width: 2; rx: 10; }
+        .class-box { fill: #333; stroke: #555; stroke-width: 1; rx: 5; }
+        .public-class { stroke: #4CAF50; stroke-width: 2; }
+        .internal-class { stroke: #FF5252; stroke-width: 2; stroke-dasharray: 4; }
+        .text-main { fill: #e0e0e0; font-size: 16px; font-weight: bold; }
+        .text-sub { fill: #aaa; font-size: 14px; }
+        .text-label { fill: #fff; font-size: 14px; font-weight: bold; text-anchor: middle; }
+        .arrow-success { stroke: #4CAF50; stroke-width: 3; fill: none; marker-end: url(#arrow-success); }
+        .arrow-fail { stroke: #FF5252; stroke-width: 3; fill: none; stroke-dasharray: 5; marker-end: url(#arrow-fail); }
+    </style>
+    <defs>
+        <marker id="arrow-success" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#4CAF50" />
+        </marker>
+        <marker id="arrow-fail" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF5252" />
+        </marker>
+    </defs>
+
+    <rect width="100%" height="100%" class="bg"/>
+
+    <!-- External Component (Payments) -->
+    <g transform="translate(50, 150)">
+        <rect class="external-box" width="200" height="120"/>
+        <text class="text-main" x="15" y="30">com.citypulse.payments</text>
+        
+        <rect class="class-box" x="25" y="50" width="150" height="50"/>
+        <text class="text-label" x="100" y="80">PaymentService</text>
+    </g>
+
+    <!-- Target Component (Ticketing) -->
+    <g transform="translate(450, 50)">
+        <rect class="component-box" width="300" height="350"/>
+        <text class="text-main" x="20" y="30">com.citypulse.ticketing</text>
+        
+        <!-- Public Interface -->
+        <g transform="translate(50, 60)">
+            <rect class="class-box public-class" width="200" height="60"/>
+            <text class="text-label" x="100" y="35">TicketService</text>
+            <text class="text-sub" x="100" y="52" text-anchor="middle" fill="#4CAF50">(public)</text>
+        </g>
+
+        <!-- Internal Details -->
+        <g transform="translate(50, 160)">
+            <rect class="class-box internal-class" width="200" height="60"/>
+            <text class="text-label" x="100" y="35">TicketRepository</text>
+            <text class="text-sub" x="100" y="52" text-anchor="middle" fill="#FF5252">(package-private)</text>
+        </g>
+
+        <g transform="translate(50, 240)">
+            <rect class="class-box internal-class" width="200" height="60"/>
+            <text class="text-label" x="100" y="35">Ticket Entity</text>
+            <text class="text-sub" x="100" y="52" text-anchor="middle" fill="#FF5252">(package-private)</text>
+        </g>
+    </g>
+
+    <!-- Interactions -->
+    
+    <!-- Success Path -->
+    <path class="arrow-success" d="M 225 175 C 350 175, 350 140, 490 140"/>
+    <rect x="320" y="130" width="80" height="25" rx="4" fill="#1a1a1a" stroke="#4CAF50"/>
+    <text x="360" y="147" text-anchor="middle" fill="#4CAF50" font-size="12" font-weight="bold">ALLOWED</text>
+
+    <!-- Fail Path -->
+    <path class="arrow-fail" d="M 225 225 C 350 225, 350 240, 490 240"/>
+    <rect x="320" y="245" width="80" height="25" rx="4" fill="#1a1a1a" stroke="#FF5252"/>
+    <text x="360" y="262" text-anchor="middle" fill="#FF5252" font-size="12" font-weight="bold">BLOCKED</text>
+
+    <!-- Legend/Note -->
+    <text x="400" y="430" text-anchor="middle" class="text-sub" font-style="italic">The compiler physically prevents 'Payments' from seeing 'TicketRepository'.</text>
+</svg>

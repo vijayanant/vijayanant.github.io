@@ -1,0 +1,85 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+    <style>
+        .bg { fill: #1a1a1a; }
+        .box-healthy { fill: #2a2a2a; stroke: #A5D6A7; stroke-width: 2; rx: 8; }
+        .box-cycle { fill: #2a2a2a; stroke: #FFAB91; stroke-width: 2; rx: 8; }
+        .text-label { fill: #e0e0e0; font-size: 14px; font-weight: bold; text-anchor: middle; }
+        .text-title { fill: #fff; font-size: 18px; font-weight: bold; text-anchor: middle; }
+        .text-desc { fill: #888; font-size: 12px; text-anchor: middle; font-style: italic; }
+        .arrow-healthy { stroke: #A5D6A7; stroke-width: 2; fill: none; marker-end: url(#arrow-h); }
+        .arrow-cycle { stroke: #FFAB91; stroke-width: 2; fill: none; marker-end: url(#arrow-c); }
+    </style>
+    <defs>
+        <marker id="arrow-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#A5D6A7" />
+        </marker>
+        <marker id="arrow-c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFAB91" />
+        </marker>
+    </defs>
+
+    <rect width="100%" height="100%" class="bg"/>
+
+    <!-- Left Panel: Healthy -->
+    <g transform="translate(0, 0)">
+        <text class="text-title" x="200" y="40">Healthy: One-Way Flow</text>
+        
+        <g transform="translate(140, 80)">
+            <rect class="box-healthy" width="120" height="50"/>
+            <text class="text-label" x="60" y="30">API / UI</text>
+        </g>
+        <g transform="translate(140, 180)">
+            <rect class="box-healthy" width="120" height="50"/>
+            <text class="text-label" x="60" y="30">Invoicing</text>
+        </g>
+        <g transform="translate(140, 280)">
+            <rect class="box-healthy" width="120" height="50"/>
+            <text class="text-label" x="60" y="30">Tax Logic</text>
+        </g>
+
+        <path class="arrow-healthy" d="M 200 130 L 200 175"/>
+        <path class="arrow-healthy" d="M 200 230 L 200 275"/>
+        <text class="text-desc" x="200" y="360">Clean separation of concerns.</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="400" y1="50" x2="400" y2="350" stroke="#444" stroke-width="2" stroke-dasharray="5"/>
+
+    <!-- Right Panel: Cycle -->
+    <g transform="translate(400, 0)">
+        <text class="text-title" x="200" y="40">Toxic: The "Loyalty Cycle"</text>
+
+        <!-- Order Node -->
+        <g transform="translate(140, 80)">
+            <rect class="box-cycle" width="120" height="50"/>
+            <text class="text-label" x="60" y="30">Order</text>
+        </g>
+        
+        <!-- Payment Node -->
+        <g transform="translate(40, 240)">
+            <rect class="box-cycle" width="120" height="50"/>
+            <text class="text-label" x="60" y="30">Payment</text>
+        </g>
+
+        <!-- User Node -->
+        <g transform="translate(240, 240)">
+            <rect class="box-cycle" width="120" height="50"/>
+            <text class="text-label" x="60" y="30">User / Loyalty</text>
+        </g>
+
+        <!-- Cyclic Arrows -->
+        <!-- Order -> User (Get Discount) -->
+        <path class="arrow-cycle" d="M 230 130 L 275 235"/>
+        <text x="290" y="180" fill="#FFAB91" font-size="10" font-weight="bold" transform="rotate(30, 290, 180)">Needs Discount</text>
+        
+        <!-- User -> Payment (Get History) -->
+        <path class="arrow-cycle" d="M 240 265 L 165 265"/>
+        <text x="200" y="285" fill="#FFAB91" font-size="10" font-weight="bold" text-anchor="middle">Needs Spending Data</text>
+        
+        <!-- Payment -> Order (Verify Status) -->
+        <path class="arrow-cycle" d="M 130 240 L 175 135"/>
+        <text x="120" y="180" fill="#FFAB91" font-size="10" font-weight="bold" transform="rotate(-30, 120, 180)">Needs Order Status</text>
+
+        <text class="text-desc" x="200" y="360">The "Distributed Monolith" Knot.</text>
+    </g>
+</svg>

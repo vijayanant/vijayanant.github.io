@@ -1,0 +1,97 @@
+<svg width="1200" height="650" viewBox="0 0 1200 650" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="14px">
+    <style>
+        .bg { fill: #1a1a1a; }
+        .panel-title { font-size: 20px; font-weight: bold; fill: #e0e0e0; }
+        .layer-box { fill: #2a2a2a; stroke: #555; rx: 5; }
+        .layer-text { fill: #c0c0c0; font-size: 16px; font-weight: bold; }
+        .component-box { fill: #222; stroke-width: 1; rx: 8; }
+        .component-text { fill: #e0e0e0; font-size: 18px; font-weight: bold; }
+        .flow-arrow { fill: none; stroke-width: 2.5; marker-end: url(#arrowhead); }
+        .flow-text { font-size: 12px; fill: #ddd; }
+        .user-color { stroke: #FFAB91; }
+        .ticketing-color { stroke: #A5D6A7; }
+        .payments-color { stroke: #81D4FA; }
+        .api-box { fill: #444; }
+        .api-text { fill: #fff; font-weight: bold; }
+        .internal-box { fill: #282828; }
+        .internal-text { fill: #888; }
+        .entry-point { fill: white; stroke: black; stroke-width: 1px; }
+    </style>
+    <defs>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#e0e0e0" />
+        </marker>
+    </defs>
+
+    <rect width="100%" height="100%" class="bg"/>
+
+    <!-- BEFORE: Package by Layer -->
+    <g transform="translate(50, 50)">
+        <text class="panel-title" x="225" y="0" text-anchor="middle">Before: A feature request cuts across all layers</text>
+        <rect width="450" height="520" y="30" fill="none" stroke="#555" stroke-dasharray="4"/>
+        
+        <rect class="layer-box" x="50" y="80" width="350" height="120"/>
+        <text class="layer-text" x="65" y="100">Controllers</text>
+        <rect class="layer-box" x="50" y="220" width="350" height="120"/>
+        <text class="layer-text" x="65" y="240">Services</text>
+        <rect class="layer-box" x="50" y="360" width="350" height="120"/>
+        <text class="layer-text" x="65" y="380">Repositories</text>
+
+        <!-- Feature Flow -->
+        <text class="flow-text ticketing-color" x="225" y="70" text-anchor="middle">"Buy Ticket" Feature</text>
+        <path class="flow-arrow ticketing-color" d="M 225 75 v 40"/>
+        <text class="flow-text ticketing-color" x="240" y="125">TicketController</text>
+        <path class="flow-arrow ticketing-color" d="M 225 200 v 40"/>
+        <text class="flow-text ticketing-color" x="240" y="255">TicketService</text>
+        <path class="flow-arrow ticketing-color" d="M 225 340 v 40"/>
+        <text class="flow-text ticketing-color" x="240" y="395">TicketRepository</text>
+    </g>
+
+    <!-- AFTER: Package by Component -->
+    <g transform="translate(650, 50)">
+        <text class="panel-title" x="250" y="0" text-anchor="middle">After: A feature is contained in one component</text>
+        <rect width="500" height="520" y="30" fill="none" stroke="#555" stroke-dasharray="4"/>
+
+        <!-- Components -->
+        <g transform="translate(40, 100)">
+            <rect class="component-box" width="180" height="400" stroke="#FFAB91"/>
+            <text class="component-text user-color" x="90" y="35" text-anchor="middle">Users</text>
+            <rect class="api-box" x="15" y="60" width="150" height="40" rx="3"/>
+            <text class="api-text" x="90" y="85" text-anchor="middle">UserService</text>
+            <circle class="entry-point" cx="15" cy="80" r="5"/>
+        </g>
+        
+        <g transform="translate(260, 100)">
+            <rect class="component-box" width="180" height="400" stroke="#A5D6A7"/>
+            <text class="component-text ticketing-color" x="90" y="35" text-anchor="middle">Ticketing</text>
+            
+            <!-- Public API -->
+            <rect class="api-box" x="15" y="60" width="150" height="40" rx="3"/>
+            <text class="api-text" x="90" y="85" text-anchor="middle">TicketService</text>
+            <circle class="entry-point" cx="15" cy="80" r="5"/>
+            
+            <!-- Internal Implementation -->
+            <g transform="translate(15, 120)">
+                <rect class="internal-box" x="0" y="0" width="150" height="260" rx="3"/>
+                <text class="internal-text" x="75" y="20" text-anchor="middle" font-style="italic">-- internal implementation --</text>
+                <g transform="translate(10, 40)">
+                    <rect width="130" height="30" class="folder-icon" rx="3"/>
+                    <text class="folder-text" x="65" y="20" text-anchor="middle">web</text>
+                </g>
+                <g transform="translate(10, 80)">
+                    <rect width="130" height="30" class="folder-icon" rx="3"/>
+                    <text class="folder-text" x="65" y="20" text-anchor="middle">domain</text>
+                </g>
+                 <g transform="translate(10, 120)">
+                    <rect width="130" height="30" class="folder-icon" rx="3"/>
+                    <text class="folder-text" x="65" y="20" text-anchor="middle">persistence</text>
+                </g>
+            </g>
+
+             <!-- Flow within component -->
+            <path class="flow-arrow ticketing-color" d="M 90 100 v 280"/>
+        </g>
+        
+        <text class="flow-text" x="250" y="530" text-anchor="middle" fill="#aaa">The Public API shields internal complexity.</text>
+    </g>
+</svg>
