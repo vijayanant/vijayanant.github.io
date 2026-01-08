@@ -14,16 +14,21 @@
           {{ $image := .Resources.GetMatch .Params.featured_image }}
           {{ if $image }}
             <div class="related-post-image-wrapper">
-              {{ $thumbnail := $image.Fill "400x250 webp" }}
-              <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+              {{ $thumbnail := $image }}
+              {{ if ne $image.MediaType.SubType "svg" }}
+                {{ $thumbnail = $image.Fill "400x250 webp" }}
+              {{ end }}
+              <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
             </div>
           {{ else }}
             {{ with .Params.featured_image }}
               {{ $thumbnail := resources.Get . }}
               {{ if $thumbnail }}
-                {{ $thumbnail = $thumbnail.Fill "400x250 webp" }}
+                {{ if ne $thumbnail.MediaType.SubType "svg" }}
+                  {{ $thumbnail = $thumbnail.Fill "400x250 webp" }}
+                {{ end }}
                 <div class="related-post-image-wrapper">
-                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
                 </div>
               {{ end }}
             {{ end }}

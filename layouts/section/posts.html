@@ -14,8 +14,11 @@
           {{ $postPermalink := .Permalink }}
           {{ with .Resources.GetMatch .Params.featured_image }}
             <a href="{{ $postPermalink }}" class="featured-post-link">
-              {{ $heroImage := .Fill "1200x600 webp" }}
-              <img src="{{ $heroImage.RelPermalink }}" alt="{{ $featuredPost.Title }}" class="featured-post-hero-image" width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}">
+              {{ $heroImage := . }}
+              {{ if ne .MediaType.SubType "svg" }}
+                {{ $heroImage = .Fill "1200x600 webp" }}
+              {{ end }}
+              <img src="{{ $heroImage.RelPermalink }}" alt="{{ $featuredPost.Title }}" class="featured-post-hero-image" {{ if ne $heroImage.MediaType.SubType "svg" }}width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"{{ end }}>
               <span class="featured-post-badge">Latest Article</span> <!-- NEW LINE -->
               <div class="featured-post-overlay">
                 <h2 class="featured-post-hero-title">{{ $featuredPost.Title }}</h2>
@@ -43,8 +46,11 @@
                   {{ with .Params.featured_image }}
                     {{ $image := $seriesPage.Resources.GetMatch . }}
                     {{ if $image }}
-                      {{ $thumbnail := $image.Fill "400x250 webp" }}
-                      <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+                      {{ $thumbnail := $image }}
+                      {{ if ne $image.MediaType.SubType "svg" }}
+                        {{ $thumbnail = $image.Fill "400x250 webp" }}
+                      {{ end }}
+                      <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
                     {{ end }}
                   {{ end }}
                   <h3 class="post-card-title">
@@ -97,8 +103,11 @@
               {{ $postPermalink := .Permalink }}
               {{ with .Resources.GetMatch .Params.featured_image }}
               <a href="{{ $postPermalink }}">
-                {{ $thumbnail := .Fill "400x250 webp" }}
-                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"> 
+                {{ $thumbnail := . }}
+                {{ if ne .MediaType.SubType "svg" }}
+                  {{ $thumbnail = .Fill "400x250 webp" }}
+                {{ end }}
+                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}> 
               </a>
               {{ else }}
               {{/* Optional: Add a fallback image here if no featured image is found */}}

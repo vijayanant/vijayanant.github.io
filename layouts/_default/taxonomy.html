@@ -13,8 +13,11 @@
           {{ $postPermalink := .Permalink }}
           {{ with .Resources.GetMatch .Params.featured_image }}
           <a href="{{ $postPermalink }}">
-            {{ $thumbnail := .Fill "400x250 webp" }}
-            <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+            {{ $thumbnail := . }}
+            {{ if ne .MediaType.SubType "svg" }}
+              {{ $thumbnail = .Fill "400x250 webp" }}
+            {{ end }}
+            <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
           </a>
           {{ else }}
           {{/* Optional: Add a fallback image here if no featured image is found */}}
