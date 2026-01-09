@@ -1,0 +1,54 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        </pattern>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="#0F172A"/>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+    
+    <!-- Isometric Stack of Blueprints -->
+    <g transform="translate(600, 300)">
+        
+        <!-- Bottom Sheet (Faded) -->
+        <path d="M -300 50 L 50 -150 L 400 -50 L 50 150 Z" fill="rgba(56, 189, 248, 0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+        
+        <!-- Middle Sheet (Faded) -->
+        <path d="M -310 30 L 40 -170 L 390 -70 L 40 130 Z" fill="rgba(56, 189, 248, 0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+
+        <!-- Top Sheet (Primary) -->
+        <path d="M -320 10 L 30 -190 L 380 -90 L 30 110 Z" fill="rgba(15, 23, 42, 0.9)" stroke="#38BDF8" stroke-width="3" filter="url(#glow)" />
+        
+        <!-- Blueprint Markings on Top Sheet (Abstract structure) -->
+        <g transform="translate(30, -40)" stroke="rgba(56, 189, 248, 0.4)" fill="none" stroke-width="2">
+            <!-- Central Module -->
+            <path d="M -100 0 L 0 -50 L 100 0 L 0 50 Z" />
+            <path d="M -100 -20 L 0 -70 L 100 -20" />
+            
+            <!-- Connection lines -->
+            <path d="M -100 0 L -180 40" stroke-dasharray="5,5" />
+            <path d="M 100 0 L 180 40" stroke-dasharray="5,5" />
+            <path d="M 0 -50 L 0 -120" stroke-dasharray="5,5" />
+        </g>
+
+        <!-- Tool: Compass/Ruler metaphor (Abstract) -->
+        <line x1="-250" y1="150" x2="-50" y2="-50" stroke="#F472B6" stroke-width="4" stroke-linecap="round" filter="url(#glow)" />
+        <circle cx="-50" cy="-50" r="6" fill="#F472B6" filter="url(#glow)" />
+    </g>
+
+    <!-- Series Title Overlay with Cursor -->
+    <g transform="translate(600, 550)">
+        <text fill="#fff" font-family="sans-serif" font-size="42" font-weight="bold" text-anchor="middle" letter-spacing="6">CODIFYING YOUR ARCHITECTURE</text>
+        <rect x="360" y="-42" width="8" height="50" fill="#38BDF8" filter="url(#glow)"/>
+    </g>
+
+</svg>

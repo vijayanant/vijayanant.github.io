@@ -130,7 +130,7 @@ When you switch to Package by Component, you force a difficult question at the m
 
 Here's the deeper reality of what this enables:
 
-### 1. It’s About Encapsulation (Hiding the Sausage)
+### 1. It’s About Encapsulation
 
 In a traditional "Package by Layer" approach (e.g., `src/controllers`, `src/services`, `src/repositories`), almost everything has to be public or exported. This means a `PaymentService` can casually bypass the `TicketingService`'s business logic and directly grab data from `TicketRepository` if `TicketRepository` is also public. That's architectural rot, leading to a "distributed monolith" in microservices contexts or an entangled mess in a monolith.
 
@@ -215,3 +215,6 @@ This approach is not a silver bullet. It requires more upfront thought to identi
 Architecture starts with the shape of your code. By grouping files by business purpose, you turn the directory structure into a tangible first line of defense against chaos. This clarity isn't about being neat—it's about paying the architectural cost upfront to avoid the bankruptcy of a "Big Ball of Mud" later.
 
 But directories alone are just a blueprint, not a fortress. In our next post, **"The Formal Contract,"** we’ll lock down these boundaries using the compiler itself, turning good intentions into enforceable guarantees.
+
+---
+*The code examples for this series are available on GitHub: [vijayanant/codifying-architecture-examples](https://github.com/vijayanant/codifying-architecture-examples)*
