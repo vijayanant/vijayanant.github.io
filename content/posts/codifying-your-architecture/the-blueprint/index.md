@@ -14,7 +14,7 @@ featured_image: "blueprint-featured.svg"
 
 {{< figure src="blueprint-featured.svg" alt="Abstract architectural blueprint contrasting an entangled messy dependency graph with a structured, modular one." >}}
 
-You open a new codebase—maybe even your own project from six months ago. You look at the file tree in your editor. What do you see?
+You open a new codebase or even your own project from long time ago. You look at the file tree in your editor. What do you see?
 
 In most cases, you’ll see a sea of directories that describe the code’s technical role, not its business purpose. I've encountered this in almost every ecosystem; it's the default starting point for many frameworks, but it's a convention that fails to scale as a project grows. For example:
 
@@ -104,7 +104,7 @@ In this structure, the `ticketing` package acts as a distinct module.
 {{< figure src="package-by-component.svg" alt="A diagram comparing a directory structure organized by technical layers versus one organized by business components." caption="A visual comparison of the two primary code organization strategies." >}}
 
 {{< note type="warning" title="The 'Shared' Gravity Well" >}}
-Experienced architects know that as soon as you start creating components, someone will ask: *"Where does the DateHelper go?"*
+Experienced developers know that as soon as you start creating components, someone will ask: *"Where does the DateHelper go?"*
 
 The temptation is to create a `common/` or `shared/` directory. Be extremely careful. `shared` is where modularity goes to die. Every time you add a class to a shared module, you create a "gravity well" that couples every other component together. If two modules need the same three helper functions, I often prefer **Duplication over Coupling**. Copy the code. Keep the boundaries clean.
 {{< /note >}}
@@ -119,7 +119,7 @@ By explicitly separating `web` (HTTP concerns) from `domain` (Business Logic), w
 
 At this point, a natural question arises, perhaps with a mocking tone: "So, architecture is just about directory names? `TicketingController`, `TicketingRepository`, and `TicketingModel` instead of `Controller`, `Repository`, and `Model`?"
 
-You are absolutely right to ask that. If we just move files around and change nothing else, we haven't architected anything—we've just rearranged the furniture. The directory structure is the **physical manifestation** of your architecture, designed for human cognition. But the real architecture lives in the **logical constraints** that structure enables you to enforce.
+You are absolutely right to ask that. If we just move files around and change nothing else, we haven't architected anything. We have just rearranged the furniture. The directory structure is the **physical manifestation** of your architecture, designed for human cognition. But the real architecture lives in the **logical constraints** that structure enables you to enforce.
 
 One is for your team to understand the domain; the other is for your build tool to protect it.
 {{< note type="log" title="Architect's Log: The 'Where Does This Go?' Friction" >}}
@@ -192,13 +192,12 @@ Tools like [ArchUnit](https://www.archunit.org/) for Java allow you to write uni
 public class ArchitectureTest {
 
     @ArchTest
-    static final ArchRule component_isolation =
+    static final ArchRule componentIsolation =
         slices().matching("com.citypulse.(*)..")
-            .should().beFreeOfCycles()
-            .andShould().notDependOnEachOther();
+            .should().beFreeOfCycles();
             
     @ArchTest
-    static final ArchRule web_should_not_access_persistence =
+    static final ArchRule webShouldNotAccessPersistence =
         noClasses().that().resideInAPackage("..web..")
             .should().dependOnClassesThat().resideInAPackage("..persistence..");
 }
