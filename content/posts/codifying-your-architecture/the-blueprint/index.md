@@ -54,7 +54,7 @@ Software Architecture is a vast discipline encompassing infrastructure, data con
 
 ## Building the Structure
 
-To build a structure that reveals its intent, you transform from organizing code by technical layers to organizing it by business capability or feature. I'll use **Java** for this example to demonstrate how standard language features can enforce architectural intent, but the concepts apply to any language.
+To build a structure that reveals its intent, you stop organizing by technical layers and start organizing by business capability. I'll use **Java** for this example to demonstrate how standard language features can enforce architectural intent, but the concepts apply to any language.
 
 **Before (Package by Layer):**
 
@@ -134,7 +134,9 @@ Here's the deeper reality of what this enables:
 
 In a traditional "Package by Layer" approach (e.g., `src/controllers`, `src/services`, `src/repositories`), almost everything has to be public or exported. This means a `PaymentService` can casually bypass the `TicketingService`'s business logic and directly grab data from `TicketRepository` if `TicketRepository` is also public. That's architectural rot, leading to a "distributed monolith" in microservices contexts or an entangled mess in a monolith.
 
-In a "Package by Component" or "Screaming Architecture" approach, you group `TicketController`, `TicketService`, and `TicketRepository` within a `Ticketing/` directory. Now, `TicketRepository` can be made package-private or internal. The rest of the application can only interact with the well-defined public interface of the `Ticketing` component (e.g., exposed by `TicketService`). You physically prevent other parts of the app from coupling to internal details, enforcing encapsulation directly in the code.
+In a "Package by Component" or "Screaming Architecture" approach, you group `TicketController`, `TicketService`, and `TicketRepository` within a `Ticketing/` directory. Now, `TicketRepository` can be made package-private or internal. The rest of the application can only interact with the well-defined public interface of the `Ticketing` component (e.g., exposed by `TicketService`).
+
+This is the practical implementation of [**Strong Module Isolation**]({{< ref "/posts/modular-by-design/modularity-through-the-ages" >}}) where we physically prevent other parts of the app from coupling to internal details by enforcing encapsulation directly in the code.
 
 Crucially, in Java, within each component's root package (`com.citypulse.ticketing`), you would make **only the `TicketService.java` class `public`**.
 
@@ -174,7 +176,7 @@ The real pain lives in the other 90%: Connascence of Data (shared database table
 {{< note type="warning" title="The 'Microservices' Trap" >}}
 It is common to think, *"We use Microservices, so we don't need this; our boundaries are the network calls."*
 
-Be careful. Service boundaries are rarely perfect on day one. A "User Service" often grows to encompass "Auth," "Profiles," and "Preferences." If the *internal* code of that service isn't modular, you can't split it later when it inevitably becomes a bottleneck. You end up with a "Distributed Monolith"—services that are too big to maintain but too entangled to split.
+Be careful. Service boundaries are rarely perfect on day one. A "User Service" often grows to encompass "Auth," "Profiles," and "Preferences." If the *internal* code of that service isn't modular, you can't split it later when it inevitably becomes a bottleneck. You end up with a "Distributed Monolith": services that are too big to maintain but too entangled to split.
 {{< /note >}}
 
 ## Enforcing the Boundaries
@@ -211,7 +213,7 @@ This approach is not a silver bullet. It requires more upfront thought to identi
 
 ## The Blueprint is Just the Beginning
 
-Architecture starts with the shape of your code. By grouping files by business purpose, you turn the directory structure into a tangible first line of defense against chaos. This clarity isn't about being neat—it's about paying the architectural cost upfront to avoid the bankruptcy of a "Big Ball of Mud" later.
+Architecture starts with the shape of your code. By grouping files by business purpose, you turn the directory structure into a tangible first line of defense against chaos. This clarity isn't about being neat, it's about paying the architectural cost upfront to avoid the bankruptcy of a "Big Ball of Mud" later.
 
 But directories alone are just a blueprint, not a fortress. In our next post, **"The Formal Contract,"** we’ll lock down these boundaries using the compiler itself, turning good intentions into enforceable guarantees.
 

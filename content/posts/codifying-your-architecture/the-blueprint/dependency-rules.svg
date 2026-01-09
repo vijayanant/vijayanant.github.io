@@ -70,15 +70,15 @@
         <!-- Cyclic Arrows -->
         <!-- Order -> User (Get Discount) -->
         <path class="arrow-cycle" d="M 230 130 L 275 235"/>
-        <text x="290" y="180" fill="#FFAB91" font-size="10" font-weight="bold" transform="rotate(30, 290, 180)">Needs Discount</text>
+        <text x="260" y="180" fill="#FFAB91" font-size="10" font-weight="bold">Needs Discount</text>
         
         <!-- User -> Payment (Get History) -->
         <path class="arrow-cycle" d="M 240 265 L 165 265"/>
-        <text x="200" y="285" fill="#FFAB91" font-size="10" font-weight="bold" text-anchor="middle">Needs Spending Data</text>
+        <text x="200" y="285" fill="#FFAB91" font-size="10" font-weight="bold" text-anchor="middle">Spending Data</text>
         
         <!-- Payment -> Order (Verify Status) -->
         <path class="arrow-cycle" d="M 130 240 L 175 135"/>
-        <text x="120" y="180" fill="#FFAB91" font-size="10" font-weight="bold" transform="rotate(-30, 120, 180)">Needs Order Status</text>
+        <text x="60" y="180" fill="#FFAB91" font-size="10" font-weight="bold">Needs Order Status</text>
 
         <text class="text-desc" x="200" y="360">The "Distributed Monolith" Knot.</text>
     </g>
