@@ -1,7 +1,7 @@
 ---
 title: "Driving AI Code: Why Test-Driven Development is Essential in the LLM Era"
 slug: "driving-ai-code-why-test-driven-development-is-essential-in-the-llm-era"
-date: 2025-06-20T02:47:28.763Z
+date: 2025-06-20
 draft: false
 featured_image: "driving-ai-code-why-test-driven-development-1.jpeg"
 tags: ["tdd", "llm", "software-design", "prompt-engineering", "testing"]

@@ -2,7 +2,7 @@
 title: "TDD: What Most Articles Miss"
 slug: "tdd-what-most-articles-miss"
 subtitle: "Uncovering the Design Discipline You Didn't Know You Were Missing"
-date: 2023-05-21T07:30:40.257Z
+date: 2023-05-21
 draft: false
 description: "Uncovering the Design Discipline You Didn't Know You Were Missing"
 featured_image: "tdd-what-most-articles-miss-1.jpg"

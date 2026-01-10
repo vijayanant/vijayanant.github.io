@@ -4,7 +4,7 @@ series_order: 5
 title: "Think Entities, Not Procedures"
 slug: "think-entities-not-procedures"
 subtitle: "Contrasting RPCs with ReST"
-date: 2024-05-24T12:07:28.795Z
+date: 2024-05-24
 draft: false
 description: "Contrasting RPCs with ReST"
 featured_image: "think-entity-not-procedures-1.png"

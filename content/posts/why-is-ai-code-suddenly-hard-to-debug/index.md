@@ -1,7 +1,7 @@
 ---
 title: "Why Is AI Code Suddenly “Hard to Debug”?"
 slug: "why-is-ai-code-suddenly-hard-to-debug"
-date: 2025-08-19T09:13:49.342Z
+date: 2025-08-19
 draft: false
 description: "Debugging is easy when someone carries the mental model. With AI, nobody does."
 featured_image: "why-is-ai-code-suddenly-hard-to-debug-1.jpg"

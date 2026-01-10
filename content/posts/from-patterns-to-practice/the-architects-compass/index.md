@@ -2,7 +2,7 @@
 title: "The Architect's Compass"
 slug: "the-architects-compass"
 subtitle: "A Tale of Speed vs. Scale"
-date: 2025-10-08T09:00:00-07:00
+date: 2025-10-08T09:00:00+05:30
 draft: false
 series: ["From Patterns to Practice"]
 series_order: 1

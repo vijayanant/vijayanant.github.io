@@ -1,7 +1,7 @@
 ---
 title: "Mastering Your Blog: Advanced Image Handling"
 slug: "mastering-your-blog-advanced-image-handling"
-date: 2024-10-07T10:00:00-05:00
+date: 2024-10-07
 draft: true
 series: ["Mastering Your Blog"]
 tags: ["hugo", "blogging", "writing", "shortcode", "content-strategy"]

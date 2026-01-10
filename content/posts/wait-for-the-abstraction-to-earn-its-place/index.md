@@ -1,7 +1,7 @@
 ---
 title: "Wait for the Abstraction to Earn Its Place"
 slug: "wait-for-the-abstraction-to-earn-its-place"
-date: 2025-07-29T02:35:03.617Z
+date: 2025-07-29
 draft: false
 description: "Duplication isn’t the enemy. Premature abstraction is."
 featured_image: "wait-for-the-abstraction-to-earn-1.jpg"

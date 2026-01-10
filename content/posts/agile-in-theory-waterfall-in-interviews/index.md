@@ -1,7 +1,7 @@
 ---
 title: "Agile in Theory, Waterfall in Interviews"
 slug: "agile-in-theory-waterfall-in-interviews"
-date: 2025-08-11T11:38:20.886Z
+date: 2025-08-11
 draft: false
 description: "Why our system design interviews don’t reflect how real systems are built and what we should test instead"
 featured_image: "agile-waterfall-interview-meme.jpg"

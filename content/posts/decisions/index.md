@@ -1,7 +1,7 @@
 ---
 title: "Decisions"
 slug: "decisions"
-date: 2016-08-15T14:51:00.000Z
+date: 2016-08-15
 draft: false
 featured_image: "decisions-1.jpg"
 tags: ["decision-making", "life-advice", "career"]

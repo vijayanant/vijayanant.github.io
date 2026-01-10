@@ -1,7 +1,7 @@
 ---
 title: "Monomorphism, Polymorphism, and Higher Ranked Types."
 slug: "monomorphism-polymorphism-and-higher-ranked-types"
-date: 2019-01-24T14:02:00.000Z
+date: 2019-01-24
 draft: false
 featured_image: "higher-ranked-types-1.jpg"
 tags: ["haskell", "type-system", "polymorphism", "rankntypes"]

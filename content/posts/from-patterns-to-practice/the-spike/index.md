@@ -2,7 +2,7 @@
 title: "The Spike"
 slug: "the-spike"
 subtitle: "Where Theory Meets Reality"
-date: 2025-10-08T09:04:00-07:00
+date: 2025-10-08T09:04:00+05:30
 draft: false
 series: ["From Patterns to Practice"]
 series_order: 5

@@ -3,7 +3,7 @@ series: ["Modular by Design"]
 series_order: 4
 title: "Looking Back At RPCs"
 slug: "looking-back-at-rpcs"
-date: 2024-04-17T04:00:53.946Z
+date: 2024-04-17
 draft: false
 description: "A Programming Abstraction for Distributed Systems"
 featured_image: "looking-back-at-rpcs-1.jpeg"

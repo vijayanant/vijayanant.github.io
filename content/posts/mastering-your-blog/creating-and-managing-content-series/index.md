@@ -2,7 +2,7 @@
 title: "Creating and Managing Content Series"
 slug: "creating-and-managing-content-series"
 subtitle: "Organize your blog posts into engaging series for better reader experience and navigation."
-date: 2024-09-29T10:00:00-07:00
+date: 2024-09-29
 draft: true
 series: ["Mastering Your Blog"]
 series_order: 4
@@ -97,7 +97,7 @@ Once your series overview is set up, you can add individual posts to it.
 ---
 title: "Your Post Title"
 subtitle: "An engaging subtitle for your post."
-date: 2024-01-01T10:00:00-07:00
+date: 2024-01-01
 draft: true
 series: ["Your Series Name"]
 series_order: 1 # Important for ordering within the series

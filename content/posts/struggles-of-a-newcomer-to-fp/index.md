@@ -1,7 +1,7 @@
 ---
 title: "Struggles Of A Newcomer To FP"
 slug: "struggles-of-a-newcomer-to-fp"
-date: 2022-06-09T12:15:00.000Z
+date: 2022-06-09
 draft: false
 featured_image: "struggles-of-a-newcomer-to-fp-1.jpg"
 tags: ["functional-programming", "haskell", "recursion", "refactoring"]

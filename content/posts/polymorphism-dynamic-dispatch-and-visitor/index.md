@@ -1,7 +1,7 @@
 ---
 title: "Polymorphism, Dynamic Dispatch, and Visitor"
 slug: "polymorphism-dynamic-dispatch-and-visitor"
-date: 2023-12-04T06:42:32.498Z
+date: 2023-12-04
 draft: false
 featured_image: polymorphism-dynamic-dispatch-and-visitor-1.jpeg
 tags: ["polymorphism", "visitor-pattern", "design-pattern", "oop"]

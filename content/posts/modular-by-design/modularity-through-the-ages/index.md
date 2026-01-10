@@ -1,6 +1,6 @@
 ---
 title: "Modularity Through The Ages"
-date: 2024-02-29T08:17:52.645Z
+date: 2024-02-29
 slug: "modularity-through-the-ages"
 series: ["Modular by Design"]
 series_order: 3

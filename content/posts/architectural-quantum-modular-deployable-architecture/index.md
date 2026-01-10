@@ -2,7 +2,7 @@
 title: "A Practical Guide to Architectural Quanta"
 subtitle: "The key to unlocking independent deployability and true microservice agility."
 slug: "architectural-quantum-modular-deployable-architecture"
-date: 2025-11-05T17:00:00+05:30
+date: 2025-11-05
 draft: false
 categories: ["Software Architecture"]
 tags: ["microservice", "distributed-system", "independent-deployability", "coupling", "modularity", "connascence", "architectural-quantum", "system-design"]

@@ -2,7 +2,7 @@
 title: "YAGNI, Debt, and Adaptability"
 slug: "yagni-debt-and-adaptability"
 subtitle: "Building for Tomorrow without Sacrificing Today"
-date: 2023-12-22T06:25:59.434Z
+date: 2023-12-22
 draft: false
 description: "Building for Tomorrow without Sacrificing Today, "
 featured_image: "yagni-debt-and-adaptability-1.jpg"

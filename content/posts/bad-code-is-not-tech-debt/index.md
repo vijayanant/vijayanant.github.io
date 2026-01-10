@@ -1,7 +1,7 @@
 ---
 title: "Bad Code Is Not Tech Debt"
 slug: "bad-code-is-not-tech-debt"
-date: 2022-12-28T05:18:00.000Z
+date: 2022-12-28
 draft: false
 description: ""
 featured_image: "bad-code-is-not-tech-debt-1.jpg"

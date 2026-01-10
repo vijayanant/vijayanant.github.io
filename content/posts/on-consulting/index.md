@@ -1,7 +1,7 @@
 ---
 title: "On Consulting"
 slug: "on-consulting"
-date: 2023-12-11T10:03:53.821Z
+date: 2023-12-11
 draft: false
 featured_image: "on-consulting-1.png"
 tags: ["consulting", "career", "freelancing"]

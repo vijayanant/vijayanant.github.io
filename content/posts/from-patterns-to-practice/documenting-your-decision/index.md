@@ -2,7 +2,7 @@
 title: "Documenting your decision"
 slug: "documenting-your-decision"
 subtitle: "Documenting and Communicating Your Decision"
-date: 2025-10-08T09:05:00-07:00
+date: 2025-10-08T09:05:00+05:30
 draft: false
 series: ["From Patterns to Practice"]
 series_order: 6

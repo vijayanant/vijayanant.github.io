@@ -1,7 +1,7 @@
 ---
 title: "Expressiveness"
 slug: "expressiveness"
-date: 2018-11-08T09:35:00.000Z
+date: 2018-11-08
 draft: false
 featured_image: "expressiveness-1.jpg"
 tags: ["expressiveness", "haskell", "type-system", "programming-language"]

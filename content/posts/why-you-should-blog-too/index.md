@@ -1,7 +1,7 @@
 ---
 title: "Why YOU Should Blog Too!"
 slug: "why-you-should-blog-too"
-date: 2023-03-30T11:21:00.000Z
+date: 2023-03-30
 draft: false
 featured_image: "why-you-should-blog-too-1.jpg"
 tags: ["blogging", "writing", "career", "personal-branding"]

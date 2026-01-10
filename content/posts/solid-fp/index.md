@@ -1,7 +1,7 @@
 ---
 title: "SOLID fp "
 slug: "solid-fp"
-date: 2023-09-09T07:36:00.000Z
+date: 2023-09-09
 draft: false
 description: "Exploring how the SOLID principles, often discussed in OOP, apply to Functional Programming, focusing on functions, composition, and higher-order functions."
 featured_image: "solid-fp-1.png"

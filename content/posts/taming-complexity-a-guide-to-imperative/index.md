@@ -1,7 +1,7 @@
 ---
 title: "Taming Complexity: A Guide to Imperative, Object-Oriented, and Functional Programming"
 slug: "taming-complexity-a-guide-to-imperative-object-oriented-and-functional-programming"
-date: 2017-09-15T11:23:00.000Z
+date: 2017-09-15
 draft: false
 featured_image: "taming-complexity-a-guide-to-imperative-1.jpg"
 tags: ["programming-paradigm", "functional-programming", "oop", "complexity"]

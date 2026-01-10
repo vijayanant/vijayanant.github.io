@@ -1,7 +1,7 @@
 ---
 title: "Beyond the GoF: The Pattern Mindset"
 slug: "venturing-beyond-the-gof"
-date: 2023-11-16T12:28:19.184Z
+date: 2023-11-16
 draft: false
 description: "Patterns are not a catalog to be memorized. They are a way of seeing the shape of a problem. This post is about reclaiming that discipline."
 featured_image: "venturing-beyond-the-gof-1.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "GADTs To Eliminate Runtime Checks"
 slug: "gadts-to-eliminate-runtime-checks"
-date: 2016-10-14T19:52:00.000Z
+date: 2016-10-14
 draft: false
 featured_image: "gadts-to-eliminate-runtime-checks-1.jpg"
 tags: ["gadt", "haskell", "type-system", "compiler"]

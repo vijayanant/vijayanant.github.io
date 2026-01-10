@@ -3,7 +3,7 @@ series: ["Modular by Design"]
 series_order: 2
 title: "Good Coupling, Bad Coupling, and Cohesion"
 slug: "good-coupling-bad-coupling-and-cohesion"
-date: 2023-11-18T16:23:53.270Z
+date: 2023-11-18
 draft: false
 description: "Spaghetti Pasta is Good, Spaghetti Code is Bad!"
 featured_image: "good-coupling-bad-coupling-and-cohesion-1.jpg"

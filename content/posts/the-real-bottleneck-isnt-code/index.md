@@ -2,7 +2,7 @@
 title: "The Real Bottleneck Isn’t Code"
 slug: "the-real-bottleneck-isnt-code"
 subtitle: "If you're not building the same thing in your minds, you'll spend even more time fixing what shouldn't have broken."
-date: 2025-07-23T04:58:04.212Z
+date: 2025-07-23
 draft: false
 description: "If you're not building the same thing in your minds, you'll spend even more time fixing what shouldn't have broken."
 featured_image: "the-real-bottleneck-isnt-code-1.jpg"

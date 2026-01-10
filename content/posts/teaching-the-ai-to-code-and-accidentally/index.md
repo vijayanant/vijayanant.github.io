@@ -1,7 +1,7 @@
 ---
 title: "Teaching the AI to Code (and Accidentally Becoming Better Engineers)"
 slug: "teaching-the-ai-to-code-and-accidentally-becoming-better-engineers"
-date: 2025-07-24T03:01:22.065Z
+date: 2025-07-24
 draft: false
 description: "The best practices we used to skip are suddenly back, not for us, but for the AI"
 featured_image: "teaching-the-ai-to-code-and-accidentally-1.jpg"
