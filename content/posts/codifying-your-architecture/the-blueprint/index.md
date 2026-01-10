@@ -2,13 +2,13 @@
 title: "The Directory is the Diagram"
 slug: "the-directory-is-the-diagram"
 subtitle: "Why Your File Tree Should Scream Your Intent"
-date: 2026-01-05T09:00:00-07:00
+date: 2026-01-10
 draft: false
 series: ["Codifying Your Architecture"]
 series_order: 1
 categories: ["Software Architecture"]
 tags: ["modularity", "architecture-as-code", "package-by-component", "screaming-architecture", "code-structure"]
-description: "A deep dive into why organizing code by business capability is more than just rearranging directories. This post tackles the common skepticism head-on, showing how a 'Package by Component' structure is the key to enabling encapsulation, enforcing dependency rules, and achieving architectural goals like Maintainability and Evolvability."                                                     
+description: "Organizing code by business capability is more than just rearranging directories. It's about using the file tree to enforce boundaries that the compiler can actually defend."                                                     
 featured_image: "blueprint-featured.svg"
 ---
 
