@@ -4,22 +4,7 @@
 
     <div class="blog-grid">
       {{ range .Pages }}
-        <div class="post-card">
-          {{ $postPermalink := .Permalink }}
-          {{ with .Resources.GetMatch .Params.featured_image }}
-            {{ $thumbnail := .Fill "400x250 webp" }}
-            <a href="{{ $postPermalink }}">
-              <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
-            </a>
-          {{ else }}
-          {{/* Optional: Add a fallback image here if no featured image is found */}}
-          {{ end }}
-          <h2 class="post-card-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h2>          
-          <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
-          <!-- <a href="{{ .Permalink }}" class="read-more-button">Read More →</a> -->
-        </div>
+        {{ partial "post-card.html" . }}
       {{ end }}
     </div>
   </div>

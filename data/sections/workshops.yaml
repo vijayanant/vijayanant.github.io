@@ -1,12 +1,15 @@
-title: Corporate Workshops & Training
-intro: I offer a range of interactive workshops and training sessions designed to level-up your engineering team. These sessions are tailored to your specific needs and can be delivered remotely or in-person.
+title: Corporate Training & Workshops
+intro: I help teams bridge the gap between theory and practice.
 items:
-  - title: Pragmatic Tech Leadership
-    description: A workshop for new and aspiring tech leads on how to build and manage high-performing engineering teams.
-    link: /workshops/pragmatic-tech-leadership/
   - title: "Software Architecture: From Patterns to Practice"
     description: "A foundational workshop for software engineers who want to learn the principles of software architecture and how to apply them in practice."
     link: /workshops/software-architecture-foundations/
+    image: "images/sections/cover-architecture.svg"
   - title: "Modern Cloud Architectures: A Hands-On Guide"
     description: "A practical workshop for software engineers and architects who want to learn how to design and build scalable, resilient, and cost-effective cloud-native applications."
     link: /workshops/modern-cloud-architectures/
+    image: "images/sections/cover-cloud.svg"
+  - title: Pragmatic Tech Leadership
+    description: A workshop for new and aspiring tech leads on how to build and manage high-performing engineering teams.
+    link: /workshops/pragmatic-tech-leadership/
+    image: "images/sections/cover-leadership.svg"

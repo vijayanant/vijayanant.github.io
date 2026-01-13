@@ -1,0 +1,44 @@
+{{/* Context (.) is the data item (map) from YAML */}}
+<div class="post-card">
+    {{/* --- Image Section --- */}}
+    {{ if .image }}
+    <div class="post-card-image-wrapper">
+        {{ $img := resources.Get .image }}
+        {{ if $img }}
+            {{ $img.Content | safeHTML }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* --- Title Section --- */}}
+    <h3 class="post-card-title">
+        {{ if .link }}
+            <a href="{{ .link | relURL }}">{{ .title }}</a>
+        {{ else }}
+            {{ .title }}
+        {{ end }}
+    </h3>
+
+    {{/* --- Meta Section (e.g. Conference Name | Year) --- */}}
+    {{ if .meta }}
+    <div class="post-card-meta">{{ .meta }}</div>
+    {{ end }}
+
+    {{/* --- Description Section --- */}}
+    <p class="post-card-description">{{ .description | markdownify }}</p>
+
+    {{/* --- Footer Link (Flexible) --- */}}
+    {{ if .links }}
+        <div class="post-card-links">
+            {{ range .links }}
+            <a href="{{ .url }}" class="button button-primary" target="_blank">
+                {{ if .icon }}<i class="{{ .icon }}" style="margin-right: 4px;"></i>{{ end }}{{ .label }}
+            </a>
+            {{ end }}
+        </div>
+    {{ else if .link }}
+        <div class="post-card-footer">
+             <a href="{{ .link | relURL }}" class="read-more-button">Details &rarr;</a>
+        </div>
+    {{ end }}
+</div>
