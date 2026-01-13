@@ -8,26 +8,26 @@ items:
       - label: "Watch Video"
         url: "#"
         icon: "fas fa-play"
-      - label: "Slides"
-        url: "#"
-        icon: "fas fa-sliders-h"
 
   - title: "(Why?) Should You Know Category Theory"
     meta: Functional Conf. | 2018 | Bengaluru, India
-    description: Explored the link between the abstract mathematical field of Category Theory and the concrete world of real-world Programming.
+    description: "A bridge between abstract math and practical modeling. Using probabilistic tree growth as a case study, I demonstrated how Functors and Monads provide a superior framework for managing side effects and complexity."
     image: "images/sections/cover-category-theory.svg"
     links:
       - label: "Watch Video"
-        url: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
-        icon: "fas fa-play"
+        url: "https://youtu.be/lzFZkLHS6PE?si=txmqNbzsbshUwC2c"
+        icon: "fab fa-youtube"
+      - label: "Slides (PDF)"
+        url: "/files/category-theory.pdf"
+        icon: "fas fa-file-pdf"
 
   - title: "Have you GADT?"
     meta: Functional Conf. | 2017 | Bengaluru, India
-    description: Introduced GADTs and explored their role in ensuring program correctness, demonstrating how they eliminate the need for runtime checks.
+    description: "An exploration of 'Correctness by Construction.' I showcased how Generalized Algebraic Data Types (GADTs) move validation logic from fragile runtime checks to robust compile-time proofs."
     image: "images/sections/cover-gadt.svg"
     links:
-      - label: "Slides"
-        url: "#"
+      - label: "Slides (PDF)"
+        url: "/files/gadt.pdf"
         icon: "fas fa-file-pdf"
 
   - title: FP 101
