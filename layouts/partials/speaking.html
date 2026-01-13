@@ -1,13 +1,9 @@
 <section id="speaking" class="speaking-section">
     <div class="container">
         <h2 class="section-title">{{ .Site.Data.sections.speaking.title }}</h2>
-        <div class="speaking-grid">
+        <div class="blog-grid">
             {{ range .Site.Data.sections.speaking.items }}
-            <div class="speaking-item">
-                <h3 class="speaking-title">{{ .title }}</h3>
-                <p class="speaking-meta">{{ .meta }}</p>
-                <p class="speaking-description">{{ .description | markdownify }}</p>
-            </div>
+                {{ partial "data-card.html" . }}
             {{ end }}
         </div>
     </div>

@@ -1,0 +1,42 @@
+{{/* Expects a Page object (the Series Term Page) */}}
+{{ $seriesPage := . }}
+
+<div class="post-card">
+  {{ $postPermalink := $seriesPage.Permalink }}
+  {{ $featuredImage := $seriesPage.Params.featured_image }}
+  
+  {{ if $featuredImage }}
+      {{ $imageResource := $seriesPage.Resources.GetMatch $featuredImage }}
+      {{ if $imageResource }}
+          {{ if eq $imageResource.MediaType.SubType "svg" }}
+              <div class="post-card-image-wrapper">
+                  {{ $imageResource.Content | safeHTML }}
+              </div>
+          {{ else }}
+              {{ $thumbnail := $imageResource.Fill "400x250 webp" }}
+              <a href="{{ $postPermalink }}">
+                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+              </a>
+          {{ end }}
+      {{ else }}
+          <a href="{{ $postPermalink }}">
+             <img src="{{ $featuredImage | relURL }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+          </a>
+      {{ end }}
+  {{ else }}
+      <!-- Fallback image or pattern if no series image exists -->
+      <a href="{{ $postPermalink }}" class="series-card-fallback">
+        <i class="fas fa-layer-group fa-3x"></i>
+      </a>
+  {{ end }}
+
+  <h2 class="post-card-title">
+    <a href="{{ $postPermalink }}">{{ $seriesPage.Title }}</a>
+  </h2>
+  
+  <p class="post-card-description">{{ $seriesPage.Description | truncate 120 }}</p>
+  
+  <div class="series-card-footer">
+      <a href="{{ $postPermalink }}" class="button button-primary">Explore Series</a>
+  </div>
+</div>

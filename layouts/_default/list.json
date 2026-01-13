@@ -1,16 +1,28 @@
 {{- if .Site.Params.enableSearch -}}
 {{- $.Scratch.Add "pages" (slice) -}}
-{{- range .Site.RegularPages -}}
-  {{- $post := . -}}
-  {{- if and (eq $post.Kind "page") (eq $post.Section "posts") -}}
+
+{{/* 1. Add Regular Blog Posts */}}
+{{- range where .Site.RegularPages "Section" "posts" -}}
     {{- $.Scratch.Add "pages" (dict 
-        "uri" $post.Permalink 
-        "title" $post.Title 
-        "tags" $post.Params.tags 
-        "categories" $post.Params.categories 
-        "content" ($post.Content | plainify) 
-        "description" $post.Description) -}}
-  {{- end -}}
+        "uri" .Permalink 
+        "title" .Title 
+        "tags" .Params.tags 
+        "categories" .Params.categories 
+        "content" (.Content | plainify) 
+        "description" .Description) -}}
 {{- end -}}
+
+{{/* 2. Add Series Terms */}}
+{{- range .Site.Taxonomies.series -}}
+    {{- $termPage := .Page -}}
+    {{- $.Scratch.Add "pages" (dict 
+        "uri" $termPage.Permalink 
+        "title" (printf "Series: %s" $termPage.Title)
+        "tags" (slice "Series")
+        "categories" (slice "Deep Dive")
+        "content" ($termPage.Description | plainify) 
+        "description" $termPage.Description) -}}
+{{- end -}}
+
 {{- $.Scratch.Get "pages" | jsonify -}}
 {{- end -}}

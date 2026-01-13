@@ -1,8 +1,47 @@
 {{ define "main" }}
     {{ partial "hero.html" . }}
-    {{ partial "expertise.html" . }}
-    {{ partial "writing.html" . }}
+
+    {{/* --- Featured Series Section --- */}}
+    <section id="series" style="padding: 4rem 0; background-color: var(--surface-color);">
+        <div class="container">
+            <h2 class="section-title">The Big Picture</h2>
+            <p class="section-intro">Some topics are too complex for a single post. These are my deep dives into the systems and patterns that matter most.</p>
+            
+            <div class="blog-grid">
+                {{/* Get the "series" taxonomy */}}
+                {{ range .Site.Taxonomies.series }}
+                    {{/* Pass the Page object associated with the Term */}}
+                    {{ partial "series-card.html" .Page }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    {{/* --- Recent Essays Section --- */}}
+    <section id="writing" style="padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title">Latest Essays</h2>
+            <p class="section-intro">My latest thinking on code, complexity, and trade-offs.</p>
+
+            <div class="blog-grid">
+                {{/* Get the latest 3 regular pages from the "posts" section */}}
+                {{ $posts := where .Site.RegularPages "Section" "posts" }}
+                {{ range first 3 $posts }}
+                    {{ partial "post-card.html" . }}
+                {{ end }}
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="/posts/" class="button button-primary">View Archive &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    {{/* --- Workshops & Speaking (Condensed) --- */}}
     {{ partial "speaking.html" . }}
     {{ partial "workshops.html" . }}
+
+    {{/* --- Contact --- */}}
     {{ partial "contact.html" . }}
+
 {{ end }}

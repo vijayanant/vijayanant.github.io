@@ -18,30 +18,29 @@ function handleScrollspy() {
 
     // Scrollspy logic
     let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (current && link.href.includes(current)) {
-            link.classList.add('active');
-        }
-    });
-
-    if (window.scrollY === 0) {
-        // ONLY run this if we are on the actual homepage (root path)
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === 'index.html') {
-            const homeLink = document.querySelector('a.nav-link.js-scrollspy-item[href*="#hero"]');
-            if (homeLink) {
-                // This is now safe as it only runs on the homepage
-                navLinks.forEach(link => link.classList.remove('active'));
-                homeLink.classList.add('active');
+    
+    // Only perform scrollspy if we have sections to spy on
+    if (sections.length > 0) {
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
             }
+        });
+
+        if (current) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.href.includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        } else if (window.scrollY < HEADER_SCROLL_THRESHOLD && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
+             // If near top of homepage, highlight Home
+             navLinks.forEach(link => link.classList.remove('active'));
+             const homeLink = document.querySelector('a.nav-link.js-scrollspy-item[href*="#hero"]');
+             if (homeLink) homeLink.classList.add('active');
         }
     }
 }

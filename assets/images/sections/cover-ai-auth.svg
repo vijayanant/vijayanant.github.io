@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="var(--surface-color)" opacity="0.5"/>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Circuit Pattern -->
+  <g stroke="var(--primary-color)" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M100 225 H250 L300 175 H400" />
+    <path d="M100 150 H200 L250 200" />
+    <circle cx="400" cy="175" r="5" fill="var(--primary-color)" />
+    
+    <path d="M700 225 H550 L500 275 H400" />
+    <circle cx="400" cy="275" r="5" fill="var(--primary-color)" />
+    
+    <path d="M400 100 V350" stroke-dasharray="10 10"/>
+    <rect x="350" y="150" width="100" height="150" rx="10" />
+  </g>
+</svg>
