@@ -2,12 +2,12 @@ title: Selected Talks
 items:
   - title: AI Based Technologies for Authentication
     meta: IDRBT | 2019 | Hyderabad, India
-    description: Discussed the limitations of existing authentication methods and examined how to leverage AI to authenticate customers in the digital/online age.
+    description: "Discussed the limitations of legacy authentication and explored how AI and behavioral biometrics can verify identity in the digital age."
     image: "images/sections/cover-ai-auth.svg"
     links:
-      - label: "Watch Video"
-        url: "#"
-        icon: "fas fa-play"
+      - label: "Slides (PDF)"
+        url: "/files/ai-auth.pdf"
+        icon: "fas fa-file-pdf"
 
   - title: "(Why?) Should You Know Category Theory"
     meta: Functional Conf. | 2018 | Bengaluru, India
@@ -32,5 +32,10 @@ items:
 
   - title: FP 101
     meta: BHIVE Tech Talk | 2016 | Bengaluru, India
-    description: An introduction to Functional Programming and the Haskell programming language.
+    description: "An introduction to Functional Programming and the Haskell programming language."
     image: "images/sections/cover-fp.svg"
+    links:
+      - label: "Slides (PDF)"
+        url: "/files/fp-101.pdf"
+        icon: "fas fa-file-pdf"
+
