@@ -7,9 +7,11 @@
   <rect width="100%" height="100%" fill="var(--surface-color)" opacity="0.5"/>
   <rect width="100%" height="100%" fill="url(#grid)" />
   
-  <!-- Functional Programming Lambda -->
-  <g transform="translate(400, 225) scale(3)" stroke="var(--primary-color)" stroke-width="2" fill="none">
-    <path d="M-15 15 L15 -15" />
-    <path d="M-15 -15 L-5 0" />
+  <!-- Structural Lambda -->
+  <g transform="translate(400, 225) scale(3)" stroke="var(--primary-color)" stroke-width="0.8" fill="none">
+    <!-- Main Load Bearing Beam (Top-Left to Bottom-Right) -->
+    <path d="M-15 -25 L 20 25" />
+    <!-- Support Strut (Bottom-Left to Center) -->
+    <path d="M-20 25 L -3 -1" />
   </g>
 </svg>
