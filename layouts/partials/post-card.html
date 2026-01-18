@@ -27,5 +27,7 @@
   <h2 class="post-card-title">
     <a href="{{ .Permalink }}">{{ .Title }}</a>
   </h2>
-  <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
+  <div class="post-card-meta">
+    {{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read
+  </div>
 </div>

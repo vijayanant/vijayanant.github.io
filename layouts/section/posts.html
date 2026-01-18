@@ -22,7 +22,7 @@
               <span class="featured-post-badge">Latest Article</span> <!-- NEW LINE -->
               <div class="featured-post-overlay">
                 <h2 class="featured-post-hero-title">{{ $featuredPost.Title }}</h2>
-                <div class="featured-post-hero-meta">{{ $featuredPost.Date.Format "January 2, 2006" }}</div>
+                <div class="featured-post-hero-meta">{{ $featuredPost.Date.Format "January 2, 2006" }} &middot; {{ $featuredPost.ReadingTime }} min read</div>
                 <p class="featured-post-hero-description">{{ $featuredPost.Description }}</p>
               </div>
             </a>
@@ -115,7 +115,7 @@
               <h3 class="post-card-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
               </h3>          
-              <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
+              <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</div>
               <p class="post-card-description">{{ .Description | truncate 100 }}</p>
               <!-- <a href="{{ .Permalink }}" class="read-more-button">Read More →</a> -->
             </div>
