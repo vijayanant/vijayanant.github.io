@@ -22,13 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Check LocalStorage
     let currentTheme = localStorage.getItem('theme');
 
-    // 2. Check System Preference if no local storage
+    // 2. Default to Dark Mode if no local storage preference
     if (!currentTheme) {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-            currentTheme = 'light';
-        } else {
-            currentTheme = 'dark';
-        }
+        currentTheme = 'dark';
     }
 
     // Apply initial theme
