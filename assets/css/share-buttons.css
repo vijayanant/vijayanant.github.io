@@ -52,3 +52,9 @@
 [data-theme="light"] .share-btn {
     background-color: #fff;
 }
+
+[data-theme="light"] .share-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff !important; /* Force white text over primary bg */
+    border-color: var(--primary-color);
+}
