@@ -11,6 +11,7 @@ enableCodeCopyButton = true
 enableRelatedPosts = true
 enableNewsletter = true
 enableSearch = true
+enableThemeToggle = true
 
 [params.newsletter]
 title = "The Anant Loop"

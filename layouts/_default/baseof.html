@@ -22,6 +22,9 @@
     {{ $tabsStyle := resources.Get "css/tabs.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $tabsStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
+    {{ $toggleStyle := resources.Get "css/floating-toggle.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $toggleStyle.RelPermalink }}" media="print" onload="this.media='all'">
+
     {{ $faStyle := resources.Get "css/fontawesome.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $faStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
@@ -68,12 +71,24 @@
     {{ $tabsScript := resources.Get "js/tabs.js" | minify | fingerprint }}
     <script src="{{ $tabsScript.RelPermalink }}" defer></script>
 
+    {{ if .Site.Params.enableThemeToggle }}
+    {{ $themeToggleScript := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
+    <script src="{{ $themeToggleScript.RelPermalink }}" defer></script>
+    {{ end }}
+
     {{ $jqueryScript := resources.Get "js/jquery.min.js" | fingerprint }}
     <script src="{{ $jqueryScript.RelPermalink }}" defer></script>
 
     {{ $lityScript := resources.Get "js/lity.min.js" | fingerprint }}
     <script src="{{ $lityScript.RelPermalink }}" defer></script>
     {{ partial "search_modal.html" . }}
+    
+    {{ if .Site.Params.enableThemeToggle }}
+    <button id="theme-toggle" class="floating-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
+    {{ end }}
+
     {{- if .Site.Params.enableSearch -}}
     {{ $fuseScript := resources.Get "js/fuse.min.js" | fingerprint }}
     <script src="{{ $fuseScript.RelPermalink }}" defer></script>

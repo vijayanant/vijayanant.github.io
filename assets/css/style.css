@@ -48,6 +48,53 @@
     --note-log-text: #e9d5ff;
 }
 
+[data-theme="light"] {
+    /* "Paper" feel - reduces glare */
+    --background-color: #f5f5f2; 
+    --surface-color: #eae8e1; /* Slightly darker warmth */
+    --card-background-color: #ffffff; /* Cards stay white for pop */
+    
+    --text-color: #333333;
+    --secondary-text-color: #555555;
+    --tertiary-text-color: #777777;
+    
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.08);
+    --text-color-inverted: #fff;
+    
+    /* Readable Notes: Very light pastel bg, dark text */
+    --note-info-background: #e6f2ff; /* Very pale blue */
+    --note-info-border: #2563eb;
+    --note-info-text: #1e3a8a; /* Dark blue text */
+    
+    --note-tip-background: #ecfdf5; /* Very pale green */
+    --note-tip-border: #059669;
+    --note-tip-text: #064e3b; /* Dark green text */
+    
+    --note-warning-background: #fffbeb; /* Very pale yellow */
+    --note-warning-border: #d97706;
+    --note-warning-text: #78350f; /* Dark brownish text */
+    
+    --note-danger-background: #fef2f2; /* Very pale red */
+    --note-danger-border: #dc2626;
+    --note-danger-text: #7f1d1d; /* Dark red text */
+    
+    --note-log-text: #581c87;
+    
+    /* Hover override for light mode */
+    --hover-color: #000000; 
+}
+
+/* Specific hover fixes for Light Mode */
+[data-theme="light"] a:hover {
+    color: var(--hover-color) !important;
+}
+
+/* But keep button text white on primary bg hover */
+[data-theme="light"] .button:hover {
+    color: #fff !important;
+}
+
 body {
     font-family: var(--heading-font);
     line-height: 1.8;
@@ -651,7 +698,8 @@ footer .footer-link:hover {
     /* background-color: var(--card-background-color); */
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-medium);
+    /* box-shadow: 0 4px 8px var(--shadow-medium); */
+    /* border: 1px solid var(--card-border-color, transparent); */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
