@@ -25,6 +25,9 @@
     {{ $toggleStyle := resources.Get "css/floating-toggle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $toggleStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
+    {{ $shareStyle := resources.Get "css/share-buttons.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $shareStyle.RelPermalink }}" media="print" onload="this.media='all'">
+
     {{ $faStyle := resources.Get "css/fontawesome.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $faStyle.RelPermalink }}" media="print" onload="this.media='all'">
 

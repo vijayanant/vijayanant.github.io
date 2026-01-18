@@ -1114,7 +1114,7 @@ body:not([data-page-kind="home"]) #site-header {
 
 /* Related Posts Section */
 .related-posts-section {
-    margin-top: 4rem;
+    margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid var(--surface-color);
 }

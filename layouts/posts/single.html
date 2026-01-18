@@ -54,11 +54,11 @@
               {{ end }}
             </div>
           {{ end }}
+
+          {{ partial "share-buttons.html" . }}
         </article>
 
-        
-
-            {{ if .Params.series }}
+        {{ if .Params.series }}
               {{ $seriesName := index .Params.series 0 }}
               {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
               {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}

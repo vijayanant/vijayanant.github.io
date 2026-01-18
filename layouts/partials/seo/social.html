@@ -1,24 +1,37 @@
-{{- with .Title }}<meta property="og:title" content="{{ . }}" />{{ end }}
-{{- with .Description }}<meta property="og:description" content="{{ . }}" />{{ end }}
+{{- $title := .Title | default .Site.Title }}
+{{- $description := .Description | default .Summary | default .Site.Params.description }}
 {{- $ogType := "website" }}
 {{- if .IsPage }}
   {{- $ogType = "article" }}
 {{- end }}
+
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
 <meta property="og:type" content="{{ $ogType }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-{{ $image := "" }}
-{{ with .Params.featured_image }}
-  {{ $image = . }}
-{{ else }}
-  {{ $image = .Site.Params.image }}
-{{ end }}
-{{ with $image }}<meta property="og:image" content="{{ . | absURL }}" />{{ end }}
-{{- $author := "" }}
-{{- with .Params.author }}
-  {{- $author = . }}
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:locale" content="{{ replace .Site.LanguageCode "-" "_" }}" />
+
+{{/* Image Logic */}}
+{{- $ogImage := "" }}
+{{- with .Params.featured_image }}
+  {{- $resource := $.Resources.GetMatch . }}
+  {{- if $resource }}
+    {{- $ogImage = $resource.Permalink }}
+  {{- else }}
+    {{- $ogImage = . | absURL }}
+  {{- end }}
 {{- else }}
-  {{- $author = .Site.Params.author }}
+  {{- with .Site.Params.image }}
+    {{- $ogImage = . | absURL }}
+  {{- end }}
 {{- end }}
+
+{{- with $ogImage }}
+<meta property="og:image" content="{{ . }}" />
+{{- end }}
+
+{{- $author := .Params.author | default .Site.Params.author }}
 {{- if .IsPage }}
 {{- with .PublishDate }}<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />{{ end }}
 {{- with .Lastmod }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />{{ end }}
@@ -26,16 +39,24 @@
 {{- range .Params.tags }}<meta property="article:tag" content="{{ . }}" />{{ end }}
 {{- range .Params.categories }}<meta property="article:tag" content="{{ . }}" />{{ end }}
 {{- end }}
+
 {{- with $author }}<meta name="author" content="{{ . }}" />{{ end }}
+
+{{/* Twitter Handle Extraction */}}
 {{- $twitterHandle := "" }}
 {{- range .Site.Params.social }}
   {{- if eq .name "Twitter" }}
-    {{- $twitterHandle = (replace .url "https://twitter.com/" "") }}
+    {{- $twitterHandle = .url | replaceRE `^https?://(www\.)?twitter\.com/([^/?#]+)/?.*$` "$2" }}
   {{- end }}
 {{- end }}
-{{- with $twitterHandle }}<meta name="twitter:card" content="summary_large_image" />
+
+<meta name="twitter:card" content="summary_large_image" />
+{{- with $twitterHandle }}
 <meta name="twitter:site" content="@{{ . }}" />
-<meta name="twitter:creator" content="@{{ . }}" />{{ end }}
-{{- with .Title }}<meta name="twitter:title" content="{{ . }}" />{{ end }}
-{{- with .Description }}<meta name="twitter:description" content="{{ . }}" />{{ end }}
-{{ with $image }}<meta name="twitter:image" content="{{ . | absURL }}" />{{ end }}
+<meta name="twitter:creator" content="@{{ . }}" />
+{{- end }}
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+{{- with $ogImage }}
+<meta name="twitter:image" content="{{ . }}" />
+{{- end }}

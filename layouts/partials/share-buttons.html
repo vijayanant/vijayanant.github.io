@@ -1,0 +1,39 @@
+<div class="share-buttons">
+    <div class="share-label">Found this useful? Share it with your network:</div>
+    <div class="share-links">
+    
+    {{ $title := .Title }}
+    {{ $url := .Permalink }}
+    {{ $twitterHandle := "" }}
+    {{ range .Site.Params.social }}
+        {{ if eq .name "Twitter" }}
+            {{ $twitterHandle = .url | replaceRE `^https?://(www\.)?twitter\.com/([^/?#]+)/?.*$` "$2" }}
+        {{ end }}
+    {{ end }}
+
+    <!-- Twitter/X -->
+    <a href="https://twitter.com/intent/tweet?text={{ urlquery $title }}&amp;url={{ urlquery $url }}{{ with $twitterHandle }}&amp;via={{ . }}{{ end }}" 
+       class="share-btn twitter" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Share on Twitter">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlquery $url }}" 
+       class="share-btn linkedin" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Share on LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:?subject={{ urlquery $title }}&amp;body={{ urlquery $url }}" 
+       class="share-btn email" 
+       title="Share via Email">
+        <i class="fas fa-envelope"></i>
+    </a>
+    </div>
+</div>
