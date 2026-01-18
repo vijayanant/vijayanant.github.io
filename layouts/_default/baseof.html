@@ -19,6 +19,9 @@
     {{ $subscriptionStyle := resources.Get "css/subscription.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $subscriptionStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
+    {{ $tabsStyle := resources.Get "css/tabs.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $tabsStyle.RelPermalink }}" media="print" onload="this.media='all'">
+
     {{ $faStyle := resources.Get "css/fontawesome.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $faStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
@@ -61,6 +64,9 @@
     {{ $copyCodeScript := resources.Get "js/copy-code.js" | minify | fingerprint }}
     <script src="{{ $copyCodeScript.RelPermalink }}" defer></script>
     {{ end }}
+
+    {{ $tabsScript := resources.Get "js/tabs.js" | minify | fingerprint }}
+    <script src="{{ $tabsScript.RelPermalink }}" defer></script>
 
     {{ $jqueryScript := resources.Get "js/jquery.min.js" | fingerprint }}
     <script src="{{ $jqueryScript.RelPermalink }}" defer></script>
