@@ -17,7 +17,21 @@
 {{- with .Params.featured_image }}
   {{- $resource := $.Resources.GetMatch . }}
   {{- if $resource }}
-    {{- $ogImage = $resource.Permalink }}
+    {{- if eq $resource.MediaType.SubType "svg" }}
+        {{/* If SVG, look for a PNG counterpart for Social Cards */}}
+        {{- $pngName := replace . ".svg" ".png" }}
+        {{- $pngResource := $.Resources.GetMatch $pngName }}
+        {{- if $pngResource }}
+            {{- $ogImage = $pngResource.Permalink }}
+        {{- else }}
+            {{/* Fallback to Site Default if no PNG counterpart found */}}
+            {{- with site.Params.image }}
+                {{- $ogImage = . | absURL }}
+            {{- end }}
+        {{- end }}
+    {{- else }}
+        {{- $ogImage = $resource.Permalink }}
+    {{- end }}
   {{- else }}
     {{- $ogImage = . | absURL }}
   {{- end }}
