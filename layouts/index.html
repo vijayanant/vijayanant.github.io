@@ -8,10 +8,10 @@
             <p class="section-intro">Some topics are too complex for a single post. These are my deep dives into the systems and patterns that matter most.</p>
             
             <div class="blog-grid">
-                {{/* Get the "series" taxonomy */}}
-                {{ range .Site.Taxonomies.series }}
-                    {{/* Pass the Page object associated with the Term */}}
-                    {{ partial "series-card.html" .Page }}
+                {{/* Get the "series" taxonomy pages sorted by Date Descending */}}
+                {{ $series := .Site.GetPage "taxonomy" "series" }}
+                {{ range $series.Pages.ByDate.Reverse }}
+                    {{ partial "series-card.html" . }}
                 {{ end }}
             </div>
         </div>

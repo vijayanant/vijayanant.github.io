@@ -16,31 +16,33 @@ function handleScrollspy() {
         header.classList.remove('header-scrolled');
     }
 
-    // Scrollspy logic
-    let current = '';
-    
-    // Only perform scrollspy if we have sections to spy on
-    if (sections.length > 0) {
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        if (current) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.href.includes(current)) {
-                    link.classList.add('active');
+    // Scrollspy logic (Only on Homepage)
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        let current = '';
+        
+        // Only perform scrollspy if we have sections to spy on
+        if (sections.length > 0) {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - header.offsetHeight; // Adjust for fixed header
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
                 }
             });
-        } else if (window.scrollY < HEADER_SCROLL_THRESHOLD && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
-             // If near top of homepage, highlight Home
-             navLinks.forEach(link => link.classList.remove('active'));
-             const homeLink = document.querySelector('a.nav-link.js-scrollspy-item[href*="#hero"]');
-             if (homeLink) homeLink.classList.add('active');
+
+            if (current) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.href.includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            } else if (window.scrollY < HEADER_SCROLL_THRESHOLD) {
+                 // If near top of homepage, highlight Home
+                 navLinks.forEach(link => link.classList.remove('active'));
+                 const homeLink = document.querySelector('a.nav-link.js-scrollspy-item[href*="#hero"]');
+                 if (homeLink) homeLink.classList.add('active');
+            }
         }
     }
 }

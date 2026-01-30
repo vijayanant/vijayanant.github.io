@@ -9,9 +9,9 @@
       {{ $imageResource := $seriesPage.Resources.GetMatch $featuredImage }}
       {{ if $imageResource }}
           {{ if eq $imageResource.MediaType.SubType "svg" }}
-              <div class="post-card-image-wrapper">
+              <a href="{{ $postPermalink }}" class="post-card-image-wrapper">
                   {{ $imageResource.Content | safeHTML }}
-              </div>
+              </a>
           {{ else }}
               {{ $thumbnail := $imageResource.Fill "400x250 webp" }}
               <a href="{{ $postPermalink }}">
