@@ -16,11 +16,11 @@ featured_image: "blueprint-featured.svg"
 
 You open a new codebase or even your own project from long time ago. You look at the file tree in your editor. What do you see?
 
-In most cases, you’ll see a sea of directories that describe the code’s technical role, not its business purpose. I've encountered this in almost every ecosystem; it's the default starting point for many frameworks, but it's a convention that fails to scale as a project grows. For example:
+Open almost any project. You’ll see a sea of directories that describe the code’s technical role, not its business purpose. I've encountered this in almost every ecosystem; it's the default starting point for many frameworks, but it's a convention that fails to scale as a project grows. For example:
 
 * In a **Java Spring** application, you might see packages like `com.example.web`, `com.example.service`, and `com.example.repository`.
 * In a **Ruby on Rails** or **.NET MVC** app, you'll find top-level directories named `controllers`, `models`, and `views`.
-* In a modern **React** frontend, you'll likely find `components`, `hooks`, and `api`.
+* **React?** `components`, `hooks`, `api`. That's it.
 
 In every case, the structure tells you about the code's technical role. It’s a controller. It’s a service. Or a UI component.
 
@@ -119,11 +119,11 @@ By explicitly separating `web` (HTTP concerns) from `domain` (Business Logic), w
 
 At this point, a natural question arises, perhaps with a mocking tone: "So, architecture is just about directory names? `TicketingController`, `TicketingRepository`, and `TicketingModel` instead of `Controller`, `Repository`, and `Model`?"
 
-You are absolutely right to ask that. If we just move files around and change nothing else, we haven't architected anything. We have just rearranged the furniture. The directory structure is the **physical manifestation** of your architecture, designed for human cognition. But the real architecture lives in the **logical constraints** that structure enables you to enforce.
+Fair question. If you just move files around without changing your mindset, it *is* meaningless. We haven't architected anything. We have just rearranged the furniture. The directory structure is the **physical manifestation** of your architecture, designed for human cognition. But the real architecture lives in the **logical constraints** that structure enables you to enforce.
 
 One is for your team to understand the domain; the other is for your build tool to protect it.
 {{< note type="log" title="Architect's Log: The 'Where Does This Go?' Friction" >}}
-I have fought this battle in a dozen codebases. The hardest part isn't the file move; it's the muscle memory. Developers love "Buckets of Types" (like a `controllers/` directory) because they don't have to think about the *domain* to file a new class. It's lazy, and it’s the exact reason why six months into a project, nobody knows where anything actually lives.
+I have fought this battle in a dozen codebases. The hardest part isn't the file move; it's the muscle memory. Developers are addicted to "Buckets of Types" (like a `controllers/` directory) because they don't have to think about the *domain* to file a new class. It's lazy, and it’s the exact reason why six months into a project, nobody knows where anything actually lives.
 
 When you switch to Package by Component, you force a difficult question at the moment of creation: *"What business capability does this code serve?"* This friction is a feature, not a bug. It forces architectural thinking into the daily coding loop.
 {{< /note >}}
@@ -216,6 +216,8 @@ This approach is not a silver bullet. It requires more upfront thought to identi
 Architecture starts with the shape of your code. By grouping files by business purpose, you turn the directory structure into a tangible first line of defense against chaos. This clarity isn't about being neat, it's about paying the architectural cost upfront to avoid the bankruptcy of a "Big Ball of Mud" later.
 
 But directories alone are just a blueprint, not a fortress. In our next post, **"The Formal Contract,"** we’ll lock down these boundaries using the compiler itself, turning good intentions into enforceable guarantees.
+
+{{< newsletter type="simple" >}}
 
 ---
 *The code examples for this series are available on GitHub: [vijayanant/codifying-architecture-examples](https://github.com/vijayanant/codifying-architecture-examples)*

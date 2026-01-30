@@ -6,6 +6,30 @@ This document outlines the goals, themes, and rules for the "Codifying Your Arch
 
 The central theme is that **architecture is not an abstract diagram but a set of tangible, enforceable constraints within the code itself.** The series tells a story of building up these layers of constraint, moving from the physical layout of the code to its logical contracts, and finally to its automated verification.
 
+## The Roadmap (8 Parts)
+
+The series is divided into four phases, prioritizing the "Day-to-Day" coding experience before moving to infrastructure.
+
+### Phase 1: The Static Structure (The Skeleton)
+*Focus: How the code is organized and accessed.*
+1.  **The Blueprint (Directories):** Physical organization by domain. *(Status: Published)*
+2.  **The Formal Contract (Visibility):** Logical enforcement via access modifiers. *(Status: Published)*
+3.  **The Invisible Border Patrol (Verification):** Automated governance via ArchUnit/Fitness Functions.
+
+### Phase 2: The Semantic Logic (The Muscle)
+*Focus: How the code expresses meaning and prevents logic errors.*
+4.  **The Shape of Data (Type Safety):** Using the type system as an architectural constraint. Moving beyond "Primitive Obsession" to codify constraints (Value Objects, ADTs).
+5.  **The Explicit Flow (Side Effects):** Codifying *when* things happen. Replacing implicit magic (Aspects/Annotations) with explicit patterns (Result Types, Domain Events).
+
+### Phase 3: The System Boundary (The Skin)
+*Focus: How the code interacts with the outside world.*
+6.  **The Wire Contract (IDLs):** Moving the "Truth" out of the code and into the Interface Definition (OpenAPI/Protobuf).
+
+### Phase 4: The Operational Reality (The Environment)
+*Focus: How the system is deployed and governed.*
+7.  **The Topology is Code (IaC):** Ensuring the deployment architecture matches the diagram via Terraform/CDK.
+8.  **The Intent is Code (ADRs):** Version-controlling the *decisions* that led to the architecture.
+
 ## Primary Goal
 
 To provide developers and architects with a practical, actionable toolkit for making architectural designs a living, breathing part of their codebase. The key outcome for the reader is to learn how to prevent architectural drift and improve the long-term health and maintainability of their systems.
@@ -25,12 +49,12 @@ To maintain consistency, each post in the series should generally follow this st
 2. **Bridge:** Briefly connect to the concept from the previous post in the series.
 3. **The Mechanism:** Introduce and explain the core topic of the post (e.g., Fitness Functions).
 4. **The "How" (Example):** Provide a concrete, simplified code example.
-5. **The "Why" (Architectural Role):** Explicitly explain which quality attributes this mechanism supports and how it enforces architectural principles.
+5. **The Payoff:** Explicitly explain which quality attributes this mechanism supports and how it enforces architectural principles.
 6. **Conclusion & Next Steps:** Summarize the key takeaway and provide a "teaser" for the next post in the narrative arc.
 
 ## Style and Tone
 
-The series will adopt a nuanced and sophisticated tone. While the main narrative of each post will present a clear, focused argument, we will make extensive use of Hugo's `note` shortcode to provide layers of meta-commentary.
+The series will adopt a nuanced and sophisticated tone ("The Grumpy Senior"). While the main narrative of each post will present a clear, focused argument, we will make extensive use of Hugo's `note` shortcode to provide layers of meta-commentary.
 
 * **Goal:** To separate the primary "story" from the messy but important real-world details, thereby keeping the main narrative clean while demonstrating a deep understanding of the topic's complexity.
 * **Mechanism:** Use shortcodes for asides:
