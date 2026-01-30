@@ -688,11 +688,12 @@ footer .footer-link:hover {
 *--------------------*/
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 0rem;
 }
 
 .post-card {
+    position: relative;
     line-height: 25px;
     font-size: 19px;
     /* background-color: var(--card-background-color); */
@@ -1711,19 +1712,6 @@ body:not([data-page-kind="home"]) #site-header {
 }
 
 
-/* Placeholder Card Styles */
-.post-card-placeholder {
-    opacity: 0; /* Make it invisible */
-    pointer-events: none; /* Not clickable */
-    cursor: default;
-}
-
-@media (max-width: 992px) {
-    .post-card-placeholder {
-        display: none; /* Hide placeholders on screens not wide enough for 3 columns */
-    }
-}
-
 /* Search Overlay Styles */
 .search-overlay {
     display: none;
@@ -1919,4 +1907,34 @@ a:hover {
     justify-content: center;
     font-size: 0.8rem;
     padding: 8px 16px;
+}
+
+/* Series Status Badge */
+.series-status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 10;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.status-ongoing {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@keyframes pulse-status {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.status-ongoing {
+    animation: pulse-status 2s infinite ease-in-out;
 }

@@ -8,12 +8,18 @@
             <p class="section-intro">Some topics are too complex for a single post. These are my deep dives into the systems and patterns that matter most.</p>
             
             <div class="blog-grid">
-                {{/* Get the "series" taxonomy pages sorted by Date Descending */}}
+                {{/* Get the "series" taxonomy pages sorted by Date Descending, limit to 3 */}}
                 {{ $series := .Site.GetPage "taxonomy" "series" }}
-                {{ range $series.Pages.ByDate.Reverse }}
+                {{ range first 3 $series.Pages.ByDate.Reverse }}
                     {{ partial "series-card.html" . }}
                 {{ end }}
             </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="/series/" class="button button-primary">View All Series &rarr;</a>
+            </div>
+        </div>
+    </section>
         </div>
     </section>
 

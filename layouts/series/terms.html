@@ -3,15 +3,20 @@
   <div class="container">
 
     <header class="series-list-header mb-4">
-      <h1 class="section-title">All Series</h1>
-      <p class="section-intro">Explore all available content series.</p>
+      <h1 class="section-title">Deep Dives</h1>
+      <p class="section-intro">Curated paths through complex topics. Pick a thread and follow it.</p>
     </header>
 
     <div class="blog-grid">
-      {{ range .Data.Terms.ByCount }}
-        {{ $seriesTerm := . }}
-        {{ $seriesPage := site.GetPage (printf "series/%s" ($seriesTerm.Term | urlize)) }}
+      {{ $series := .Site.GetPage "taxonomy" "series" }}
+      {{ range $series.Pages.ByDate.Reverse }}
+        {{ $seriesPage := . }}
         <div class="post-card">
+          {{ if eq $seriesPage.Params.status "Ongoing" }}
+            <span class="series-status-badge status-ongoing">
+              Ongoing
+            </span>
+          {{ end }}
           <a href="{{ $seriesPage.Permalink }}" class="post-card-link">
             {{ with $seriesPage.Params.featured_image }}
               {{ $image := $seriesPage.Resources.GetMatch . }}
@@ -35,36 +40,8 @@
               <a href="{{ $seriesPage.Permalink }}">{{ $seriesPage.Title }}</a>
             </h2>
             <p class="post-card-description">{{ $seriesPage.Description | truncate 100 }}</p>
-            <p class="post-card-meta text-muted">{{ $seriesTerm.Count }} posts</p>
+            <p class="post-card-meta text-muted">{{ len $seriesPage.Pages }} posts</p>
           </a>
-        </div>
-      {{ end }}
-      {{ $numSeries := len .Data.Terms.ByCount }}
-      {{ if eq $numSeries 2 }}
-        <div class="post-card post-card-placeholder">
-          <div class="placeholder-image"></div>
-          <div class="placeholder-content">
-            <div class="placeholder-line title"></div>
-            <div class="placeholder-line meta"></div>
-            <div class="placeholder-line description"></div>
-          </div>
-        </div>
-      {{ else if eq $numSeries 1 }}
-        <div class="post-card post-card-placeholder">
-          <div class="placeholder-image"></div>
-          <div class="placeholder-content">
-            <div class="placeholder-line title"></div>
-            <div class="placeholder-line meta"></div>
-            <div class="placeholder-line description"></div>
-          </div>
-        </div>
-        <div class="post-card post-card-placeholder">
-          <div class="placeholder-image"></div>
-          <div class="placeholder-content">
-            <div class="placeholder-line title"></div>
-            <div class="placeholder-line meta"></div>
-            <div class="placeholder-line description"></div>
-          </div>
         </div>
       {{ end }}
     </div>

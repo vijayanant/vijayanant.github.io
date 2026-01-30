@@ -17,6 +17,11 @@
         {{ if .Params.featured }}
           <span class="featured-post-badge">Featured Series</span>
         {{ end }}
+        {{ if eq .Params.status "Ongoing" }}
+          <span class="series-status-badge status-ongoing">
+            Ongoing
+          </span>
+        {{ end }}
         <div class="featured-post-overlay">
           <h1 class="featured-post-hero-title">{{ .Title }}</h1>
           {{ with .Description }}

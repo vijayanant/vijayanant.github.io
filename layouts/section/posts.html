@@ -30,73 +30,10 @@
         {{ end }}
       </div>
 
-      {{/* Featured Series Section */}}
-      {{ $series := first 3 site.Taxonomies.series.ByCount }}
-      {{ range site.Taxonomies.series.Alphabetical }}
-      {{ end }}
-      {{ if gt (len $series) 0 }}
-        <h2 class="section-title mt-5">Featured Series</h2>
-        <div class="blog-grid mb-5">
-          {{ range $series }}
-            {{ $currentSeriesTerm := . }}
-            {{ $seriesPage := site.GetPage (printf "series/%s" ($currentSeriesTerm.Term | urlize)) }}
-            {{ with $seriesPage }}
-              <div class="post-card">
-                <a href="{{ .Permalink }}" class="post-card-link">
-                  {{ with .Params.featured_image }}
-                    {{ $image := $seriesPage.Resources.GetMatch . }}
-                    {{ if $image }}
-                      {{ $thumbnail := $image }}
-                      {{ if ne $image.MediaType.SubType "svg" }}
-                        {{ $thumbnail = $image.Fill "400x250 webp" }}
-                      {{ end }}
-                      <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
-                    {{ end }}
-                  {{ end }}
-                  <h3 class="post-card-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                  </h3>
-                  <p class="post-card-description">{{ .Description | truncate 100 }}</p>
-                  <p class="post-card-meta text-muted">{{ $currentSeriesTerm.Count }} posts</p>
-                </a>
-              </div>
-            {{ end }}
-          {{ end }}
-          {{ $numSeries := len $series }}
-          {{ if eq $numSeries 2 }}
-            <div class="post-card post-card-placeholder">
-              <div class="placeholder-image"></div>
-              <div class="placeholder-content">
-                <div class="placeholder-line title"></div>
-                <div class="placeholder-line meta"></div>
-                <div class="placeholder-line description"></div>
-              </div>
-            </div>
-          {{ else if eq $numSeries 1 }}
-            <div class="post-card post-card-placeholder">
-              <div class="placeholder-image"></div>
-              <div class="placeholder-content">
-                <div class="placeholder-line title"></div>
-                <div class="placeholder-line meta"></div>
-                <div class="placeholder-line description"></div>
-              </div>
-            </div>
-            <div class="post-card post-card-placeholder">
-              <div class="placeholder-image"></div>
-              <div class="placeholder-content">
-                <div class="placeholder-line title"></div>
-                <div class="placeholder-line meta"></div>
-                <div class="placeholder-line description"></div>
-              </div>
-            </div>
-          {{ end }}
-        </div>
-      {{ end }}
-
       {{/* All Other Posts Grid */}}
       {{ if gt (len $remainingPosts) 0 }}
         <hr class="section-divider mt-5 mb-5">
-        <h2 class="section-title mt-5">Posts</h2>
+        <h2 class="section-title mt-5">The Archive</h2>
         <div class="blog-grid">
           {{ range $remainingPosts }}
             <div class="post-card">

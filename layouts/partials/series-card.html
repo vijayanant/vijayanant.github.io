@@ -2,6 +2,11 @@
 {{ $seriesPage := . }}
 
 <div class="post-card">
+  {{ if eq $seriesPage.Params.status "Ongoing" }}
+    <span class="series-status-badge status-ongoing">
+      Ongoing
+    </span>
+  {{ end }}
   {{ $postPermalink := $seriesPage.Permalink }}
   {{ $featuredImage := $seriesPage.Params.featured_image }}
   
