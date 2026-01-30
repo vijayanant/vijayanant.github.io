@@ -50,7 +50,7 @@ Let's take a simple problem. You need to create an object. The most direct way i
 
 * **The Force of Complexity:** The constructor for `MyObject` is complex. It requires looking up configuration, instantiating other dependencies, and performing several steps. You don't want to repeat this logic everywhere.
 * **The Force of Variation:** You don't want a `MyObject`. You need a `SpecializedObjectA` or a `SpecializedObjectB` depending on a parameter or an environment setting, but the client shouldn't have to know the difference.
-* **The Force of Inversion:** The client code shouldn't depend on a concrete implementation like `MyObject`. It should depend on an interface, `IMyObject`, to allow for testing and future changes.
+* **The Force of Inversion:** The client code shouldn't depend on a concrete implementation like `MyObject`. It should depend on an interface, to allow for testing and future changes.
 
 These forces impose a **shape** on the solution: a clear separation between the client's *request* for an object and the *process* of its creation. The **Factory** pattern is the classic, named solution that fits this shape. It encapsulates the messy creation logic and returns a clean interface to the client.
 
@@ -192,4 +192,3 @@ See the shape.
 The right pattern, named or not, will follow.
 
 {{< newsletter type="simple" >}}
-
