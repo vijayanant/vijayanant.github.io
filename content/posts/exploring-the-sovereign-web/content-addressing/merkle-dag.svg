@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .hash { font-family: monospace; font-size: 12px; fill: #38bdf8; text-anchor: middle; }
+      .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+      .root { stroke: #38bdf8; stroke-width: 3; }
+      .manifest { stroke: #fbbf24; }
+      .block { stroke: #4ade80; }
+      .line { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <rect width="600" height="400" fill="#1e293b" />
+  <rect width="600" height="400" fill="url(#grid)" />
+
+  <rect x="225" y="20" width="150" height="60" class="box root" />
+  <text x="300" y="45" class="label" font-weight="bold">Root Hash</text>
+  <text x="300" y="65" class="hash">QmRoot123...</text>
+
+  <line x1="300" y1="80" x2="300" y2="120" class="line" />
+
+  <rect x="200" y="130" width="200" height="80" class="box manifest" />
+  <text x="300" y="155" class="label" font-weight="bold">Manifest (The Map)</text>
+  <text x="300" y="175" class="hash" font-size="10">Link: Block A (QmAr5...)</text>
+  <text x="300" y="190" class="hash" font-size="10">Link: Block B (QmBz9...)</text>
+
+  <line x1="250" y1="210" x2="150" y2="280" class="line" />
+  <line x1="350" y1="210" x2="450" y2="280" class="line" />
+
+  <rect x="80" y="280" width="140" height="60" class="box block" />
+  <text x="150" y="305" class="label">Block A</text>
+  <text x="150" y="325" class="hash">QmAr5...</text>
+
+  <rect x="380" y="280" width="140" height="60" class="box block" />
+  <text x="450" y="305" class="label">Block B</text>
+  <text x="450" y="325" class="hash">QmBz9...</text>
+</svg>

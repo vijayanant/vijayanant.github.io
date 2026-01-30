@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 18px; font-weight: bold; fill: #f8fafc; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .hash { font-family: monospace; font-size: 11px; fill: #38bdf8; text-anchor: middle; }
+      .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+      .v1 { stroke: #475569; fill: #0f172a; stroke-dasharray: 4,2; } 
+      .v1-text { fill: #64748b; }
+      .root { stroke: #38bdf8; stroke-width: 2.5; }
+      .manifest { stroke: #fbbf24; }
+      .block-new { stroke: #4ade80; stroke-width: 3; fill: #064e3b; }
+      .block-shared { fill: #0f172a; stroke: #38bdf8; }
+      .line { stroke: #475569; stroke-width: 1; marker-end: url(#arrow-gray); }
+      .line-active { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow-white); }
+      .line-new { stroke: #4ade80; stroke-width: 2; marker-end: url(#arrow-green); }
+    </style>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569" />
+    </marker>
+    <marker id="arrow-white" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4ade80" />
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="#1e293b" />
+  <rect width="800" height="500" fill="url(#grid)" />
+
+  <text x="400" y="35" class="title">Updating a File: Changing Block B to B'</text>
+  <text x="200" y="60" class="label v1-text">Version 1 (Old)</text>
+  <rect x="150" y="80" width="100" height="40" class="box v1" />
+  <text x="200" y="105" class="label v1-text">Root V1</text>
+  <line x1="200" y1="120" x2="200" y2="150" class="line" />
+  <rect x="120" y="150" width="160" height="50" class="box v1" />
+  <text x="200" y="180" class="label v1-text">Manifest V1</text>
+  <line x1="160" y1="200" x2="160" y2="350" class="line" />
+  <line x1="240" y1="200" x2="400" y2="330" class="line" />
+  <rect x="350" y="330" width="100" height="50" class="box v1" />
+  <text x="400" y="360" class="label v1-text">Block B</text>
+
+  <text x="600" y="60" class="label">Version 2 (New)</text>
+  <rect x="550" y="80" width="100" height="40" class="box root" />
+  <text x="600" y="105" class="label">Root V2</text>
+  <line x1="600" y1="120" x2="600" y2="150" class="line-new" />
+  <rect x="520" y="150" width="160" height="50" class="box manifest" />
+  <text x="600" y="180" class="label">Manifest V2</text>
+  <line x1="560" y1="200" x2="220" y2="350" class="line-active" />
+  <line x1="640" y1="200" x2="640" y2="330" class="line-new" />
+
+  <rect x="150" y="350" width="100" height="50" class="box block-shared" />
+  <text x="200" y="370" class="label">Block A</text>
+  <text x="200" y="390" class="hash">(Unchanged)</text>
+
+  <rect x="590" y="330" width="100" height="50" class="box block-new" />
+  <text x="640" y="350" class="label" font-weight="bold" fill="#4ade80">Block B'</text>
+  <text x="640" y="370" class="hash" fill="#86efac">(New Data)</text>
+
+  <text x="380" y="450" class="label" fill="#4ade80" font-style="italic">Only the new block and new manifest are created. Block A is reused.</text>
+</svg>
