@@ -8,8 +8,10 @@ draft: false
 description: "Why encryption isn't just scrambling, why the server must be blind (not just honest), and how to protect data at rest using authenticated encryption."
 tags: ["privacy", "encryption", "aead", "cryptography", "zero-trust"]
 categories: ["Software Architecture"]
-featured_image: "bit-flip-attack.svg"
+featured_image: "featured-private.jpg"
 ---
+
+{{< figure src="featured-private.jpg" caption="Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/private-signage-door-u5Zt-HoocrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
 
 In the previous exploration, we solved the problem of **Identity**. We figured out how to verify *who* is speaking using cryptographic keys and graphs of authority.
 

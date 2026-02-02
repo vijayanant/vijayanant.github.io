@@ -30,6 +30,10 @@
         </div>
       </div>
 
+      <div class="content series-intro mb-5">
+        {{ .Content }}
+      </div>
+
       <div class="series-posts-section">
         <ol class="series-posts-list">
           {{ range .Pages.ByParam "series_order" }}

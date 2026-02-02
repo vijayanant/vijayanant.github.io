@@ -8,8 +8,10 @@ draft: false
 description: "Why static keys (like PGP) failed, why device keys (like Signal) aren't enough, and how treating identity as a 'Graph of Authority' finally solves the recovery problem."
 tags: ["identity", "cryptography", "zero-trust", "decentralized-web", "security"]
 categories: ["Software Architecture"]
-featured_image: "identity-graph.svg"
+featured_image: "featured-antique-keys.jpg"
 ---
+
+{{< figure src="featured-antique-keys.jpg" caption="Photo by [Aniyora J](https://unsplash.com/@yora_dreams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/silver-and-black-skeleton-key-PhuxBx5bOCk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
 
 In the previous exploration, I looked at content addressing and how cryptographic hashes let us verify data without trusting a central host. That solves the problem of **integrity**, but it leaves a massive gap regarding **authenticity**.
 
