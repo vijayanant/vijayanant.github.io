@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #f8fafc; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      
+      .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+      .algo-box { fill: #1e293b; stroke: #38bdf8; stroke-width: 3; rx: 8; }
+      
+      .msg { fill: #4ade80; fill-opacity: 0.2; stroke: #4ade80; }
+      .key { fill: #38bdf8; fill-opacity: 0.2; stroke: #38bdf8; }
+      .ad { fill: #fbbf24; fill-opacity: 0.2; stroke: #fbbf24; }
+      
+      .arrow { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow-gray); fill: none; }
+    </style>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="30" class="title">Authenticated Encryption (AEAD)</text>
+
+  <!-- Inputs -->
+  <rect x="50" y="80" width="100" height="40" class="box key" />
+  <text x="100" y="105" class="label">Key</text>
+
+  <rect x="50" y="150" width="100" height="40" class="box msg" />
+  <text x="100" y="175" class="label">Message</text>
+
+  <rect x="50" y="280" width="120" height="40" class="box ad" />
+  <text x="110" y="305" class="label">Associated Data</text>
+  <text x="110" y="335" class="label" font-size="10" fill="#fbbf24">(e.g., Block ID)</text>
+
+
+  <!-- The Algorithm -->
+  <rect x="300" y="60" width="200" height="200" class="algo-box" />
+  <text x="400" y="150" class="label" font-weight="bold" font-size="18">AEAD</text>
+  <text x="400" y="175" class="label" fill="#38bdf8">Encrypt + MAC</text>
+
+
+  <!-- Input Arrows -->
+  <path d="M150,100 L300,120" class="arrow" />
+  <path d="M150,170 L300,170" class="arrow" />
+  
+  <!-- Associated Data Arrow (Bypassing Encryption Logic but entering box) -->
+  <path d="M170,300 L400,300 L400,260" class="arrow" style="stroke:#fbbf24; stroke-dasharray:4,2" />
+
+
+  <!-- Outputs -->
+  <rect x="650" y="150" width="100" height="40" class="box msg" style="stroke-dasharray:2,2" />
+  <text x="700" y="175" class="label">Ciphertext</text>
+
+  <rect x="650" y="220" width="100" height="40" class="box" style="stroke:#38bdf8; fill:#0f172a" />
+  <text x="700" y="245" class="label" fill="#38bdf8">Auth Tag</text>
+
+
+  <!-- Output Arrows -->
+  <path d="M500,170 L650,170" class="arrow" />
+  <path d="M500,200 L650,240" class="arrow" />
+
+</svg>

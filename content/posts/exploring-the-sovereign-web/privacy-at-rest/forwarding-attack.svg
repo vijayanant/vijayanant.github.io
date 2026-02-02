@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #f8fafc; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      
+      .actor { fill: #0f172a; stroke: #38bdf8; stroke-width: 2; rx: 8; }
+      .msg { fill: #1e293b; stroke: #4ade80; stroke-width: 2; }
+      .env { fill: #1e293b; stroke: #fbbf24; stroke-width: 2; stroke-dasharray: 4,2; }
+      
+      .arrow { stroke: #94a3b8; stroke-width: 2; marker-end: url(#arrow-gray); fill: none; }
+      .arrow-red { stroke: #ef4444; stroke-width: 2; marker-end: url(#arrow-red); fill: none; }
+    </style>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="30" class="title">The "Sign-then-Encrypt" Trap</text>
+
+  <!-- Alice -->
+  <rect x="50" y="100" width="80" height="150" class="actor" />
+  <text x="90" y="270" class="label">Alice</text>
+
+  <!-- Alice's Message -->
+  <rect x="70" y="130" width="40" height="50" class="msg" />
+  <text x="90" y="160" class="label" font-size="10">Signed</text>
+
+  <!-- Arrow to Bob -->
+  <path d="M130,150 L250,150" class="arrow" />
+  <rect x="160" y="130" width="60" height="40" class="env" />
+  <text x="190" y="155" class="label" fill="#fbbf24" font-size="10">For Bob</text>
+
+  <!-- Bob -->
+  <rect x="250" y="100" width="80" height="150" class="actor" style="stroke:#ef4444" />
+  <text x="290" y="270" class="label" fill="#ef4444">Bob (Evil)</text>
+
+  <!-- Bob's Action -->
+  <text x="390" y="110" class="label" fill="#ef4444">1. Decrypts</text>
+  <text x="390" y="130" class="label" fill="#ef4444">2. Re-Encrypts</text>
+  <text x="390" y="150" class="label" fill="#ef4444">for Charlie</text>
+
+  <!-- Arrow to Charlie -->
+  <path d="M330,180 L550,180" class="arrow-red" />
+  <rect x="410" y="160" width="80" height="40" class="env" />
+  <text x="450" y="185" class="label" fill="#fbbf24" font-size="10">For Charlie</text>
+
+  <!-- Charlie -->
+  <rect x="550" y="100" width="80" height="150" class="actor" />
+  <text x="590" y="270" class="label">Charlie</text>
+
+  <!-- Charlie's View -->
+  <rect x="670" y="130" width="100" height="60" class="msg" />
+  <text x="720" y="155" class="label" font-weight="bold">"I Love You"</text>
+  <text x="720" y="175" class="label" fill="#4ade80">- Alice</text>
+
+  <text x="720" y="220" class="label" fill="#ef4444" font-style="italic">Charlie thinks</text>
+  <text x="720" y="240" class="label" fill="#ef4444" font-style="italic">it's for him!</text>
+
+</svg>

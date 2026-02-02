@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #f8fafc; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+      .funnel { fill: #0f172a; stroke: #38bdf8; stroke-width: 2; }
+      .key { fill: #4ade80; stroke: #4ade80; stroke-width: 1; }
+      
+      .arrow { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow-gray); fill: none; }
+      .chaos { fill: #fbbf24; font-size: 12px; }
+    </style>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+    
+    <!-- Key Icon -->
+    <symbol id="keyIcon" viewBox="0 0 24 24">
+      <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
+      <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1e293b" />
+  <rect width="800" height="500" fill="url(#grid)" />
+
+  <text x="400" y="30" class="title">The Entropy </text>
+
+  <!-- Sources of Chaos -->
+  <text x="200" y="80" class="chaos">Mouse Jitter</text>
+  <text x="360" y="70" class="chaos">Network Noise</text>
+  <text x="530" y="80" class="chaos">Thermal Fluctuations</text>
+
+  <!-- Chaos Lines -->
+  <path d="M250,90 L350,150" class="arrow" stroke-dasharray="2,2" />
+  <path d="M400,80 L400,150" class="arrow" stroke-dasharray="2,2" />
+  <path d="M550,90 L450,150" class="arrow" stroke-dasharray="2,2" />
+
+  <!-- Funnel Shape -->
+  <path d="M300,150 L500,150 L450,300 L350,300 Z" class="funnel" />
+  <text x="400" y="230" class="label" fill="#38bdf8" font-weight="bold">OS CSPRNG</text>
+  <text x="400" y="250" class="label" font-size="10" fill="#94a3b8">(Cryptographically Secure PRNG)</text>
+
+  <!-- Output Arrow -->
+  <path d="M400,300 L400,380" class="arrow" style="stroke:#4ade80; stroke-width:3" />
+
+  <!-- The Key -->
+  <circle cx="400" cy="420" r="30" fill="#0f172a" stroke="#4ade80" stroke-width="2" />
+  <use href="#keyIcon" x="388" y="408" width="24" height="24" class="key" />
+  
+  <text x="400" y="480" class="label" fill="#4ade80" font-weight="bold">256-bit Key</text>
+  <text x="400" y="495" class="label" font-size="10" fill="#94a3b8">(Mathematical Certainty)</text>
+
+</svg>
