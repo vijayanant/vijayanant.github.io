@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 18px; font-weight: bold; fill: #f8fafc; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+      .node { fill: #0f172a; stroke: #38bdf8; stroke-width: 2; }
+      .root { fill: #0f172a; stroke: #fbbf24; stroke-width: 3; }
+      .line-mesh { stroke: #94a3b8; stroke-width: 1; opacity: 0.6; }
+      .line-tree { stroke: #f8fafc; stroke-width: 1.5; marker-end: url(#arrow-white); }
+    </style>
+    <marker id="arrow-white" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f8fafc" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <!-- Left: Web of Trust -->
+  <text x="200" y="40" class="title">PGP Web of Trust</text>
+  <text x="200" y="65" class="label" font-style="italic" fill="#94a3b8">"Messy Peer Verification"</text>
+
+  <!-- Mesh Nodes -->
+  <circle cx="200" cy="200" r="15" class="node" />
+  <circle cx="150" cy="140" r="10" class="node" />
+  <circle cx="250" cy="140" r="10" class="node" />
+  <circle cx="120" cy="240" r="10" class="node" />
+  <circle cx="280" cy="240" r="10" class="node" />
+  <circle cx="180" cy="280" r="10" class="node" />
+
+  <!-- Mesh Connections -->
+  <line x1="200" y1="200" x2="150" y2="140" class="line-mesh" />
+  <line x1="200" y1="200" x2="250" y2="140" class="line-mesh" />
+  <line x1="200" y1="200" x2="120" y2="240" class="line-mesh" />
+  <line x1="200" y1="200" x2="280" y2="240" class="line-mesh" />
+  <line x1="200" y1="200" x2="180" y2="280" class="line-mesh" />
+  <line x1="150" y1="140" x2="250" y2="140" class="line-mesh" />
+  <line x1="120" y1="240" x2="180" y2="280" class="line-mesh" />
+
+  <!-- Divider -->
+  <line x1="400" y1="50" x2="400" y2="350" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Right: CA Hierarchy -->
+  <text x="600" y="40" class="title">CA Hierarchy (PKI)</text>
+  <text x="600" y="65" class="label" font-style="italic" fill="#94a3b8">"Centralized Authority"</text>
+
+  <!-- Root CA -->
+  <rect x="550" y="100" width="100" height="40" class="box root" />
+  <text x="600" y="125" class="label" fill="#fbbf24" font-weight="bold">Root CA</text>
+
+  <!-- Intermediates -->
+  <rect x="480" y="180" width="80" height="30" class="box" />
+  <text x="520" y="200" class="label" font-size="12">Int. CA 1</text>
+  
+  <rect x="640" y="180" width="80" height="30" class="box" />
+  <text x="680" y="200" class="label" font-size="12">Int. CA 2</text>
+
+  <!-- Users -->
+  <circle cx="500" cy="260" r="10" class="node" />
+  <circle cx="540" cy="260" r="10" class="node" />
+  <circle cx="660" cy="260" r="10" class="node" />
+  <circle cx="700" cy="260" r="10" class="node" />
+
+  <!-- Tree Lines -->
+  <line x1="600" y1="140" x2="520" y2="180" class="line-tree" />
+  <line x1="600" y1="140" x2="680" y2="180" class="line-tree" />
+  <line x1="520" y1="210" x2="500" y2="250" class="line-tree" />
+  <line x1="520" y1="210" x2="540" y2="250" class="line-tree" />
+  <line x1="680" y1="210" x2="660" y2="250" class="line-tree" />
+  <line x1="680" y1="210" x2="700" y2="250" class="line-tree" />
+
+</svg>
