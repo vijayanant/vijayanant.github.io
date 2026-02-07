@@ -1,5 +1,35 @@
 /* base.css */
 
+/* Local Fonts */
+@font-face {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../webfonts/mulish-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../webfonts/mulish-700.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../webfonts/lora-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../webfonts/lora-700.woff2') format('woff2');
+}
+
 /* Reset styles */
 * {
     box-sizing: border-box;

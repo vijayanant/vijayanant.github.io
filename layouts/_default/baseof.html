@@ -37,14 +37,6 @@
 
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Mulish:wght@400;700&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
-
     {{ $apple := resources.Get "images/apple-touch-icon.png" | fingerprint }}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $apple.RelPermalink }}">
     {{ $favicon32 := resources.Get "images/favicon-32.png" | fingerprint }}

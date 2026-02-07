@@ -20,12 +20,12 @@
           {{ else }}
               {{ $thumbnail := $imageResource.Fill "400x250 webp" }}
               <a href="{{ $postPermalink }}">
-                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}">
+                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" loading="lazy">
               </a>
           {{ end }}
       {{ else }}
           <a href="{{ $postPermalink }}">
-             <img src="{{ $featuredImage | relURL }}" alt="{{ $seriesPage.Title }}" class="post-card-image">
+             <img src="{{ $featuredImage | relURL }}" alt="{{ $seriesPage.Title }}" class="post-card-image" loading="lazy">
           </a>
       {{ end }}
   {{ else }}
