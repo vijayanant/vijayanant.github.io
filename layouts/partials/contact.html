@@ -7,7 +7,7 @@
                 <p><a href="mailto:{{ .Site.Data.sections.contact.email }}" class="button button-primary"><i class="fas fa-envelope"></i> {{ .Site.Data.sections.contact.email }}</a></p>
                 <div class="social-links">
                     {{ range .Site.Data.sections.contact.social_links }}
-                    <a href="{{ .url }}"{{ if not (strings.HasPrefix .url "/") }} target="_blank" rel="noopener noreferrer"{{ end }} aria-label="{{ .name }}"><i class="{{ .icon }}"></i></a>
+                    <a href="{{ .url }}"{{ if not (strings.HasPrefix .url "/") }} target="_blank" rel="noopener noreferrer"{{ end }} aria-label="{{ .name }}"><i class="{{ .icon }}"></i><span class="sr-only">{{ .name }}</span></a>
                     {{ end }}
                 </div>
             </div>
