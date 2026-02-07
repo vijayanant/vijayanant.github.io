@@ -5,7 +5,7 @@
     <meta charset="{{ .Site.Params.charset | default "UTF8" }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ .Description | default .Site.Params.description }}">
-    <title>{{ .Title | default .Site.Title }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
@@ -39,6 +39,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Mulish:wght@400;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
@@ -67,27 +69,25 @@
 
     {{ partial "footer.html" . }}
 
-    {{ $script := resources.Get "js/script.js" | minify | fingerprint }}
-    <script src="{{ $script.RelPermalink }}" defer></script>
-
+    {{ $scripts := slice }}
+    {{ $scripts = $scripts | append (resources.Get "js/script.js") }}
+    {{ $scripts = $scripts | append (resources.Get "js/tabs.js") }}
     {{ if .Site.Params.enableCodeCopyButton }}
-    {{ $copyCodeScript := resources.Get "js/copy-code.js" | minify | fingerprint }}
-    <script src="{{ $copyCodeScript.RelPermalink }}" defer></script>
+        {{ $scripts = $scripts | append (resources.Get "js/copy-code.js") }}
     {{ end }}
-
-    {{ $tabsScript := resources.Get "js/tabs.js" | minify | fingerprint }}
-    <script src="{{ $tabsScript.RelPermalink }}" defer></script>
-
     {{ if .Site.Params.enableThemeToggle }}
-    {{ $themeToggleScript := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
-    <script src="{{ $themeToggleScript.RelPermalink }}" defer></script>
+        {{ $scripts = $scripts | append (resources.Get "js/theme-toggle.js") }}
     {{ end }}
+    
+    {{ $bundle := $scripts | resources.Concat "js/bundle.js" | minify | fingerprint }}
+    <script src="{{ $bundle.RelPermalink }}" defer></script>
 
-    {{ $jqueryScript := resources.Get "js/jquery.min.js" | fingerprint }}
-    <script src="{{ $jqueryScript.RelPermalink }}" defer></script>
+    {{ $vendorScripts := slice }}
+    {{ $vendorScripts = $vendorScripts | append (resources.Get "js/jquery.min.js") }}
+    {{ $vendorScripts = $vendorScripts | append (resources.Get "js/lity.min.js") }}
+    {{ $vendorBundle := $vendorScripts | resources.Concat "js/vendor.js" | minify | fingerprint }}
+    <script src="{{ $vendorBundle.RelPermalink }}" defer></script>
 
-    {{ $lityScript := resources.Get "js/lity.min.js" | fingerprint }}
-    <script src="{{ $lityScript.RelPermalink }}" defer></script>
     {{ partial "search_modal.html" . }}
     
     {{ if .Site.Params.enableThemeToggle }}

@@ -1,4 +1,5 @@
 baseURL = "https://vijayanant.com/"
+title = "Vijay Anant"
 languageCode = "en-us"
 [params]
 description = "Engineering Leader & Product Builder"

@@ -44,10 +44,14 @@
 
     // Event listener for opening the search
     if (searchButton) {
+        // Pre-fetch on hover or focus for performance
+        searchButton.addEventListener('mouseenter', fetchSearchIndex);
+        searchButton.addEventListener('focus', fetchSearchIndex);
+
         searchButton.addEventListener('click', () => {
             searchOverlay.style.display = 'flex';
             searchInput.focus();
-            fetchSearchIndex(); // Fetch index when search is opened
+            fetchSearchIndex(); // Ensure it's called
         });
     }
 

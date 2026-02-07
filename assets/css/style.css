@@ -1938,3 +1938,34 @@ a:hover {
 .status-ongoing {
     animation: pulse-status 2s infinite ease-in-out;
 }
+
+/* --- Table Styles --- */
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.content th {
+    background-color: var(--surface-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.content td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.15);
+}
+
+.content tr:nth-child(even) {
+    background-color: rgba(var(--primary-color-rgb), 0.03);
+}
+
+.content tr:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.08);
+}
