@@ -61,9 +61,10 @@
 </head>
 
 <body data-page-kind="{{ .Kind }}" data-enable-code-copy-button="{{ .Site.Params.enableCodeCopyButton }}" data-enable-search="{{ .Site.Params.enableSearch }}">
+    <a href="#main-content" class="skip-link">Skip to content</a>
     {{ partial "header.html" . }}
 
-    <main>
+    <main id="main-content">
         {{ block "main" . }}{{ end }}
     </main>
 

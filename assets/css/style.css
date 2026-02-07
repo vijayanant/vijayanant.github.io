@@ -1969,3 +1969,24 @@ a:hover {
 .content tr:hover {
     background-color: rgba(var(--primary-color-rgb), 0.08);
 }
+
+/* Accessibility: Skip to Content */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--text-color-inverted);
+    padding: 10px 25px;
+    z-index: 10000;
+    text-decoration: none;
+    transition: top 0.3s;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.skip-link:focus {
+    top: 0;
+}
