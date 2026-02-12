@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 18px; font-weight: bold; fill: #ef4444; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .vault { fill: #0f172a; stroke: #94a3b8; stroke-width: 4; rx: 8; }
+      .key { fill: #4ade80; stroke: #4ade80; stroke-width: 1; }
+      .data { fill: #1e293b; stroke: #38bdf8; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="50" class="title">The Privacy Paradox: The Fortress</text>
+
+  <!-- The Vault -->
+  <rect x="300" y="100" width="200" height="200" class="vault" />
+  
+  <!-- Content inside -->
+  <rect x="350" y="150" width="100" height="100" class="data" rx="4" />
+  <text x="400" y="205" class="label" fill="#38bdf8" font-weight="bold">DATA</text>
+
+  <!-- The Single Key -->
+  <g transform="translate(150, 200)">
+    <circle cx="0" cy="0" r="30" fill="#0f172a" stroke="#4ade80" stroke-width="2" />
+    <path d="M-10,-10 L10,10 M-10,10 L10,-10" stroke="#4ade80" stroke-width="3" />
+    <text y="50" class="label">My Key</text>
+  </g>
+
+  <!-- The Blocked Path -->
+  <g transform="translate(650, 200)">
+    <circle cx="0" cy="0" r="30" fill="#0f172a" stroke="#94a3b8" stroke-width="2" opacity="0.5" />
+    <text y="50" class="label" fill="#94a3b8">Your Device</text>
+  </g>
+
+</svg>

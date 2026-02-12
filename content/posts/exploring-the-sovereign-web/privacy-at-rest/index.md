@@ -1,6 +1,6 @@
 ---
-title: "Exploring Privacy"
-subtitle: "The Sealed Vault"
+title: "The Sealed Vault"
+subtitle: "Encryption Before Exchange"
 date: 2026-02-02
 series: ["Exploring the Sovereign Web"]
 series_order: 3
@@ -55,7 +55,7 @@ It seems trivial, but manual composition is a famous trap in cryptography.
 
 This forced me to unlearn the idea that cryptographic primitives are like lego bricks. I realized that "Privacy" and "Identity" cannot be slapped together; they must be fused into a single, context-aware structure.
 
-## The Solution: Authenticated Encryption (AEAD)
+## Authenticated Encryption (AEAD)
 
 To solve both the **Bit-Flip Attack** and the **Composition Trap**, modern cryptography has moved to a standard called **Authenticated Encryption with Associated Data (AEAD)**. Algorithms like **AES-GCM** or **ChaCha20-Poly1305** don't just act as locks; they act as tamper-evident seals.
 
@@ -66,6 +66,8 @@ The magic lies in the "Associated Data" field. This allows us to bind the encryp
 {{< figure src="aead-diagram.svg" title="Authenticated Encryption with Associated Data" caption="The Message is encrypted. The Associated Data is NOT encrypted, but they are **cryptographically bound** like a chemical bond, you cannot change one without breaking the integrity of the whole." >}}
 
 For example, if I store an encrypted block in a database, I can feed the "Block ID" into the encryption function as Associated Data. This binds the ciphertext to that specific ID. If an attacker tries to cut-and-paste a valid encrypted message from "Block A" into the slot for "Block B," the decryption will fail because the Associated Data won't match the Tag. The data is not just secret; it is mathematically anchored to its specific place in the universe.
+
+{{< newsletter >}}
 
 ## The Politics of Algorithms: AES vs. ChaCha20
 
@@ -79,7 +81,7 @@ Decentralized systems often run on the edge, on cheap Android phones, Raspberry 
 
 ChaCha20 is a "software-first" cipher. It was designed by Daniel J. Bernstein to be secure and fast on *any* general-purpose CPU. It relies on simple addition and rotation operations that take the same amount of time regardless of the data, making it naturally immune to timing attacks. By choosing ChaCha20, we are optimizing for the **User's Device**, not the **Server's Cloud**. It is a subtle but powerful statement about who the system is built for.
 
-## The Seed of Truth: Entropy
+## The Seed of Truth
 
 This was the point where I realized that all this complex math rests on a surprisingly fragile foundation: **Randomness**.
 
@@ -92,6 +94,8 @@ A sovereign system must rely on the **OS CSPRNG** (Cryptographically Secure Pseu
 {{< figure src="entropy-funnel.svg" title="Harvesting Chaos" caption="The CSPRNG acts as a funnel, compressing the messy noise of the physical world into a mathematically pure key." >}}
 
 It turns the chaos of reality into the mathematical certainty of a key. Without this bridge to the physical world, our digital vault is just a predictable illusion.
+
+{{< newsletter >}}
 
 ## The Burden of the Key
 

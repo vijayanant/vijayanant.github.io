@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #38bdf8; text-anchor: middle; text-transform: uppercase; letter-spacing: 2px; }
+      .key-box { fill: #0f172a; stroke: #f8fafc; stroke-width: 2; rx: 4; }
+      .signed-box { fill: #1e293b; stroke: #4ade80; stroke-width: 2; rx: 4; stroke-dasharray: 4,2; }
+      .arrow { stroke: #4ade80; stroke-width: 2; fill: none; marker-end: url(#arrow-head); }
+      .key-icon { fill: #4ade80; }
+    </style>
+    <marker id="arrow-head" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4ade80" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="40" class="title">The Delegation Chain</text>
+
+  <!-- Root Key -->
+  <g transform="translate(100, 150)">
+    <rect x="-60" y="-40" width="120" height="80" class="key-box" />
+    <circle cx="0" cy="-10" r="10" fill="none" stroke="#4ade80" stroke-width="2" />
+    <path d="M0,0 L0,15 M-5,10 L5,10 M-5,15 L5,15" stroke="#4ade80" stroke-width="2" />
+    <text y="30" class="label" font-weight="bold">Root Key</text>
+    <text y="55" class="label" font-size="10" opacity="0.7">(Owner)</text>
+  </g>
+
+  <!-- Delegation 1 -->
+  <path d="M160,150 L240,150" class="arrow" />
+  <text x="200" y="140" class="label" fill="#4ade80" font-size="12">Signs</text>
+
+  <!-- Admin Key -->
+  <g transform="translate(350, 150)">
+    <rect x="-70" y="-50" width="140" height="100" class="signed-box" />
+    <text y="-10" class="label" font-weight="bold">Admin Capability</text>
+    <text y="15" class="label" font-size="11">"Authorized by Root"</text>
+    <text y="35" class="label" font-size="10" opacity="0.7" font-family="monospace">Sig: 0x8f2a...</text>
+  </g>
+
+  <!-- Delegation 2 -->
+  <path d="M420,150 L500,150" class="arrow" />
+  <text x="460" y="140" class="label" fill="#4ade80" font-size="12">Signs</text>
+
+  <!-- Editor Key -->
+  <g transform="translate(620, 150)">
+    <rect x="-70" y="-50" width="140" height="100" class="signed-box" />
+    <text y="-10" class="label" font-weight="bold">Editor Capability</text>
+    <text y="15" class="label" font-size="11">"Authorized by Admin"</text>
+    <text y="35" class="label" font-size="10" opacity="0.7" font-family="monospace">Sig: 0x3c1e...</text>
+  </g>
+
+  <!-- Action -->
+  <path d="M620,200 L620,280" class="arrow" />
+  <text x="620" y="310" class="label" font-weight="bold">Valid Action</text>
+  <text x="620" y="330" class="label" font-size="11">Device verifies full chain</text>
+
+</svg>

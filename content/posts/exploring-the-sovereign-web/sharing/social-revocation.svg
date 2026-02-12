@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #f8fafc; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .actor { fill: #0f172a; stroke: #38bdf8; stroke-width: 2; rx: 8; }
+      .key { fill: #4ade80; stroke: #4ade80; stroke-width: 1; }
+      .arrow { stroke: #94a3b8; stroke-width: 2; marker-end: url(#arrow-gray); fill: none; }
+      .arrow-red { stroke: #ef4444; stroke-width: 3; marker-end: url(#arrow-red); fill: none; }
+    </style>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="30" class="title">Revocation is Social, not Technical</text>
+
+  <!-- User A -->
+  <rect x="50" y="150" width="80" height="100" class="actor" />
+  <text x="90" y="270" class="label">User A</text>
+
+  <!-- Share Action -->
+  <path d="M130,200 L240,200" class="arrow" />
+  <text x="185" y="190" class="label" fill="#4ade80">Shares</text>
+
+  <!-- User B -->
+  <rect x="250" y="150" width="80" height="100" class="actor" />
+  <text x="290" y="270" class="label">User B</text>
+
+  <!-- Copy Actions -->
+  <path d="M330,180 L440,100" class="arrow" stroke-dasharray="4,4" />
+  <text x="380" y="130" class="label" fill="#94a3b8">Copies</text>
+
+  <path d="M330,220 L440,300" class="arrow" stroke-dasharray="4,4" />
+  <text x="380" y="280" class="label" fill="#94a3b8">Backs up</text>
+
+  <!-- Targets -->
+  <!-- User C -->
+  <rect x="450" y="50" width="80" height="100" class="actor" />
+  <text x="490" y="170" class="label">User C</text>
+
+  <!-- Backup -->
+  <rect x="450" y="250" width="80" height="80" class="actor" stroke-dasharray="2,2" />
+  <text x="490" y="350" class="label">Offline Disk</text>
+
+  <!-- REVOKE ACTION -->
+  <g transform="translate(100, 100)">
+    <rect x="-40" y="-15" width="80" height="30" rx="15" fill="#ef4444" />
+    <text y="5" class="label" fill="#ffffff" font-weight="bold" font-size="10">REVOKE</text>
+    <path d="M0,15 L80,100" class="arrow-red" />
+  </g>
+
+  <!-- The "Remaining" Markers -->
+  <circle cx="510" cy="100" r="10" fill="#4ade80" /> <!-- Key still exists -->
+  <circle cx="510" cy="290" r="10" fill="#4ade80" /> <!-- Key still exists -->
+
+  <text x="650" y="200" class="label" fill="#ef4444" font-weight="bold">The knowledge</text>
+  <text x="650" y="220" class="label" fill="#ef4444" font-weight="bold">already escaped!</text>
+
+</svg>

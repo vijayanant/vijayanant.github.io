@@ -1,6 +1,6 @@
 ---
-title: "Content Addressing"
-subtitle: "The Anatomy of a Permanent Web"
+title: "The Anatomy of a Permanent Web"
+subtitle: "Beyond the URL"
 date: 2026-01-30
 series: ["Exploring the Sovereign Web"]
 series_order: 1
@@ -51,6 +51,8 @@ Because the hash is derived directly from the bytes, it becomes the data’s uni
 
 This replaces institutional trust with **structural trust**. You can receive the data from a friend, a stranger, or a server you’ve never heard of. It does not matter. You hash what you receive yourself. If the fingerprint matches, the math proves the data is correct.
 
+{{< newsletter >}}
+
 The web shifts from trusting organizations to trusting the physics of information.
 
 ## From files to graphs
@@ -65,7 +67,7 @@ Before hashing anything, you have to solve an annoying but critical problem: the
 
 **Canonicalization** strips away this environmental noise and produces a deterministic byte sequence. If two systems agree on the meaning, they must agree on the bytes. Without this step, content addressing falls apart quietly and painfully.
 
-Consider these two JSON objects. Semantically, they are identical—they contain the exact same data. But because the keys are ordered differently, their raw bytes are different:
+Consider these two JSON objects. Semantically, they are identical, as they contain the exact same data. But because the keys are ordered differently, their raw bytes are different:
 
 ```json
 // Input A
@@ -99,7 +101,7 @@ Edit one sentence in a large document and you only change one block. That block 
 
 Synchronizing the update means transferring a few kilobytes instead of a gigabyte. At scale, this efficiency is the difference between a clever idea and a usable system.
 
-This is the same principle that makes Git so fast—when you commit a change, Git doesn't copy your whole project; it only creates new objects for the files that changed and reuses the rest of the Merkle tree.
+This is the same principle that makes Git so fast; when you commit a change, Git doesn't copy your whole project; it only creates new objects for the files that changed and reuses the rest of the Merkle tree.
 
 ## The hard parts nobody gets for free
 
@@ -144,6 +146,8 @@ It does *not* give you privacy.
 Unless the data is encrypted before hashing, any node storing it can still read its contents. The warehouse becomes dumb, but not blind.
 
 This distinction matters. Verifiability and privacy are separate problems. Solving one does not automatically solve the other. I’m deliberately starting with integrity because it is the prerequisite for everything that follows.
+
+{{< newsletter >}}
 
 ## Decoupling truth from location
 

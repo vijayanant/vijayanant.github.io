@@ -1,5 +1,5 @@
 ---
-title: "Cryptographic Identity"
+title: "The Shape of Cryptographic Identity"
 subtitle: "From Keys to Graphs"
 date: 2026-01-31
 series: ["Exploring the Sovereign Web"]
@@ -39,9 +39,11 @@ As a social experiment, this was interesting. As a global identity mechanism, it
 
 ### Technical weight
 
-On top of the social friction, the technology itself was heavy. PGP relied on RSA keys—massive 2048 or 4096-bit blobs of math that were slow to generate and cumbersome to move. You didn't just "have" an identity; you had to carry it around as a file, protecting it like nuclear launch codes.
+On top of the social friction, the technology itself was heavy. PGP relied on RSA keys, massive 2048 or 4096-bit blobs of math that were slow to generate and cumbersome to move. You didn't just "have" an identity; you had to carry it around as a file, protecting it like nuclear launch codes.
 
 Managing these keys required an understanding of Certificate Authorities (CAs) or complex manual key management that was simply out of reach for anyone who wasn't a dedicated systems administrator. This weight ensured that strong cryptography remained a niche tool for the paranoid, rather than a foundational utility for the public.
+
+{{< newsletter >}}
 
 ### Static identity and the revocation problem
 
@@ -102,6 +104,8 @@ Any subset of those shards can reconstruct the key, while individual shards reve
 {{< figure src="social-recovery.svg" title="Social Recovery" caption="Splitting the Root Key into shards (Shamir's Secret Sharing). No single friend holds the key, but together they can restore it." >}}
 
 This approach acknowledges trade-offs openly. It replaces the certainty of permanent loss with a manageable risk of collusion. That’s a trade many systems are now willing to make.
+
+{{< newsletter >}}
 
 ## Where this leaves us
 

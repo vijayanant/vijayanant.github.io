@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .axis-label { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #38bdf8; text-anchor: middle; text-transform: uppercase; letter-spacing: 2px; }
+      .point-dot { fill: #f8fafc; stroke: #38bdf8; stroke-width: 2; }
+      .point-text { font-family: monospace; font-size: 14px; fill: #f8fafc; text-anchor: middle; font-weight: bold; }
+      .frontier-box { fill: none; stroke: #4ade80; stroke-dasharray: 10,5; stroke-width: 2; rx: 8; }
+    </style>
+    <marker id="arrow-white" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f8fafc" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1e293b" />
+  <rect width="800" height="600" fill="url(#grid)" />
+
+  <!-- Axes -->
+  <line x1="100" y1="300" x2="700" y2="300" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow-white)" /> <!-- X: Decentralized -->
+  <line x1="400" y1="500" x2="400" y2="100" stroke="#f8fafc" stroke-width="2" marker-end="url(#arrow-white)" /> <!-- Y: Asynchronous -->
+
+  <text x="400" y="80" class="axis-label">Asynchronous</text>
+  <text x="400" y="540" class="axis-label" opacity="0.5">Synchronous</text>
+  <text x="50" y="305" class="axis-label" opacity="0.5" transform="rotate(-90, 50, 300)">Centralized</text>
+  <text x="750" y="305" class="axis-label" transform="rotate(90, 750, 300)">Decentralized</text>
+
+  <!-- Point 1: Broadcast TV -->
+  <circle cx="200" cy="450" r="6" class="point-dot" />
+  <text x="200" y="480" class="point-text">Broadcast TV</text>
+
+  <!-- Point 2: Signal -->
+  <circle cx="550" cy="450" r="6" class="point-dot" />
+  <text x="550" y="480" class="point-text">Signal</text>
+
+  <!-- Point 3: Git / PGP -->
+  <circle cx="650" cy="450" r="6" class="point-dot" />
+  <text x="650" y="480" class="point-text">Git / PGP</text>
+
+  <!-- THE VOID (The Frontier) -->
+  <rect x="450" y="100" width="250" height="150" class="frontier-box" />
+  <text x="575" y="175" font-family="serif" font-size="40" fill="#4ade80" font-weight="bold" opacity="0.5">?</text>
+  <text x="575" y="230" class="label" fill="#4ade80" font-weight="bold">The Sovereign Frontier</text>
+
+</svg>

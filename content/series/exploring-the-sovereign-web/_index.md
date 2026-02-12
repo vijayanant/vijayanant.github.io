@@ -1,7 +1,7 @@
 ---
 title: "Exploring the Sovereign Web"
 date: 2026-01-30
-description: "My journey into the foundations of privacy-first, zero-trust, and decentralized systems."
+description: "My notes on Trust, Time, and Software"
 status: "Ongoing"
 featured_image: "explorers-field-guide.jpg"
 draft: false

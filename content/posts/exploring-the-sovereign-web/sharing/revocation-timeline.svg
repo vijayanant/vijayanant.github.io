@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #f8fafc; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .line { stroke: #94a3b8; stroke-width: 2; }
+      .access { stroke: #4ade80; stroke-width: 8; stroke-linecap: round; }
+      .revoked { stroke: #ef4444; stroke-width: 8; stroke-linecap: round; stroke-dasharray: 1, 15; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" fill="#1e293b" />
+  <rect width="800" height="300" fill="url(#grid)" />
+
+  <text x="400" y="40" class="title">Revocation: The Time Barrier</text>
+
+  <!-- Timeline -->
+  <line x1="100" y1="150" x2="700" y2="150" class="line" />
+  <text x="100" y="180" class="label">Past</text>
+  <text x="700" y="180" class="label">Future</text>
+
+  <!-- Access Periods -->
+  <!-- Active -->
+  <line x1="150" y1="150" x2="400" y2="150" class="access" />
+  <text x="275" y="130" class="label" fill="#4ade80">Access Granted</text>
+
+  <!-- The Cut -->
+  <line x1="400" y1="120" x2="400" y2="180" stroke="#ef4444" stroke-width="3" />
+  <text x="400" y="110" class="label" fill="#ef4444" font-weight="bold">REVOKED</text>
+
+  <!-- Inactive -->
+  <line x1="400" y1="150" x2="650" y2="150" class="revoked" />
+  <text x="525" y="130" class="label" fill="#94a3b8">No Future Access</text>
+
+  <text x="400" y="250" class="label" font-style="italic">The key changed. The old number is useless for new data.</text>
+
+</svg>
