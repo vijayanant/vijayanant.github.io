@@ -8,7 +8,7 @@ series: ["From Patterns to Practice"]
 series_order: 1
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
-description: "Understanding the core conflict between speed and scale is the architect's first challenge. This post explores how to translate business pressures into concrete drivers and navigate critical trade-offs."
+description: "Architecture is the navigation of the conflict between speed and scale. Learn how to translate technical anxiety into concrete drivers so your organization can choose its trade-offs."
 featured_image: "compass.jpg"
 ---
 

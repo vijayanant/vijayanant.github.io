@@ -4,7 +4,7 @@ slug: "tdd-what-most-articles-miss"
 subtitle: "Uncovering the Design Discipline You Didn't Know You Were Missing"
 date: 2023-05-21
 draft: false
-description: "Uncovering the Design Discipline You Didn't Know You Were Missing"
+description: "TDD is more than a testing ritual; it’s a design discipline. Learn to reclaim the 'unit' as a slice of behavior and let your architecture emerge organically from intent."
 featured_image: "tdd-what-most-articles-miss-1.jpg"
 tags: ["tdd", "testing", "software-design", "agile"]
 categories: ["Programming"]

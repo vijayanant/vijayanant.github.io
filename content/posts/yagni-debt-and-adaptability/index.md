@@ -4,7 +4,7 @@ slug: "yagni-debt-and-adaptability"
 subtitle: "Building for Tomorrow without Sacrificing Today"
 date: 2023-12-22
 draft: false
-description: "Building for Tomorrow without Sacrificing Today, "
+description: "The delicate balance between 'You Aren't Gonna Need It' and technical debt. Learn how to build for future change without sacrificing today's delivery speed."
 featured_image: "yagni-debt-and-adaptability-1.jpg"
 tags: ["yagni", "technical-debt", "adaptability", "software-design"]
 categories: ["Programming"]

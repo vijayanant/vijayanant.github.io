@@ -6,7 +6,7 @@ draft: false
 featured_image: "gadts-to-eliminate-runtime-checks-1.jpg"
 tags: ["gadt", "haskell", "type-system", "compiler"]
 categories: ["Programming"]
-description: "Generalised Algebraic Data Types (GADTs) generalises ordinary Algebraic Data Types(ADTs) by permitting value constructors to return specific types. GADTs are used for ensuring program correctness and in generic programming."
+description: "Standard ADTs sometimes allow invalid states to type check. Learn how GADTs allow value constructors to return specific types, ensuring program correctness at compile time."
 ---
 {{< figure src="gadts-to-eliminate-runtime-checks-1.jpg" alt="clothes iron, hammer, axe, flashlight and pitcher on brown wooden table" caption="Photo by [Todd Quackenbush](https://unsplash.com/@toddquackenbush) on [Unsplash](https://unsplash.com)" >}}
 

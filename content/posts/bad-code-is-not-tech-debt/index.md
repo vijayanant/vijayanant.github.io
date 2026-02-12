@@ -3,7 +3,7 @@ title: "Bad Code Is Not Tech Debt"
 slug: "bad-code-is-not-tech-debt"
 date: 2022-12-28
 draft: false
-description: ""
+description: "Messy code isn't technical debt; it's just bad software. Discover Ward Cunningham's original definition and why the debt metaphor only works when the code is clean enough to refactor."
 featured_image: "bad-code-is-not-tech-debt-1.jpg"
 tags: ["technical-debt", "refactoring", "clean-code", "software-design"]
 categories: ["Programming"]

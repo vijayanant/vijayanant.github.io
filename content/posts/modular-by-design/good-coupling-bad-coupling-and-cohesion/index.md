@@ -5,7 +5,7 @@ title: "Good Coupling, Bad Coupling, and Cohesion"
 slug: "good-coupling-bad-coupling-and-cohesion"
 date: 2023-11-18
 draft: false
-description: "Spaghetti Pasta is Good, Spaghetti Code is Bad!"
+description: "Why spaghetti code is the ultimate productivity killer. A practical guide to understanding coupling and cohesion and why your architecture depends on keeping modules independent."
 featured_image: "good-coupling-bad-coupling-and-cohesion-1.jpg"
 tags: ["coupling", "cohesion", "modularity"]
 categories: ["Software Architecture"]

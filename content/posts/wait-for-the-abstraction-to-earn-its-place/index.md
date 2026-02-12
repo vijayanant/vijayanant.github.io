@@ -3,7 +3,7 @@ title: "Wait for the Abstraction to Earn Its Place"
 slug: "wait-for-the-abstraction-to-earn-its-place"
 date: 2025-07-29
 draft: false
-description: "Duplication isn’t the enemy. Premature abstraction is."
+description: "Don't DRY your code prematurely. Learn why 'two ideas wearing the same coat' is a common design trap and how waiting for the right abstraction prevents centralized fragility."
 featured_image: "wait-for-the-abstraction-to-earn-1.jpg"
 tags: ["abstraction", "duplication", "refactoring", "dry-principle"]
 categories: ["Programming"]

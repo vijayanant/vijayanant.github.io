@@ -6,7 +6,7 @@ draft: false
 featured_image: "expressiveness-1.jpg"
 tags: ["expressiveness", "haskell", "type-system", "programming-language"]
 categories: ["Programming"]
-description: "Exploring the concept of expressiveness in programming languages, comparing Haskell, Java, and Python implementations of a Tree data structure."
+description: "Expressiveness is more than just conciseness. Compare Tree implementations in Haskell, Java, and Python to see how closely a language can match its problem formulation."
 ---
 {{< figure src="expressiveness-1.jpg" alt="Expressive" caption="Expressive" >}}
 

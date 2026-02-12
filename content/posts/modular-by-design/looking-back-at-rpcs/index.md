@@ -5,7 +5,7 @@ title: "Looking Back At RPCs"
 slug: "looking-back-at-rpcs"
 date: 2024-04-17
 draft: false
-description: "A Programming Abstraction for Distributed Systems"
+description: "Remote Procedure Calls attempt to make the network invisible. Learn the cost of this transparency and why obscuring architectural boundaries can lead to distributed spaghetti code."
 featured_image: "looking-back-at-rpcs-1.jpeg"
 tags: ["rpc", "distributed-system", "api-design"]
 categories: ["Software Architecture"]

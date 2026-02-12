@@ -8,7 +8,7 @@ series: ["Codifying Your Architecture"]
 series_order: 1
 categories: ["Software Architecture"]
 tags: ["modularity", "architecture-as-code", "package-by-component", "screaming-architecture", "code-structure"]
-description: "Organizing code by business capability is more than just rearranging directories. It's about using the file tree to enforce boundaries that the compiler can actually defend."                                                     
+description: "Stop hiding your business logic in 'service' and 'repository' folders. Learn how to use 'Screaming Architecture' to make your file tree a direct reflection of your system's intent."                                                     
 featured_image: "blueprint-featured.svg"
 ---
 

@@ -8,7 +8,7 @@ series: ["Codifying Your Architecture"]
 series_order: 2
 categories: ["Software Architecture"]
 tags: ["encapsulation", "information-hiding", "modularity", "clean-code", "java", "python"]
-description: "A clean directory structure is just a facade if anyone can import anything. Learn how to use visibility rules and explicit contracts to turn your folder tree into a fortress."
+description: "Your 'clean' directory structure is a facade if anyone can import anything. Learn how to use visibility rules and explicit contracts to stop 'architectural treason' at the compiler level."
 featured_image: "contract-featured.svg"
 ---
 

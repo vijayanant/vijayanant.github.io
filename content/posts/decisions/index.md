@@ -6,7 +6,7 @@ draft: false
 featured_image: "decisions-1.jpg"
 tags: ["decision-making", "life-advice", "career"]
 categories: ["Career and Writing"]
-description: "We all make decisions. We should make decisions to be happy."
+description: "A short reflection on the ultimate goal of every decision we make."
 ---
 {{< figure src="decisions-1.jpg" alt="landscape photography of splitted road surrounded with trees" caption="Photo by [Oliver Roos](https://unsplash.com/@fairfilter) on [Unsplash](https://unsplash.com)" >}}
 

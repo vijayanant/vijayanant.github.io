@@ -4,7 +4,7 @@ slug: "the-real-bottleneck-isnt-code"
 subtitle: "If you're not building the same thing in your minds, you'll spend even more time fixing what shouldn't have broken."
 date: 2025-07-23
 draft: false
-description: "If you're not building the same thing in your minds, you'll spend even more time fixing what shouldn't have broken."
+description: "LLMs can accelerate your hands, but only humans can align your minds. Learn why 'Team Resonance' is the real productivity multiplier and how to avoid 'Resonance Drift'."
 featured_image: "the-real-bottleneck-isnt-code-1.jpg"
 tags: ["ai", "llm", "teamwork", "communication"]
 categories: ["AI in Engineering"]

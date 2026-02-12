@@ -2,7 +2,7 @@ baseURL = "https://vijayanant.com/"
 title = "Vijay Anant"
 languageCode = "en-us"
 [params]
-description = "Engineering Leader & Product Builder"
+description = "Software Architect and Hands-on Technologist. Writing about the hard stuff: distributed systems and architecture, functional programming and patterns, and how to keep engineering teams sane as they scale."
 author = "Vijay Anantharamaiah"
 portrait = "images/contact-image.png"
 googleAnalytics = "G-XNSPFRLLVH"

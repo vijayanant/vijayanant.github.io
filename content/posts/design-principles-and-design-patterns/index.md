@@ -4,7 +4,7 @@ slug: "design-principles-and-design-patterns"
 date: 2023-04-06
 draft: false
 featured_image: "design-principles-and-design-patterns-1.png"
-description: "Design principles are high-level guidelines for designing software, while design patterns are specific solutions to recurring design problems. This post explores their complementary relationship."
+description: "Design principles are the 'Why' and patterns are the 'How.' Explore the complementary relationship between SOLID principles and classic design patterns with practical examples."
 tags: ["design-pattern", "design-principle", "solid", "software-design"]
 categories: ["Programming"]
 ---

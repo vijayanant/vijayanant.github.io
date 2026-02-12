@@ -12,10 +12,17 @@
   {{- end }}
 {{- end }}
 
+{{- $schemaType := "BlogPosting" }}
+{{- range .Params.categories }}
+  {{- if in (slice "Software Architecture" "Programming" "AI in Engineering" "Distributed Systems") . }}
+    {{- $schemaType = "TechArticle" }}
+  {{- end }}
+{{- end }}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": {{ $schemaType | jsonify }},
   "headline": {{ $title | jsonify }},
   "description": {{ $description | jsonify }},
   "image": {{ $image | absURL | jsonify }},

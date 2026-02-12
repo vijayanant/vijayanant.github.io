@@ -1,5 +1,5 @@
 ---
-title: "SOLID fp "
+title: "SOLID fp"
 slug: "solid-fp"
 date: 2023-09-09
 draft: false

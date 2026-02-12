@@ -5,7 +5,7 @@ date: 2023-10-12
 draft: false
 series: ["Modular by Design"]
 series_order: 1
-description: "Stop just talking about modularity and start achieving it. This guide introduces effective technique for designing truly modular software."
+description: "Modularity isn't just a virtue; it is the result of deliberate information hiding. Learn how to draw boundaries around the secrets most likely to change in your business."
 tags: ["modularity", "software-design", "architecture", "information-hiding"]
 categories: ["Software Architecture"]
 featured_image: "modularity.jpg"

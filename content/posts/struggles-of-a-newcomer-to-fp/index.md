@@ -6,7 +6,7 @@ draft: false
 featured_image: "struggles-of-a-newcomer-to-fp-1.jpg"
 tags: ["functional-programming", "haskell", "recursion", "refactoring"]
 categories: ["Programming"]
-description: "One of the challenges that I faced earlier on with FP is coming up with non-imperative solutions..."
+description: "Moving from imperative to functional programming often leads to messy recursive solutions. Learn how to improve your FP code by removing state management and using standard library abstractions."
 ---
 {{< figure src="struggles-of-a-newcomer-to-fp-1.jpg" alt="woman in black long sleeve shirt covering her face with her hands" caption="Photo by [Elisa Ventur](https://unsplash.com/@elisa_ventur) on [Unsplash](https://unsplash.com)" >}}
 

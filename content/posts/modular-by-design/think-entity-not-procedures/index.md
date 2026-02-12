@@ -6,7 +6,7 @@ slug: "think-entities-not-procedures"
 subtitle: "Contrasting RPCs with ReST"
 date: 2024-05-24
 draft: false
-description: "Contrasting RPCs with ReST"
+description: "RPC models the world as actions; REST models it as entities. Learn how this fundamental shift in perspective enables the loose coupling and independent evolution that modern services require."
 featured_image: "think-entity-not-procedures-1.png"
 tags: ["rest", "rpc", "api-design", "hateoas", "distributed-system"]
 categories: ["Software Architecture"]

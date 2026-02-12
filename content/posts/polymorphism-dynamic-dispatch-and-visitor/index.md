@@ -6,7 +6,7 @@ draft: false
 featured_image: polymorphism-dynamic-dispatch-and-visitor-1.jpeg
 tags: ["polymorphism", "visitor-pattern", "design-pattern", "oop"]
 categories: ["Programming"]
-description: "Exploring polymorphism, dynamic dispatch, and the Visitor pattern in object-oriented programming, focusing on designing extensible systems."
+description: "Single dispatch languages like Java can make complex transformations difficult to extend. Learn how the Visitor pattern enables double dispatch to design truly extensible systems."
 ---
 {{< figure src="polymorphism-dynamic-dispatch-and-visitor-1.jpeg" alt="Change neon light signage" caption="Photo by [Ross Findon](https://unsplash.com/@rossfindon) on [Unsplash](https://unsplash.com)" >}}
 
