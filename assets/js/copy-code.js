@@ -40,6 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             navigator.clipboard.writeText(textToCopy.trimEnd()).then(() => {
                 button.innerText = 'Copied!';
+                
+                // Track code copy event
+                if (typeof gtag === 'function') {
+                    gtag('event', 'share', {
+                        'method': 'copy_code',
+                        'content_type': 'code_block',
+                        'item_id': window.location.pathname
+                    });
+                }
+
                 setTimeout(() => button.innerText = 'Copy', 2000);
             }).catch(err => console.error('Failed to copy:', err));
         });

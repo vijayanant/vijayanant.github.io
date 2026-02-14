@@ -3,10 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = toggleButton.querySelector('i');
     
     // Function to set theme
-    const setTheme = (theme) => {
+    const setTheme = (theme, isInitial = false) => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         
+        // Track theme in GA4
+        if (typeof gtag === 'function') {
+            gtag('event', 'select_content', {
+                'content_type': 'theme',
+                'item_id': theme,
+                'non_interaction': isInitial // Don't affect bounce rate on initial load
+            });
+        }
+
         // Update Icon (Action Indicator)
         // If theme is Light, show Moon (to switch to Dark)
         // If theme is Dark, show Sun (to switch to Light)
@@ -28,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Apply initial theme
-    setTheme(currentTheme);
+    setTheme(currentTheme, true);
 
     // Event Listener
     toggleButton.addEventListener('click', () => {

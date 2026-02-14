@@ -98,6 +98,16 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
     .then(response => {
         // Because of no-cors, we can't read the response body.
         // We have to assume success and instruct the user to check their email.
+        
+        // Track the successful submission
+        if (typeof gtag === 'function') {
+            gtag('event', 'sign_up', {
+                'event_category': 'engagement',
+                'event_label': 'newsletter_subscription',
+                'method': 'js_fetch'
+            });
+        }
+
         form.reset();
         messageDiv.textContent = 'Great! Now check your inbox to confirm your subscription.';
         messageDiv.style.color = 'var(--primary-color)';
@@ -111,4 +121,63 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
       submitButton.disabled = false;
     });
   });
+});
+
+// Track Workshop Contact Clicks
+document.addEventListener('click', function(event) {
+    const workshopButton = event.target.closest('.workshop-contact-button');
+    if (workshopButton) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+                'event_category': 'business',
+                'event_label': 'workshop_inquiry'
+            });
+        }
+    }
+
+    const socialLink = event.target.closest('.social-link-click');
+    if (socialLink) {
+        if (typeof gtag === 'function') {
+            const platform = socialLink.getAttribute('aria-label') || 'unknown';
+            gtag('event', 'click', {
+                'event_category': 'social',
+                'event_label': platform,
+                'destination_url': socialLink.href
+            });
+        }
+    }
+
+    const shareBtn = event.target.closest('.share-btn-click');
+    if (shareBtn) {
+        if (typeof gtag === 'function') {
+            const platform = shareBtn.title || shareBtn.getAttribute('aria-label') || 'unknown';
+            gtag('event', 'share', {
+                'method': platform,
+                'item_id': window.location.pathname
+            });
+        }
+    }
+
+    const outboundLink = event.target.closest('.outbound-link-click');
+    if (outboundLink) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'click', {
+                'event_category': 'outbound',
+                'event_label': outboundLink.innerText.trim(),
+                'destination_url': outboundLink.href
+            });
+        }
+    }
+
+    const relatedLink = event.target.closest('.related-post-link');
+    if (relatedLink) {
+        if (typeof gtag === 'function') {
+            const postTitle = relatedLink.querySelector('.related-post-title')?.innerText || 'unknown';
+            gtag('event', 'select_content', {
+                'content_type': 'related_post',
+                'item_id': relatedLink.href,
+                'item_name': postTitle
+            });
+        }
+    }
 });

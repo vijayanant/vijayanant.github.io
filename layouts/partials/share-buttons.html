@@ -13,7 +13,7 @@
 
     <!-- Twitter/X -->
     <a href="https://twitter.com/intent/tweet?text={{ urlquery $title }}&amp;url={{ urlquery $url }}{{ with $twitterHandle }}&amp;via={{ . }}{{ end }}" 
-       class="share-btn twitter" 
+       class="share-btn twitter share-btn-click" 
        target="_blank" 
        rel="noopener noreferrer" 
        title="Share on Twitter">
@@ -23,7 +23,7 @@
 
     <!-- LinkedIn -->
     <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlquery $url }}" 
-       class="share-btn linkedin" 
+       class="share-btn linkedin share-btn-click" 
        target="_blank" 
        rel="noopener noreferrer" 
        title="Share on LinkedIn">
@@ -33,7 +33,7 @@
 
     <!-- Email -->
     <a href="mailto:?subject={{ urlquery $title }}&amp;body={{ urlquery $url }}" 
-       class="share-btn email" 
+       class="share-btn email share-btn-click" 
        title="Share via Email">
         <i class="fas fa-envelope"></i>
         <span class="sr-only">Share via Email</span>

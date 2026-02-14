@@ -13,7 +13,7 @@
     {{/* --- Title Section --- */}}
     <h3 class="post-card-title">
         {{ if .link }}
-            <a href="{{ .link | relURL }}">{{ .title }}</a>
+            <a href="{{ .link | relURL }}" class="outbound-link-click">{{ .title }}</a>
         {{ else }}
             {{ .title }}
         {{ end }}
@@ -31,14 +31,14 @@
     {{ if .links }}
         <div class="post-card-links">
             {{ range .links }}
-            <a href="{{ .url }}" class="button button-primary" target="_blank">
+            <a href="{{ .url }}" class="button button-primary outbound-link-click" target="_blank">
                 {{ if .icon }}<i class="{{ .icon }}" style="margin-right: 4px;"></i>{{ end }}{{ .label }}
             </a>
             {{ end }}
         </div>
     {{ else if .link }}
         <div class="post-card-footer">
-             <a href="{{ .link | relURL }}" class="read-more-button">Details &rarr;</a>
+             <a href="{{ .link | relURL }}" class="read-more-button outbound-link-click">Details &rarr;</a>
         </div>
     {{ end }}
 </div>

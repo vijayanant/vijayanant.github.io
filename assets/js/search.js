@@ -67,6 +67,7 @@
     }
 
     // Event listener for search input
+    let searchTimeout;
     if (searchInput) {
         searchInput.addEventListener('input', () => {
             const query = searchInput.value.trim();
@@ -74,6 +75,16 @@
                 if (fuse) { // Ensure Fuse is initialized
                     const results = fuse.search(query);
                     displayResults(results, query);
+
+                    // Track search query with debouncing
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'search', {
+                                'search_term': query
+                            });
+                        }
+                    }, 1000); // Wait for 1 second of inactivity before logging
                 } else {
                     searchResults.innerHTML = '<p>Loading search index...</p>';
                 }

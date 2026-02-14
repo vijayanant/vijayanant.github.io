@@ -6,7 +6,14 @@
   <script type="text/javascript" src="https://zgp4-zgp4.maillist-manage.in/js/optin.min.js" onload="setupSF('sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e','ZCFORMVIEW',false,'light',false,'0')"></script>
   <script type="text/javascript">
     function runOnFormSubmit_sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e(th){
-    /*Before submit, if you want to trigger your event, "include your code here"*/
+      /*Before submit, if you want to trigger your event, "include your code here"*/
+      if (typeof gtag === 'function') {
+        gtag('event', 'sign_up', {
+          'event_category': 'engagement',
+          'event_label': 'newsletter_subscription',
+          'method': 'zoho_campaigns'
+        });
+      }
     };
   </script>
 
