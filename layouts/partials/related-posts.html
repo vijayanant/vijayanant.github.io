@@ -1,6 +1,35 @@
 {{ if .Site.Params.enableRelatedPosts }}
-  {{ $related := .Site.RegularPages.Related . | first 3 }}
-  {{ with $related }}
+  {{ $currentSeries := "" }}
+  {{ if .Params.series }}
+    {{ $currentSeries = index .Params.series 0 }}
+  {{ end }}
+  
+  {{ $related := .Site.RegularPages.Related . }}
+  
+  {{/* Filter out posts from the same series if current post has one */}}
+  {{ $filtered := slice }}
+  {{ if $currentSeries }}
+    {{ range $related }}
+      {{ $itemSeries := "" }}
+      {{ if .Params.series }}
+        {{ $itemSeries = index .Params.series 0 }}
+      {{ end }}
+      {{ if ne $itemSeries $currentSeries }}
+        {{ $filtered = $filtered | append . }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ $filtered = $related }}
+  {{ end }}
+
+  {{/* If we filtered out too many, or there was no series, fall back to the original related list */}}
+  {{ if lt (len $filtered) 1 }}
+    {{ $filtered = $related }}
+  {{ end }}
+
+  {{ $finalRelated := $filtered | first 3 }}
+
+  {{ with $finalRelated }}
   <div class="related-posts-section">
     <h2 class="section-title">You Might Also Like</h2>
     <ul class="related-posts-list">

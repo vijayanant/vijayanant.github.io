@@ -29,21 +29,25 @@ name = "Twitter"
 url = "https://twitter.com/vijayanant"
 
 [related]
-threshold = 80
+threshold = 50
 includeNewer = true
 toLower = true
 
 [[related.indices]]
-name = "categories"
-weight = 180
+name = "tags"
+weight = 100
 
 [[related.indices]]
-name = "tags"
-weight = 120
+name = "categories"
+weight = 80
+
+[[related.indices]]
+name = "series"
+weight = 50
 
 [[related.indices]]
 name = "title"
-weight = 15
+weight = 20
 
 [[related.indices]]
 name = "date"
