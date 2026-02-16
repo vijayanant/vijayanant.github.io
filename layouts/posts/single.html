@@ -14,7 +14,7 @@
             <div class="post-meta-info text-center mb-3">
               {{ with .Params.categories }}
                 {{ range $i, $e := . }}
-                  <a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="category-link">{{ . }}</a>{{ if lt ($i | add 1) (len $.Params.categories) }}<span class="meta-delimiter">&middot;</span>{{ end }}
+                  <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" class="category-link">{{ . }}</a>{{ if lt ($i | add 1) (len $.Params.categories) }}<span class="meta-delimiter">&middot;</span>{{ end }}
                 {{ end }}
                 <span class="meta-separator"> | </span>
               {{ end }}
@@ -50,7 +50,7 @@
           {{ with .Params.tags }}
             <div class="post-tags mt-4">
               {{ range . }}
-                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag-link ms-2">#{{ . }}</a>
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-link ms-2">#{{ . }}</a>
               {{ end }}
             </div>
           {{ end }}
