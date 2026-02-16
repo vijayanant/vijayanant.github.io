@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #38bdf8; text-anchor: middle; text-transform: uppercase; letter-spacing: 2px; }
+      .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+      .actor { fill: #1e293b; stroke: #38bdf8; stroke-width: 2; rx: 8; }
+      .red-x { stroke: #ef4444; stroke-width: 4; }
+      .green-check { stroke: #4ade80; stroke-width: 4; }
+      .key { fill: #4ade80; }
+      .key-old { fill: #ef4444; opacity: 0.5; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="40" class="title">The Two Stages of Revocation</text>
+
+  <!-- Level 1: Stage 1 -->
+  <text x="200" y="80" class="label" font-weight="bold" fill="#ef4444">Stage 1: Invalidate Signature</text>
+  <g transform="translate(200, 150)">
+    <rect x="-60" y="-40" width="120" height="80" class="actor" />
+    <text y="5" class="label">Revoked Actor</text>
+    <!-- Muted Microphone / Cross through signature -->
+    <line x1="-30" y1="-20" x2="30" y2="20" class="red-x" />
+    <line x1="30" y1="-20" x2="-30" y2="20" class="red-x" />
+    <text y="60" class="label" font-size="10">"Signature Ignored"</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="400" y1="60" x2="400" y2="350" stroke="#334155" stroke-width="2" stroke-dasharray="5,5" />
+
+  <!-- Level 2: Stage 2 -->
+  <text x="600" y="80" class="label" font-weight="bold" fill="#4ade80">Stage 2: Change the Locks</text>
+  <g transform="translate(600, 150)">
+    <rect x="-60" y="-40" width="120" height="80" class="actor" />
+    <text y="5" class="label">Remaining Team</text>
+    <!-- New Key Symbol -->
+    <circle cx="0" cy="-10" r="10" fill="none" stroke="#4ade80" stroke-width="2" />
+    <path d="M0,0 L0,15 M-5,10 L5,10 M-5,15 L5,15" stroke="#4ade80" stroke-width="2" />
+    <text y="60" class="label" font-size="10">"New Key Distributed"</text>
+  </g>
+
+  <!-- Result Logic -->
+  <text x="400" y="300" class="label" font-style="italic">If you only do Stage 1, the revoked actor can still **read** history.</text>
+  <text x="400" y="325" class="label" font-style="italic">If you do both, access is truly terminated.</text>
+
+</svg>

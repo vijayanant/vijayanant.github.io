@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #38bdf8; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .block { fill: #0f172a; stroke-width: 2; rx: 4; }
+      .green-block { stroke: #4ade80; }
+      .cyan-block { stroke: #38bdf8; }
+      .line { stroke: #ef4444; stroke-width: 3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="40" class="title">Forward Secrecy: Drawing a Line in Time</text>
+
+  <!-- Past Blocks -->
+  <g transform="translate(100, 200)">
+    <rect x="-40" y="-40" width="80" height="80" class="block green-block" />
+    <text y="60" class="label" fill="#4ade80">Old Key</text>
+  </g>
+  <g transform="translate(200, 200)">
+    <rect x="-40" y="-40" width="80" height="80" class="block green-block" />
+  </g>
+  <g transform="translate(300, 200)">
+    <rect x="-40" y="-40" width="80" height="80" class="block green-block" />
+  </g>
+
+  <!-- The Barrier -->
+  <line x1="400" y1="100" x2="400" y2="300" class="line" stroke-dasharray="10,5" />
+  <rect x="350" y="80" width="100" height="30" rx="15" fill="#ef4444" />
+  <text x="400" y="100" class="label" fill="#ffffff" font-weight="bold" font-size="10">REVOCATION</text>
+
+  <!-- Future Blocks -->
+  <g transform="translate(500, 200)">
+    <rect x="-40" y="-40" width="80" height="80" class="block cyan-block" />
+    <text y="60" class="label" fill="#38bdf8">New Key</text>
+  </g>
+  <g transform="translate(600, 200)">
+    <rect x="-40" y="-40" width="80" height="80" class="block cyan-block" />
+  </g>
+  <g transform="translate(700, 200)">
+    <rect x="-40" y="-40" width="80" height="80" class="block cyan-block" />
+  </g>
+
+  <!-- Access Visualization -->
+  <text x="200" y="320" class="label" fill="#4ade80">Revoked Actor can read past</text>
+  <text x="600" y="320" class="label" fill="#ef4444">Revoked Actor is blind to future</text>
+
+  <text x="400" y="370" class="label" font-style="italic">Rotation ensures that even if you have the lockbox for history, you lack the key for the future.</text>
+
+</svg>
