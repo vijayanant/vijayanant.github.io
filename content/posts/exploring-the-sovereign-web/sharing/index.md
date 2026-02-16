@@ -13,7 +13,7 @@ featured_image: "message-in-a-bottle-at-seashore.jpg"
 
 {{< figure src="message-in-a-bottle-at-seashore.jpg" caption="Photo by [Jayne Harris](https://unsplash.com/@jayneharr33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-bottle-floating-in-a-body-of-water-SkVpd5YhUug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
 
-In the previous explorations, integrity let us verify data without trusting where it lived. Identity let us understand who could speak for that data. Privacy let us hide meaning from the infrastructure that stored it.
+In the previous explorations, [**integrity**]({{< ref "/posts/exploring-the-sovereign-web/content-addressing/" >}}) let us verify data without trusting where it lived. [**Identity**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}) let us understand who could speak for that data. [**Privacy**]({{< ref "/posts/exploring-the-sovereign-web/privacy-at-rest/" >}}) let us hide meaning from the infrastructure that stored it.
 
 And then encryption worked a little *too* well.
 
@@ -128,7 +128,7 @@ And time, unlike math, refuses to stay tidy.
 
 To build a system that is decentralized and asynchronous, I hit one final hurdle: **The Identity Registry**.
 
-If I want to share a file with you while you are offline, I need to know your Public Encryption Key. If I ask a central server, I have reintroduced a point of surveillance. If I keep it in a local address book, I can’t find new people.
+If I want to share a file with you while you are offline, I need to know your Public Encryption Key. If I ask a central server, I have reintroduced a point of metadata exposure. If I keep it in a local address book, I can’t find new people.
 
 Even "Serverless" systems often need a **Dumb Helper**, which acts as a relay or directory that doesn't understand the keys but holds them in a global "Yellow Pages" so we can find each other in the dark. Whether it is a **DHT (Distributed Hash Table)** in IPFS or a **Relay** in the Nostr protocol, we minimize the server's power (it can't read the mail) but acknowledge its utility (it holds the mailbox).
 
@@ -143,3 +143,7 @@ A chat app needs the **Ephemerality** of the Ratchet. A secret archive needs the
 The math was never the hard part.
 
 And that realization feels less like an answer… and more like the next boundary.
+
+***
+
+*This post continues a series of research notes exploring the foundations of long-lived distributed systems. Next up: [**Where is my Admin Panel?**]({{< ref "/posts/exploring-the-sovereign-web/authority-and-governance/" >}})*

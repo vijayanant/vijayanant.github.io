@@ -53,7 +53,7 @@ This replaces institutional trust with **structural trust**. You can receive the
 
 {{< newsletter >}}
 
-The web shifts from trusting organizations to trusting the physics of information.
+The web shifts from trusting organizations to trusting the **immutable nature** of information.
 
 ## From files to graphs
 
@@ -161,4 +161,4 @@ Servers stop being arbiters of correctness and become commodity providers of sto
 
 That shift does not solve every problem, but it changes which problems matter.
 
-I’m starting here because integrity is the first layer you have to get right. Privacy, identity, and authority build on top of it. Those are the layers I’m exploring next.
+I’m starting here because integrity is the first layer you have to get right. [**Privacy, identity, and authority**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}) build on top of it. Those are the layers I’m exploring next.

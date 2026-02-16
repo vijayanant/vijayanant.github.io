@@ -13,7 +13,7 @@ featured_image: "featured-private.jpg"
 
 {{< figure src="featured-private.jpg" caption="Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/private-signage-door-u5Zt-HoocrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
 
-In the previous exploration, we solved the problem of **Identity**. We figured out how to verify *who* is speaking using cryptographic keys and graphs of authority.
+In the previous exploration, we solved the problem of [**Identity**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}). We figured out how to verify *who* is speaking using cryptographic keys and graphs of authority.
 
 But knowing "who" is speaking doesn't stop others from listening.
 
@@ -103,4 +103,4 @@ If we use these tools correctly, AEAD for integrity, careful ordering for safety
 
 But this privacy comes at a steep price.
 
-We have successfully locked the world out. The problem is, we have also locked ourselves in. To make this data useful, we have to figure out how to smuggle the key through the very same untrusted channels we just built the walls to protect. That is what I’ll explore next.
+We have successfully locked the world out. The problem is, we have also locked ourselves in. To make this data useful, we have to figure out how to [**smuggle the key**]({{< ref "/posts/exploring-the-sovereign-web/sharing/" >}}) through the very same untrusted channels we just built the walls to protect. That is what I’ll explore next.

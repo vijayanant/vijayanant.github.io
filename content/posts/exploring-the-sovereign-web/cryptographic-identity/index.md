@@ -13,7 +13,7 @@ featured_image: "featured-antique-keys.jpg"
 
 {{< figure src="featured-antique-keys.jpg" caption="Photo by [Aniyora J](https://unsplash.com/@yora_dreams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/silver-and-black-skeleton-key-PhuxBx5bOCk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
 
-In the previous exploration, I looked at content addressing and how cryptographic hashes let us verify data without trusting a central host. That solves the problem of **integrity**, but it leaves a massive gap regarding **authenticity**.
+In the previous exploration, I looked at [**content addressing**]({{< ref "/posts/exploring-the-sovereign-web/content-addressing/" >}}) and how cryptographic hashes let us verify data without trusting a central host. That solves the problem of **integrity**, but it leaves a massive gap regarding **authenticity**.
 
 I can write a document, hash it, hand you the fingerprint, and claim it was written by Albert Einstein. The hash proves the file hasn't changed since I created it, but it proves absolutely nothing about *who* created it.
 
@@ -115,4 +115,4 @@ What’s changed is not the math, but the architecture around it. By treating id
 
 This is still hard. It’s still easy to get wrong. But it no longer feels out of reach.
 
-But identifying 'who' someone is doesn't guarantee that only they can read your data. Whether we are sending a message or storing a file for a team, we need a way to lock the data so that only authorized identities can unlock it. This is what I will explore next.
+But identifying 'who' someone is doesn't guarantee that only they can read your data. Whether we are sending a message or storing a file for a team, we need a way to [**lock the data**]({{< ref "/posts/exploring-the-sovereign-web/privacy-at-rest/" >}}) so that only authorized identities can unlock it. This is what I will explore next.
