@@ -113,4 +113,4 @@ We trade the comfort of a central Admin Panel for the durability of a system tha
 
 ***
 
-*This post continues a series of research notes exploring the foundations of long-lived distributed systems. Next up: The Sync Paradox (How we actually agree on "Now").*
+*This post continues a series of research notes exploring the foundations of long-lived distributed systems. Next up: **The Sync Paradox (How we actually agree on "Now").***
