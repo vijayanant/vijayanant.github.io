@@ -123,7 +123,15 @@
 .ak-card:hover::after { opacity: 1; }
 
 .ak-grid-container { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
-.ak-feature-card { grid-column: span 2; padding: 4rem 2.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.ak-feature-card {
+    grid-column: span 2;
+    padding: 4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+}
+
 .ak-feature-card:nth-child(1), .ak-feature-card:nth-child(2) { grid-column: span 3; }
 .ak-card-icon { width: 50px; height: 50px; margin-bottom: 2rem; color: var(--ak-accent); }
 
@@ -134,7 +142,13 @@
 .ak-use-cases, .ak-journey { padding: 10rem 0; border-top: 1px solid var(--ak-border); }
 .ak-section-title { font-size: 3.5rem !important; font-weight: 900; text-align: center; margin-bottom: 8rem !important; text-transform: uppercase; }
 .ak-use-case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-.ak-use-case-card { padding: 4.5rem 2.5rem; text-align: left; }
+.ak-use-case-card {
+    padding: 4.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
 
 /* Journey Section */
 .ak-journey-timeline { position: relative; max-width: 1200px; margin: 0 auto; }
@@ -164,6 +178,46 @@ body > header, body > footer, .floating-theme-toggle, #theme-toggle, .skip-link,
 .ak-footer-content { display: flex; justify-content: space-between; align-items: center; font-family: var(--ak-font-mono); font-size: 0.75rem; color: var(--ak-dim); text-transform: uppercase; letter-spacing: 0.1em; }
 .ak-footer-nav { display: flex; gap: 2rem; }
 .ak-footer-nav a { color: var(--ak-accent) !important; text-decoration: none !important; transition: opacity 0.3s; }
+
+/* Responsive Architecture */
+@media (max-width: 1024px) {
+    .akshara-title { font-size: clamp(3.5rem, 12vw, 6rem) !important; }
+    .ak-grid-container { grid-template-columns: repeat(2, 1fr); }
+    .ak-feature-card:nth-child(1), .ak-feature-card:nth-child(2) { grid-column: span 2; }
+    .ak-use-case-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .akshara-hero { padding: 10rem 1.5rem 6rem 1.5rem; }
+    .akshara-title { font-size: 3rem !important; letter-spacing: -0.04em !important; }
+    .akshara-subtitle { font-size: 1.2rem !important; }
+    
+    .ak-grid-container { display: flex; flex-direction: column; padding: 0 1.5rem; }
+    .ak-use-case-grid { display: flex; flex-direction: column; padding: 0 1.5rem; }
+    
+    .ak-feature-card, .ak-use-case-card { padding: 3rem 2rem; border-radius: 1.5rem; }
+    .ak-feature-enabler, .ak-use-case-title { font-size: 1.5rem !important; }
+    
+    .ak-use-cases, .ak-journey { padding: 6rem 0; }
+    .ak-section-title { font-size: 2.2rem !important; margin-bottom: 4rem !important; }
+    
+    /* MOBILE TIMELINE: Centered Background Line */
+    .ak-journey-timeline::before { left: 50%; transform: translateX(-50%); z-index: 0; }
+    .ak-journey-item { width: 100%; padding: 0 1rem !important; text-align: center !important; z-index: 1; }
+    .ak-journey-row { justify-content: center !important; margin-bottom: 2rem; }
+    .ak-journey-row:nth-child(odd) .ak-journey-link { flex-direction: row; }
+    
+    .ak-journey-item::before { left: 50% !important; top: 0 !important; transform: translate(-50%, -50%) !important; }
+    
+    .ak-phase-name { font-size: 1.5rem !important; } /* SCALED DOWN */
+    .ak-phase-header { background: var(--ak-bg); padding: 1rem; }
+
+    .ak-footer-content { flex-direction: column; gap: 2rem; text-align: center; }
+    .ak-hero-lattice { opacity: 0.05; }
+    
+    /* CLEANER STATUS POSITION */
+    .ak-hero-status { position: relative; top: 0; right: 0; margin: 0 auto 2rem auto; justify-content: center; transform: none; }
+}
 
 /* Animations */
 @keyframes ak-title-forge { 0% { opacity: 0; transform: translateY(40px) scale(0.98); filter: blur(10px); } 100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
