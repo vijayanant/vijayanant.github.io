@@ -19,11 +19,11 @@ I had built a system with integrity, but I had no mechanism for **Authority**.
 
 In a traditional application, authority is a database problem. Access control lives in a central registry (an ACL). When a user tries to save a file, the server checks the registry. If the user has the `write` bit enabled, the server accepts the change. The server is the judge because it is the only one that can see the registry.
 
-But in a decentralized architecture where the server is a blind relay, it cannot see the data and it cannot see the rules. This makes the standard ACL model physically impossible. If the server cannot judge the write, the authority must be verifiable at the edge.
+But in a decentralized architecture where the server is a blind relay, it cannot see the data and it cannot see the rules. This creates a physics problem for state that signatures alone cannot solve. If the server cannot judge the write, the authority must be verifiable at the edge.
 
 One alternative is the **Token-based model** (such as JWTs). In this architecture, a central server issues a signed credential that the user possesses. This shifts verification to the edge, but the root of trust remains centralized. If the issuing server is unavailable, new credentials cannot be created. If the server’s private key is compromised, every token in the system is invalidated.
 
-To achieve true decentralization, we must remove the central issuer. Authority is not granted by a service; it is delegated by the owner of the data.
+To eliminate infrastructure dependency, we must remove the central issuer. Authority is not granted by a service; it is delegated by the owner of the data.
 
 ## From Registry to Delegation
 
@@ -49,7 +49,7 @@ The math can verify the signatures, but it cannot resolve the contradiction. It 
 
 {{< figure src="authority-fork.svg" title="The Authority Fork" caption="Two contradictory operations are signed while offline. Without a central clock, the network sees a valid state fork that cannot be resolved by math alone." >}}
 
-This highlights a fundamental limit: signatures prove *who* spoke, but they cannot prove *when*. To resolve a state fork, we must choose a strategy for reconciliation:
+This highlights a fundamental limit: signatures prove the **authorized origin**, but they cannot prove *when*. To resolve a state fork, we must choose a strategy for reconciliation:
 
 * **Causal Ordering:** Using Lamport Clocks to establish a logical sequence.
 * **Deterministic Policies:** "Oldest key wins" or "Lowest hash wins" to force a winner.

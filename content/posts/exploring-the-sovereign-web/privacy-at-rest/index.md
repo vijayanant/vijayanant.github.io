@@ -13,13 +13,11 @@ featured_image: "featured-private.jpg"
 
 {{< figure src="featured-private.jpg" caption="Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/private-signage-door-u5Zt-HoocrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
 
-In the previous exploration, we solved the problem of [**Identity**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}). We figured out how to verify *who* is speaking using cryptographic keys and graphs of authority.
+In the previous exploration, we solved the problem of [**Identity**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}). We figured out how to verify **provenance** using cryptographic keys and graphs of authority.
 
-But knowing "who" is speaking doesn't stop others from listening.
+But proving the source of the data doesn't stop unauthorized parties from reading it.
 
-If we send our verified data to a random, untrusted warehouse in a basement somewhere, we might have trusted signatures to ensure they don't *change* the data, but can we trust them not to *read* it? Can we trust them not to sell it, leak it, or use it against us?
-
-Once we decouple storage from trust, we must assume the server is malicious. To build a truly sovereign system, the server (the Relay) must be more than just "Dumb"; it must be **Blind**.
+The data might still exist on a thousand hard drives around the world, but your address is useless because it was tied to a place, not the thing. To build a trust-agnostic infrastructure, the server (the Relay) must be more than just "Dumb"; it must be **Blind**.
 
 This brings us to the science of keeping secrets on an untrusted disk: **Encryption at Rest**.
 
@@ -76,10 +74,10 @@ When investigating which algorithm to use, I stumbled into a fascinating technol
 **The Enterprise Choice: AES.**
 The Advanced Encryption Standard (AES) is the gold standard for banks and governments. It is incredibly fast because modern Intel and AMD chips have special circuits (AES-NI) dedicated to it. However, implementing AES in software (without those chips) is notoriously dangerous; it is prone to "timing attacks" where a hacker can guess your key by measuring exactly how many nanoseconds your CPU takes to process a zero vs. a one.
 
-**The Sovereign Choice: ChaCha20.**
+**The Edge-Optimized Choice: ChaCha20.**
 Decentralized systems often run on the edge, on cheap Android phones, Raspberry Pis, or browser tabs. These devices might not have AES hardware acceleration. This is why protocols like Signal, WireGuard, and IPFS prefer **ChaCha20**.
 
-ChaCha20 is a "software-first" cipher. It was designed by Daniel J. Bernstein to be secure and fast on *any* general-purpose CPU. It relies on simple addition and rotation operations that take the same amount of time regardless of the data, making it naturally immune to timing attacks. By choosing ChaCha20, we are optimizing for the **User's Device**, not the **Server's Cloud**. It is a subtle but powerful statement about who the system is built for.
+ChaCha20 is a "software-first" cipher. It was designed by Daniel J. Bernstein to be secure and fast on *any* general-purpose CPU. It relies on simple addition and rotation operations that take the same amount of time regardless of the data, making it naturally immune to timing attacks. By choosing ChaCha20, we are prioritizing the performance of the **User's Device** over server-side acceleration. It is a deliberate engineering choice focused on hardware-agnostic security.
 
 ## The Seed of Truth
 

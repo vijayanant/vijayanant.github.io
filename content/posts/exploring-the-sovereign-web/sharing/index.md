@@ -35,10 +35,6 @@ This was the moment the problem stopped feeling mathematical. Encryption had bee
 
 I went looking for how real systems handled this, half-expecting there to be a clean, universal answer. There wasn’t.
 
-When we map these models, a pattern emerges. Most of our current web lives in the top-left (Google Docs: Asynchronous but Centralized) or bottom-left (Broadcast TV: Centralized and Synchronous). Even our best secure messengers often lean toward the bottom-right, requiring complex handshakes to manage decentralized keys in a live session.
-
-The empty space in the top-right is the **Sovereign Frontier**: the place where we can share data without a central boss and without both parties being online at the same time.
-
 ## Four ways systems attempt to share secrets
 
 Across different distributed and end-to-end encrypted systems, a few recurring patterns began to emerge. These are not perfect solutions, but rather different ways of coping with the tension between secrecy and collaboration over time.
@@ -65,7 +61,8 @@ If you have a valid subscription, your unique subset of keys allows you to solve
 
 This is the "Digital Envelope" model. If I want to share a document with you, I take the document's symmetric key and wrap it in a tiny encrypted box, a **Lockbox**, that only your specific Public Encryption Key can open. If I share with five people, I create five separate lockboxes.
 
-This is the ultimate expression of sovereignty. I don’t need a central server to manage a group; I only need to know your Public Identity. However, there is a **Scaling Penalty**. If I want to share a file with 10,000 people, I have to upload and manage 10,000 individual lockboxes. The "map" of the keys eventually becomes heavier than the data itself.
+This enables **direct, peer-to-peer cryptographic delegation**. I don’t need a central server to manage a group; I only need to know your Public Identity. However, there is a **Scaling Penalty**. If I want to share a file with 10,000 people, I have to upload and manage 10,000 individual lockboxes.
+ The "map" of the keys eventually becomes heavier than the data itself.
 
 ### 4. The Tree (Recursive Wrapping)
 
@@ -79,7 +76,7 @@ Elegant in theory, but operationally complex. To bridge the gap between sovereig
 
 When we map these models, a pattern emerges. Most of our current web lives in the top-left (Google Docs: Asynchronous but Centralized) or bottom-left (Broadcast TV: Centralized and Synchronous). Even our best secure messengers often lean toward the bottom-right, requiring handshakes to manage decentralized keys in a live session.
 
-The empty space in the top-right is the **Sovereign Frontier**: the place where we can share data without a central boss and without both parties being online at the same time.
+The empty space in the top-right is the **Decentralized Asynchronous Space**: the place where we can share data without a central boss and without both parties being online at the same time.
 
 Elegant in theory, but heavy in practice. A reminder that scale always asks us to pay somewhere.
 
@@ -143,7 +140,3 @@ A chat app needs the **Ephemerality** of the Ratchet. A secret archive needs the
 The math was never the hard part.
 
 And that realization feels less like an answer… and more like the next boundary.
-
-***
-
-*This post continues a series of research notes exploring the foundations of long-lived distributed systems. Next up: [**Where is my Admin Panel?**]({{< ref "/posts/exploring-the-sovereign-web/authority-and-governance/" >}})*

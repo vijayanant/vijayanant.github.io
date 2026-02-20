@@ -31,7 +31,7 @@ The web we use today is built on **location addressing**. When you want to see a
 
 You are pointing to a specific server, owned by a specific company, sitting in a specific data center.
 
-This model quietly forces us into a system of **institutional trust**. You are not actually asking for the file itself. You are asking a gatekeeper to give it to you. If that gatekeeper moves the file, changes its rules, or disappears entirely, the link dies.
+This model quietly forces us into a system of **provider-dependent trust**. You are not actually asking for the file itself. You are asking an **infrastructure host** to give it to you. If that host moves the file, changes its rules, or disappears entirely, the link dies.
 
 The data might still exist on a thousand hard drives around the world, but your address is useless because it was tied to a place, not the thing. We have effectively built a global library where the only way to find a book is by knowing exactly which shelf it was on years ago.
 
@@ -49,11 +49,11 @@ Because the hash is derived directly from the bytes, it becomes the data’s uni
 
 > Who has the bytes that match this fingerprint?
 
-This replaces institutional trust with **structural trust**. You can receive the data from a friend, a stranger, or a server you’ve never heard of. It does not matter. You hash what you receive yourself. If the fingerprint matches, the math proves the data is correct.
+This replaces provider-dependent trust with **structural trust**. You can receive the data from a friend, a stranger, or a server you’ve never heard of. It does not matter. You hash what you receive yourself. If the fingerprint matches, the math proves the data is correct.
 
 {{< newsletter >}}
 
-The web shifts from trusting organizations to trusting the **immutable nature** of information.
+System validity shifts from host-assertion to the mathematical verification of the data itself.
 
 ## From files to graphs
 

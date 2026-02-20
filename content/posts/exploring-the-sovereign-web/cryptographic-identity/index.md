@@ -17,7 +17,7 @@ In the previous exploration, I looked at [**content addressing**]({{< ref "/post
 
 I can write a document, hash it, hand you the fingerprint, and claim it was written by Albert Einstein. The hash proves the file hasn't changed since I created it, but it proves absolutely nothing about *who* created it.
 
-This forces us to ask a harder, more human question: how do we establish identity in a world without gatekeepers?
+This forces us to ask a harder, more human question: how do we establish identity in a decentralized system?
 
 For decades, public-key cryptography has given us the primitives for answering this question. A user generates a private key and a corresponding public key. Messages signed with the private key can be verified by anyone holding the public key. The math is solid, and it has been for a long time.
 
@@ -85,7 +85,7 @@ Below it are device keys. Each device generates its own key pair. The master key
 
 This changes the revocation story completely. If a device is lost or compromised, the master key issues a revocation. Anyone verifying a signature can look at the identity’s history and see exactly when that device was authorized and when it was revoked.
 
-In a decentralized system, this history is usually an append-only log of signed operations. By verifying the log, I don't just see a key; I see a self-sovereign audit trail. There is no need for global coordination. Verification becomes local and deterministic.
+In a decentralized system, this history is usually an append-only log of signed operations. By verifying the log, I don't just see a key; I see a locally verifiable audit trail. There is no need for global coordination. Verification becomes local and deterministic.
 
 ### Digital identity needs analog durability
 
