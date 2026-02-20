@@ -1,26 +1,18 @@
 {{ define "main" }}
-<div class="akshara-landing">
-    {{/* IDENTITY OVERRIDES - Forced via Layout */}}
+<div class="akshara-landing" id="akshara-portal">
+    {{/* IDENTITY & SOCIAL OVERRIDES */}}
     <title>Akshara | Trust-Agnostic Infrastructure</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon-akshara.svg">
+    <meta property="og:title" content="Akshara | Trust-Agnostic Infrastructure" />
+    <meta property="og:description" content="A foundational layer for building applications where secrecy is the baseline and the hosting infrastructure is irrelevant to the security of the data." />
+    <meta name="twitter:title" content="Akshara | Trust-Agnostic Infrastructure" />
 
-    <script>
-        /* Aggressive Identity Pivot */
-        document.title = "Akshara | Trust-Agnostic Infrastructure";
-        
-        // Remove ALL existing favicons
-        var icons = document.querySelectorAll("link[rel*='icon']");
-        icons.forEach(function(icon) { icon.parentNode.removeChild(icon); });
-        
-        // Inject Bold Akshara Sigil as the only icon for readability
-        var link = document.createElement('link');
-        link.type = 'image/svg+xml';
-        link.rel = 'icon';
-        link.href = '/assets/images/favicon-akshara.svg';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
+    {{/* DECORATIVE DATA STRINGS */}}
+    <div class="ak-data-bg" style="top: 10%; left: 5%;">bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3j6qi6rulerhaea</div>
+    <div class="ak-data-bg" style="top: 40%; right: 2%;">f1d2d2f924e986ac86fdf7b3636cd0d733934fb1</div>
+    <div class="ak-data-bg" style="bottom: 20%; left: 2%;">0x50_BLOCK_CODEC_HARDENED</div>
 
     <header class="akshara-hero">
+        <div class="ak-hero-glow"></div>
         <div class="ak-hero-lattice">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="width:100%; height:100%;">
                 <path d="M0,50 L100,50 M50,0 L50,100 M0,0 L100,100 M100,0 L0,100" stroke="rgba(255,255,255,0.1)" stroke-width="0.05" fill="none" />
@@ -33,9 +25,10 @@
             STATUS: FORGING [PHASE II]
         </div>
 
-        {{/* THE AKSHARA SIGIL */}}
-        <div class="ak-hero-visual">
-            <img src="/assets/images/logo-h-minimal.svg" width="120" height="120" style="margin: 0 auto; filter: drop-shadow(0 0 20px rgba(165, 124, 117, 0.3));">
+        <div class="ak-hero-visual" id="hero-sigil-container">
+            <div class="ak-logo-container" id="hero-sigil">
+                <img src="/assets/images/logo-h-minimal.svg" width="120" height="120" style="filter: drop-shadow(0 0 20px rgba(165, 124, 117, 0.3));">
+            </div>
         </div>
 
         <div class="ak-label">[FOUNDATION]</div>
@@ -45,13 +38,11 @@
         {{ end }}
 
         <div class="ak-hero-cta">
-            <a href="#odyssey" class="ak-btn">
-                [ VIEW THE ODYSSEY ]
-            </a>
+            <a href="#odyssey" class="ak-btn">[ VIEW THE ODYSSEY ]</a>
         </div>
     </header>
 
-    {{/* REST OF THE LAYOUT... */}}
+    {{/* Capabilities */}}
     <section class="ak-grid-container">
         {{ range $index, $item := .Params.capabilities }}
         <div class="ak-card ak-feature-card">
@@ -70,9 +61,10 @@
         {{ end }}
     </section>
 
+    {{/* Professional Sectors - RESTORING ICONS + KEEPING CODES */}}
     <section class="ak-use-cases">
         <div class="container">
-            <h2 class="ak-section-title">Professional Sectors</h2>
+            <h2 class="ak-section-title">High-Stakes Environments</h2>
             <div class="ak-use-case-grid">
                 {{ range .Params.use_cases }}
                 <div class="ak-card ak-use-case-card">
@@ -82,6 +74,11 @@
                         {{ else if eq .icon "engineering" }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M2 7v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7"/><path d="M2 7h20M12 7v12"/></svg>
                         {{ end }}
                     </div>
+                    <div class="ak-spec-label">
+                        {{ if eq .icon "medical" }}[SEC-01: PHI_ENCLAVE]
+                        {{ else if eq .icon "legal" }}[GOV-04: CAUSAL_PROVENANCE]
+                        {{ else if eq .icon "engineering" }}[ENG-09: BIT_INTEGRITY]{{ end }}
+                    </div>
                     <h4 class="ak-use-case-title">{{ .title }}</h4>
                     <p class="ak-use-case-desc">{{ .desc }}</p>
                 </div>
@@ -90,6 +87,7 @@
         </div>
     </section>
 
+    {{/* Odyssey */}}
     <section class="ak-journey" id="odyssey">
         <div class="container">
             <h2 class="ak-section-title">The Engineering Odyssey</h2>
@@ -130,6 +128,24 @@
             </div>
         </div>
     </footer>
+
+    {{/* INTERACTION SCRIPT */}}
+    <script>
+        const sigil = document.getElementById('hero-sigil');
+        window.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            sigil.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        /* Aggressive Identity Pivot */
+        document.title = "Akshara | Trust-Agnostic Infrastructure";
+        var icons = document.querySelectorAll("link[rel*='icon']");
+        icons.forEach(function(icon) { icon.parentNode.removeChild(icon); });
+        var link = document.createElement('link');
+        link.type = 'image/svg+xml'; link.rel = 'icon'; link.href = '/assets/images/favicon-akshara.svg';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
 </div>
 
 {{ $aksharaStyle := resources.Get "css/akshara.css" | minify | fingerprint }}
