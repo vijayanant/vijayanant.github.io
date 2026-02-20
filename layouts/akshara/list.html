@@ -1,0 +1,137 @@
+{{ define "main" }}
+<div class="akshara-landing">
+    {{/* IDENTITY OVERRIDES - Forced via Layout */}}
+    <title>Akshara | Trust-Agnostic Infrastructure</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon-akshara.svg">
+
+    <script>
+        /* Aggressive Identity Pivot */
+        document.title = "Akshara | Trust-Agnostic Infrastructure";
+        
+        // Remove ALL existing favicons
+        var icons = document.querySelectorAll("link[rel*='icon']");
+        icons.forEach(function(icon) { icon.parentNode.removeChild(icon); });
+        
+        // Inject Bold Akshara Sigil as the only icon for readability
+        var link = document.createElement('link');
+        link.type = 'image/svg+xml';
+        link.rel = 'icon';
+        link.href = '/assets/images/favicon-akshara.svg';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <header class="akshara-hero">
+        <div class="ak-hero-lattice">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="width:100%; height:100%;">
+                <path d="M0,50 L100,50 M50,0 L50,100 M0,0 L100,100 M100,0 L0,100" stroke="rgba(255,255,255,0.1)" stroke-width="0.05" fill="none" />
+                <circle cx="50" cy="50" r="1" fill="var(--ak-accent)" />
+            </svg>
+        </div>
+
+        <div class="ak-hero-status">
+            <span class="ak-status-dot"></span>
+            STATUS: FORGING [PHASE II]
+        </div>
+
+        {{/* THE AKSHARA SIGIL */}}
+        <div class="ak-hero-visual">
+            <img src="/assets/images/logo-h-minimal.svg" width="120" height="120" style="margin: 0 auto; filter: drop-shadow(0 0 20px rgba(165, 124, 117, 0.3));">
+        </div>
+
+        <div class="ak-label">[FOUNDATION]</div>
+        <h1 class="akshara-title">{{ .Title }}</h1>
+        {{ with .Params.subtitle }}
+        <p class="akshara-subtitle">{{ . }}</p>
+        {{ end }}
+
+        <div class="ak-hero-cta">
+            <a href="#odyssey" class="ak-btn">
+                [ VIEW THE ODYSSEY ]
+            </a>
+        </div>
+    </header>
+
+    {{/* REST OF THE LAYOUT... */}}
+    <section class="ak-grid-container">
+        {{ range $index, $item := .Params.capabilities }}
+        <div class="ak-card ak-feature-card">
+            <div class="ak-card-icon">
+                {{ if eq $index 0 }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7 L6 17 M12 7 L18 17 M7 19 L17 19"/></svg>
+                {{ else if eq $index 1 }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M12 2l-4 4M12 2l4 4M8 12h8M8 18h8"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+                {{ else if eq $index 2 }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg>
+                {{ else if eq $index 3 }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                {{ else if eq $index 4 }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 2l-10 10M22 2h-6M22 2v6"/></svg>
+                {{ end }}
+            </div>
+            <div class="ak-feature-title">{{ .feature }}</div>
+            <div class="ak-feature-enabler">{{ .enabler }}</div>
+            <div class="ak-feature-desc">{{ .desc }}</div>
+        </div>
+        {{ end }}
+    </section>
+
+    <section class="ak-use-cases">
+        <div class="container">
+            <h2 class="ak-section-title">Professional Sectors</h2>
+            <div class="ak-use-case-grid">
+                {{ range .Params.use_cases }}
+                <div class="ak-card ak-use-case-card">
+                    <div class="ak-card-icon">
+                        {{ if eq .icon "medical" }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5v14M7 9h10"/></svg>
+                        {{ else if eq .icon "legal" }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 7V3M6 7H2M22 7h-4M16 8l-2 4h4l-2 4M8 8L6 12h4L8 16"/><path d="M2 17h20M12 17v4M7 21h10"/></svg>
+                        {{ else if eq .icon "engineering" }}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M2 7v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7"/><path d="M2 7h20M12 7v12"/></svg>
+                        {{ end }}
+                    </div>
+                    <h4 class="ak-use-case-title">{{ .title }}</h4>
+                    <p class="ak-use-case-desc">{{ .desc }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <section class="ak-journey" id="odyssey">
+        <div class="container">
+            <h2 class="ak-section-title">The Engineering Odyssey</h2>
+            <div class="ak-journey-timeline">
+                {{ range .Params.journey_phases }}
+                <div class="ak-journey-phase">
+                    <div class="ak-phase-header">
+                        <span class="ak-phase-tag">{{ .phase }}</span>
+                        <h3 class="ak-phase-name">{{ .name }}</h3>
+                        <span class="ak-phase-status {{ lower .status }}">{{ .status }}</span>
+                    </div>
+                    <div class="ak-phase-links">
+                        {{ range $index, $link := .links }}
+                        <div class="ak-journey-row">
+                            <div class="ak-journey-item">
+                                <a href="{{ .url }}" class="ak-journey-link">
+                                    {{ .title }}
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ak-link-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <footer class="ak-footer">
+        <div class="container">
+            <div class="ak-footer-content">
+                <span class="ak-copyright">© 2026 Vijay Anantharamaiah</span>
+                <nav class="ak-footer-nav">
+                    <a href="/">[ HOME ]</a>
+                    <a href="/index.xml">[ RSS ]</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{{ $aksharaStyle := resources.Get "css/akshara.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $aksharaStyle.RelPermalink }}">
+{{ end }}

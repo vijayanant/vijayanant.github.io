@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- THE AKSHARA BLOCK (Precision Blueprint) -->
+    <!-- The Foundation (Hexagon Outline) - RAZOR THIN -->
+    <path d="M50,15 L85,35 L85,65 L50,85 L15,65 L15,35 Z" fill="none" stroke="#A57C75" stroke-width="0.8" stroke-linejoin="round" />
+    
+    <!-- The Internal Structure (3 Isometric Lines) -->
+    <path d="M50,50 L50,85 M50,50 L85,35 M50,50 L15,35" fill="none" stroke="#A57C75" stroke-width="0.8" stroke-linecap="round" />
+    
+    <!-- Precision Markers (Corner Ticks) -->
+    <path d="M50,15 L50,10 M85,35 L90,32 M85,65 L90,68 M50,85 L50,90 M15,65 L10,68 M15,35 L10,32" fill="none" stroke="#A57C75" stroke-width="0.4" opacity="0.5" />
+
+    <!-- THE ROOT OF TRUST (The Central Signature) - SHARP & GLOWING -->
+    <circle cx="50" cy="50" r="3" fill="#fff" />
+    <circle cx="50" cy="50" r="6" fill="none" stroke="#fff" stroke-width="0.2" opacity="0.4" />
+</svg>
