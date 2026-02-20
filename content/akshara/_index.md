@@ -5,9 +5,26 @@ date: 2026-02-19
 draft: false
 type: "akshara"
 description: "Akshara is a foundational layer for building applications where secrecy is the baseline and the hosting infrastructure is irrelevant to the security of the data."
-# Masking social previews
-featured_image: "/assets/images/akshara-social.png" # We will create this later, for now it will fallback or be empty
-author: "Akshara Architecture" # Overriding your personal name for this section
+featured_image: "/assets/images/akshara-social.png"
+author: "Akshara Architecture"
+
+vitals:
+  - label: "THROUGHPUT"
+    value: "~250 MB/s"
+  - label: "VERIFICATION"
+    value: "92 ACTIVE TESTS"
+  - label: "INTEGRITY"
+    value: "DAG-CBOR STANDARD"
+  - label: "COVERAGE"
+    value: ">90% BRANCH"
+
+constitution:
+  - law: "I. Source-Side Secrecy"
+    desc: "The hosting infrastructure must be mathematically excluded from the trust boundary. All data is encrypted before transit."
+  - law: "II. Content-Addressed Integrity"
+    desc: "Validity is a property of the data itself, not the host. Every bit is cryptographically verifiable and location-independent."
+  - law: "III. Symmetric Reconciliation"
+    desc: "Sovereignty is absolute. Peer convergence is achieved through mathematical mirrors, without central authority."
 
 capabilities:
   - feature: "Topology Independent Infrastructure"

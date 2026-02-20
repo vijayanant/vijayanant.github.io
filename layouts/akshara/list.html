@@ -4,7 +4,13 @@
     <title>Akshara | Trust-Agnostic Infrastructure</title>
     <meta property="og:title" content="Akshara | Trust-Agnostic Infrastructure" />
     <meta property="og:description" content="A foundational layer for building applications where secrecy is the baseline and the hosting infrastructure is irrelevant to the security of the data." />
+    <meta property="og:image" content="/assets/images/logo-h-minimal.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Akshara | Trust-Agnostic Infrastructure" />
+    <meta name="twitter:description" content="High-secrecy applications by design. Build applications where privacy is enforced by the laws of physics." />
+    <meta name="twitter:image" content="/assets/images/logo-h-minimal.svg" />
+
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon-akshara.svg">
 
     {{/* DECORATIVE DATA STRINGS */}}
     <div class="ak-data-bg" style="top: 10%; left: 5%;">bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3j6qi6rulerhaea</div>
@@ -42,6 +48,16 @@
         </div>
     </header>
 
+    {{/* TECHNICAL VITALS STRIP */}}
+    <section class="ak-vitals-strip">
+        {{ range .Params.vitals }}
+        <div class="ak-vital-item">
+            <span class="ak-vital-label">{{ .label }}</span>
+            <span class="ak-vital-value">{{ .value }}</span>
+        </div>
+        {{ end }}
+    </section>
+
     {{/* Capabilities */}}
     <section class="ak-grid-container">
         {{ range $index, $item := .Params.capabilities }}
@@ -61,7 +77,7 @@
         {{ end }}
     </section>
 
-    {{/* Professional Sectors - RESTORING ICONS + KEEPING CODES */}}
+    {{/* High-Stakes Environments */}}
     <section class="ak-use-cases">
         <div class="container">
             <h2 class="ak-section-title">High-Stakes Environments</h2>
@@ -81,6 +97,21 @@
                     </div>
                     <h4 class="ak-use-case-title">{{ .title }}</h4>
                     <p class="ak-use-case-desc">{{ .desc }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    {{/* Architectural Constitution */}}
+    <section class="ak-constitution">
+        <div class="container">
+            <h2 class="ak-section-title">The Akshara Constitution</h2>
+            <div class="ak-constitution-grid">
+                {{ range .Params.constitution }}
+                <div class="ak-law-card">
+                    <h3 class="ak-law-title">{{ .law }}</h3>
+                    <p class="ak-law-desc">{{ .desc }}</p>
                 </div>
                 {{ end }}
             </div>
