@@ -2,11 +2,12 @@
   {{ $formType := .Get "type" | default "simple" }}
   {{ $title := .Get "title" }}
   {{ $description := .Get "description" }}
+  {{ $instanceId := printf "%d" .Ordinal }}
+  {{ $containerId := printf "sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e_%s" $instanceId }}
+  {{ $formId := printf "zcampaignOptinForm_%s" $instanceId }}
 
-  <script type="text/javascript" src="https://zgp4-zgp4.maillist-manage.in/js/optin.min.js" onload="setupSF('sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e','ZCFORMVIEW',false,'light',false,'0')"></script>
   <script type="text/javascript">
-    function runOnFormSubmit_sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e(th){
-      /*Before submit, if you want to trigger your event, "include your code here"*/
+    function runOnFormSubmit_{{ $containerId }}(th){
       if (typeof gtag === 'function') {
         gtag('event', 'sign_up', {
           'event_category': 'engagement',
@@ -15,14 +16,35 @@
         });
       }
     };
+
+    (function() {
+      function initZoho() {
+        if (typeof setupSF === 'function') {
+          const container = document.getElementById('{{ $containerId }}');
+          const form = container.querySelector('form');
+          // Zoho script is hardcoded to look for "zcampaignOptinForm". 
+          // We temporarily give it what it wants so it binds to THIS specific form.
+          const originalId = form.id;
+          form.id = 'zcampaignOptinForm';
+          setupSF('{{ $containerId }}','ZCFORMVIEW',false,'light',false,'0');
+          // Reset ID after a short delay so HTML remains valid
+          setTimeout(function() { if(form.id === 'zcampaignOptinForm') form.id = originalId; }, 1000);
+        } else {
+          setTimeout(initZoho, 100);
+        }
+      }
+      if (document.readyState === 'complete') { initZoho(); } 
+      else { window.addEventListener('load', initZoho); }
+    })();
   </script>
+  <script type="text/javascript" src="https://zgp4-zgp4.maillist-manage.in/js/optin.min.js"></script>
 
   {{ if eq $formType "full" }}
   <div class="newsletter-section">
     <h3 class="newsletter-title">{{ if $title }}{{ $title }}{{ else }}Stay Updated{{ end }}</h3>
     <p class="newsletter-description">{{ if $description }}{{ $description }}{{ else }}Get new articles and updates delivered directly to your inbox.{{ end }}</p>
-    <div id="sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e" data-type="signupform">
-      <form method="POST" id="zcampaignOptinForm" class="newsletter-form" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc">
+    <div id="{{ $containerId }}" data-type="signupform">
+      <form method="POST" id="{{ $formId }}" class="newsletter-form" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc">
         <div class="newsletter-form-fields">
             <input type="email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" placeholder="Your email address" required>
             <input type="submit" value="Subscribe" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON">
@@ -51,8 +73,8 @@
   {{ else }}
   <div class="newsletter-simple-form-wrapper">
     {{ if $title }}<p class="newsletter-simple-title">{{ $title }}</p>{{ end }}
-    <div id="sf3z48b7f20d89ba1f71a16fc74002a2c3d748274256fd50746f0fd0c7232461662e" data-type="signupform">
-        <form method="POST" id="zcampaignOptinForm" class="newsletter-form newsletter-form-simple" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc">
+    <div id="{{ $containerId }}" data-type="signupform">
+        <form method="POST" id="{{ $formId }}" class="newsletter-form newsletter-form-simple" action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc">
           <div class="newsletter-form-fields">
             <input type="email" name="CONTACT_EMAIL" id="EMBED_FORM_EMAIL_LABEL" placeholder="Your email address" required>
             <input type="submit" value="Subscribe" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON">

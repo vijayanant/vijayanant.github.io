@@ -78,51 +78,6 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// Handle Newsletter Form Submission
-document.querySelectorAll('.newsletter-form').forEach(form => {
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const messageDiv = form.querySelector('.newsletter-message');
-    const submitButton = form.querySelector('input[type="submit"]');
-    messageDiv.textContent = 'Submitting...';
-    submitButton.disabled = true;
-
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      mode: 'no-cors', // Important for cross-domain form posts that don't need to read the response
-    })
-    .then(response => {
-        // Because of no-cors, we can't read the response body.
-        // We have to assume success and instruct the user to check their email.
-        
-        // Track the successful submission
-        if (typeof gtag === 'function') {
-            gtag('event', 'sign_up', {
-                'event_category': 'engagement',
-                'event_label': 'newsletter_subscription',
-                'method': 'js_fetch'
-            });
-        }
-
-        form.reset();
-        messageDiv.textContent = 'Great! Now check your inbox to confirm your subscription.';
-        messageDiv.style.color = 'var(--primary-color)';
-    })
-    .catch(error => {
-      messageDiv.textContent = 'An error occurred. Please try again.';
-      messageDiv.style.color = 'var(--note-danger-border)';
-      console.error('Form submission error:', error);
-    })
-    .finally(() => {
-      submitButton.disabled = false;
-    });
-  });
-});
-
 // Track Workshop Contact Clicks
 document.addEventListener('click', function(event) {
     const workshopButton = event.target.closest('.workshop-contact-button');
