@@ -1,0 +1,27 @@
+{{- $nodes := slice -}}
+{{- $links := slice -}}
+
+{{- range where .Site.RegularPages "Section" "posts" -}}
+    {{- $post := . -}}
+    {{- $nodes = $nodes | append (dict "id" .RelPermalink "label" .Title "group" "essay" "url" .RelPermalink "description" .Description) -}}
+    
+    {{- range .Params.categories -}}
+        {{- $id := printf "/categories/%s/" (. | urlize) -}}
+        {{- $links = $links | append (dict "source" $post.RelPermalink "target" $id "value" 1 "type" "category") -}}
+        {{- $nodes = $nodes | append (dict "id" $id "label" . "group" "category" "url" $id) -}}
+    {{- end -}}
+
+    {{- range .Params.tags -}}
+        {{- $id := printf "/tags/%s/" (. | urlize) -}}
+        {{- $links = $links | append (dict "source" $post.RelPermalink "target" $id "value" 1 "type" "tag") -}}
+        {{- $nodes = $nodes | append (dict "id" $id "label" . "group" "tag" "url" $id) -}}
+    {{- end -}}
+
+    {{- range .Params.series -}}
+        {{- $id := printf "/series/%s/" (. | urlize) -}}
+        {{- $links = $links | append (dict "source" $post.RelPermalink "target" $id "value" 2 "type" "series") -}}
+        {{- $nodes = $nodes | append (dict "id" $id "label" . "group" "series" "url" $id) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- dict "nodes" ($nodes | uniq) "links" $links | jsonify -}}

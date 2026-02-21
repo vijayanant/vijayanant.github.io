@@ -1,0 +1,327 @@
+{{ define "main" }}
+{{ $styles := resources.Get "css/graph.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+
+<section id="knowledge-graph-container">
+    <div id="graph-canvas"></div>
+    
+    <!-- Floating Info Panel (Detail Only) -->
+    <div id="side-panel">
+        <div id="panel-content">
+            <button id="btn-close-panel" style="float: right; background: none; border: none; color: var(--primary-color); cursor: pointer;"><i class="fas fa-times"></i></button>
+            <h2 id="panel-title" class="pillar-title"></h2>
+            <p id="panel-group" class="text-muted small text-uppercase mb-3"></p>
+            <div id="panel-description" class="pillar-subtitle mb-4"></div>
+            
+            <div id="panel-connections-container" class="mb-4">
+                <h4 class="text-muted small text-uppercase mb-2">Related to:</h4>
+                <ul id="panel-connections" class="pillar-posts-list"></ul>
+            </div>
+
+            <a id="panel-link" href="#" class="button button-primary w-100 justify-content-center">Read Essay</a>
+        </div>
+    </div>
+
+    <!-- Persistent Global Search -->
+    <div id="global-search" style="position: absolute; top: 20px; right: 20px; z-index: 100;">
+        <input type="text" id="graph-search" placeholder="Search essays, tags..." style="height: 42px; width: 350px; padding: 0 20px; border-radius: 21px; border: 1px solid var(--primary-color); background: rgba(15, 23, 42, 0.8); color: var(--text-color); font-size: 0.85rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    </div>
+
+    <!-- Main View Legend (Acting as Filters) -->
+    <div id="graph-legend" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(15, 23, 42, 0.8); height: 42px; padding: 0 25px; border-radius: 21px; border: 1px solid var(--primary-color); z-index: 10; display: flex; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        <div style="display: flex; flex-direction: row; align-items: center; gap: 20px; color: var(--text-color); font-size: 0.85rem;">
+            <div class="legend-item" onclick="window.filterByGroup('essay')" title="Show All Essays">
+                <div style="width:10px; height:10px; background:#38bdf8; display:inline-block; vertical-align:middle; margin-right:4px;"></div> <span style="cursor:pointer">Essays</span>
+            </div>
+            <div class="legend-item" onclick="window.filterByGroup('category')" title="Show All Categories">
+                <div style="width:10px; height:10px; border-radius:50%; background:#fbbf24; display:inline-block; vertical-align:middle; margin-right:4px;"></div> <span style="cursor:pointer">Categories</span>
+            </div>
+            <div class="legend-item" onclick="window.filterByGroup('series')" title="Show All Series">
+                <div style="width:10px; height:10px; background:#4ade80; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display:inline-block; vertical-align:middle; margin-right:4px;"></div> <span style="cursor:pointer">Series</span>
+            </div>
+            <div class="legend-item" onclick="window.filterByGroup('tag')" title="Show All Tags">
+                <div style="width:10px; height:10px; background:#94a3b8; transform: rotate(45deg); display:inline-block; vertical-align:middle; margin-right:4px;"></div> <span style="cursor:pointer">Tags</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="graph-controls">
+        <button id="btn-reset" class="button button-primary">Reset Map</button>
+    </div>
+</section>
+
+<script src="//unpkg.com/force-graph"></script>
+<script>
+    (function() {
+        const elem = document.getElementById('graph-canvas');
+        const sidePanel = document.getElementById('side-panel');
+        const pTitle = document.getElementById('panel-title');
+        const pGroup = document.getElementById('panel-group');
+        const pDesc = document.getElementById('panel-description');
+        const pLink = document.getElementById('panel-link');
+
+        let fullData = { nodes: [], links: [] };
+        let activeNode = null;
+
+        const nodeColors = { 
+            'essay': '#38bdf8',     // Cyan
+            'series': '#4ade80',    // Green
+            'tag': '#94a3b8',       // Gray
+            'category': '#fbbf24'   // Gold
+        };
+
+        const Graph = ForceGraph()(elem);
+        Graph.d3Force('center', null); 
+
+        // Theme Awareness
+        function getThemeColors() {
+            const style = getComputedStyle(document.body);
+            return {
+                background: style.getPropertyValue('--background-color').trim(),
+                text: style.getPropertyValue('--text-color').trim(),
+                primary: style.getPropertyValue('--primary-color').trim()
+            };
+        }
+
+        function syncTheme() {
+            const colors = getThemeColors();
+            Graph.backgroundColor(colors.background);
+            Graph.refresh();
+        }
+
+        // Observer for theme toggle
+        const observer = new MutationObserver(() => syncTheme());
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+        fetch('/knowledge-graph.json')
+            .then(res => res.json())
+            .then(data => {
+                fullData = data;
+                const initialNodes = data.nodes.filter(n => n.group === 'category' || n.group === 'series');
+                Graph.graphData({ nodes: initialNodes, links: [] });
+                
+                syncTheme(); // Set initial theme
+                
+                setTimeout(() => {
+                    Graph.zoomToFit(400, 100);
+                }, 500);
+            });
+
+        Graph.nodeLabel('label')
+            .nodeColor(node => nodeColors[node.group] || '#ffffff')
+            .linkColor(() => 'rgba(56, 189, 248, 0.2)')
+            .linkWidth(2)
+            .nodeCanvasObject((node, ctx, globalScale) => {
+                const label = node.label;
+                const fontSize = 14/globalScale;
+                const colors = getThemeColors();
+                ctx.font = `bold ${fontSize}px Sans-Serif`;
+                
+                const size = 8;
+                const color = nodeColors[node.group] || '#ffffff';
+                ctx.fillStyle = color;
+
+                if (node.group === 'essay') {
+                    ctx.fillRect(node.x - size/2, node.y - size/2, size, size);
+                } else if (node.group === 'tag') {
+                    ctx.beginPath();
+                    ctx.moveTo(node.x, node.y - size);
+                    ctx.lineTo(node.x + size, node.y);
+                    ctx.lineTo(node.x, node.y + size);
+                    ctx.lineTo(node.x - size, node.y);
+                    ctx.closePath();
+                    ctx.fill();
+                } else if (node.group === 'series') {
+                    ctx.beginPath();
+                    for (let i = 0; i < 6; i++) {
+                        const angle = Math.PI / 3 * i;
+                        ctx.lineTo(node.x + (size+2) * Math.cos(angle), node.y + (size+2) * Math.sin(angle));
+                    }
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, size+2, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                }
+
+                // Active Node Glow
+                if (activeNode && node.id === activeNode.id) {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, size + 6, 0, 2 * Math.PI, false);
+                    ctx.strokeStyle = colors.text;
+                    ctx.lineWidth = 2/globalScale;
+                    ctx.stroke();
+                }
+
+                // Draw Label Logic
+                const isLandmark = node.group === 'category' || node.group === 'series';
+                const shouldShowLabel = isLandmark || globalScale > 3.0 || (activeNode && node.id === activeNode.id);
+
+                if (shouldShowLabel) {
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'top';
+                    ctx.fillStyle = colors.text;
+                    ctx.fillText(label, node.x, node.y + size + 2);
+                }
+            })
+            .nodePointerAreaPaint((node, color, ctx) => {
+                ctx.fillStyle = color;
+                const size = 10;
+                if (node.group === 'essay') {
+                    ctx.fillRect(node.x - size/2, node.y - size/2, size, size);
+                } else {
+                    ctx.beginPath(); ctx.arc(node.x, node.y, size, 0, 2 * Math.PI, false); ctx.fill();
+                }
+            })
+            .onNodeClick(node => {
+                activeNode = node;
+                
+                const isMobile = window.innerWidth <= 768;
+                const zoomLevel = 6;
+                
+                // If not mobile, we want the node at 30% of the screen width
+                // to avoid the 350px panel on the right.
+                if (!isMobile) {
+                    const canvasWidth = elem.clientWidth;
+                    const targetX = canvasWidth * 0.3; // 30% from left
+                    const currentX = canvasWidth / 2;
+                    const screenOffset = (currentX - targetX) / zoomLevel;
+                    Graph.centerAt(node.x + screenOffset, node.y, 1000);
+                } else {
+                    Graph.centerAt(node.x, node.y, 1000);
+                }
+                
+                Graph.zoom(zoomLevel, 1000);
+
+                sidePanel.style.display = 'block';
+                pTitle.innerText = node.label;
+                pGroup.innerText = node.group;
+                pDesc.innerText = node.description || "Exploring the connections of " + node.label;
+                
+                const connectionsList = document.getElementById('panel-connections');
+                connectionsList.innerHTML = '';
+                
+                const neighbors = fullData.links
+                    .filter(l => 
+                        (typeof l.source === 'object' ? l.source.id : l.source) === node.id || 
+                        (typeof l.target === 'object' ? l.target.id : l.target) === node.id
+                    )
+                    .map(l => {
+                        const neighborId = (typeof l.source === 'object' ? l.source.id : l.source) === node.id 
+                            ? (typeof l.target === 'object' ? l.target.id : l.target) 
+                            : (typeof l.source === 'object' ? l.source.id : l.source);
+                        const neighborNode = fullData.nodes.find(n => n.id === neighborId);
+                        let relType = l.type;
+                        if (neighborNode && neighborNode.group === 'essay') relType = 'Essay';
+                        return { node: neighborNode, type: relType };
+                    });
+
+                neighbors.forEach(neighbor => {
+                    if (!neighbor.node) return;
+                    const li = document.createElement('li');
+                    li.className = 'pillar-post-item';
+                    li.innerHTML = `<span class="text-muted" style="font-size:0.7rem; text-transform:uppercase;">${neighbor.type}</span> ${neighbor.node.label}`;
+                    li.style.cursor = 'pointer';
+                    li.onclick = () => {
+                        const n = fullData.nodes.find(dn => dn.id === neighbor.node.id);
+                        if (n) Graph.onNodeClick()(n);
+                    };
+                    connectionsList.appendChild(li);
+                });
+
+                if (node.group === 'essay') {
+                    pLink.style.display = 'inline-flex';
+                    pLink.href = node.url;
+                } else {
+                    pLink.style.display = 'none';
+                }
+
+                const relatedLinks = fullData.links.filter(l => 
+                    (typeof l.source === 'object' ? l.source.id : l.source) === node.id || 
+                    (typeof l.target === 'object' ? l.target.id : l.target) === node.id
+                );
+                
+                const relatedNodeIds = new Set([node.id]);
+                relatedLinks.forEach(l => {
+                    relatedNodeIds.add(typeof l.source === 'object' ? l.source.id : l.source);
+                    relatedNodeIds.add(typeof l.target === 'object' ? l.target.id : l.target);
+                });
+
+                const visibleNodes = fullData.nodes.filter(n => relatedNodeIds.has(n.id) || n.group === 'category' || n.group === 'series');
+                Graph.graphData({ nodes: visibleNodes, links: relatedLinks });
+            });
+
+        function resize() {
+            Graph.width(elem.clientWidth);
+            Graph.height(elem.clientHeight);
+        }
+        window.addEventListener('resize', resize);
+        setTimeout(resize, 100);
+
+        window.resetZoom = () => {
+            activeNode = null; // Clear highlight ring
+            const initialNodes = fullData.nodes.filter(n => n.group === 'category' || n.group === 'series');
+            Graph.graphData({ nodes: initialNodes, links: [] });
+            
+            setTimeout(() => {
+                Graph.zoomToFit(400, 80);
+                Graph.centerAt(0, 0, 400);
+            }, 100);
+            
+            sidePanel.style.display = 'none';
+        };
+
+        document.getElementById('btn-reset').onclick = window.resetZoom;
+        document.getElementById('btn-close-panel').onclick = () => sidePanel.style.display = 'none';
+
+        // Filter Logic (Clustered)
+        window.filterByGroup = (group) => {
+            if (group === 'essay') {
+                // Show essays AND their categories to create clusters
+                const essayNodes = fullData.nodes.filter(n => n.group === 'essay');
+                const catNodes = fullData.nodes.filter(n => n.group === 'category');
+                const nodes = [...essayNodes, ...catNodes];
+                
+                // Show links between these nodes
+                const links = fullData.links.filter(l => 
+                    nodes.find(n => n.id === (typeof l.source === 'object' ? l.source.id : l.source)) && 
+                    nodes.find(n => n.id === (typeof l.target === 'object' ? l.target.id : l.target))
+                );
+                
+                Graph.graphData({ nodes, links });
+            } else {
+                const nodes = fullData.nodes.filter(n => n.group === group);
+                Graph.graphData({ nodes, links: [] });
+            }
+            Graph.zoomToFit(400, 100);
+        };
+
+        // Search Logic
+        document.getElementById('graph-search').addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            if (!val) return window.resetZoom();
+
+            const matchedNodes = fullData.nodes.filter(n => n.label.toLowerCase().includes(val));
+            if (matchedNodes.length > 0) {
+                // Expand to show matches
+                const matchedIds = new Set(matchedNodes.map(n => n.id));
+                const relatedLinks = fullData.links.filter(l => 
+                    matchedIds.has(typeof l.source === 'object' ? l.source.id : l.source) || 
+                    matchedIds.has(typeof l.target === 'object' ? l.target.id : l.target)
+                );
+                
+                relatedLinks.forEach(l => {
+                    matchedIds.add(typeof l.source === 'object' ? l.source.id : l.source);
+                    matchedIds.add(typeof l.target === 'object' ? l.target.id : l.target);
+                });
+
+                Graph.graphData({ 
+                    nodes: fullData.nodes.filter(n => matchedIds.has(n.id)), 
+                    links: relatedLinks 
+                });
+            }
+        });
+    })();
+</script>
+{{ end }}

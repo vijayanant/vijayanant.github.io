@@ -67,9 +67,15 @@ keepQuotes = false
 newLine = false
 
 [outputs]
-home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS", "JSON", "KNOWLEDGEGRAPH"]
 page = ["HTML", "RSS"]
 section = ["HTML", "RSS"]
+
+[outputFormats.KNOWLEDGEGRAPH]
+mediaType = "application/json"
+baseName = "knowledge-graph"
+isPlainText = true
+notAlternative = true
 
 [taxonomies]
 tag = "tags"

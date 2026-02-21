@@ -30,6 +30,10 @@
                 <li class="nav-item">
                     <a href="{{ "/#writing" | relURL }}" class="nav-link js-scrollspy-item{{ if or (eq .Section "posts") (eq .Type "tags") (eq .Type "categories") }} active{{ end }}">Essays</a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ "/explore/" | relURL }}" class="nav-link{{ if eq .Section "explore" }} active{{ end }}">Explore</a>
+                </li>
                 
                 <li class="nav-item">
                     <a href="{{ "/#speaking" | relURL }}" class="nav-link js-scrollspy-item">Speaking</a>
