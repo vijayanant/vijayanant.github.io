@@ -6,7 +6,7 @@ series: ["Exploring the Sovereign Web"]
 series_order: 1
 draft: false
 description: "Why the way we link to things on the web is broken, and how addressing content by 'what' it is, rather than 'where' it is, builds a foundation for a permanent, verifiable internet."
-tags: ["distributed-systems", "content-addressing", "zero-trust", "decentralised-web", "cryptography", "privacy"]
+tags: ["distributed-system", "content-addressing", "zero-trust", "decentralised-web", "cryptography", "privacy"]
 categories: ["Software Architecture"]
 featured_image: "library-card-catalog.jpg"
 ---

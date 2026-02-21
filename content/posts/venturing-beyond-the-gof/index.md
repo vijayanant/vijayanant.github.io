@@ -5,7 +5,7 @@ date: 2023-11-16
 draft: false
 description: "Stop memorizing the 23 GoF patterns. Learn to reclaim the discipline of pattern thinking—seeing the underlying shape of a problem and choosing the right structural response."
 featured_image: "venturing-beyond-the-gof-1.jpg"
-tags: ["design-patterns", "system-design", "distributed-systems", "first-principle", "trade-offs"]
+tags: ["design-pattern", "system-design", "distributed-system", "first-principle", "trade-offs"]
 categories: ["Software Architecture"]
 ---
 {{< figure
