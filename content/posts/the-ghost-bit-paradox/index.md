@@ -114,7 +114,7 @@ The bit flip wasn't a failure of the math, but a property of how the decoder han
 
 In a strict system, the decoder should have seen a "Byte String" where the schema expected a "Text String" and returned an error. But the decoder (`serde_cbor`) was being lenient. It observed that the bytes were valid UTF-8 and matched the expected length, so it implicitly coerced the Byte String back to the Text String the Rust struct expected.
 
-Because the resulting struct was identical to the original, the hash re-calculation passed. The "Ghost Bit" was simply a **non-semantic bit-flip**—a structural artifact that was normalized by the decoder before it reached the application logic.
+Because the resulting struct was identical to the original, the hash re-calculation passed. The "Ghost Bit" was simply a **non-semantic bit-flip**: a structural artifact that was normalized by the decoder before it reached the application logic.
 
 {{< figure src="ghost-bit-malleability.svg" alt="A diagram showing a bit-flip in a CBOR bitstream being normalized by a decoder into a single semantic object model." title="The Anatomy of a Non-Semantic Bit-Flip" caption="Malleability allows transport noise to bypass object-level integrity checks if the decoder is lenient." >}}
 
@@ -122,7 +122,7 @@ Because the resulting struct was identical to the original, the hash re-calculat
 
 This discrepancy reveals a fundamental architectural choice in the design of distributed systems: at what layer do you anchor your truth? The real question is whether identity belongs to the serialized representation or to the abstract data model it encodes.
 
-{{< figure src="integrity-anchor-models.svg" alt="A side-by-side comparison of Binary Integrity (bit-level hashing) and Semantic Integrity (object-level hashing)." title="Integrity Anchor Models" caption="Anchoring truth in the raw bitstream (Binary) vs. anchoring it in the interpreted data model (Semantic)." >}}
+{{< figure src="integrity-anchor-models.svg" alt="A side-by-side comparison of Binary Integrity (bit-level hashing) and Semantic Integrity (object-level hashing)." title="Integrity Anchor Models" caption="Anchoring truth in the raw bitstream (Binary Representation) vs. anchoring it in the interpreted data model (Semantic Model)." >}}
 
 The "Ghost Bit" phenomenon demonstrates that the choice between hashing **deserialized objects** or **raw bitstreams** is a trade-off between resilience and strictness.
 
@@ -134,14 +134,14 @@ This is where I realized that malleability isn't just an encoding quirk. If tran
 
 In this model, the system re-computes the hash based on the **logical fields** of the data (such as the Identifier, its References, and Metadata).
 
-* **The Advantage:** **Representational Independence**. Because the hash is derived from the meaning, the "identity" of the data is decoupled from the encoding. This is powerful for long-lived systems where serialization formats might evolve (e.g., migrating from CBOR to a newer standard) without invalidating the entire history of hashes.
+* **The Advantage:** **Representational Independence**. Because the hash is derived from the model, the identity of the data is decoupled from the encoding. This is powerful for long-lived systems where serialization formats might evolve (e.g., migrating from CBOR to a newer standard) without invalidating the entire history of hashes.
 * **The Trade-off:** **Encoding Tolerance**. As the fuzzer discovered, this model is blind to non-semantic corruption. The decoder acts as a silent filter, normalizing "ghost bits" and presenting a perfect object to the validation layer. Security testing in this model must be model-aware, verifying that the audit only passes if the **Semantic Identifier** remains unchanged.
 
 ### 2. Binary Integrity (Hashing the Bitstream)
 
 This is the model used by systems like Git or IPFS. The hash is computed directly from the raw bytes before any decoding occurs.
 
-* **The Advantage:** **Absolute Determinism**. Every single bit in the transport layer is sacred. A single bit-flip—even in a redundant type tag—instantly invalidates the hash. It eliminates the "Ghost Bit" paradox by turning every bit into a semantic bit. This allows for lightweight **Merkle Proofs** where nodes can verify parts of a large structure without needing to decode the entire object.
+* **The Advantage:** **Absolute Determinism**. Every single bit in the transport layer is sacred. A single bit-flip, even in a redundant type tag, instantly invalidates the hash. It eliminates the "Ghost Bit" paradox by turning every bit into a semantic bit. This allows for lightweight **Merkle Proofs** where nodes can verify parts of a large structure without needing to decode the entire object.
 * **The Requirement:** **Strict Canonicalization**. This model demands that the system guarantees a one-to-one mapping between an object and its bytes. Any lenience in the decoder becomes a potential security vulnerability, as it creates a gap between the verified bitstream and the application state.
 
 {{< note type="log" title="The C14N Rabbit Hole" >}}
@@ -174,9 +174,9 @@ This refinement ensures the fuzzer continues to catch real data model corruption
 
 {{< newsletter >}}
 
-The "Ghost Bit Paradox" is a reminder that in any binary protocol, the decoder is a critical component of the security pipeline. Whether you choose the strict determinism of binary hashing or the representational flexibility of semantic hashing, you must understand where your validation layer ends and your encoding layer begins.
+The "Ghost Bit Paradox" highlights a critical dependency: in any binary protocol, the decoder is a part of the security boundary. Whether you choose the strict determinism of binary hashing or the representational flexibility of semantic hashing, you must define exactly where your validation layer ends and your encoding layer begins.
 
-Semantic equivalence is a form of resilience, but it requires a fuzzer that understands the data model it is protecting. In a world of lenient decoders, the truth is sometimes deeper than the ink.
+In a world of lenient decoders, the truth is found in the model, not the bitstream.
 
 ***
 
