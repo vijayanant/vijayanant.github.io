@@ -542,7 +542,7 @@ nav {
     Footer Styles
 *--------------------*/
 footer {
-    padding: 2rem 0;
+    padding: 1rem 0; /* Slimmer footer */
     background-color: var(--surface-color);
     color: var(--text-color);
     text-align: center;

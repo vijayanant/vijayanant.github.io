@@ -27,24 +27,26 @@
         <input type="text" id="graph-search" placeholder="Search essays, tags...">
     </div>
 
+    {{/* Shared Legend Items Template */}}
+    {{- $legendItems := slice 
+        (dict "id" "essay" "label" "Essays" "color" "#38bdf8" "shape" "square")
+        (dict "id" "category" "label" "Categories" "color" "#fbbf24" "shape" "circle")
+        (dict "id" "series" "label" "Series" "color" "#4ade80" "shape" "hexagon")
+        (dict "id" "tag" "label" "Tags" "color" "#94a3b8" "shape" "triangle")
+    -}}
+
     <!-- Filter/Legend Overlay for Mobile -->
     <div id="graph-filters-overlay">
         <div id="filters-overlay-content">
             <button id="btn-close-filters-overlay"><i class="fas fa-times"></i></button>
             <h3>Filter & Legend</h3>
             <div class="legend-wrapper-vertical">
-                <div class="legend-item" onclick="window.filterByGroup('essay')" title="Show All Essays">
-                    <div class="legend-shape" style="background:#38bdf8;"></div> <span>Essays</span>
+                {{ range $legendItems }}
+                <div class="legend-item" data-group="{{ .id }}" title="Show All {{ .label }}">
+                    <div class="legend-shape shape-{{ .shape }}" style="background:{{ .color }};"></div> 
+                    <span>{{ .label }}</span>
                 </div>
-                <div class="legend-item" onclick="window.filterByGroup('category')" title="Show All Categories">
-                    <div class="legend-shape" style="border-radius:50%; background:#fbbf24;"></div> <span>Categories</span>
-                </div>
-                <div class="legend-item" onclick="window.filterByGroup('series')" title="Show All Series">
-                    <div class="legend-shape" style="background:#4ade80; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div> <span>Series</span>
-                </div>
-                <div class="legend-item" onclick="window.filterByGroup('tag')" title="Show All Tags">
-                    <div class="legend-shape" style="background:#94a3b8; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div> <span>Tags</span>
-                </div>
+                {{ end }}
             </div>
         </div>
     </div>
@@ -57,18 +59,12 @@
     <!-- Main View Legend (Acting as Filters for Desktop) -->
     <div id="graph-legend">
         <div class="legend-wrapper">
-            <div class="legend-item" onclick="window.filterByGroup('essay')" title="Show All Essays">
-                <div class="legend-shape" style="background:#38bdf8;"></div> <span>Essays</span>
+            {{ range $legendItems }}
+            <div class="legend-item" data-group="{{ .id }}" title="Show All {{ .label }}">
+                <div class="legend-shape shape-{{ .shape }}" style="background:{{ .color }};"></div> 
+                <span>{{ .label }}</span>
             </div>
-            <div class="legend-item" onclick="window.filterByGroup('category')" title="Show All Categories">
-                <div class="legend-shape" style="border-radius:50%; background:#fbbf24;"></div> <span>Categories</span>
-            </div>
-            <div class="legend-item" onclick="window.filter-item('series')" title="Show All Series">
-                <div class="legend-shape" style="background:#4ade80; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div> <span>Series</span>
-            </div>
-            <div class="legend-item" onclick="window.filterByGroup('tag')" title="Show All Tags">
-                <div class="legend-shape" style="background:#94a3b8; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div> <span>Tags</span>
-            </div>
+            {{ end }}
         </div>
     </div>
 

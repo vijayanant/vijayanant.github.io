@@ -2,7 +2,7 @@
 /* Floating Theme Toggle */
 .floating-theme-toggle {
     position: fixed;
-    bottom: 2rem;
+    bottom: 4rem; /* Adjusted for slim footer */
     right: 2rem;
     width: 3rem;
     height: 3rem;
@@ -31,7 +31,7 @@
 
 @media (max-width: 768px) {
     .floating-theme-toggle {
-        bottom: 1.5rem;
+        bottom: 4.5rem; /* Adjusted for mobile slim footer */
         right: 1.5rem;
         width: 2.8rem;
         height: 2.8rem;
