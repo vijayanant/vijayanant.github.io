@@ -7,7 +7,7 @@
   {{ $formId := printf "zcampaignOptinForm_%s" $instanceId }}
 
   <script type="text/javascript">
-    function runOnFormSubmit_{{ $containerId }}(th){
+    function runOnFormSubmit_{{ $containerId | safeJS }}(th){
       if (typeof gtag === 'function') {
         gtag('event', 'sign_up', {
           'event_category': 'engagement',
