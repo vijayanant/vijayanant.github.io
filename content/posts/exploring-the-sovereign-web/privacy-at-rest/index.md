@@ -87,7 +87,7 @@ Cryptography is deterministic. If I feed the same Key into the same Algorithm, I
 
 If your computer generates a key using a predictable source (like the current time in milliseconds), an attacker can just guess the time you created the key and derive the secret. This happened famously in 2013, when a flaw in the Android Random Number Generator allowed hackers to steal coins from thousands of Bitcoin wallets. The math was perfect; the randomness was flawed.
 
-A sovereign system must rely on the **OS CSPRNG** (Cryptographically Secure Pseudo-Random Number Generator). This subsystem acts as an "Entropy Sponge," soaking up noise from the physical world: mouse movements, network packet arrival times, thermal sensor fluctuations.
+A distributed system must rely on the **OS CSPRNG** (Cryptographically Secure Pseudo-Random Number Generator). This subsystem acts as an "Entropy Sponge," soaking up noise from the physical world: mouse movements, network packet arrival times, thermal sensor fluctuations.
 
 {{< figure src="entropy-funnel.svg" title="Harvesting Chaos" caption="The CSPRNG acts as a funnel, compressing the messy noise of the physical world into a mathematically pure key." >}}
 

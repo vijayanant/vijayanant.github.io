@@ -70,7 +70,7 @@ This enables **direct, peer-to-peer cryptographic delegation**. I don’t need a
 
 Access flows through hierarchies of derived or delegated keys. Granting or revoking access reshapes the structure rather than redistributing the original secret. This is the model used by modern protocols like **MLS (Messaging Layer Security)**.
 
-Elegant in theory, but operationally complex. To bridge the gap between sovereignty and scale, modern protocols use a tree structure to manage group keys. Imagine a binary tree where every user is a leaf. Every node in the tree is an "Intermediate Key" encrypted by the keys below it. The "Group Key" is the root of the tree. When someone joins or leaves, the system only needs to update the "path" from that user's leaf to the root.
+Elegant in theory, but operationally complex. To bridge the gap between privacy and scale, modern protocols use a tree structure to manage group keys. Imagine a binary tree where every user is a leaf. Every node in the tree is an "Intermediate Key" encrypted by the keys below it. The "Group Key" is the root of the tree. When someone joins or leaves, the system only needs to update the "path" from that user's leaf to the root.
 
 {{< figure src="the-frontier-map.svg" title="The Frontier of Access" caption="Mapping the landscape of sharing. The 'Sovereign Frontier' lies in the intersection of Decentralized authority and Asynchronous coordination." >}}
 
