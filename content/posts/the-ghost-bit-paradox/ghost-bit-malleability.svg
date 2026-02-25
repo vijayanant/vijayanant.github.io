@@ -8,12 +8,15 @@
       .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #38bdf8; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
       .mono { font-family: monospace; font-size: 14px; fill: #38bdf8; text-anchor: middle; }
       .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
-      .bit-flip { fill: #ef4444; stroke: #ef4444; stroke-width: 2; }
       .arrow { stroke: #94a3b8; stroke-width: 2; fill: none; marker-end: url(#arrow-gray); }
+      .arrow-red { stroke: #ef4444; stroke-width: 2; fill: none; marker-end: url(#arrow-red); }
       .decoder-box { fill: #0f172a; stroke: #fbbf24; stroke-width: 3; rx: 8; }
     </style>
     <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
     </marker>
   </defs>
 
@@ -21,52 +24,53 @@
   <rect width="800" height="450" fill="#1e293b" />
   <rect width="800" height="450" fill="url(#grid)" />
 
-  <text x="400" y="40" class="title">The Anatomy of a Non-Semantic Bit-Flip</text>
+  <text x="400" y="40" class="title">Non-Semantic Bit-Flip</text>
 
-  <!-- Bitstream Level -->
-  <text x="400" y="80" class="label" fill="#94a3b8">BITSTREAM LEVEL (Raw Bytes)</text>
+  <!-- BITSTREAM SIDE (Left) -->
+  <text x="220" y="80" class="label" fill="#94a3b8">BITSTREAM (Raw Bytes)</text>
   
-  <!-- Bytes Visualization -->
+  <!-- Original Byte -->
   <g transform="translate(100, 100)">
-    <!-- Byte 1: 0x69 (Text String) -->
-    <text x="-50" y="25" class="label" text-anchor="end">0x69</text>
     <rect x="0" y="0" width="240" height="40" class="box" />
     <text x="120" y="25" class="mono">0 1 1 0 1 0 0 1</text>
-    <text x="120" y="60" class="label" font-size="10">Major Type: Text</text>
+    <text x="-30" y="25" class="label" text-anchor="end">0x69</text>
+    <text x="120" y="60" class="label" font-size="10">Type: Text String</text>
   </g>
 
-  <!-- Bit-Flip Arrow -->
-  <path d="M400,120 L400,180" class="arrow" stroke="#ef4444" />
-  <text x="480" y="155" class="label" fill="#ef4444">Flip Bit 5</text>
+  <!-- Bit-Flip Action (Now properly aligned) -->
+  <path d="M220,140 L220,195" class="arrow-red" />
+  <text x="280" y="175" class="label" fill="#ef4444" text-anchor="start">Flip Bit 5</text>
 
+  <!-- Corrupted Byte -->
   <g transform="translate(100, 200)">
-    <!-- Byte 1: 0x49 (Byte String) -->
-    <text x="-50" y="25" class="label" text-anchor="end">0x49</text>
     <rect x="0" y="0" width="240" height="40" class="box" style="stroke:#ef4444" />
     <text x="120" y="25" class="mono" fill="#ef4444">0 1 0 0 1 0 0 1</text>
-    <text x="120" y="60" class="label" font-size="10" fill="#ef4444">Major Type: Byte String</text>
+    <text x="-30" y="25" class="label" text-anchor="end" fill="#ef4444">0x49</text>
+    <text x="120" y="60" class="label" font-size="10" fill="#ef4444">Type: Byte String</text>
   </g>
 
-  <!-- The Filter (Decoder) -->
-  <rect x="450" y="100" width="120" height="140" class="decoder-box" />
-  <text x="510" y="160" class="label" font-weight="bold">DECODER</text>
-  <text x="510" y="180" class="label" font-size="10" fill="#fbbf24">(serde_cbor)</text>
-  <text x="510" y="200" class="label" font-size="9" opacity="0.7">"Implicit Coercion"</text>
+  <!-- LOGIC SIDE (Right) -->
+  
+  <!-- The Decoder -->
+  <rect x="450" y="125" width="120" height="100" class="decoder-box" />
+  <text x="510" y="170" class="label" font-weight="bold">DECODER</text>
+  <text x="510" y="190" class="label" font-size="10" fill="#fbbf24">(serde_cbor)</text>
+  <text x="510" y="210" class="label" font-size="9" opacity="0.7">"Implicit Coercion"</text>
 
-  <!-- Convergence -->
-  <path d="M340,120 L450,150" class="arrow" />
+  <!-- Convergence Lines -->
+  <path d="M340,120 L450,160" class="arrow" />
   <path d="M340,220 L450,190" class="arrow" />
 
-  <!-- Object Level -->
-  <g transform="translate(600, 140)">
-    <rect x="0" y="0" width="150" height="60" class="box" style="stroke:#4ade80; stroke-width:3" />
-    <text x="75" y="25" class="label" font-weight="bold">Object Model</text>
-    <text x="75" y="45" class="mono" fill="#4ade80">String("...")</text>
+  <!-- Final Object Model -->
+  <g transform="translate(620, 145)">
+    <rect x="0" y="0" width="140" height="60" class="box" style="stroke:#4ade80; stroke-width:3" />
+    <text x="70" y="25" class="label" font-weight="bold">Object Model</text>
+    <text x="70" y="45" class="mono" fill="#4ade80">String("...")</text>
   </g>
 
-  <!-- Conclusion Label -->
-  <text x="400" y="380" class="label" fill="#4ade80" font-weight="bold">RESULT: Semantic Equality</text>
-  <text x="400" y="405" class="label" font-size="12">The Object-level Hash stays the same despite the bit-flip.</text>
-  <text x="400" y="425" class="label" font-size="12" opacity="0.7">This is Bitstream Malleability.</text>
+  <!-- Result Summary -->
+  <rect x="100" y="350" width="600" height="60" rx="8" fill="#0f172a" stroke="#4ade80" stroke-opacity="0.3" />
+  <text x="400" y="375" class="label" fill="#4ade80" font-weight="bold">RESULT: Semantic Equality</text>
+  <text x="400" y="395" class="label" font-size="12">The Object-level integrity check passes despite the binary corruption.</text>
 
 </svg>

@@ -116,7 +116,7 @@ In a strict system, the decoder should have seen a "Byte String" where the schem
 
 Because the resulting struct was identical to the original, the hash re-calculation passed. The "Ghost Bit" was simply a **non-semantic bit-flip**: a structural artifact that was normalized by the decoder before it reached the application logic.
 
-{{< figure src="ghost-bit-malleability.svg" alt="A diagram showing a bit-flip in a CBOR bitstream being normalized by a decoder into a single semantic object model." title="The Anatomy of a Non-Semantic Bit-Flip" caption="Malleability allows transport noise to bypass object-level integrity checks if the decoder is lenient." >}}
+{{< figure src="ghost-bit-malleability.svg" alt="A diagram showing a bit-flip in a CBOR bitstream being normalized by a decoder into a single semantic object model." title="Non-Semantic Bit-Flip" caption="Malleability allows transport noise to bypass object-level integrity checks if the decoder is lenient." >}}
 
 ## Objects vs. Bytes
 

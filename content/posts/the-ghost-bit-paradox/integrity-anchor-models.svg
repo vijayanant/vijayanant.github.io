@@ -9,7 +9,7 @@
       .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
       .anchor { fill: #1e293b; stroke: #fbbf24; stroke-width: 2; rx: 8; }
       .hash { fill: #0f172a; stroke: #4ade80; stroke-width: 2; rx: 4; }
-      .line { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow-gray); fill: none; }
+      .arrow { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow-gray); fill: none; }
     </style>
     <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
@@ -24,15 +24,19 @@
 
   <!-- Model 1: Binary Integrity -->
   <text x="200" y="80" class="label" font-weight="bold">1. Binary Representation</text>
-  <g transform="translate(100, 120)">
+  
+  <!-- Bitstream Box -->
+  <g transform="translate(100, 110)">
     <rect x="0" y="0" width="200" height="40" class="box" />
     <text x="100" y="25" class="label" font-family="monospace">01011010 1100...</text>
     <text x="100" y="60" class="label" font-size="10">Raw Bitstream</text>
   </g>
   
-  <path d="M200,180 L200,220" class="line" />
-  <text x="250" y="205" class="label" fill="#94a3b8" font-size="11">Direct Hash</text>
+  <!-- Direct Arrow -->
+  <path d="M200,170 L200,240" class="arrow" />
+  <text x="260" y="210" class="label" fill="#94a3b8" font-size="11">Direct Hash</text>
 
+  <!-- Identifier Box -->
   <g transform="translate(125, 240)">
     <rect x="0" y="0" width="150" height="50" class="hash" />
     <text x="75" y="30" class="label" fill="#4ade80" font-weight="bold">IDENTIFIER</text>
@@ -46,21 +50,27 @@
 
   <!-- Model 2: Semantic Integrity -->
   <text x="600" y="80" class="label" font-weight="bold">2. Semantic Model</text>
-  <g transform="translate(500, 120)">
+  
+  <!-- Bitstream Box -->
+  <g transform="translate(500, 110)">
     <rect x="0" y="0" width="200" height="40" class="box" opacity="0.5" />
     <text x="100" y="25" class="label" font-family="monospace">01011010 1100...</text>
   </g>
 
-  <path d="M600,160 L600,200" class="line" />
-  <text x="660" y="185" class="label" fill="#fbbf24" font-size="11">Decoder Filter</text>
+  <!-- Decoder Arrow -->
+  <path d="M600,150 L600,200" class="arrow" />
+  <text x="660" y="180" class="label" fill="#fbbf24" font-size="11">Decoder Filter</text>
 
+  <!-- Data Model Box -->
   <g transform="translate(525, 200)">
     <rect x="0" y="0" width="150" height="50" class="anchor" />
     <text x="75" y="30" class="label" font-weight="bold">DATA MODEL</text>
   </g>
 
-  <path d="M600,250 L600,280" class="line" />
+  <!-- Hash Arrow -->
+  <path d="M600,250 L600,300" class="arrow" />
 
+  <!-- Identifier Box -->
   <g transform="translate(525, 300)">
     <rect x="0" y="0" width="150" height="50" class="hash" />
     <text x="75" y="30" class="label" fill="#4ade80" font-weight="bold">IDENTIFIER</text>
