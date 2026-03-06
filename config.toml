@@ -82,6 +82,10 @@ tag = "tags"
 category = "categories"
 series = "series"
 
+[frontmatter]
+# Map README.md to _index.md for section indexing
+index = ["_index", "index", "README"]
+
 [markup]
 [markup.highlight]
 lineNos = true

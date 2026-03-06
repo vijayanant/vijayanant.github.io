@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="akshara-spec-page">
+    <div class="container">
+        <header class="spec-header">
+            <div class="ak-label">[TECHNICAL_SPECIFICATION]</div>
+            <h1 class="spec-title">{{ .Title }}</h1>
+            {{ with .Params.subtitle }}
+            <p class="spec-subtitle">{{ . }}</p>
+            {{ end }}
+            <div class="spec-meta">Version: {{ .Params.version | default "0.1.0-alpha" }} | Status: {{ .Params.status | default "Anchored" }}</div>
+        </header>
+
+        <article class="spec-content">
+            {{ .Content }}
+        </article>
+
+        <nav class="spec-nav">
+            <a href="/akshara/spec/">← Back to Spec Index</a>
+        </nav>
+    </div>
+</div>
+
+<style>
+    .akshara-spec-page { background: #121212; color: #E0E0E0; padding: 8rem 0; min-height: 100vh; }
+    .spec-header { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4rem; margin-bottom: 4rem; }
+    .spec-title { font-size: 3.5rem; font-weight: 900; margin: 1rem 0; color: #fff; }
+    .spec-subtitle { font-size: 1.4rem; color: #888; }
+    .spec-meta { font-family: monospace; font-size: 0.8rem; color: rgb(165, 124, 117); margin-top: 2rem; }
+    
+    .spec-content { font-size: 1.1rem; line-height: 1.8; max-width: 800px; }
+    .spec-content h2 { font-size: 2rem; margin-top: 4rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem; color: #fff; }
+    .spec-content h3 { font-size: 1.5rem; margin-top: 2.5rem; color: rgb(165, 124, 117); }
+    .spec-content ul { padding-left: 1.5rem; margin: 1.5rem 0; }
+    .spec-content li { margin-bottom: 0.75rem; }
+    .spec-content code { background: #1E1E1E; padding: 0.2rem 0.5rem; border-radius: 4px; font-family: monospace; }
+    .spec-content pre { background: #0a0a0a; padding: 2rem; border-radius: 1rem; border: 1px solid #222; overflow-x: auto; margin: 2rem 0; }
+    
+    .spec-nav { margin-top: 8rem; padding-top: 4rem; border-top: 1px solid #222; }
+    .spec-nav a { color: rgb(165, 124, 117); text-decoration: none; font-family: monospace; text-transform: uppercase; letter-spacing: 0.1em; }
+</style>
+{{ end }}
