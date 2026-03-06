@@ -1,30 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('theme-toggle');
-    const icon = toggleButton.querySelector('i');
-    
+    const icon = toggleButton.querySelector('.icon');
+
     // Function to set theme
     const setTheme = (theme, isInitial = false) => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        
+
         // Track theme in GA4
         if (typeof gtag === 'function') {
             gtag('event', 'select_content', {
                 'content_type': 'theme',
                 'item_id': theme,
-                'non_interaction': isInitial // Don't affect bounce rate on initial load
+                'non_interaction': isInitial
             });
         }
 
-        // Update Icon (Action Indicator)
-        // If theme is Light, show Moon (to switch to Dark)
-        // If theme is Dark, show Sun (to switch to Light)
+        // Update Icon - swap moon/sun SVG
+        const moonIcon = toggleButton.querySelector('.icon-moon');
+        const sunIcon = toggleButton.querySelector('.icon-sun');
+        
         if (theme === 'light') {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
+            // Light theme: show moon icon (to switch to dark)
+            if (moonIcon) moonIcon.style.display = 'block';
+            if (sunIcon) sunIcon.style.display = 'none';
         } else {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+            // Dark theme: show sun icon (to switch to light)
+            if (moonIcon) moonIcon.style.display = 'none';
+            if (sunIcon) sunIcon.style.display = 'block';
         }
     };
 

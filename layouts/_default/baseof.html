@@ -7,12 +7,30 @@
     <meta name="description" content="{{ .Description | default .Site.Params.description }}">
     <title>{{ if .IsHome }}{{ .Title | default .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
+    
+    {{/* DNS Prefetch for Analytics and External Resources */}}
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
+    {{/* Preload Critical Webfonts */}}
+    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/mulish-400.woff2" | relURL }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/mulish-700.woff2" | relURL }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/lora-400.woff2" | relURL }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/lora-700.woff2" | relURL }}" crossorigin>
+
+    {{/* Critical CSS for Above-the-Fold Content */}}
+    {{ $criticalStyle := resources.Get "css/critical.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $criticalStyle.RelPermalink }}">
+
+    {{/* Non-Critical CSS Loaded Asynchronously */}}
     {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" href="{{ $style.RelPermalink }}"></noscript>
 
     {{ $chromaStyle := resources.Get "css/chroma.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}" media="print" onload="this.media='all'">
@@ -31,9 +49,6 @@
 
     {{ $shareStyle := resources.Get "css/share-buttons.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $shareStyle.RelPermalink }}" media="print" onload="this.media='all'">
-
-    {{ $faStyle := resources.Get "css/fontawesome.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $faStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
 
 
@@ -85,7 +100,8 @@
     
     {{ if .Site.Params.enableThemeToggle }}
     <button id="theme-toggle" class="floating-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
-        <i class="fas fa-moon"></i>
+        {{ partial "icons/moon.html" . }}
+        {{ partial "icons/sun.html" . }}
     </button>
     {{ end }}
 

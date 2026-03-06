@@ -1,11 +1,11 @@
 <div class="note-box note-type-{{ .Get "type" | default "info" }}">
     <div class="note-meta">
-        {{ if eq (.Get "type") "log" }}<i class="fas fa-book"></i> Log
-        {{ else if eq (.Get "type") "info" }}<i class="fas fa-info-circle"></i> Info
-        {{ else if eq (.Get "type") "tip" }}<i class="fas fa-lightbulb"></i> Tip
-        {{ else if eq (.Get "type") "warning" }}<i class="fas fa-exclamation-triangle"></i> Warning
-        {{ else if eq (.Get "type") "danger" }}<i class="fas fa-skull-crossbones"></i> Danger
-        {{ else }}<i class="fas fa-sticky-note"></i> Note
+        {{ if eq (.Get "type") "log" }}{{ partial "icons/book.html" . }} Log
+        {{ else if eq (.Get "type") "info" }}{{ partial "icons/info-circle.html" . }} Info
+        {{ else if eq (.Get "type") "tip" }}{{ partial "icons/lightbulb.html" . }} Tip
+        {{ else if eq (.Get "type") "warning" }}{{ partial "icons/exclamation-triangle.html" . }} Warning
+        {{ else if eq (.Get "type") "danger" }}{{ partial "icons/skull-crossbones.html" . }} Danger
+        {{ else }}{{ partial "icons/book.html" . }} Note
         {{ end }}
     </div>
     {{ with .Get "title" }}

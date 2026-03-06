@@ -8,7 +8,7 @@
     <!-- Floating Info Panel (Detail Only) -->
     <div id="side-panel">
         <div id="panel-content">
-            <button id="btn-close-panel"><i class="fas fa-times"></i></button>
+            <button id="btn-close-panel">{{ partial "icons/times.html" . }}</button>
             <h2 id="panel-title" class="pillar-title"></h2>
             <p id="panel-group" class="text-muted small text-uppercase mb-3"></p>
             <div id="panel-description" class="pillar-subtitle mb-4"></div>
@@ -38,7 +38,7 @@
     <!-- Filter/Legend Overlay for Mobile -->
     <div id="graph-filters-overlay">
         <div id="filters-overlay-content">
-            <button id="btn-close-filters-overlay"><i class="fas fa-times"></i></button>
+            <button id="btn-close-filters-overlay">{{ partial "icons/times.html" . }}</button>
             <h3>Filter & Legend</h3>
             <div class="legend-wrapper-vertical">
                 {{ range $legendItems }}
@@ -53,7 +53,7 @@
 
     <!-- Persistent Filter Button for Mobile -->
     <div id="btn-open-filters-container">
-        <button id="btn-open-filters" class="button button-primary"><i class="fas fa-filter"></i></button>
+        <button id="btn-open-filters" class="button button-primary">{{ partial "icons/filter.html" . }}</button>
     </div>
 
     <!-- Main View Legend (Acting as Filters for Desktop) -->

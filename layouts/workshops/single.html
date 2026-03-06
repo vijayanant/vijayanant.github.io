@@ -15,7 +15,7 @@
                 <ul class="syllabus-list">
                     {{ range $workshopData.key_takeaways }}
                     <li>
-                        <i class="fas fa-check-circle"></i>
+                        {{ partial "icons/check-circle.html" . }}
                         <span>{{ . }}</span>
                     </li>
                     {{ end }}
@@ -37,7 +37,7 @@
                 <ul class="audience-list">
                     {{ range $workshopData.target_audience }}
                     <li>
-                        <i class="fas fa-users"></i>
+                        {{ partial "icons/users.html" . }}
                         <span>{{ . }}</span>
                     </li>
                     {{ end }}

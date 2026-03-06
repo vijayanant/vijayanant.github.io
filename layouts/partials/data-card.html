@@ -32,7 +32,10 @@
         <div class="post-card-links">
             {{ range .links }}
             <a href="{{ .url }}" class="button button-primary outbound-link-click" target="_blank">
-                {{ if .icon }}<i class="{{ .icon }}" style="margin-right: 4px;"></i>{{ end }}{{ .label }}
+                {{ if eq .icon "fas fa-file-pdf" }}{{ partial "icons/file-pdf.html" $ }}
+                {{ else if eq .icon "fab fa-youtube" }}{{ partial "icons/youtube.html" $ }}
+                {{ end }}
+                {{ .label }}
             </a>
             {{ end }}
         </div>

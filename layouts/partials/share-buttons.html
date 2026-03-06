@@ -12,30 +12,30 @@
     {{ end }}
 
     <!-- Twitter/X -->
-    <a href="https://twitter.com/intent/tweet?text={{ urlquery $title }}&amp;url={{ urlquery $url }}{{ with $twitterHandle }}&amp;via={{ . }}{{ end }}" 
-       class="share-btn twitter share-btn-click" 
-       target="_blank" 
-       rel="noopener noreferrer" 
+    <a href="https://twitter.com/intent/tweet?text={{ urlquery $title }}&amp;url={{ urlquery $url }}{{ with $twitterHandle }}&amp;via={{ . }}{{ end }}"
+       class="share-btn twitter share-btn-click"
+       target="_blank"
+       rel="noopener noreferrer"
        title="Share on Twitter">
-        <i class="fab fa-twitter"></i>
+        {{ partial "icons/twitter.html" . }}
         <span class="sr-only">Share on Twitter</span>
     </a>
 
     <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlquery $url }}" 
-       class="share-btn linkedin share-btn-click" 
-       target="_blank" 
-       rel="noopener noreferrer" 
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlquery $url }}"
+       class="share-btn linkedin share-btn-click"
+       target="_blank"
+       rel="noopener noreferrer"
        title="Share on LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
+        {{ partial "icons/linkedin.html" . }}
         <span class="sr-only">Share on LinkedIn</span>
     </a>
 
     <!-- Email -->
-    <a href="mailto:?subject={{ urlquery $title }}&amp;body={{ urlquery $url }}" 
-       class="share-btn email share-btn-click" 
+    <a href="mailto:?subject={{ urlquery $title }}&amp;body={{ urlquery $url }}"
+       class="share-btn email share-btn-click"
        title="Share via Email">
-        <i class="fas fa-envelope"></i>
+        {{ partial "icons/envelope.html" . }}
         <span class="sr-only">Share via Email</span>
     </a>
     </div>

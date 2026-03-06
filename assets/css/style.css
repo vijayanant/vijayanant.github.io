@@ -192,6 +192,26 @@ img {
     line-height: 1.8;
     font-family: var(--body-font);
 }
+
+/* Icon Styles */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    color: inherit;
+}
+
+.button .icon {
+    width: 1.2em;
+    height: 1.2em;
+}
+
 /* components.css */
 .button {
     display: inline-flex;
@@ -208,9 +228,10 @@ img {
     font-family: var(--heading-font);
 }
 
-.button i {
-    font-size: 1.2rem; /* Slightly larger than text for emphasis */
-    vertical-align: middle; /* Align icon with text */
+.button .icon {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
 }
 
 .button-primary {
@@ -669,25 +690,28 @@ footer .footer-link:hover {
     margin-bottom: 1.5rem;
 }
 
-.syllabus-list, 
+.syllabus-list,
 .audience-list {
     list-style: none;
     padding-left: 0;
 }
 
-.syllabus-list li, 
+.syllabus-list li,
 .audience-list li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 1.1rem;
     margin-bottom: 1rem;
+    gap: 1rem;
 }
 
-.syllabus-list i, 
-.audience-list i {
+.syllabus-list .icon,
+.audience-list .icon {
     color: var(--primary-color);
-    margin-right: 1rem;
-    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.1rem;
 }
 
 .interested-section {

@@ -1,14 +1,11 @@
 <header id="site-header">
     <div class="container">
         <a href="{{ "/" | relURL }}" class="logo">
-            <picture>
-                {{ $original := resources.Get "images/contact-image.png" }}
-                {{ if $original }}
-                    {{ $webp := $original.Resize "35x webp" }}
-                    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-                    <img src="{{ $original.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="35" height="35" loading="lazy">
-                {{ end }}
-            </picture>
+            {{ $original := resources.Get "images/contact-image.webp" }}
+            {{ if $original }}
+                {{ $webp := $original.Resize "35x webp" }}
+                <img src="{{ $webp.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="35" height="35" loading="lazy">
+            {{ end }}
         </a>
         <nav>
             <button class="nav-toggle" aria-label="Toggle Navigation">
@@ -16,7 +13,7 @@
             </button>
             <ul class="nav-list">
                 {{- if .Site.Params.enableSearch -}}
-                <li class="nav-item"><button id="search-button" class="nav-link" aria-label="Search" title="Search"><i class="fas fa-search"></i><span class="sr-only">Search</span></button></li>
+                <li class="nav-item"><button id="search-button" class="nav-link" aria-label="Search" title="Search">{{ partial "icons/search.html" . }}<span class="sr-only">Search</span></button></li>
                 {{- end -}}
                 
                 <li class="nav-item">
