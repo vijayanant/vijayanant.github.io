@@ -7,11 +7,21 @@
         {{ with .Params.featured_image }}
           {{ $image := $.Page.Resources.GetMatch . }}
           {{ if $image }}
-            {{ $heroImage := $image }}
             {{ if ne $image.MediaType.SubType "svg" }}
-              {{ $heroImage = $image.Fill "1200x600 webp" }}
+              {{ $heroImageSmall := $image.Fill "600x300 webp" }}
+              {{ $heroImageLarge := $image.Fill "1200x600 webp" }}
+              <img src="{{ $heroImageLarge.RelPermalink }}" 
+                   alt="{{ $.Title }}" 
+                   class="featured-post-hero-image" 
+                   srcset="{{ $heroImageSmall.RelPermalink }} 600w, {{ $heroImageLarge.RelPermalink }} 1200w"
+                   sizes="(max-width: 768px) 600px, 1200px"
+                   width="{{ $heroImageLarge.Width }}" 
+                   height="{{ $heroImageLarge.Height }}"
+                   fetchpriority="high"
+                   loading="eager">
+            {{ else }}
+              {{ $image.Content | safeHTML }}
             {{ end }}
-            <img src="{{ $heroImage.RelPermalink }}" alt="{{ $.Title }}" class="featured-post-hero-image" {{ if ne $heroImage.MediaType.SubType "svg" }}width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"{{ end }}>
           {{ end }}
         {{ end }}
         {{ if .Params.featured }}
@@ -49,22 +59,30 @@
                     {{ $imagePath := $currentPost.Params.featured_image }}
                     {{ $image := $currentPost.Resources.GetMatch $imagePath }}
                     {{ if $image }}
-                      {{ $thumbnail := $image }}
                       {{ if ne $image.MediaType.SubType "svg" }}
-                        {{ $thumbnail = $image.Fill "400x250 webp" }}
+                        {{ $small := $image.Fill "200x125 webp" }}
+                        {{ $medium := $image.Fill "400x250 webp" }}
+                        <div class="series-post-image-wrapper ms-3">
+                          <img src="{{ $medium.RelPermalink }}" 
+                               alt="{{ $currentPost.Title }}" 
+                               class="series-post-image" 
+                               srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
+                               sizes="(max-width: 768px) 200px, 400px"
+                               width="400" height="250">
+                        </div>
+                      {{ else }}
+                        <div class="series-post-image-wrapper ms-3">
+                          {{ $image.Content | safeHTML }}
+                        </div>
                       {{ end }}
-                      <div class="series-post-image-wrapper ms-3">
-                        <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $currentPost.Title }}" class="series-post-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
-                      </div>
                     {{ else }}
                       {{ $image := resources.Get $imagePath }}
                       {{ if $image }}
-                        {{ $thumbnail := $image }}
                         {{ if ne $image.MediaType.SubType "svg" }}
-                          {{ $thumbnail = $image.Fill "400x250 webp" }}
+                          {{ $image = $image.Fill "400x250 webp" }}
                         {{ end }}
                         <div class="series-post-image-wrapper ms-3">
-                          <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $currentPost.Title }}" class="series-post-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
+                          <img src="{{ $image.RelPermalink }}" alt="{{ $currentPost.Title }}" class="series-post-image" width="400" height="250">
                         </div>
                       {{ end }}
                     {{ end }}

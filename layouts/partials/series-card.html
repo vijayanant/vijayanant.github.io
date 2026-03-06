@@ -18,9 +18,16 @@
                   {{ $imageResource.Content | safeHTML }}
               </a>
           {{ else }}
-              {{ $thumbnail := $imageResource.Fill "400x250 webp" }}
+              {{ $small := $imageResource.Fill "200x125 webp" }}
+              {{ $medium := $imageResource.Fill "400x250 webp" }}
               <a href="{{ $postPermalink }}">
-                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" loading="lazy">
+                  <img src="{{ $medium.RelPermalink }}" 
+                       alt="{{ $seriesPage.Title }}" 
+                       class="post-card-image" 
+                       srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
+                       sizes="(max-width: 768px) 200px, 400px"
+                       width="400" height="250" 
+                       loading="lazy">
               </a>
           {{ end }}
       {{ else }}

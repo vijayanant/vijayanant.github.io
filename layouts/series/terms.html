@@ -21,18 +21,25 @@
             {{ with $seriesPage.Params.featured_image }}
               {{ $image := $seriesPage.Resources.GetMatch . }}
               {{ if $image }}
-                {{ $thumbnail := $image }}
                 {{ if ne $image.MediaType.SubType "svg" }}
-                  {{ $thumbnail = $image.Fill "400x250 webp" }}
+                  {{ $small := $image.Fill "200x125 webp" }}
+                  {{ $medium := $image.Fill "400x250 webp" }}
+                  <img src="{{ $medium.RelPermalink }}" 
+                       alt="{{ $seriesPage.Title }}" 
+                       class="post-card-image" 
+                       srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
+                       sizes="(max-width: 768px) 200px, 400px"
+                       width="400" height="250">
+                {{ else }}
+                  {{ $image.Content | safeHTML }}
                 {{ end }}
-                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
               {{ else }}
                 {{ $thumbnail := resources.Get . }}
                 {{ if $thumbnail }}
                   {{ if ne $thumbnail.MediaType.SubType "svg" }}
                     {{ $thumbnail = $thumbnail.Fill "400x250 webp" }}
                   {{ end }}
-                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
+                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="400" height="250">
                 {{ end }}
               {{ end }}
             {{ end }}
