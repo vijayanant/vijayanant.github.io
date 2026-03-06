@@ -24,19 +24,18 @@
         {{- if $pngResource }}
             {{- $ogImage = $pngResource.Permalink }}
         {{- else }}
-            {{/* Fallback to Site Default if no PNG counterpart found */}}
             {{- with site.Params.image }}
                 {{- $ogImage = . | absURL }}
             {{- end }}
         {{- end }}
     {{- else }}
-        {{- $ogImage = $resource.Permalink }}
+        {{- $ogImage = ($resource.Resize "1200x webp").Permalink }}
     {{- end }}
   {{- else }}
     {{- $ogImage = . | absURL }}
   {{- end }}
 {{- else }}
-  {{- with .Site.Params.image }}
+  {{- with site.Params.image }}
     {{- $ogImage = . | absURL }}
   {{- end }}
 {{- end }}
