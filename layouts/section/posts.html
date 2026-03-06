@@ -16,15 +16,23 @@
             <a href="{{ $postPermalink }}" class="featured-post-link">
               {{ $heroImage := . }}
               {{ if ne .MediaType.SubType "svg" }}
-                {{ $heroImage = .Fill "1200x600 webp" }}
+                {{ $heroImageSmall := .Fill "600x300 webp" }}
+                {{ $heroImageLarge := .Fill "1200x600 webp" }}
+                <img src="{{ $heroImageLarge.RelPermalink }}" 
+                     alt="{{ $featuredPost.Title }}" 
+                     class="featured-post-hero-image" 
+                     srcset="{{ $heroImageSmall.RelPermalink }} 600w, {{ $heroImageLarge.RelPermalink }} 1200w"
+                     sizes="(max-width: 768px) 600px, 1200px"
+                     {{ if ne $heroImageLarge.MediaType.SubType "svg" }}width="{{ $heroImageLarge.Width }}" height="{{ $heroImageLarge.Height }}"{{ end }} 
+                     fetchpriority="high" 
+                     loading="eager">
+                <span class="featured-post-badge">Latest Article</span>
+                <div class="featured-post-overlay">
+                  <h2 class="featured-post-hero-title">{{ $featuredPost.Title }}</h2>
+                  <div class="featured-post-hero-meta">{{ $featuredPost.Date.Format "January 2, 2006" }} &middot; {{ $featuredPost.ReadingTime }} min read</div>
+                  <p class="featured-post-hero-description">{{ $featuredPost.Description }}</p>
+                </div>
               {{ end }}
-              <img src="{{ $heroImage.RelPermalink }}" alt="{{ $featuredPost.Title }}" class="featured-post-hero-image" {{ if ne $heroImage.MediaType.SubType "svg" }}width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"{{ end }}>
-              <span class="featured-post-badge">Latest Article</span> <!-- NEW LINE -->
-              <div class="featured-post-overlay">
-                <h2 class="featured-post-hero-title">{{ $featuredPost.Title }}</h2>
-                <div class="featured-post-hero-meta">{{ $featuredPost.Date.Format "January 2, 2006" }} &middot; {{ $featuredPost.ReadingTime }} min read</div>
-                <p class="featured-post-hero-description">{{ $featuredPost.Description }}</p>
-              </div>
             </a>
           {{ end }}
         {{ end }}
@@ -40,11 +48,23 @@
               {{ $postPermalink := .Permalink }}
               {{ with .Resources.GetMatch .Params.featured_image }}
               <a href="{{ $postPermalink }}">
-                {{ $thumbnail := . }}
                 {{ if ne .MediaType.SubType "svg" }}
-                  {{ $thumbnail = .Fill "400x250 webp" }}
+                  {{ $small := .Fill "200x125 webp" }}
+                  {{ $medium := .Fill "400x250 webp" }}
+                  <img src="{{ $medium.RelPermalink }}" 
+                       alt="{{ .Title }}" 
+                       class="post-card-image" 
+                       srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
+                       sizes="(max-width: 768px) 200px, 400px"
+                       width="400" height="250"
+                       loading="lazy">
+                {{ else }}
+                  <img src="{{ .RelPermalink }}" 
+                       alt="{{ .Title }}" 
+                       class="post-card-image" 
+                       width="400" height="250"
+                       loading="lazy">
                 {{ end }}
-                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}> 
               </a>
               {{ else }}
               {{/* Optional: Add a fallback image here if no featured image is found */}}
