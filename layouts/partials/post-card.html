@@ -8,13 +8,20 @@
         {{/* Check if the image is an SVG */}}
         {{ if eq $imageResource.MediaType.SubType "svg" }}
             <a href="{{ $postPermalink }}">
-                <img src="{{ $imageResource.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" loading="lazy">
+                <img src="{{ $imageResource.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" width="400" height="250" loading="lazy">
             </a>
         {{ else }}
-            {{/* If resource found and not SVG, resize it */}}
-            {{ $thumbnail := $imageResource.Fill "400x250 webp" }}
+            {{/* If resource found and not SVG, create responsive sizes */}}
+            {{ $small := $imageResource.Fill "200x125 webp" }}
+            {{ $medium := $imageResource.Fill "400x250 webp" }}
             <a href="{{ $postPermalink }}">
-                <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" class="post-card-image" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" loading="lazy">
+                <img src="{{ $medium.RelPermalink }}" 
+                     alt="{{ .Title }}" 
+                     class="post-card-image" 
+                     srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
+                     sizes="(max-width: 768px) 200px, 400px"
+                     width="400" height="250" 
+                     loading="lazy">
             </a>
         {{ end }}
     {{ else }}
