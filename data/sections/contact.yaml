@@ -4,7 +4,7 @@ email: hello@vijayanant.com
 social_links:
   - name: LinkedIn
     url: https://www.linkedin.com/in/vijayanant/
-    icon: fab fa-linkedin
+    icon: linkedin
   - name: Blog
     url: /posts/
-    icon: fas fa-newspaper
+    icon: newspaper

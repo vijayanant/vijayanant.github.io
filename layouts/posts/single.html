@@ -77,7 +77,7 @@
               {{ if $nextPost }}
                 <div class="next-post-prompt">
                   <a href="{{ $nextPost.Permalink }}" class="next-post-link">
-                    Next: {{ $nextPost.Title }} <i class="fas fa-arrow-right"></i>
+                    Next: {{ $nextPost.Title }} {{ partial "icons/arrow-right.html" . }}
                   </a>
                 </div>
               {{ end }}
