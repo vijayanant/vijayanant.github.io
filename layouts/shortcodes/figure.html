@@ -31,7 +31,9 @@
                 >
             </a>
         {{ else }}
-            <a href="{{ $original.RelPermalink }}" data-lity>
+            {{/* Create a large WebP version for lightbox (not the original!) */}}
+            {{ $lightboxImage := $original.Resize "1600x webp" }}
+            <a href="{{ $lightboxImage.RelPermalink }}" data-lity>
             {{/* Define responsive sizes for raster images */}}
             {{ $sizes := (slice 480 800 1200) }}
 
