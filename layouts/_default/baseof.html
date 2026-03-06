@@ -50,6 +50,9 @@
     {{ $shareStyle := resources.Get "css/share-buttons.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $shareStyle.RelPermalink }}" media="print" onload="this.media='all'">
 
+    {{ $errorStyle := resources.Get "css/404.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $errorStyle.RelPermalink }}" media="print" onload="this.media='all'">
+
 
 
     {{ $apple := resources.Get "images/apple-touch-icon.png" | fingerprint }}

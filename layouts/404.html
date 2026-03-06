@@ -1,24 +1,83 @@
 {{ define "main" }}
-<section id="404" class="text-center full-height-section">
+<section id="404" class="full-height-section">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="section-title">404</h1>
-                <h2>Oops! Page Not Found</h2>
-                <script>
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'page_view', {
-                            'page_title': '404 Error: Page Not Found',
-                            'page_location': window.location.href,
-                            'page_path': window.location.pathname,
-                            'error_code': '404'
-                        });
-                    }
-                </script>
-                <p>Sorry, but the page you were trying to view does not exist.</p>
-                <p>You can <a href="{{ "/" | relURL }}">return to the homepage</a> or <a href="mailto:hello@vijayanant.com">contact me</a> if you need help.</p>
+        <div class="error-content">
+            <!-- Error Code & Title -->
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page Not Found</h2>
+            <p class="error-message">
+                The page you're looking for doesn't exist or has been moved.
+            </p>
+            
+            <!-- Action Buttons -->
+            <div class="error-actions">
+                <a href="{{ "/" | relURL }}" class="button button-primary">
+                    {{ partial "icons/newspaper.html" . }}
+                    Homepage
+                </a>
+                <a href="{{ "/posts/" | relURL }}" class="button button-primary">
+                    {{ partial "icons/layer-group.html" . }}
+                    All Posts
+                </a>
+            </div>
+            
+            <!-- Popular Posts -->
+            {{ $posts := where .Site.RegularPages "Section" "posts" | first 3 }}
+            {{ if $posts }}
+            <div class="popular-posts">
+                <h3 class="popular-posts-title">Popular Posts</h3>
+                <ul class="popular-posts-list">
+                    {{ range $posts }}
+                    <li class="popular-post-item">
+                        <a href="{{ .Permalink }}" class="popular-post-link">
+                            <span class="popular-post-title">{{ .Title }}</span>
+                            <span class="popular-post-meta">{{ .ReadingTime }} min</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+            
+            <!-- Search or Contact -->
+            <div class="error-help">
+                <p>Can't find what you need?</p>
+                <div class="error-help-actions">
+                    {{ if .Site.Params.enableSearch }}
+                    <button id="error-search-button" class="search-link" aria-label="Search">
+                        {{ partial "icons/search.html" . }}
+                        <span>Search</span>
+                    </button>
+                    {{ end }}
+                    <a href="mailto:{{ .Site.Params.contactEmail }}" class="contact-link">
+                        {{ partial "icons/envelope.html" . }}
+                        <span>Get in touch</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+    
+    <!-- Analytics Tracking -->
+    <script>
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', {
+                'page_title': '404 Error: Page Not Found',
+                'page_location': window.location.href,
+                'page_path': window.location.pathname,
+                'error_code': '404'
+            });
+        }
+        
+        // Search functionality
+        const errorSearchButton = document.getElementById('error-search-button');
+        const searchButton = document.getElementById('search-button');
+        
+        if (errorSearchButton && searchButton) {
+            errorSearchButton.addEventListener('click', function() {
+                searchButton.click();
+            });
+        }
+    </script>
 </section>
 {{ end }}
