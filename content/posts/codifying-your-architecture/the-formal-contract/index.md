@@ -10,6 +10,8 @@ categories: ["Software Architecture"]
 tags: ["encapsulation", "information-hiding", "modularity", "clean-code", "java", "python"]
 description: "Your 'clean' directory structure is a facade if anyone can import anything. Learn how to use visibility rules and explicit contracts to stop 'architectural treason' at the compiler level."
 featured_image: "contract-featured.svg"
+pillar: craft
+pillar_role: deep_dive
 ---
 
 {{< figure src="contract-featured.svg" alt="A stylized illustration of a scroll (the contract) being locked with a digital shield, representing code-level enforcement." >}}

@@ -9,6 +9,8 @@ description: "Remote Procedure Calls attempt to make the network invisible. Lear
 featured_image: "looking-back-at-rpcs-1.jpeg"
 tags: ["rpc", "distributed-system", "api-design"]
 categories: ["Software Architecture"]
+pillar: system
+pillar_role: deep_dive
 ---
 {{< figure src="looking-back-at-rpcs-1.jpeg" alt="Historical illustration of early telecommunications devices like a telephone, microphone, and phonograph." caption="By Benoît Bonnafoux - Le téléphone, le microphone et le phonographe (1880, 3rd edition), by Théodose du Moncel (1821-1884), Public Domain, https://commons.wikimedia.org/w/index.php?curid=130827340" >}}
 

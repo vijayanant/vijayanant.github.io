@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #38bdf8; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .box { fill: #0f172a; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+      .highlight { stroke: #fbbf24; fill: #fbbf24; fill-opacity: 0.1; }
+      .line { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow-gray); fill: none; }
+    </style>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="40" class="title">The Audit Trail of Intent</text>
+
+  <!-- Central History -->
+  <g transform="translate(100, 200)">
+    <rect x="-40" y="-25" width="80" height="50" class="box" />
+    <text y="5" class="label">State A</text>
+  </g>
+
+  <!-- The Fork -->
+  <!-- Upper: The "Lie" -->
+  <g transform="translate(300, 120)">
+    <rect x="-60" y="-25" width="120" height="50" class="box" style="stroke:#fbbf24" />
+    <text y="5" class="label" fill="#fbbf24">Signed Contract</text>
+    <path d="M-200,80 L-60,0" class="line" style="stroke:#fbbf24" />
+  </g>
+
+  <!-- Lower: The "Revocation" -->
+  <g transform="translate(300, 280)">
+    <rect x="-60" y="-25" width="120" height="50" class="box" style="stroke:#ef4444" />
+    <text y="5" class="label" fill="#ef4444">Revoke Key</text>
+    <path d="M-200,-80 L-60,0" class="line" style="stroke:#ef4444" />
+  </g>
+
+  <!-- The Observer (Bob) -->
+  <g transform="translate(600, 200)">
+    <rect x="-100" y="-60" width="200" height="120" class="box" style="stroke:#38bdf8; stroke-width:3" />
+    <text y="-30" class="label" font-weight="bold">Bob's Storage</text>
+    <text y="0" class="label" font-size="12">"I see both paths."</text>
+    <text y="25" class="label" fill="#fbbf24" font-weight="bold">Evidence of Choice</text>
+  </g>
+
+  <text x="400" y="370" class="label" font-style="italic">You can rewrite your branch, but you can't delete the original signature from your peers.</text>
+
+</svg>

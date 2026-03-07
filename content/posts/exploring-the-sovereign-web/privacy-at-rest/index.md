@@ -9,6 +9,8 @@ description: "Why encryption isn't just scrambling, why the server must be blind
 tags: ["privacy", "encryption", "aead", "cryptography", "zero-trust"]
 categories: ["Software Architecture"]
 featured_image: "featured-private.jpg"
+pillar: system
+pillar_role: deep_dive
 ---
 
 {{< figure src="featured-private.jpg" caption="Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/private-signage-door-u5Zt-HoocrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}

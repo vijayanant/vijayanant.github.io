@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    <style>
+      .label { font-family: system-ui, sans-serif; font-size: 14px; fill: #f8fafc; text-anchor: middle; }
+      .title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #38bdf8; text-anchor: middle; text-transform: uppercase; letter-spacing: 1px; }
+      .block { fill: #0f172a; stroke-width: 2; rx: 4; }
+      .good { stroke: #4ade80; }
+      .bad { stroke: #ef4444; fill: #ef4444; fill-opacity: 0.1; }
+      .new { stroke: #38bdf8; stroke-width: 3; }
+      .line { stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow-gray); fill: none; }
+      .line-correction { stroke: #38bdf8; stroke-width: 2.5; marker-end: url(#arrow-cyan); fill: none; }
+    </style>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#38bdf8" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e293b" />
+  <rect width="800" height="400" fill="url(#grid)" />
+
+  <text x="400" y="40" class="title">Timeline Correction (The Force Push)</text>
+
+  <!-- Manifest 1 -->
+  <g transform="translate(100, 200)">
+    <rect x="-40" y="-30" width="80" height="60" class="block good" />
+    <text y="50" class="label">Manifest V1</text>
+  </g>
+
+  <!-- Manifest 2 -->
+  <g transform="translate(250, 200)">
+    <rect x="-40" y="-30" width="80" height="60" class="block good" />
+    <text y="50" class="label">Manifest V2</text>
+    <line x1="-110" y1="0" x2="-40" y2="0" class="line" />
+  </g>
+
+  <!-- The Fork (Malicious) -->
+  <g transform="translate(450, 120)">
+    <rect x="-40" y="-30" width="80" height="60" class="block bad" />
+    <text y="50" class="label" fill="#ef4444">Compromised V3</text>
+    <path d="M-160,80 Q-100,0 -40,0" class="line" style="stroke:#ef4444" />
+  </g>
+
+  <!-- The Correction -->
+  <g transform="translate(550, 280)">
+    <rect x="-60" y="-30" width="120" height="60" class="block new" />
+    <text y="5" class="label" font-weight="bold">NEW SNAPSHOT</text>
+    <text y="20" class="label" font-size="10">Recovered V3'</text>
+    <path d="M-300,-80 Q-150,80 -60,80" class="line-correction" />
+  </g>
+
+  <!-- Conclusion -->
+  <text x="650" y="200" class="label" fill="#38bdf8" text-anchor="start">
+    <tspan x="620" dy="0">The graph prunes the</tspan>
+    <tspan x="620" dy="20">malicious branch for</tspan>
+    <tspan x="620" dy="20">all future observers.</tspan>
+  </text>
+
+</svg>

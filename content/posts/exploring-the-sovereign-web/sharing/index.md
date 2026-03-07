@@ -9,6 +9,8 @@ description: "Once you build a perfect vault, you realize you've built a tomb. E
 tags: ["sharing", "access-control", "cryptography", "zero-trust", "decentralized-web"]
 categories: ["Software Architecture"]
 featured_image: "message-in-a-bottle-at-seashore.jpg"
+pillar: system
+pillar_role: deep_dive
 ---
 
 {{< figure src="message-in-a-bottle-at-seashore.jpg" caption="Photo by [Jayne Harris](https://unsplash.com/@jayneharr33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-bottle-floating-in-a-body-of-water-SkVpd5YhUug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
