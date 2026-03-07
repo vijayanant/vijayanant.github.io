@@ -9,6 +9,8 @@ description: "Why the way we link to things on the web is broken, and how addres
 tags: ["distributed-system", "content-addressing", "zero-trust", "decentralised-web", "cryptography", "privacy"]
 categories: ["Software Architecture"]
 featured_image: "library-card-catalog.jpg"
+pillar: system
+pillar_role: deep_dive
 ---
 
 {{< figure src="library-card-catalog.jpg" caption="Photo by [Daniel Forsman](https://unsplash.com/@danielforsman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-hand-pulls-a-card-from-the-librarys-card-catalog-Ph4ZJrwf4x8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}

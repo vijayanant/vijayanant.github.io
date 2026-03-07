@@ -10,6 +10,8 @@ categories: ["Software Architecture"]
 tags: ["modularity", "architecture-as-code", "package-by-component", "screaming-architecture", "code-structure"]
 description: "Stop hiding your business logic in 'service' and 'repository' folders. Learn how to use 'Screaming Architecture' to make your file tree a direct reflection of your system's intent."                                                     
 featured_image: "blueprint-featured.svg"
+pillar: craft
+pillar_role: deep_dive
 ---
 
 {{< figure src="blueprint-featured.svg" alt="Abstract architectural blueprint contrasting an entangled messy dependency graph with a structured, modular one." >}}

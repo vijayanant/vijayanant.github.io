@@ -9,6 +9,8 @@ description: "Why spaghetti code is the ultimate productivity killer. A practica
 featured_image: "good-coupling-bad-coupling-and-cohesion-1.jpg"
 tags: ["coupling", "cohesion", "modularity"]
 categories: ["Software Architecture"]
+pillar: system
+pillar_role: deep_dive
 ---
 {{< figure src="good-coupling-bad-coupling-and-cohesion-1.jpg" alt="brass-colored chain machine" caption="Photo by [Jay Heike](https://unsplash.com/@jayrheike) on [Unsplash](https://unsplash.com)" >}}
 

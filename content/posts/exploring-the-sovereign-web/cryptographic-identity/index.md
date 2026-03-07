@@ -9,6 +9,8 @@ description: "Why static keys (like PGP) failed, why device keys (like Signal) a
 tags: ["identity", "cryptography", "zero-trust", "decentralized-web", "security"]
 categories: ["Software Architecture"]
 featured_image: "featured-antique-keys.jpg"
+pillar: system
+pillar_role: deep_dive
 ---
 
 {{< figure src="featured-antique-keys.jpg" caption="Photo by [Aniyora J](https://unsplash.com/@yora_dreams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/silver-and-black-skeleton-key-PhuxBx5bOCk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}

@@ -10,6 +10,8 @@ categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Architecture is the navigation of the conflict between speed and scale. Learn how to translate technical anxiety into concrete drivers so your organization can choose its trade-offs."
 featured_image: "compass.jpg"
+pillar: strategy
+pillar_role: foundational
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" width="1200" >}}

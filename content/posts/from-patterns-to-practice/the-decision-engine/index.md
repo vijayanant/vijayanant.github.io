@@ -10,6 +10,8 @@ categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Learn how to move from qualitative analysis to a final, justifiable, and data-informed architectural decision using a Weighted Scoring Matrix to factor in business priorities."
 featured_image: "decision-signpost.jpg"
+pillar: strategy
+pillar_role: deep_dive
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}

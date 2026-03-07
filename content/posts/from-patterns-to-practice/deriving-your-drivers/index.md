@@ -10,6 +10,8 @@ categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Learn how to translate vague business goals into concrete, measurable architectural drivers using Quality Attribute Scenarios (QAS) to identify and address critical risks."
 featured_image: "driving.jpg"
+pillar: strategy
+pillar_role: deep_dive
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}

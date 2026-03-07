@@ -9,6 +9,8 @@ description: "Modularity isn't just a virtue; it is the result of deliberate inf
 tags: ["modularity", "software-design", "architecture", "information-hiding"]
 categories: ["Software Architecture"]
 featured_image: "modularity.jpg"
+pillar: system
+pillar_role: foundational
 ---
 
 {{< figure

@@ -10,6 +10,8 @@ categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Beyond making initial decisions, an architect's true role involves continuously guiding the evolution of a system, establishing governance, and strategically managing technical debt."
 featured_image: "architectural-flywheel.png"
+pillar: strategy
+pillar_role: deep_dive
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}

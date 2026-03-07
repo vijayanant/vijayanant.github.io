@@ -10,6 +10,8 @@ categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
 description: "Explore how architectural spikes bridge the gap between theoretical decisions and real-world implementation, validating hypotheses and assessing team readiness for complex architectural styles."
 featured_image: "experiment.jpg"
+pillar: strategy
+pillar_role: deep_dive
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
