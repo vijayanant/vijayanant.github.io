@@ -8,6 +8,8 @@ tags: ["functional-programming", "Haskell", "Dependent Types", "type-safety", "s
 draft: false
 description: "An exploration of how to leverage dependent types in Haskell to catch errors at compile-time, eliminating the need for certain runtime checks and leading to more robust code."
 featured_image: "runtime-checks.jpg"
+pillar: craft
+pillar_role: deep_dive
 ---
 
 One of the main advantages of [static type checking](https://en.wikipedia.org/wiki/Type_system#Static_type_checking) is to catch

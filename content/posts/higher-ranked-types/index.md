@@ -7,6 +7,8 @@ featured_image: "higher-ranked-types-1.jpg"
 tags: ["haskell", "type-system", "polymorphism", "rankntypes"]
 categories: ["Programming"]
 description: "An explanation of Monomorphism, Polymorphism, and Higher Ranked Types in Haskell."
+pillar: craft
+pillar_role: deep_dive
 ---
 {{< figure src="higher-ranked-types-1.jpg" alt="white stage" caption="Photo by [Joshua Golde](https://unsplash.com/@joshgmit) on [Unsplash](https://unsplash.com)" >}}
 

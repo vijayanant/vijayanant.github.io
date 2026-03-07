@@ -7,6 +7,8 @@ description: "Fuzz testing a Merkle-DAG manifest revealed instances where binary
 tags: ["distributed-system", "decentralized-web", "cryptography", "cbor", "rust", "fuzzing", "serialization"]
 categories: ["Programming"]
 featured_image: "investigation.jpg"
+pillar: system
+pillar_role: essay
 ---
 
 {{< figure src="investigation.jpg" alt="A vintage typewriter on a white table with a sheet of paper that has the word INVESTIGATION typed on it." caption="Photo by [Markus Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/green-and-white-typewriter-on-blue-textile-cS2eQHB7wE4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}

@@ -7,6 +7,8 @@ description: "Debugging is easy when someone carries the mental model. With AI, 
 featured_image: "why-is-ai-code-suddenly-hard-to-debug-1.jpg"
 tags: ["ai", "llm", "debugging", "mental-model"]
 categories: ["AI in Engineering"]
+pillar: craft
+pillar_role: essay
 ---
 Lately I keep seeing the same refrain: _“AI-generated code is hard to debug.”_
 And almost every time, it’s followed by a pitch, usually a framework, a

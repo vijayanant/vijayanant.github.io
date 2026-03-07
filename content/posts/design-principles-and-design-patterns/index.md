@@ -7,6 +7,8 @@ featured_image: "design-principles-and-design-patterns-1.png"
 description: "Design principles are the 'Why' and patterns are the 'How.' Explore the complementary relationship between SOLID principles and classic design patterns with practical examples."
 tags: ["design-pattern", "design-principle", "solid", "software-design"]
 categories: ["Programming"]
+pillar: craft
+pillar_role: essay
 ---
 {{< figure src="design-principles-and-design-patterns-1.png" alt="Design Principles and Design Patterns" >}}
 

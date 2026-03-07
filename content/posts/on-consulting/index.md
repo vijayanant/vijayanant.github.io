@@ -7,6 +7,8 @@ featured_image: "on-consulting-1.png"
 tags: ["consulting", "career", "freelancing"]
 categories: ["Career and Writing"]
 description: "A personal reflection on the shift from deep learning to broad exposure. Explore the unexpected advantages of consulting, from accelerating your skillset to the challenges of feeling like an outsider."
+pillar: strategy
+pillar_role: essay
 ---
 {{< figure
     src="on-consulting-1.png"

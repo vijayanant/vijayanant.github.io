@@ -3,6 +3,8 @@ title: "Why Is All Software Complex"
 slug: "why-is-all-software-complex"
 date: 
 draft: true
+pillar: system
+pillar_role: essay
 ---
 What makes modern software complex?
 

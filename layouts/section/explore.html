@@ -1,79 +1,89 @@
 {{ define "main" }}
-{{ $styles := resources.Get "css/graph.css" | minify | fingerprint }}
+{{ $styles := resources.Get "css/explore.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 
-<section id="knowledge-graph-container">
-    <div id="graph-canvas"></div>
-    
-    <!-- Floating Info Panel (Detail Only) -->
-    <div id="side-panel">
-        <div id="panel-content">
-            <button id="btn-close-panel">{{ partial "icons/times.html" . }}</button>
-            <h2 id="panel-title" class="pillar-title"></h2>
-            <p id="panel-group" class="text-muted small text-uppercase mb-3"></p>
-            <div id="panel-description" class="pillar-subtitle mb-4"></div>
-            
-            <div id="panel-connections-container" class="mb-4">
-                <h4 class="text-muted small text-uppercase mb-2">Related to:</h4>
-                <ul id="panel-connections" class="pillar-posts-list"></ul>
-            </div>
+<section id="explore-hub" class="full-height-section">
+    <div class="container">
+        <!-- Header -->
+        <header class="explore-header">
+            <h1 class="section-title">The Knowledge Map</h1>
+            <p class="section-intro">A curated guide to the pillars of my architectural philosophy. Use this to navigate the system, from tactical craft to strategic stewardship.</p>
+        </header>
 
-            <a id="panel-link" href="#" class="button button-primary w-100 justify-content-center">Read Essay</a>
-        </div>
-    </div>
+        <!-- Pillars Grid -->
+        <div class="pillar-grid">
+            {{ range $key, $pillar := .Site.Data.pillars }}
+            <div class="pillar-column" id="pillar-{{ $key }}">
+                <!-- Pillar Header (Ensuring alignment) -->
+                <div class="pillar-header-content">
+                    <div class="pillar-icon">
+                        {{ if eq $key "craft" }}{{ partial "icons/lightbulb.html" . }}{{ end }}
+                        {{ if eq $key "system" }}{{ partial "icons/layer-group.html" . }}{{ end }}
+                        {{ if eq $key "strategy" }}{{ partial "icons/users.html" . }}{{ end }}
+                    </div>
+                    <h2 class="pillar-title">{{ $pillar.title }}</h2>
+                    <p class="pillar-description">{{ $pillar.description }}</p>
+                </div>
 
-    <!-- Persistent Global Search -->
-    <div id="global-search">
-        <input type="text" id="graph-search" placeholder="Search essays, tags...">
-    </div>
+                {{ $pillar_posts := where $.Site.RegularPages "Params.pillar" "==" $key }}
 
-    {{/* Shared Legend Items Template */}}
-    {{- $legendItems := slice 
-        (dict "id" "essay" "label" "Essays" "color" "#38bdf8" "shape" "square")
-        (dict "id" "category" "label" "Categories" "color" "#fbbf24" "shape" "circle")
-        (dict "id" "series" "label" "Series" "color" "#4ade80" "shape" "hexagon")
-        (dict "id" "tag" "label" "Tags" "color" "#94a3b8" "shape" "triangle")
-    -}}
-
-    <!-- Filter/Legend Overlay for Mobile -->
-    <div id="graph-filters-overlay">
-        <div id="filters-overlay-content">
-            <button id="btn-close-filters-overlay">{{ partial "icons/times.html" . }}</button>
-            <h3>Filter & Legend</h3>
-            <div class="legend-wrapper-vertical">
-                {{ range $legendItems }}
-                <div class="legend-item" data-group="{{ .id }}" title="Show All {{ .label }}">
-                    <div class="legend-shape shape-{{ .shape }}" style="background:{{ .color }};"></div> 
-                    <span>{{ .label }}</span>
+                <!-- 1. Foundational (Start Here) -->
+                {{ $foundational := where $pillar_posts "Params.pillar_role" "==" "foundational" }}
+                {{ if $foundational }}
+                <div class="pillar-group">
+                    <h3 class="group-label">Foundations</h3>
+                    <div class="foundational-list">
+                        {{ range $foundational }}
+                        <a href="{{ .Permalink }}" class="foundational-card">
+                            <div class="card-tag">Start Here</div>
+                            <h4 class="card-title">{{ .Title }}</h4>
+                            <p class="card-summary">{{ .Description | default .Summary | truncate 200 }}</p>
+                            <span class="card-link">Read the Manifesto →</span>
+                        </a>
+                        {{ end }}
+                    </div>
                 </div>
                 {{ end }}
-            </div>
-        </div>
-    </div>
 
-    <!-- Persistent Filter Button for Mobile -->
-    <div id="btn-open-filters-container">
-        <button id="btn-open-filters" class="button button-primary">{{ partial "icons/filter.html" . }}</button>
-    </div>
+                <!-- 2. Deep Dives (Series & Long Form) -->
+                {{ $deep_dives := where $pillar_posts "Params.pillar_role" "==" "deep_dive" }}
+                {{ if $deep_dives }}
+                <div class="pillar-group">
+                    <h3 class="group-label">Deep Dives ({{ len $deep_dives }})</h3>
+                    <ul class="dense-list">
+                        {{ range $deep_dives.ByDate.Reverse }}
+                        <li>
+                            <a href="{{ .Permalink }}" class="list-link">
+                                <span class="link-title">{{ .Title }}</span>
+                                {{ if .Params.series }}
+                                <span class="series-tag">Series</span>
+                                {{ end }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
 
-    <!-- Main View Legend (Acting as Filters for Desktop) -->
-    <div id="graph-legend">
-        <div class="legend-wrapper">
-            {{ range $legendItems }}
-            <div class="legend-item" data-group="{{ .id }}" title="Show All {{ .label }}">
-                <div class="legend-shape shape-{{ .shape }}" style="background:{{ .color }};"></div> 
-                <span>{{ .label }}</span>
+                <!-- 3. Essays & Field Notes -->
+                {{ $essays := where $pillar_posts "Params.pillar_role" "==" "essay" }}
+                {{ if $essays }}
+                <div class="pillar-group">
+                    <h3 class="group-label">Essays ({{ len $essays }})</h3>
+                    <ul class="dense-list">
+                        {{ range $essays.ByDate.Reverse }}
+                        <li>
+                            <a href="{{ .Permalink }}" class="list-link">
+                                <span class="link-title">{{ .Title }}</span>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
             </div>
             {{ end }}
         </div>
     </div>
-
-    <div id="graph-controls">
-        <button id="btn-reset" class="button button-primary">Reset Map</button>
-    </div>
 </section>
-
-<script src="//unpkg.com/force-graph"></script>
-{{ $script := resources.Get "js/graph.js" | minify | fingerprint }}
-<script src="{{ $script.RelPermalink }}" defer></script>
 {{ end }}
