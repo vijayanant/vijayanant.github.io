@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section id="404" class="full-height-section">
+<section id="404">
     <div class="container">
         <div class="error-content">
             <!-- Header: Immediate Pivot -->
@@ -7,71 +7,26 @@
                 <span class="error-code">404</span>
                 <h1 class="section-title">An unplanned detour.</h1>
                 <p class="error-message section-intro">
-                    This link is broken, but your journey doesn't have to be.
+                    The link you followed is broken, but your journey doesn't have to be.
                 </p>
-                <div class="error-actions">
-                    {{ if .Site.Params.enableSearch }}
-                    <button id="error-search-trigger" class="button button-primary">
-                        {{ partial "icons/search.html" . }}
-                        <span>Search site</span>
-                    </button>
-                    {{ end }}
-                    <button id="surprise-me" class="button button-primary">
-                        {{ partial "icons/lightbulb.html" . }}
-                        <span>Surprise me</span>
-                    </button>
-                </div>
             </div>
 
-            <!-- Discovery Hub: Side-by-Side -->
-            <div class="discovery-hub">
-                <!-- Left: Curated Series -->
-                <div class="discovery-section">
-                    <h3 class="discovery-title">Start a Deep Dive</h3>
-                    <div class="discovery-list">
-                        {{/* 1. Modular by Design */}}
-                        {{ with .Site.GetPage "/series/modular-by-design" }}
-                        <a href="{{ .Permalink }}" class="mini-card highlight">
-                            <span class="mini-card-title">{{ .Title }}</span>
-                            <span class="mini-card-action">Start →</span>
-                        </a>
-                        {{ end }}
-
-                        {{/* 2. From Patterns to Practice */}}
-                        {{ with .Site.GetPage "/series/from-patterns-to-practice" }}
-                        <a href="{{ .Permalink }}" class="mini-card">
-                            <span class="mini-card-title">{{ .Title }}</span>
-                            <span class="mini-card-action">Start →</span>
-                        </a>
-                        {{ end }}
-
-                        {{/* 3. Latest Series fallback (excluding those above) */}}
-                        {{ range (first 1 (where (.Site.GetPage "taxonomy" "series").Pages "File.BaseFileName" "not in" (slice "modular-by-design" "from-patterns-to-practice"))) }}
-                        <a href="{{ .Permalink }}" class="mini-card">
-                            <span class="mini-card-title">{{ .Title }}</span>
-                            <span class="mini-card-action">Start →</span>
-                        </a>
-                        {{ end }}
-                    </div>
-                </div>
-                
-                <!-- Right: Latest Writing -->
-                {{ $posts := (where .Site.RegularPages "Section" "posts") | first 3 }}
-                {{ if $posts }}
-                <div class="discovery-section">
-                    <h3 class="discovery-title">Latest Writing</h3>
-                    <div class="discovery-list">
-                        {{ range $posts }}
-                        <a href="{{ .Permalink }}" class="mini-card">
-                            <div class="mini-card-content">
-                                <span class="mini-card-title">{{ .Title }}</span>
-                                <span class="mini-card-meta">{{ .ReadingTime }} min read</span>
-                            </div>
-                        </a>
-                        {{ end }}
-                    </div>
-                </div>
+            <!-- Launchpad Actions -->
+            <div class="error-actions">
+                <a href="{{ "/explore/" | relURL }}" class="button button-primary">
+                    {{ partial "icons/lightbulb.html" . }}
+                    <span>View Knowledge Map</span>
+                </a>
+                {{ if .Site.Params.enableSearch }}
+                <button id="error-search-trigger" class="button button-primary">
+                    {{ partial "icons/search.html" . }}
+                    <span>Search site</span>
+                </button>
                 {{ end }}
+                <button id="surprise-me" class="button button-primary">
+                    {{ partial "icons/lightbulb.html" . }}
+                    <span>Surprise me</span>
+                </button>
             </div>
             
             <!-- Minimal Footer -->
@@ -86,6 +41,7 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Search
             const errorSearchButton = document.getElementById('error-search-trigger');
             const navSearchButton = document.getElementById('search-button');
             if (errorSearchButton && navSearchButton) {
@@ -95,6 +51,7 @@
                 });
             }
 
+            // Surprise Me
             const surpriseButton = document.getElementById('surprise-me');
             if (surpriseButton) {
                 const posts = [
