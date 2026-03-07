@@ -4,11 +4,11 @@ craft:
   foundational: "tdd-what-most-articles-miss"
 
 system:
-  title: "The Architecture of Boundaries"
+  title: "The Evolvable System"
   description: "Designing for evolution. Focus on Information Hiding, Architectural Quanta, and the 'Physics' of distributed systems over the buzzwords of Microservices."
   foundational: "achieving-modularity"
 
 strategy:
-  title: "The Philosophy of Stewardship"
+  title: "The Stewardship"
   description: "Leading through resonance. Focus on the human bottleneck, the 'Architect's Compass' for decision-making, and the stewardship of long-term system evolution."
   foundational: "the-architects-compass"
