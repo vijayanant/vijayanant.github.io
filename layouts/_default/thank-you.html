@@ -3,19 +3,19 @@
 {{ $pageData := index .Site.Data.subscription $subscription_page }}
 <div class="container thank-you-container">
     {{ with $pageData }}
-    <h1 class="hero-title">{{ .title }}</h1>
-    <p class="hero-subtitle">{{ .subtitle }}</p>
-    <p class="hero-description thank-you-description">{{ .description }}</p>
+    <div class="thank-you-header">
+        <h1 class="hero-title">{{ .title }}</h1>
+        <p class="hero-subtitle">{{ .subtitle }}</p>
+        <p class="hero-description thank-you-description">{{ .description }}</p>
+    </div>
 
-    <div class="popular-posts-container">
-        <h2 class="section-title popular-posts-title">{{ .popular_posts_title }}</h2>
-        <ul class="popular-posts-list">
-            {{ range .popular_posts }}
-            <li class="popular-post-item">
-                <a href="{{ .url }}" class="popular-post-link">{{ .title }}</a>
-            </li>
-            {{ end }}
-        </ul>
+    <div class="thank-you-cta">
+        <h2 class="section-title">Where to start?</h2>
+        <p class="cta-text">To understand how I think about systems, engineering craft, and stewardship, I've curated my work into a <strong>Knowledge Map</strong>. It is the best way to navigate the 40+ essays on this site.</p>
+        <a href="{{ "/explore/" | relURL }}" class="button button-primary">
+            {{ partial "icons/lightbulb.html" . }}
+            <span>Explore the Knowledge Map</span>
+        </a>
     </div>
     {{ end }}
 </div>
