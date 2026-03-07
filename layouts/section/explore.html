@@ -7,14 +7,14 @@
         <!-- Header -->
         <header class="explore-header">
             <h1 class="section-title">The Knowledge Map</h1>
-            <p class="section-intro">A curated guide to the pillars of my architectural philosophy. Use this to navigate the system, from tactical craft to strategic stewardship.</p>
+            <p class="section-intro">A map of everything I've written here, organized into three core pillars: craft, systems, and stewardship.</p>
         </header>
 
         <!-- Pillars Grid -->
         <div class="pillar-grid">
             {{ range $key, $pillar := .Site.Data.pillars }}
-            <div class="pillar-column" id="pillar-{{ $key }}">
-                <!-- Pillar Header (Ensuring alignment) -->
+            <div class="pillar-column pillar-{{ $key }}" id="pillar-{{ $key }}">
+                <!-- Pillar Header -->
                 <div class="pillar-header-content">
                     <div class="pillar-icon">
                         {{ if eq $key "craft" }}{{ partial "icons/lightbulb.html" . }}{{ end }}
@@ -27,7 +27,7 @@
 
                 {{ $pillar_posts := where $.Site.RegularPages "Params.pillar" "==" $key }}
 
-                <!-- 1. Foundational (Start Here) -->
+                <!-- 1. Foundational -->
                 {{ $foundational := where $pillar_posts "Params.pillar_role" "==" "foundational" }}
                 {{ if $foundational }}
                 <div class="pillar-group">
@@ -35,29 +35,35 @@
                     <div class="foundational-list">
                         {{ range $foundational }}
                         <a href="{{ .Permalink }}" class="foundational-card">
-                            <div class="card-tag">Start Here</div>
+                            <div class="card-badge">Start Here</div>
                             <h4 class="card-title">{{ .Title }}</h4>
-                            <p class="card-summary">{{ .Description | default .Summary | truncate 200 }}</p>
-                            <span class="card-link">Read the Manifesto →</span>
+                            <p class="card-summary">{{ .Description | default .Summary | truncate 180 }}</p>
+                            <div class="card-footer-meta">
+                                <span class="card-link">Start Reading →</span>
+                                <span class="read-time">{{ .ReadingTime }} min read</span>
+                            </div>
                         </a>
                         {{ end }}
                     </div>
                 </div>
                 {{ end }}
 
-                <!-- 2. Deep Dives (Series & Long Form) -->
+                <!-- 2. Deep Dives -->
                 {{ $deep_dives := where $pillar_posts "Params.pillar_role" "==" "deep_dive" }}
                 {{ if $deep_dives }}
                 <div class="pillar-group">
-                    <h3 class="group-label">Deep Dives ({{ len $deep_dives }})</h3>
+                    <h3 class="group-label">Deep Dives <span class="group-count">{{ len $deep_dives }}</span></h3>
                     <ul class="dense-list">
                         {{ range $deep_dives.ByDate.Reverse }}
                         <li>
                             <a href="{{ .Permalink }}" class="list-link">
-                                <span class="link-title">{{ .Title }}</span>
-                                {{ if .Params.series }}
-                                <span class="series-tag">Series</span>
-                                {{ end }}
+                                <div class="link-main">
+                                    <span class="link-title">{{ .Title }}</span>
+                                    {{ if .Params.series }}
+                                    <span class="series-tag">Series</span>
+                                    {{ end }}
+                                </div>
+                                <span class="link-meta">{{ .ReadingTime }}m</span>
                             </a>
                         </li>
                         {{ end }}
@@ -65,16 +71,17 @@
                 </div>
                 {{ end }}
 
-                <!-- 3. Essays & Field Notes -->
+                <!-- 3. Essays -->
                 {{ $essays := where $pillar_posts "Params.pillar_role" "==" "essay" }}
                 {{ if $essays }}
                 <div class="pillar-group">
-                    <h3 class="group-label">Essays ({{ len $essays }})</h3>
+                    <h3 class="group-label">Essays <span class="group-count">{{ len $essays }}</span></h3>
                     <ul class="dense-list">
                         {{ range $essays.ByDate.Reverse }}
                         <li>
                             <a href="{{ .Permalink }}" class="list-link">
                                 <span class="link-title">{{ .Title }}</span>
+                                <span class="link-meta">{{ .ReadingTime }}m</span>
                             </a>
                         </li>
                         {{ end }}
