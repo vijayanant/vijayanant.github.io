@@ -2,82 +2,112 @@
 <section id="404" class="full-height-section">
     <div class="container">
         <div class="error-content">
-            <!-- Error Code & Title -->
-            <h1 class="error-code">404</h1>
-            <h2 class="error-title">Page Not Found</h2>
-            <p class="error-message">
-                The page you're looking for doesn't exist or has been moved.
-            </p>
-            
-            <!-- Action Buttons -->
-            <div class="error-actions">
-                <a href="{{ "/" | relURL }}" class="button button-primary">
-                    {{ partial "icons/newspaper.html" . }}
-                    Homepage
-                </a>
-                <a href="{{ "/posts/" | relURL }}" class="button button-primary">
-                    {{ partial "icons/layer-group.html" . }}
-                    All Posts
-                </a>
-            </div>
-            
-            <!-- Popular Posts -->
-            {{ $posts := where .Site.RegularPages "Section" "posts" | first 3 }}
-            {{ if $posts }}
-            <div class="popular-posts">
-                <h3 class="popular-posts-title">Popular Posts</h3>
-                <ul class="popular-posts-list">
-                    {{ range $posts }}
-                    <li class="popular-post-item">
-                        <a href="{{ .Permalink }}" class="popular-post-link">
-                            <span class="popular-post-title">{{ .Title }}</span>
-                            <span class="popular-post-meta">{{ .ReadingTime }} min</span>
-                        </a>
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
-            {{ end }}
-            
-            <!-- Search or Contact -->
-            <div class="error-help">
-                <p>Can't find what you need?</p>
-                <div class="error-help-actions">
+            <!-- Header: Immediate Pivot -->
+            <div class="error-header">
+                <span class="error-code">404</span>
+                <h1 class="section-title">An unplanned detour.</h1>
+                <p class="error-message section-intro">
+                    This link is broken, but your journey doesn't have to be.
+                </p>
+                <div class="error-actions">
                     {{ if .Site.Params.enableSearch }}
-                    <button id="error-search-button" class="search-link" aria-label="Search">
+                    <button id="error-search-trigger" class="button button-primary">
                         {{ partial "icons/search.html" . }}
-                        <span>Search</span>
+                        <span>Search site</span>
                     </button>
                     {{ end }}
-                    <a href="mailto:{{ .Site.Params.contactEmail }}" class="contact-link">
-                        {{ partial "icons/envelope.html" . }}
-                        <span>Get in touch</span>
-                    </a>
+                    <button id="surprise-me" class="button button-primary">
+                        {{ partial "icons/lightbulb.html" . }}
+                        <span>Surprise me</span>
+                    </button>
                 </div>
+            </div>
+
+            <!-- Discovery Hub: Side-by-Side -->
+            <div class="discovery-hub">
+                <!-- Left: Curated Series -->
+                <div class="discovery-section">
+                    <h3 class="discovery-title">Start a Deep Dive</h3>
+                    <div class="discovery-list">
+                        {{/* 1. Modular by Design */}}
+                        {{ with .Site.GetPage "/series/modular-by-design" }}
+                        <a href="{{ .Permalink }}" class="mini-card highlight">
+                            <span class="mini-card-title">{{ .Title }}</span>
+                            <span class="mini-card-action">Start →</span>
+                        </a>
+                        {{ end }}
+
+                        {{/* 2. From Patterns to Practice */}}
+                        {{ with .Site.GetPage "/series/from-patterns-to-practice" }}
+                        <a href="{{ .Permalink }}" class="mini-card">
+                            <span class="mini-card-title">{{ .Title }}</span>
+                            <span class="mini-card-action">Start →</span>
+                        </a>
+                        {{ end }}
+
+                        {{/* 3. Latest Series fallback (excluding those above) */}}
+                        {{ range (first 1 (where (.Site.GetPage "taxonomy" "series").Pages "File.BaseFileName" "not in" (slice "modular-by-design" "from-patterns-to-practice"))) }}
+                        <a href="{{ .Permalink }}" class="mini-card">
+                            <span class="mini-card-title">{{ .Title }}</span>
+                            <span class="mini-card-action">Start →</span>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                
+                <!-- Right: Latest Writing -->
+                {{ $posts := (where .Site.RegularPages "Section" "posts") | first 3 }}
+                {{ if $posts }}
+                <div class="discovery-section">
+                    <h3 class="discovery-title">Latest Writing</h3>
+                    <div class="discovery-list">
+                        {{ range $posts }}
+                        <a href="{{ .Permalink }}" class="mini-card">
+                            <div class="mini-card-content">
+                                <span class="mini-card-title">{{ .Title }}</span>
+                                <span class="mini-card-meta">{{ .ReadingTime }} min read</span>
+                            </div>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            
+            <!-- Minimal Footer -->
+            <div class="error-footer">
+                <a href="{{ "/" | relURL }}" class="back-home">
+                    {{ partial "icons/arrow-right.html" . }}
+                    <span>Back to Homepage</span>
+                </a>
             </div>
         </div>
     </div>
     
-    <!-- Analytics Tracking -->
     <script>
-        if (typeof gtag === 'function') {
-            gtag('event', 'page_view', {
-                'page_title': '404 Error: Page Not Found',
-                'page_location': window.location.href,
-                'page_path': window.location.pathname,
-                'error_code': '404'
-            });
-        }
-        
-        // Search functionality
-        const errorSearchButton = document.getElementById('error-search-button');
-        const searchButton = document.getElementById('search-button');
-        
-        if (errorSearchButton && searchButton) {
-            errorSearchButton.addEventListener('click', function() {
-                searchButton.click();
-            });
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const errorSearchButton = document.getElementById('error-search-trigger');
+            const navSearchButton = document.getElementById('search-button');
+            if (errorSearchButton && navSearchButton) {
+                errorSearchButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navSearchButton.click();
+                });
+            }
+
+            const surpriseButton = document.getElementById('surprise-me');
+            if (surpriseButton) {
+                const posts = [
+                    {{ range where .Site.RegularPages "Section" "posts" }}
+                    "{{ .Permalink }}",
+                    {{ end }}
+                ];
+                surpriseButton.addEventListener('click', () => {
+                    const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                    window.location.href = randomPost;
+                });
+            }
+        });
     </script>
 </section>
 {{ end }}
