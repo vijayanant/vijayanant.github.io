@@ -8,6 +8,8 @@ description: "LLMs can accelerate your hands, but only humans can align your min
 featured_image: "the-real-bottleneck-isnt-code-1.jpg"
 tags: ["ai", "llm", "teamwork", "communication"]
 categories: ["AI in Engineering"]
+pillar: strategy
+pillar_role: foundational
 ---
 You know the feeling.
 

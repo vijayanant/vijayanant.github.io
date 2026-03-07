@@ -7,6 +7,8 @@ description: "Messy code isn't technical debt; it's just bad software. Discover 
 featured_image: "bad-code-is-not-tech-debt-1.jpg"
 tags: ["technical-debt", "refactoring", "clean-code", "software-design"]
 categories: ["Programming"]
+pillar: craft
+pillar_role: essay
 ---
 
 {{< figure

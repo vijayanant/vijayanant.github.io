@@ -8,6 +8,8 @@ description: "The delicate balance between 'You Aren't Gonna Need It' and techni
 featured_image: "yagni-debt-and-adaptability-1.jpg"
 tags: ["yagni", "technical-debt", "adaptability", "software-design"]
 categories: ["Programming"]
+pillar: system
+pillar_role: essay
 ---
 Software development is a constant balancing act. Users want stuff now,
 features that solve their immediate problems. But we also gotta think ahead,

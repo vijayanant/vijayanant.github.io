@@ -7,6 +7,8 @@ featured_image: "driving-ai-code-why-test-driven-development-1.jpeg"
 tags: ["tdd", "llm", "software-design", "prompt-engineering", "testing"]
 categories: ["AI in Engineering"]
 description: "Exploring how Large Language Models (LLMs) are transforming coding and the essential role of Test-Driven Development (TDD) in leveraging AI's speed without sacrificing design integrity."
+pillar: craft
+pillar_role: foundational
 ---
 ## The Double-Edged Sword of LLM Code Generation
 

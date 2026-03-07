@@ -7,6 +7,8 @@ description: "Don't DRY your code prematurely. Learn why 'two ideas wearing the 
 featured_image: "wait-for-the-abstraction-to-earn-1.jpg"
 tags: ["abstraction", "duplication", "refactoring", "dry-principle"]
 categories: ["Programming"]
+pillar: craft
+pillar_role: essay
 ---
 {{< figure src="wait-for-the-abstraction-to-earn-1.jpg" alt="turned on laptop computer" >}}
 

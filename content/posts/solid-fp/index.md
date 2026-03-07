@@ -7,6 +7,8 @@ description: "Exploring how the SOLID principles, often discussed in OOP, apply 
 featured_image: "solid-fp-1.png"
 tags: ["solid", "functional-programming", "design-principle"]
 categories: ["Programming"]
+pillar: craft
+pillar_role: deep_dive
 ---
 {{< figure
     src="solid-fp-1.png"

@@ -8,6 +8,8 @@ categories: ["Software Architecture"]
 tags: ["microservice", "distributed-system", "independent-deployability", "coupling", "modularity", "connascence", "architectural-quantum", "system-design"]
 description: "Explore the Architectural Quantum, the true unit of independent deployment, and uncover how understanding it is key to avoiding the 'distributed monolith' and building truly evolvable systems."
 featured_image: "Architectural-Quanta.png"
+pillar: system
+pillar_role: foundational
 ---
 
 ## Why Does Your "Microservice" Feel Like a Monolith?

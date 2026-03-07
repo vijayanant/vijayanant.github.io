@@ -8,6 +8,8 @@ description: "TDD is more than a testing ritual; it’s a design discipline. Lea
 featured_image: "tdd-what-most-articles-miss-1.jpg"
 tags: ["tdd", "testing", "software-design", "agile"]
 categories: ["Programming"]
+pillar: craft
+pillar_role: foundational
 ---
 {{< figure src="tdd-what-most-articles-miss-1.jpg" alt="person writing on paper at lap" caption="Photo by [Jason Coudriet](https://unsplash.com/@jcoudriet) on [Unsplash](https://unsplash.com)" >}}
 

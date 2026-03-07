@@ -7,6 +7,8 @@ featured_image: "taming-complexity-a-guide-to-imperative-1.jpg"
 tags: ["programming-paradigm", "functional-programming", "oop", "complexity"]
 categories: ["Programming"]
 description: "Complexity is the root of most software failures. Explore how Imperative, Object-Oriented, and Functional paradigms offer different philosophies for managing state and control flow."
+pillar: craft
+pillar_role: essay
 ---
 {{< figure
     src="taming-complexity-a-guide-to-imperative-1.jpg" alt="time lapse photo of cars passing by during nighttime"

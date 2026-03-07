@@ -7,6 +7,8 @@ description: "Why our system design interviews don’t reflect how real systems 
 featured_image: "agile-waterfall-interview-meme.jpg"
 tags: ["interview", "hiring", "agile", "system-design", "career"]
 categories: ["Career and Writing"]
+pillar: strategy
+pillar_role: essay
 ---
 We say we value iteration.  
 We say feedback is everything.  

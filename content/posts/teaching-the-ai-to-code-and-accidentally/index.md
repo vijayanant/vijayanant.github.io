@@ -7,6 +7,8 @@ description: "The best practices we used to skip are suddenly back, not for us, 
 featured_image: "teaching-the-ai-to-code-and-accidentally-1.jpg"
 tags: ["ai", "llm", "best-practice"]
 categories: ["AI in Engineering"]
+pillar: craft
+pillar_role: essay
 ---
 Remember all those engineering best practices we were taught…  
 but quietly skipped?

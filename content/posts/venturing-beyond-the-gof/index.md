@@ -7,6 +7,8 @@ description: "Stop memorizing the 23 GoF patterns. Learn to reclaim the discipli
 featured_image: "venturing-beyond-the-gof-1.jpg"
 tags: ["design-pattern", "system-design", "distributed-system", "first-principle", "trade-offs"]
 categories: ["Software Architecture"]
+pillar: strategy
+pillar_role: essay
 ---
 {{< figure
     src="venturing-beyond-the-gof-1.jpg"
