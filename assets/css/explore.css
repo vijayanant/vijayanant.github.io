@@ -33,6 +33,25 @@
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
+    position: relative;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Spotlight Effect */
+.pillar-grid:hover > .pillar-column:not(:hover) {
+    opacity: 0.4;
+    filter: grayscale(0.2);
+}
+
+/* Vertical Dividers */
+.pillar-column:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(var(--primary-color-rgb), 0.15), transparent);
 }
 
 /* Pillar Accent Colors (Subtle) */
@@ -42,7 +61,7 @@
 
 /* Pillar Header */
 .pillar-header-content {
-    border-bottom: 2px solid rgba(var(--primary-color-rgb), 0.1);
+    border-bottom: 3px solid var(--pillar-accent, rgba(var(--primary-color-rgb), 0.1));
     padding-bottom: 2.5rem;
     text-align: center;
     min-height: 260px;
@@ -79,13 +98,13 @@
     line-height: 1.6;
 }
 
-/* Group Labels */
+/* Group Labels - Semantic Color */
 .group-label {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 800;
-    color: var(--tertiary-text-color);
+    color: var(--pillar-accent, var(--tertiary-text-color));
     margin-bottom: 1.75rem;
     display: flex;
     align-items: center;
@@ -96,7 +115,8 @@
     content: '';
     flex-grow: 1;
     height: 1px;
-    background-color: rgba(var(--primary-color-rgb), 0.1);
+    background-color: var(--pillar-accent, rgba(var(--primary-color-rgb), 0.1));
+    opacity: 0.3;
 }
 
 .group-count {
