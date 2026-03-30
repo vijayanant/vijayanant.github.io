@@ -5,36 +5,36 @@
   "@graph": [
     {
       "@type": "WebSite",
-      "name": {{ site.Title | jsonify }},
-      "url": {{ site.BaseURL | jsonify }},
+      "name": {{ site.Title | jsonify | safeJS }},
+      "url": {{ site.BaseURL | jsonify | safeJS }},
       "potentialAction": {
         "@type": "SearchAction",
-        "target": {{ printf "%ssearch?q={search_term_string}" site.BaseURL | jsonify }},
+        "target": {{ printf "%ssearch?q={search_term_string}" site.BaseURL | jsonify | safeJS }},
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": "Person",
-      "@id": {{ printf "%s#person" site.BaseURL | jsonify }},
-      "name": {{ site.Params.author | default site.Title | jsonify }},
-      "url": {{ site.BaseURL | jsonify }},
-      "image": {{ site.Params.portrait | absURL | jsonify }},
+      "@id": {{ printf "%s#person" site.BaseURL | jsonify | safeJS }},
+      "name": {{ site.Params.author | default site.Title | jsonify | safeJS }},
+      "url": {{ site.BaseURL | jsonify | safeJS }},
+      "image": {{ site.Params.portrait | absURL | jsonify | safeJS }},
       "sameAs": [
         {{- range $i, $e := site.Params.social }}
           {{- if $i }},{{- end }}
-          {{- $e.url | jsonify }}
+          {{- $e.url | jsonify | safeJS }}
         {{- end }}
       ],
-      "jobTitle": {{ site.Params.description | jsonify }},
+      "jobTitle": {{ site.Params.description | jsonify | safeJS }},
       "worksFor": {
         "@type": "Organization",
-        "name": {{ site.Title | jsonify }}
+        "name": {{ site.Title | jsonify | safeJS }}
       }
       {{- with site.Params.contactEmail }}
       ,
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": {{ . | jsonify }},
+        "email": {{ . | jsonify | safeJS }},
         "contactType": "customer service"
       }
       {{- end }}

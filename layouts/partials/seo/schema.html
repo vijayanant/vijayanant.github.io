@@ -2,10 +2,14 @@
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" }}
 {{- $params := .Params }}
 {{- $title := .Title }}
-{{- $description := .Description | default .Summary }}
+{{- $description := .Description | default .Summary | plainify | truncate 160 }}
 {{- $image := "" }}
 {{- with .Params.featured_image }}
-  {{- $image = . | absURL }}
+  {{- with $.Resources.GetMatch . }}
+    {{- $image = .Permalink }}
+  {{- else }}
+    {{- $image = . | absURL }}
+  {{- end }}
 {{- else }}
   {{- with site.Params.image }}
     {{- $image = . | absURL }}
@@ -19,47 +23,50 @@
   {{- end }}
 {{- end }}
 
+{{- $publishDate := .PublishDate }}
+{{- if or $publishDate.IsZero (not $publishDate) }}{{ $publishDate = .Date }}{{ end }}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": {{ $schemaType | jsonify }},
-  "headline": {{ $title | jsonify }},
-  "description": {{ $description | jsonify }},
-  "image": {{ $image | absURL | jsonify }},
-  "datePublished": {{ .PublishDate.Format $iso8601 | jsonify }},
-  "dateModified": {{ .Lastmod.Format $iso8601 | jsonify }},
+  "@type": {{ $schemaType | jsonify | safeJS }},
+  "headline": {{ $title | jsonify | safeJS }},
+  "description": {{ $description | jsonify | safeJS }},
+  "image": {{ $image | jsonify | safeJS }},
+  "datePublished": {{ $publishDate.Format $iso8601 | jsonify | safeJS }},
+  "dateModified": {{ .Lastmod.Format $iso8601 | jsonify | safeJS }},
   "author": {
     "@type": "Person",
-    "name": {{ site.Params.author | default "Your Name" | jsonify }}
+    "name": {{ site.Params.author | default "Your Name" | jsonify | safeJS }}
   },
   "publisher": {
     "@type": "Organization",
-    "name": {{ site.Title | jsonify }},
+    "name": {{ site.Title | jsonify | safeJS }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ site.Params.image | absURL | jsonify }}
+      "url": {{ site.Params.image | absURL | jsonify | safeJS }}
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify }}
+    "@id": {{ .Permalink | jsonify | safeJS }}
   },
-  "wordcount": {{ .WordCount }},
-  "url": {{ .Permalink | jsonify }},
-  "inLanguage": {{ site.LanguageCode | default "en-us" | jsonify }},
-  {{- with .Params.categories }}
+  "wordCount": {{ .WordCount }},
+  "url": {{ .Permalink | jsonify | safeJS }},
+  "inLanguage": {{ site.LanguageCode | default "en-us" | jsonify | safeJS }}
+  {{- with .Params.categories }},
   "articleSection": [
     {{- range $i, $e := . }}
       {{- if $i }},{{- end }}
-      {{- $e | jsonify }}
+      {{- $e | jsonify | safeJS }}
     {{- end }}
-  ],
+  ]
   {{- end }}
-  {{- with .Params.tags }}
+  {{- with .Params.tags }},
   "keywords": [
     {{- range $i, $e := . }}
       {{- if $i }},{{- end }}
-      {{- $e | jsonify }}
+      {{- $e | jsonify | safeJS }}
     {{- end }}
   ]
   {{- end }}

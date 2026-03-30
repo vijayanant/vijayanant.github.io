@@ -11,8 +11,8 @@
     {
       "@type": "ListItem",
       "position": {{ $position }},
-      "name": {{ .Title | jsonify }},
-      "item": {{ .Permalink | jsonify }}
+      "name": {{ .Title | jsonify | safeJS }},
+      "item": {{ .Permalink | jsonify | safeJS }}
     },
       {{- $position = add $position 1 }}
       {{- end }}
@@ -21,7 +21,8 @@
     {
       "@type": "ListItem",
       "position": {{ $position }},
-      "name": {{ .Title | jsonify }}
+      "name": {{ .Title | jsonify | safeJS }},
+      "item": {{ .Permalink | jsonify | safeJS }}
     }
   ]
 }
