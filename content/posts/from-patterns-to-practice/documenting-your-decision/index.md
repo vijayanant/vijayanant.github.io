@@ -1,5 +1,6 @@
 ---
-title: "Documenting your decision"
+title: "Documenting Your Decision"
+seo_title: "How to Document Architectural Decisions: ADRs and the C4 Model"
 slug: "documenting-your-decision"
 subtitle: "Documenting and Communicating Your Decision"
 date: 2025-10-08T09:05:00+05:30
@@ -8,7 +9,7 @@ series: ["From Patterns to Practice"]
 series_order: 6
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
-description: "Learn how to effectively document and communicate architectural decisions using Architectural Decision Records (ADRs) and the C4 Model to prevent 'Architectural Amnesia' and maintain clarity."
+description: "Stop 'Architectural Amnesia' in your team. Learn how to use Architectural Decision Records (ADRs) and C4 diagrams to document and communicate high-stakes design choices."
 featured_image: "documentation.jpg"
 pillar: strategy
 pillar_role: deep_dive

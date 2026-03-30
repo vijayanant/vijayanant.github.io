@@ -1,14 +1,16 @@
 ---
 title: "On Consulting"
+seo_title: "The Consultant's Path: Breadth, Alienation, and Dynamics"
 slug: "on-consulting"
 date: 2023-12-11
 draft: false
+description: "Transitioning from deep focus to broad exposure. Explore the unexpected advantages and psychological challenges of life as a technical consultant."
 featured_image: "on-consulting-1.png"
 tags: ["consulting", "career", "freelancing"]
 categories: ["Career and Writing"]
-description: "A personal reflection on the shift from deep learning to broad exposure. Explore the unexpected advantages of consulting, from accelerating your skillset to the challenges of feeling like an outsider."
 pillar: strategy
 pillar_role: essay
+level: "Intermediate"
 ---
 {{< figure
     src="on-consulting-1.png"

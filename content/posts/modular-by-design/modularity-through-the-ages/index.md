@@ -1,5 +1,6 @@
 ---
 title: "Modularity Through The Ages"
+seo_title: "The History of Software Modularity: From Monoliths to Microservices"
 date: 2024-02-29
 slug: "modularity-through-the-ages"
 series: ["Modular by Design"]
@@ -7,7 +8,7 @@ series_order: 3
 draft: false
 tags: ["modularity", "microservice", "monolith", "history"]
 categories: ["Software Architecture"]
-description: "A look at the history of software architecture, from RPCs to microservices, and the timeless importance of modularity, coupling, and cohesion."
+description: "Trace the evolution of software architecture from RPCs and SOAs to modern microservices. Learn why the core principles of modularity, coupling, and cohesion remain timeless."
 featured_image: "modularity-through-the-ages-1.jpg"
 pillar: system
 pillar_role: deep_dive

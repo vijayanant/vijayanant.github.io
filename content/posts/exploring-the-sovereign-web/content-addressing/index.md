@@ -1,11 +1,12 @@
 ---
 title: "The Anatomy of a Permanent Web"
+seo_title: "Location vs. Content Addressing: Foundations of the Sovereign Web"
 subtitle: "Beyond the URL"
 date: 2026-01-30
 series: ["Exploring the Sovereign Web"]
 series_order: 1
 draft: false
-description: "Why the way we link to things on the web is broken, and how addressing content by 'what' it is, rather than 'where' it is, builds a foundation for a permanent, verifiable internet."
+description: "How content addressing (hashes) replaces location addressing (URLs) to build a permanent, verifiable, and provider-independent internet. A deep dive into Merkle DAGs and structural trust."
 tags: ["distributed-system", "content-addressing", "zero-trust", "decentralised-web", "cryptography", "privacy"]
 categories: ["Software Architecture"]
 featured_image: "library-card-catalog.jpg"

@@ -1,14 +1,16 @@
 ---
 title: "Why YOU Should Blog Too!"
+seo_title: "Why Every Developer Should Blog: Documenting Your Journey"
 slug: "why-you-should-blog-too"
 date: 2023-03-30
 draft: false
 featured_image: "why-you-should-blog-too-1.jpg"
 tags: ["blogging", "writing", "career", "personal-branding"]
 categories: ["Career and Writing"]
-description: "Blogging isn't about being a world-class expert on day one. It is a tool for documenting your own learning journey and organizing your thoughts while connecting with a community."
+description: "You don't need to be an expert to start. Learn how writing serves as a tool for organizing thoughts, learning faster, and building a brand."
 pillar: strategy
 pillar_role: essay
+level: "Beginner"
 ---
 {{< figure src="why-you-should-blog-too-1.jpg" alt="white printer paper beside silver macbook" caption="Photo by [Markus Winkler](https://unsplash.com/@markuswinkler) on [Unsplash](https://unsplash.com)" >}}
 

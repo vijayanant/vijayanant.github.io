@@ -1,5 +1,6 @@
 ---
 title: "The Decision Engine"
+seo_title: "Data-Driven Architecture: Scorecards and Weighted Scoring Matrices"
 slug: "the-decision-engine"
 subtitle: "Making Data-Driven Architectural Choices"
 date: 2025-10-08T09:03:00+05:30
@@ -8,10 +9,11 @@ series: ["From Patterns to Practice"]
 series_order: 4
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
-description: "Learn how to move from qualitative analysis to a final, justifiable, and data-informed architectural decision using a Weighted Scoring Matrix to factor in business priorities."
+description: "Stop choosing architecture based on gut feelings. Learn how to use Pattern Profiling Scorecards and Weighted Scoring Matrices to make defensible decisions."
 featured_image: "decision-signpost.jpg"
 pillar: strategy
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}

@@ -1,12 +1,13 @@
 ---
 title: "Struggles Of A Newcomer To FP"
+seo_title: "Imperative to Functional Programming: Overcoming the Recursion Trap"
 slug: "struggles-of-a-newcomer-to-fp"
 date: 2022-06-09
 draft: false
 featured_image: "struggles-of-a-newcomer-to-fp-1.jpg"
 tags: ["functional-programming", "haskell", "recursion", "refactoring"]
 categories: ["Programming"]
-description: "Moving from imperative to functional programming often leads to messy recursive solutions. Learn how to improve your FP code by removing state management and using standard library abstractions."
+description: "Struggling with Functional Programming? Learn how to move from messy recursive algorithms to clean, declarative FP code by removing state management and using standard abstractions."
 pillar: craft
 pillar_role: essay
 ---

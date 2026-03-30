@@ -1,14 +1,16 @@
 ---
 title: "Agile in Theory, Waterfall in Interviews"
+seo_title: "System Design Interviews: Why They Fail and How to Prepare"
 slug: "agile-in-theory-waterfall-in-interviews"
 date: 2025-08-11
 draft: false
-description: "Why our system design interviews don’t reflect how real systems are built and what we should test instead"
+description: "System design interviews often contradict real engineering. Learn what to test instead and how to demonstrate your thinking as a candidate."
 featured_image: "agile-waterfall-interview-meme.jpg"
 tags: ["interview", "hiring", "agile", "system-design", "career"]
 categories: ["Career and Writing"]
 pillar: strategy
 pillar_role: essay
+level: "Intermediate"
 ---
 We say we value iteration.  
 We say feedback is everything.  

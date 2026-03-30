@@ -1,5 +1,6 @@
 ---
 title: "The Directory is the Diagram"
+seo_title: "Screaming Architecture: Organizing Code by Business Component"
 slug: "the-directory-is-the-diagram"
 subtitle: "Why Your File Tree Should Scream Your Intent"
 date: 2026-01-10
@@ -8,10 +9,11 @@ series: ["Codifying Your Architecture"]
 series_order: 1
 categories: ["Software Architecture"]
 tags: ["modularity", "architecture-as-code", "package-by-component", "screaming-architecture", "code-structure"]
-description: "Stop hiding your business logic in 'service' and 'repository' folders. Learn how to use 'Screaming Architecture' to make your file tree a direct reflection of your system's intent."                                                     
+description: "Stop organizing code by technical layers. Learn how to implement Screaming Architecture and package-by-component to reveal your system's intent."                                                     
 featured_image: "blueprint-featured.svg"
 pillar: craft
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="blueprint-featured.svg" alt="Abstract architectural blueprint contrasting an entangled messy dependency graph with a structured, modular one." >}}

@@ -2,10 +2,11 @@
 series: ["Modular by Design"]
 series_order: 4
 title: "Looking Back At RPCs"
+seo_title: "Remote Procedure Calls (RPC): The Cost of Network Transparency"
 slug: "looking-back-at-rpcs"
 date: 2024-04-17
 draft: false
-description: "Remote Procedure Calls attempt to make the network invisible. Learn the cost of this transparency and why obscuring architectural boundaries can lead to distributed spaghetti code."
+description: "Understand the philosophy and pitfalls of RPCs in distributed systems. Learn why 'making the network invisible' can lead to tight coupling and architectural challenges."
 featured_image: "looking-back-at-rpcs-1.jpeg"
 tags: ["rpc", "distributed-system", "api-design"]
 categories: ["Software Architecture"]

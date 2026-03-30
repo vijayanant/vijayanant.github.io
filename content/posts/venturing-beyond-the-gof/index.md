@@ -1,9 +1,10 @@
 ---
 title: "Beyond the GoF: The Pattern Mindset"
+seo_title: "Beyond the Gang of Four: Reclaiming the Design Pattern Mindset"
 slug: "venturing-beyond-the-gof"
 date: 2023-11-16
 draft: false
-description: "Stop memorizing the 23 GoF patterns. Learn to reclaim the discipline of pattern thinking—seeing the underlying shape of a problem and choosing the right structural response."
+description: "Stop memorizing GoF patterns and start thinking in 'forces'. Learn how to recognize recurring problem shapes and choose the right structural response for modern systems."
 featured_image: "venturing-beyond-the-gof-1.jpg"
 tags: ["design-pattern", "system-design", "distributed-system", "first-principle", "trade-offs"]
 categories: ["Software Architecture"]

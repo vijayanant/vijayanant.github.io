@@ -1,12 +1,13 @@
 ---
 title: "Expressiveness"
+seo_title: "Programming Language Expressiveness: Haskell vs. Java vs. Python"
 slug: "expressiveness"
 date: 2018-11-08
 draft: false
 featured_image: "expressiveness-1.jpg"
 tags: ["expressiveness", "haskell", "type-system", "programming-language"]
 categories: ["Programming"]
-description: "Expressiveness is more than just conciseness. Compare Tree implementations in Haskell, Java, and Python to see how closely a language can match its problem formulation."
+description: "What makes a programming language expressive? Compare Tree implementations in Haskell, Java, and Python to see how language features impact problem formulation and clarity."
 pillar: craft
 pillar_role: essay
 ---

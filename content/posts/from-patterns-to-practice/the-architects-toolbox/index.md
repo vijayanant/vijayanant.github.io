@@ -1,5 +1,6 @@
 ---
 title: "The Architect's Toolbox"
+seo_title: "Monolith vs. Microservices vs. Event-Driven: Choosing an Architecture Style"
 slug: "the-architects-toolbox"
 subtitle: "Choosing Your Foundational Style"
 date: 2025-10-08T09:02:00+05:30
@@ -8,7 +9,7 @@ series: ["From Patterns to Practice"]
 series_order: 3
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
-description: "A practical guide to analyzing Monolithic, Microservices, and Event-Driven architectural styles against real-world business drivers to choose the foundational style for your system."
+description: "Monolith, Microservices, or Event-Driven? A practical architect's guide to choosing the right foundational style by analyzing trade-offs against business drivers."
 featured_image: "toolbox.jpg"
 pillar: strategy
 pillar_role: deep_dive

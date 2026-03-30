@@ -2,16 +2,18 @@
 series: ["Modular by Design"]
 series_order: 5
 title: "Think Entities, Not Procedures"
+seo_title: "RPC vs. REST: Choosing Between Action and Entity Abstractions"
 slug: "think-entities-not-procedures"
 subtitle: "Contrasting RPCs with ReST"
 date: 2024-05-24
 draft: false
-description: "RPC models the world as actions; REST models it as entities. Learn how this fundamental shift in perspective enables the loose coupling and independent evolution that modern services require."
+description: "Understand the fundamental shift from RPC procedures to REST entities. Learn how HATEOAS and generic interfaces enable independent evolution."
 featured_image: "think-entity-not-procedures-1.png"
 tags: ["rest", "rpc", "api-design", "hateoas", "distributed-system"]
 categories: ["Software Architecture"]
 pillar: system
 pillar_role: deep_dive
+level: "Advanced"
 ---
 In the previous post, we analyzed the world of Remote Procedure Calls, an architectural style built on a powerful **procedural abstraction**. This philosophy of modeling the world as a set of actions has a long and rich history, from OOP counterparts like [CORBA](http://corba.org), Microsoft’s [DCOM](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dcom/4a893f3d-bd29-48cd-9f43-d9777a4415b0), and [Java RMI](https://docs.oracle.com/javase/tutorial/rmi/index.html), to modern reincarnations like Google’s **[gRPC](https://grpc.io/)** and **[Apache Thrift](https://thrift.apache.org/)**.
 

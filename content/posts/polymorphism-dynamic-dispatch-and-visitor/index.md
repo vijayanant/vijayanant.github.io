@@ -1,12 +1,13 @@
 ---
 title: "Polymorphism, Dynamic Dispatch, and Visitor"
+seo_title: "Double Dispatch and the Visitor Pattern: Solving Polymorphism Challenges"
 slug: "polymorphism-dynamic-dispatch-and-visitor"
 date: 2023-12-04
 draft: false
 featured_image: polymorphism-dynamic-dispatch-and-visitor-1.jpeg
 tags: ["polymorphism", "visitor-pattern", "design-pattern", "oop"]
 categories: ["Programming"]
-description: "Single dispatch languages like Java can make complex transformations difficult to extend. Learn how the Visitor pattern enables double dispatch to design truly extensible systems."
+description: "Why single dispatch isn't enough for extensible systems. Learn how to implement Double Dispatch using the Visitor pattern in Java and C++."
 pillar: craft
 pillar_role: essay
 level: "Intermediate"

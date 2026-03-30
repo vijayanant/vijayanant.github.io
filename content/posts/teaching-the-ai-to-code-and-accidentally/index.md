@@ -1,14 +1,16 @@
 ---
 title: "Teaching the AI to Code (and Accidentally Becoming Better Engineers)"
+seo_title: "Coding with AI: How LLMs are Reviving Engineering Discipline"
 slug: "teaching-the-ai-to-code-and-accidentally-becoming-better-engineers"
 date: 2025-07-24
 draft: false
-description: "The best practices we used to skip are suddenly back, not for us, but for the AI"
+description: "The engineering habits we used to skip are back. Learn why giving AI full context—architecture and intent—is making us better engineers."
 featured_image: "teaching-the-ai-to-code-and-accidentally-1.jpg"
 tags: ["ai", "llm", "best-practice"]
 categories: ["AI in Engineering"]
 pillar: craft
 pillar_role: essay
+level: "Intermediate"
 ---
 Remember all those engineering best practices we were taught…  
 but quietly skipped?

@@ -1,5 +1,6 @@
 ---
 title: "The Formal Contract"
+seo_title: "Enforcing Architectural Boundaries: Java and Python Modifiers"
 slug: "the-formal-contract"
 subtitle: "Turning Directories into Fortresses with Access Modifiers"
 date: 2026-01-25
@@ -8,10 +9,11 @@ series: ["Codifying Your Architecture"]
 series_order: 2
 categories: ["Software Architecture"]
 tags: ["encapsulation", "information-hiding", "modularity", "clean-code", "java", "python"]
-description: "Your 'clean' directory structure is a facade if anyone can import anything. Learn how to use visibility rules and explicit contracts to stop 'architectural treason' at the compiler level."
+description: "How to use Java's package-private and Python's __all__ to enforce boundaries and prevent coupling treason at the compiler level."
 featured_image: "contract-featured.svg"
 pillar: craft
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="contract-featured.svg" alt="A stylized illustration of a scroll (the contract) being locked with a digital shield, representing code-level enforcement." >}}

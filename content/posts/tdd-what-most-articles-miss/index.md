@@ -1,15 +1,17 @@
 ---
 title: "TDD: What Most Articles Miss"
+seo_title: "TDD as Design: What Most Test-Driven Development Articles Miss"
 slug: "tdd-what-most-articles-miss"
 subtitle: "Uncovering the Design Discipline You Didn't Know You Were Missing"
 date: 2023-05-21
 draft: false
-description: "TDD is more than a testing ritual; it’s a design discipline. Learn to reclaim the 'unit' as a slice of behavior and let your architecture emerge organically from intent."
+description: "TDD is a design discipline, not a testing ritual. Learn how to use behavior-first testing to guide the organic emergence of your architecture."
 featured_image: "tdd-what-most-articles-miss-1.jpg"
 tags: ["tdd", "testing", "software-design", "agile"]
 categories: ["Programming"]
 pillar: craft
 pillar_role: foundational
+level: "Advanced"
 ---
 {{< figure src="tdd-what-most-articles-miss-1.jpg" alt="person writing on paper at lap" caption="Photo by [Jason Coudriet](https://unsplash.com/@jcoudriet) on [Unsplash](https://unsplash.com)" >}}
 

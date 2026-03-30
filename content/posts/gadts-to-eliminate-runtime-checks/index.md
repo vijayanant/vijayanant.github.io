@@ -1,14 +1,16 @@
 ---
 title: "GADTs To Eliminate Runtime Checks"
+seo_title: "Haskell GADTs: Type Safety in Expression Evaluators"
 slug: "gadts-to-eliminate-runtime-checks"
 date: 2016-10-14
 draft: false
 featured_image: "gadts-to-eliminate-runtime-checks-1.jpg"
 tags: ["gadt", "haskell", "type-system", "compiler"]
 categories: ["Programming"]
-description: "Standard ADTs sometimes allow invalid states to type check. Learn how GADTs allow value constructors to return specific types, ensuring program correctness at compile time."
+description: "Standard ADTs allow invalid states. Learn how Generalized Algebraic Data Types (GADTs) enable strict type-level guarantees."
 pillar: craft
 pillar_role: deep_dive
+level: "Advanced"
 ---
 {{< figure src="gadts-to-eliminate-runtime-checks-1.jpg" alt="clothes iron, hammer, axe, flashlight and pitcher on brown wooden table" caption="Photo by [Todd Quackenbush](https://unsplash.com/@toddquackenbush) on [Unsplash](https://unsplash.com)" >}}
 

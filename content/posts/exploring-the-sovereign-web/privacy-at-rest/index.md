@@ -1,16 +1,18 @@
 ---
 title: "The Sealed Vault"
+seo_title: "Encryption at Rest: AEAD and the Blind Server Ideal"
 subtitle: "Encryption Before Exchange"
 date: 2026-02-02
 series: ["Exploring the Sovereign Web"]
 series_order: 3
 draft: false
-description: "Why encryption isn't just scrambling, why the server must be blind (not just honest), and how to protect data at rest using authenticated encryption."
+description: "Learn how Authenticated Encryption (AEAD) and ChaCha20 protect data integrity and privacy on untrusted disks. Why your server should be blind, not just honest."
 tags: ["privacy", "encryption", "aead", "cryptography", "zero-trust"]
 categories: ["Software Architecture"]
 featured_image: "featured-private.jpg"
 pillar: system
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="featured-private.jpg" caption="Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/private-signage-door-u5Zt-HoocrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}

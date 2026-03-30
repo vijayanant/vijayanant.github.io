@@ -2,15 +2,17 @@
 series: ["Modular by Design"]
 series_order: 2
 title: "Good Coupling, Bad Coupling, and Cohesion"
+seo_title: "Software Coupling and Cohesion: A Guide to Good vs. Bad Design"
 slug: "good-coupling-bad-coupling-and-cohesion"
 date: 2023-11-18
 draft: false
-description: "Why spaghetti code is the ultimate productivity killer. A practical guide to understanding coupling and cohesion and why your architecture depends on keeping modules independent."
+description: "What is coupling in software engineering? Learn the difference between loose and tight coupling, how cohesion drives modularity, and how to avoid 'God classes'."
 featured_image: "good-coupling-bad-coupling-and-cohesion-1.jpg"
 tags: ["coupling", "cohesion", "modularity"]
 categories: ["Software Architecture"]
 pillar: system
 pillar_role: deep_dive
+level: "Advanced"
 ---
 {{< figure src="good-coupling-bad-coupling-and-cohesion-1.jpg" alt="brass-colored chain machine" caption="Photo by [Jay Heike](https://unsplash.com/@jayrheike) on [Unsplash](https://unsplash.com)" >}}
 

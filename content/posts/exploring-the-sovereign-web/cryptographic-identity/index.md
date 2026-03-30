@@ -1,16 +1,18 @@
 ---
 title: "The Shape of Cryptographic Identity"
+seo_title: "Cryptographic Identity: From PGP to Graphs of Authority"
 subtitle: "From Keys to Graphs"
 date: 2026-01-31
 series: ["Exploring the Sovereign Web"]
 series_order: 2
 draft: false
-description: "Why static keys (like PGP) failed, why device keys (like Signal) aren't enough, and how treating identity as a 'Graph of Authority' finally solves the recovery problem."
+description: "Why PGP and device keys failed, and how treating identity as a 'Graph of Authority' with social recovery solves the long-term decentralized identity problem."
 tags: ["identity", "cryptography", "zero-trust", "decentralized-web", "security"]
 categories: ["Software Architecture"]
 featured_image: "featured-antique-keys.jpg"
 pillar: system
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="featured-antique-keys.jpg" caption="Photo by [Aniyora J](https://unsplash.com/@yora_dreams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/silver-and-black-skeleton-key-PhuxBx5bOCk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}

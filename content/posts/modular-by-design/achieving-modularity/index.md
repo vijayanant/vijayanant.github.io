@@ -1,11 +1,12 @@
 ---
 title: "Achieving Modularity"
+seo_title: "What is Modularity in Software? A Guide to Modular Design"
 slug: "achieving-modularity"
 date: 2023-10-12
 draft: false
 series: ["Modular by Design"]
 series_order: 1
-description: "Modularity isn't just a virtue; it is the result of deliberate information hiding. Learn how to draw boundaries around the secrets most likely to change in your business."
+description: "What is modularity in software engineering? Learn how to achieve modular design using David Parnas's 'Information Hiding' to build resilient and maintainable systems."
 tags: ["modularity", "software-design", "architecture", "information-hiding"]
 categories: ["Software Architecture"]
 featured_image: "modularity.jpg"

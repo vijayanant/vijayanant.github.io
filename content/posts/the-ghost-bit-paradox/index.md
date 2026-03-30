@@ -1,9 +1,10 @@
 ---
 title: "The Ghost Bit Paradox"
+seo_title: "The Ghost Bit Paradox: When Binary Corruption Doesn't Break Hashes"
 subtitle: "Why Semantic Integrity Survives Lenient Encodings"
 date: 2026-02-19
 draft: false
-description: "Fuzz testing a Merkle-DAG manifest revealed instances where binary corruption did not invalidate high-level integrity checks. This post analyzes the role of decoder lenience in CBOR serialization."
+description: "Why can you flip bits in a file without changing its cryptographic hash? Discover the 'Ghost Bit Paradox' in CBOR serialization and what it means for Merkle DAG integrity."
 tags: ["distributed-system", "decentralized-web", "cryptography", "cbor", "rust", "fuzzing", "serialization"]
 categories: ["Programming"]
 featured_image: "investigation.jpg"

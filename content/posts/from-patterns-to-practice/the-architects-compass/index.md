@@ -1,5 +1,6 @@
 ---
 title: "The Architect's Compass"
+seo_title: "Software Architecture: Navigating the Speed vs. Scale Conflict"
 slug: "the-architects-compass"
 subtitle: "A Tale of Speed vs. Scale"
 date: 2025-10-08T09:00:00+05:30
@@ -8,10 +9,11 @@ series: ["From Patterns to Practice"]
 series_order: 1
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
-description: "Architecture is the navigation of the conflict between speed and scale. Learn how to translate technical anxiety into concrete drivers so your organization can choose its trade-offs."
+description: "Architecture is the art of the trade-off. Learn how to translate business pressure into concrete drivers like time-to-market and scalability."
 featured_image: "compass.jpg"
 pillar: strategy
 pillar_role: foundational
+level: "Advanced"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" width="1200" >}}

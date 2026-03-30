@@ -1,15 +1,17 @@
 ---
 title: "Dependent Types To Eliminate Runtime Checks"
+seo_title: "Haskell Dependent Types: Eliminating Runtime Checks"
 subtitle: "Moving runtime checks to the compile-time using Dependent Types"
 date: "2018-10-26"
 slug: "dependent-types-to-eliminate-runtime-checks"
 categories: ["Programming"]
 tags: ["functional-programming", "Haskell", "Dependent Types", "type-safety", "static-analysis"]
 draft: false
-description: "An exploration of how to leverage dependent types in Haskell to catch errors at compile-time, eliminating the need for certain runtime checks and leading to more robust code."
+description: "How to use DataKinds and KindSignatures to move validation to the type system. A guide to safer, more robust Haskell code."
 featured_image: "runtime-checks.jpg"
 pillar: craft
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 One of the main advantages of [static type checking](https://en.wikipedia.org/wiki/Type_system#Static_type_checking) is to catch

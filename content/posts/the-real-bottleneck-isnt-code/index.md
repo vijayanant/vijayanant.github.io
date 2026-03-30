@@ -1,15 +1,17 @@
 ---
 title: "The Real Bottleneck Isn’t Code"
+seo_title: "Team Resonance: Why Shared Understanding is the Real Bottleneck"
 slug: "the-real-bottleneck-isnt-code"
 subtitle: "If you're not building the same thing in your minds, you'll spend even more time fixing what shouldn't have broken."
 date: 2025-07-23
 draft: false
-description: "LLMs can accelerate your hands, but only humans can align your minds. Learn why 'Team Resonance' is the real productivity multiplier and how to avoid 'Resonance Drift'."
+description: "LLMs accelerate coding, but only humans can align minds. Learn why 'Team Resonance' is the real multiplier and how to avoid mental model drift."
 featured_image: "the-real-bottleneck-isnt-code-1.jpg"
 tags: ["ai", "llm", "teamwork", "communication"]
 categories: ["AI in Engineering"]
 pillar: strategy
 pillar_role: foundational
+level: "Intermediate"
 ---
 You know the feeling.
 

@@ -1,5 +1,6 @@
 ---
 title: "An Architect's Work is Never Done"
+seo_title: "Architectural Stewardship: Managing Evolution and Tech Debt"
 slug: "an-architects-work-is-never-done"
 subtitle: "Guiding the Evolution"
 date: 2025-10-08T09:06:00+05:30
@@ -8,10 +9,11 @@ series: ["From Patterns to Practice"]
 series_order: 7
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
-description: "Beyond making initial decisions, an architect's true role involves continuously guiding the evolution of a system, establishing governance, and strategically managing technical debt."
+description: "Beyond the initial decision: Learn how architects guide system evolution and manage technical debt to prevent architectural drift."
 featured_image: "architectural-flywheel.png"
 pillar: strategy
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}

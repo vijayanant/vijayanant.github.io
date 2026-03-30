@@ -1,10 +1,11 @@
 ---
 title: "Performance Analysis In Python"
+seo_title: "Python Performance Profiling: cProfile and Memory"
 date: "2014-11-02 20:05:36"
 slug: "performance-analysis-in-python"
 tags: [ "python", "Profiling", "performance", "analysis" ]
 categories: ["Programming"]
-description: "A practical look at measuring Python performance. Learn how to use time, cProfile, and memory_profiler to identify bottlenecks and leaks in your code."
+description: "A guide to measuring Python performance. Learn how to use cProfile and memory_profiler to identify bottlenecks and optimize code."
 featured_image: "analysis.jpg"
 draft: false
 pillar: craft

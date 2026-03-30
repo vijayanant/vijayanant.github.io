@@ -1,16 +1,18 @@
 ---
 title: "Sharing After Secrecy"
+seo_title: "Encrypted Sharing: Four Architectures for Decentralized Access"
 subtitle: "Keys, Access, and Time"
 date: 2026-02-06
 series: ["Exploring the Sovereign Web"]
 series_order: 4
 draft: false
-description: "Once you build a perfect vault, you realize you've built a tomb. Exploring the four architectures of sharing and the paradox of un-sharing in a decentralized world."
+description: "How to share secrets in a zero-trust world. Comparing pairwise lockboxes, mathematical gating, and tree-based key management for decentralized systems."
 tags: ["sharing", "access-control", "cryptography", "zero-trust", "decentralized-web"]
 categories: ["Software Architecture"]
 featured_image: "message-in-a-bottle-at-seashore.jpg"
 pillar: system
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="message-in-a-bottle-at-seashore.jpg" caption="Photo by [Jayne Harris](https://unsplash.com/@jayneharr33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-bottle-floating-in-a-body-of-water-SkVpd5YhUug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}

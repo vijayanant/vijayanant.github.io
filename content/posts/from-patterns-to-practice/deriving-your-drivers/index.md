@@ -1,5 +1,6 @@
 ---
 title: "Deriving Your Real Architectural Drivers"
+seo_title: "Quality Attribute Scenarios: Translating Business Goals"
 slug: "deriving-your-real-architectural-drivers"
 subtitle: "Great architecture does not start with a solution. It starts with a deep, honest understanding of the problem"
 date: 2025-10-08T09:01:00+05:30
@@ -8,10 +9,11 @@ series: ["From Patterns to Practice"]
 series_order: 2
 categories: ["Software Architecture"]
 tags: ["decision-making", "architectural-style", "trade-off", "adr"]
-description: "Learn how to translate vague business goals into concrete, measurable architectural drivers using Quality Attribute Scenarios (QAS) to identify and address critical risks."
+description: "Stop designing for vague goals. Learn how to use Quality Attribute Scenarios (QAS) to define concrete, testable requirements for your system."
 featured_image: "driving.jpg"
 pillar: strategy
 pillar_role: deep_dive
+level: "Advanced"
 ---
 
 {{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}

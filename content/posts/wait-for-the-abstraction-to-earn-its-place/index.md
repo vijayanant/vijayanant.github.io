@@ -1,14 +1,16 @@
 ---
 title: "Wait for the Abstraction to Earn Its Place"
+seo_title: "Premature Abstraction: Why Duplication is Better Than the Wrong Shape"
 slug: "wait-for-the-abstraction-to-earn-its-place"
 date: 2025-07-29
 draft: false
-description: "Don't DRY your code prematurely. Learn why 'two ideas wearing the same coat' is a common design trap and how waiting for the right abstraction prevents centralized fragility."
+description: "Don't DRY your code too early. Learn why 'two ideas wearing the same coat' is a design trap and how waiting for the right abstraction prevents fragility."
 featured_image: "wait-for-the-abstraction-to-earn-1.jpg"
 tags: ["abstraction", "duplication", "refactoring", "dry-principle"]
 categories: ["Programming"]
 pillar: craft
 pillar_role: essay
+level: "Advanced"
 ---
 {{< figure src="wait-for-the-abstraction-to-earn-1.jpg" alt="turned on laptop computer" >}}
 
