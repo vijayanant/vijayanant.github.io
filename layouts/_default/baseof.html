@@ -84,13 +84,14 @@
     {{ $scripts := slice }}
     {{ $scripts = $scripts | append (resources.Get "js/script.js") }}
     {{ $scripts = $scripts | append (resources.Get "js/tabs.js") }}
+    {{ $scripts = $scripts | append (resources.Get "js/scroll-depth.js") }}
     {{ if .Site.Params.enableCodeCopyButton }}
         {{ $scripts = $scripts | append (resources.Get "js/copy-code.js") }}
     {{ end }}
     {{ if .Site.Params.enableThemeToggle }}
         {{ $scripts = $scripts | append (resources.Get "js/theme-toggle.js") }}
     {{ end }}
-    
+
     {{ $bundle := $scripts | resources.Concat "js/bundle.js" | minify | fingerprint }}
     <script src="{{ $bundle.RelPermalink }}" defer></script>
 
