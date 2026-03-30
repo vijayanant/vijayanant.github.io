@@ -9,6 +9,7 @@ tags: ["design-pattern", "design-principle", "solid", "software-design"]
 categories: ["Programming"]
 pillar: craft
 pillar_role: essay
+level: "Intermediate"
 ---
 {{< figure src="design-principles-and-design-patterns-1.png" alt="Design Principles and Design Patterns" >}}
 

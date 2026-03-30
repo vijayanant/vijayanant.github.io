@@ -9,6 +9,7 @@ featured_image: "analysis.jpg"
 draft: false
 pillar: craft
 pillar_role: essay
+level: "Intermediate"
 ---
 
 

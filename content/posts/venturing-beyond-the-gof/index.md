@@ -9,6 +9,7 @@ tags: ["design-pattern", "system-design", "distributed-system", "first-principle
 categories: ["Software Architecture"]
 pillar: strategy
 pillar_role: essay
+level: "Intermediate"
 ---
 {{< figure
     src="venturing-beyond-the-gof-1.jpg"

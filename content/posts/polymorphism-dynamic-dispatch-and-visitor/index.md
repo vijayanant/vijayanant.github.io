@@ -9,6 +9,7 @@ categories: ["Programming"]
 description: "Single dispatch languages like Java can make complex transformations difficult to extend. Learn how the Visitor pattern enables double dispatch to design truly extensible systems."
 pillar: craft
 pillar_role: essay
+level: "Intermediate"
 ---
 {{< figure src="polymorphism-dynamic-dispatch-and-visitor-1.jpeg" alt="Change neon light signage" caption="Photo by [Ross Findon](https://unsplash.com/@rossfindon) on [Unsplash](https://unsplash.com)" >}}
 
