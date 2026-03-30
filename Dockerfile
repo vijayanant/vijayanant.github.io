@@ -18,5 +18,5 @@ COPY data/ data/
 COPY content/ content/
 COPY assets/ assets/
 
-# Build the Hugo site
-CMD ["hugo"]
+# Build the Hugo site with GitInfo enabled for lastmod support
+CMD ["hugo", "--enableGitInfo"]

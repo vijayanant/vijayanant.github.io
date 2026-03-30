@@ -3,7 +3,7 @@
 # Variables
 IMAGE_NAME = personal-website-builder
 DRAFTS ?= false
-HUGO_FLAGS = $(if $(filter true,$(DRAFTS)),--buildDrafts,)
+HUGO_FLAGS = $(if $(filter true,$(DRAFTS)),--buildDrafts,) --enableGitInfo
 
 # Targets
 .PHONY: all build run rebuild clean help serve

@@ -31,7 +31,7 @@ jobs:
           extended: true
 
       - name: Build Hugo site
-        run: hugo --minify
+        run: hugo --minify --enableGitInfo
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
