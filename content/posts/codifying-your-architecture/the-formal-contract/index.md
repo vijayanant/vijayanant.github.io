@@ -164,11 +164,13 @@ If your public `TicketService` returns a raw Database Entity (like a Hibernate `
 
 By using access modifiers, we’ve moved from "I hope the team follows the structure" to "The code won't compile unless they do." We have codified the architecture.
 
-But even this has limits. Language-level visibility can't prevent **Cyclic Dependencies** (e.g., Ticketing calling Payments, which calls Ticketing). It can't prevent "Shared" modules from becoming "Junk Drawers."
+#### Boundaries are a Gift
 
-For that, we need something stronger. We need a tool that can analyze the entire dependency graph and fail the build if our high-level rules are violated.
+It’s tempting to keep everything `public` to avoid the "friction" of visibility rules. But that friction is exactly what keeps your system from collapsing into a Big Ball of Mud. When you hide an internal detail, you aren't just protecting the code; you're protecting your teammates from having to care about things that don't matter to them.
 
-In our next post, **"The Invisible Border Patrol,"** we’ll introduce **ArchUnit** and show how to write "Fitness Functions" that guard your architecture while you sleep.
+Try this: find one internal class in your current sprint and remove the `public` keyword. If the IDE complains, you've just found a dependency that shouldn't exist. If it doesn't, you've just made the system a little safer for the next person who touches it. 
+
+But even compilers have limits. In our next post, **"The Invisible Border Patrol,"** we’ll introduce **ArchUnit** and show how to write "Fitness Functions" that guard your architecture while you sleep.
 
 {{< newsletter type="simple" >}}
 

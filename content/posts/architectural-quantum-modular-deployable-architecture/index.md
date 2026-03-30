@@ -244,4 +244,10 @@ By learning to see your system in quanta, every engineer gains a powerful lens t
 
 Most teams only discover where their real boundaries are when something breaks. By then, the architecture has already decided for them.
 
+#### Deployment is the Truth
+
+We spend a lot of time talking about "clean code" and "modular directories," but the true test of your architecture happens at the CI/CD pipeline. Your deployment scripts don't care about your whiteboard diagrams; they only care about what *must* move together.
+
+Next time your team is planning a release, watch for the "lock-step" deployments. If you find yourself saying, *"We can't ship the API until the Database team ships their change,"* you've just identified a quantum boundary. Don't fight it with more meetings; acknowledge it as a physical constraint of your current design, and decide if that's a "tax" you're still willing to pay.
+
 {{< newsletter type="simple" >}}

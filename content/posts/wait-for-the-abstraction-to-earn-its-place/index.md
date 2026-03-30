@@ -185,4 +185,10 @@ Wait for the abstraction to earn its place.
 Then, and only then, give it a name.  
 Duplication can be fixed. Wrong abstraction? That’s a scar.
 
+#### The Discipline of Doing Nothing
+
+We are paid to write code, so choosing to leave duplication alone often feels like laziness. It isn't. It's a deliberate investment in future clarity. 
+
+In your next Pull Request, when you see those three identical blocks, resist the urge to be "clever." Instead, add a comment: *“Duplicated for now—waiting for diverging requirements.”* Let the friction build until the right abstraction becomes a physical necessity rather than a guess. It is much easier to explain to your team why you didn't DRY your code today than it is to spend the next six months untangling a "generic" service that turned out to be anything but.
+
 {{< newsletter type="simple" >}}

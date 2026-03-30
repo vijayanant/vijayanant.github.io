@@ -64,6 +64,8 @@ This team sees the challenges as familiar, solvable problems. They decide to inc
 
 An architectural spike is not meant to prove your initial hypothesis right. Its purpose is to replace uncertainty with evidence. 
 
-As you have seen, the same evidence can lead to two different, entirely correct decisions. Path A was not a "failure," and Path B was not "smarter." They were different answers to the same question, tailored to the reality of the people who have to build the system.
+#### Buying Information
 
-In our next post, we will follow **Path B** and tackle the first challenge of implementation: **Documenting the Decision.**
+The hardest part of a spike isn't the code; it's having the discipline to stop when you've learned enough. It's not a head-start on the project; it's an investment in certainty.
+
+When you finish your next spike, be honest about the friction. If the team struggled to debug the event flow, that is a data point just as valuable as a working "walking skeleton." Now that we know what we're actually building, we need to make sure the "Why" survives the first year of development. Next, we'll look at **Documenting the Decision.**

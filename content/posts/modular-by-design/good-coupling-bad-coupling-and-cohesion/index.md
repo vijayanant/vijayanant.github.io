@@ -166,6 +166,14 @@ data can create a dependency between the them.
 
 Striving for high cohesion and loose coupling isn't just a technical exercise; it's how we validate our design decisions and ensure the module boundaries we create are sound. It is the art of building a system from parts that are both self-contained and gracefully interconnected.
 
+#### The Sunday Morning Test
+
+You don’t need a complex tool to measure your coupling. You just need to observe how you feel on a Sunday night when you realize you have to change a core business rule on Monday morning.
+
+If your first thought is, *"I hope I don't break the Payments module while editing the User rules,"* you have a coupling problem. If you know exactly which file to open and you're confident that the rest of the system will stay silent, you’ve achieved cohesion. 
+
+Don't aim for "perfect" architecture. Aim for the confidence that you can change your mind tomorrow without the whole system screaming back at you.
+
 This timeless struggle between coupling and cohesion is not a new problem. In fact, it is one of the central, driving forces in the history of software architecture. To truly master these concepts, we must look to the past and see how generations of developers have wrestled with these same forces. In our next post, we'll take a journey through the ages to do just that.
 
 {{< newsletter type="simple" >}}

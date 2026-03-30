@@ -117,6 +117,10 @@ Centralized identity didn’t dominate because it was malicious. It dominated be
 
 What’s changed is not the math, but the architecture around it. By treating identity as a graph of delegated authority, anchoring it in durable recovery mechanisms, and designing for revocation from the start, we can finally build systems where identity survives contact with time.
 
-This is still hard. It’s still easy to get wrong. But it no longer feels out of reach.
+#### The Recovery Dilemma
+
+As I followed the trail from PGP to graphs of authority, the realization wasn't that the math had improved, but that our model of human failure had. Centralization succeeded because it made losing a key a temporary problem. 
+
+By building identity as a log of revocable delegations, we’re trying to bake that same resilience into the cryptography itself. It’s an attempt to create an identity that can survive device churn without a central "Reset Password" button. But identity is only the first layer; knowing who someone is doesn't stop the storage layer from looking at the data. I have the map of "who," but now I need to build the walls.
 
 But identifying 'who' someone is doesn't guarantee that only they can read your data. Whether we are sending a message or storing a file for a team, we need a way to [**lock the data**]({{< ref "/posts/exploring-the-sovereign-web/privacy-at-rest/" >}}) so that only authorized identities can unlock it. This is what I will explore next.

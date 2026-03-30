@@ -99,7 +99,11 @@ You can zoom in further, but for communicating a new style, these first two leve
 
 Execution of the framework is complete. You have moved from a business problem to a data-driven, documented, and justified plan for the foundation of CityPulse. This is the repeatable process for high-stakes architectural choices.
 
-But is the job over? Not even close. Architecture is a living thing. Now that the foundation is set, we must move to the next challenge: protecting it against the slow erosion of time. In our next series, we will move from **Practicing Architecture** to **Codifying it**.
+#### A Gift to Your Future Self
+
+We document our decisions not for the "archives," but for the people who will have to change this code in eighteen months—people who will likely include you. ADRs and C4 diagrams are the antidote to "Architectural Amnesia."
+
+Tomorrow, take the most recent "hallway decision" your team made and write it down as a one-page ADR. Share it. Watch how much less time you spend repeating the same explanation in three different meetings. But documentation is only the beginning. Architecture is a living thing, and next, we’ll look at how to manage its ongoing evolution.
 
 ---
 

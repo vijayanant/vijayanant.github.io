@@ -143,4 +143,10 @@ A chat app needs the **Ephemerality** of the Ratchet. A secret archive needs the
 
 The math was never the hard part.
 
+#### The Logic of Revocation
+
+Mapping these sharing architectures—from pairwise lockboxes to recursive trees—made one thing clear: every cryptographic primitive we choose imposes a specific social constraint. To use a ratchet is to demand ephemerality; to use a lockbox is to accept a scaling penalty. 
+
+We aren't just choosing algorithms; we're deciding how access survives over time and how difficult it should be to take it back. The challenge is matching these technical structures to the actual, messy intent of the people using the system. 
+
 And that realization feels less like an answer… and more like the next boundary.

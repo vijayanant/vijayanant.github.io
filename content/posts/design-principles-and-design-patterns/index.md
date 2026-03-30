@@ -120,19 +120,12 @@ principles simultaneously.
 
   * The Factory Method pattern can address the SRP, the OCP, and the Dependency Inversion Principle (DIP) at the same time. The Factory Method pattern separates the creation of objects from their use, allowing for greater flexibility in object creation and adherence to the SRP. It also allows for the creation of objects at runtime, adhering to the OCP. Finally, by using abstractions to create objects, it adheres to the DIP.
 
-While it is important to understand the concepts behind each design pattern,
-it is also important to choose the right pattern for the specific problem you
-are trying to solve. Not all patterns will apply to every situation, and it is
-important to consider the trade-offs and benefits of each pattern before
-choosing the one that is best suited for your needs.
+While it is important to understand the concepts behind each design pattern, it is also important to choose the right pattern for the specific problem you are trying to solve. Not all patterns will apply to every situation, and it is important to consider the trade-offs and benefits of each pattern before choosing the one that is best suited for your needs.
 
-{{< summary >}}
-In conclusion, the five major design principles in object-oriented programming
-and design patterns are essential for creating maintainable, extensible, and
-adaptable code. By following these principles and patterns, developers can
-reduce the risk of introducing bugs when making changes, and make systems more
-modular and easier to maintain, and create code that is easier to test and
-reuse.
-{{< /summary >}}
+#### Principles are the North Star, Patterns are the Map
+
+Don't get discouraged if your code doesn't perfectly match a textbook pattern on the first pass. Patterns are just common responses to recurring forces. The goal isn't to use the "most" patterns; it's to build a system that is easy to change.
+
+Tomorrow, look at a piece of code that has been difficult to refactor. Don't ask which pattern fits; ask which principle is being violated. Is it doing too much (SRP)? Is it hard to extend (OCP)? Once you identify the "Why," the "How" (the pattern) will often reveal itself.
 
 {{< newsletter type="simple" >}}

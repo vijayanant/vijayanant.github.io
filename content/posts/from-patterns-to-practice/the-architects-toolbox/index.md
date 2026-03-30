@@ -94,9 +94,11 @@ Of all the styles, Event-Driven Architecture is the easiest to get wrong. The al
 
 You have moved beyond buzzwords to a nuanced understanding of how each style interacts with your specific business problem. The dilemma is clear: the Monolith wins on speed, Microservices wins on organizational scale, and the Event-Driven style wins on resilience and load absorption.
 
-So, how do you choose? How do you break the tie?
+#### Beyond the Buzzwords
 
-In the next post, we will introduce the final analytical tools in our framework—the **Pattern Profiling Scorecard** and the **Weighted Scoring Matrix**—to turn this analysis into a final, data-driven decision.
+It is tempting to pick an architecture because it looks good on a resume or because it's what the "big players" are doing. But as an architect, you are responsible for the "tax" your team will pay for that choice every single day.
+
+Whether you choose the operational simplicity of a monolith or the decoupled resilience of an event-driven system, do it with your eyes open. In our next post, we will look at how to move past these qualitative debates and use a data-driven "Decision Engine" to break the tie.
 
 ## Further Reading
 

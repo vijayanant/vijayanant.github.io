@@ -180,7 +180,13 @@ This refinement ensures the fuzzer continues to catch real data model corruption
 
 The "Ghost Bit Paradox" highlights a critical dependency: in any binary protocol, the decoder is a part of the security boundary. Whether you choose the strict determinism of binary hashing or the representational flexibility of semantic hashing, you must define exactly where your validation layer ends and your encoding layer begins.
 
-In a world of lenient decoders, the truth is found in the model, not the bitstream.
+In a world of lenient decoders, the technical definition of integrity resides in the object model, not the raw bytes.
+
+#### Security is in the Details
+
+The "Ghost Bit" was a humbling reminder that our security boundaries are only as strong as our most lenient component. We often treat serialization as a solved problem—a "dumb" pipe between our logic and the disk. But as we saw, the decoder is a silent participant in our integrity checks.
+
+When you design your next binary protocol, ask yourself: *Where do I want to enforce strictness?* If you enforce it at the model level, you accept that some bit-level changes are non-semantic. If you enforce it at the byte level, you demand canonical perfection. There is no right answer, only a conscious choice between resilience and strictness.
 
 ***
 

@@ -72,4 +72,10 @@ A word of caution: while these numbers look precise, they are often just well-in
 
 Until you have these concrete scenarios, you are not doing architecture; you are doing guesswork. You might build a perfectly scaled "User Profile" service while the checkout flow is still a single-threaded bottleneck.
 
-Now that we have mapped the territory and defined our real drivers, we can finally open the toolbox. In our next post, we will evaluate the three foundational architectural styles against these specific scenarios.
+#### The Clarity of a Target
+
+Writing a QAS often feels tedious, but it is the most honest work an architect does. It moves you from the safety of "generic best practices" to the vulnerability of a specific number. 
+
+Don't worry if your first few scenarios feel like guesses. The goal isn't perfect foresight; it's shared alignment. Once you and your stakeholders agree that "1,000 transactions per second" is the goal, you’ve stopped debating opinions and started solving a problem. Now that we have our target, it's time to open the toolbox and see which architectural styles can actually hit it.
+
+In our next post, we will evaluate the three foundational architectural styles against these specific scenarios.

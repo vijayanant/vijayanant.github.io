@@ -86,12 +86,12 @@ Maybe the hardest part isn’t the code at all. It’s the trust gap. We debug
 human code assuming purpose. We debug AI code assuming chaos. That alone
 changes how much patience we bring to the task.
 
-And for those who say they can’t debug AI-written code, I have to ask: why?
-Have you not ever stepped into code written by someone else? Have you not
-fixed bugs in parts of the system you didn’t author? AI is just another
-“someone else.” The only difference is whether the team has made the system’s
-intended behaviour explicit or left it implicit.
+And for those who say they can’t debug AI-written code, I have to ask: why? Have you not ever stepped into code written by someone else? Have you not fixed bugs in parts of the system you didn’t author? AI is just another “someone else.” The only difference is whether the team has made the system’s intended behaviour explicit or left it implicit.
 
-* * *
+#### The Externalized Mind
+
+Debugging has always been a "memory retrieval" task. We look at a line of code and try to remember the mental state of the person who wrote it. With AI, that person never existed. 
+
+To survive the LLM era, we have to stop relying on our individual memories and start building "System Memory." This means moving the "Why" out of our heads and into the artifacts: the tests, the ADRs, and the code structure itself. If you find yourself struggling to debug an AI-generated component, don't blame the AI—blame the lack of a shared model. Your job isn't just to generate code anymore; it's to steward the understanding that makes that code maintainable.
 
 {{< newsletter type="simple" >}}

@@ -270,10 +270,12 @@ rewrite later.
 
 ## Finally…
 
-Technical Debt is a metaphor initially used to explain the management need for
-code refactoring; it is not a development methodology or a design philosophy;
-it neither tell you how to design or write code nor does it tell you when to
-take debt. The debt metaphor helps us think about how to deal with design
-problems and how to communicate that thinking.
+Technical Debt is a metaphor initially used to explain the management need for code refactoring; it is not a development methodology or a design philosophy; it neither tell you how to design or write code nor does it tell you when to take debt. The debt metaphor helps us think about how to deal with design problems and how to communicate that thinking.
+
+#### The "Debt" is a Choice, Not an Accident
+
+The next time you’re tempted to call messy code "tech debt," stop and ask: *Did we choose this shortcut to learn something faster, or did we just let the garden grow wild?*
+
+If it was a choice, make it visible. Write it down in a `DEBT.md` or a ticket. If it was an accident, don't hide behind the metaphor—fix the quality. Debt is a powerful tool for startups and fast-moving teams, but only if the "borrower" has a plan to pay it back. Otherwise, you aren't managing a balance sheet; you're just managing a mess.
 
 {{< newsletter type="simple" >}}

@@ -314,9 +314,13 @@ Applying Scaling transformation to Circle
 Applying Scaling transformation to Rectangle
 ```
 
-This is exactly what [Visitor design
-pattern](https://en.wikipedia.org/wiki/Visitor_pattern) achieve - Double
-Dispatch.
+This is exactly what [Visitor design pattern](https://en.wikipedia.org/wiki/Visitor_pattern) achieve - Double Dispatch.
+
+#### The Cost of Extensibility
+
+Double dispatch is a powerful technique, but it comes with a "complexity tax." By introducing the `accept` method and the Visitor interface, you've gained the ability to add new transformations without touching your shapes, but you've also made the control flow harder to follow for a newcomer.
+
+Before you reach for the Visitor pattern, ask yourself: *Is this hierarchy really going to grow in terms of operations (transformations), or in terms of data (new shapes)?* If you're adding new shapes every week, the Visitor pattern will actually make your life harder. But if your shapes are stable and your business rules are evolving, Double Dispatch is the key to keeping your core logic clean.
 
 {{< newsletter type="simple" >}}
 

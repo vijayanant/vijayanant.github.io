@@ -87,7 +87,11 @@ Crucially, the biggest missing piece here is **Team Proficiency**. If your team 
 
 Choosing an architecture is not about being "right." It is about being justifiable. By following this process, you have moved from a "gut feeling" to a defensible strategy that the business has signed off on. 
 
-But even with the best data, a decision on paper is still just a hypothesis. In our next post, we will move from the spreadsheet to the code: running an **Architectural Spike** to prove the design before you bet the company on it.
+#### The Defensible Choice
+
+A weighted matrix isn't a magic eight-ball; it's a mirror. It reflects back the priorities you and your leadership team *say* you have. If the "mathematical winner" feels wrong, it's usually because there's a hidden priority you haven't named yet.
+
+Use these tools to make your reasoning transparent. It is much easier to defend a decision when you can show the math behind the trade-offs. But remember: a spreadsheet is still just a hypothesis. In our next post, we’ll move from the matrix to the IDE to run an **Architectural Spike** and prove our assumptions in the real world.
 
 ## Further Reading
 

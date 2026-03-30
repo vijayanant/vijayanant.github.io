@@ -86,6 +86,12 @@ But as we have seen, choosing the foundation is only half the battle. The other 
 
 In our next series, we will move beyond documentation and into **enforcement**. We will look at how to turn your architectural intent into code that the system can actually defend itself. 
 
+#### The Architect as a Steward
+
+Making the big decision is the heroic part of the job, but stewardship is the essential part. Architecture isn't a goal you reach; it's a standard you maintain against the constant pressure of "just one more feature."
+
+Your role is to make the "right way" the "easy way." Whether through automated guardrails or constant negotiation, your goal is to keep the system's intent visible long after the initial launch. Our journey through practice is complete, but the work of enforcement is just beginning. In our next series, we will look at how to turn this intent into code: **Codifying Your Architecture.**
+
 Join me for the next chapter: [**Codifying Your Architecture**]({{< ref "/series/codifying-your-architecture" >}}).
 
 ## Further Reading

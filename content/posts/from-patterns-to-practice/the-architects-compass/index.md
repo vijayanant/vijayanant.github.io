@@ -81,9 +81,11 @@ Be careful of the 'false dichotomy.' The world is not just monoliths and microse
 
 The choice is not about which technology is "best." It is about which set of trade-offs you are willing to accept to serve the unique, conflicting needs of your business. 
 
-Most teams stumble into a disaster because they do not actively choose their priorities. They try to "scale everything" while launching "tomorrow," and end up with a mess that achieves neither.
+#### Choosing your Pain
 
-In our next post, we’ll move from these vague concepts to a tool that turns "scalability" into a concrete, testable requirement: **The Quality Attribute Scenario.**
+Most teams stumble into a disaster because they try to ignore the speed-vs-scale conflict. They aim for "infinite scale" while promising a "next-week launch," ending up with a system that achieves neither. 
+
+Tomorrow, listen to the hallway conversations in your office. When you hear words like "fast" or "reliable," don't let them stay vague. Force them into the light. Naming the trade-off is the first step toward owning it. In our next post, we’ll look at the specific tool that turns this technical anxiety into a concrete target: **The Quality Attribute Scenario.**
 
 ## Further Reading
 

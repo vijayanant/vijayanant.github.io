@@ -219,7 +219,13 @@ This approach is not a silver bullet. It requires more upfront thought to identi
 
 Architecture starts with the shape of your code. By grouping files by business purpose, you turn the directory structure into a tangible first line of defense against chaos. This clarity isn't about being neat, it's about paying the architectural cost upfront to avoid the bankruptcy of a "Big Ball of Mud" later.
 
-But directories alone are just a blueprint, not a fortress. In our next post, **"The Formal Contract,"** we’ll lock down these boundaries using the compiler itself, turning good intentions into enforceable guarantees.
+#### The First Line of Defense
+
+A clean directory structure is the easiest architectural win you can achieve, but it's also the easiest to lose. It requires the discipline to ask "What business problem does this solve?" before every `New File` command.
+
+Tomorrow, take a cold look at your project's root directory. If all you see are technical labels like `controllers` and `models`, you're looking at a framework's architecture, not your own. Try grouping just one small feature by its business intent. You'll likely find that the code becomes easier to reason about the moment it has a home that reflects its purpose. 
+
+Directories are just the blueprint, though. In our next post, **"The Formal Contract,"** we’ll lock down these boundaries using the compiler itself, turning good intentions into enforceable guarantees.
 
 {{< newsletter type="simple" >}}
 

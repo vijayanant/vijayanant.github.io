@@ -105,4 +105,12 @@ If we use these tools correctly, AEAD for integrity, careful ordering for safety
 
 But this privacy comes at a steep price.
 
-We have successfully locked the world out. The problem is, we have also locked ourselves in. To make this data useful, we have to figure out how to [**smuggle the key**]({{< ref "/posts/exploring-the-sovereign-web/sharing/" >}}) through the very same untrusted channels we just built the walls to protect. That is what I’ll explore next.
+We have successfully locked the world out. The problem is, we have also locked ourselves in.
+
+#### The Isolation of Secrecy
+
+Exploring AEAD and hardware-agnostic ciphers like ChaCha20 moved the security boundary for me. It’s a shift from trusting a firewall to trusting the construction of each individual block of data. A "blind" server isn't just a design preference; it’s the only way to build infrastructure that is technically incapable of betrayal. 
+
+But as I hardened these walls against bit-flips and forwarding attacks, I hit a practical wall: a vault that can't be shared is just a tomb. Secrecy is easy; controlled access is where the complexity returns. The next challenge is figuring out how to smuggle a key to a collaborator without re-introducing the vulnerabilities I just spent weeks trying to eliminate.
+
+To make this data useful, we have to figure out how to [**smuggle the key**]({{< ref "/posts/exploring-the-sovereign-web/sharing/" >}}) through the very same untrusted channels we just built the walls to protect. That is what I’ll explore next.
