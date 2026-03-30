@@ -26,6 +26,16 @@
 {{- $publishDate := .PublishDate }}
 {{- if or $publishDate.IsZero (not $publishDate) }}{{ $publishDate = .Date }}{{ end }}
 
+{{- $skills := slice }}
+{{- range .Params.categories }}
+  {{- $skills = $skills | append . }}
+{{- end }}
+{{- range .Params.tags }}
+  {{- if not (in $skills .) }}
+    {{- $skills = $skills | append . }}
+  {{- end }}
+{{- end }}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,6 +75,15 @@
   {{- with .Params.tags }},
   "keywords": [
     {{- range $i, $e := . }}
+      {{- if $i }},{{- end }}
+      {{- $e | jsonify | safeJS }}
+    {{- end }}
+  ]
+  {{- end }}
+  {{- if eq $schemaType "TechArticle" }},
+  "proficiencyLevel": "Advanced",
+  "teaches": [
+    {{- range $i, $e := $skills }}
       {{- if $i }},{{- end }}
       {{- $e | jsonify | safeJS }}
     {{- end }}
