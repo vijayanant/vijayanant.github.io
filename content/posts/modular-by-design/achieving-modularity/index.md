@@ -118,9 +118,13 @@ This isn't just theory. You can apply this thinking today.
 
 For those looking to dive deeper into advanced techniques for identifying secrets and predicting change, including specific heuristics, design patterns, and analytical approaches like Domain-Driven Design, a dedicated "spoke" article will explore these topics in detail.
 
-## Conclusion: The First Step to Being "Modular by Design"
-
 We often think of modularity as an abstract architectural goal. But as we've seen, it can be the result of a concrete, practical technique. By shifting our focus from the *steps in a process* to the *secrets that are likely to change*, we can start building systems that are truly modular.
+
+#### Design is a Prediction
+
+David Parnas wasn't just talking about code; he was talking about the future. Every time you draw a module boundary, you are making a bet on which parts of your system will stay quiet and which will be noisy with change.
+
+Tomorrow, look at your most "annoying" module—the one you have to touch for every single feature request. It likely has no secret; it's probably just a step in a process. Try identifying the actual decision it's supposed to protect. Mastering the small act of hiding one secret is the first step toward building an architecture that doesn't collapse under the weight of its own history.
 
 Now that we have a powerful technique for creating module boundaries, a new question arises: how do we know if we've drawn the lines in the right place? How do we measure the quality of our modules?
 

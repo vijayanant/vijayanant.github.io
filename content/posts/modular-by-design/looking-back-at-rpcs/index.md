@@ -201,7 +201,11 @@ applications that require fast response times.
 
 Knowing the specifics of an RPC system is a must, but understanding its core philosophy is even more critical. What RPCs offer is a powerful **procedural abstraction** that models the world as a set of actions. It's an attempt to make the complex, messy world of distributed systems feel as simple as a familiar function call.
 
-But this raises a crucial question: is modeling the world as a set of actions the only way, or even the best way? What happens if we change our core abstraction? In the final post of our series, we'll explore a contrasting philosophy, REST, which asks us to think not in procedures, but in **entities**.
+#### The Transparency Trap
+
+RPCs succeeded because they were intuitive—they made the complex network feel like a simple function call. But that same "transparency" is what makes them dangerous. It invites us to ignore the physical reality of the network and the architectural boundaries of our modules.
+
+When you use a tool like gRPC today, remember that you aren't just calling a function; you are crossing a border. Don't let the convenience of the tool trick you into building a distributed monolith. In our final post, we’ll look at the alternative: **REST**, and how thinking in entities instead of actions can fundamentally change the physics of your system.
 
 {{< newsletter type="simple" >}}
 

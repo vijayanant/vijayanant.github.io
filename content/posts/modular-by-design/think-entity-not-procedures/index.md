@@ -236,12 +236,13 @@ architectures.
 *   **Pragmatism vs. Purity:** While adhering to all REST constraints (like HATEOAS) is ideal, practical considerations often lead to compromises. Understanding the principles helps make informed trade-offs.
 {{< /summary >}}
 
-It is much harder to build REST system. It is OK to build non-rest systems if
-it helps in any way. It is just a matter of knowing what is and is not REST.
-It is okay to prioritise practicality in certain situations. Understanding
-REST principles helps you make informed decisions. A well-designed API - even
-if it doesn’t adhere to all the ReST constraints- can still be efficient and
-maintainable.
+It is much harder to build REST system. It is OK to build non-rest systems if it helps in any way. It is just a matter of knowing what is and is not REST. It is okay to prioritize practicality in certain situations. Understanding REST principles helps you make informed decisions. A well-designed API - even if it doesn’t adhere to all the ReST constraints- can still be efficient and maintainable.
+
+#### Beyond the Dogma
+
+It is easy to get caught in the "REST vs. RPC" religious war. But as an architect, your job isn't to be a purist; it's to choose the right abstraction for the evolution you expect. 
+
+RPC is for actions; REST is for independent evolution. If you build a REST API but ignore HATEOAS and hardcode every URL, you've just built a slower version of RPC. That's okay—as long as it's a conscious trade-off. The pursuit of "Modular by Design" isn't about finding the perfect pattern; it's about owning the trade-offs that let your system survive the next decade of change.
 
 Our journey is now complete. From the foundational technique of Information Hiding, to the critical metrics of coupling and cohesion, to the long arc of history, and finally, to the competing worldviews of RPC and REST—it all comes back to a single pursuit. Being "Modular by Design" is not about following a dogma, but about consciously and deliberately making the trade-offs that allow our systems to grow and adapt. It is the timeless, essential work of the software architect.
 

@@ -209,6 +209,14 @@ Brand new microservices (or Hexagonal, or Hub-and-Spokes, or..) architecture
 is bound to cause more pain than bring benefits if you are not careful while
 designing your module/service/component.
 
-This history teaches us that while technologies and buzzwords change, the principles of modular design are timeless. To see this in action, our journey continues with a deep dive into two classic, contrasting architectural styles. In the next post, we will analyze Remote Procedure Calls (RPCs) through the lens of modularity we've developed so far.
+This history teaches us that while technologies and buzzwords change, the principles of modular design are timeless. 
+
+#### The More Things Change...
+
+We like to think we're living in a revolution of Microservices and Cloud-Native design. But as we've seen, we are mostly just fighting the same battles our predecessors fought with RPCs and SOAs in the 80s and 90s.
+
+The next time you see a "revolutionary" new architectural pattern, don't look at the buzzwords. Look at how it handles coupling. Look at where it hides its secrets. If you understand the core principles of modularity, you'll realize that most "new" technologies are just old wisdom in new containers. 
+
+To see this in action, our journey continues with a deep dive into two classic, contrasting architectural styles. In the next post, we will analyze Remote Procedure Calls (RPCs) through the lens of modularity we've developed so far.
 
 {{< newsletter type="simple" >}}
