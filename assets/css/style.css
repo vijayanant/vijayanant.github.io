@@ -1475,9 +1475,9 @@ body:not([data-page-kind="home"]) #site-header {
 }
 
 .post-meta-info .post-date-updated {
-    color: var(--primary-color); /* Highlight updated date with primary color */
-    font-weight: 600; /* Make updated date bolder */
-    white-space: nowrap; /* Prevent date from breaking */
+    /* Same styling as publish date - freshness is for SEO, not UI */
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 /*--------------------*
