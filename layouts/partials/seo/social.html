@@ -1,5 +1,6 @@
-{{- $title := .Title | default .Site.Title }}
-{{- $description := .Description | default .Summary | default .Site.Params.description }}
+{{- $title := .Params.seo_title | default .Title }}
+{{- if not .IsHome }}{{ $title = printf "%s | %s" $title site.Title }}{{ end }}
+{{- $description := .Description | default .Summary | default site.Params.description | plainify | truncate 160 }}
 {{- $ogType := "website" }}
 {{- if .IsPage }}
   {{- $ogType = "article" }}
