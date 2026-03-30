@@ -1474,6 +1474,12 @@ body:not([data-page-kind="home"]) #site-header {
     white-space: nowrap; /* Prevent date from breaking */
 }
 
+.post-meta-info .post-date-updated {
+    color: var(--primary-color); /* Highlight updated date with primary color */
+    font-weight: 600; /* Make updated date bolder */
+    white-space: nowrap; /* Prevent date from breaking */
+}
+
 /*--------------------*
     Post Card Category Styles
 *--------------------*/
