@@ -165,9 +165,7 @@ Because that's what abstraction is for. Not just cleanliness but for
 
 ### In the end, duplication is easier to recover from
 
-Bad abstractions are sticky. They spread. They become dependencies.
-
-Duplication? You can always clean it up later.
+Bad abstractions are sticky. They spread. They become dependencies. Duplication? You can always clean it up later. As I’ve argued in [**Bad Code is Not Tech Debt**]({{< ref "/posts/bad-code-is-not-tech-debt" >}}), choosing a temporary mess is often a strategic trade-off, but only if the code remains "refactorable" once the right abstraction earns its place.
 
 {{< quote type="pull" >}}
 **Premature abstractions often turn into leaky abstractions.**  

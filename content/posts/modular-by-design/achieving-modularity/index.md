@@ -128,7 +128,7 @@ Tomorrow, look at your most "annoying" module—the one you have to touch for ev
 
 Now that we have a powerful technique for creating module boundaries, a new question arises: how do we know if we've drawn the lines in the right place? How do we measure the quality of our modules?
 
-In the next post in this series, we'll explore the critical concepts of **coupling and cohesion**, which provide the metrics we need to evaluate our modular design and ensure we're building a system that is built to last.
+In the next post in this series, we'll explore the critical concepts of [**coupling and cohesion**]({{< ref "/posts/modular-by-design/good-coupling-bad-coupling-and-cohesion" >}}), which provide the metrics we need to evaluate our modular design. These metrics will ultimately help us choose between the foundational styles in [**The Architect's Toolbox**]({{< ref "/posts/from-patterns-to-practice/the-architects-toolbox" >}}).
 
 ## Further Reading
 

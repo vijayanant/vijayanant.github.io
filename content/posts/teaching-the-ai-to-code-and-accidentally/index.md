@@ -86,10 +86,8 @@ We're doing them because the AI falls apart without them.
 The AI isn't leveling us up.  
 It's just reminding us what the level always was.
 
-We say we’re coding with AI.
+We say we’re coding with AI. But most days, it feels more like we’re **coaching** it.
 
-But most days, it feels more like we’re **coaching** it.
-
-And in doing that maybe we’re finally coaching ourselves again, too.
+And in doing that maybe we’re finally coaching ourselves again, too. By forcing ourselves to [**drive the AI through TDD**]({{< ref "/posts/driving-ai-code-why-test-driven-development" >}}) and clear architectural intent, we are fixing the [**real bottleneck**]({{< ref "/posts/the-real-bottleneck-isnt-code" >}}) of software development: shared understanding.
 
 {{< newsletter type="simple" >}}

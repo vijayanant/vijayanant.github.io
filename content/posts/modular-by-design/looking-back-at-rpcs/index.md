@@ -108,7 +108,7 @@ its costs, mostly in programming complexity. The RPC calls may now need to use
 locks and other synchronisation primitives to ensure their correct operation.
 
 {{< note type="info" title="RPCs and Modularity" >}}
-From the perspective of modularity, RPC's procedural abstraction can introduce challenges. Clients become tightly coupled to specific remote procedures, making it harder to change the server's internal implementation without affecting clients. This can hinder information hiding, as the client often needs to know details about the remote procedure's signature and behavior. The goal of making remote calls "transparent" can inadvertently obscure the architectural boundaries, leading to distributed spaghetti code if not managed carefully.
+From the perspective of modularity, RPC's procedural abstraction can introduce challenges. Clients become tightly coupled to specific remote procedures, making it harder to change the server's internal implementation without affecting clients. This can hinder information hiding, as the client often needs to know details about the remote procedure's signature and behavior. The goal of making remote calls "transparent" can inadvertently obscure the architectural boundaries, leading to distributed spaghetti code if not managed carefully with [**low coupling and high cohesion**]({{< ref "/posts/modular-by-design/good-coupling-bad-coupling-and-cohesion" >}}).
 {{< /note >}}
 
 ## Naming, Registry, and Discovery
@@ -205,7 +205,7 @@ Knowing the specifics of an RPC system is a must, but understanding its core phi
 
 RPCs succeeded because they were intuitive—they made the complex network feel like a simple function call. But that same "transparency" is what makes them dangerous. It invites us to ignore the physical reality of the network and the architectural boundaries of our modules.
 
-When you use a tool like gRPC today, remember that you aren't just calling a function; you are crossing a border. Don't let the convenience of the tool trick you into building a distributed monolith. In our final post, we’ll look at the alternative: **REST**, and how thinking in entities instead of actions can fundamentally change the physics of your system.
+When you use a tool like gRPC today, remember that you aren't just calling a function; you are crossing a border. Don't let the convenience of the tool trick you into building a distributed monolith. In our final post, we’ll look at the alternative: [**Think Entities, Not Procedures**]({{< ref "/posts/modular-by-design/think-entity-not-procedures" >}}), and how thinking in entities instead of actions can fundamentally change the physics of your system.
 
 {{< newsletter type="simple" >}}
 

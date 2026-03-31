@@ -51,12 +51,9 @@ Call it _team resonance_ — when everyone’s wavelength aligns.
 The enemy? **Resonance drift** — when people slowly slide out of sync, even
 while shipping fast.
 
-Code faster if you want.  
-But if you're not building the same thing in your minds, you'll spend even
-more time fixing what shouldn't have broken.
+Code faster if you want. But if you're not building the same thing in your minds, you'll spend even more time fixing what shouldn't have broken. This is why the typical [**System Design Interview**]({{< ref "/posts/agile-in-theory-waterfall-in-interviews" >}}) often fails—it tests for the "correct" diagram rather than the ability to build shared understanding.
 
 * * *
-
 {{< summary >}}
 
 * AI makes code generation cheap
