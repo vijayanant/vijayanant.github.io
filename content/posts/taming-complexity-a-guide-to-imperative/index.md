@@ -151,10 +151,12 @@ can then interact with each other and thereby update their internal state when
 something in the system changes. This corresponds to how we often perceive the
 world.
 
-* The**functional** paradigms take a different approach, modelling system
-behaviour using pure functions entirely. This aligns with the mathematical
-concept that values are immutable, and all system changes are essentially the
-application of functions.
-{{< /summary >}}
+* The**functional** paradigms take a different approach, modelling system behaviour using pure functions entirely. This aligns with the mathematical concept that values are immutable, and all system changes are essentially the application of functions.
+
+#### Choosing your Philosophy
+
+Complexity is the only constant in software. Whether you choose the state-management of OO or the mathematical purity of FP, you are ultimately deciding which type of complexity you are willing to manage.
+
+There is no "perfect" paradigm. The best engineers are those who understand the trade-offs of each and can choose the right philosophy for the problem at hand. Complexity isn't something you defeat; it is something you negotiate with every single day.
 
 {{< newsletter type="simple" >}}

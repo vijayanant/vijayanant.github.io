@@ -153,10 +153,13 @@ eval (IsZero e) = 0 == eval e
 eval (If b e1 e2) = if eval b then eval e1 else eval e2
 ```
 
-This version of `eval` is complete unlike the previously implemented one. If
-we are evaluating an expression, the expression is guaranteed to be valid and
-no failure cases are possible. Compile time guarantee is always better than a
-runtime check.
+This version of `eval` is complete unlike the previously implemented one. If we are evaluating an expression, the expression is guaranteed to be valid and no failure cases are possible. Compile time guarantee is always better than a runtime check.
+
+#### Moving the Goalposts
+
+Type-level programming can feel like a climb up a steep mountain. But every check you move from runtime to compile-time is a bug that simply cannot exist in production. 
+
+You don't have to rewrite your entire system in GADTs tomorrow. Start by finding one "impossible" state in your application and see if you can make it unrepresentable in your types. It is a small victory for your future self, who will never have to debug that specific failure again.
 
 {{< newsletter type="simple" >}}
 </interactive>

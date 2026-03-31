@@ -201,9 +201,12 @@ As a beginner, sticking to these three guidelines/principles will help a lot.
 Of course, there is much more to FP, but no need to hurry, it will come to you
 naturally as you write more functional code.
 
-There is another lesson here for us - using a language that promotes
-functional style of programming (like Haskell, Scala, Clojure, etc.) does not
-automatically guarantee simple and maintainable code. If not careful, even FP
-cannot save us from ugly and unmaintainable code.
+There is another lesson here for us: using a language that promotes functional style of programming (like Haskell, Scala, Clojure, etc.) does not automatically guarantee simple and maintainable code. If not careful, even FP cannot save us from ugly and unmaintainable code.
+
+#### The Art of Unlearning
+
+The hardest part of the functional journey isn't learning recursion; it is unlearning the habit of thinking in steps and mutable state. You will write "ugly" FP code for a while, and that is okay.
+
+Focus on one small abstraction at a time. Every time you replace a loop with a map or a conditional with a pattern match, you are rewiring your brain. FP won't automatically make your code perfect, but it will give you a better set of tools to reason about why it is broken.
 
 {{< newsletter type="simple" >}}

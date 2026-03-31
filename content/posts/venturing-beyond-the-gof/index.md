@@ -195,4 +195,10 @@ See the forces.
 See the shape.
 The right pattern, named or not, will follow.
 
+#### Seeing the Forces
+
+Next time you are stuck on a design, stop looking for a "named" solution. List the forces instead: *Is the problem that things are changing too fast (OCP)? Is it that I have too many combinations of types (Visitor)?*
+
+Once you name the forces, the right pattern, named or not, will reveal itself. Patterns are a grammar, not a cage. Use them to speak, not to restrict your thinking.
+
 {{< newsletter type="simple" >}}

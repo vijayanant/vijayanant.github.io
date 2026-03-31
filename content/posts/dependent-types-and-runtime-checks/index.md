@@ -241,8 +241,12 @@ one we meant - the type "GBP" or the string value "GBP".
 
 ## The Beginning
 
-There is much more to depended types than what we have seen here. This is to
-show readers that dependent types can be useful in day-to-day programming as
-well.
+There is much more to depended types than what we have seen here. This is to show readers that dependent types can be useful in day-to-day programming as well.
+
+#### Moving the Goalposts
+
+Type-level programming can feel like a climb up a steep mountain. But every check you move from runtime to compile-time is a bug that simply cannot exist in production. 
+
+You don't have to rewrite your entire system in dependent types tomorrow. Start by finding one "impossible" state in your application and see if you can make it unrepresentable in your types. It is a small victory for your future self, who will never have to debug that specific failure again.
 
 {{< newsletter type="simple" >}}
