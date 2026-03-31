@@ -15,8 +15,11 @@ level: "Advanced"
 ---
 
 One of the main advantages of [static type checking](https://en.wikipedia.org/wiki/Type_system#Static_type_checking) is to catch
-errors before we deploy code to production.  [Dependent Types](https://en.wikipedia.org/wiki/Dependent_type) allow us to eliminate some checks
-that are usually done at run time. Through a simple example, this article demonstrates how dependent types can be applied in everyday programming.
+errors before we deploy code to production.  [Dependent Types](https://en.wikipedia.org/wiki/Dependent_type) allow us to eliminate some checks that are usually done at run time. Together with [**Higher Ranked Types**]({{< ref "/posts/higher-ranked-types" >}}) and [**GADTs**]({{< ref "/posts/gadts-to-eliminate-runtime-checks" >}}), they represent the pinnacle of Haskell's compile-time safety.
+
+...
+
+Through a simple example, this article demonstrates how dependent types can be applied in everyday programming.
 
 {{< figure
     src="runtime-checks.jpg"

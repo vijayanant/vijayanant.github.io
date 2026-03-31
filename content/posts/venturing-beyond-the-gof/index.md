@@ -20,7 +20,7 @@ level: "Intermediate"
 
 The Gang of Four's "Design Patterns" book gave us 23 patterns. For a generation of developers, these patterns became a shared language for object-oriented design. But somewhere along the way, the industry made a mistake: we behaved as if the list was the value. We learned the vocabulary and ignored the grammar.
 
-The real contribution of the GoF was not the catalog itself, but the *discipline* of pattern thinking that it introduced. A true pattern is not just a code structure; it is a solution in context, an answer to a set of competing forces. It comes with trade-offs, a discussion of participants, and an understanding of when it applies.
+The real contribution of the GoF was not the catalog itself, but the *discipline* of pattern thinking that it introduced. A true pattern is not just a code structure; it is a solution in context, an answer to a set of competing forces. It comes with trade-offs, a discussion of participants, and an understanding of when it applies. This is why [**Design Principles are the North Star**]({{< ref "/posts/design-principles-and-design-patterns" >}}) that guide us toward the right pattern.
 
 This post is about reclaiming that grammar. It's about learning to see the underlying shape of a problem and reaching for the right structural response, whether it has a famous name or not. The goal isn't to memorize more patterns; the goal is to get better at seeing.
 

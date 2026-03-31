@@ -23,7 +23,7 @@ The way we build our softwares have changed over the years. But the core
 qualities of good software are still the same - Modular, extensible, reusable,
 composable, etc. And we all have heard of the software principles. Five of the
 major principles of software design, popularly knows as SOLID principles, are
-mostly talked about in the OOP space and not much in the FP space. Why so?
+mostly talked about in the OOP space and not much in the FP space. Why so? I've discussed the [**relationship between principles and patterns**]({{< ref "/posts/design-principles-and-design-patterns" >}}) previously, and many of those same goals drive the [**design discipline of TDD**]({{< ref "/posts/tdd-what-most-articles-miss" >}}).
 {{< /summary >}}
 
 **SRP** , together with **ISP** promotes interfaces with fewer methods, and if

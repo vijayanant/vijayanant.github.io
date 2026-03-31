@@ -26,9 +26,7 @@ and even boost test coverage. And yes, it does all those things.
 
 {{< note type="info" >}}
 But if that's all you take away, you're missing the real power. TDD isn't just
-a testing technique. It's fundamentally a **design discipline** that deepens
-your understanding of the **problem and business domain** as it shapes your
-code from the ground up.
+TDD isn't just a testing technique. It's fundamentally a **design discipline** that deepens your understanding of the **problem and business domain** as it shapes your code from the ground up. This discipline is what prevents technical debt from becoming [**Bad Code**]({{< ref "/posts/bad-code-is-not-tech-debt" >}}), and it has become even more vital in the [**age of AI-generated code**]({{< ref "/posts/driving-ai-code-why-test-driven-development" >}}).
 {{< /note >}}
 
 This post isn't about the basics you find everywhere. We're **uncovering** the

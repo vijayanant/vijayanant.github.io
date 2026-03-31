@@ -17,7 +17,7 @@ level: "Advanced"
 Type system help programmers ensure that the software they write behave
 correctly. They detect errors and also serve as documentation. A good type
 system allow abstracting domain specific concepts. Haskell’s much appreciated
-ADTs though powerful, is still lacking in few aspects. GADTs fill that gap.
+ADTs though powerful, is still lacking in few aspects. GADTs fill that gap, offering a bridge toward the even more powerful [**Dependent Types**]({{< ref "/posts/dependent-types-and-runtime-checks" >}}). Together with [**Higher Ranked Types**]({{< ref "/posts/higher-ranked-types" >}}), they form the bedrock of Haskell's advanced type system.
 
 This article explains GADTs with simple examples.
 
