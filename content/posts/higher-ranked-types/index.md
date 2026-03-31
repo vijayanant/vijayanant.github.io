@@ -128,12 +128,24 @@ goodfoo :: (forall a. Show a => a -> a) -> String
 goodfoo g = (show (g 1)) ++ (g "Works!")
 ```
 
-Higher Ranked Types make polymorphic Haskell functions _first class_.
+Higher Ranked Types make polymorphic Haskell functions _first class_. This is a
+step toward the advanced type-level guarantees found in
+[**GADTs**]({{< ref "/posts/gadts-to-eliminate-runtime-checks" >}}) and
+[**Dependent Types**]({{< ref "/posts/dependent-types-and-runtime-checks" >}}),
+where the type system itself begins to enforce business logic.
 
 #### The Freedom of the 'Forall'
 
-Higher-ranked types can feel like an academic curiosity until you hit a problem where you need a function to stay "generic" even after it's been passed around. It’s about moving the power of decision-making from the function author to the function user.
+Higher-ranked types can feel like an academic curiosity until you hit a problem
+where you need a function to stay "generic" even after it's been passed around.
+It’s about moving the power of decision-making from the function author to the
+function user.
 
-If you're struggling to grasp `RankNTypes`, don't get lost in the N-levels. Just remember the core intent: *Who gets to decide what 'a' is?* In a standard polymorphic function, the caller decides. In a higher-ranked function, the function itself gets to decide, multiple times, with different types. It's a subtle but profound shift that unlocks the kind of abstractions that make Haskell feel like magic once they click.
+If you're struggling to grasp `RankNTypes`, don't get lost in the N-levels.
+Just remember the core intent: _Who gets to decide what 'a' is?_ In a standard
+polymorphic function, the caller decides. In a higher-ranked function, the
+function itself gets to decide, multiple times, with different types. It's
+a subtle but profound shift that unlocks the kind of abstractions that make
+Haskell feel like magic once they click.
 
 {{< newsletter type="simple" >}}

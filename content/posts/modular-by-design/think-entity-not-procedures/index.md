@@ -15,9 +15,18 @@ pillar: system
 pillar_role: deep_dive
 level: "Advanced"
 ---
-In the previous post, we analyzed the world of Remote Procedure Calls, an architectural style built on a powerful **procedural abstraction**. This philosophy of modeling the world as a set of actions has a long and rich history, from OOP counterparts like [CORBA](http://corba.org), Microsoft’s [DCOM](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dcom/4a893f3d-bd29-48cd-9f43-d9777a4415b0), and [Java RMI](https://docs.oracle.com/javase/tutorial/rmi/index.html), to modern reincarnations like Google’s **[gRPC](https://grpc.io/)** and **[Apache Thrift](https://thrift.apache.org/)**.
+In the previous post, we analyzed the world of Remote Procedure Calls, an
+architectural style built on a powerful **procedural abstraction**. This
+philosophy of modeling the world as a set of actions has a long and rich
+history, from OOP counterparts like [CORBA](http://corba.org), Microsoft’s
+[DCOM](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dcom/4a893f3d-bd29-48cd-9f43-d9777a4415b0),
+and [Java RMI](https://docs.oracle.com/javase/tutorial/rmi/index.html), to modern reincarnations like Google’s **[gRPC](https://grpc.io/)** and **[Apache Thrift](https://thrift.apache.org/)**.
 
-Now, in the final chapter of our "Modular by Design" series, we will explore a fundamentally different philosophy: Representational State Transfer (REST). We will see how its **entity abstraction** offers another path to modularity and discover how the way we choose to model the world is one of the most critical architectural decisions we can make.
+Now, in the final chapter of our "Modular by Design" series, we will explore a
+fundamentally different philosophy: Representational State Transfer (REST). We
+will see how its **entity abstraction** offers another path to modularity and
+discover how the way we choose to model the world is one of the most critical
+architectural decisions we can make.
 
 All these frameworks follow the familiar client/server architecture in which a
 client invokes a procedure that executes on the server. Arguments can be
@@ -41,7 +50,11 @@ many of the stuff between the client and the server. By relying on XML and
 HTTP, the client and the server need not be coded in the same language or even
 in the same style of language.
 
-{{< figure src="think-entity-not-procedures-1.png" alt="Diagram showing the evolution from RPC to Web Services, with XML-RPC and SOAP as intermediate steps." caption="The evolutionary path from RPC to modern Web Services." >}}
+{{< figure
+  src="think-entity-not-procedures-1.png"
+  alt="Diagram showing the evolution from RPC to Web Services, with XML-RPC and SOAP as intermediate steps."
+  caption="The evolutionary path from RPC to modern Web Services."
+>}}
 
 ## Evolve Independently And Incrementally
 
@@ -66,7 +79,11 @@ The success of the world-wide-web has led to an alternative model for APIs —
 **Representational State Transfer** (ReST). ReST embodies the design
 principles that underpin HTTP and the world-wide-web itself.
 
-{{< figure src="think-entity-not-procedures-2.png" alt="Diagram illustrating the World Wide Web (WWW) approach to APIs, showing a client interacting with a server via HTTP." caption="The WWW approach: a client interacts with a server using the standardized HTTP API." >}}
+{{< figure
+  src="think-entity-not-procedures-2.png"
+  alt="Diagram illustrating the World Wide Web (WWW) approach to APIs, showing a client interacting with a server via HTTP."
+  caption="The WWW approach: a client interacts with a server using the standardized HTTP API."
+>}}
 
 The ReST model is the perfect inverse of the RPC model. In the RPC model, the
 addressable units are procedures, and the entities of the problem domain are
@@ -83,7 +100,14 @@ WWW exposes exactly the same API - the HTTP. The web browsers only need to
 know a single API to navigate the entire web.
 
 {{< note type="info" title="REST and Modularity" >}}
-The power of REST, particularly its reliance on HTTP's generic interface, lies in its ability to foster extreme loose coupling. Unlike RPC, where clients often need specific knowledge of remote procedures, a REST client primarily interacts with generic resources via standardized verbs (GET, POST, PUT, DELETE). This means the client is less coupled to the server's internal implementation details, allowing both client and server to evolve more independently—a direct application of the loose coupling and information hiding principles we've discussed.
+The power of REST, particularly its reliance on HTTP's generic interface, lies
+in its ability to foster extreme loose coupling. Unlike RPC, where clients
+often need specific knowledge of remote procedures, a REST client primarily
+interacts with generic resources via standardized verbs (GET, POST, PUT,
+DELETE). This means the client is less coupled to the server's internal
+implementation details, allowing both client and server to evolve more
+independently—a direct application of the loose coupling and information
+hiding principles we've discussed.
 {{< /note >}}
 
 Since HTTP is already so widely known, there’s a lot less to learn about a new
@@ -128,10 +152,10 @@ recipient.
 
 ## ReST And Loose Coupling
 
-In a system where [clients are de-coupled from the server]({{< ref "posts/modular-by-design/good-coupling-bad-coupling-and-cohesion" >}}), clients will in general be fault tolerant and thus robust. In such
-a system changes done on the server will not affect the client as they adapt
-to the changes; while a tightly coupled client will fail to process further
-requests. We should know that for any two systems to be completely de-coupled
+In a system where [**clients are de-coupled from the server**]({{< ref "posts/modular-by-design/good-coupling-bad-coupling-and-cohesion" >}}),
+clients will in general be fault tolerant and thus robust. In such a system
+changes done on the server will not affect the client as they adapt to the
+changes. We should know that for any two systems to be completely de-coupled
 they must not communicate with each other at all! The goal is to minimise the
 dependency as much as possible.
 
@@ -230,20 +254,45 @@ evolution and bears some resemblance to the limitations we saw with RPC-style
 architectures.
 
 {{< summary title="Key Takeaways from REST" >}}
-*   **Entity Abstraction:** REST models the world as resources (entities) rather than procedures, promoting a different architectural worldview.
-*   **Loose Coupling via Generic Interface:** HTTP's standardized verbs and uniform interface enable extreme loose coupling, allowing clients and servers to evolve independently.
-*   **HATEOAS for Evolvable APIs:** Hypermedia As The Engine Of Application State (HATEOAS) is a core REST principle that allows servers to guide clients through available actions, further reducing coupling.
-*   **Pragmatism vs. Purity:** While adhering to all REST constraints (like HATEOAS) is ideal, practical considerations often lead to compromises. Understanding the principles helps make informed trade-offs.
+
+* **Entity Abstraction:** REST models the world as resources (entities) rather
+than procedures, promoting a different architectural worldview.
+* **Loose Coupling via Generic Interface:** HTTP's standardized verbs and
+uniform interface enable extreme loose coupling, allowing clients and servers
+to evolve independently.
+* **HATEOAS for Evolvable APIs:** Hypermedia As The Engine Of Application State
+(HATEOAS) is a core REST principle that allows servers to guide clients through
+available actions, further reducing coupling.
+* **Pragmatism vs. Purity:** While adhering to all REST constraints(like
+HATEOAS) is ideal, practical considerations often lead to compromises.
+Understanding the principles helps make informed trade-offs.
 {{< /summary >}}
 
-It is much harder to build REST system. It is OK to build non-rest systems if it helps in any way. It is just a matter of knowing what is and is not REST. It is okay to prioritize practicality in certain situations. Understanding REST principles helps you make informed decisions. A well-designed API - even if it doesn’t adhere to all the ReST constraints- can still be efficient and maintainable.
+It is much harder to build REST system. It is OK to build non-rest systems if
+it helps in any way. It is just a matter of knowing what is and is not REST.
+It is okay to prioritize practicality in certain situations. Understanding REST
+principles helps you make informed decisions. A well-designed API - even if it
+doesn’t adhere to all the ReST constraints- can still be efficient and
+maintainable.
 
 #### Beyond the Dogma
 
-It is easy to get caught in the "REST vs. RPC" religious war. But as an architect, your job isn't to be a purist; it's to choose the right abstraction for the evolution you expect. 
+It is easy to get caught in the "REST vs. RPC" religious war. But as an
+architect, your job isn't to be a purist; it's to choose the right abstraction
+for the evolution you expect.
 
-RPC is for actions; REST is for independent evolution. If you build a REST API but ignore HATEOAS and hardcode every URL, you've just built a slower version of RPC. That's okay—as long as it's a conscious trade-off. The pursuit of "Modular by Design" isn't about finding the perfect pattern; it's about owning the trade-offs that let your system survive the next decade of change.
+RPC is for actions; REST is for independent evolution. If you build a REST API
+but ignore HATEOAS and hardcode every URL, you've just built a slower version
+of RPC. That's okay—as long as it's a conscious trade-off. The pursuit of
+"Modular by Design" isn't about finding the perfect pattern; it's about owning
+the trade-offs that let your system survive the next decade of change.
 
-Our journey is now complete. From the foundational technique of Information Hiding, to the critical metrics of coupling and cohesion, to the long arc of history, and finally, to the competing worldviews of RPC and REST—it all comes back to a single pursuit. Being "Modular by Design" is not about following a dogma, but about consciously and deliberately making the trade-offs that allow our systems to grow and adapt. It is the timeless, essential work of the software architect.
+Our journey is now complete. From the foundational technique of Information
+Hiding, to the critical metrics of coupling and cohesion, to the long arc of
+history, and finally, to the competing worldviews of RPC and REST—it all comes
+back to a single pursuit. Being "Modular by Design" is not about following a
+dogma, but about consciously and deliberately making the trade-offs that allow
+our systems to grow and adapt. It is the timeless, essential work of the
+software architect.
 
 {{< newsletter type="simple" >}}

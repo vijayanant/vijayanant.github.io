@@ -92,11 +92,10 @@ dynamically checked language.
 
 ## Programming Paradigm
 
-I don’t consider [programming
-paradigm]({{< ref "posts/taming-complexity-a-guide-to-imperative" >}}) to be a property of a programming language, it
-is rather something that a language promotes. This is evident in Python which
-provides many constructs to supports procedural, object oriented, and
-functional style of programming.
+I don’t consider [**programming paradigm**]({{< ref "posts/taming-complexity-a-guide-to-imperative" >}})
+to be a property of a programming language, it is rather something that a
+language promotes. This is evident in Python which provides many constructs to
+supports procedural, object oriented, and functional style of programming.
 
 However, it is definitely possible that some problems and/or their solutions
 are better expressed in one style than in other.

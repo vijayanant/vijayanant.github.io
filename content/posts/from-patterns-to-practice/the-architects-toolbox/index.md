@@ -69,7 +69,7 @@ But this introduces a "microservice tax" that is often ignored until it’s too 
 Even worse, this style is a poor fit for your **Time-to-Market** goal. The upfront complexity of creating a distributed system makes a three-month deadline nearly impossible. It also scores lower on **Reliability**. A single purchase might now require synchronous calls between three services, introducing "temporal coupling" where a failure in one service brings down the entire chain.
 
 {{< note type="info" title="The Distributed Monolith Trap" >}}
-If you build microservices but they all share a single database and use synchronous calls for everything, you have not built microservices. You have built a "distributed monolith"—all the operational pain of microservices with none of the autonomy. I explore this in detail in the [**Secret to Modular, Deployable Architecture**]({{< ref "/posts/architectural-quantum-modular-deployable-architecture" >}}).
+If you build microservices but they all share a single database and use synchronous calls for everything, you have not built microservices. You have built a "distributed monolith"—all the operational pain of microservices with none of the autonomy. This happens when you fail to identify your true [**Architectural Quanta**]({{< ref "/posts/architectural-quantum-modular-deployable-architecture" >}}), the smallest units of independent deployment.
 {{< /note >}}
 
 ## The Event-Driven Style
