@@ -91,7 +91,7 @@ Choosing an architecture is not about being "right." It is about being justifiab
 
 A weighted matrix isn't a magic eight-ball; it's a mirror. It reflects back the priorities you and your leadership team *say* you have. If the "mathematical winner" feels wrong, it's usually because there's a hidden priority you haven't named yet.
 
-Use these tools to make your reasoning transparent. It is much easier to defend a decision when you can show the math behind the trade-offs. But remember: a spreadsheet is still just a hypothesis. In our next post, we’ll move from the matrix to the IDE to run an **Architectural Spike** and prove our assumptions in the real world.
+Use these tools to make your reasoning transparent. It is much easier to defend a decision when you can show the math behind the trade-offs. But remember: a spreadsheet is still just a hypothesis. In our next post, we’ll move from the matrix to the IDE to run an [**Architectural Spike**]({{< ref "/posts/from-patterns-to-practice/the-spike" >}}) and prove our assumptions in the real world. Finally, we'll ensure the "Why" survives through [**Documentation**]({{< ref "/posts/from-patterns-to-practice/documenting-your-decision" >}}).
 
 ## Further Reading
 

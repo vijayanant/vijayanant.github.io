@@ -35,8 +35,7 @@ need to make other coordinated changes in other parts of the codebase. It is
 so much better if the related changes were local and not in an seemingly
 unrelated part.
 
-We want related code to be close together and no unintended consequences
-elsewhere. This is [Coupling and Cohesion]({{< ref "posts/modular-by-design/good-coupling-bad-coupling-and-cohesion/" >}}) in action. This is the basis for good **modular design**.
+We want related code to be close together and no unintended consequences elsewhere. This is [**Coupling and Cohesion**]({{< ref "/posts/modular-by-design/good-coupling-bad-coupling-and-cohesion" >}}) in action. This is the basis for good **modular design**.
 Coupling describes how modules in software depend on each other, while
 cohesion tells you how closely related functions are within a module. Our aim,
 as software developers, is to achieve **low coupling** (independent modules)
@@ -217,6 +216,6 @@ We like to think we're living in a revolution of Microservices and Cloud-Native 
 
 The next time you see a "revolutionary" new architectural pattern, don't look at the buzzwords. Look at how it handles coupling. Look at where it hides its secrets. If you understand the core principles of modularity, you'll realize that most "new" technologies are just old wisdom in new containers. 
 
-To see this in action, our journey continues with a deep dive into two classic, contrasting architectural styles. In the next post, we will analyze Remote Procedure Calls (RPCs) through the lens of modularity we've developed so far.
+To see this in action, our journey continues with a deep dive into two classic, contrasting architectural styles. In the next post, we will analyze Remote Procedure Calls (RPCs) through the lens of modularity we've developed so far. In our final post, we’ll look at the alternative: [**Think Entities, Not Procedures**]({{< ref "/posts/modular-by-design/think-entity-not-procedures" >}}), and how thinking in entities instead of actions can fundamentally change the physics of your system.
 
 {{< newsletter type="simple" >}}

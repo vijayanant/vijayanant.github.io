@@ -53,7 +53,7 @@ Your role now is to guide the system through these new challenges. Here are the 
 
 ### Guiding Evolution (The Unexpected Feature)
 
-Your architecture must be able to evolve. When a major new feature like live-streaming comes along, you run the same decision-making process again, but with a critical new constraint: the existing system. Your job is to guide this evolution, making sure it's a conscious choice, not an accident.
+Your architecture must be able to evolve. When a major new feature like live-streaming comes along, you run the same [**decision-making process**]({{< ref "/posts/from-patterns-to-practice/the-decision-engine" >}}) again, but with a critical new constraint: the existing system. Your job is to guide this evolution, making sure it's a conscious choice, not an accident.
 
 ### Governance is a dirty word
 
@@ -98,5 +98,8 @@ Join me for the next chapter: [**Codifying Your Architecture**]({{< ref "/series
 
 * [***Building Evolutionary Architectures***](https://www.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/) by Neal Ford, Rebecca Parsons, and Patrick Kua. The definitive guide to creating architectures that can adapt to change, and the origin of the "Architectural Fitness Function" concept.
 * My take on technical debt: [**Bad Code is not Tech Debt**](/posts/bad-code-is-not-tech-debt/). This post argues that not all bad code is technical debt and explores the nuances of this common misconception.
+
+{{< newsletter type="simple" >}}
+and explores the nuances of this common misconception.
 
 {{< newsletter type="simple" >}}
