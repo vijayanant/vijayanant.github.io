@@ -1,19 +1,17 @@
 {{ define "main" }}
-{{ $workshop := .Page.Params.workshop }}
-{{ $workshopData := index .Site.Data.workshops $workshop }}
 <section id="workshop-detail">
     <div class="container">
-        <h1 class="section-title">{{ $workshopData.title }}</h1>
+        <h1 class="section-title">{{ .Title }}</h1>
         <div class="workshop-content">
             <div class="workshop-section">
                 <h2 class="workshop-subtitle">Workshop Overview</h2>
-                <p>{{ $workshopData.overview }}</p>
+                <p>{{ .Params.overview }}</p>
             </div>
 
             <div class="workshop-section">
                 <h2 class="workshop-subtitle">Key Takeaways</h2>
                 <ul class="syllabus-list">
-                    {{ range $workshopData.key_takeaways }}
+                    {{ range .Params.key_takeaways }}
                     <li>
                         {{ partial "icons/check-circle.html" . }}
                         <span>{{ . }}</span>
@@ -24,7 +22,7 @@
 
             <div class="workshop-section">
                 <h2 class="workshop-subtitle">Syllabus</h2>
-                {{ range $workshopData.syllabus }}
+                {{ range .Params.syllabus }}
                 <div class="syllabus-item">
                     <h3 class="syllabus-title">{{ .title }}</h3>
                     <p>{{ .description }}</p>
@@ -35,7 +33,7 @@
             <div class="workshop-section">
                 <h2 class="workshop-subtitle">Target Audience</h2>
                 <ul class="audience-list">
-                    {{ range $workshopData.target_audience }}
+                    {{ range .Params.target_audience }}
                     <li>
                         {{ partial "icons/users.html" . }}
                         <span>{{ . }}</span>
@@ -46,13 +44,13 @@
 
             <div class="workshop-section">
                 <h2 class="workshop-subtitle">Format</h2>
-                <p>{{ $workshopData.format }}</p>
+                <p>{{ .Params.format }}</p>
             </div>
 
             <div class="workshop-section interested-section">
                 <h2 class="workshop-subtitle">Interested?</h2>
                 <p>If you're interested in a private workshop for your team, please get in touch to discuss your needs and how I can help.</p>
-                <a href="{{ $workshopData.interested_cta.link }}" class="button button-primary">{{ $workshopData.interested_cta.text }}</a>
+                <a href="{{ .Params.interested_cta.link }}" class="button button-primary">{{ .Params.interested_cta.text }}</a>
             </div>
         </div>
     </div>

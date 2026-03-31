@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{ $url := .Permalink }}
+  {{ if .Params.links }}{{ $url = (index .Params.links 0).url }}{{ end }}
+  <title>Redirecting...</title>
+  <link rel="canonical" href="{{ $url }}">
+  <meta http-equiv="refresh" content="0; url={{ $url }}">
+</head>
+<body>
+  <p>Redirecting to <a href="{{ $url }}">{{ $url }}</a>...</p>
+</body>
+</html>

@@ -1,8 +1,9 @@
 <section id="speaking" class="speaking-section">
     <div class="container">
-        <h2 class="section-title">{{ .Site.Data.sections.speaking.title }}</h2>
+        <h2 class="section-title">Selected Talks</h2>
         <div class="blog-grid">
-            {{ range .Site.Data.sections.speaking.items }}
+            {{ $talks := where .Site.RegularPages "Type" "speaking" }}
+            {{ range $talks.ByDate.Reverse }}
                 {{ partial "data-card.html" . }}
             {{ end }}
         </div>

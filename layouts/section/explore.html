@@ -25,10 +25,10 @@
                     <p class="pillar-description">{{ $pillar.description }}</p>
                 </div>
 
-                {{ $pillar_posts := where $.Site.RegularPages "Params.pillar" "==" $key }}
+                {{ $pillar_pages := where $.Site.RegularPages "Params.pillar" "==" $key }}
 
-                <!-- 1. Foundational -->
-                {{ $foundational := where $pillar_posts "Params.pillar_role" "==" "foundational" }}
+                <!-- 1. Foundational (Blog) -->
+                {{ $foundational := where (where $pillar_pages "Section" "posts") "Params.pillar_role" "==" "foundational" }}
                 {{ if $foundational }}
                 <div class="pillar-group">
                     <h3 class="group-label">Foundations</h3>
@@ -48,8 +48,50 @@
                 </div>
                 {{ end }}
 
-                <!-- 2. Deep Dives -->
-                {{ $deep_dives := where $pillar_posts "Params.pillar_role" "==" "deep_dive" }}
+                <!-- 2. Workshops -->
+                {{ $workshops := where $pillar_pages "Section" "workshops" }}
+                {{ if $workshops }}
+                <div class="pillar-group">
+                    <h3 class="group-label">Workshops</h3>
+                    <ul class="dense-list">
+                        {{ range $workshops }}
+                        <li>
+                            <a href="{{ .Permalink }}" class="list-link">
+                                <div class="link-main">
+                                    <span class="link-title">{{ .Title }}</span>
+                                    <span class="series-tag">Service</span>
+                                </div>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+
+                <!-- 3. Talks -->
+                {{ $talks := where $pillar_pages "Type" "speaking" }}
+                {{ if $talks }}
+                <div class="pillar-group">
+                    <h3 class="group-label">Selected Talks</h3>
+                    <ul class="dense-list">
+                        {{ range $talks.ByDate.Reverse }}
+                        {{ $primaryLink := .Permalink }}
+                        {{ if .Params.links }}{{ $primaryLink = (index .Params.links 0).url }}{{ end }}
+                        <li>
+                            <a href="{{ $primaryLink | relURL }}" class="list-link" {{ if (strings.HasPrefix $primaryLink "http") }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                                <div class="link-main">
+                                    <span class="link-title">{{ .Title }}</span>
+                                    <span class="series-tag">Talk</span>
+                                </div>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+
+                <!-- 4. Deep Dives (Blog) -->
+                {{ $deep_dives := where (where $pillar_pages "Section" "posts") "Params.pillar_role" "==" "deep_dive" }}
                 {{ if $deep_dives }}
                 <div class="pillar-group">
                     <h3 class="group-label">Deep Dives <span class="group-count">{{ len $deep_dives }}</span></h3>
@@ -71,8 +113,8 @@
                 </div>
                 {{ end }}
 
-                <!-- 3. Essays -->
-                {{ $essays := where $pillar_posts "Params.pillar_role" "==" "essay" }}
+                <!-- 5. Essays (Blog) -->
+                {{ $essays := where (where $pillar_pages "Section" "posts") "Params.pillar_role" "==" "essay" }}
                 {{ if $essays }}
                 <div class="pillar-group">
                     <h3 class="group-label">Essays <span class="group-count">{{ len $essays }}</span></h3>

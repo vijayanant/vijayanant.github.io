@@ -1,9 +1,10 @@
 <section id="workshops">
     <div class="container">
-        <h2 class="section-title">{{ .Site.Data.sections.workshops.title }}</h2>
-        <p class="section-intro">{{ .Site.Data.sections.workshops.intro | markdownify }}</p>
+        <h2 class="section-title">Corporate Training & Workshops</h2>
+        <p class="section-intro">I help teams bridge the gap between theory and practice.</p>
         <div class="blog-grid">
-            {{ range .Site.Data.sections.workshops.items }}
+            {{ $workshops := where .Site.RegularPages "Section" "workshops" }}
+            {{ range $workshops }}
                 {{ partial "data-card.html" . }}
             {{ end }}
         </div>

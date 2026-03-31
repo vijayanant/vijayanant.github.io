@@ -1,5 +1,38 @@
 ---
-title: Pragmatic Tech Leadership
-layout: workshops/single
-workshop: pragmatic-tech-leadership
+title: "Pragmatic Tech Leadership: From Good Engineer to Great Leader"
+seo_title: "Tech Leadership Workshop: From Good Engineer to Great Leader"
+description: "A hands-on workshop for new and aspiring tech leads who want to build and lead high-performing, happy, and autonomous engineering teams."
+featured_image: "images/sections/cover-leadership.svg"
+pillar: strategy
+pillar_role: foundational
+level: "Intermediate"
+overview: "Are you a software engineer who's recently been promoted to a tech lead role? Or are you an aspiring tech lead who wants to prepare for the next step in your career? If so, you know that the skills that made you a great engineer are not the same skills that will make you a great leader. This interactive workshop is designed to bridge that gap. We'll go beyond the theory and focus on the practical, day-to-day challenges of tech leadership. You'll leave with the confidence, skills, and a pragmatic toolkit to excel in your new role."
+key_takeaways:
+  - "Understand the key responsibilities of a tech lead and how to balance them with your own technical contributions."
+  - "Learn how to build and maintain a healthy and psychologically safe team culture."
+  - "Master the art of effective communication, including how to give and receive constructive feedback."
+  - "Develop a framework for making sound technical decisions and managing technical risk."
+  - "Learn how to effectively manage projects, delegate tasks, and keep your team on track."
+  - "Discover how to mentor and grow the engineers on your team, helping them to achieve their career goals."
+syllabus:
+  - title: "The Tech Lead Mindset: From Maker to Multiplier"
+    description: "In this session, we'll explore the fundamental shift in mindset that's required to be a successful tech lead. We'll discuss the importance of psychological safety, and you'll learn how to move from being a top individual contributor to a leader who multiplies the impact of your entire team."
+  - title: "Building a High-Performing Team Culture"
+    description: "A healthy team culture is the foundation of any high-performing team. In this session, you'll learn how to define and cultivate a positive and inclusive team culture. We'll cover topics like setting clear expectations, fostering collaboration, and resolving conflict."
+  - title: "The Art of Effective Communication"
+    description: "Communication is the most important tool in a tech lead's toolkit. In this session, you'll learn how to communicate effectively with your team, your peers, and your stakeholders. We'll cover topics like active listening, giving and receiving feedback, and running effective meetings."
+  - title: "Pragmatic Technical Decision-Making"
+    description: "As a tech lead, you'll be responsible for making important technical decisions. In this session, you'll learn a framework for making sound technical decisions, even in the face of uncertainty. We'll cover topics like RFCs, architecture design, and managing technical debt."
+  - title: "Execution and Project Management"
+    description: "Getting things done is a critical part of the tech lead role. In this session, you'll learn how to effectively manage projects, delegate tasks, and keep your team on track. We'll cover topics like agile methodologies, project planning, and risk management."
+  - title: "Mentoring and Career Development"
+    description: "A great tech lead is also a great mentor. In this session, you'll learn how to mentor and grow the engineers on your team. We'll cover topics like career coaching, performance management, and creating opportunities for growth."
+target_audience:
+  - "You're a software engineer who has been a tech lead for less than a year."
+  - "You're an aspiring tech lead who wants to get a head start on the skills you'll need to succeed."
+  - "You're an engineering manager who provide your tech leads with a solid foundation in leadership skills."
+format: "This is a full-day, interactive workshop that can be delivered remotely or in-person. The workshop includes a mix of presentations, group discussions, and hands-on exercises. You'll have plenty of opportunities to ask questions, share your experiences, and learn from your peers."
+interested_cta:
+  text: "Book a Private Workshop"
+  link: "mailto:hello@vijayanant.com?subject=Private%20Workshop%20Inquiry"
 ---

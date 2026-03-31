@@ -1,9 +1,41 @@
-{{/* Context (.) is the data item (map) from YAML */}}
+{{/* Supports both data maps (YAML) and Hugo Page objects */}}
+{{ $title := "" }}
+{{ $description := "" }}
+{{ $image := "" }}
+{{ $meta := "" }}
+{{ $link := "" }}
+{{ $links := slice }}
+{{ $section := "" }}
+
+{{ if (reflect.IsMap .) }}
+  {{ $title = .title }}
+  {{ $description = .description }}
+  {{ $image = .image }}
+  {{ $meta = .meta }}
+  {{ $link = .link }}
+  {{ $links = .links }}
+{{ else }}
+  {{ $title = .Title }}
+  {{ $description = .Description | default .Summary }}
+  {{ $image = .Params.featured_image }}
+  {{ $meta = .Params.meta }}
+  {{ $link = .Permalink }}
+  {{ $links = .Params.links }}
+  {{ $section = .Section }}
+{{ end }}
+
+{{/* UX Logic: For speaking items, the title links directly to the first asset (PDF/Video) */}}
+{{ if eq $section "speaking" }}
+  {{ if $links }}
+    {{ $link = (index $links 0).url }}
+  {{ end }}
+{{ end }}
+
 <div class="post-card">
     {{/* --- Image Section --- */}}
-    {{ if .image }}
+    {{ if $image }}
     <div class="post-card-image-wrapper">
-        {{ $img := resources.Get .image }}
+        {{ $img := resources.Get $image }}
         {{ if $img }}
             {{ $img.Content | safeHTML }}
         {{ end }}
@@ -12,26 +44,26 @@
 
     {{/* --- Title Section --- */}}
     <h3 class="post-card-title">
-        {{ if .link }}
-            <a href="{{ .link | relURL }}" class="outbound-link-click">{{ .title }}</a>
+        {{ if $link }}
+            <a href="{{ $link | relURL }}" class="outbound-link-click" {{ if (strings.HasPrefix $link "http") }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ $title }}</a>
         {{ else }}
-            {{ .title }}
+            {{ $title }}
         {{ end }}
     </h3>
 
     {{/* --- Meta Section (e.g. Conference Name | Year) --- */}}
-    {{ if .meta }}
-    <div class="post-card-meta">{{ .meta }}</div>
+    {{ if $meta }}
+    <div class="post-card-meta">{{ $meta }}</div>
     {{ end }}
 
     {{/* --- Description Section --- */}}
-    <p class="post-card-description">{{ .description | markdownify }}</p>
+    <p class="post-card-description">{{ $description | markdownify }}</p>
 
-    {{/* --- Footer Link (Flexible) --- */}}
-    {{ if .links }}
+    {{/* --- Footer Links (Buttons) --- */}}
+    {{ if $links }}
         <div class="post-card-links">
-            {{ range .links }}
-            <a href="{{ .url }}" class="button button-primary outbound-link-click" target="_blank">
+            {{ range $links }}
+            <a href="{{ .url }}" class="button button-primary outbound-link-click" {{ if (strings.HasPrefix .url "http") }}target="_blank" rel="noopener noreferrer"{{ end }}>
                 {{ if eq .icon "fas fa-file-pdf" }}{{ partial "icons/file-pdf.html" $ }}
                 {{ else if eq .icon "fab fa-youtube" }}{{ partial "icons/youtube.html" $ }}
                 {{ end }}
@@ -39,9 +71,9 @@
             </a>
             {{ end }}
         </div>
-    {{ else if .link }}
+    {{ else if and (eq $section "workshops") $link }}
         <div class="post-card-footer">
-             <a href="{{ .link | relURL }}" class="read-more-button outbound-link-click">Details &rarr;</a>
+             <a href="{{ $link | relURL }}" class="read-more-button outbound-link-click">Workshop Details &rarr;</a>
         </div>
     {{ end }}
 </div>
