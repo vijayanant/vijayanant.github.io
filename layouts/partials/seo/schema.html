@@ -1,8 +1,23 @@
 {{- if .IsPage }}
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" }}
-{{- $params := .Params }}
 {{- $title := .Params.seo_title | default .Title }}
 {{- $description := .Description | default .Summary | plainify | truncate 160 }}
+{{- $publishDate := .PublishDate }}
+{{- if or $publishDate.IsZero (not $publishDate) }}{{ $publishDate = .Date }}{{ end }}
+
+{{- /* Determine Schema Type */}}
+{{- $schemaType := "BlogPosting" }}
+{{- if eq .Section "workshops" }}
+  {{- $schemaType = "Course" }}
+{{- else }}
+  {{- range .Params.categories }}
+    {{- if in (slice "Software Architecture" "Programming" "AI in Engineering" "Distributed Systems") . }}
+      {{- $schemaType = "TechArticle" }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- /* Image Logic */}}
 {{- $image := "" }}
 {{- with .Params.featured_image }}
   {{- with $.Resources.GetMatch . }}
@@ -16,37 +31,19 @@
   {{- end }}
 {{- end }}
 
-{{- $schemaType := "BlogPosting" }}
-{{- range .Params.categories }}
-  {{- if in (slice "Software Architecture" "Programming" "AI in Engineering" "Distributed Systems") . }}
-    {{- $schemaType = "TechArticle" }}
-  {{- end }}
-{{- end }}
-
-{{- $proficiencyLevel := "" }}
-{{- if eq $schemaType "TechArticle" }}
-  {{- $proficiencyLevel = .Params.level | default "" }}
-  {{- if not $proficiencyLevel }}
-    {{- if eq .Params.pillar_role "deep_dive" }}
-      {{- $proficiencyLevel = "Advanced" }}
-    {{- else if or (eq .Params.pillar_role "foundational") (eq .Params.pillar_role "strategy") }}
-      {{- $proficiencyLevel = "Intermediate" }}
-    {{- else if eq .Params.pillar_role "essay" }}
-      {{- $proficiencyLevel = "Beginner" }}
-    {{- end }}
-  {{- end }}
-{{- end }}
-
-{{- $publishDate := .PublishDate }}
-{{- if or $publishDate.IsZero (not $publishDate) }}{{ $publishDate = .Date }}{{ end }}
-
+{{- /* Skills and Proficiency */}}
 {{- $skills := slice }}
-{{- range .Params.categories }}
-  {{- $skills = $skills | append . }}
-{{- end }}
-{{- range .Params.tags }}
-  {{- if not (in $skills .) }}
-    {{- $skills = $skills | append . }}
+{{- range .Params.categories }}{{ $skills = $skills | append . }}{{ end }}
+{{- range .Params.tags }}{{ if not (in $skills .) }}{{ $skills = $skills | append . }}{{ end }}{{ end }}
+
+{{- $proficiencyLevel := .Params.level | default "" }}
+{{- if not $proficiencyLevel }}
+  {{- if eq .Params.pillar_role "deep_dive" }}
+    {{- $proficiencyLevel = "Advanced" }}
+  {{- else if or (eq .Params.pillar_role "foundational") (eq .Params.pillar_role "strategy") }}
+    {{- $proficiencyLevel = "Intermediate" }}
+  {{- else if eq .Params.pillar_role "essay" }}
+    {{- $proficiencyLevel = "Beginner" }}
   {{- end }}
 {{- end }}
 
@@ -54,15 +51,17 @@
 {
   "@context": "https://schema.org",
   "@type": {{ $schemaType | jsonify | safeJS }},
-  "headline": {{ $title | jsonify | safeJS }},
+  {{ if eq $schemaType "Course" }}"name"{{ else }}"headline"{{ end }}: {{ $title | jsonify | safeJS }},
   "description": {{ $description | jsonify | safeJS }},
   "image": {{ $image | jsonify | safeJS }},
+  {{- if ne $schemaType "Course" }}
   "datePublished": {{ $publishDate.Format $iso8601 | jsonify | safeJS }},
   "dateModified": {{ .Lastmod.Format $iso8601 | jsonify | safeJS }},
   "author": {
     "@type": "Person",
     "name": {{ site.Params.author | default "Your Name" | jsonify | safeJS }}
   },
+  {{- end }}
   "publisher": {
     "@type": "Organization",
     "name": {{ site.Title | jsonify | safeJS }},
@@ -71,11 +70,18 @@
       "url": {{ site.Params.image | absURL | jsonify | safeJS }}
     }
   },
+  "provider": {
+    "@type": "Person",
+    "name": {{ site.Params.author | default "Your Name" | jsonify | safeJS }},
+    "url": {{ site.BaseURL | jsonify | safeJS }}
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": {{ .Permalink | jsonify | safeJS }}
   },
+  {{- if ne $schemaType "Course" }}
   "wordCount": {{ .WordCount }},
+  {{- end }}
   "url": {{ .Permalink | jsonify | safeJS }},
   "inLanguage": {{ site.LanguageCode | default "en-us" | jsonify | safeJS }}
   {{- with .Params.categories }},
@@ -94,8 +100,8 @@
     {{- end }}
   ]
   {{- end }}
-  {{- if $proficiencyLevel }},
-  "proficiencyLevel": {{ $proficiencyLevel | jsonify | safeJS }},
+  {{- if or $proficiencyLevel $skills }},
+  "proficiencyLevel": {{ $proficiencyLevel | default "Advanced" | jsonify | safeJS }},
   "teaches": [
     {{- range $i, $e := $skills }}
       {{- if $i }},{{- end }}

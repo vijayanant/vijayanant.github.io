@@ -3,6 +3,8 @@ title: "Pragmatic Tech Leadership: From Good Engineer to Great Leader"
 seo_title: "Tech Leadership Workshop: From Good Engineer to Great Leader"
 description: "A hands-on workshop for new and aspiring tech leads who want to build and lead high-performing, happy, and autonomous engineering teams."
 featured_image: "images/sections/cover-leadership.svg"
+categories: ["Career and Writing"]
+tags: ["tech-leadership", "mentorship", "team-culture", "decision-making", "communication"]
 pillar: strategy
 pillar_role: foundational
 level: "Intermediate"

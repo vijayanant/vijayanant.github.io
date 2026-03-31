@@ -3,6 +3,8 @@ title: "Software Architecture: From Patterns to Practice"
 seo_title: "Software Architecture Workshop: From Patterns to Practice"
 description: "A foundational workshop for software engineers who want to learn the principles of software architecture and how to apply them in practice."
 featured_image: "images/sections/cover-architecture.svg"
+categories: ["Software Architecture"]
+tags: ["design-patterns", "decision-making", "architecture-foundations", "adr", "weighted-scoring-matrix"]
 pillar: strategy
 pillar_role: foundational
 level: "Advanced"

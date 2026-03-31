@@ -3,6 +3,8 @@ title: "Modern Cloud Architectures: A Hands-On Guide"
 seo_title: "Modern Cloud Architectures Workshop: A Hands-On Guide"
 description: "A practical workshop for software engineers and architects who want to learn how to design and build scalable, resilient, and cost-effective cloud-native applications."
 featured_image: "images/sections/cover-cloud.svg"
+categories: ["Software Architecture"]
+tags: ["cloud-native", "microservices", "serverless", "event-driven", "resilience"]
 pillar: system
 pillar_role: foundational
 level: "Advanced"
