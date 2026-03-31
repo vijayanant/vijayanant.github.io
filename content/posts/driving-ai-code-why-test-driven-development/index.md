@@ -484,6 +484,12 @@ a flexible asset, ready for constant improvement and adaptation.
 
 AI can be a powerful co-pilot, but it is a terrible captain. It doesn't care about your 3:00 AM production outages or your team's long-term velocity. It only cares about the next most likely token.
 
-TDD is how you reclaim your seat in the cockpit. By writing the test first, you are forcing the AI to work within *your* mental model, rather than forcing you to debug *its* hallucinations. Speed is valuable, but design ownership is vital. Don't let the "code dump" make you a stranger in your own codebase.
+TDD is how you reclaim your seat in the cockpit. By writing the test first, you
+are forcing the AI to work within _your_ mental model, rather than forcing you
+to debug _its_ hallucinations. Speed is valuable, but design ownership is
+vital. Don't let the "code dump" make you a stranger in your own codebase. As
+I explored in my post on [**Coaching the AI**]({{< ref "/posts/teaching-the-ai-to-code-and-accidentally" >}}),
+the moment we stop participating in the design is the moment the system
+becomes [**Hard to Debug**]({{< ref "/posts/why-is-ai-code-suddenly-hard-to-debug" >}}).
 
 {{< newsletter type="simple" >}}

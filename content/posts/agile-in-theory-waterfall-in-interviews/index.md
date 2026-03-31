@@ -26,13 +26,13 @@ It’s a weird contradiction.
 
 * * *
 
-System design interviews are supposed to test how well someone can architect
-real-world systems.
+System design interviews are supposed to test how well someone can architect real-world systems.
+Real systems are rarely built in a single 45-minute burst of "final" architecture.
 
-But real systems aren’t designed in a 45-minute whiteboard session.  
-They evolve.
-They respond to changing needs, product feedback, scale surprises, and team
-constraints.
+They are composed of [**Architectural Quanta**]({{< ref "/posts/architectural-quantum-modular-deployable-architecture" >}}) that evolve independently over time.
+They respond to changing needs, product feedback, scale surprises, and team constraints.
+
+Great architecture doesn't start with a solution; it starts with [**deriving the real drivers**]({{< ref "/posts/from-patterns-to-practice/deriving-your-drivers" >}}) behind the business problem.
 
 So what are we really testing?
 

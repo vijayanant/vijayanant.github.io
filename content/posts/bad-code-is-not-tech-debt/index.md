@@ -79,12 +79,16 @@ way it is.
 The debt is supposed to be easier to pay back. Bad code makes repayment
 harder. In fact, the debt metaphor works to our advantage only if we write
 code that is clean enough to be understood and refactor easily when our
-understanding of the problem improves.
+understanding of the problem improves. This is why disciplines like
+[**Test-Driven Development**]({{< ref "/posts/tdd-what-most-articles-miss" >}})
+and [**SOLID principles**]({{< ref "/posts/solid-fp" >}}) are so criticali,
+they ensure the code remains "refactorable" enough to actually pay down the
+debt.
 
-{{< quote type="pull">}}
+{{< quote type="pull" >}}
 If you can’t refactor your software because it is poorly architected or poorly
 written, you don’t have technical debt, you have bad software.
-{{</quote>}}
+{{</quote >}}
 
 Then, if bad code is not Tech Debt, what is?
 
@@ -274,7 +278,7 @@ Technical Debt is a metaphor initially used to explain the management need for c
 
 #### The "Debt" is a Choice, Not an Accident
 
-The next time you’re tempted to call messy code "tech debt," stop and ask: *Did we choose this shortcut to learn something faster, or did we just let the garden grow wild?*
+The next time you’re tempted to call messy code "tech debt," stop and ask: _Did we choose this shortcut to learn something faster, or did we just let the garden grow wild?_
 
 If it was a choice, make it visible. Write it down in a `DEBT.md` or a ticket. If it was an accident, don't hide behind the metaphor—fix the quality. Debt is a powerful tool for startups and fast-moving teams, but only if the "borrower" has a plan to pay it back. Otherwise, you aren't managing a balance sheet; you're just managing a mess.
 

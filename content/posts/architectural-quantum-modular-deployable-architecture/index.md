@@ -32,7 +32,7 @@ This isn't just an academic problem; it's a tax on your team's daily productivit
 
 In practice, you rarely notice these costs individually. You notice them all at once on a Friday afternoon when a "small change" suddenly takes down the entire platform.
 
-Understanding and managing coupling is central to building evolvable systems, a topic I explore extensively in my [Modular by Design series]({{< ref "/series/modular-by-design" >}}).
+Understanding and managing coupling is central to building evolvable systems, a topic I explore extensively in my [**Modular by Design series**]({{< ref "/series/modular-by-design" >}}), specifically looking at the difference between [**Good and Bad Coupling**]({{< ref "/posts/modular-by-design/good-coupling-bad-coupling-and-cohesion" >}}).
 
 {{< figure
     src="quanta-overview.svg"

@@ -16,9 +16,26 @@ level: "Advanced"
 ---
 {{< figure src="good-coupling-bad-coupling-and-cohesion-1.jpg" alt="brass-colored chain machine" caption="Photo by [Jay Heike](https://unsplash.com/@jayrheike) on [Unsplash](https://unsplash.com)" >}}
 
-In the last post, we discovered a powerful technique for achieving modularity: hiding secrets. We learned to draw boundaries based on what we predict will change. But this raises a critical question: how do we know if we've drawn the boundaries in the right place? A bad boundary can be worse than no boundary at all.
+In the last post, we discovered a powerful technique for achieving modularity:
+hiding secrets. We learned to draw boundaries based on what we predict will
+change. But this raises a critical question: how do we know if we've drawn the
+boundaries in the right place? A bad boundary can be worse than no boundary at
+all.
 
-To judge our work, we need to develop a critical eye by learning a new language. This language has three key terms—loose coupling, tight coupling, and cohesion—and they play a role very similar to the three titular characters in the movie _‘[The Good, the Bad and the Ugly](https://en.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly)’_. Each has its own distinct characteristics, and understanding them is the key to crafting a maintainable, reusable, and ultimately successful software system. These metrics are fundamental to building systems that are truly **"Modular by Design."**
+To judge our work, we need to develop a critical eye by learning a new
+language. This language has three key terms—loose coupling, tight coupling,
+and cohesion—and they play a role very similar to the three titular characters
+in the movie _‘[The Good, the Bad and the Ugly](https://en.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly)’_.
+Each has its own distinct characteristics, and understanding them is the key
+to crafting a maintainable, reusable, and ultimately successful software
+system. These metrics are fundamental to building systems that are truly
+**"Modular by Design."**
+
+This struggle between coupling and cohesion is the "Red Thread" that runs
+through the [**History of Modularity**]({{< ref "/posts/modular-by-design/modularity-through-the-ages" >}}).
+To master it, we must move beyond abstract definitions and look at how these
+forces manifest in our code—specifically through the structure of our
+[**Directories and Diagrams**]({{< ref "/posts/codifying-your-architecture/the-blueprint" >}}).
 
 ## **The Good: Loose Coupling and High Cohesion**
 
@@ -79,11 +96,11 @@ reducing the complexity of the testing process.
 
 **Examples of Good Coupling Practices:**
 
-  * **Favour dependency injection:** Instead of hardcoding dependencies within a module, rely on dependency injection to provide dependencies at runtime. This promotes loose coupling and makes modules more adaptable. Concrete code examples illustrating this will be provided in a dedicated "spoke" article.
+* **Favour dependency injection:** Instead of hardcoding dependencies within a module, rely on dependency injection to provide dependencies at runtime. This promotes loose coupling and makes modules more adaptable. Concrete code examples illustrating this will be provided in a dedicated "spoke" article.
 
-  * **Utilise abstraction layers:** Abstract layers act as intermediaries between modules, decoupling them and preventing direct dependencies. This promotes loose coupling and enhances flexibility.
+* **Utilise abstraction layers:** Abstract layers act as intermediaries between modules, decoupling them and preventing direct dependencies. This promotes loose coupling and enhances flexibility.
 
-  * **Encapsulate data within modules:** Modules should encapsulate their data, preventing external access and modification. This reduces coupling and promotes modularity.
+* **Encapsulate data within modules:** Modules should encapsulate their data, preventing external access and modification. This reduces coupling and promotes modularity.
 
 ## **The Pitfalls of Bad Coupling**
 
@@ -99,15 +116,15 @@ system.
 
 **Examples of Bad Coupling Practices:**
 
-  * **Directly accessing internal data of another module:** This creates a tight dependency, making it difficult to modify one module without affecting the other.
+* **Directly accessing internal data of another module:** This creates a tight dependency, making it difficult to modify one module without affecting the other.
 
-  * **Passing large data structures between modules:** This increases coupling, as changes in the data structure can necessitate modifications in multiple modules.
+* **Passing large data structures between modules:** This increases coupling, as changes in the data structure can necessitate modifications in multiple modules.
 
-  * **Using global variables:** Global variables introduce tight coupling, as any module can access and modify them, making it challenging to track dependencies and changes.
+* **Using global variables:** Global variables introduce tight coupling, as any module can access and modify them, making it challenging to track dependencies and changes.
 
 ## **The Essence of High Cohesion**
 
-If loose coupling is about the relationship *between* modules, high cohesion is about the character *of* a single module. It's the principle that the elements inside a module should be closely related and focused on a single, well-defined purpose.
+If loose coupling is about the relationship _between_ modules, high cohesion is about the character _of_ a single module. It's the principle that the elements inside a module should be closely related and focused on a single, well-defined purpose.
 
 But why does this matter? The true power of high cohesion is that it gives a module a **single reason to change**.
 
@@ -115,11 +132,11 @@ This connects directly to the "Information Hiding" principle from our first post
 
 **Examples of High Cohesion Practices:**
 
-  * **Create modules with a single purpose:** Each module should focus on a specific task or responsibility, promoting cohesion and reducing scattering of functionalities.
+* **Create modules with a single purpose:** Each module should focus on a specific task or responsibility, promoting cohesion and reducing scattering of functionalities.
 
-  * **Group related functions together:** Functions that perform related tasks should be grouped within the same module, enhancing cohesion and making code more organised.
+* **Group related functions together:** Functions that perform related tasks should be grouped within the same module, enhancing cohesion and making code more organised.
 
-  * **Avoid God classes:** God classes, modules that contain a vast array of unrelated functionalities, should be avoided. Divide them into smaller, more cohesive modules.
+* **Avoid God classes:** God classes, modules that contain a vast array of unrelated functionalities, should be avoided. Divide them into smaller, more cohesive modules.
 
 ## **The Consequences of Low Cohesion**
 
@@ -133,11 +150,11 @@ makes code maintenance challenging and increases the risk of errors.
 
 **Examples of Low Cohesion Practices:**
 
-  * **Mixing unrelated functionalities within a module:** This reduces cohesion and makes the module's purpose unclear.
+* **Mixing unrelated functionalities within a module:** This reduces cohesion and makes the module's purpose unclear.
 
-  * **Including unrelated data within a module:** Data that is not directly related to the module's purpose should be moved to a more appropriate location.
+* **Including unrelated data within a module:** Data that is not directly related to the module's purpose should be moved to a more appropriate location.
 
-  * **Creating overly large modules:** Large modules can become difficult to manage and maintain, making it challenging to understand and modify their functionalities.
+* **Creating overly large modules:** Large modules can become difficult to manage and maintain, making it challenging to understand and modify their functionalities.
 
 ## **Striking the Right Balance**
 
@@ -157,11 +174,12 @@ defined interfaces, they still need to share some data with each other. This
 data can create a dependency between the them.
 
 {{< summary title="Key Takeaways" >}}
-*   **Cohesion:** How well the elements *inside* a single module belong together. **High cohesion** is our goal.
-*   **Coupling:** The degree of interdependence *between* modules. **Loose coupling** is our goal.
-*   **The Goal:** A module should have a single, well-defined reason to change (High Cohesion) and should depend on as few other modules as possible (Loose Coupling).
-*   **The Litmus Test:** A change to a single business policy should ideally require a change to only a single module. If not, you may have low cohesion or tight coupling.
-*   **Validation through Testing:** Robust testing strategies (unit, integration, contract) are essential for continuously validating and enforcing modular boundaries. (A deeper dive into this topic will be explored in a separate post.)
+
+* **Cohesion:** How well the elements _inside_ a single module belong together. **High cohesion** is our goal.
+* **Coupling:** The degree of interdependence _between_ modules. **Loose coupling** is our goal.
+* **The Goal:** A module should have a single, well-defined reason to change (High Cohesion) and should depend on as few other modules as possible (Loose Coupling).
+* **The Litmus Test:** A change to a single business policy should ideally require a change to only a single module. If not, you may have low cohesion or tight coupling.
+* **Validation through Testing:** Robust testing strategies (unit, integration, contract) are essential for continuously validating and enforcing modular boundaries. (A deeper dive into this topic will be explored in a separate post.)
 {{< /summary >}}
 
 Striving for high cohesion and loose coupling isn't just a technical exercise; it's how we validate our design decisions and ensure the module boundaries we create are sound. It is the art of building a system from parts that are both self-contained and gracefully interconnected.
@@ -170,7 +188,7 @@ Striving for high cohesion and loose coupling isn't just a technical exercise; i
 
 You don’t need a complex tool to measure your coupling. You just need to observe how you feel on a Sunday night when you realize you have to change a core business rule on Monday morning.
 
-If your first thought is, *"I hope I don't break the Payments module while editing the User rules,"* you have a coupling problem. If you know exactly which file to open and you're confident that the rest of the system will stay silent, you’ve achieved cohesion. 
+If your first thought is, _"I hope I don't break the Payments module while editing the User rules,"_ you have a coupling problem. If you know exactly which file to open and you're confident that the rest of the system will stay silent, you’ve achieved cohesion.
 
 Don't aim for "perfect" architecture. Aim for the confidence that you can change your mind tomorrow without the whole system screaming back at you.
 
