@@ -136,8 +136,6 @@ way.
 
 ### Paradigm Shift
 
-{{< summary >}}
-
 * In essence, programming paradigms stem from diverse philosophies concerning
 how the world operates. They represent distinct perspectives on how to
 effectively model the real world while constructing programs—ultimately defining the [**Expressiveness**]({{< ref "/posts/expressiveness" >}}) of the languages that promote them.
