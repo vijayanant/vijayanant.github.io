@@ -30,7 +30,11 @@
             {{- end }}
         {{- end }}
     {{- else }}
-        {{- $ogImage = ($resource.Resize "1200x webp").Permalink }}
+        {{- if gt $resource.Width 1200 }}
+            {{- $ogImage = ($resource.Resize "1200x jpg").Permalink }}
+        {{- else }}
+            {{- $ogImage = $resource.Permalink }}
+        {{- end }}
     {{- end }}
   {{- else }}
     {{- $ogImage = . | absURL }}

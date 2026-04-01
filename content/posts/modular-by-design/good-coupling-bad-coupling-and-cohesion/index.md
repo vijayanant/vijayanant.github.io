@@ -7,7 +7,7 @@ slug: "good-coupling-bad-coupling-and-cohesion"
 date: 2023-11-18
 draft: false
 description: "What is coupling in software engineering? Learn the difference between loose and tight coupling, how cohesion drives modularity, and how to avoid 'God classes'."
-featured_image: "good-coupling-bad-coupling-and-cohesion-1.jpg"
+featured_image: "featured.svg"
 tags: ["coupling", "cohesion", "modularity"]
 categories: ["Software Architecture"]
 pillar: system

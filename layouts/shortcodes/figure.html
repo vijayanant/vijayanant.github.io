@@ -53,7 +53,7 @@
                             , {{ ($original.Resize (printf "%dx webp" $original.Width)).RelPermalink }} {{ $original.Width }}w
                         {{- end -}}
                     "
-                    sizes="(max-width: 768px) 100vw, 768px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
                 >
 
                 {{/* --- Fallback sources (e.g., JPEG/PNG) --- */}}
@@ -71,7 +71,7 @@
                             , {{ $original.RelPermalink }} {{ $original.Width }}w
                         {{- end -}}
                     "
-                    sizes="(max-width: 768px) 100vw, 768px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
                 >
 
                 {{/* --- Fallback <img> for old browsers --- */}}

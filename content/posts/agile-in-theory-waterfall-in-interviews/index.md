@@ -5,7 +5,7 @@ slug: "agile-in-theory-waterfall-in-interviews"
 date: 2025-08-11
 draft: false
 description: "System design interviews often contradict real engineering. Learn what to test instead and how to demonstrate your thinking as a candidate."
-featured_image: "agile-waterfall-interview-meme.jpg"
+featured_image: "featured.svg"
 tags: ["interview", "hiring", "agile", "system-design", "career"]
 categories: ["Career and Writing"]
 pillar: strategy

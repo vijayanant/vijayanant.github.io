@@ -6,7 +6,7 @@ subtitle: "Uncovering the Design Discipline You Didn't Know You Were Missing"
 date: 2023-05-21
 draft: false
 description: "TDD is a design discipline, not a testing ritual. Learn how to use behavior-first testing to guide the organic emergence of your architecture."
-featured_image: "tdd-what-most-articles-miss-1.jpg"
+featured_image: "featured.svg"
 tags: ["tdd", "testing", "software-design", "agile"]
 categories: ["Programming"]
 pillar: craft

@@ -95,3 +95,8 @@ unsafe = true
 [security]
 [security.funcs]
 getenv = ["HUGO_"]
+
+[imaging]
+quality = 90
+resampleFilter = "lanczos"
+anchor = "smart"

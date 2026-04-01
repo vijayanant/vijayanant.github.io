@@ -1,0 +1,34 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        </pattern>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(255,255,255,0.3)" />
+        </marker>
+    </defs>
+    <rect width="100%" height="100%" fill="#0F172A"/>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+    <g transform="translate(300, 300)">
+        <circle r="100" stroke="#A78BFA" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+        <path d="M 0,-120 L 20,-20 L 120,0 L 20,20 L 0,120 L -20,20 L -120,0 L -20,-20 Z" fill="#38BDF8" filter="url(#glow)"/>
+        <text y="160" fill="#38BDF8" font-family="monospace" font-size="24" text-anchor="middle">THE WHY (PRINCIPLES)</text>
+    </g>
+    <path d="M 450,300 L 700,300" stroke="rgba(255,255,255,0.2)" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrowhead)"/>
+    <g transform="translate(850, 300)">
+        <rect x="-100" y="-80" width="200" height="160" rx="10" stroke="#F472B6" stroke-width="3" fill="rgba(244, 114, 182, 0.1)" filter="url(#glow)"/>
+        <path d="M -70,-40 L 70,-40 M -70,0 L 70,0 M -70,40 L 0,40" stroke="#F472B6" stroke-width="2"/>
+        <text y="130" fill="#F472B6" font-family="monospace" font-size="24" text-anchor="middle">THE HOW (PATTERNS)</text>
+    </g>
+    <g transform="translate(600, 580)">
+        <text fill="#fff" font-family="sans-serif" font-size="28" font-weight="bold" text-anchor="middle" letter-spacing="4">PRINCIPLES GUIDE, PATTERNS IMPLEMENT</text>
+        <rect x="330" y="-28" width="6" height="34" fill="#38BDF8" filter="url(#glow)"/>
+    </g>
+</svg>

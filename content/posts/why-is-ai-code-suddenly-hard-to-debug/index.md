@@ -5,7 +5,7 @@ slug: "why-is-ai-code-suddenly-hard-to-debug"
 date: 2025-08-19
 draft: false
 description: "Why is AI-generated code so difficult to repair? Learn why the lack of shared mental models makes debugging AI code uniquely brutal and how to fix it with engineering discipline."
-featured_image: "why-is-ai-code-suddenly-hard-to-debug-1.jpg"
+featured_image: "featured.svg"
 tags: ["ai", "llm", "debugging", "mental-model"]
 categories: ["AI in Engineering"]
 pillar: craft
