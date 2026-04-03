@@ -9,7 +9,7 @@ date: 2024-05-24
 draft: false
 description: "Understand the fundamental shift from RPC procedures to REST entities. Learn how HATEOAS and generic interfaces enable independent evolution."
 featured_image: "think-entity-not-procedures-1.png"
-tags: ["rest", "rpc", "api-design", "hateoas", "distributed-system"]
+tags: ["rest", "rpc", "api-design", "hateoas", "distributed-systems"]
 categories: ["Software Architecture"]
 pillar: system
 pillar_role: deep_dive

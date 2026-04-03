@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 4
 categories: ["Software Architecture"]
-tags: ["decision-making", "architectural-style", "trade-off", "adr"]
+tags: ["decision-making", "architectural-styles", "trade-offs", "adr"]
 description: "Stop choosing architecture based on gut feelings. Learn how to use Pattern Profiling Scorecards and Weighted Scoring Matrices to make defensible decisions."
 featured_image: "decision-signpost.jpg"
 pillar: strategy

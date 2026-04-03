@@ -1,6 +1,6 @@
 ---
 title: "Driving AI Code: Why Test-Driven Development is Essential in the LLM Era"
-seo_title: "TDD for LLMs: Why Test-Driven Development is Essential for AI Code Integrity"
+seo_title: "TDD for LLMs: Using Test-Driven Development to Prevent AI Hallucinations"
 slug: "driving-ai-code-why-test-driven-development-is-essential-in-the-llm-era"
 date: 2025-06-20
 draft: false

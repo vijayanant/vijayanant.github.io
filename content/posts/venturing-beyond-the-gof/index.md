@@ -6,7 +6,7 @@ date: 2023-11-16
 draft: false
 description: "Stop memorizing GoF patterns and start thinking in 'forces'. Learn how to recognize recurring problem shapes and choose the right structural response for modern systems."
 featured_image: "venturing-beyond-the-gof-1.jpg"
-tags: ["design-pattern", "system-design", "distributed-system", "first-principle", "trade-offs"]
+tags: ["design-patterns", "system-design", "distributed-systems", "first-principle", "trade-offs"]
 categories: ["Software Architecture"]
 pillar: strategy
 pillar_role: essay

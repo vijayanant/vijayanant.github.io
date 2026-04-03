@@ -6,7 +6,7 @@ date: 2023-09-09
 draft: false
 description: "Do SOLID principles apply to FP? Learn how SRP, OCP, and DIP are naturally implemented through function composition and closures."
 featured_image: "featured.svg"
-tags: ["solid", "functional-programming", "design-principle"]
+tags: ["solid", "functional-programming", "design-principles"]
 categories: ["Programming"]
 pillar: craft
 pillar_role: deep_dive

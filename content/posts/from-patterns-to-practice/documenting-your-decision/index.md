@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 6
 categories: ["Software Architecture"]
-tags: ["decision-making", "architectural-style", "trade-off", "adr"]
+tags: ["decision-making", "architectural-styles", "trade-offs", "adr"]
 description: "Stop 'Architectural Amnesia' in your team. Learn how to use Architectural Decision Records (ADRs) and C4 diagrams to document and communicate high-stakes design choices."
 featured_image: "documentation.jpg"
 pillar: strategy
@@ -74,7 +74,7 @@ People often get hung up on the ADR format. It does not matter. What matters is 
 
 ## Communicating the "What": The C4 Model
 
-Now that you have captured the 'why,' you need to explain the 'what.' How will this new system look? 
+Now that you have captured the 'why,' you need to explain the 'what.' How will this new system look?
 
 Do not try to show everything to everyone. You will end up with a "big ball of mud" diagram that looks impressive on a wall but tells nobody how the system actually works. The solution is to create different maps for different audiences. I use the **C4 Model** to structure this.
 

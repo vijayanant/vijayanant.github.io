@@ -6,7 +6,7 @@ date: 2023-04-06
 draft: false
 featured_image: "featured.svg"
 description: "Understand the difference between software design principles (the Why) and design patterns (the How). Learn how SOLID and GoF patterns work together with practical examples."
-tags: ["design-pattern", "design-principle", "solid", "software-design"]
+tags: ["design-patterns", "design-principles", "solid", "software-design"]
 categories: ["Programming"]
 pillar: craft
 pillar_role: essay

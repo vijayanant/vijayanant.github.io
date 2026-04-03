@@ -1,6 +1,6 @@
 ---
 title: "Achieving Modularity"
-seo_title: "What is Modularity in Software? A Guide to Modular Design"
+seo_title: "Information Hiding: The Secret to Achieving True Software Modularity"
 slug: "achieving-modularity"
 date: 2023-10-12
 draft: false

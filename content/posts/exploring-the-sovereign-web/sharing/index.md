@@ -133,6 +133,10 @@ If I want to share a file with you while you are offline, I need to know your Pu
 
 Even "Serverless" systems often need a **Dumb Helper**, which acts as a relay or directory that doesn't understand the keys but holds them in a global "Yellow Pages" so we can find each other in the dark. Whether it is a **DHT (Distributed Hash Table)** in IPFS or a **Relay** in the Nostr protocol, we minimize the server's power (it can't read the mail) but acknowledge its utility (it holds the mailbox).
 
+{{< note type="log" title="Explorer's Log: The Server's Ghost" >}}
+My goal was to remove the central server entirely, but every path I take seems to lead back to a "Helper." Even in a zero-trust world, we still need a way to find each other in the dark. Whether it is a DHT or a Relay, there is always this "Metadata Tax" we have to pay for coordination. I am starting to see that sovereignty is not about being invisible; it is about being illegible to the very infrastructure that helps us connect.
+{{< /note >}}
+
 {{< newsletter >}}
 
 ## Intent follows Architecture

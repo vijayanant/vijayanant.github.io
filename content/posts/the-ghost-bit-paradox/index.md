@@ -5,7 +5,7 @@ subtitle: "Why Semantic Integrity Survives Lenient Encodings"
 date: 2026-02-19
 draft: false
 description: "Why can you flip bits in a file without changing its cryptographic hash? Discover the 'Ghost Bit Paradox' in CBOR serialization and what it means for Merkle DAG integrity."
-tags: ["distributed-system", "decentralized-web", "cryptography", "cbor", "rust", "fuzzing", "serialization"]
+tags: ["distributed-systems", "decentralized-web", "cryptography", "cbor", "rust", "fuzzing", "serialization"]
 categories: ["Programming"]
 featured_image: "investigation.jpg"
 pillar: system

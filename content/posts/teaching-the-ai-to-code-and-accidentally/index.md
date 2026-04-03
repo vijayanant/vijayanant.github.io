@@ -6,7 +6,7 @@ date: 2025-07-24
 draft: false
 description: "The engineering habits we used to skip are back. Learn why giving AI full context—architecture and intent—is making us better engineers."
 featured_image: "teaching-the-ai-to-code-and-accidentally-1.jpg"
-tags: ["ai", "llm", "best-practice"]
+tags: ["ai", "llm", "best-practices"]
 categories: ["AI in Engineering"]
 pillar: craft
 pillar_role: essay

@@ -5,7 +5,7 @@ slug: "expressiveness"
 date: 2018-11-08
 draft: false
 featured_image: "expressiveness-1.jpg"
-tags: ["expressiveness", "haskell", "type-system", "programming-language"]
+tags: ["language-expressiveness", "haskell", "type-system", "programming-language"]
 categories: ["Programming"]
 description: "What makes a programming language expressive? Compare Tree implementations in Haskell, Java, and Python to see how language features impact problem formulation and clarity."
 pillar: craft

@@ -83,6 +83,10 @@ Decentralized systems often run on the edge, on cheap Android phones, Raspberry 
 
 ChaCha20 is a "software-first" cipher. It was designed by Daniel J. Bernstein to be secure and fast on *any* general-purpose CPU. It relies on simple addition and rotation operations that take the same amount of time regardless of the data, making it naturally immune to timing attacks. By choosing ChaCha20, we are prioritizing the performance of the **User's Device** over server-side acceleration. It is a deliberate engineering choice focused on hardware-agnostic security.
 
+{{< note type="log" title="Explorer's Log: The Hardware Dependency" >}}
+I assumed encryption was a pure math problem, but it is actually a physical one. Learning that some CPUs have "shortcuts" for certain ciphers (AES) while others struggle and "leak" information through timing was a wake-up call. It changed my map. I cannot just pick the "strongest" math; I have to pick the math that is most resilient to the unpredictable hardware it will eventually live on.
+{{< /note >}}
+
 ## The Seed of Truth
 
 This was the point where I realized that all this complex math rests on a surprisingly fragile foundation: **Randomness**.

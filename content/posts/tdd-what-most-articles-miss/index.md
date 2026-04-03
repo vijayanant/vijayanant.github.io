@@ -1,6 +1,6 @@
 ---
 title: "TDD: What Most Articles Miss"
-seo_title: "TDD as Design: What Most Test-Driven Development Articles Miss"
+seo_title: "Advanced TDD: Reclaiming Test-Driven Development as a Design Discipline"
 slug: "tdd-what-most-articles-miss"
 subtitle: "Uncovering the Design Discipline You Didn't Know You Were Missing"
 date: 2023-05-21

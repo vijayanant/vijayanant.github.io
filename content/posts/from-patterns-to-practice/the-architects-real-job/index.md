@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 7
 categories: ["Software Architecture"]
-tags: ["decision-making", "architectural-style", "trade-off", "adr"]
+tags: ["decision-making", "architectural-styles", "trade-offs", "adr"]
 description: "Beyond the initial decision: Learn how architects guide system evolution and manage technical debt to prevent architectural drift."
 featured_image: "architectural-flywheel.png"
 pillar: strategy

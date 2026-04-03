@@ -8,7 +8,7 @@ date: 2024-04-17
 draft: false
 description: "Understand the philosophy and pitfalls of RPCs in distributed systems. Learn why 'making the network invisible' can lead to tight coupling and architectural challenges."
 featured_image: "looking-back-at-rpcs-1.jpeg"
-tags: ["rpc", "distributed-system", "api-design"]
+tags: ["rpc", "distributed-systems", "api-design"]
 categories: ["Software Architecture"]
 pillar: system
 pillar_role: deep_dive

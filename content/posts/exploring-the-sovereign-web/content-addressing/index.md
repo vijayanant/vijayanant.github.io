@@ -7,14 +7,16 @@ series: ["Exploring the Sovereign Web"]
 series_order: 1
 draft: false
 description: "How content addressing (hashes) replaces location addressing (URLs) to build a permanent, verifiable, and provider-independent internet. A deep dive into Merkle DAGs and structural trust."
-tags: ["distributed-system", "content-addressing", "zero-trust", "decentralised-web", "cryptography", "privacy"]
+tags: ["distributed-systems", "content-addressing", "zero-trust", "decentralised-web", "cryptography", "privacy"]
 categories: ["Software Architecture"]
 featured_image: "library-card-catalog.jpg"
 pillar: system
 pillar_role: deep_dive
 ---
 
-{{< figure src="library-card-catalog.jpg" caption="Photo by [Daniel Forsman](https://unsplash.com/@danielforsman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-hand-pulls-a-card-from-the-librarys-card-catalog-Ph4ZJrwf4x8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
+{{< figure
+  src="library-card-catalog.jpg"
+  caption="Photo by [Daniel Forsman](https://unsplash.com/@danielforsman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-hand-pulls-a-card-from-the-librarys-card-catalog-Ph4ZJrwf4x8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
 
 {{< note type="info" title="Why I'm writing this" >}}
 I’m exploring this space because I’m working on something that touches these ideas. I’m keeping the details private for now, but the goal here isn’t to announce a product.
@@ -76,13 +78,19 @@ Consider these two JSON objects. Semantically, they are identical, as they conta
 // Input A
 { "name": "Alice", "role": "admin" }
 // SHA-256: 5c65980e9c48d0e18518ecee46e295c007428fc49741271e090ef17970ddd684
+```
 
+```json
 // Input B
 { "role": "admin", "name": "Alice" }
 // SHA-256: 402b9ee5cac7ccba93d8825ef9d7f97358e59d99c689b5c8fe8ed86da7add3a8
 ```
 
 Because the cryptographic hash is derived from the *bytes* and not the *meaning*, these two inputs produce completely different fingerprints. A canonicalization step (like sorting keys alphabetically) ensures they both hash to the same value.
+
+{{< note type="log" title="Explorer's Log: The C14N Friction" >}}
+I initially thought "same data = same hash," but the reality is much messier. I spent hours debugging why two identical-looking objects had different hashes because of a single hidden line break or a different key order. It is a humbling realization: before you can have a "Permanent Web," you have to solve the "Canonical Representation" problem. In a decentralized world, if we cannot agree on the bytes, we cannot agree on the truth.
+{{< /note >}}
 
 ### Blocks and manifests
 

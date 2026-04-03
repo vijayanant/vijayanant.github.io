@@ -57,6 +57,10 @@ If you lost it, your identity was gone. If it was stolen, you had to revoke it. 
 
 The result was a dangerous failure mode: compromised identities that lingered. A stolen key could continue to be accepted by parts of the network long after its owner knew it was unsafe. Identity became something that could die, but not fully disappear.
 
+{{< note type="log" title="Explorer's Log: The Recovery Trap" >}}
+As I mapped out PGP vs. modern device-centric identity, I kept hitting the same wall: what happens when I lose my hardware? It is the ultimate trade-off of this journey. If I want total sovereignty, I have to accept the risk of permanent loss. If I want a "Reset Password" button, I have to give up my sovereignty to a central authority. Finding a third way that is not just "writing 12 words on a piece of paper" is proving to be one of the deepest challenges of this exploration.
+{{< /note >}}
+
 ## The second era: device-centric identity
 
 Modern secure messaging systems took a more pragmatic approach. Instead of asking users to manage long-lived identity keys, they shifted identity to the device itself.
