@@ -1,10 +1,10 @@
 <header id="site-header">
     <div class="container">
         <a href="{{ "/" | relURL }}" class="logo">
-            {{ $original := resources.Get "images/contact-image.webp" }}
+            {{ $original := resources.Get site.Params.portrait }}
             {{ if $original }}
-                {{ $webp := $original.Resize "35x webp" }}
-                <img src="{{ $webp.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="35" height="35" loading="lazy">
+                {{ $logo := $original.Resize "70x webp" }}
+                <img src="{{ $logo.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="35" height="35" loading="lazy">
             {{ end }}
         </a>
         <nav>
