@@ -15,7 +15,7 @@ pillar_role: deep_dive
 level: "Advanced"
 ---
 
-{{< figure src="message-in-a-bottle-at-seashore.jpg" caption="Photo by [Jayne Harris](https://unsplash.com/@jayneharr33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-bottle-floating-in-a-body-of-water-SkVpd5YhUug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
+{{< figure src="message-in-a-bottle-at-seashore.jpg" caption="Photo by [Jayne Harris](https://unsplash.com/@jayneharr33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-bottle-floating-in-a-body-of-water-SkVpd5YhUug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"  lazy="false" >}}
 
 In the previous explorations, [**integrity**]({{< ref "/posts/exploring-the-sovereign-web/content-addressing/" >}}) let us verify data without trusting where it lived. [**Identity**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}) let us understand who could speak for that data. [**Privacy**]({{< ref "/posts/exploring-the-sovereign-web/privacy-at-rest/" >}}) let us hide meaning from the infrastructure that stored it.
 

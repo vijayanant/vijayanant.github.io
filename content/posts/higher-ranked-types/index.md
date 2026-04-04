@@ -11,7 +11,7 @@ description: "A deep dive into Haskell's type system. Learn the difference betwe
 pillar: craft
 pillar_role: deep_dive
 ---
-{{< figure src="higher-ranked-types-1.jpg" alt="white stage" caption="Photo by [Joshua Golde](https://unsplash.com/@joshgmit) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="higher-ranked-types-1.jpg" alt="white stage" caption="Photo by [Joshua Golde](https://unsplash.com/@joshgmit) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 Let’s get started with a _monomorphic_ function -
 

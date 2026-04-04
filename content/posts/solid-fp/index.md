@@ -16,7 +16,7 @@ level: "Advanced"
     src="solid-fp-1.png"
     caption="Aperiodic Tile: a single shape that can be used to cover a surface completely without ever creating a repeating pattern."
     width=750
->}}
+ lazy="false" >}}
 
 {{< summary title="Why SOLID in FP?" >}}
 The way we build our softwares have changed over the years. But the core

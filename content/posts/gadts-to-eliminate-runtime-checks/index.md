@@ -12,7 +12,7 @@ pillar: craft
 pillar_role: deep_dive
 level: "Advanced"
 ---
-{{< figure src="gadts-to-eliminate-runtime-checks-1.jpg" alt="clothes iron, hammer, axe, flashlight and pitcher on brown wooden table" caption="Photo by [Todd Quackenbush](https://unsplash.com/@toddquackenbush) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="gadts-to-eliminate-runtime-checks-1.jpg" alt="clothes iron, hammer, axe, flashlight and pitcher on brown wooden table" caption="Photo by [Todd Quackenbush](https://unsplash.com/@toddquackenbush) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 Type system help programmers ensure that the software they write behave
 correctly. They detect errors and also serve as documentation. A good type

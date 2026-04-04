@@ -16,7 +16,7 @@ pillar_role: deep_dive
 level: "Advanced"
 ---
 
-{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap"  lazy="false" >}}
 
 ## The End of the Beginning
 

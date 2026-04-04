@@ -7,6 +7,7 @@
     - caption (optional): Image caption, rendered in a <figcaption>.
     - width (optional): The intrinsic width for the final <img> tag. Defaults to a sensible medium size.
     - class (optional): Custom class for the <figure> element.
+    - lazy (optional): Set to "false" to disable lazy loading (useful for LCP images). Defaults to "true".
 */}}
 
 {{ $src := .Get "src" }}
@@ -14,6 +15,7 @@
 {{ $caption := .Get "caption" | markdownify }}
 {{ $width := .Get "width" }}
 {{ $class := .Get "class" }}
+{{ $lazy := .Get "lazy" | default "true" }}
 
 {{ with .Page.Resources.GetMatch $src }}
     {{ $original := . }}
@@ -26,8 +28,13 @@
                     src="{{ $original.RelPermalink }}"
                     alt="{{ $alt }}"
                     {{ with $width }}width="{{ . }}"{{ end }}
-                    loading="lazy"
-                    decoding="async"
+                    {{ if eq $lazy "false" }}
+                        fetchpriority="high"
+                        decoding="sync"
+                    {{ else }}
+                        loading="lazy"
+                        decoding="async"
+                    {{ end }}
                 >
             </a>
         {{ else }}
@@ -87,8 +94,13 @@
                     width="{{ $fallbackImg.Width }}"
                     height="{{ $fallbackImg.Height }}"
                     alt="{{ $alt }}"
-                    loading="lazy"
-                    decoding="async"
+                    {{ if eq $lazy "false" }}
+                        fetchpriority="high"
+                        decoding="sync"
+                    {{ else }}
+                        loading="lazy"
+                        decoding="async"
+                    {{ end }}
                 >
             </picture>
             </a>

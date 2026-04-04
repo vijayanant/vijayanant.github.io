@@ -16,7 +16,7 @@ pillar_role: deep_dive
 level: "Advanced"
 ---
 
-{{< figure src="blueprint-featured.svg" alt="Abstract architectural blueprint contrasting an entangled messy dependency graph with a structured, modular one." >}}
+{{< figure src="blueprint-featured.svg" alt="Abstract architectural blueprint contrasting an entangled messy dependency graph with a structured, modular one."  lazy="false" >}}
 
 You open a new codebase or even your own project from long time ago. You look at the file tree in your editor. What do you see?
 

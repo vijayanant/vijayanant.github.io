@@ -43,7 +43,7 @@ YAGNI prioritises today, Technical Debt flags future costs, and design
 patterns empower adaptability.
 {{< /quote >}}
 
-{{< figure src="yagni-debt-and-adaptability-1.jpg" caption="Photo by [Saksham Gangwar](https://unsplash.com/@saksham) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="yagni-debt-and-adaptability-1.jpg" caption="Photo by [Saksham Gangwar](https://unsplash.com/@saksham) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 ## The Dance
 

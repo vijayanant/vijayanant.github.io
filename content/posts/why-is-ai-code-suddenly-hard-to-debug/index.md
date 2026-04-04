@@ -22,7 +22,7 @@ built the feature are also able to repair it.
 
 So why does that logic collapse when the author is AI?
 
-{{< figure src="why-is-ai-code-suddenly-hard-to-debug-1.jpg" alt="a woman covering her face while looking at a laptop" caption="Photo by [SEO Galaxy](https://unsplash.com/@seogalaxy) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="why-is-ai-code-suddenly-hard-to-debug-1.jpg" alt="a woman covering her face while looking at a laptop" caption="Photo by [SEO Galaxy](https://unsplash.com/@seogalaxy) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 * * *
 

@@ -17,7 +17,7 @@ pillar_role: foundational
 {{< figure
     src="modularity.jpg"
     caption="Photo by [imagine Buddy](https://unsplash.com/@imaginebuddy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)  on [Unsplash](https://unsplash.com/photos/a-person-placing-a-block-into-a-pile-of-wooden-blocks-bTMTggEt5s4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
->}}
+ lazy="false" >}}
 
 As software developers, we're all taught that modularity is a cardinal virtue. We nod along in meetings, we write it in our design docs, and we praise it in code reviews. We know *why* it's good: it helps us manage complexity, work in parallel, and make changes without breaking everything.
 

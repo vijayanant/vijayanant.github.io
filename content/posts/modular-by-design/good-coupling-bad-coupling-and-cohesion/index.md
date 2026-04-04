@@ -14,7 +14,7 @@ pillar: system
 pillar_role: deep_dive
 level: "Advanced"
 ---
-{{< figure src="good-coupling-bad-coupling-and-cohesion-1.jpg" alt="brass-colored chain machine" caption="Photo by [Jay Heike](https://unsplash.com/@jayrheike) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="good-coupling-bad-coupling-and-cohesion-1.jpg" alt="brass-colored chain machine" caption="Photo by [Jay Heike](https://unsplash.com/@jayrheike) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 In the last post, we discovered a powerful technique for achieving modularity:
 hiding secrets. We learned to draw boundaries based on what we predict will

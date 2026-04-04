@@ -13,7 +13,7 @@ pillar: craft
 pillar_role: foundational
 level: "Advanced"
 ---
-{{< figure src="tdd-what-most-articles-miss-1.jpg" alt="person writing on paper at lap" caption="Photo by [Jason Coudriet](https://unsplash.com/@jcoudriet) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="tdd-what-most-articles-miss-1.jpg" alt="person writing on paper at lap" caption="Photo by [Jason Coudriet](https://unsplash.com/@jcoudriet) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 ## Beyond the Ritual
 

@@ -15,7 +15,7 @@ pillar_role: deep_dive
 level: "Advanced"
 ---
 
-{{< figure src="featured-private.jpg" caption="Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/private-signage-door-u5Zt-HoocrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
+{{< figure src="featured-private.jpg" caption="Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/private-signage-door-u5Zt-HoocrM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"  lazy="false" >}}
 
 In the previous exploration, we solved the problem of [**Identity**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}). We figured out how to verify **provenance** using cryptographic keys and graphs of authority.
 

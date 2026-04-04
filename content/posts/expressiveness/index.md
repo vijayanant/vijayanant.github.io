@@ -11,7 +11,7 @@ description: "What makes a programming language expressive? Compare Tree impleme
 pillar: craft
 pillar_role: essay
 ---
-{{< figure src="expressiveness-1.jpg" alt="Expressive" caption="Expressive" >}}
+{{< figure src="expressiveness-1.jpg" alt="Expressive" caption="Expressive"  lazy="false" >}}
 
 My goto answer when someone asks why I like
 [Haskell](https://www.haskell.org/) so much these days is usually _“I like the

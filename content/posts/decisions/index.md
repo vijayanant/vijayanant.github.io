@@ -10,7 +10,7 @@ description: "A short reflection on the ultimate goal of every decision we make.
 pillar: strategy
 pillar_role: essay
 ---
-{{< figure src="decisions-1.jpg" alt="landscape photography of splitted road surrounded with trees" caption="Photo by [Oliver Roos](https://unsplash.com/@fairfilter) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="decisions-1.jpg" alt="landscape photography of splitted road surrounded with trees" caption="Photo by [Oliver Roos](https://unsplash.com/@fairfilter) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 We all make decisions. We should make decisions to be happy.
 

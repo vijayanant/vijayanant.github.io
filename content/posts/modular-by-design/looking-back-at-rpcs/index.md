@@ -13,7 +13,7 @@ categories: ["Software Architecture"]
 pillar: system
 pillar_role: deep_dive
 ---
-{{< figure src="looking-back-at-rpcs-1.jpeg" alt="Historical illustration of early telecommunications devices like a telephone, microphone, and phonograph." caption="By Benoît Bonnafoux - Le téléphone, le microphone et le phonographe (1880, 3rd edition), by Théodose du Moncel (1821-1884), Public Domain, https://commons.wikimedia.org/w/index.php?curid=130827340" >}}
+{{< figure src="looking-back-at-rpcs-1.jpeg" alt="Historical illustration of early telecommunications devices like a telephone, microphone, and phonograph." caption="By Benoît Bonnafoux - Le téléphone, le microphone et le phonographe (1880, 3rd edition), by Théodose du Moncel (1821-1884), Public Domain, https://commons.wikimedia.org/w/index.php?curid=130827340"  lazy="false" >}}
 
 Our journey through the principles of modular design has taken us from the "how" of Information Hiding to the "why" of historical context. Now, to see these principles in action, we will analyze our first major case study: Remote Procedure Calls (RPCs). This is an architectural style built on a powerful, intuitive idea: what if interacting with a computer across the world felt the same as calling a function in our own code?
 

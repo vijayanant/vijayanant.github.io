@@ -13,7 +13,7 @@ pillar_role: essay
 level: "Intermediate"
 ---
 {{< figure src="design-principles-and-design-patterns-1.png"
-    alt="Design Principles and Design Patterns" >}}
+    alt="Design Principles and Design Patterns"  lazy="false" >}}
 
 Design principles and design patterns are related but serve different
 purposes.

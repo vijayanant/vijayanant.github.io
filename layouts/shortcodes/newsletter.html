@@ -19,9 +19,12 @@
 
     (function() {
       function initZoho() {
+        const container = document.getElementById('{{ $containerId }}');
+        if (!container) return; // Exit if the specific form instance is not on this page
+
         if (typeof setupSF === 'function') {
-          const container = document.getElementById('{{ $containerId }}');
           const form = container.querySelector('form');
+          if (!form) return;
           // Zoho script is hardcoded to look for "zcampaignOptinForm". 
           // We temporarily give it what it wants so it binds to THIS specific form.
           const originalId = form.id;
@@ -37,7 +40,7 @@
       else { window.addEventListener('load', initZoho); }
     })();
   </script>
-  <script type="text/javascript" src="https://zgp4-zgp4.maillist-manage.in/js/optin.min.js"></script>
+  <script type="text/javascript" src="https://zgp4-zgp4.maillist-manage.in/js/optin.min.js" defer></script>
 
   {{ if eq $formType "full" }}
   <div class="newsletter-section">

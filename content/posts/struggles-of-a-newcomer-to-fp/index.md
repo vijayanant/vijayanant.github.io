@@ -11,7 +11,7 @@ description: "Struggling with Functional Programming? Learn how to move from mes
 pillar: craft
 pillar_role: essay
 ---
-{{< figure src="struggles-of-a-newcomer-to-fp-1.jpg" alt="woman in black long sleeve shirt covering her face with her hands" caption="Photo by [Elisa Ventur](https://unsplash.com/@elisa_ventur) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="struggles-of-a-newcomer-to-fp-1.jpg" alt="woman in black long sleeve shirt covering her face with her hands" caption="Photo by [Elisa Ventur](https://unsplash.com/@elisa_ventur) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 One of the challenges that I faced earlier on with FP is coming up with non-
 imperative solutions (I still do sometimes). I am sure many have faced similar

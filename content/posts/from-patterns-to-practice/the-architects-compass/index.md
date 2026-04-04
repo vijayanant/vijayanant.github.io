@@ -16,7 +16,7 @@ pillar_role: foundational
 level: "Advanced"
 ---
 
-{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" width="1200" >}}
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" width="1200"  lazy="false" >}}
 
 In the workshops I lead on software architecture, I always start with a specific scenario. I call it 'CityPulse,' and it represents the first major test any new architect faces: the fundamental conflict between the business and the engineering team.
 

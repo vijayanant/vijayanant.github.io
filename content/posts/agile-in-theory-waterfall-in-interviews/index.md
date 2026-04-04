@@ -78,7 +78,7 @@ Then they build with the team one decision at a time.
     src="agile-waterfall-interview-meme.jpg"
     alt="Meme featuring a character (often from Office Space) sarcastically asking to skip clarifying questions and directly draw a final system design diagram, highlighting the contradiction in typical tech interviews."
     width=600
->}}
+ lazy="false" >}}
 
 System design interviews won’t go away. And they _can_ be useful.  
 But maybe it’s time we align how we interview with how we actually build.

@@ -19,7 +19,7 @@ from experimental curiosities into **powerful, everyday tools** that are
 fundamentally changing how we approach coding. This isn't theoretical; it's
 just how we do things now, offering a significant "superpower" to developers.
 
-{{< figure src="driving-ai-code-why-test-driven-development-1.jpeg" alt="Driving AI Code: Why Test-Driven Development is Essential in the LLM Era" width=600 >}}
+{{< figure src="driving-ai-code-why-test-driven-development-1.jpeg" alt="Driving AI Code: Why Test-Driven Development is Essential in the LLM Era" width=600  lazy="false" >}}
 
 The biggest thing LLMs do for us is **AI-powered code generation**. Tools like
 [GitHub Copilot](https://github.com/features/copilot) (an AI pair programmer

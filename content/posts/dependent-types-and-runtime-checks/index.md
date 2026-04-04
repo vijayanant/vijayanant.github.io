@@ -25,7 +25,7 @@ Through a simple example, this article demonstrates how dependent types can be a
     src="runtime-checks.jpg"
     alt="A person checking items off a checklist, symbolizing compile-time checks replacing runtime checks."
     caption="Photo by [Glenn Carstens-Peters](https://unsplash.com/@glenncarstenspeters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/person-writing-bucket-list-on-book-RLw-UC03Gwc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
->}}
+ lazy="false" >}}
 
 ## Give Me The Money
 

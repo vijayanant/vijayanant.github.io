@@ -16,7 +16,7 @@ pillar_role: deep_dive
 level: "Advanced"
 ---
 
-{{< figure src="contract-featured.svg" alt="A stylized illustration of a scroll (the contract) being locked with a digital shield, representing code-level enforcement." >}}
+{{< figure src="contract-featured.svg" alt="A stylized illustration of a scroll (the contract) being locked with a digital shield, representing code-level enforcement."  lazy="false" >}}
 
 In the [previous post]({{< ref "/posts/codifying-your-architecture/the-blueprint" >}}), we talked about the "Screaming Architecture". The idea is that your directory structure should shout your business intent. We rearranged the furniture, moved classes into domain-centric buckets, and felt a brief moment of zen.
 

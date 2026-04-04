@@ -11,7 +11,7 @@ categories: ["Software Architecture"]
 featured_image: "control_panel.jpg"
 ---
 
-{{< figure src="control_panel.jpg" caption="Photo by [Karan Suthar](https://unsplash.com/@karan_suthar_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-close-up-of-a-control-panel-with-buttons-and-switches-3gX0VUxKekU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
+{{< figure src="control_panel.jpg" caption="Photo by [Karan Suthar](https://unsplash.com/@karan_suthar_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/a-close-up-of-a-control-panel-with-buttons-and-switches-3gX0VUxKekU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"  lazy="false" >}}
 
 So far, I looked at how we [**secure bytes**]({{< ref "/posts/exploring-the-sovereign-web/content-addressing/" >}}), [**verify identities**]({{< ref "/posts/exploring-the-sovereign-web/cryptographic-identity/" >}}), [**seal the vault**]({{< ref "/posts/exploring-the-sovereign-web/privacy-at-rest/" >}}), and [**share secrets**]({{< ref "/posts/exploring-the-sovereign-web/sharing/" >}}). I had reached a point where the storage was secure and the actors were verified. But when I tried to model how a group would actually use this vault, I realized I had no way to define who was in charge.
 

@@ -16,7 +16,7 @@ level: "Intermediate"
     src="venturing-beyond-the-gof-1.jpg"
     alt="blue ballpoint pen on white notebook"
     caption="Photo by [Med Badr Chemmaoui](https://unsplash.com/@medbadrc) on [Unsplash](https://unsplash.com)"
->}}
+ lazy="false" >}}
 
 The Gang of Four's "Design Patterns" book gave us 23 patterns. For a generation of developers, these patterns became a shared language for object-oriented design. But somewhere along the way, the industry made a mistake: we behaved as if the list was the value. We learned the vocabulary and ignored the grammar.
 

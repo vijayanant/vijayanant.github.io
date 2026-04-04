@@ -29,7 +29,7 @@ So a lot of that got lost.
 {{< figure
     src="teaching-the-ai-to-code-and-accidentally-1.jpg"
     width=600
->}}
+ lazy="false" >}}
 
 Now, with AI in the mix, we’re doing it all again.  
 **Not for ourselves but to help the AI understand what we're asking.**

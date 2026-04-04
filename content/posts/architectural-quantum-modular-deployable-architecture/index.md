@@ -38,7 +38,7 @@ Understanding and managing coupling is central to building evolvable systems, a 
     src="quanta-overview.svg"
     alt="Diagram contrasting a distributed monolith (one large quantum) with true microservices (multiple independent quanta). The monolith shows tightly coupled services in one boundary, while the microservices have separate boundaries with async communication."
     caption="Figure 1: A single large quantum (distributed monolith) vs. multiple independent quanta (true microservices)."
->}}
+ lazy="false" >}}
 
 ## A Litmus Test: Independent Deployability
 

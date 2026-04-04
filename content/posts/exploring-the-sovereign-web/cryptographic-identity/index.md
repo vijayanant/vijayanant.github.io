@@ -15,7 +15,7 @@ pillar_role: deep_dive
 level: "Advanced"
 ---
 
-{{< figure src="featured-antique-keys.jpg" caption="Photo by [Aniyora J](https://unsplash.com/@yora_dreams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/silver-and-black-skeleton-key-PhuxBx5bOCk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
+{{< figure src="featured-antique-keys.jpg" caption="Photo by [Aniyora J](https://unsplash.com/@yora_dreams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/silver-and-black-skeleton-key-PhuxBx5bOCk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"  lazy="false" >}}
 
 In the previous exploration, I looked at [**content addressing**]({{< ref "/posts/exploring-the-sovereign-web/content-addressing/" >}}) and how cryptographic hashes let us verify data without trusting a central host. That solves the problem of **integrity**, but it leaves a massive gap regarding **authenticity**.
 

@@ -12,10 +12,10 @@ pillar: craft
 pillar_role: essay
 level: "Intermediate"
 ---
-
 {{< figure
     src="bad-code-is-not-tech-debt-1.jpg" alt="Until debt tear us apart printed red brick wall at daytime"
     caption="Photo by [Alice Pasqual](https://unsplash.com/@stri_khedonia) on [Unsplash](https://unsplash.com)"
+     lazy="false" >}}
     width=800
 >}}
 

@@ -15,7 +15,7 @@ pillar: strategy
 pillar_role: deep_dive
 ---
 
-{{< figure src="framework_roadmap.svg" alt="Framework Roadmap" >}}
+{{< figure src="framework_roadmap.svg" alt="Framework Roadmap"  lazy="false" >}}
 
 ## From "Why" to "How"
 

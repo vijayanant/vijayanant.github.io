@@ -12,7 +12,7 @@ pillar: strategy
 pillar_role: essay
 level: "Beginner"
 ---
-{{< figure src="why-you-should-blog-too-1.jpg" alt="white printer paper beside silver macbook" caption="Photo by [Markus Winkler](https://unsplash.com/@markuswinkler) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="why-you-should-blog-too-1.jpg" alt="white printer paper beside silver macbook" caption="Photo by [Markus Winkler](https://unsplash.com/@markuswinkler) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 When I first thought about blogging it was daunting. Even though I liked the
 idea of blogging, I didn’t know why I should blog. What was I going to add to

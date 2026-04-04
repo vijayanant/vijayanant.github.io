@@ -30,7 +30,7 @@ I've also been thinking about how to fix the damage a thief might do before they
 
 The only logical path I see is to sign a new "Canonical Snapshot" that points back to the last known good state, effectively skipping the thief’s work.
 
-{{< figure src="timeline-correction.svg" title="Timeline Correction" caption="Recovery by state-override. Is this the standard way to handle 'rollback' in decentralized graphs?" >}}
+{{< figure src="timeline-correction.svg" title="Timeline Correction" caption="Recovery by state-override. Is this the standard way to handle 'rollback' in decentralized graphs?"  lazy="false" >}}
 
 This feels like a `git push --force`. It corrects the future, but it creates a **Historical Fork**. Anyone who saw the thief’s version still has those blocks. **Does this pattern of 'Accountability through Forking' exist in other systems, or am I over-complicating the recovery logic?**
 

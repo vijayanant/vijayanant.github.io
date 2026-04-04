@@ -22,7 +22,7 @@ they were integrating with.
 That gap? It’s not about poor coding skills.  
 It’s about **missing shared understanding**.
 
-{{< figure src="the-real-bottleneck-isnt-code-1.jpg" alt="Without context from the person who drew it, it could be either. If only they all had shared understanding." caption="_Without context from the person who drew it, it could be either. If only they all had shared understanding._" >}}
+{{< figure src="the-real-bottleneck-isnt-code-1.jpg" alt="Without context from the person who drew it, it could be either. If only they all had shared understanding." caption="_Without context from the person who drew it, it could be either. If only they all had shared understanding._"  lazy="false" >}}
 
 Shared understanding means the whole team holds the same mental model of
 _what_ we’re building, _why_ , and _how_ it should work.

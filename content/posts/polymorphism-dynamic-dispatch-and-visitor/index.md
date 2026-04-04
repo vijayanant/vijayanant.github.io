@@ -12,7 +12,7 @@ pillar: craft
 pillar_role: essay
 level: "Intermediate"
 ---
-{{< figure src="polymorphism-dynamic-dispatch-and-visitor-1.jpeg" alt="Change neon light signage" caption="Photo by [Ross Findon](https://unsplash.com/@rossfindon) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="polymorphism-dynamic-dispatch-and-visitor-1.jpeg" alt="Change neon light signage" caption="Photo by [Ross Findon](https://unsplash.com/@rossfindon) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 Let's revisit a classic example from our early days of object-oriented
 programming: shapes and transformations. We will design a system that allows

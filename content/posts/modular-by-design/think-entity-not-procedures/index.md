@@ -54,7 +54,7 @@ in the same style of language.
   src="think-entity-not-procedures-1.png"
   alt="Diagram showing the evolution from RPC to Web Services, with XML-RPC and SOAP as intermediate steps."
   caption="The evolutionary path from RPC to modern Web Services."
->}}
+ lazy="false" >}}
 
 ## Evolve Independently And Incrementally
 

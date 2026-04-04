@@ -16,7 +16,7 @@ level: "Intermediate"
     src="taming-complexity-a-guide-to-imperative-1.jpg" alt="time lapse photo of cars passing by during nighttime"
     caption="Photo by [wxshutterbug](https://unsplash.com/@wxshutterbug) on [Unsplash](https://unsplash.com)"
     width=600
->}}
+ lazy="false" >}}
 
 In the realm of software development, complexity is the root cause of majority
 of problems. Unreliable programs often exhibit intricate structures and are

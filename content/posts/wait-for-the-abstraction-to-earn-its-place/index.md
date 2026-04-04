@@ -12,7 +12,7 @@ pillar: craft
 pillar_role: essay
 level: "Advanced"
 ---
-{{< figure src="wait-for-the-abstraction-to-earn-1.jpg" alt="turned on laptop computer" >}}
+{{< figure src="wait-for-the-abstraction-to-earn-1.jpg" alt="turned on laptop computer"  lazy="false" >}}
 
 We’ve been taught to fear duplication.
 

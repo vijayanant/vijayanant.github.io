@@ -13,7 +13,7 @@ pillar_role: essay
 level: "Advanced"
 ---
 
-{{< figure src="investigation.jpg" alt="A vintage typewriter on a white table with a sheet of paper that has the word INVESTIGATION typed on it." caption="Photo by [Markus Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/green-and-white-typewriter-on-blue-textile-cS2eQHB7wE4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" >}}
+{{< figure src="investigation.jpg" alt="A vintage typewriter on a white table with a sheet of paper that has the word INVESTIGATION typed on it." caption="Photo by [Markus Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/green-and-white-typewriter-on-blue-textile-cS2eQHB7wE4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"  lazy="false" >}}
 
 While working on a prototype based on my [**Exploring the Sovereign Web**]({{< ref "/series/exploring-the-sovereign-web/" >}}) series, I encountered a technical paradox involving binary serialization and integrity verification.
 

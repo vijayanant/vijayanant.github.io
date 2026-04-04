@@ -17,7 +17,7 @@ level: "Intermediate"
     alt="xkcd comic 2539"
     caption="<https://xkcd.com/2539>"
     width=500
->}}
+ lazy="false" >}}
 
 {{< summary title="" >}}
 I was always fascinated by consulting work; the flexibility on schedule was

@@ -13,7 +13,7 @@ featured_image: "modularity-through-the-ages-1.jpg"
 pillar: system
 pillar_role: deep_dive
 ---
-{{< figure src="modularity-through-the-ages-1.jpg" alt="child playing with lego blocks" caption="Photo by [Aedrian](https://unsplash.com/@aedrian) on [Unsplash](https://unsplash.com)" >}}
+{{< figure src="modularity-through-the-ages-1.jpg" alt="child playing with lego blocks" caption="Photo by [Aedrian](https://unsplash.com/@aedrian) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 In the last post, we explored the timeless push and pull between coupling and cohesion. We established them as the key metrics for a healthy, modular system. But this struggle is not new. In fact, it is one of the central, driving forces in the history of software architecture.
 
