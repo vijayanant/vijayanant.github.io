@@ -59,7 +59,8 @@
   "dateModified": {{ .Lastmod.Format $iso8601 | jsonify | safeJS }},
   "author": {
     "@type": "Person",
-    "name": {{ site.Params.author | default "Your Name" | jsonify | safeJS }}
+    "name": {{ site.Params.author | default "Your Name" | jsonify | safeJS }},
+    "url": {{ site.BaseURL | jsonify | safeJS }}
   },
   {{- end }}
   "publisher": {
