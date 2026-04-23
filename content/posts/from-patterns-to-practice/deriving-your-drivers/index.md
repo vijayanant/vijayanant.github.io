@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 2
 categories: ["Software Architecture"]
-tags: ["decision-making", "architectural-styles", "trade-offs", "adr"]
+tags: ["quality-attributes", "qas", "decision-making"]
 description: "Stop designing for vague goals. Learn how to use Quality Attribute Scenarios (QAS) to define concrete, testable requirements for your system."
 featured_image: "driving.jpg"
 pillar: strategy

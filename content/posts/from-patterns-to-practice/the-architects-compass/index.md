@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 1
 categories: ["Software Architecture"]
-tags: ["decision-making", "architectural-styles", "trade-offs", "adr"]
+tags: ["speed-vs-scale", "trade-offs", "decision-making"]
 description: "Architecture is the art of the trade-off. Learn how to translate business pressure into concrete drivers like time-to-market and scalability."
 featured_image: "compass.jpg"
 pillar: strategy

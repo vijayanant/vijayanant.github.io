@@ -8,7 +8,7 @@ draft: false
 series: ["Codifying Your Architecture"]
 series_order: 1
 categories: ["Software Architecture"]
-tags: ["modularity", "architecture-as-code", "package-by-component", "screaming-architecture", "code-structure"]
+tags: ["screaming-architecture", "package-by-component", "enforceable-architecture"]
 description: "Stop organizing code by technical layers. Learn how to implement Screaming Architecture and package-by-component to reveal your system's intent."                                                     
 featured_image: "blueprint-featured.svg"
 pillar: craft

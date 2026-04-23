@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 5
 categories: ["Software Architecture"]
-tags: ["decision-making", "architectural-styles", "trade-offs", "adr"]
+tags: ["architectural-spike", "risk-management", "decision-making"]
 description: "Don't bet the company on a hypothesis. Learn how to use Architectural Spikes to buy information, expose unknown unknowns, and validate complex designs."
 featured_image: "experiment.jpg"
 pillar: strategy

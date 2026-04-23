@@ -8,7 +8,7 @@ date: 2023-11-18
 draft: false
 description: "What is coupling in software engineering? Learn the difference between loose and tight coupling, how cohesion drives modularity, and how to avoid 'God classes'."
 featured_image: "featured.svg"
-tags: ["coupling", "cohesion", "modularity"]
+tags: ["loose-coupling", "high-cohesion", "modular-design"]
 categories: ["Software Architecture"]
 pillar: system
 pillar_role: deep_dive

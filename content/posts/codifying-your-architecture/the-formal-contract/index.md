@@ -8,7 +8,7 @@ draft: false
 series: ["Codifying Your Architecture"]
 series_order: 2
 categories: ["Software Architecture"]
-tags: ["encapsulation", "information-hiding", "modularity", "clean-code", "java", "python"]
+tags: ["enforceable-architecture", "access-modifiers", "encapsulation"]
 description: "How to use Java's package-private and Python's __all__ to enforce boundaries and prevent coupling treason at the compiler level."
 featured_image: "contract-featured.svg"
 pillar: craft
