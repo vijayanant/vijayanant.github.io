@@ -1,4 +1,4 @@
-{{- if .IsPage }}
+{{- if or .IsPage .IsSection }}
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" }}
 {{- $title := .Params.seo_title | default .Title }}
 {{- $description := .Description | default .Summary | plainify | truncate 160 }}
@@ -7,7 +7,9 @@
 
 {{- /* Determine Schema Type */}}
 {{- $schemaType := "BlogPosting" }}
-{{- if eq .Section "workshops" }}
+{{- if .IsSection }}
+  {{- $schemaType = "CollectionPage" }}
+{{- else if eq .Section "workshops" }}
   {{- $schemaType = "Course" }}
 {{- else }}
   {{- range .Params.categories }}
@@ -51,10 +53,25 @@
 {
   "@context": "https://schema.org",
   "@type": {{ $schemaType | jsonify | safeJS }},
-  {{ if eq $schemaType "Course" }}"name"{{ else }}"headline"{{ end }}: {{ $title | jsonify | safeJS }},
+  {{ if or (eq $schemaType "Course") (eq $schemaType "CollectionPage") }}"name"{{ else }}"headline"{{ end }}: {{ $title | jsonify | safeJS }},
   "description": {{ $description | jsonify | safeJS }},
   "image": {{ $image | jsonify | safeJS }},
-  {{- if ne $schemaType "Course" }}
+  {{- if eq $schemaType "CollectionPage" }}
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {{- range $i, $e := .Pages }}
+        {{- if $i }},{{- end }}
+        {
+          "@type": "ListItem",
+          "position": {{ add $i 1 }},
+          "url": {{ .Permalink | jsonify | safeJS }}
+        }
+      {{- end }}
+    ]
+  },
+  {{- end }}
+  {{- if and (ne $schemaType "Course") (ne $schemaType "CollectionPage") }}
   "datePublished": {{ $publishDate.Format $iso8601 | jsonify | safeJS }},
   "dateModified": {{ .Lastmod.Format $iso8601 | jsonify | safeJS }},
   "author": {
@@ -80,7 +97,7 @@
     "@type": "WebPage",
     "@id": {{ .Permalink | jsonify | safeJS }}
   },
-  {{- if ne $schemaType "Course" }}
+  {{- if and (ne $schemaType "Course") (ne $schemaType "CollectionPage") }}
   "wordCount": {{ .WordCount }},
   {{- end }}
   "url": {{ .Permalink | jsonify | safeJS }},

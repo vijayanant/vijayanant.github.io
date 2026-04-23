@@ -1,7 +1,8 @@
 ---
 title: "Exploring the Sovereign Web"
+seo_title: "Sovereign Web Guide: A Deep Dive into Decentralized Trust and Privacy"
 date: 2026-01-30
-description: "My notes on Trust, Time, and Software"
+description: "Explore the foundations of the Sovereign Web. A technical field guide to content addressing, cryptographic identity, and zero-trust sharing in a decentralized world."
 status: "Ongoing"
 featured_image: "explorers-field-guide.jpg"
 draft: false
