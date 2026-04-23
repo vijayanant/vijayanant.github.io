@@ -4,7 +4,7 @@ subtitle: "Tokens, Time Machines, and the Return of the Document"
 slug: "the-agentic-web"
 date: 2026-02-13
 draft: true
-categories: ["Architecture"]
+categories: ["Software Architecture"]
 tags: ["ai", "architecture", "web", "strategy"]
 description: "We spent thirty years building a web for the human eye, only to realize that the artificial mind prefers the simplicity of 1995."
 --- 

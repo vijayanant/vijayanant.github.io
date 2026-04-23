@@ -5,7 +5,7 @@ slug: "taming-complexity-a-guide-to-imperative-object-oriented-and-functional-pr
 date: 2017-09-15
 draft: false
 featured_image: "taming-complexity-a-guide-to-imperative-1.jpg"
-tags: ["programming-paradigms", "complexity-management", "functional-programming"]
+tags: ["programming-paradigms", "complexity-management", "functional-programming", "oop"]
 categories: ["Programming"]
 description: "How different paradigms tackle complexity. A comparison of philosophies for managing state, control flow, and system order."
 pillar: craft

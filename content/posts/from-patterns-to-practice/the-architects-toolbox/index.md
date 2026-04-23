@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 3
 categories: ["Software Architecture"]
-tags: ["architectural-styles", "monolith", "microservices", "event-driven"]
+tags: ["architectural-styles", "monolith", "microservices", "event-driven", "decision-making"]
 description: "Monolith, Microservices, or Event-Driven? A practical architect's guide to choosing the right foundational style by analyzing trade-offs against business drivers."
 featured_image: "toolbox.jpg"
 pillar: strategy

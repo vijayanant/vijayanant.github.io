@@ -5,7 +5,7 @@ subtitle: "Moving runtime checks to the compile-time using Dependent Types"
 date: "2018-10-26"
 slug: "dependent-types-to-eliminate-runtime-checks"
 categories: ["Programming"]
-tags: ["dependent-types", "static-analysis", "type-safety"]
+tags: ["dependent-types", "static-analysis", "type-safety", "haskell", "functional-programming"]
 draft: false
 description: "How to use DataKinds and KindSignatures to move validation to the type system. A guide to safer, more robust Haskell code."
 featured_image: "runtime-checks.jpg"

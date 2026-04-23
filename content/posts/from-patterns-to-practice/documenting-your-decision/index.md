@@ -8,7 +8,7 @@ draft: false
 series: ["From Patterns to Practice"]
 series_order: 6
 categories: ["Software Architecture"]
-tags: ["adr", "c4-model", "documentation"]
+tags: ["adr", "c4-model", "documentation", "decision-making"]
 description: "Stop 'Architectural Amnesia' in your team. Learn how to use Architectural Decision Records (ADRs) and C4 diagrams to document and communicate high-stakes design choices."
 featured_image: "documentation.jpg"
 pillar: strategy

@@ -7,7 +7,7 @@ draft: false
 series: ["Modular by Design"]
 series_order: 1
 description: "What is modularity in software engineering? Learn how to achieve modular design using David Parnas's 'Information Hiding' to build resilient and maintainable systems."
-tags: ["modular-design", "information-hiding", "david-parnas"]
+tags: ["modular-design", "information-hiding", "david-parnas", "modularity"]
 categories: ["Software Architecture"]
 featured_image: "modularity.jpg"
 pillar: system

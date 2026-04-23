@@ -5,7 +5,7 @@ slug: "struggles-of-a-newcomer-to-fp"
 date: 2022-06-09
 draft: false
 featured_image: "struggles-of-a-newcomer-to-fp-1.jpg"
-tags: ["functional-refactoring", "recursion", "learning-fp"]
+tags: ["functional-refactoring", "recursion", "learning-fp", "haskell", "functional-programming"]
 categories: ["Programming"]
 description: "Struggling with Functional Programming? Learn how to move from messy recursive algorithms to clean, declarative FP code by removing state management and using standard abstractions."
 pillar: craft

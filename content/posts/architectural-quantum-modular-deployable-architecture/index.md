@@ -6,7 +6,7 @@ slug: "architectural-quantum-modular-deployable-architecture"
 date: 2025-11-05
 draft: false
 categories: ["Software Architecture"]
-tags: ["independent-deployability", "architectural-quantum", "system-modularity"]
+tags: ["independent-deployability", "architectural-quantum", "system-modularity", "modularity"]
 description: "What is an Architectural Quantum? Learn how to identify hidden deployment coupling and break down distributed monoliths for true microservice agility."
 featured_image: "featured.svg"
 pillar: system

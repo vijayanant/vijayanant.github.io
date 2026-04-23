@@ -5,7 +5,7 @@ slug: "driving-ai-code-why-test-driven-development-is-essential-in-the-llm-era"
 date: 2025-06-20
 draft: false
 featured_image: "driving-ai-code-why-test-driven-development-1.jpeg"
-tags: ["llm-tdd", "ai-code-integrity", "software-design"]
+tags: ["llm-tdd", "ai-code-integrity", "software-design", "ai", "llm"]
 categories: ["AI in Engineering"]
 description: "LLMs can write code fast, but can they write good code? Learn why TDD is the essential methodology for preventing AI hallucinations and maintaining design ownership."
 pillar: craft

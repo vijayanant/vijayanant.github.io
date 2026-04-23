@@ -6,7 +6,7 @@ slug: "modularity-through-the-ages"
 series: ["Modular by Design"]
 series_order: 3
 draft: false
-tags: ["history-of-modularity", "soa", "microservices-history"]
+tags: ["history-of-modularity", "soa", "microservices-history", "modularity"]
 categories: ["Software Architecture"]
 description: "Trace the evolution of software architecture from RPCs and SOAs to modern microservices. Learn why the core principles of modularity, coupling, and cohesion remain timeless."
 featured_image: "modularity-through-the-ages-1.jpg"

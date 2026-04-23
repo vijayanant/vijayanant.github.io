@@ -5,7 +5,7 @@ slug: "gadts-to-eliminate-runtime-checks"
 date: 2016-10-14
 draft: false
 featured_image: "gadts-to-eliminate-runtime-checks-1.jpg"
-tags: ["gadt", "type-level-guarantees", "compiler-safety"]
+tags: ["gadt", "type-level-guarantees", "compiler-safety", "haskell"]
 categories: ["Programming"]
 description: "Standard ADTs allow invalid states. Learn how Generalized Algebraic Data Types (GADTs) enable strict type-level guarantees."
 pillar: craft
