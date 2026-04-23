@@ -101,6 +101,8 @@ You can’t change the format. But you _can_ shape how you show up:
 
 * **Aim for a conversation.** Not a final answer.
 
+If you're interested in how real systems evolve outside of the interview room, you might enjoy my guide on [**Architectural Quanta**]({{< ref "/posts/architectural-quantum-modular-deployable-architecture" >}})—the true units of independent change in a distributed world.
+
 System design interviews may not reflect how we build.  
 But how you think still matters.  
 Make that visible.

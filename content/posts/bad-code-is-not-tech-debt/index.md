@@ -282,4 +282,6 @@ The next time you’re tempted to call messy code "tech debt," stop and ask: _Di
 
 If it was a choice, make it visible. Write it down in a `DEBT.md` or a ticket. If it was an accident, don't hide behind the metaphor—fix the quality. Debt is a powerful tool for startups and fast-moving teams, but only if the "borrower" has a plan to pay it back. Otherwise, you aren't managing a balance sheet; you're just managing a mess.
 
+If you found this distinction between debt and mess useful, you’ll likely enjoy my exploration of [**YAGNI, Debt, and Adaptability**]({{< ref "/posts/yagni-debt-and-adaptability" >}}), where I look at how we balance today's delivery with tomorrow's change.
+
 {{< newsletter type="simple" >}}

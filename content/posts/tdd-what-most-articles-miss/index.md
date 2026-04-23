@@ -139,11 +139,7 @@ bug prevention. It fundamentally alters how you build software, leading to:
 
 ### **Organic, Adaptable Architecture**
 
-By designing from behaviour and letting internal “units” emerge, your
-architecture isn't rigid or defined upfront. It grows organically, constantly
-adapting to new requirements and a deeper understanding of the problem and
-business domain. This iterative evolution prevents the costly rework
-associated with fixed, big-design-up-front approaches.
+By designing from behaviour and letting internal “units” emerge, your architecture isn't rigid or defined upfront. It grows organically, constantly adapting to new requirements and a deeper understanding of the problem and business domain. This iterative evolution prevents the costly rework associated with fixed, big-design-up-front approaches. This is the same discipline that ensures our design remains flexible across paradigms—a concept I explore in my guide on [**Applying SOLID to Functional Programming**]({{< ref "/posts/solid-fp" >}}).
 
 ### **Cohesive and Loosely Coupled Code**
 
