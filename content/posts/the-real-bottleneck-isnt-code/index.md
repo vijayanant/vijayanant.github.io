@@ -7,7 +7,7 @@ date: 2025-07-23
 draft: false
 description: "LLMs accelerate coding, but only humans can align minds. Learn why 'Team Resonance' is the real multiplier and how to avoid mental model drift."
 featured_image: "the-real-bottleneck-isnt-code-1.jpg"
-tags: ["ai", "llm", "teamwork", "communication"]
+tags: ["team-resonance", "shared-understanding", "llm-impact"]
 categories: ["AI in Engineering"]
 pillar: strategy
 pillar_role: foundational

@@ -6,7 +6,7 @@ date: 2025-08-19
 draft: false
 description: "Why is AI-generated code so difficult to repair? Learn why the lack of shared mental models makes debugging AI code uniquely brutal and how to fix it with engineering discipline."
 featured_image: "featured.svg"
-tags: ["ai", "llm", "debugging", "mental-model"]
+tags: ["ai-debugging", "mental-models", "trust-gap"]
 categories: ["AI in Engineering"]
 pillar: craft
 pillar_role: essay
