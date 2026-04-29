@@ -13,6 +13,10 @@ pillar_role: deep_dive
 ---
 {{< figure src="higher-ranked-types-1.jpg" alt="white stage" caption="Photo by [Joshua Golde](https://unsplash.com/@joshgmit) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
+Haskell's type system is famously powerful, but it often hides a subtle distinction in how it binds logic to data. To truly master advanced functional design, we need to understand the boundary between **Monomorphism** and **Polymorphism**—and more importantly, where that boundary breaks.
+
+In this post, we'll look at how Haskell handles type variables in higher-order functions. We'll discover a common trap where "generic" functions are less polymorphic than they appear, and see how **Higher Ranked Types** (via the `RankNTypes` extension) let us move the power of decision-making from the function author to the function user.
+
 Let’s get started with a _monomorphic_ function -
 
 ```haskell
@@ -87,6 +91,8 @@ this function body, `g` is monomorphic.
 
 What we wanted, though, is for `g` to be polymorphic. We want the type of `g`
 to be bound when user calls `badfoo` - not when `g` is used within `badfoo`.
+
+The problem is the scope of the polymorphism. In standard Haskell, type variables are bound "too early" (at the outer function level). To fix this, we need a way to talk about the **level** at which a function is polymorphic. This is where the concept of **Rank** comes in.
 
 ## Rank
 

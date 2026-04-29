@@ -14,17 +14,11 @@ level: "Intermediate"
 ---
 {{< figure src="polymorphism-dynamic-dispatch-and-visitor-1.jpeg" alt="Change neon light signage" caption="Photo by [Ross Findon](https://unsplash.com/@rossfindon) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
-Let's revisit a classic example from our early days of object-oriented
-programming: shapes and transformations. We will design a system that allows
-applying scaling and rotation to lines, circles, and rectangles. However, this
-time, we'll take it a step further and make it
-[extensible](https://en.wikipedia.org/wiki/Extensibility). This means future
-developers should be able to easily add new types of transformations without
-modifying existing code.
+Let's revisit a classic example from our early days of object-oriented programming: shapes and transformations. We will design a system that allows applying scaling and rotation to lines, circles, and rectangles. 
 
-What we need is a [polymorphic
-function](https://en.wikipedia.org/wiki/Polymorphism_\(computer_science\))
-that exhibits different behaviour based on the data we provide. Specifically,
+However, this time, we'll look at it through the lens of **System Extensibility**. Most developers assume that standard inheritance and polymorphism are enough, but we'll discover a silent trap where standard **Single Dispatch** fails us. By following this journey, we'll see exactly where the language limits our design and how the **Visitor Pattern** provides the **Double Dispatch** solution required for truly extensible systems.
+
+What we need is a [polymorphic function](https://en.wikipedia.org/wiki/Polymorphism_\(computer_science\)) that exhibits different behaviour based on the data we provide. Specifically,
 a function that performs various transformations (rotate, scale, etc.) on the
 shape/type (Line, Circle, Rectangle) of the object. Basically we want a
 function
@@ -36,7 +30,7 @@ apply(transformation, shape);
 The challenge is to design a model such that adding new transformation is
 trivial.
 
-## **Well, we have to start somewhere!**
+## **Initial Approach: Conditional Logic**
 
 We could try to simply mimic the above function as a polymorphic method in a
 `Transformer` class, but we will soon realise the function will get messy with
@@ -44,7 +38,7 @@ We could try to simply mimic the above function as a polymorphic method in a
 modifying the method which goes against [Open-closed
 Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle).
 
-## **Function Overloading (Static Polymorphism)**
+## **Attempt 1: Static Polymorphism (Function Overloading)**
 
 [Function overloading](https://en.wikipedia.org/wiki/Function_overloading) or
 method overloading is the ability to create multiple functions of the same
@@ -54,7 +48,7 @@ is at compile time, depending only on the static types of the arguments
 call, the compiler determines which overloaded function to use, and resolves
 this
 
-This seems like the way forward, don't you think? Multiple implementations
+At first glance, this seems like the way forward. Multiple implementations
 with same function name (transform) with different behaviour based on the
 parameters we passed (transformations and shapes).
 
