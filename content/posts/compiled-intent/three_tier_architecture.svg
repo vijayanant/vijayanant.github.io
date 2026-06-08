@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" style="font-family: ui-sans-serif, system-ui, sans-serif; background: #0b0f19; border-radius: 12px; border: 1px solid #1e293b; padding: 20px;">
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+  </defs>
+  <text x="30" y="35" fill="#f8fafc" font-size="15" font-weight="600">3-Tier Architecture Invariant (ADR-005)</text>
+  <rect x="150" y="60" width="300" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+  <text x="300" y="90" fill="#f1f5f9" font-size="13" font-weight="500" text-anchor="middle">Tier 3: CLI / MCP Server</text>
+  <rect x="150" y="145" width="300" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+  <text x="300" y="175" fill="#f1f5f9" font-size="13" font-weight="500" text-anchor="middle">Tier 2: Facade SDK (api.py)</text>
+  <rect x="150" y="230" width="300" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+  <text x="300" y="260" fill="#f1f5f9" font-size="13" font-weight="500" text-anchor="middle">Tier 1: Core Engine (LanceDB)</text>
+  <path d="M 300 110 L 300 137" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-cyan)" />
+  <path d="M 300 195 L 300 222" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-cyan)" />
+  <path d="M 450 85 C 530 85, 530 255, 458 255" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#arrow-red)" />
+  <circle cx="500" cy="170" r="14" fill="#ef4444" />
+  <text x="500" y="175" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">X</text>
+  <text x="520" y="174" fill="#ef4444" font-size="11" font-weight="600" text-anchor="start">Blocked Direct Connect</text>
+</svg>

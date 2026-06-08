@@ -172,6 +172,8 @@ Try this: find one internal class in your current sprint and remove the `public`
 
 But even compilers have limits. In our next post, **"The Invisible Border Patrol,"** we’ll introduce **ArchUnit** and show how to write "Fitness Functions" that guard your architecture while you sleep.
 
+*(Note: For enforcing non-structural, semantic architectural constraints that neither compilers nor ArchUnit can verify, see my post on [Compiled Intent]({{\< ref "/posts/compiled-intent" \>}}).)*
+
 {{< newsletter type="simple" >}}
 
 ---
