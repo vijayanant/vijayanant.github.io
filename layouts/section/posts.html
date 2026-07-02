@@ -11,30 +11,38 @@
       {{/* Featured Post Section - Redesigned */}}
       <div class="featured-post-hero mb-5">
         {{ with $featuredPost }}
-          {{ $postPermalink := .Permalink }}
-          {{ with .Resources.GetMatch .Params.featured_image }}
-            <a href="{{ $postPermalink }}" class="featured-post-link">
-              {{ $heroImage := . }}
-              {{ if ne .MediaType.SubType "svg" }}
-                {{ $heroImageSmall := .Fill "600x300 webp" }}
-                {{ $heroImageLarge := .Fill "1200x600 webp" }}
+          <a href="{{ .Permalink }}" class="featured-post-link">
+            {{ $heroImage := .Resources.GetMatch .Params.featured_image }}
+            {{ if $heroImage }}
+              {{ if ne $heroImage.MediaType.SubType "svg" }}
+                {{ $heroImageSmall := $heroImage.Fill "600x300 webp" }}
+                {{ $heroImageLarge := $heroImage.Fill "1200x600 webp" }}
                 <img src="{{ $heroImageLarge.RelPermalink }}" 
-                     alt="{{ $featuredPost.Title }}" 
+                     alt="{{ .Title }}" 
                      class="featured-post-hero-image" 
                      srcset="{{ $heroImageSmall.RelPermalink }} 600w, {{ $heroImageLarge.RelPermalink }} 1200w"
                      sizes="(max-width: 768px) 600px, 1200px"
-                     {{ if ne $heroImageLarge.MediaType.SubType "svg" }}width="{{ $heroImageLarge.Width }}" height="{{ $heroImageLarge.Height }}"{{ end }} 
+                     width="{{ $heroImageLarge.Width }}" height="{{ $heroImageLarge.Height }}" 
                      fetchpriority="high" 
                      loading="eager">
-                <span class="featured-post-badge">Latest Article</span>
-                <div class="featured-post-overlay">
-                  <h2 class="featured-post-hero-title">{{ $featuredPost.Title }}</h2>
-                  <div class="featured-post-hero-meta">{{ $featuredPost.Date.Format "January 2, 2006" }} &middot; {{ $featuredPost.ReadingTime }} min read</div>
-                  <p class="featured-post-hero-description">{{ $featuredPost.Description }}</p>
-                </div>
+              {{ else }}
+                <img src="{{ $heroImage.RelPermalink }}" 
+                     alt="{{ .Title }}" 
+                     class="featured-post-hero-image" 
+                     fetchpriority="high" 
+                     loading="eager">
               {{ end }}
-            </a>
-          {{ end }}
+            {{ else }}
+              <!-- Fallback background when no image exists -->
+              <div class="featured-post-hero-fallback"></div>
+            {{ end }}
+            <span class="featured-post-badge">Latest Article</span>
+            <div class="featured-post-overlay">
+              <h2 class="featured-post-hero-title">{{ .Title }}</h2>
+              <div class="featured-post-hero-meta">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</div>
+              <p class="featured-post-hero-description">{{ .Description }}</p>
+            </div>
+          </a>
         {{ end }}
       </div>
 

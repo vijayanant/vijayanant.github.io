@@ -2171,3 +2171,16 @@ a:hover {
     visibility: hidden;
     display: block;
 }
+
+/* Automatically append a subtle GitHub icon to GitHub links inside articles */
+.content a[href^="https://github.com/"]::after {
+    content: "";
+    display: inline-block;
+    width: 0.85em;
+    height: 0.85em;
+    margin-left: 0.35em;
+    vertical-align: middle;
+    background-color: currentColor; /* Inherits the link's text color & hover states */
+    -webkit-mask: url('/images/github.svg') no-repeat center / contain;
+    mask: url('/images/github.svg') no-repeat center / contain;
+}
