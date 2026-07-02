@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%" fx="50%" fy="30%">
+      <stop offset="0%" stop-color="#121829" />
+      <stop offset="60%" stop-color="#0a0d16" />
+      <stop offset="100%" stop-color="#05070a" />
+    </radialGradient>
+
+    <!-- Technical Blueprint Grid Pattern -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#334155" opacity="0.12" />
+    </pattern>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.75" />
+    </linearGradient>
+
+    <!-- Card Border Gradients -->
+    <linearGradient id="cyanBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="greenBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="redBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="orangeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" opacity="0.5"/>
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neonGlowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" opacity="0.5"/>
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neonGlowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" opacity="0.5"/>
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Markers -->
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#475569" />
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#ef4444" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: 'Inter', system-ui, sans-serif; font-size: 20px; fill: #f8fafc; font-weight: 800; letter-spacing: -0.5px; }
+    .subtitle { font-family: 'Inter', system-ui, sans-serif; font-size: 12.5px; fill: #64748b; font-weight: 500; }
+    .label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #64748b; font-weight: bold; text-transform: uppercase; letter-spacing: 0.75px; }
+    .bold-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #cbd5e1; font-weight: 600; }
+    .decision-text { font-family: 'Inter', sans-serif; font-size: 11.5px; fill: #f1f5f9; font-weight: 800; }
+    .arrow-text { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #475569; font-weight: bold; }
+  </style>
+
+  <!-- Background Layers -->
+  <rect width="500" height="550" fill="url(#bgGlow)" />
+  <rect width="500" height="550" fill="url(#grid)" />
+
+  <!-- Title Block -->
+  <g transform="translate(40, 40)">
+    <text class="title">The Canonical Ritual</text>
+    <text class="subtitle" y="22">Malleability validation pipeline during block deserialization</text>
+  </g>
+
+  <!-- FLOW DIAGRAM CENTRAL LINE -->
+
+  <!-- NODE 1: Incoming Bytes -->
+  <g transform="translate(150, 100)">
+    <rect width="200" height="42" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-opacity="0.6" stroke-width="1.5" />
+    <rect width="4" height="20" x="0" y="11" rx="1" fill="#475569" />
+    <g transform="translate(16, 12)">
+      <text class="label">Incoming Byte Stream</text>
+      <text y="16" class="bold-value" fill="#94a3b8">raw_payload: &amp;[u8]</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 250 142 L 250 166" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- NODE 2: Deserialize -->
+  <g transform="translate(150, 175)">
+    <rect width="200" height="46" rx="8" fill="url(#cardGrad)" stroke="url(#cyanBorder)" stroke-width="1.5" />
+    <rect width="4" height="20" x="0" y="13" rx="1" fill="#06b6d4" filter="url(#neonGlowCyan)" />
+    <g transform="translate(16, 13)">
+      <text class="label" fill="#06b6d4">1. Deserialize Payload</text>
+      <text y="18" class="bold-value">serde_ipld_dagcbor</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 250 221 L 250 245" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- NODE 3: Canonical Serialize -->
+  <g transform="translate(150, 254)">
+    <rect width="200" height="46" rx="8" fill="url(#cardGrad)" stroke="url(#orangeBorder)" stroke-width="1.5" />
+    <rect width="4" height="20" x="0" y="13" rx="1" fill="#f97316" />
+    <g transform="translate(16, 13)">
+      <text class="label" fill="#f97316">2. Re-Serialize (C14N)</text>
+      <text y="18" class="bold-value">to_canonical_bytes()</text>
+    </g>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 250 300 L 250 324" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- NODE 4: Bit-identical? -->
+  <g transform="translate(150, 333)">
+    <rect width="200" height="46" rx="8" fill="url(#cardGrad)" stroke="#334155" stroke-opacity="0.6" stroke-width="1.5" />
+    <g transform="translate(16, 13)">
+      <text class="label">3. Match Verification</text>
+      <text y="18" class="decision-text">Original == Canonical?</text>
+    </g>
+  </g>
+
+  <!-- Branching Arrows exiting from the SIDES of Node 4 -->
+  <!-- YES Path (Exits Left) -->
+  <path d="M 150 356 L 140 356 L 140 410" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)" filter="url(#neonGlowGreen)" />
+  <text x="108" y="348" class="arrow-text" fill="#10b981">YES</text>
+
+  <!-- NO Path (Exits Right) -->
+  <path d="M 350 356 L 360 356 L 360 410" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowRed)" filter="url(#neonGlowRed)" />
+  <text x="368" y="348" class="arrow-text" fill="#ef4444">NO</text>
+
+  <!-- NODE 5: ACCEPT (Green) -->
+  <g transform="translate(45, 418)">
+    <rect width="190" height="42" rx="8" fill="#064e3b" fill-opacity="0.2" stroke="url(#greenBorder)" stroke-width="1.5" />
+    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#10b981" transform="translate(12, 12) scale(0.7)" />
+    <text x="32" y="24" font-family="'Inter', sans-serif" font-size="11" fill="#34d399" font-weight="800" letter-spacing="0.5px">ACCEPT &amp; INGEST</text>
+  </g>
+
+  <!-- NODE 6: REJECT (Red) -->
+  <g transform="translate(265, 418)">
+    <rect width="190" height="42" rx="8" fill="#7f1d1d" fill-opacity="0.2" stroke="url(#redBorder)" stroke-width="1.5" />
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#ef4444" transform="translate(12, 12) scale(0.7)" />
+    <text x="32" y="24" font-family="'Inter', sans-serif" font-size="11" fill="#fca5a5" font-weight="800" letter-spacing="0.5px">REJECT MALFORMED</text>
+  </g>
+
+  <!-- EXAMPLES (Placed completely outside the main flow on the sides) -->
+  <!-- Left Side: Canonical Example -->
+  <g transform="translate(15, 175)">
+    <rect width="115" height="46" rx="6" fill="#0b0f19" stroke="#334155" stroke-opacity="0.3" />
+    <text x="10" y="18" class="label" fill="#10b981">Valid CBOR</text>
+    <text x="10" y="34" class="bold-value" fill="#94a3b8">[0x05]</text>
+  </g>
+
+  <!-- Right Side: Malleable Example -->
+  <g transform="translate(370, 175)">
+    <rect width="115" height="46" rx="6" fill="#0b0f19" stroke="#334155" stroke-opacity="0.3" />
+    <text x="10" y="18" class="label" fill="#ef4444">Malleable CBOR</text>
+    <text x="10" y="34" class="bold-value" fill="#94a3b8">[0x19, 0x00, 0x05]</text>
+  </g>
+
+</svg>

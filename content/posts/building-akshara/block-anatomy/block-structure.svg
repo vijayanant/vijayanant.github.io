@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%" fx="50%" fy="30%">
+      <stop offset="0%" stop-color="#121829" />
+      <stop offset="60%" stop-color="#0a0d16" />
+      <stop offset="100%" stop-color="#05070a" />
+    </radialGradient>
+
+    <!-- Technical Blueprint Grid Pattern -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#334155" opacity="0.12" />
+    </pattern>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.75" />
+    </linearGradient>
+
+    <!-- Border Gradients -->
+    <linearGradient id="greenBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="orangeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="cyanBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="magentaBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Markers -->
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <style>
+    .title { font-family: 'Inter', system-ui, sans-serif; font-size: 20px; fill: #f8fafc; font-weight: 800; letter-spacing: -0.5px; }
+    .subtitle { font-family: 'Inter', system-ui, sans-serif; font-size: 12.5px; fill: #64748b; font-weight: 500; }
+    .label { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #64748b; font-weight: bold; text-transform: uppercase; letter-spacing: 0.75px; }
+    .bold-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; fill: #cbd5e1; font-weight: 600; }
+    .arrow-text { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #475569; font-weight: bold; }
+  </style>
+
+  <!-- Background Layers -->
+  <rect width="500" height="700" fill="url(#bgGlow)" />
+  <rect width="500" height="700" fill="url(#grid)" />
+
+  <!-- Title Block -->
+  <g transform="translate(40, 40)">
+    <text class="title">Block Construction Pipeline</text>
+    <text class="subtitle" y="22">The cryptographic lifecycle of an Akshara block</text>
+  </g>
+
+  <!-- PIPELINE FLOW -->
+
+  <!-- STEP 1: Plaintext (Green) -->
+  <g transform="translate(130, 95)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#greenBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#10b981" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#10b981">1. Plaintext Input</text>
+      <text y="16" class="bold-value">Raw Payload (Bytes)</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 250 137 L 250 157" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 2: Canonical DAG-CBOR (Green) -->
+  <g transform="translate(130, 166)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#greenBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#10b981" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#10b981">2. Serialization</text>
+      <text y="16" class="bold-value">Canonical DAG-CBOR</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 250 208 L 250 228" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 3: Compute Associated Data (Orange) -->
+  <g transform="translate(130, 237)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#orangeBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#f97316" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#f97316">3. Context Binding</text>
+      <text y="16" class="bold-value">Compute Associated Data (AD)</text>
+    </g>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 250 279 L 250 299" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 4: Derive Nonce (Orange) -->
+  <g transform="translate(130, 308)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#orangeBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#f97316" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#f97316">4. Nonce Derivation</text>
+      <text y="16" class="bold-value">HMAC-SHA256(Key, Plain, AD)</text>
+    </g>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <path d="M 250 350 L 250 370" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 5: Encrypt (Blue) -->
+  <g transform="translate(130, 379)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#cyanBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#06b6d4" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#06b6d4">5. AEAD Encryption</text>
+      <text y="16" class="bold-value">XChaCha20-Poly1305</text>
+    </g>
+  </g>
+
+  <!-- Arrow 5 -> 6 -->
+  <path d="M 250 421 L 250 441" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 6: Compute Block ID (Blue) -->
+  <g transform="translate(130, 450)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#cyanBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#06b6d4" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#06b6d4">6. Content Addressing</text>
+      <text y="16" class="bold-value">Compute CIDv1 (Codec 0x57)</text>
+    </g>
+  </g>
+
+  <!-- Arrow 6 -> 7 -->
+  <path d="M 250 492 L 250 512" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 7: Sign (Purple) -->
+  <g transform="translate(130, 521)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#magentaBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#ec4899" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#ec4899">7. Origin Authenticity</text>
+      <text y="16" class="bold-value">Ed25519 Sign (Shadow Key)</text>
+    </g>
+  </g>
+
+  <!-- Arrow 7 -> 8 -->
+  <path d="M 250 563 L 250 583" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- STEP 8: Final Block (Purple) -->
+  <g transform="translate(130, 592)">
+    <rect width="240" height="42" rx="8" fill="url(#cardGrad)" stroke="url(#magentaBorder)" stroke-width="1.5" />
+    <circle cx="16" cy="21" r="4" fill="#ec4899" />
+    <g transform="translate(32, 11)">
+      <text class="label" fill="#ec4899">8. Sealed Envelope</text>
+      <text y="16" class="bold-value">Final Block Node</text>
+    </g>
+  </g>
+
+</svg>
