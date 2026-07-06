@@ -16,7 +16,7 @@ pillar_role: deep_dive
 
 {{< figure src="featured.jpg" alt="A translucent geometric block illuminated from within" lazy="false" >}}
 
-In the theoretical explorations of the [**sovereign web series**]({{< ref "/series/exploring-the-sovereign-web" >}}), I mapped out a model for an offline-first, cryptographically secured network. But ideas are cheap. The real challenge starts when I try to translate those ideals into Rust code. This series of posts is my log of building [**Akshara**](https://github.com/vijayanant/akshara/): a zero-trust, local-first document engine.
+In the theoretical explorations of the [**sovereign web series**]({{< ref "/series/exploring-the-sovereign-web" >}}), I mapped out a model for an offline-first, cryptographically secured network. But ideas are cheap. The real challenge starts when I try to translate those ideals into Rust code. This series of posts is my log of building [**Akshara**](https://github.com/vijayanant/akshara/): a sovereign, zero-trust identity and state engine.
 
 In this first post, I will take the theoretical ideas of content addressing, which I talked about in [**The Anatomy of a Permanent Web**]({{< ref "/posts/exploring-the-sovereign-web/content-addressing/" >}}), and show how I built them as a tamper-proof Block primitive in Rust.
 
@@ -89,7 +89,7 @@ impl TryFrom<&[u8]> for Address {
 ```
 
 {{< note type="log" title="Engineer's Log: The Truncation Pitfall" >}}
-I originally wrote a naive `TryFrom` that just read the CID bytes using `Cid::read_bytes` and returned it. But during implementation, I realized this left a security loophole: if the input buffer had extra trailing bytes (junk or malicious payload), the parser would successfully decode the CID and ignore the rest. This would allow an attacker to append unauthorized data to an envelope. Enforcing `cursor.position() == bytes.len()` ensures the entire byte slice is valid and consumed.
+I originally wrote a naive `TryFrom` that just read the CID bytes using `Cid::read_bytes` and returned it. But during implementation, I learned that this left a security loophole: if the input buffer had extra trailing bytes (junk or malicious payload), the parser would successfully decode the CID and ignore the rest. This would allow an attacker to append unauthorized data to an envelope. Enforcing `cursor.position() == bytes.len()` ensures the entire byte slice is valid and consumed.
 {{< /note >}}
 
 I then defined `BlockId` and `ManifestId` as wrapper types around this `Address` type so that the compiler can guarantee a manifest address is never used where a block address is expected.
@@ -177,9 +177,7 @@ fn derive_nonce(key: &GraphKey, plaintext: &[u8], ad: &[u8]) -> Result<[u8; 24],
 ```
 
 {{< note type="log" title="Engineer's Log: The Nonce Reuse Trap" >}}
-During testing, I realized this deterministic approach introduced a fatal secondary trap: reusing a key-nonce pair across different contexts is a vulnerability in AEAD ciphers like XChaCha20-Poly1305. If the same plaintext (e.g., `b"hello"`) appears in two different parts of the graph, it is encrypted with different Associated Data (AD) representing different structural contexts.
-
-Reusing the same derived nonce here leaks the Poly1305 authenticator state, allowing a malicious relay to recover the authentication key and forge valid blocks.
+Apparently, reusing a key-nonce pair across different contexts is a fatal mistake in AEAD ciphers like XChaCha20-Poly1305. If the same plaintext (e.g., `b"hello"`) appears in two different parts of the graph under the same key, the Poly1305 authenticator state leaks, allowing a malicious relay to recover the authentication key and forge valid blocks.
 
 To neutralize this, I updated the derivation to mix the AD hash directly into the nonce formula (`nonce = HMAC(GraphKey, plaintext || AD)`). Now, if the structural context changes, the nonce shifts, keeping the authenticator secure.
 {{< /note >}}
@@ -292,7 +290,7 @@ If a document is split into dozens of encrypted, content-addressed blocks, the c
 
 This is the role of the [**Manifest**](https://github.com/vijayanant/akshara/blob/master/docs/specs/graph-model/snapshots.md#4-manifest-structure).
 
-If blocks are raw Git-like blobs, the Manifest is the Git tree: a signed, unencrypted metadata block that serves as the public entry point for a graph.
+If blocks are raw Git-like blobs, the Manifest is a Git-like commit: a signed, unencrypted metadata block that serves as the public entry point for a graph.
 
 Instead of storing content, the Manifest holds a single `content_root` CID (pointing to the root of the document's Merkle DAG) and a list of `parents` CIDs (referencing preceding manifest versions).
 
