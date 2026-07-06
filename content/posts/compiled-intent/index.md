@@ -4,7 +4,7 @@ seo_title: "Compiled Intent: Enforcing Software Architecture with Local AI"
 subtitle: "Making documentation executable using local models and vector search."
 date: 2026-06-07
 slug: "compiled-intent"
-draft: false
+draft: true
 pillar: system
 pillar_role: deep_dive
 level: "Advanced"
@@ -14,11 +14,11 @@ tags: ["ai", "llm", "ai-code-integrity", "enforceable-architecture", "local-firs
 categories: ["AI in Engineering"]
 ---
 
-{{< figure src="featured.jpg" alt="A concrete structure illustrating compiled path boundaries" caption="Photo by [Brett Jordan](https://unsplash.com/@brett_jordan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/text-TMj1c5wlO3k?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)" lazy="false" >}}
+{{< figure src="featured.jpg" alt="A concrete structure illustrating compiled path boundaries" caption="Photo by [Brett Jordan](https://unsplash.com/@brett_jordan) on [Unsplash](https://unsplash.com/photos/text-TMj1c5wlO3k)" lazy="false" >}}
 
-I built [**Chronicle AI**](https://github.com/vijayanant/chronicle-ai) as a narrative linter to solve this problem for my blog—indexing my technical writing history to audit new drafts against style, definitions, and series continuity. But as I worked on the engine, I realized the underlying primitives are identical. Software design documentation and [ADRs]({{\< ref "/posts/from-patterns-to-practice/documenting-your-decision" \>}}) are, after all, just another form of technical narrative.
+I built [**Chronicle AI**](https://github.com/vijayanant/chronicle-ai) as a narrative linter to solve this problem for my blog—indexing my technical writing history to audit new drafts against style, definitions, and series continuity. But as I worked on the engine, I realized the underlying primitives are identical. Software design documentation and [ADRs]({{< ref "/posts/from-patterns-to-practice/documenting-your-decision" >}}) are, after all, just another form of technical narrative.
 
-To test this, I ran an architectural spike: I pointed the Chronicle engine at its own codebase's ADRs, compiled a \"Technical Constitution\" of our coding constraints, and used the auditor to scan our Python source code.
+To test this, I ran an architectural spike: I pointed the Chronicle engine at its own codebase's ADRs, compiled a "Technical Constitution" of our coding constraints, and used the auditor to scan our Python source code.
 
 Here is what happened, what we built, and what it taught me about the future of executable documentation.
 
@@ -114,7 +114,7 @@ It worked.
 
 What impressed me wasn't that the model spotted `import lancedb`.
 
-In JVM codebases, you can use tools like **ArchUnit** (or **NetArchTest** in .NET) to enforce structural invariants via unit tests. We've previously explored some of these structural enforcement techniques—like [using packages as boundaries]({{\< ref "/posts/codifying-your-architecture/the-blueprint" \>}}) to design clean directories and [defining visibility rules]({{\< ref "/posts/codifying-your-architecture/the-formal-contract" \>}}) to create formal access controls. But static checkers have clear limits:
+In JVM codebases, you can use tools like **ArchUnit** (or **NetArchTest** in .NET) to enforce structural invariants via unit tests. We've previously explored some of these structural enforcement techniques—like [using packages as boundaries]({{< ref "/posts/codifying-your-architecture/the-blueprint" >}}) to design clean directories and [defining visibility rules]({{< ref "/posts/codifying-your-architecture/the-formal-contract" >}}) to create formal access controls. But static checkers have clear limits:
 
 * **High Maintenance:** You have to write and maintain code to test code. If packages are renamed or refactored, the test rules themselves must be rewritten.
 * **Polyglot Friction:** They are bound to specific runtimes. In a polyglot system (e.g., Python scripts talking to a Go backend), you have to manage multiple, disparate framework rules.

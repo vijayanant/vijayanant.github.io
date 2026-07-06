@@ -6,4 +6,5 @@ description: "Stop treating architecture as a shared hallucination. Learn how to
 featured_image: "codifying-architecture-featured.jpg"
 status: "Ongoing"
 draft: false
+featured: false
 ---
