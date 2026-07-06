@@ -8,3 +8,5 @@ resources/
 codifying-architecture-examples/
 presentations/
 .chronicle/
+.agents/
+.geminiignore
