@@ -5,7 +5,7 @@ subtitle: "Beyond the URL: Coding verifiable, content-addressed primitives"
 date: 2026-06-15
 series: ["Building Akshara"]
 series_order: 1
-draft: false
+draft: true
 description: "How to build Akshara's content-addressed Block in Rust. Enforce canonical CBOR, prevent block-swapping, and solve E2EE deduplication."
 tags: ["rust", "serialization", "content-addressing", "cbor", "cryptography", "systems-design"]
 categories: ["Software Engineering"]
