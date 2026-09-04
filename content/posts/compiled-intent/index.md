@@ -3,6 +3,7 @@ title: "Compiled Intent: Enforcing Software Architecture with Local AI"
 seo_title: "Compiled Intent: Enforcing Software Architecture with Local AI"
 subtitle: "Making documentation executable using local models and vector search."
 date: 2026-06-07
+draft: true
 slug: "compiled-intent"
 pillar: system
 pillar_role: deep_dive
