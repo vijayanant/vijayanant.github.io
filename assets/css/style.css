@@ -132,6 +132,7 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 main {
@@ -299,11 +300,56 @@ img {
     background-color: var(--background-color);
     margin-bottom: 3.5rem;
 }
+
+/* Compact Horizontal Masthead on Individual Article Pages */
+body[data-page-kind="page"] .site-header {
+    padding: 0.85rem 0;
+    margin-bottom: 2.75rem;
+}
+
+body[data-page-kind="page"] header .masthead-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+body[data-page-kind="page"] .brand-lockup {
+    gap: 0.75rem;
+}
+
+body[data-page-kind="page"] .brand-logo {
+    width: 32px;
+    height: 32px;
+}
+
+body[data-page-kind="page"] .brand-name {
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+body[data-page-kind="page"] .brand-tagline {
+    display: none;
+}
+
+body[data-page-kind="page"] .masthead-index {
+    font-size: 0.82rem;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    body[data-page-kind="page"] header .masthead-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+    }
+}
 /*--------------------*
     Masthead Styles (LM Standard)
 *--------------------*/
 .masthead-container,
 .section-focus .container,
+.section-recent .container,
 .section-essays .container,
 .connect-container {
     max-width: 760px;
@@ -746,120 +792,176 @@ footer .footer-link:hover {
 }
 
 .blog-post-content {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
-.post-sidebar {
-    flex: 1;
-    position: relative;
-    /* padding-top: 8rem; */
+.post-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.post-sidebar .sticky-top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 150px; /* Adjust based on header height */
-}
-
-.blog-post-content article header h1 {
+.post-title {
     font-family: var(--heading-font);
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    color: var(--primary-color);
-    line-height: 1.2;
+    font-size: 2.35rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text-color);
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.015em;
+    text-align: left;
 }
 
-.blog-post-content article header p.text-muted {
-    text-align: center;
+.post-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--secondary-text-color);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.post-meta-info {
+    font-family: var(--code-font);
+    font-size: 0.78rem;
     color: var(--tertiary-text-color);
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    text-align: left;
+    margin: 0;
+}
+
+.post-meta-info .category-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.post-meta-info .category-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .blog-post-content .content h2, 
 .blog-post-content .content h3, 
 .blog-post-content .content h4 {
     font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin-top: 2.5rem;
+    color: var(--text-color);
+    margin-top: 2.75rem;
     margin-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
 }
 
-.blog-post-content .content h2 { font-size: 2.2rem; }
-.blog-post-content .content h3 { font-size: 1.8rem; }
-.blog-post-content .content h4 { font-size: 1.4rem; }
+.blog-post-content .content h2 { font-size: 1.65rem; font-weight: 500; }
+.blog-post-content .content h3 { font-size: 1.35rem; font-weight: 500; }
+.blog-post-content .content h4 { font-size: 1.15rem; font-weight: 500; }
 
 .blog-post-content .content p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    font-family: var(--body-font);
-    font-size: 1.1rem;
+    margin-bottom: 1.65rem;
+    line-height: 1.75;
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 18;
+    color: var(--text-color);
 }
 
 .blog-post-content .content a {
     color: var(--primary-color);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
 }
 
 .blog-post-content .content a:hover {
-    color: var(--text-color-inverted);
+    color: var(--text-color);
 }
 
 .blog-post-content .content ul, 
 .blog-post-content .content ol {
-    margin-bottom: 1.5rem;
-    padding-left: 2rem;
+    margin-bottom: 1.65rem;
+    padding-left: 1.75rem;
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 18;
+    line-height: 1.75;
+    color: var(--text-color);
 }
 
 .blog-post-content .content li {
     margin-bottom: 0.5rem;
 }
 
+/* Optical Weight Calibration for Variable Serif */
+[data-theme="dark"] .blog-post-content .content p,
+[data-theme="dark"] .blog-post-content .content li,
+:root:not([data-theme="light"]) .blog-post-content .content p,
+:root:not([data-theme="light"]) .blog-post-content .content li {
+    font-weight: 380;
+    color: #ececec;
+}
+
+[data-theme="light"] .blog-post-content .content p,
+[data-theme="light"] .blog-post-content .content li {
+    font-weight: 400;
+    color: #171717;
+}
+
 .blog-post-content .content blockquote {
-    border-left: 4px solid var(--primary-color);
-    padding-left: 1.5rem;
-    margin: 1.5rem 0;
+    border-left: 2px solid var(--primary-color);
+    padding-left: 1.25rem;
+    margin: 2rem 0;
+    font-family: var(--font-serif);
     font-style: italic;
     color: var(--secondary-text-color);
+    font-size: 1.15rem;
+    line-height: 1.7;
 }
 
-.blog-post-content .content pre {
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    overflow-x: auto;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* Monospace font */
-    font-size: 0.95rem; /* Slightly smaller font size */
-    line-height: 1.4; /* Reduced line height */
-    position: relative; /* Ensure positioning context for copy button */
-}
-
-pre.chroma {
-  overflow-x: auto; /* Adds a horizontal scrollbar if content overflows */
-  white-space: pre; /* Prevents line wrapping within the code block */
-}
-
+.blog-post-content .content pre,
+pre.chroma,
 .blog-post-content .content .highlight pre {
-  overflow-x: auto;
-  white-space: pre;
+    padding: 1.25rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background-color);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    font-family: var(--code-font);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    position: relative;
 }
 
-.blog-post-content .content code { /* For inline code */
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.95em; /* Relative to parent */
-    /* background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle background */ */
-    padding: 0.2em 0.4em;
+.blog-post-content .content code {
+    font-family: var(--code-font);
+    font-size: 0.88em;
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    color: var(--text-color);
+    padding: 0.15em 0.35em;
     border-radius: 3px;
 }
 
+.blog-post-content .content pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    color: inherit;
+}
+
 .series-nav, .toc-nav {
-    background-color: var(--surface-color);
-    border-left: 4px solid var(--primary-color);
-    padding: 1.5rem; /* Reduced padding */
-    border-radius: 8px;
-    margin-bottom: 2rem;
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--primary-color);
+    padding: 1.25rem 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 2.5rem;
 }
 
 .series-nav ol,
@@ -2248,6 +2350,67 @@ a:hover {
 
 .meta-sep {
     color: var(--tertiary-text-color);
+}
+
+/* Recent Writing */
+.section-recent {
+    padding: 0 0 2.5rem;
+}
+
+.section-recent .section-header {
+    margin-bottom: 1.5rem;
+}
+
+.recent-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.recent-item:last-child {
+    border-bottom: none;
+}
+
+.recent-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 0.85rem 0;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.recent-title {
+    font-family: var(--heading-font);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--text-color);
+    transition: color 0.15s ease;
+}
+
+.recent-link:hover .recent-title {
+    color: var(--primary-color);
+}
+
+.recent-meta {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.78rem;
+    color: var(--tertiary-text-color);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: color 0.15s ease;
+}
+
+.recent-link:hover .recent-meta {
+    color: var(--primary-color);
 }
 
 /* Notable Essays (The 3 Foundational Pillars) */

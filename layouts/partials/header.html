@@ -40,7 +40,7 @@
         </div>
 
         <nav class="masthead-index" aria-label="Section navigation">
-            <a href="{{ "/#essays" | relURL }}" class="index-link">Writing</a>
+            <a href="{{ "/explore/" | relURL }}" class="index-link{{ if eq .Section "explore" }} active{{ end }}">Essays</a>
             <span class="index-sep" aria-hidden="true">&middot;</span>
             <a href="{{ "/series/" | relURL }}" class="index-link{{ if eq .Section "series" }} active{{ end }}">Series</a>
             <span class="index-sep" aria-hidden="true">&middot;</span>

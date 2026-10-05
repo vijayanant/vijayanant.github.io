@@ -248,6 +248,31 @@
     flex-shrink: 0;
 }
 
+/* Archive Bridge Footnote */
+.explore-archive-bridge {
+    text-align: center;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.bridge-text {
+    font-family: var(--code-font);
+    font-size: 0.8rem;
+    color: var(--tertiary-text-color);
+}
+
+.bridge-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+}
+
+.bridge-link:hover {
+    color: var(--text-color);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .pillar-grid {

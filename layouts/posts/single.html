@@ -6,25 +6,26 @@
       <!-- Post Content -->
       <div class="blog-post-content">
         <article>
-          <header>
-            <h1>{{ .Title }}</h1>
+          <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
             {{ with .Params.subtitle }}
-              <p class="post-subtitle text-muted">{{ . }}</p>
+              <p class="post-subtitle">{{ . }}</p>
             {{ end }}
-            <div class="post-meta-info text-center mb-3">
-              {{ with .Params.categories }}
-                {{ range $i, $e := . }}
-                  <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" class="category-link">{{ . }}</a>{{ if lt ($i | add 1) (len $.Params.categories) }}<span class="meta-delimiter">&middot;</span>{{ end }}
-                {{ end }}
-                <span class="meta-separator"> | </span>
-              {{ end }}
-              <span class="post-date">Published: {{ .Date.Format "January 2, 2006" }}</span>
-              {{ if ne .Lastmod .Date }}
-                <span class="meta-separator"> | </span>
-                <span class="post-date-updated">Updated: {{ .Lastmod.Format "January 2, 2006" }}</span>
-              {{ end }}
-              <span class="meta-separator"> | </span>
+            <div class="post-meta-info">
+              <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+              <span class="meta-sep">&middot;</span>
               <span class="reading-time">{{ .ReadingTime }} min read</span>
+              {{ with .Params.categories }}
+                <span class="meta-sep">&middot;</span>
+                {{ range $i, $e := . }}
+                  {{ if gt $i 0 }}, {{ end }}
+                  <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" class="category-link">{{ . }}</a>
+                {{ end }}
+              {{ end }}
+              {{ if ne .Lastmod .Date }}
+                <span class="meta-sep">&middot;</span>
+                <span class="post-date-updated">Updated: {{ .Lastmod.Format "Jan 2006" }}</span>
+              {{ end }}
             </div>
           </header>
 

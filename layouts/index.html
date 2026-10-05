@@ -43,6 +43,31 @@
 
     <hr class="section-divider">
 
+    {{/* --- Recent Writing --- */}}
+    {{ $recentPosts := first 3 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+    {{ if $recentPosts }}
+    <section id="recent-writing" class="section-recent">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Recent Essays</h2>
+            </header>
+
+            <ul class="recent-list">
+                {{ range $recentPosts }}
+                <li class="recent-item">
+                    <a href="{{ .Permalink }}" class="recent-link">
+                        <span class="recent-title">{{ .Title }}</span>
+                        <span class="recent-meta">{{ .Date.Format "Jan 2006" }} &middot; {{ .ReadingTime }}m</span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+    {{ end }}
+
     {{/* --- Notable Essays (The 3 Foundational Pillars) --- */}}
     <section id="essays" class="section-essays">
         <div class="container">
