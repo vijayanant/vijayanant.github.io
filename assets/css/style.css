@@ -1030,114 +1030,161 @@ pre.chroma,
     }
 }
 
-/* Custom Shortcode Styles */
-.note-box, .summary-box {
-    position: relative; /* For absolute positioning of note-meta */
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-    line-height: 1.6;
-}
-
+/* Custom Shortcode Styles: Note & Aside Boxes */
 .note-box {
-    border-left: 5px solid;
+    margin: 2.5rem 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: 4px;
+    border-left: 2px solid var(--primary-color);
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    line-height: 1.7;
 }
 
-.note-meta {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--tertiary-text-color);
+.note-header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
 }
 
-.note-meta i {
-    margin-right: 0.3rem;
-    font-size: 1em;
+.note-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
 }
 
-.note-title {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+.note-label svg {
+    width: 14px;
+    height: 14px;
+}
+
+.note-title-inline {
     font-family: var(--heading-font);
-    font-size: 1.1rem;
-}
-
-/* Note Types */
-.note-type-info {
-    background-color: var(--note-info-background);
-    border-color: var(--note-info-border); /* Blue */
-    color: var(--note-info-text);
-}
-
-.note-type-tip {
-    background-color: var(--note-tip-background);
-    border-color: var(--note-tip-border); /* Green */
-    color: var(--note-tip-text);
-}
-
-.note-type-warning {
-    background-color: var(--note-warning-background);
-    border-color: var(--note-warning-border); /* Yellow */
-    color: var(--note-warning-text);
-}
-
-.note-type-danger {
-    background-color: var(--note-danger-background);
-    border-color: var(--note-danger-border); /* Red */
-    color: var(--note-danger-text);
-}
-
-.note-type-log {
-    background-color: rgba(var(--primary-color-rgb), 0.1);
-    border-color: var(--primary-color); /* Purple */
-    color: var(--note-log-text);
-}
-
-.summary-box {
-    background-color: var(--surface-color);
-    border: 1px solid var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: normal;
     color: var(--text-color);
 }
 
-.summary-title {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    font-family: var(--heading-font);
-    font-size: 1.1rem;
+.note-body {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.note-body p {
+    margin-bottom: 0.85rem;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.note-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Note Type Semantic Accents */
+.note-type-log {
+    border-left-color: var(--primary-color);
+    background-color: rgba(var(--primary-color-rgb), 0.06);
+}
+.note-type-log .note-label {
     color: var(--primary-color);
 }
 
-.summary-box ul {
-    list-style: disc;
-    padding-left: 1.5rem;
+.note-type-info {
+    border-left-color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.05);
+}
+.note-type-info .note-label {
+    color: #60a5fa;
 }
 
-.summary-box li {
+.note-type-tip {
+    border-left-color: #10b981;
+    background-color: rgba(16, 185, 129, 0.05);
+}
+.note-type-tip .note-label {
+    color: #34d399;
+}
+
+.note-type-warning {
+    border-left-color: #f59e0b;
+    background-color: rgba(245, 158, 11, 0.05);
+}
+.note-type-warning .note-label {
+    color: #fbbf24;
+}
+
+.note-type-danger {
+    border-left-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.05);
+}
+.note-type-danger .note-label {
+    color: #f87171;
+}
+
+/* Summary / Key Takeaways Box */
+.summary-box {
+    margin: 2.5rem 0;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 4px;
+    background-color: var(--surface-color);
+}
+
+.summary-eyebrow {
+    display: inline-block;
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
+}
+
+.summary-title {
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0 0 0.75rem 0;
 }
 
 .summary-content ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
 .summary-content ul li {
     position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
+    padding-left: 1.75rem;
+    margin-bottom: 0.65rem;
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 
 .summary-content ul li::before {
-    content: '\f00c'; /* Font Awesome check-circle icon */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: var(--primary-color);
+    content: "✓";
     position: absolute;
     left: 0;
-    top: 0.2em;
+    top: 0;
+    color: var(--primary-color);
+    font-family: var(--code-font);
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 /* Post Separator */
@@ -1790,9 +1837,12 @@ body:not([data-page-kind="home"]) #site-header {
 
 .responsive-figure figcaption {
     text-align: center;
-    margin-top: 0.5rem; /* Add some space between image and caption */
-    color: var(--secondary-text-color); /* Use a slightly dimmer text color for captions */
-    font-size: 0.9rem; /* Slightly smaller font size for captions */
+    margin-top: 0.75rem;
+    color: var(--secondary-text-color);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* Lity Lightbox - Override all z-indexes to be above header (99999) */
@@ -1878,21 +1928,32 @@ body:not([data-page-kind="home"]) #site-header {
     }
 }
 
-/* Styling for pull-quotes (now using div) */
+/* Styling for pull-quotes: Unboxed Typographic Breakout */
 .pull-quote {
+    font-family: var(--heading-font);
     font-style: italic;
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin: 2rem auto; /* Consistent vertical margin, auto for horizontal centering */
-    max-width: 800px; /* Limiting width for readability, similar to main content */
+    font-size: 1.35rem;
+    line-height: 1.55;
+    margin: 3rem auto;
+    max-width: 640px;
     text-align: center;
-    background-color: var(--surface-color); /* Added for gray box effect */
-    border-radius: 8px; /* Consistent rounded corners */
-    box-shadow: 0 4px 8px var(--shadow-light); /* Consistent shadow */
-    border: 1px solid var(--primary-color); /* Single border around the box, consistent with summary-box */
-    padding: 1.5rem; /* Consistent padding */
-    color: var(--text-color); /* Default text color */
-    position: relative; /* Keep relative for potential future absolute positioning needs */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 1rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.pull-quote::before {
+    content: "“";
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
 }
 
 /* Tag Styles */

@@ -1,15 +1,19 @@
-<div class="note-box note-type-{{ .Get "type" | default "info" }}">
-    <div class="note-meta">
-        {{ if eq (.Get "type") "log" }}{{ partial "icons/book.html" . }} Log
-        {{ else if eq (.Get "type") "info" }}{{ partial "icons/info-circle.html" . }} Info
-        {{ else if eq (.Get "type") "tip" }}{{ partial "icons/lightbulb.html" . }} Tip
-        {{ else if eq (.Get "type") "warning" }}{{ partial "icons/exclamation-triangle.html" . }} Warning
-        {{ else if eq (.Get "type") "danger" }}{{ partial "icons/skull-crossbones.html" . }} Danger
-        {{ else }}{{ partial "icons/book.html" . }} Note
+<aside class="note-box note-type-{{ .Get "type" | default "info" }}">
+    <div class="note-header">
+        <span class="note-label">
+            {{ if eq (.Get "type") "log" }}{{ partial "icons/book.html" . }} <span>Log</span>
+            {{ else if eq (.Get "type") "info" }}{{ partial "icons/info-circle.html" . }} <span>Info</span>
+            {{ else if eq (.Get "type") "tip" }}{{ partial "icons/lightbulb.html" . }} <span>Tip</span>
+            {{ else if eq (.Get "type") "warning" }}{{ partial "icons/exclamation-triangle.html" . }} <span>Warning</span>
+            {{ else if eq (.Get "type") "danger" }}{{ partial "icons/skull-crossbones.html" . }} <span>Caution</span>
+            {{ else }}{{ partial "icons/book.html" . }} <span>Note</span>
+            {{ end }}
+        </span>
+        {{ with .Get "title" }}
+            <span class="note-title-inline">&middot; {{ . }}</span>
         {{ end }}
     </div>
-    {{ with .Get "title" }}
-        <p class="note-title">{{ . }}</p>
-    {{ end }}
-    {{ .Inner | markdownify }}
-</div>
+    <div class="note-body">
+        {{ .Inner | markdownify }}
+    </div>
+</aside>

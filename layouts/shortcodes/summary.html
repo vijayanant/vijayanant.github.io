@@ -1,5 +1,12 @@
 <div class="summary-box">
-    <p class="summary-title">{{ .Get "title" | default "Key Takeaways" }}:</p>
+    <div class="summary-header">
+        <span class="summary-eyebrow">Key Takeaways</span>
+        {{ with .Get "title" }}
+            {{ if ne . "Key Takeaways" }}
+                <h4 class="summary-title">{{ . }}</h4>
+            {{ end }}
+        {{ end }}
+    </div>
     <div class="summary-content">
         {{ .Inner | markdownify }}
     </div>
