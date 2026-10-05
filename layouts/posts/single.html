@@ -2,7 +2,6 @@
 <section id="blog-detail">
   <div class="container">
     <div class="post-layout">
-
       <!-- Post Content -->
       <div class="blog-post-content">
         <article>
@@ -33,29 +32,39 @@
             {{ $seriesName := . }}
             {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
             {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
-            <div class="series-nav mb-4">
-              <h5 class="series-title">Part of the <a href="{{ site.BaseURL }}series/{{ $seriesName | urlize }}/">{{ $seriesName }}</a> series</h5>
-              <ol>
-                {{ range $sortedPages }}
-                  <li class="{{ if eq .Permalink $.Permalink }}fw-bold{{ end }}">
-                    {{ if eq .Permalink $.Permalink }}
-                      <span>{{ .Title }}</span>
+            {{ $totalParts := len $sortedPages }}
+            {{ $currentOrder := $.Params.series_order | default 1 }}
+            <nav class="series-sequence-header" aria-label="Series Sequence">
+              <div class="sequence-eyebrow">
+                <span class="sequence-label">Part {{ $currentOrder }} of {{ $totalParts }} in</span>
+                <a href="{{ "/series/" | relURL }}{{ $seriesName | urlize }}/" class="sequence-series-link">{{ $seriesName }}</a>
+              </div>
+              <ol class="sequence-list">
+                {{ range $idx, $p := $sortedPages }}
+                  {{ $isCurrent := eq .Permalink $.Permalink }}
+                  <li class="sequence-item{{ if $isCurrent }} active{{ end }}">
+                    <span class="sequence-num">{{ printf "%02d" (add $idx 1) }}</span>
+                    {{ if $isCurrent }}
+                      <span class="sequence-item-current">{{ .Title }} <span class="current-marker">(Current)</span></span>
                     {{ else }}
-                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                      <a href="{{ .Permalink }}" class="sequence-item-link">{{ .Title }}</a>
                     {{ end }}
                   </li>
                 {{ end }}
               </ol>
-            </div>
-          {{ end }} 
+            </nav>
+          {{ end }}
+
           <div class="content">
             {{ .Content }}
           </div>
 
           {{ with .Params.tags }}
-            <div class="post-tags mt-4">
-              {{ range . }}
-                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-link ms-2">#{{ . }}</a>
+            <div class="post-topics">
+              <span class="topics-label">Filed under:</span>
+              {{ range $i, $t := . }}
+                {{ if gt $i 0 }}<span class="topic-sep">&middot;</span>{{ end }}
+                <a href="{{ "/tags/" | relURL }}{{ $t | urlize }}/" class="topic-link">{{ $t }}</a>
               {{ end }}
             </div>
           {{ end }}
@@ -63,34 +72,39 @@
           {{ partial "share-buttons.html" . }}
         </article>
 
+        {{ $hasNextPost := false }}
+        {{ $nextPost := false }}
         {{ if .Params.series }}
-              {{ $seriesName := index .Params.series 0 }}
-              {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
-              {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
-              {{ $currentPostIndex := -1 }}
-              {{ range $i, $p := $sortedPages }}
-                {{ if eq .Permalink $.Permalink }}
-                  {{ $currentPostIndex = $i }}
-                {{ end }}
-              {{ end }}
+          {{ $seriesName := index .Params.series 0 }}
+          {{ $pagesInSeries := where site.RegularPages "Params.series" "intersect" (slice $seriesName) }}
+          {{ $sortedPages := $pagesInSeries.ByParam "series_order" }}
+          {{ $currentPostIndex := -1 }}
+          {{ range $i, $p := $sortedPages }}
+            {{ if eq .Permalink $.Permalink }}
+              {{ $currentPostIndex = $i }}
+            {{ end }}
+          {{ end }}
 
-              {{ $nextPost := false }}
-              {{ if lt $currentPostIndex (sub (len $sortedPages) 1) }}
-                {{ $nextPost = index $sortedPages (add $currentPostIndex 1) }}
-              {{ end }}
+          {{ if lt $currentPostIndex (sub (len $sortedPages) 1) }}
+            {{ $nextPost = index $sortedPages (add $currentPostIndex 1) }}
+            {{ $hasNextPost = true }}
+          {{ end }}
+        {{ end }}
 
-              {{ if $nextPost }}
-                <div class="next-post-prompt">
-                  <a href="{{ $nextPost.Permalink }}" class="next-post-link">
-                    Next: {{ $nextPost.Title }} {{ partial "icons/arrow-right.html" . }}
-                  </a>
-                </div>
-              {{ end }}
-            {{ end }} {{/* This closes the 'if .Params.series' block */}}
-            {{ partial "related-posts.html" . }} {{/* Always show related posts */}}
-            {{ partial "giscus.html" . }}
+        {{ if $hasNextPost }}
+          <div class="series-continuation">
+            <span class="continuation-label">Next in {{ index .Params.series 0 }}:</span>
+            <a href="{{ $nextPost.Permalink }}" class="continuation-link">
+              <span class="continuation-title">{{ $nextPost.Title }}</span>
+              <span class="continuation-arrow">&rarr;</span>
+            </a>
+          </div>
+        {{ else }}
+          {{ partial "related-posts.html" . }}
+        {{ end }}
+
+        {{ partial "giscus.html" . }}
       </div>
-
     </div>
   </div>
 </section>

@@ -797,9 +797,7 @@ footer .footer-link:hover {
 }
 
 .post-header {
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2.25rem;
 }
 
 .post-title {
@@ -955,53 +953,89 @@ pre.chroma,
     color: inherit;
 }
 
-.series-nav, .toc-nav {
-    background-color: var(--card-background-color);
-    border: 1px solid var(--border-color);
-    border-left: 3px solid var(--primary-color);
-    padding: 1.25rem 1.5rem;
-    border-radius: 4px;
-    margin-bottom: 2.5rem;
+/*--------------------------------------------------------------
+# In-Article Series Sequence (Top)
+--------------------------------------------------------------*/
+.series-sequence-header {
+    margin: 1.5rem 0 2.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.series-nav ol,
-.toc-nav ol {
-    list-style: none;
-    padding-left: 0;
-    max-height: 250px; /* Max height for scrollability */
-    overflow-y: auto; /* Enable vertical scrolling */
+.sequence-eyebrow {
+    font-family: var(--code-font);
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 0.85rem;
 }
 
-.series-nav ol li,
-.toc-nav ol li {
-    margin-bottom: 0.1rem; /* Further reduced margin */
-    line-height: 1.2; /* Further reduced line height */
-    font-size: 0.9rem; /* Reduced font size */
+.sequence-label {
+    color: var(--tertiary-text-color);
 }
 
-.series-nav ol li a,
-.toc-nav ol li a,
-.series-nav ol li span {
-    text-decoration: none;
+.sequence-series-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.sequence-series-link:hover {
     color: var(--text-color);
-    transition: color 0.3s ease;
-    display: block;
-    padding: 0.2rem 0.4rem; /* Further reduced padding */
 }
 
-.series-nav ol li a:hover,
-.toc-nav ol li a:hover {
+.sequence-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.sequence-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.sequence-num {
+    font-family: var(--code-font);
+    font-size: 0.78rem;
     color: var(--primary-color);
+    width: 22px;
+    flex-shrink: 0;
 }
 
-.series-nav ol li.fw-bold a {
+.sequence-item-link {
+    font-family: var(--font-serif);
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.sequence-item-link:hover {
+    color: var(--text-color);
+}
+
+.sequence-item.active .sequence-num {
+    font-weight: 600;
+}
+
+.sequence-item-current {
+    font-family: var(--font-serif);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.current-marker {
+    font-family: var(--code-font);
+    font-size: 0.75rem;
     color: var(--primary-color);
-    font-weight: 700;
-}
-
-.series-nav ol li.fw-bold {
-    background-color: var(--white-highlight);
-    border-radius: 4px;
+    margin-left: 0.35rem;
+    font-weight: normal;
 }
 
 
@@ -1195,33 +1229,90 @@ pre.chroma,
     width: 50%; /* Not full width, for elegance */
 }
 
-/* Next Post Prompt */
-.next-post-prompt {
+/*--------------------------------------------------------------
+# In-Article Topics Footnote
+--------------------------------------------------------------*/
+.post-topics {
     margin-top: 3rem;
-    padding: 1rem 0; /* Reduced padding */
-    background-color: transparent; /* Make background transparent */
-    border-left: none; /* Remove border */
-    border-radius: 0; /* Remove border-radius */
-    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    font-family: var(--code-font);
+    font-size: 0.8rem;
+    color: var(--tertiary-text-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
 }
 
-.next-post-prompt .next-post-link {
-    display: inline-flex;
-    align-items: center;
+.topics-label {
+    color: var(--tertiary-text-color);
+}
+
+.topic-link {
+    color: var(--secondary-text-color);
     text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.topic-link:hover {
     color: var(--primary-color);
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
 }
 
-.next-post-prompt .next-post-link:hover {
-    color: var(--text-color-inverted);
+.topic-sep {
+    color: var(--border-color);
 }
 
-.next-post-prompt .next-post-link i {
-    margin-left: 0.5rem;
-    font-size: 0.9em;
+/*--------------------------------------------------------------
+# Series Continuation Bridge (Bottom)
+--------------------------------------------------------------*/
+.series-continuation {
+    margin-top: 3.5rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.continuation-label {
+    display: block;
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.continuation-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.continuation-title {
+    font-family: var(--heading-font);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color 0.15s ease;
+}
+
+.continuation-link:hover .continuation-title {
+    color: var(--primary-color);
+}
+
+.continuation-arrow {
+    font-family: var(--code-font);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: transform 0.15s ease;
+}
+
+.continuation-link:hover .continuation-arrow {
+    transform: translateX(4px);
 }
 
 /* Code Copy Button Styles */
