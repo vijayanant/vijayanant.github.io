@@ -7,82 +7,60 @@
         <!-- Header -->
         <header class="explore-header">
             <h1 class="section-title">The Knowledge Map</h1>
-            <p class="section-intro">A map of everything I've written here, organized into three core pillars: craft, systems, and stewardship.</p>
+            <p class="explore-intro">Beyond standard categories and tags, I have mapped each essay, talk, and note to one of three architectural pillars: <strong>Craft</strong> (preserving human intent), <strong>Systems</strong> (designing for evolution), and <strong>Stewardship</strong> (navigating trade-offs).</p>
         </header>
 
         <!-- Pillars Grid -->
         <div class="pillar-grid">
-            {{ range $key, $pillar := .Site.Data.pillars }}
-            <div class="pillar-column pillar-{{ $key }}" id="pillar-{{ $key }}">
+            {{ $pillars := slice 
+                (dict "key" "craft" "num" "01" "title" "Craft" "subtitle" "Preserving human intent and software design")
+                (dict "key" "system" "num" "02" "title" "Systems" "subtitle" "Designing for evolution and resilience")
+                (dict "key" "strategy" "num" "03" "title" "Stewardship" "subtitle" "Navigating architectural trade-offs")
+            }}
+            {{ range $pillars }}
+            <div class="pillar-column pillar-{{ .key }}" id="pillar-{{ .key }}">
                 <!-- Pillar Header -->
                 <div class="pillar-header-content">
-                    <div class="pillar-icon">
-                        {{ if eq $key "craft" }}{{ partial "icons/lightbulb.html" . }}{{ end }}
-                        {{ if eq $key "system" }}{{ partial "icons/layer-group.html" . }}{{ end }}
-                        {{ if eq $key "strategy" }}{{ partial "icons/users.html" . }}{{ end }}
-                    </div>
-                    <h2 class="pillar-title">{{ $pillar.title }}</h2>
-                    <p class="pillar-description">{{ $pillar.description }}</p>
+                    <span class="pillar-num">{{ .num }}</span>
+                    <h2 class="pillar-title">{{ .title }}</h2>
+                    <p class="pillar-subtitle">{{ .subtitle }}</p>
                 </div>
 
-                {{ $pillar_pages := where $.Site.RegularPages "Params.pillar" "==" $key }}
+                {{ $pillar_pages := where $.Site.RegularPages "Params.pillar" "==" .key }}
 
-                <!-- 1. Foundational (Blog) -->
+                <!-- 1. Foundational -->
                 {{ $foundational := where (where $pillar_pages "Section" "posts") "Params.pillar_role" "==" "foundational" }}
                 {{ if $foundational }}
                 <div class="pillar-group">
-                    <h3 class="group-label">Foundations</h3>
+                    <h3 class="group-label">Foundational</h3>
                     <div class="foundational-list">
                         {{ range $foundational }}
-                        <a href="{{ .Permalink }}" class="foundational-card">
-                            <div class="card-badge">Start Here</div>
-                            <h4 class="card-title">{{ .Title }}</h4>
-                            <p class="card-summary">{{ .Description | default .Summary | truncate 180 }}</p>
-                            <div class="card-footer-meta">
-                                <span class="card-link">Start Reading →</span>
+                        <article class="foundational-item">
+                            <div class="foundational-meta">
+                                <span class="foundational-badge">Essential</span>
                                 <span class="read-time">{{ .ReadingTime }} min read</span>
                             </div>
-                        </a>
+                            <h4 class="foundational-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                            <p class="foundational-summary">{{ .Description | default .Summary | truncate 150 }}</p>
+                        </article>
                         {{ end }}
                     </div>
                 </div>
                 {{ end }}
 
-                <!-- 2. Workshops -->
-                {{ $workshops := where $pillar_pages "Section" "workshops" }}
-                {{ if $workshops }}
-                <div class="pillar-group">
-                    <h3 class="group-label">Workshops</h3>
-                    <ul class="dense-list">
-                        {{ range $workshops }}
-                        <li>
-                            <a href="{{ .Permalink }}" class="list-link">
-                                <div class="link-main">
-                                    <span class="link-title">{{ .Title }}</span>
-                                    <span class="series-tag">Service</span>
-                                </div>
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </div>
-                {{ end }}
-
-                <!-- 3. Talks -->
+                <!-- 2. Selected Talks -->
                 {{ $talks := where $pillar_pages "Type" "speaking" }}
                 {{ if $talks }}
                 <div class="pillar-group">
-                    <h3 class="group-label">Selected Talks</h3>
+                    <h3 class="group-label">Selected Talks <span class="group-count">{{ len $talks }}</span></h3>
                     <ul class="dense-list">
                         {{ range $talks.ByDate.Reverse }}
                         {{ $primaryLink := .Permalink }}
                         {{ if .Params.links }}{{ $primaryLink = (index .Params.links 0).url }}{{ end }}
-                        <li>
+                        <li class="dense-item">
                             <a href="{{ $primaryLink | relURL }}" class="list-link" {{ if (strings.HasPrefix $primaryLink "http") }}target="_blank" rel="noopener noreferrer"{{ end }}>
-                                <div class="link-main">
-                                    <span class="link-title">{{ .Title }}</span>
-                                    <span class="series-tag">Talk</span>
-                                </div>
+                                <span class="link-title">{{ .Title }}</span>
+                                <span class="type-tag">Talk</span>
                             </a>
                         </li>
                         {{ end }}
@@ -90,22 +68,22 @@
                 </div>
                 {{ end }}
 
-                <!-- 4. Deep Dives (Blog) -->
+                <!-- 3. Deep Dives -->
                 {{ $deep_dives := where (where $pillar_pages "Section" "posts") "Params.pillar_role" "==" "deep_dive" }}
                 {{ if $deep_dives }}
                 <div class="pillar-group">
                     <h3 class="group-label">Deep Dives <span class="group-count">{{ len $deep_dives }}</span></h3>
                     <ul class="dense-list">
                         {{ range $deep_dives.ByDate.Reverse }}
-                        <li>
+                        <li class="dense-item">
                             <a href="{{ .Permalink }}" class="list-link">
-                                <div class="link-main">
-                                    <span class="link-title">{{ .Title }}</span>
+                                <span class="link-title">{{ .Title }}</span>
+                                <div class="link-meta-group">
                                     {{ if .Params.series }}
-                                    <span class="series-tag">Series</span>
+                                    <span class="type-tag">Series</span>
                                     {{ end }}
+                                    <span class="link-meta">{{ .ReadingTime }}m</span>
                                 </div>
-                                <span class="link-meta">{{ .ReadingTime }}m</span>
                             </a>
                         </li>
                         {{ end }}
@@ -113,14 +91,14 @@
                 </div>
                 {{ end }}
 
-                <!-- 5. Essays (Blog) -->
+                <!-- 4. Essays -->
                 {{ $essays := where (where $pillar_pages "Section" "posts") "Params.pillar_role" "==" "essay" }}
                 {{ if $essays }}
                 <div class="pillar-group">
                     <h3 class="group-label">Essays <span class="group-count">{{ len $essays }}</span></h3>
                     <ul class="dense-list">
                         {{ range $essays.ByDate.Reverse }}
-                        <li>
+                        <li class="dense-item">
                             <a href="{{ .Permalink }}" class="list-link">
                                 <span class="link-title">{{ .Title }}</span>
                                 <span class="link-meta">{{ .ReadingTime }}m</span>

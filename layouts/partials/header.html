@@ -1,4 +1,3 @@
-{{ if .IsHome }}
 <div class="top-actions">
     {{- if .Site.Params.enableSearch -}}
     <button id="search-button" class="top-action-btn" aria-label="Search" title="Search">
@@ -15,7 +14,7 @@
     {{- end -}}
 </div>
 
-<header class="site-header-home">
+<header class="site-header">
     <div class="container masthead-container">
         <div class="brand-lockup">
             <a href="{{ "/" | relURL }}" class="brand-logo-link" aria-label="{{ site.Title }}">
@@ -26,7 +25,11 @@
                 {{ end }}
             </a>
             <div class="brand-text">
+                {{ if .IsHome }}
                 <h1 class="brand-name"><a href="{{ "/" | relURL }}">{{ .Site.Data.sections.hero.title }}</a></h1>
+                {{ else }}
+                <span class="brand-name"><a href="{{ "/" | relURL }}">{{ .Site.Data.sections.hero.title }}</a></span>
+                {{ end }}
                 <p class="brand-tagline">
                     {{ range $i, $item := .Site.Data.sections.hero.meta_items }}
                         {{ if gt $i 0 }} &middot; {{ end }}
@@ -39,7 +42,7 @@
         <nav class="masthead-index" aria-label="Section navigation">
             <a href="{{ "/#essays" | relURL }}" class="index-link">Writing</a>
             <span class="index-sep" aria-hidden="true">&middot;</span>
-            <a href="{{ "/series/" | relURL }}" class="index-link">Series</a>
+            <a href="{{ "/series/" | relURL }}" class="index-link{{ if eq .Section "series" }} active{{ end }}">Series</a>
             <span class="index-sep" aria-hidden="true">&middot;</span>
             <a href="{{ "/#current-focus" | relURL }}" class="index-link">Building Now</a>
             <span class="index-sep" aria-hidden="true">&middot;</span>
@@ -47,48 +50,3 @@
         </nav>
     </div>
 </header>
-{{ else }}
-<header id="site-header" class="site-header-sub">
-    <div class="container header-container">
-        <a href="{{ "/" | relURL }}" class="site-title">
-            <span class="site-name">{{ site.Title }}</span>
-        </a>
-        <nav class="site-nav">
-            <button class="nav-toggle" aria-label="Toggle Navigation">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="{{ "/#essays" | relURL }}" class="nav-link">Writing</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ "/series/" | relURL }}" class="nav-link{{ if eq .Section "series" }} active{{ end }}">Series</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ "/#current-focus" | relURL }}" class="nav-link">Building Now</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ "/#contact" | relURL }}" class="nav-link">Contact</a>
-                </li>
-                {{- if .Site.Params.enableSearch -}}
-                <li class="nav-item">
-                    <button id="search-button" class="nav-link" aria-label="Search" title="Search">
-                        {{ partial "icons/search.html" . }}
-                        <span class="sr-only">Search</span>
-                    </button>
-                </li>
-                {{- end -}}
-                {{- if .Site.Params.enableThemeToggle -}}
-                <li class="nav-item">
-                    <button id="theme-toggle" class="nav-link theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme">
-                        {{ partial "icons/moon.html" . }}
-                        {{ partial "icons/sun.html" . }}
-                        <span class="sr-only">Toggle Theme</span>
-                    </button>
-                </li>
-                {{- end -}}
-            </ul>
-        </nav>
-    </div>
-</header>
-{{ end }}
