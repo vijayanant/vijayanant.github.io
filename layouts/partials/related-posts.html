@@ -31,36 +31,17 @@
 
   {{ with $finalRelated }}
   <div class="related-posts-section">
-    <h2 class="section-title">You Might Also Like</h2>
+    <h2 class="related-posts-heading">You Might Also Like</h2>
     <ul class="related-posts-list">
       {{ range . }}
       <li class="related-post-item">
         <a href="{{ .Permalink }}" class="related-post-link">
-          <div class="related-post-content">
-            <h3 class="related-post-title">{{ .Title }}</h3>
-            <p class="related-post-description">{{ .Description }}</p>
+          <div class="related-post-header">
+            <span class="related-post-title">{{ .Title }}</span>
+            <span class="related-post-meta">{{ .ReadingTime }}m</span>
           </div>
-          {{ $image := .Resources.GetMatch .Params.featured_image }}
-          {{ if $image }}
-            <div class="related-post-image-wrapper">
-              {{ $thumbnail := $image }}
-              {{ if ne $image.MediaType.SubType "svg" }}
-                {{ $thumbnail = $image.Fill "400x250 webp" }}
-              {{ end }}
-              <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
-            </div>
-          {{ else }}
-            {{ with .Params.featured_image }}
-              {{ $thumbnail := resources.Get . }}
-              {{ if $thumbnail }}
-                {{ if ne $thumbnail.MediaType.SubType "svg" }}
-                  {{ $thumbnail = $thumbnail.Fill "400x250 webp" }}
-                {{ end }}
-                <div class="related-post-image-wrapper">
-                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="related-post-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
-                </div>
-              {{ end }}
-            {{ end }}
+          {{ with .Description }}
+            <p class="related-post-description">{{ . }}</p>
           {{ end }}
         </a>
       </li>
