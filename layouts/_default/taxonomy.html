@@ -1,36 +1,30 @@
 {{ define "main" }}
-<section id="blog-detail">
-  <div class="container">
-
-    <header class="taxonomy-term-header mb-4">
-      <h1 class="section-title">{{ .Data.Singular | title }}: {{ .Title }}</h1>
-      <p class="section-intro">Posts filed under {{ .Title }}.</p>
+<section class="section-archive">
+  <div class="container archive-container">
+    <header class="archive-header">
+      <span class="archive-eyebrow">{{ .Data.Singular | title }}</span>
+      <h1 class="archive-title">{{ .Title }}</h1>
+      <p class="archive-intro">Essays tagged with <span class="tag-highlight">{{ .Title }}</span>.</p>
     </header>
 
-    <div class="blog-grid">
-      {{ range .Pages }}
-        <div class="post-card">
-          {{ $postPermalink := .Permalink }}
-          {{ with .Resources.GetMatch .Params.featured_image }}
-          <a href="{{ $postPermalink }}">
-            {{ $thumbnail := . }}
-            {{ if ne .MediaType.SubType "svg" }}
-              {{ $thumbnail = .Fill "400x250 webp" }}
+    <div class="archive-years">
+      {{ range .Pages.GroupByDate "2006" }}
+        <div class="archive-year-group">
+          <h2 class="archive-year-heading">{{ .Key }}</h2>
+          <ul class="archive-list">
+            {{ range .Pages }}
+              <li class="archive-item">
+                <a href="{{ .Permalink }}" class="archive-link">
+                  <span class="archive-item-date">{{ .Date.Format "Jan 02" }}</span>
+                  <span class="archive-item-title">{{ .Title }}</span>
+                  <span class="archive-item-meta">{{ .ReadingTime }}m</span>
+                </a>
+              </li>
             {{ end }}
-            <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $.Title }}" class="post-card-image" {{ if ne $thumbnail.MediaType.SubType "svg" }}width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"{{ end }}>
-          </a>
-          {{ else }}
-          {{/* Optional: Add a fallback image here if no featured image is found */}}
-          {{ end }}
-          <h2 class="post-card-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h2>          
-          <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }}</div>
-          <!-- <a href="{{ .Permalink }}" class="read-more-button">Read More →</a> -->
+          </ul>
         </div>
       {{ end }}
     </div>
-
   </div>
 </section>
 {{ end }}

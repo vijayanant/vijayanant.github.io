@@ -1282,187 +1282,337 @@ body:not([data-page-kind="home"]) #site-header {
     position: relative;
 }
 
-/*--------------------*
-    Series Posts Section
-*--------------------*/
-.series-posts-section {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--surface-color);
+/*--------------------------------------------------------------
+# Series Hub & Sequence Detail Styles (LambdaMatters Aesthetic)
+--------------------------------------------------------------*/
+.section-series-hub,
+.section-series-detail,
+.section-archive {
+    padding: 0 0 4rem;
 }
 
-.series-posts-section .section-title { /* For the main series title if it were inside this section, but we have a separate header */
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.series-hub-container,
+.series-detail-container,
+.archive-container {
+    max-width: 720px;
+    margin: 0 auto;
 }
 
-.series-posts-list {
-    list-style: none; /* Ensure default ordered list numbering is removed */
-    padding: 0;
+.series-hub-header,
+.series-detail-header,
+.archive-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.series-post-item {
-    min-height: 120px; /* Ensure a minimum height for the box */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    min-height: 120px; /* Ensure a minimum height for the box */
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.1); /* Subtle border for separation */
-}
-
-.series-post-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow-light);
-}
-
-.series-post-link {
-    display: flex;
-    flex-direction: row-reverse; /* Reverse the order of items */
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 1rem;
-}
-
-@media (max-width: 768px) {
-    .series-post-link {
-        flex-direction: column; /* Stack items vertically */
-        align-items: stretch; /* Make items stretch to fill width */
-        padding: 1rem; /* Consistent padding */
-    }
-    .series-post-content {
-        margin-right: 0; /* Remove horizontal margin when stacked */
-        margin-bottom: 1rem; /* Add vertical margin below content */
-        padding-left: 1rem; /* Adjust padding for stacked layout */
-        order: 2; /* Content below image */
-    }
-    .series-post-content::before {
-        left: 1rem; /* Keep counter left-aligned */
-        top: 0; /* Align with the top of the content */
-    }
-    .series-post-image-wrapper {
-        width: 100%; /* Image takes full width */
-        height: 180px; /* Fixed height similar to post-card */
-        max-width: none; /* Remove max-width constraint */
-        margin: 0 auto 1rem auto; /* Center the image wrapper and add bottom margin */
-        order: 1; /* Image above content */
-    }
-    .series-post-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }}
-
-.series-post-content {
-    flex-grow: 1;
-    padding-right: 1rem;
-    margin-right: 1.5rem; /* Space between content and image */
-    position: relative; /* For counter positioning */
-    padding-left: 1rem; /* Adjusted padding since number is removed */
-}
-
-
-
-.series-post-title {
-    font-family: var(--heading-font);
-    font-size: 1.2rem;
-    font-weight: 700;
+.series-hub-eyebrow,
+.series-detail-eyebrow,
+.archive-eyebrow {
+    display: inline-block;
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.series-back-link {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.series-back-link:hover {
+    color: var(--text-color);
+}
+
+.eyebrow-sep {
+    margin: 0 0.5rem;
+    color: var(--tertiary-text-color);
+}
+
+.series-hub-title,
+.series-detail-title,
+.archive-title {
+    font-family: var(--heading-font);
+    font-size: 2.35rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text-color);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.75rem;
+}
+
+.series-hub-intro,
+.series-detail-lead,
+.archive-intro {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--secondary-text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.series-detail-meta {
+    font-family: var(--code-font);
+    font-size: 0.8rem;
+    color: var(--tertiary-text-color);
+    margin-top: 0.75rem;
+}
+
+.series-detail-intro {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Series Hub List / Ledger */
+.series-ledger {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.series-entry {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.series-entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.series-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     margin-bottom: 0.5rem;
 }
 
-.series-post-description {
-    font-size: 0.9rem;
+.series-entry-title {
+    font-family: var(--heading-font);
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.series-entry-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.series-entry-link:hover {
+    color: var(--primary-color);
+}
+
+.series-entry-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--code-font);
+    font-size: 0.75rem;
+}
+
+.series-pill {
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.pill-ongoing {
+    background-color: rgba(var(--primary-color-rgb), 0.15);
+    color: var(--primary-color);
+}
+
+.pill-complete {
+    background-color: var(--border-color);
     color: var(--secondary-text-color);
 }
 
-.series-post-meta {
+.series-pill-count {
+    color: var(--tertiary-text-color);
+}
+
+.series-entry-desc {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--secondary-text-color);
+    margin-bottom: 0.75rem;
+}
+
+.series-cta-link {
+    font-family: var(--code-font);
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.series-cta-link:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Series Curriculum / Sequence Order */
+.series-curriculum-heading {
+    font-family: var(--code-font);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--secondary-text-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.series-step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.series-step-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.series-step-item:last-child {
+    border-bottom: none;
+}
+
+.series-step-number {
+    font-family: var(--code-font);
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-top: 0.25rem;
+    width: 28px;
+    flex-shrink: 0;
+}
+
+.series-step-body {
+    flex-grow: 1;
+}
+
+.series-step-title {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0 0 0.35rem 0;
+}
+
+.series-step-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.series-step-link:hover {
+    color: var(--primary-color);
+}
+
+.series-step-subtitle {
+    font-family: var(--font-serif);
+    font-size: 0.98rem;
+    color: var(--secondary-text-color);
+    line-height: 1.5;
+    margin: 0 0 0.4rem 0;
+}
+
+.series-step-meta {
+    font-family: var(--code-font);
+    font-size: 0.75rem;
+    color: var(--tertiary-text-color);
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+/*--------------------------------------------------------------
+# Chronological Archive Styles
+--------------------------------------------------------------*/
+.archive-year-group {
+    margin-bottom: 2.5rem;
+}
+
+.archive-year-heading {
+    font-family: var(--code-font);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.archive-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.archive-item:last-child {
+    border-bottom: none;
+}
+
+.archive-link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 0.75rem 0;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.archive-item-date {
+    font-family: var(--code-font);
     font-size: 0.8rem;
     color: var(--tertiary-text-color);
-    margin-top: 0.5rem;
-}
-
-.series-post-image-wrapper {
+    width: 60px;
     flex-shrink: 0;
-    width: 250px; /* Fixed width for stability */
-    height: 150px; /* Fixed height */
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: rgba(var(--primary-color-rgb), 0.05); /* Subtle background for transparent SVGs */
-    display: flex; /* Centering */
-    align-items: center;
-    justify-content: center;
 }
 
-@media (max-width: 768px) {
-    .series-post-image-wrapper {
-        width: 100%;
-        max-width: none;
-    }
+.archive-item-title {
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--text-color);
+    flex-grow: 1;
+    transition: color 0.15s ease;
 }
 
-@media (max-width: 480px) {
-    .series-post-image-wrapper {
-        width: 100%;
-    }
+.archive-link:hover .archive-item-title {
+    color: var(--primary-color);
 }
 
-.series-post-image {
-    width: 100%;
-    height: 100%;
-    max-height: 180px; /* Set a maximum height for the image */
-    object-fit: cover;
-}
-
-.current-series-post {
-    border-left: 4px solid var(--primary-color); /* Highlight current post */
-    background-color: rgba(var(--primary-color-rgb), 0.1); /* Subtle background highlight */
-}
-
-/*--------------------*
-    Series Header Styling
-*--------------------*/
-.series-header {
-    position: relative;
-    padding: 6rem 0;
-    background-color: var(--surface-color);
-    background-size: cover;
-    background-position: center center;
-    color: var(--text-color-inverted);
-    text-shadow: 0 2px 4px var(--shadow-dark);
-    display: flex;
-    align-items: flex-end; /* Align content to the bottom */
-    justify-content: center;
-    min-height: 350px; /* Slightly increased height for better visual */
-    overflow: hidden; /* Ensure gradient doesn't spill */
-}
-
-.series-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%); /* Fading gradient */
-    z-index: 1;
-}
-
-.series-header-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 2rem auto; /* Add bottom margin to push content up from the very bottom */
-    padding: 0 20px;
-}
-
-.series-header-content h1 {
-    color: var(--text-color-inverted); /* Ensure title is white over image */
-    margin-bottom: 1rem;
-}
-
-.series-header-content .lead {
-    color: var(--white-translucent-high); /* Lighter text for description */
+.archive-item-meta {
+    font-family: var(--code-font);
+    font-size: 0.75rem;
+    color: var(--tertiary-text-color);
+    flex-shrink: 0;
 }
 
 

@@ -1,99 +1,31 @@
 {{ define "main" }}
-<section id="blog-list">
-  <div class="container">
+<section class="section-archive">
+  <div class="container archive-container">
+    <header class="archive-header">
+      <span class="archive-eyebrow">Index</span>
+      <h1 class="archive-title">Archive</h1>
+      <p class="archive-intro">A chronological ledger of all essays, dispatches, and technical explorations.</p>
+    </header>
 
-    {{ $allPosts := .Pages }} {{/* No pagination needed for <25 posts */}}
-
-    {{ if gt (len $allPosts) 0 }}
-      {{ $featuredPost := index $allPosts 0 }}
-      {{ $remainingPosts := after 1 $allPosts }}
-
-      {{/* Featured Post Section - Redesigned */}}
-      <div class="featured-post-hero mb-5">
-        {{ with $featuredPost }}
-          <a href="{{ .Permalink }}" class="featured-post-link">
-            {{ $heroImage := .Resources.GetMatch .Params.featured_image }}
-            {{ if $heroImage }}
-              {{ if ne $heroImage.MediaType.SubType "svg" }}
-                {{ $heroImageSmall := $heroImage.Fill "600x300 webp" }}
-                {{ $heroImageLarge := $heroImage.Fill "1200x600 webp" }}
-                <img src="{{ $heroImageLarge.RelPermalink }}" 
-                     alt="{{ .Title }}" 
-                     class="featured-post-hero-image" 
-                     srcset="{{ $heroImageSmall.RelPermalink }} 600w, {{ $heroImageLarge.RelPermalink }} 1200w"
-                     sizes="(max-width: 768px) 600px, 1200px"
-                     width="{{ $heroImageLarge.Width }}" height="{{ $heroImageLarge.Height }}" 
-                     fetchpriority="high" 
-                     loading="eager">
-              {{ else }}
-                <img src="{{ $heroImage.RelPermalink }}" 
-                     alt="{{ .Title }}" 
-                     class="featured-post-hero-image" 
-                     fetchpriority="high" 
-                     loading="eager">
-              {{ end }}
-            {{ else }}
-              <!-- Fallback background when no image exists -->
-              <div class="featured-post-hero-fallback"></div>
+    {{ $posts := where site.RegularPages "Section" "posts" }}
+    <div class="archive-years">
+      {{ range $posts.GroupByDate "2006" }}
+        <div class="archive-year-group">
+          <h2 class="archive-year-heading">{{ .Key }}</h2>
+          <ul class="archive-list">
+            {{ range .Pages }}
+              <li class="archive-item">
+                <a href="{{ .Permalink }}" class="archive-link">
+                  <span class="archive-item-date">{{ .Date.Format "Jan 02" }}</span>
+                  <span class="archive-item-title">{{ .Title }}</span>
+                  <span class="archive-item-meta">{{ .ReadingTime }}m</span>
+                </a>
+              </li>
             {{ end }}
-            <span class="featured-post-badge">Latest Article</span>
-            <div class="featured-post-overlay">
-              <h2 class="featured-post-hero-title">{{ .Title }}</h2>
-              <div class="featured-post-hero-meta">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</div>
-              <p class="featured-post-hero-description">{{ .Description }}</p>
-            </div>
-          </a>
-        {{ end }}
-      </div>
-
-      {{/* All Other Posts Grid */}}
-      {{ if gt (len $remainingPosts) 0 }}
-        <hr class="section-divider mt-5 mb-5">
-        <h2 class="section-title mt-5">The Archive</h2>
-        <div class="blog-grid">
-          {{ range $remainingPosts }}
-            <div class="post-card">
-              {{ $postPermalink := .Permalink }}
-              {{ with .Resources.GetMatch .Params.featured_image }}
-              <a href="{{ $postPermalink }}">
-                {{ if ne .MediaType.SubType "svg" }}
-                  {{ $small := .Fill "200x125 webp" }}
-                  {{ $medium := .Fill "400x250 webp" }}
-                  <img src="{{ $medium.RelPermalink }}" 
-                       alt="{{ .Title }}" 
-                       class="post-card-image" 
-                       srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
-                       sizes="(max-width: 768px) 200px, 400px"
-                       width="400" height="250"
-                       loading="lazy">
-                {{ else }}
-                  <img src="{{ .RelPermalink }}" 
-                       alt="{{ .Title }}" 
-                       class="post-card-image" 
-                       width="400" height="250"
-                       loading="lazy">
-                {{ end }}
-              </a>
-              {{ else }}
-              {{/* Optional: Add a fallback image here if no featured image is found */}}
-              {{ end }}
-              <h3 class="post-card-title">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-              </h3>          
-              <div class="post-card-meta">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</div>
-              <p class="post-card-description">{{ .Description | truncate 100 }}</p>
-              <!-- <a href="{{ .Permalink }}" class="read-more-button">Read More →</a> -->
-            </div>
-          {{ end }}
+          </ul>
         </div>
       {{ end }}
-
-      {{/* Removed pagination partial */}}
-
-    {{ else }}
-      <p class="text-center">No posts found.</p>
-    {{ end }}
-
+    </div>
   </div>
 </section>
 {{ end }}

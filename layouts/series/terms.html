@@ -1,58 +1,42 @@
 {{ define "main" }}
-<section id="blog-detail">
-  <div class="container">
-
-    <header class="series-list-header mb-4">
-      <h1 class="section-title">Deep Dives</h1>
-      <p class="section-intro">Curated paths through complex topics. Pick a thread and follow it.</p>
+<section class="section-series-hub">
+  <div class="container series-hub-container">
+    <header class="series-hub-header">
+      <span class="series-hub-eyebrow">Curated Sequences</span>
+      <h1 class="series-hub-title">Series</h1>
+      <p class="series-hub-intro">Thematic journeys through software architecture, sovereign systems, and engineering craft. Structured sequentially to follow from first principles.</p>
     </header>
 
-    <div class="blog-grid">
+    <div class="series-ledger">
       {{ $series := .Site.GetPage "taxonomy" "series" }}
       {{ range $series.Pages.ByDate.Reverse }}
         {{ $seriesPage := . }}
-        <div class="post-card">
-          {{ if eq $seriesPage.Params.status "Ongoing" }}
-            <span class="series-status-badge status-ongoing">
-              Ongoing
-            </span>
-          {{ end }}
-          <a href="{{ $seriesPage.Permalink }}" class="post-card-link">
-            {{ with $seriesPage.Params.featured_image }}
-              {{ $image := $seriesPage.Resources.GetMatch . }}
-              {{ if $image }}
-                {{ if ne $image.MediaType.SubType "svg" }}
-                  {{ $small := $image.Fill "200x125 webp" }}
-                  {{ $medium := $image.Fill "400x250 webp" }}
-                  <img src="{{ $medium.RelPermalink }}" 
-                       alt="{{ $seriesPage.Title }}" 
-                       class="post-card-image" 
-                       srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
-                       sizes="(max-width: 768px) 200px, 400px"
-                       width="400" height="250">
-                {{ else }}
-                  {{ $image.Content | safeHTML }}
-                {{ end }}
-              {{ else }}
-                {{ $thumbnail := resources.Get . }}
-                {{ if $thumbnail }}
-                  {{ if ne $thumbnail.MediaType.SubType "svg" }}
-                    {{ $thumbnail = $thumbnail.Fill "400x250 webp" }}
-                  {{ end }}
-                  <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $seriesPage.Title }}" class="post-card-image" width="400" height="250">
-                {{ end }}
-              {{ end }}
-            {{ end }}
-            <h2 class="post-card-title">
-              <a href="{{ $seriesPage.Permalink }}">{{ $seriesPage.Title }}</a>
+        {{ $postCount := len $seriesPage.Pages }}
+        {{ if gt $postCount 0 }}
+        <article class="series-entry">
+          <div class="series-entry-header">
+            <h2 class="series-entry-title">
+              <a href="{{ $seriesPage.Permalink }}" class="series-entry-link">{{ $seriesPage.Title }}</a>
             </h2>
-            <p class="post-card-description">{{ $seriesPage.Description | truncate 100 }}</p>
-            <p class="post-card-meta text-muted">{{ len $seriesPage.Pages }} posts</p>
-          </a>
-        </div>
+            <div class="series-entry-badges">
+              {{ if eq $seriesPage.Params.status "Ongoing" }}
+                <span class="series-pill pill-ongoing">Ongoing</span>
+              {{ else }}
+                <span class="series-pill pill-complete">Complete</span>
+              {{ end }}
+              <span class="series-pill-count">{{ $postCount }} {{ if eq $postCount 1 }}part{{ else }}parts{{ end }}</span>
+            </div>
+          </div>
+          {{ with $seriesPage.Description }}
+            <p class="series-entry-desc">{{ . }}</p>
+          {{ end }}
+          <div class="series-entry-action">
+            <a href="{{ $seriesPage.Permalink }}" class="series-cta-link">Read sequence &rarr;</a>
+          </div>
+        </article>
+        {{ end }}
       {{ end }}
     </div>
-
   </div>
 </section>
 {{ end }}

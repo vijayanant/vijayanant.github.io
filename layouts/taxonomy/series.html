@@ -1,99 +1,63 @@
 {{ define "main" }}
-<section id="blog-detail">
-  <div class="container">
-
+<section class="section-series-detail">
+  <div class="container series-detail-container">
     {{ if eq .Kind "term" }}
-      <div class="featured-post-hero mb-5">
-        {{ with .Params.featured_image }}
-          {{ $image := $.Page.Resources.GetMatch . }}
-          {{ if $image }}
-            {{ if ne $image.MediaType.SubType "svg" }}
-              {{ $heroImageSmall := $image.Fill "600x300 webp" }}
-              {{ $heroImageLarge := $image.Fill "1200x600 webp" }}
-              <img src="{{ $heroImageLarge.RelPermalink }}" 
-                   alt="{{ $.Title }}" 
-                   class="featured-post-hero-image" 
-                   srcset="{{ $heroImageSmall.RelPermalink }} 600w, {{ $heroImageLarge.RelPermalink }} 1200w"
-                   sizes="(max-width: 768px) 600px, 1200px"
-                   width="{{ $heroImageLarge.Width }}" 
-                   height="{{ $heroImageLarge.Height }}"
-                   fetchpriority="high"
-                   loading="eager">
-            {{ else }}
-              {{ $image.Content | safeHTML }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-        {{ if .Params.featured }}
-          <span class="featured-post-badge">Featured Series</span>
-        {{ end }}
-        {{ if eq .Params.status "Ongoing" }}
-          <span class="series-status-badge status-ongoing">
-            Ongoing
-          </span>
-        {{ end }}
-        <div class="featured-post-overlay">
-          <h1 class="featured-post-hero-title">{{ .Title }}</h1>
-          {{ with .Description }}
-            <p class="featured-post-hero-description">{{ . }}</p>
+      <header class="series-detail-header">
+        <div class="series-detail-eyebrow">
+          <a href="/series/" class="series-back-link">&larr; All Series</a>
+          <span class="eyebrow-sep">&middot;</span>
+          {{ if eq .Params.status "Ongoing" }}
+            <span class="series-pill pill-ongoing">Ongoing</span>
+          {{ else }}
+            <span class="series-pill pill-complete">Complete</span>
           {{ end }}
         </div>
-      </div>
+        
+        <h1 class="series-detail-title">{{ .Title }}</h1>
+        {{ with .Description }}
+          <p class="series-detail-lead">{{ . }}</p>
+        {{ end }}
+        
+        <div class="series-detail-meta">
+          {{ $count := len .Pages }}
+          <span>{{ $count }} {{ if eq $count 1 }}part{{ else }}parts in sequence{{ end }}</span>
+        </div>
+      </header>
 
-      <div class="content series-intro mb-5">
-        {{ .Content }}
-      </div>
+      {{ with .Content }}
+        <div class="series-detail-intro prose-content">
+          {{ . }}
+        </div>
+      {{ end }}
 
-      <div class="series-posts-section">
-        <ol class="series-posts-list">
-          {{ range .Pages.ByParam "series_order" }}
-            <li class="series-post-item {{ if eq .Permalink $.Permalink }}current-series-post{{ end }}">
-              {{ $currentPost := . }} {{/* Store the current post object here */}}
-              <a href="{{ $currentPost.Permalink }}" class="series-post-link d-flex align-items-center">
-                <div class="series-post-content">
-                  <h3 class="series-post-title">{{ $currentPost.Title }}</h3>
-                  <p class="series-post-description">{{ $currentPost.Description }}</p>
-                  <p class="series-post-meta text-muted">{{ $currentPost.Date.Format "January 2, 2006" }}</p>
-                </div>
-                {{ if $currentPost.Params.featured_image }}
-                    {{ $imagePath := $currentPost.Params.featured_image }}
-                    {{ $image := $currentPost.Resources.GetMatch $imagePath }}
-                    {{ if $image }}
-                      {{ if ne $image.MediaType.SubType "svg" }}
-                        {{ $small := $image.Fill "200x125 webp" }}
-                        {{ $medium := $image.Fill "400x250 webp" }}
-                        <div class="series-post-image-wrapper ms-3">
-                          <img src="{{ $medium.RelPermalink }}" 
-                               alt="{{ $currentPost.Title }}" 
-                               class="series-post-image" 
-                               srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 400w"
-                               sizes="(max-width: 768px) 200px, 400px"
-                               width="400" height="250">
-                        </div>
-                      {{ else }}
-                        <div class="series-post-image-wrapper ms-3">
-                          {{ $image.Content | safeHTML }}
-                        </div>
-                      {{ end }}
-                    {{ else }}
-                      {{ $image := resources.Get $imagePath }}
-                      {{ if $image }}
-                        {{ if ne $image.MediaType.SubType "svg" }}
-                          {{ $image = $image.Fill "400x250 webp" }}
-                        {{ end }}
-                        <div class="series-post-image-wrapper ms-3">
-                          <img src="{{ $image.RelPermalink }}" alt="{{ $currentPost.Title }}" class="series-post-image" width="400" height="250">
-                        </div>
-                      {{ end }}
-                    {{ end }}
+      <div class="series-curriculum">
+        <h2 class="series-curriculum-heading">Sequence Order</h2>
+        <ol class="series-step-list">
+          {{ range $idx, $post := .Pages.ByParam "series_order" }}
+            <li class="series-step-item">
+              <span class="series-step-number">{{ printf "%02d" (add $idx 1) }}</span>
+              <div class="series-step-body">
+                <h3 class="series-step-title">
+                  <a href="{{ $post.Permalink }}" class="series-step-link">{{ $post.Title }}</a>
+                </h3>
+                {{ with $post.Params.subtitle }}
+                  <p class="series-step-subtitle">{{ . }}</p>
+                {{ else }}
+                  {{ with $post.Description }}
+                    <p class="series-step-subtitle">{{ . }}</p>
+                  {{ end }}
                 {{ end }}
-              </a>
+                <div class="series-step-meta">
+                  <span>{{ $post.Date.Format "Jan 2006" }}</span>
+                  <span class="meta-sep">&middot;</span>
+                  <span>{{ $post.ReadingTime }} min read</span>
+                </div>
+              </div>
             </li>
           {{ end }}
         </ol>
       </div>
     {{ end }}
-
   </div>
 </section>
 {{ end }}
