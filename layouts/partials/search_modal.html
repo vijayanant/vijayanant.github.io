@@ -1,8 +1,19 @@
 {{- if .Site.Params.enableSearch -}}
-<div id="search-overlay" class="search-overlay">
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Search">
     <div class="search-overlay-content">
-        <input type="text" id="search-input" placeholder="Start typing to search...">
-        <div id="search-results"></div>
+        <div class="search-input-wrapper">
+            <span class="search-input-icon" aria-hidden="true">{{ partial "icons/search.html" . }}</span>
+            <input type="search" id="search-input" placeholder="Search essays, series, topics..." autocomplete="off" spellcheck="false">
+            <button id="search-close-btn" class="search-close-btn" type="button" aria-label="Close search (Esc)">
+                <span class="search-close-badge">ESC</span>
+            </button>
+        </div>
+        <div id="search-results" class="search-results"></div>
+        <div class="search-footer-hint">
+            <span class="hint-item"><kbd class="search-kbd">&uarr;</kbd> <kbd class="search-kbd">&darr;</kbd> to navigate</span>
+            <span class="hint-item"><kbd class="search-kbd">&crarr;</kbd> to select</span>
+            <span class="hint-item"><kbd class="search-kbd">ESC</kbd> to close</span>
+        </div>
     </div>
 </div>
 {{- end -}}

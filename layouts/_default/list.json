@@ -6,6 +6,7 @@
     {{- $.Scratch.Add "pages" (dict 
         "uri" .Permalink 
         "title" .Title 
+        "date" (.Date.Format "2006")
         "tags" .Params.tags 
         "categories" .Params.categories 
         "content" (.Content | plainify) 
@@ -18,8 +19,9 @@
     {{- $.Scratch.Add "pages" (dict 
         "uri" $termPage.Permalink 
         "title" (printf "Series: %s" $termPage.Title)
+        "date" "Series"
         "tags" (slice "Series")
-        "categories" (slice "Deep Dive")
+        "categories" (slice "Series")
         "content" ($termPage.Description | plainify) 
         "description" $termPage.Description) -}}
 {{- end -}}
