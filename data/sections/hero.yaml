@@ -1,6 +1,7 @@
 title: Vijay Anant
-subtitle: Software Architect & Hands-on Technologist
+meta_items:
+  - Systems Architect
+  - 20 Years of Craft
+  - Distributed Systems & AI Intent
 description: |
-  I’ve been writing code and designing systems for 20 years.
-
-  This site is where I take notes. I write about the hard stuff: distributed systems and architecture, functional programming and patterns, and how to keep engineering teams sane as they scale.
+  I build software and explore foundational problems in systems architecture. Currently focused on deterministic, local-first state engines ([Akshara](#systems)) and architectural intent compilation for AI models ([Compiled Intent](#systems)). This site is where I document my findings, benchmarks, and code.

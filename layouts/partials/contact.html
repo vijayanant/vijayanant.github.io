@@ -1,21 +1,8 @@
-<section id="contact">
+<section id="contact" class="section-contact">
     <div class="container connect-container">
         <div class="connect-content">
             <h2 class="section-title">{{ .Site.Data.sections.contact.title }}</h2>
-            <p class="connect-summary">{{ .Site.Data.sections.contact.summary | markdownify }}</p>
-            <div class="contact-details">
-                <p><a href="mailto:{{ .Site.Data.sections.contact.email }}" class="button button-primary">{{ partial "icons/envelope.html" . }} {{ .Site.Data.sections.contact.email }}</a></p>
-                <div class="social-links">
-                    {{ range .Site.Data.sections.contact.social_links }}
-                    <a href="{{ .url }}"{{ if not (strings.HasPrefix .url "/") }} target="_blank" rel="noopener noreferrer"{{ end }} aria-label="{{ .name }}" class="social-link-click">
-                        {{- if eq .icon "linkedin" }}{{ partial "icons/linkedin.html" $ }}
-                        {{ else if eq .icon "newspaper" }}{{ partial "icons/newspaper.html" $ }}
-                        {{ end -}}
-                        <span class="sr-only">{{ .name }}</span>
-                    </a>
-                    {{ end }}
-                </div>
-            </div>
+            <div class="connect-summary">{{ .Site.Data.sections.contact.summary | markdownify }}</div>
         </div>
     </div>
 </section>

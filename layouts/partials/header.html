@@ -1,49 +1,94 @@
-<header id="site-header">
-    <div class="container">
-        <a href="{{ "/" | relURL }}" class="logo">
-            {{ $original := resources.Get site.Params.portrait }}
-            {{ if $original }}
-                {{ $logo := $original.Resize "70x webp" }}
-                <img src="{{ $logo.RelPermalink }}" alt="Vijay Anantharamaiah Logo" class="logo-img" width="35" height="35" loading="lazy">
-            {{ end }}
+{{ if .IsHome }}
+<div class="top-actions">
+    {{- if .Site.Params.enableSearch -}}
+    <button id="search-button" class="top-action-btn" aria-label="Search" title="Search">
+        {{ partial "icons/search.html" . }}
+        <span class="sr-only">Search</span>
+    </button>
+    {{- end -}}
+    {{- if .Site.Params.enableThemeToggle -}}
+    <button id="theme-toggle" class="top-action-btn theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme">
+        {{ partial "icons/moon.html" . }}
+        {{ partial "icons/sun.html" . }}
+        <span class="sr-only">Toggle Theme</span>
+    </button>
+    {{- end -}}
+</div>
+
+<header class="site-header-home">
+    <div class="container masthead-container">
+        <div class="brand-lockup">
+            <a href="{{ "/" | relURL }}" class="brand-logo-link" aria-label="{{ site.Title }}">
+                {{ $portrait := resources.Get site.Params.portrait }}
+                {{ if $portrait }}
+                    {{ $avatar := $portrait.Resize "120x120 webp" }}
+                    <img src="{{ $avatar.RelPermalink }}" alt="{{ site.Title }}" class="brand-logo" width="60" height="60">
+                {{ end }}
+            </a>
+            <div class="brand-text">
+                <h1 class="brand-name"><a href="{{ "/" | relURL }}">{{ .Site.Data.sections.hero.title }}</a></h1>
+                <p class="brand-tagline">
+                    {{ range $i, $item := .Site.Data.sections.hero.meta_items }}
+                        {{ if gt $i 0 }} &middot; {{ end }}
+                        <span class="meta-item">{{ $item }}</span>
+                    {{ end }}
+                </p>
+            </div>
+        </div>
+
+        <nav class="masthead-index" aria-label="Section navigation">
+            <a href="{{ "/#essays" | relURL }}" class="index-link">Writing</a>
+            <span class="index-sep" aria-hidden="true">&middot;</span>
+            <a href="{{ "/series/" | relURL }}" class="index-link">Series</a>
+            <span class="index-sep" aria-hidden="true">&middot;</span>
+            <a href="{{ "/#current-focus" | relURL }}" class="index-link">Building Now</a>
+            <span class="index-sep" aria-hidden="true">&middot;</span>
+            <a href="{{ "/#contact" | relURL }}" class="index-link">Contact</a>
+        </nav>
+    </div>
+</header>
+{{ else }}
+<header id="site-header" class="site-header-sub">
+    <div class="container header-container">
+        <a href="{{ "/" | relURL }}" class="site-title">
+            <span class="site-name">{{ site.Title }}</span>
         </a>
-        <nav>
+        <nav class="site-nav">
             <button class="nav-toggle" aria-label="Toggle Navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="{{ "/#essays" | relURL }}" class="nav-link">Writing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ "/series/" | relURL }}" class="nav-link{{ if eq .Section "series" }} active{{ end }}">Series</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ "/#current-focus" | relURL }}" class="nav-link">Building Now</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ "/#contact" | relURL }}" class="nav-link">Contact</a>
+                </li>
                 {{- if .Site.Params.enableSearch -}}
-                <li class="nav-item"><button id="search-button" class="nav-link" aria-label="Search" title="Search">{{ partial "icons/search.html" . }}<span class="sr-only">Search</span></button></li>
+                <li class="nav-item">
+                    <button id="search-button" class="nav-link" aria-label="Search" title="Search">
+                        {{ partial "icons/search.html" . }}
+                        <span class="sr-only">Search</span>
+                    </button>
+                </li>
                 {{- end -}}
-                
+                {{- if .Site.Params.enableThemeToggle -}}
                 <li class="nav-item">
-                    <a href="{{ "/#hero" | relURL }}" class="nav-link js-scrollspy-item">Home</a>
+                    <button id="theme-toggle" class="nav-link theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Theme">
+                        {{ partial "icons/moon.html" . }}
+                        {{ partial "icons/sun.html" . }}
+                        <span class="sr-only">Toggle Theme</span>
+                    </button>
                 </li>
-                
-                <li class="nav-item">
-                    <a href="{{ "/#series" | relURL }}" class="nav-link js-scrollspy-item{{ if eq .Section "series" }} active{{ end }}">Series</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="{{ "/#writing" | relURL }}" class="nav-link js-scrollspy-item{{ if or (eq .Section "posts") (eq .Type "tags") (eq .Type "categories") }} active{{ end }}">Essays</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="{{ "/#speaking" | relURL }}" class="nav-link js-scrollspy-item">Speaking</a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="{{ "/#workshops" | relURL }}" class="nav-link js-scrollspy-item{{ if eq .Section "workshops" }} active{{ end }}">Workshops</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ "/#contact" | relURL }}" class="nav-link js-scrollspy-item">Contact</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ "/explore/" | relURL }}" class="nav-link{{ if eq .Section "explore" }} active{{ end }}">Start Here</a>
-                </li>
+                {{- end -}}
             </ul>
         </nav>
     </div>
 </header>
+{{ end }}

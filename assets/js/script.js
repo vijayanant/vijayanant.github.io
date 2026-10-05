@@ -9,11 +9,13 @@ const sections = document.querySelectorAll('section[id]');
 const HEADER_SCROLL_THRESHOLD = 100;
 
 function handleScrollspy() {
-    // Sticky header logic
-    if (window.scrollY > HEADER_SCROLL_THRESHOLD) {
-        header.classList.add('header-scrolled');
-    } else {
-        header.classList.remove('header-scrolled');
+    // Sticky header logic (only for subpages, never on homepage masthead)
+    if (header && header.classList.contains('site-header-sub')) {
+        if (window.scrollY > HEADER_SCROLL_THRESHOLD) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
     }
 
     // Scrollspy logic (Only on Homepage)
@@ -50,33 +52,35 @@ function handleScrollspy() {
 window.addEventListener('scroll', handleScrollspy); // Continue to run on scroll
 document.addEventListener('DOMContentLoaded', handleScrollspy);
 
-navToggle.addEventListener('click', () => {
-    navList.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
-
-// Add event listener to each nav link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navList.classList.remove('active'); // Close the menu
-        navToggle.classList.remove('active');
+if (navToggle && navList) {
+    navToggle.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        navToggle.classList.toggle('active');
     });
-});
 
-// Close hamburger menu on outside click
-document.addEventListener('click', function(event) {
-  if (!navList.classList.contains('active')) {
-    return;
-  }
+    // Add event listener to each nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('active'); // Close the menu
+            navToggle.classList.remove('active');
+        });
+    });
 
-  const isClickOnToggle = navToggle.contains(event.target);
-  const isClickInsideNav = navList.contains(event.target);
+    // Close hamburger menu on outside click
+    document.addEventListener('click', function(event) {
+        if (!navList.classList.contains('active')) {
+            return;
+        }
 
-  if (!isClickOnToggle && !isClickInsideNav) {
-    navList.classList.remove('active');
-    navToggle.classList.remove('active');
-  }
-});
+        const isClickOnToggle = navToggle.contains(event.target);
+        const isClickInsideNav = navList.contains(event.target);
+
+        if (!isClickOnToggle && !isClickInsideNav) {
+            navList.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+    });
+}
 
 // Track Workshop Contact Clicks
 document.addEventListener('click', function(event) {

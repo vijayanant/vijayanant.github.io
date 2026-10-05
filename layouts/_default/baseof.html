@@ -19,41 +19,32 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{/* Preload Critical Webfonts */}}
-    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/mulish-400.woff2" | relURL }}" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/mulish-700.woff2" | relURL }}" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/lora-400.woff2" | relURL }}" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="{{ "webfonts/lora-700.woff2" | relURL }}" crossorigin>
+    {{/* Typography: Newsreader & JetBrains Mono (LambdaMatters Standard) */}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap">
 
-    {{/* Critical CSS for Above-the-Fold Content */}}
-    {{ $criticalStyle := resources.Get "css/critical.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $criticalStyle.RelPermalink }}">
-
-    {{/* Non-Critical CSS Loaded Asynchronously */}}
+    {{/* Primary Consolidated Stylesheet */}}
     {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="print" onload="this.media='all';this.onload=null">
-    <noscript><link rel="stylesheet" href="{{ $style.RelPermalink }}"></noscript>
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <script>
+        (function() {
+            let saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            const theme = saved || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 
     {{ $chromaStyle := resources.Get "css/chroma.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}" media="print" onload="this.media='all'">
-
-    {{ $lityStyle := resources.Get "css/lity.min.css" | fingerprint }}
-    <link rel="stylesheet" href="{{ $lityStyle.RelPermalink }}" media="print" onload="this.media='all'">
-
-    {{ $subscriptionStyle := resources.Get "css/subscription.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $subscriptionStyle.RelPermalink }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}">
 
     {{ $tabsStyle := resources.Get "css/tabs.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $tabsStyle.RelPermalink }}" media="print" onload="this.media='all'">
-
-    {{ $toggleStyle := resources.Get "css/floating-toggle.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $toggleStyle.RelPermalink }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ $tabsStyle.RelPermalink }}">
 
     {{ $shareStyle := resources.Get "css/share-buttons.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $shareStyle.RelPermalink }}" media="print" onload="this.media='all'">
-
-    {{ $errorStyle := resources.Get "css/404.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $errorStyle.RelPermalink }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ $shareStyle.RelPermalink }}">
 
 
 
@@ -97,21 +88,8 @@
     {{ $bundle := $scripts | resources.Concat "js/bundle.js" | minify | fingerprint }}
     <script src="{{ $bundle.RelPermalink }}" defer></script>
 
-    {{ $vendorScripts := slice }}
-    {{ $vendorScripts = $vendorScripts | append (resources.Get "js/jquery.min.js") }}
-    {{ $vendorScripts = $vendorScripts | append (resources.Get "js/lity.min.js") }}
-    {{ $vendorBundle := $vendorScripts | resources.Concat "js/vendor.js" | minify | fingerprint }}
-    <script src="{{ $vendorBundle.RelPermalink }}" defer></script>
-
     {{ partial "search_modal.html" . }}
     
-    {{ if .Site.Params.enableThemeToggle }}
-    <button id="theme-toggle" class="floating-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
-        {{ partial "icons/moon.html" . }}
-        {{ partial "icons/sun.html" . }}
-    </button>
-    {{ end }}
-
     {{- if .Site.Params.enableSearch -}}
     {{ $fuseScript := resources.Get "js/fuse.min.js" | fingerprint }}
     <script src="{{ $fuseScript.RelPermalink }}" defer></script>

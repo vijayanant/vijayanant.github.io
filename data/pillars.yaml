@@ -1,14 +1,11 @@
 craft:
-  title: "The Craft of Intent"
-  description: "Engineering with discipline. Focus on TDD, Type Systems, and the rigorous 'Coaching' of AI to ensure code remains a reflection of human intent."
+  title: "Craft: Preserving Human Intent"
   foundational: "tdd-what-most-articles-miss"
 
 system:
-  title: "The Evolvable System"
-  description: "Designing for evolution. Focus on Information Hiding, Architectural Quanta, and the 'Physics' of distributed systems over the buzzwords of Microservices."
+  title: "Systems: Designing for Evolution"
   foundational: "achieving-modularity"
 
 strategy:
-  title: "The Stewardship"
-  description: "Leading through resonance. Focus on the human bottleneck, the 'Architect's Compass' for decision-making, and the stewardship of long-term system evolution."
+  title: "Stewardship: Navigating the Trade-Off"
   foundational: "the-architects-compass"

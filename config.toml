@@ -3,7 +3,7 @@ title = "Vijay Anant"
 locale = "en-us"
 # refLinksErrorLevel = "WARNING"
 [params]
-description = "Software Architect and Hands-on Technologist. Writing about the hard stuff: distributed systems and architecture, functional programming and patterns, and how to keep engineering teams sane as they scale."
+description = "Software systems architecture, deterministic state, and engineering craft."
 author = "Vijay Anantharamaiah"
 portrait = "images/contact-image.png"
 googleAnalytics = "G-XNSPFRLLVH"
@@ -11,14 +11,10 @@ image = "images/contact-image.png"
 contactEmail = "hello@vijayanant.com"
 enableCodeCopyButton = true
 enableRelatedPosts = true
-enableNewsletter = true
+enableNewsletter = false
 enableSearch = true
 enableThemeToggle = true
 
-[params.newsletter]
-title = "The Anant Loop"
-description = "Articles on crafting quality software and building high-performing teams that last."
-author = "Vijay Anant"
 [[params.social]]
 name = "LinkedIn"
 url = "https://www.linkedin.com/in/vijayanant/"

@@ -1,12 +1,11 @@
 ---
-title: "Vijay Anant | Software Architect & Hands-on Technologist"
-description: "Software Architect and Hands-on Technologist. Writing about the hard stuff: distributed systems and architecture, functional programming and patterns, and how to keep engineering teams sane as they scale."
+title: "Vijay Anant | Systems Architect"
+description: "Software systems architecture, deterministic state, and engineering craft."
 layout: index
+aliases:
+  - /explore/
+  - /workshops/
+  - /workshops/software-architecture-foundations/
+  - /workshops/modern-cloud-architectures/
+  - /workshops/pragmatic-tech-leadership/
 ---
-
-{{ partial "hero.html" . }}
-{{ partial "expertise.html" . }}
-{{ partial "writing.html" . }}
-{{ partial "speaking.html" . }}
-{{ partial "workshops.html" . }}
-{{ partial "contact.html" . }}

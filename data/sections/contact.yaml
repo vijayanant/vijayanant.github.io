@@ -1,10 +1,5 @@
-title: Get in Touch
-summary: I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great. Feel free to reach out.
+title: Contact
+summary: |
+  Questions, critiques, and discussion are always welcome at [hello@vijayanant.com](mailto:hello@vijayanant.com).
+  Code and specifications live on [GitHub](https://github.com/vijayanant).
 email: hello@vijayanant.com
-social_links:
-  - name: LinkedIn
-    url: https://www.linkedin.com/in/vijayanant/
-    icon: linkedin
-  - name: Blog
-    url: /posts/
-    icon: newspaper

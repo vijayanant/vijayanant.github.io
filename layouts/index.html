@@ -1,58 +1,115 @@
 {{ define "main" }}
-    {{ partial "hero.html" . }}
 
-    {{/* --- Featured Series Section --- */}}
-    <section id="series" style="padding: 4rem 0; background-color: var(--surface-color);">
+    {{/* --- Current Focus (Active Research at LambdaMatters) --- */}}
+    <section id="current-focus" class="section-focus">
         <div class="container">
-            <h2 class="section-title">The Big Picture</h2>
-            <p class="section-intro">Some topics are too complex for a single post. These are my deep dives into the systems and patterns that matter most.</p>
-            
-            <div class="blog-grid">
-                {{/* Get the "series" taxonomy pages sorted by Date Descending, limit to 3 */}}
-                {{ $series := .Site.GetPage "taxonomy" "series" }}
-                {{ range first 3 $series.Pages.ByDate.Reverse }}
-                    {{ partial "series-card.html" . }}
+            <header class="section-header">
+                <h2 class="section-title">What I am building now</h2>
+            </header>
+
+            <ul class="focus-list">
+                <li class="focus-item">
+                    <div class="focus-heading">
+                        <h3 class="focus-title"><a href="https://lambdamatters.com" target="_blank" rel="noopener noreferrer">Akshara</a></h3>
+                        <span class="focus-badge">Trust-Agnostic Infrastructure &middot; LambdaMatters</span>
+                    </div>
+                    <p class="focus-desc">A foundational architecture for high-secrecy, local-first applications, built on the principle of security through architecture rather than policy. By combining edge encryption, content-addressed permanence (CIDs), and causal Merkle-DAG synchronization, Akshara makes hosting infrastructure completely blind, swappable, and irrelevant to data secrecy.</p>
+                    <div class="focus-links">
+                        <a href="https://lambdamatters.com" target="_blank" rel="noopener noreferrer" class="focus-link">Protocol at LambdaMatters &rarr;</a>
+                        <span class="meta-sep">&middot;</span>
+                        <a href="/series/building-akshara/" class="focus-link">Building Akshara Series &rarr;</a>
+                        <span class="meta-sep">&middot;</span>
+                        <a href="https://github.com/vijayanant/akshara" target="_blank" rel="noopener noreferrer" class="focus-link secondary">GitHub &rarr;</a>
+                    </div>
+                </li>
+
+                <li class="focus-item">
+                    <div class="focus-heading">
+                        <h3 class="focus-title"><a href="https://lambdamatters.com" target="_blank" rel="noopener noreferrer">Compiled Intent & ArchEval</a></h3>
+                        <span class="focus-badge">Research Report LM-TR-2026-01 &middot; LambdaMatters</span>
+                    </div>
+                    <p class="focus-desc">Architectural intent recorded in wikis and ADRs usually remains inert text that neither compilers nor AI coding agents enforce. Compiled Intent indexes declared architectural boundaries into an active coprocessor, governing agentic code generation and PR reviews to prevent architectural erosion, all while saving tokens and avoiding the ammunition effect.</p>
+                    <div class="focus-links">
+                        <a href="https://lambdamatters.com" target="_blank" rel="noopener noreferrer" class="focus-link">Technical Report (LM-TR-2026-01) &rarr;</a>
+                        <span class="meta-sep">&middot;</span>
+                        <a href="/posts/compiled-intent/" class="focus-link">Author's Essay &rarr;</a>
+                        <span class="meta-sep">&middot;</span>
+                        <a href="https://github.com/vijayanant/compiled-intent-research" target="_blank" rel="noopener noreferrer" class="focus-link secondary">Benchmark Code &rarr;</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    {{/* --- Notable Essays (The 3 Foundational Pillars) --- */}}
+    <section id="essays" class="section-essays">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Notable Essays</h2>
+            </header>
+
+            <div class="pillar-groups-list">
+                {{ $groups := slice 
+                    (dict 
+                        "num" "01"
+                        "name" "Craft"
+                        "slugs" (slice 
+                            "tdd-what-most-articles-miss"
+                            "driving-ai-code-why-test-driven-development-is-essential-in-the-llm-era"
+                        )
+                    )
+                    (dict 
+                        "num" "02"
+                        "name" "Systems"
+                        "slugs" (slice 
+                            "achieving-modularity"
+                            "architectural-quantum-modular-deployable-architecture"
+                        )
+                    )
+                    (dict 
+                        "num" "03"
+                        "name" "Stewardship"
+                        "slugs" (slice 
+                            "the-architects-compass"
+                            "the-real-bottleneck-isnt-code"
+                        )
+                    )
+                }}
+                {{ range $groups }}
+                <div class="pillar-group-block">
+                    <h3 class="pillar-group-title">
+                        <span class="pillar-num">{{ .num }}</span>
+                        <span class="pillar-name">{{ .name }}</span>
+                    </h3>
+                    <ul class="pillar-index-list">
+                        {{ range .slugs }}
+                            {{ range where $.Site.RegularPages "Slug" . }}
+                            <li class="pillar-index-item">
+                                <a href="{{ .Permalink }}" class="index-item-link">
+                                    <span class="index-item-title">{{ .Title }}</span>
+                                    <span class="index-item-meta">{{ .ReadingTime }} min read &rarr;</span>
+                                </a>
+                            </li>
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
                 {{ end }}
             </div>
-            
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="/series/" class="button button-primary">View All Series &rarr;</a>
+
+            <div class="archive-bridge">
+                <a href="/explore/" class="archive-bridge-link">
+                    Explore the Full Knowledge Map (43 Essays across 3 Domains) &rarr;
+                </a>
             </div>
         </div>
     </section>
 
     <hr class="section-divider">
 
-    {{/* --- Recent Essays Section --- */}}
-    <section id="writing" style="padding: 4rem 0;">
-        <div class="container">
-            <h2 class="section-title">Latest Essays</h2>
-            <p class="section-intro">My latest thinking on code, complexity, and trade-offs.</p>
-
-            <div class="blog-grid">
-                {{/* Get the latest 3 regular pages from the "posts" section */}}
-                {{ $posts := where .Site.RegularPages "Section" "posts" }}
-                {{ range first 3 $posts }}
-                    {{ partial "post-card.html" . }}
-                {{ end }}
-            </div>
-
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="/posts/" class="button button-primary">View Archive &rarr;</a>
-            </div>
-        </div>
-    </section>
-
-    <hr class="section-divider">
-
-    {{/* --- Workshops & Speaking (Condensed) --- */}}
-    {{ partial "speaking.html" . }}
-    <hr class="section-divider">
-    {{ partial "workshops.html" . }}
-
-    <hr class="section-divider">
-
-    {{/* --- Contact --- */}}
+    {{/* --- Contact / Colophon --- */}}
     {{ partial "contact.html" . }}
 
 {{ end }}

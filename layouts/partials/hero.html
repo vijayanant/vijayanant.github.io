@@ -1,14 +1,14 @@
-<section id="hero">
+<section id="hero" class="section-hero">
     <div class="container hero-container">
-        <div class="hero-text">
-            <h1 class="hero-title">{{ .Site.Data.sections.hero.title }}</h1>
-            <h2 class="hero-subtitle">{{ .Site.Data.sections.hero.subtitle }}</h2>
-            <p class="hero-description">{{ .Site.Data.sections.hero.description | markdownify }}</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/vijayanant/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link-click">{{ partial "icons/linkedin.html" . }}<span class="sr-only">LinkedIn</span></a>
-                <a href="/posts/" aria-label="Blog" class="social-link-click">{{ partial "icons/newspaper.html" . }}<span class="sr-only">Essays</span></a>
-            </div>
-            <!-- <a href="files/Vijay-Anantharamaiah.pdf" target="_blank" class="button button-primary" aria-label="Download Vijay Anantharamaiah's Resume">Download Resume</a> -->
+        <h1 class="hero-name">{{ .Site.Data.sections.hero.title }}</h1>
+        <div class="hero-meta-bar">
+            {{ range $i, $item := .Site.Data.sections.hero.meta_items }}
+                {{ if gt $i 0 }}<span class="meta-pipe">|</span>{{ end }}
+                <span class="meta-item">{{ $item }}</span>
+            {{ end }}
+        </div>
+        <div class="hero-summary">
+            {{ .Site.Data.sections.hero.description | markdownify }}
         </div>
     </div>
 </section>
