@@ -1,60 +1,49 @@
+/*--------------------------------------------------------------
+# Article Share Links (Editorial Style)
+--------------------------------------------------------------*/
 .share-buttons {
-    margin: 4rem 0 0 0;
-    padding: 2rem 0;
-    border-top: 1px solid rgba(var(--primary-color-rgb), 0.1);
+    margin: 2rem 0 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--border-color);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
-    text-align: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .share-label {
-    font-family: var(--heading-font);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--secondary-text-color);
-    font-style: italic;
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    color: var(--tertiary-text-color);
 }
 
 .share-links {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .share-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: var(--surface-color);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 3px;
+    background-color: transparent;
     color: var(--secondary-text-color);
     text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+    transition: color 0.15s ease, border-color 0.15s ease;
+    border: 1px solid var(--border-color);
 }
 
 .share-btn:hover {
-    background-color: var(--primary-color);
-    color: #fff !important;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px var(--shadow-medium);
+    color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-.share-btn i {
-    font-size: 1.1rem;
-}
-
-[data-theme="light"] .share-btn {
-    background-color: #fff;
-}
-
-[data-theme="light"] .share-btn:hover {
-    background-color: var(--primary-color);
-    color: #fff !important; /* Force white text over primary bg */
-    border-color: var(--primary-color);
+.share-btn svg {
+    width: 14px;
+    height: 14px;
 }

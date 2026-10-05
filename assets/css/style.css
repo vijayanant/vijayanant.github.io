@@ -1264,6 +1264,45 @@ pre.chroma,
 }
 
 /*--------------------------------------------------------------
+# Post Feedback / Dialogue (Email Reply)
+--------------------------------------------------------------*/
+.post-feedback {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.feedback-label {
+    display: block;
+    font-family: var(--code-font);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.feedback-text {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--secondary-text-color);
+    margin: 0;
+}
+
+.feedback-email {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+}
+
+.feedback-email:hover {
+    color: var(--primary-color);
+}
+
+/*--------------------------------------------------------------
 # Series Continuation Bridge (Bottom)
 --------------------------------------------------------------*/
 .series-continuation {

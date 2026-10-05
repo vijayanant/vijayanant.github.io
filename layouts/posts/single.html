@@ -69,6 +69,8 @@
             </div>
           {{ end }}
 
+          {{ partial "post-feedback.html" . }}
+
           {{ partial "share-buttons.html" . }}
         </article>
 
@@ -102,8 +104,6 @@
         {{ else }}
           {{ partial "related-posts.html" . }}
         {{ end }}
-
-        {{ partial "giscus.html" . }}
       </div>
     </div>
   </div>
