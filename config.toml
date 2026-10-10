@@ -94,6 +94,14 @@ unsafe = true
 getenv = ["HUGO_"]
 
 [imaging]
-quality = 90
 resampleFilter = "lanczos"
 anchor = "smart"
+
+[imaging.jpeg]
+quality = 90
+
+[imaging.webp]
+quality = 90
+
+[imaging.avif]
+quality = 90
