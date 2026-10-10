@@ -4,7 +4,7 @@
     <link>{{ .Permalink }}</link>
     <description>{{ .Site.Params.description }}</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>{{ .Site.LanguageCode }}</language>
+    <language>{{ .Site.Language.Locale }}</language>
     <managingEditor>{{ .Site.Params.contactEmail }} ({{ .Site.Params.author }})</managingEditor>
     <webMaster>{{ .Site.Params.contactEmail }} ({{ .Site.Params.author }})</webMaster>
     <copyright>Copyright (c) {{ now.Format "2006" }}, {{ .Site.Params.author }}; all rights reserved.</copyright>

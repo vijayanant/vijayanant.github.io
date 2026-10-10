@@ -1,14 +1,14 @@
 <section id="hero" class="section-hero">
     <div class="container hero-container">
-        <h1 class="hero-name">{{ .Site.Data.sections.hero.title }}</h1>
+        <h1 class="hero-name">{{ hugo.Data.sections.hero.title }}</h1>
         <div class="hero-meta-bar">
-            {{ range $i, $item := .Site.Data.sections.hero.meta_items }}
+            {{ range $i, $item := hugo.Data.sections.hero.meta_items }}
                 {{ if gt $i 0 }}<span class="meta-pipe">|</span>{{ end }}
                 <span class="meta-item">{{ $item }}</span>
             {{ end }}
         </div>
         <div class="hero-summary">
-            {{ .Site.Data.sections.hero.description | markdownify }}
+            {{ hugo.Data.sections.hero.description | markdownify }}
         </div>
     </div>
 </section>

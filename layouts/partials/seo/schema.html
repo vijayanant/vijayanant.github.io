@@ -101,7 +101,7 @@
   "wordCount": {{ .WordCount }},
   {{- end }}
   "url": {{ .Permalink | jsonify | safeJS }},
-  "inLanguage": {{ site.LanguageCode | default "en-us" | jsonify | safeJS }}
+  "inLanguage": {{ site.Language.Locale | default "en-us" | jsonify | safeJS }}
   {{- with .Params.categories }},
   "articleSection": [
     {{- range $i, $e := . }}

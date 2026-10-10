@@ -26,12 +26,12 @@
             </a>
             <div class="brand-text">
                 {{ if .IsHome }}
-                <h1 class="brand-name"><a href="{{ "/" | relURL }}">{{ .Site.Data.sections.hero.title }}</a></h1>
+                <h1 class="brand-name"><a href="{{ "/" | relURL }}">{{ hugo.Data.sections.hero.title }}</a></h1>
                 {{ else }}
-                <span class="brand-name"><a href="{{ "/" | relURL }}">{{ .Site.Data.sections.hero.title }}</a></span>
+                <span class="brand-name"><a href="{{ "/" | relURL }}">{{ hugo.Data.sections.hero.title }}</a></span>
                 {{ end }}
                 <p class="brand-tagline">
-                    {{ range $i, $item := .Site.Data.sections.hero.meta_items }}
+                    {{ range $i, $item := hugo.Data.sections.hero.meta_items }}
                         {{ if gt $i 0 }} &middot; {{ end }}
                         <span class="meta-item">{{ $item }}</span>
                     {{ end }}

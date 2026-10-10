@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $subscription_page := .Page.Params.subscription }}
-{{ $pageData := index .Site.Data.subscription $subscription_page }}
+{{ $pageData := index hugo.Data.subscription $subscription_page }}
 <div class="container thank-you-container">
     {{ with $pageData }}
     <div class="thank-you-header">
