@@ -1,0 +1,49 @@
+{{ define "main" }}
+<section id="blog-detail">
+  <div class="container">
+    <div class="post-layout">
+      <!-- Page Content -->
+      <div class="blog-post-content">
+        <article>
+          <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            {{ with .Params.subtitle }}
+              <p class="post-subtitle">{{ . }}</p>
+            {{ end }}
+            {{ if or .Date .Params.categories }}
+            <div class="post-meta-info">
+              {{ if not .Date.IsZero }}
+                <span class="post-date">{{ .Date.Format "January 2, 2006" }}</span>
+                <span class="meta-sep">&middot;</span>
+              {{ end }}
+              <span class="reading-time">{{ .ReadingTime }} min read</span>
+              {{ with .Params.categories }}
+                <span class="meta-sep">&middot;</span>
+                {{ range $i, $e := . }}
+                  {{ if gt $i 0 }}, {{ end }}
+                  <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" class="category-link">{{ . }}</a>
+                {{ end }}
+              {{ end }}
+            </div>
+            {{ end }}
+          </header>
+
+          <div class="content">
+            {{ .Content }}
+          </div>
+
+          {{ with .Params.tags }}
+            <div class="post-topics">
+              <span class="topics-label">Filed under:</span>
+              {{ range $i, $t := . }}
+                {{ if gt $i 0 }}<span class="topic-sep">&middot;</span>{{ end }}
+                <a href="{{ "/tags/" | relURL }}{{ $t | urlize }}/" class="topic-link">{{ $t }}</a>
+              {{ end }}
+            </div>
+          {{ end }}
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
