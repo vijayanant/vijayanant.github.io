@@ -62,6 +62,21 @@
     {{ partial "seo/schema.html" . }}
     {{ partial "seo/breadcrumb-schema.html" . }}
     {{ partial "seo/schema-homepage.html" . }}
+
+    {{ if .Params.math }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    {{ end }}
 </head>
 
 <body data-page-kind="{{ .Kind }}" data-enable-code-copy-button="{{ .Site.Params.enableCodeCopyButton }}" data-enable-search="{{ .Site.Params.enableSearch }}">

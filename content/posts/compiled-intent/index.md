@@ -8,10 +8,11 @@ slug: "compiled-intent"
 pillar: system
 pillar_role: deep_dive
 level: "Advanced"
-description: "Why code syntax is blind to system intent, how stuffing design docs into LLM context triggers the Ammunition Effect, and how compiling intent via small-to-big AST retrieval cuts token bloat by 94.6% while improving enforcement."
+description: "Why code syntax is blind to system intent, how stuffing design docs into LLM context triggers the Ammunition Effect, and how compiling intent via small-to-big AST retrieval cuts token bloat by 94.7% while improving enforcement."
 tags: ["compiled-intent", "llm", "ai-code-integrity", "rag", "code-generation"]
 categories: ["AI in Engineering", "Software Architecture"]
 featured_image: "featured.jpg"
+math: true
 ---
 
 {{< figure src="featured.jpg" alt="Movable metal type blocks arranged on a composing stick" caption="Photo by [Hannes Wolf](https://unsplash.com/@hannes_wolf?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/black-and-brown-case-n2ILm0aTCYo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)" lazy="false" >}}
@@ -198,21 +199,21 @@ Technical specifications possess a rigid hierarchical structure: documents are d
 Instead of splitting text by arbitrary byte offsets, the engine uses an Abstract Syntax Tree (AST) parser (`pulldown_cmark`) to map document structure:
 
 - Every heading defines an authoritative **Parent Section**. The section header is explicitly preserved and prepended to the parent payload (`# Heading\n\n...`), completely eliminating the Pronoun Problem.
-- Inside each parent section, the engine generates dense, overlapping sliding windows of **$\le 300$ characters with a 50-character overlap**.
+- Inside each parent section, the engine generates dense, overlapping sliding windows of **`<= 300` characters with a 50-character overlap**.
 
 This creates a deliberate duality: **small chunks for mathematical embedding precision, big chunks for LLM reasoning.**
 
 The 300-character child windows are tiny and dense, giving vector embeddings maximum mathematical sharpness and preventing query averaging. But when a search hits a child window, the engine expands and returns the entire, intact **Parent Block** to the downstream model. The LLM receives complete, unbroken contextual logic under its authoritative title.
 
-{{< note type="info" title="Why ~750 Tokens?" >}}
-The ~750-token average is an emergent property of our specification corpus, not a hardcoded algorithm limit. Because the engine slices along Markdown AST headings, section size is dictated by how human authors naturally organize their thoughts, rather than an arbitrary token ceiling.
+{{< note type="info" title="Why ~820 Tokens?" >}}
+The ~820-token average is an emergent property of our specification corpus, not a hardcoded algorithm limit. Because the engine slices along Markdown AST headings, section size is dictated by how human authors naturally organize their thoughts, rather than an arbitrary token ceiling.
 {{< /note >}}
 
 ### B. Parent Chunk Collapsing (Anti-Crowding)
 
-In naive RAG, if a long section contains four matching child windows, those four sibling chunks will consume all top-$k$ search slots, starving the model of other critical specifications.
+In naive RAG, if a long section contains four matching child windows, those four sibling chunks will consume all `top-k` search slots, starving the model of other critical specifications.
 
-The engine solves this by applying an **over-fetch multiplier ($4\times$)** during stream traversal, followed by a **parent collapsing pass**. Sibling child chunks that resolve to the same `parent_id` are collapsed into a single parent return. This eliminates sibling crowding and guarantees that the retrieved context contains diverse, independent architectural sections.
+The engine solves this by applying an **over-fetch multiplier (`4x`)** during stream traversal, followed by a **parent collapsing pass**. Sibling child chunks that resolve to the same `parent_id` are collapsed into a single parent return. This eliminates sibling crowding and guarantees that the retrieved context contains diverse, independent architectural sections.
 
 ### C. Tri-Modal Retrieval with Reciprocal Rank Fusion (RRF)
 
@@ -253,9 +254,9 @@ To evaluate whether compiling intent reliably enforces system boundaries, I desi
 - **PR Audits (39 tasks):** Routine code reviews evaluating compliance on incoming commits.
 - **Adversarial Traps (39 tasks):** Code changes paired with persuasive rationalizations designed to trick the reviewer into approving violations.
 
-We benchmarked four strategies across open-weight models (`qwen2.5-coder:14b` and `gemma3:12b` at temperature $T=0$): **Zero Context**, **Oracle (Single-File)**, **Prompt Stuffing**, and **Compiled Intent**.
+We benchmarked four strategies across open-weight models (`qwen2.5-coder:14b` and `gemma3:12b` at temperature `T = 0`): **Zero Context**, **Oracle (Single-File)**, **Prompt Stuffing**, and **Compiled Intent**.
 
-### Table 1: Benchmark Accuracy Matrix ($N=117$, $T=0$)
+### Table 1: Benchmark Accuracy Matrix (`N = 117`, `T = 0`)
 
 | Strategy | Overall Accuracy | PR Audit Track | Adversarial Traps | Architectural Trivia |
 | :--- | :---: | :---: | :---: | :---: |
