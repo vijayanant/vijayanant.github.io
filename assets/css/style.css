@@ -922,11 +922,12 @@ pre.chroma,
 
 .blog-post-content .content code {
     font-family: var(--code-font);
-    font-size: 0.88em;
+    font-size: 0.81em;
     background-color: rgba(var(--primary-color-rgb), 0.1);
     color: var(--text-color);
-    padding: 0.15em 0.35em;
+    padding: 0.12em 0.35em;
     border-radius: 3px;
+    vertical-align: 0.04em;
 }
 
 .blog-post-content .content pre code {
@@ -934,6 +935,8 @@ pre.chroma,
     padding: 0;
     border-radius: 0;
     color: inherit;
+    font-size: inherit;
+    vertical-align: baseline;
 }
 
 /*--------------------------------------------------------------
