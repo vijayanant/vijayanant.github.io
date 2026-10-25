@@ -4,7 +4,7 @@ seo_title: "Design Principles vs. Design Patterns: Key Differences and Examples"
 slug: "design-principles-and-design-patterns"
 date: 2023-04-06
 draft: false
-featured_image: "featured.svg"
+featured_image: "featured.png"
 description: "Understand the difference between software design principles (the Why) and design patterns (the How). Learn how SOLID and GoF patterns work together with practical examples."
 tags: ["design-patterns", "design-principles", "solid", "software-design"]
 categories: ["Programming"]
@@ -12,7 +12,7 @@ pillar: craft
 pillar_role: essay
 level: "Intermediate"
 ---
-{{< figure src="design-principles-and-design-patterns-1.png"
+{{< figure src="featured.png"
     alt="Design Principles and Design Patterns"  lazy="false" >}}
 
 Design principles and design patterns are related but serve different

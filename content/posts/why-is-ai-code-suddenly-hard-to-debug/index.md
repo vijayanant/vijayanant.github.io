@@ -5,7 +5,7 @@ slug: "why-is-ai-code-suddenly-hard-to-debug"
 date: 2025-08-19
 draft: false
 description: "Why is AI-generated code so difficult to repair? Learn why the lack of shared mental models makes debugging AI code uniquely brutal and how to fix it with engineering discipline."
-featured_image: "featured.svg"
+featured_image: "featured.jpg"
 tags: ["ai-debugging", "mental-models", "trust-gap", "ai", "llm"]
 categories: ["AI in Engineering"]
 pillar: craft
@@ -22,7 +22,7 @@ built the feature are also able to repair it.
 
 So why does that logic collapse when the author is AI?
 
-{{< figure src="why-is-ai-code-suddenly-hard-to-debug-1.jpg" alt="a woman covering her face while looking at a laptop" caption="Photo by [SEO Galaxy](https://unsplash.com/@seogalaxy) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
+{{< figure src="featured.jpg" alt="a woman covering her face while looking at a laptop" caption="Photo by [SEO Galaxy](https://unsplash.com/@seogalaxy) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 * * *
 
@@ -90,7 +90,7 @@ And for those who say they can’t debug AI-written code, I have to ask: why? Ha
 
 #### The Externalized Mind
 
-Debugging has always been a "memory retrieval" task. We look at a line of code and try to remember the mental state of the person who wrote it. With AI, that person never existed. 
+Debugging has always been a "memory retrieval" task. We look at a line of code and try to remember the mental state of the person who wrote it. With AI, that person never existed.
 
 To survive the LLM era, we have to stop relying on our individual memories and start building "System Memory." This means moving the "Why" out of our heads and into the artifacts: the tests, the ADRs, and the code structure itself. If you find yourself struggling to debug an AI-generated component, don't blame the AI—blame the lack of a shared model. Your job isn't just to generate code anymore; it's to steward the understanding that makes that code maintainable.
 

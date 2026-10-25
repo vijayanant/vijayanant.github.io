@@ -17,8 +17,6 @@ level: "Advanced"
 One of the main advantages of [static type checking](https://en.wikipedia.org/wiki/Type_system#Static_type_checking) is to catch
 errors before we deploy code to production.  [Dependent Types](https://en.wikipedia.org/wiki/Dependent_type) allow us to eliminate some checks that are usually done at run time. Together with [**Higher Ranked Types**]({{< ref "/posts/higher-ranked-types" >}}) and [**GADTs**]({{< ref "/posts/gadts-to-eliminate-runtime-checks" >}}), they represent the pinnacle of Haskell's compile-time safety.
 
-...
-
 Through a simple example, this article demonstrates how dependent types can be applied in everyday programming.
 
 {{< figure
@@ -178,7 +176,7 @@ other types as parameters (`Maybe Int`, `[Int]` etc.). But, `"GBP"` looks like a
 String value! How is this possible?
 
 Firstly, `"GBP"` in `fiftyPence :: Money "GBP"` is not a value but a type with
-__kind__ `Symbol`. You can see that in the data definition of Money. `currency`
+**kind** `Symbol`. You can see that in the data definition of Money. `currency`
 type parameter is of kind `Symbol`.
 
 ```Haskell
@@ -191,7 +189,7 @@ a type.
 
 {{< note type="info" >}}
 You know that we can manually specify a variable's type. Similarly, we can also
-manually specify a type variable's kind using the __KindSignatures__
+manually specify a type variable's kind using the **KindSignatures**
 extension.
 {{< /note >}}
 
@@ -208,7 +206,7 @@ twoDollars :: Money "USD"
 twoDollars = Money 2
 ```
 
-This is all thanks to another GHC extension we have used - ___DataKinds__._ When
+This is all thanks to another GHC extension we have used - _**DataKinds**._ When
 this extension is enabled, the type constructors are _promoted_ to Kinds and value
 constructors are promoted to type constructors.
 
@@ -248,7 +246,7 @@ There is much more to depended types than what we have seen here. This is to sho
 
 #### Moving the Goalposts
 
-Type-level programming can feel like a climb up a steep mountain. But every check you move from runtime to compile-time is a bug that simply cannot exist in production. 
+Type-level programming can feel like a climb up a steep mountain. But every check you move from runtime to compile-time is a bug that simply cannot exist in production.
 
 You don't have to rewrite your entire system in dependent types tomorrow. Start by finding one "impossible" state in your application and see if you can make it unrepresentable in your types. It is a small victory for your future self, who will never have to debug that specific failure again.
 

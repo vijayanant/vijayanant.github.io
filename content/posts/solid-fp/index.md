@@ -5,7 +5,7 @@ slug: "solid-fp"
 date: 2023-09-09
 draft: false
 description: "Do SOLID principles apply to FP? Learn how SRP, OCP, and DIP are naturally implemented through function composition and closures."
-featured_image: "featured.svg"
+featured_image: "featured.png"
 tags: ["solid-principles", "function-composition", "design-principles", "functional-programming"]
 categories: ["Programming"]
 pillar: craft
@@ -13,7 +13,7 @@ pillar_role: deep_dive
 level: "Advanced"
 ---
 {{< figure
-    src="solid-fp-1.png"
+    src="featured.png"
     caption="Aperiodic Tile: a single shape that can be used to cover a surface completely without ever creating a repeating pattern."
     width=750
  lazy="false" >}}

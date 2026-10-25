@@ -4,14 +4,14 @@ seo_title: "Monomorphism, Polymorphism, and Higher-Ranked Types in Haskell"
 slug: "monomorphism-polymorphism-and-higher-ranked-types"
 date: 2019-01-24
 draft: false
-featured_image: "featured.svg"
+featured_image: "featured.jpg"
 tags: ["rankntypes", "polymorphism", "haskell-types", "haskell"]
 categories: ["Programming"]
 description: "A deep dive into Haskell's type system. Learn the difference between monomorphism and polymorphism, and how RankNTypes enable higher-ranked types for first-class functions."
 pillar: craft
 pillar_role: deep_dive
 ---
-{{< figure src="higher-ranked-types-1.jpg" alt="white stage" caption="Photo by [Joshua Golde](https://unsplash.com/@joshgmit) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
+{{< figure src="featured.jpg" alt="white stage" caption="Photo by [Joshua Golde](https://unsplash.com/@joshgmit) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
 Haskell's type system is famously powerful, but it often hides a subtle distinction in how it binds logic to data. To truly master advanced functional design, we need to understand the boundary between **Monomorphism** and **Polymorphism**—and more importantly, where that boundary breaks.
 

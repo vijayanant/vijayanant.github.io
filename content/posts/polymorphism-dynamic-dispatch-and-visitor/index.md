@@ -4,7 +4,7 @@ seo_title: "Double Dispatch and the Visitor Pattern: Solving Polymorphism Challe
 slug: "polymorphism-dynamic-dispatch-and-visitor"
 date: 2023-12-04
 draft: false
-featured_image: "featured.svg"
+featured_image: "featured.jpeg"
 tags: ["polymorphism", "visitor-pattern", "design-patterns", "oop"]
 categories: ["Programming"]
 description: "Why single dispatch isn't enough for extensible systems. Learn how to implement Double Dispatch using the Visitor pattern in Java and C++."
@@ -12,9 +12,9 @@ pillar: craft
 pillar_role: essay
 level: "Intermediate"
 ---
-{{< figure src="polymorphism-dynamic-dispatch-and-visitor-1.jpeg" alt="Change neon light signage" caption="Photo by [Ross Findon](https://unsplash.com/@rossfindon) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
+{{< figure src="featured.jpeg" alt="Change neon light signage" caption="Photo by [Ross Findon](https://unsplash.com/@rossfindon) on [Unsplash](https://unsplash.com)"  lazy="false" >}}
 
-Let's revisit a classic example from our early days of object-oriented programming: shapes and transformations. We will design a system that allows applying scaling and rotation to lines, circles, and rectangles. 
+Let's revisit a classic example from our early days of object-oriented programming: shapes and transformations. We will design a system that allows applying scaling and rotation to lines, circles, and rectangles.
 
 However, this time, we'll look at it through the lens of **System Extensibility**. Most developers assume that standard inheritance and polymorphism are enough, but we'll discover a silent trap where standard **Single Dispatch** fails us. By following this journey, we'll see exactly where the language limits our design and how the **Visitor Pattern** provides the **Double Dispatch** solution required for truly extensible systems.
 
@@ -314,9 +314,8 @@ This is exactly what [Visitor design pattern](https://en.wikipedia.org/wiki/Visi
 
 Double dispatch is a powerful technique, but it comes with a "complexity tax." By introducing the `accept` method and the Visitor interface, you've gained the ability to add new transformations without touching your shapes, but you've also made the control flow harder to follow for a newcomer.
 
-Before you reach for the Visitor pattern, ask yourself: *Is this hierarchy really going to grow in terms of operations (transformations), or in terms of data (new shapes)?* If you're adding new shapes every week, the Visitor pattern will actually make your life harder. But if your shapes are stable and your business rules are evolving, Double Dispatch is the key to keeping your core logic clean.
+Before you reach for the Visitor pattern, ask yourself: _Is this hierarchy really going to grow in terms of operations (transformations), or in terms of data (new shapes)?_ If you're adding new shapes every week, the Visitor pattern will actually make your life harder. But if your shapes are stable and your business rules are evolving, Double Dispatch is the key to keeping your core logic clean.
 
 {{< newsletter type="simple" >}}
 
 </shape>
-

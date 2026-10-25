@@ -96,9 +96,8 @@ def main():
     force = "--force" in sys.argv
     count = 0
 
-    if not os.path.exists(PUBLIC_DIR):
-        print("Building Hugo site to render card HTML...")
-        subprocess.run(["hugo", "--minify"], check=True)
+    print("Building Hugo site to render card HTML...")
+    subprocess.run(["hugo", "--minify"], check=True)
 
     font_css = get_font_css()
     verify_fonts_preflight(CHROME, font_css)
