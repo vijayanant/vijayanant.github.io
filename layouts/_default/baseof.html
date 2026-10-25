@@ -13,20 +13,13 @@
     {{/* DNS Prefetch for Analytics and External Resources */}}
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{/* Typography: Newsreader & JetBrains Mono (LambdaMatters Standard) */}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap">
-
-    {{/* Primary Consolidated Stylesheet */}}
-    {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{/* Preload Primary Headline Font (Self-hosted) */}}
+    <link rel="preload" href="/webfonts/newsreader-roman.woff2" as="font" type="font/woff2" crossorigin>
 
     <script>
         (function() {
@@ -37,14 +30,13 @@
         })();
     </script>
 
-    {{ $chromaStyle := resources.Get "css/chroma.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $chromaStyle.RelPermalink }}">
-
-    {{ $tabsStyle := resources.Get "css/tabs.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $tabsStyle.RelPermalink }}">
-
-    {{ $shareStyle := resources.Get "css/share-buttons.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $shareStyle.RelPermalink }}">
+    {{/* Consolidated Unified Stylesheet (Zero Extra Round Trips) */}}
+    {{ $style := resources.Get "css/style.css" }}
+    {{ $chromaStyle := resources.Get "css/chroma.css" }}
+    {{ $tabsStyle := resources.Get "css/tabs.css" }}
+    {{ $shareStyle := resources.Get "css/share-buttons.css" }}
+    {{ $cssBundle := slice $style $chromaStyle $tabsStyle $shareStyle | resources.Concat "css/bundle.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $cssBundle.RelPermalink }}">
 
 
 
