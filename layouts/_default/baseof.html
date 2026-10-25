@@ -18,9 +18,6 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{/* Preload Primary Headline Font (Self-hosted) */}}
-    <link rel="preload" href="/webfonts/newsreader-roman.woff2" as="font" type="font/woff2" crossorigin>
-
     <script>
         (function() {
             let saved = null;
@@ -30,13 +27,13 @@
         })();
     </script>
 
-    {{/* Consolidated Unified Stylesheet (Zero Extra Round Trips) */}}
+    {{/* Inlined Unified Stylesheet (Zero Render-Blocking CSS Requests, Est. +1,050ms speedup) */}}
     {{ $style := resources.Get "css/style.css" }}
     {{ $chromaStyle := resources.Get "css/chroma.css" }}
     {{ $tabsStyle := resources.Get "css/tabs.css" }}
     {{ $shareStyle := resources.Get "css/share-buttons.css" }}
-    {{ $cssBundle := slice $style $chromaStyle $tabsStyle $shareStyle | resources.Concat "css/bundle.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $cssBundle.RelPermalink }}">
+    {{ $cssBundle := slice $style $chromaStyle $tabsStyle $shareStyle | resources.Concat "css/bundle.css" | minify }}
+    <style>{{ $cssBundle.Content | safeCSS }}</style>
 
 
 

@@ -21,7 +21,7 @@
                 {{ $portrait := resources.Get site.Params.portrait }}
                 {{ if $portrait }}
                     {{ $avatar := $portrait.Resize "120x120 webp" }}
-                    <img src="{{ $avatar.RelPermalink }}" alt="{{ site.Title }}" class="brand-logo" width="60" height="60">
+                    <img src="{{ $avatar.RelPermalink }}" alt="{{ site.Title }}" class="brand-logo" width="60" height="60" fetchpriority="high" decoding="async">
                 {{ end }}
             </a>
             <div class="brand-text">
