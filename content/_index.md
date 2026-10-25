@@ -1,6 +1,6 @@
 ---
 title: "Vijay Anant | Systems Architect"
-description: "Software systems architecture, deterministic state, and engineering craft."
+description: "Preserving intent, designing for evolution, and navigating trade-offs."
 layout: index
 aliases:
   - /explore/

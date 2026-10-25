@@ -1,7 +1,7 @@
 title: Vijay Anant
 meta_items:
-  - Systems Architect
-  - 20 Years of Craft
-  - Distributed Systems & AI Intent
+  - Craft
+  - Systems
+  - Stewardship
 description: |
   I build software and explore foundational problems in systems architecture. Currently focused on deterministic, local-first state engines ([Akshara](#systems)) and architectural intent compilation for AI models ([Compiled Intent](#systems)). This site is where I document my findings, benchmarks, and code.

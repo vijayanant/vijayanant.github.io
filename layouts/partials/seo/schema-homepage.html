@@ -25,7 +25,7 @@
           {{- $e.url | jsonify | safeJS }}
         {{- end }}
       ],
-      "jobTitle": {{ site.Params.description | jsonify | safeJS }},
+      "jobTitle": {{ site.Params.jobTitle | default "Systems Architect" | jsonify | safeJS }},
       "worksFor": {
         "@type": "Organization",
         "name": {{ site.Title | jsonify | safeJS }}
