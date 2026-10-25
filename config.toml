@@ -63,10 +63,16 @@ keepCSSVariables = false
 keepQuotes = false
 newLine = false
 
+[outputFormats.OGCard]
+mediaType = "text/html"
+baseName = "og-card"
+isPlainText = false
+
 [outputs]
 home = ["HTML", "RSS", "JSON"]
-page = ["HTML", "RSS"]
+page = ["HTML", "RSS", "OGCard"]
 section = ["HTML", "RSS"]
+term = ["HTML", "RSS", "OGCard"]
 
 [taxonomies]
 tag = "tags"

@@ -15,30 +15,14 @@
 
 {{/* Image Logic */}}
 {{- $ogImage := "" }}
-{{- with .Params.featured_image }}
-  {{- $resource := $.Resources.GetMatch . }}
-  {{- if $resource }}
-    {{- if eq $resource.MediaType.SubType "svg" }}
-        {{/* If SVG, look for a PNG counterpart for Social Cards */}}
-        {{- $pngName := replace . ".svg" ".png" }}
-        {{- $pngResource := $.Resources.GetMatch $pngName }}
-        {{- if $pngResource }}
-            {{- $ogImage = $pngResource.Permalink }}
-        {{- else }}
-            {{- with site.Params.image }}
-                {{- $ogImage = . | absURL }}
-            {{- end }}
-        {{- end }}
-    {{- else }}
-        {{- if gt $resource.Width 1200 }}
-            {{- $ogImage = ($resource.Resize "1200x jpg").Permalink }}
-        {{- else }}
-            {{- $ogImage = $resource.Permalink }}
-        {{- end }}
-    {{- end }}
-  {{- else }}
-    {{- $ogImage = . | absURL }}
-  {{- end }}
+{{- $ogJpg := $.Resources.GetMatch "og.jpg" }}
+{{- $ogPng := $.Resources.GetMatch "og.png" }}
+{{- if $ogJpg }}
+  {{- $ogImage = $ogJpg.Permalink }}
+{{- else if $ogPng }}
+  {{- $ogImage = $ogPng.Permalink }}
+{{- else if .Params.featured_image }}
+  {{- $ogImage = printf "%sog.jpg" .Permalink }}
 {{- else }}
   {{- with site.Params.image }}
     {{- $ogImage = . | absURL }}
