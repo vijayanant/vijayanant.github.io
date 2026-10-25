@@ -125,8 +125,9 @@
             </div>
 
             <div class="archive-bridge">
+                {{ $postCount := len (where .Site.RegularPages "Section" "posts") }}
                 <a href="/explore/" class="archive-bridge-link">
-                    Explore the Full Knowledge Map (43 Essays across 3 Domains) &rarr;
+                    Explore the Full Knowledge Map ({{ $postCount }} Essays across all 3 Pillars) &rarr;
                 </a>
             </div>
         </div>
