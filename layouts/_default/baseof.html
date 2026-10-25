@@ -37,23 +37,30 @@
 
 
 
+    {{/* Font Preload for Immediate Text Rendering */}}
+    <link rel="preload" href="/webfonts/newsreader-roman.woff2" as="font" type="font/woff2" crossorigin>
+
     {{/* Smart LCP Preloading */}}
     {{ if .IsHome }}
         {{/* Preload Above-the-Fold LCP Image for Homepage (Portrait Avatar) */}}
         {{ $portrait := resources.Get site.Params.portrait }}
         {{ if $portrait }}
             {{ $avatar := $portrait.Resize "120x120 webp" }}
-            <link rel="preload" href="{{ $avatar.RelPermalink }}" as="image" type="image/webp">
+            <link rel="preload" href="{{ $avatar.RelPermalink }}" as="image" type="image/webp" fetchpriority="high">
         {{ end }}
     {{ else if and .IsPage (eq .Section "posts") }}
-        {{/* Preload Above-the-Fold LCP Image for Blog Post (Mobile 480w WebP / SVG) */}}
+        {{/* Preload Above-the-Fold LCP Image for Blog Post (Responsive WebP / SVG) */}}
         {{ with .Params.featured_image }}
             {{ with $.Resources.GetMatch . }}
                 {{ if eq .MediaType.SubType "svg" }}
                     <link rel="preload" href="{{ .RelPermalink }}" as="image" type="image/svg+xml">
                 {{ else }}
-                    {{ $lcpWebp := .Resize "480x webp" }}
-                    <link rel="preload" href="{{ $lcpWebp.RelPermalink }}" as="image" type="image/webp">
+                    {{ $w480 := (.Resize "480x webp").RelPermalink }}
+                    {{ $w800 := (.Resize "800x webp").RelPermalink }}
+                    {{ $w1200 := (.Resize "1200x webp").RelPermalink }}
+                    <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+                          imagesrcset="{{ $w480 }} 480w, {{ $w800 }} 800w, {{ $w1200 }} 1200w"
+                          imagesizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px">
                 {{ end }}
             {{ end }}
         {{ end }}
@@ -76,21 +83,6 @@
     {{ if .Params.math }}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css" integrity="sha384-3rdsX6e5mueWyoweR9NIVmtEsUkokpBT/0ALqKKIBMr9j4qhHkaIkAcGgsE6uVlp" crossorigin="anonymous" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css" integrity="sha384-3rdsX6e5mueWyoweR9NIVmtEsUkokpBT/0ALqKKIBMr9j4qhHkaIkAcGgsE6uVlp" crossorigin="anonymous"></noscript>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js" integrity="sha384-QFFtAGzvvj+bfgCGxXJlNZZR1nXEZgvG8tDLCCY1F19xl20WlfTYgguB4VcNdxYk" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '\\[', right: '\\]', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false}
-                ],
-                throwOnError: false
-            });
-        });
-    </script>
     {{ end }}
 </head>
 
@@ -126,6 +118,26 @@
     {{ $searchScript := resources.Get "js/search.js" | minify | fingerprint }}
     <script src="{{ $searchScript.RelPermalink }}" defer></script>
     {{- end -}}
+
+    {{ if .Params.math }}
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js" integrity="sha384-QFFtAGzvvj+bfgCGxXJlNZZR1nXEZgvG8tDLCCY1F19xl20WlfTYgguB4VcNdxYk" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener("load", function() {
+            if (typeof renderMathInElement === "function") {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '\\[', right: '\\]', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+    </script>
+    {{ end }}
 
     {{ partial "analytics.html" . }}
 </body>

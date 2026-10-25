@@ -256,8 +256,4 @@
             }
         }
     });
-
-    if (window.requestIdleCallback) {
-        requestIdleCallback(() => fetchSearchIndex(), { timeout: 3000 });
-    }
 })();
