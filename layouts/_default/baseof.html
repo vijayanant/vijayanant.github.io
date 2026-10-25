@@ -37,6 +37,13 @@
 
 
 
+    {{/* Preload Above-the-Fold LCP Image (Portrait Avatar) */}}
+    {{ $portrait := resources.Get site.Params.portrait }}
+    {{ if $portrait }}
+        {{ $avatar := $portrait.Resize "120x120 webp" }}
+        <link rel="preload" href="{{ $avatar.RelPermalink }}" as="image" type="image/webp">
+    {{ end }}
+
     {{ $apple := resources.Get "images/apple-touch-icon.png" | fingerprint }}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ $apple.RelPermalink }}">
     {{ $favicon32 := resources.Get "images/favicon-32.png" | fingerprint }}
@@ -46,7 +53,6 @@
     {{ $favicon48 := resources.Get "images/favicon-48.png" | fingerprint }}
     <link rel="icon" type="image/png" sizes="48x48" href="{{ $favicon48.RelPermalink }}">
 
-    {{ partial "analytics.html" . }}
     {{ partial "seo/social.html" . }}
     {{ partial "seo/schema.html" . }}
     {{ partial "seo/breadcrumb-schema.html" . }}
@@ -104,6 +110,8 @@
     {{ $searchScript := resources.Get "js/search.js" | minify | fingerprint }}
     <script src="{{ $searchScript.RelPermalink }}" defer></script>
     {{- end -}}
+
+    {{ partial "analytics.html" . }}
 </body>
 
 </html>
